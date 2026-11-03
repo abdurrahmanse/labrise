@@ -68,8 +68,8 @@ export const headerData = {
       href: "/scholarships"
     },
     ctaButton: {
-      label: "Start Roadmap",
-      href: "/roadmap"
+      label: "Start Here",
+      href: "/"
     },
     menuAriaLabel: "Toggle navigation menu"
   },
@@ -84,6 +84,7 @@ export const headerData = {
 };
 
 export const navLinksData: NavLinkItem[] = [
+  { href: "/", label: "Start", iconName: "Compass" },
   { href: "/roadmap", label: "Roadmap", iconName: "Map" },
   { href: "/countries", label: "Countries", iconName: "Globe2" },
   { href: "/scholarships", label: "Scholarships", iconName: "Search" },
