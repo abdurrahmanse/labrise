@@ -720,3 +720,16 @@ input[type="range"].range-slider::-moz-range-thumb {
     padding-block: 0.3rem;
   }
 }
+
+/* In light mode text-white is the dark ink colour, so text and icons on solid blue fills need real white. */
+.light .bg-indigo-600,
+.light .bg-indigo-600 .text-white,
+.light .from-indigo-600,
+.light .from-indigo-600 .text-white,
+.light .bg-emerald-500,
+.light .bg-emerald-500 .text-white,
+.light .bg-rose-500,
+.light .bg-rose-500 .text-white,
+.light .hover\:bg-indigo-600:hover {
+  color: #ffffff;
+}

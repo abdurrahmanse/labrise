@@ -1,6 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import {
-  Award, BookA, BookOpen, CalendarCheck, Bookmark, Brain, CalendarClock, CircleHelp, Clock, ExternalLink, FileText, Globe, GraduationCap, Landmark,
+  Award, BookA, LayoutGrid, Route, Search, ShieldCheck, Terminal, BookOpen, CalendarCheck, Bookmark, Brain, CalendarClock, CircleHelp, Clock, ExternalLink, FileText, Globe, GraduationCap, Landmark,
   Layers, Lightbulb, ListChecks, Mail, MapPin, Medal, Send, Sparkles, StickyNote, TriangleAlert, Users, Wallet
 } from "lucide-react";
 
@@ -10,6 +10,12 @@ export const iconRules: [pattern: RegExp, icon: LucideIcon][] = [
   [/planner|plan\b|calendar/i, CalendarCheck],
   [/saved|bookmark|shortlist/i, Bookmark],
   [/glossary|term|word|dictionary/i, BookA],
+  [/overview|dashboard/i, LayoutGrid],
+  [/workflow|journey|roadmap/i, Route],
+  [/formulas?|query|queries/i, Terminal],
+  [/portals?|safety|official portals/i, ShieldCheck],
+  [/\bfit\b|checklist/i, ListChecks],
+  [/\bfind\b|search|browse|explore/i, Search],
   [/mistake|avoid|scam|risk|problem|warning|caution/i, TriangleAlert],
   [/why/i, CircleHelp],
   [/when to|how long|timeline|deadline|window|date|schedule/i, CalendarClock],
