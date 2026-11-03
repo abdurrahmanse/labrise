@@ -137,7 +137,7 @@ export function PageHero({
     (badgeIconName ? renderCommonIcon(badgeIconName, "w-3.5 h-3.5 " + styles.badgeText) : null);
 
   return (
-    <section className="relative overflow-hidden pt-12 sm:pt-16 md:pt-20 pb-12 sm:pb-16 border-b-2 border-white/80 bg-[#0b0b0c]/70 backdrop-blur-sm">
+    <section className="relative overflow-hidden pt-12 sm:pt-16 md:pt-20 pb-12 sm:pb-16 border-b-2 border-white/80 bg-canvas-base/70 backdrop-blur-sm">
       {/* 0. Top Glowing Horizon Line */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-indigo-400 to-transparent pointer-events-none" />
 

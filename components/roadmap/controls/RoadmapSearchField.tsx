@@ -24,7 +24,7 @@ export function RoadmapSearchField({ value, onChange }: RoadmapSearchFieldProps)
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={searchPlaceholder}
-        className="w-full pl-10 pr-9 py-2.5 rounded-xl bg-[#0b0b0c] border border-white/10 text-white placeholder-slate-400 text-xs sm:text-sm focus:outline-none focus:border-teal-500/60 focus:ring-1 focus:ring-teal-500/40 transition-all font-sans"
+        className="w-full pl-10 pr-9 py-2.5 rounded-xl bg-canvas-base border border-white/10 text-white placeholder-slate-400 text-xs sm:text-sm focus:outline-none focus:border-teal-500/60 focus:ring-1 focus:ring-teal-500/40 transition-all font-sans"
       />
       {value && (
         <button

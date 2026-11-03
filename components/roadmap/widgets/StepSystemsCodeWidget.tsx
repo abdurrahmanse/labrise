@@ -75,7 +75,7 @@ export function StepSystemsCodeWidget() {
         {systemsBenchmarkMetricsData.map((metric) => (
           <div
             key={metric.id}
-            className="p-3 rounded-xl bg-[#121214] border border-white/5 flex items-center gap-3"
+            className="p-3 rounded-xl bg-canvas-card border border-white/5 flex items-center gap-3"
           >
             <div
               className={`p-2 rounded-lg shrink-0 ${
@@ -115,9 +115,9 @@ export function StepSystemsCodeWidget() {
       </WidgetTabs>
 
       {/* Code Editor Container */}
-      <div className="rounded-xl border border-white/10 bg-[#070708] overflow-hidden relative z-10 shadow-2xl">
+      <div className="rounded-xl border border-white/10 bg-canvas-base overflow-hidden relative z-10 shadow-2xl">
         {/* Editor Title Bar */}
-        <div className="px-4 py-2.5 bg-[#121214] border-b border-white/10 flex items-center justify-between">
+        <div className="px-4 py-2.5 bg-canvas-card border-b border-white/10 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-1.5 mr-2">
               <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
@@ -131,7 +131,7 @@ export function StepSystemsCodeWidget() {
 
           <button
             onClick={handleCopy}
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#0b0b0c] hover:bg-slate-800 text-slate-300 border border-white/10 text-xs font-mono transition-all cursor-pointer"
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-canvas-base hover:bg-slate-800 text-slate-300 border border-white/10 text-xs font-mono transition-all cursor-pointer"
           >
             {copied ? (
               <>
@@ -148,14 +148,14 @@ export function StepSystemsCodeWidget() {
         </div>
 
         {/* Code Content */}
-        <div className="p-4 overflow-x-auto text-xs font-mono text-slate-200 leading-relaxed bg-[#070708]/95">
+        <div className="p-4 overflow-x-auto text-xs font-mono text-slate-200 leading-relaxed bg-canvas-base/95">
           <pre className="selection:bg-cyan-900 selection:text-cyan-200">
             <code>{activeTab.code}</code>
           </pre>
         </div>
 
         {/* Code Sub-footer with Contextual Badges */}
-        <div className="px-4 py-2.5 bg-[#0d0d0f] border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-xs">
+        <div className="px-4 py-2.5 bg-canvas-base border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-xs">
           <p className="text-slate-400 text-[11px] leading-tight">
             {activeTab.description}
           </p>

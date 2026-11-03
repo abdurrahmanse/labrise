@@ -12,7 +12,7 @@ export function FundingPillarsSection() {
   const { badge, title, subtitle, pillars, callout } = fundingPillarsData;
 
   return (
-    <section className="py-16 md:py-24 border-b border-white/[0.06] bg-[#0b0b0c]">
+    <section className="py-16 md:py-24 border-b border-white/[0.06] bg-canvas-base">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <SectionHeader

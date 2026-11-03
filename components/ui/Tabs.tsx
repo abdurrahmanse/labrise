@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { cn } from "@/lib/utils";
 
 export type TabTheme = "indigo" | "cyan" | "emerald" | "amber" | "purple" | "rose";
 export type TabVariant = "pills" | "cards" | "segmented" | "minimal";
@@ -16,7 +17,7 @@ export interface TabsContainerProps {
 }
 
 const CONTAINER_VARIANTS: Record<TabVariant, string> = {
-  segmented: "p-1.5 rounded-2xl bg-[#0b0b0c] border border-white/10 flex items-center gap-1.5 overflow-x-auto scrollbar-none",
+  segmented: "p-1.5 rounded-2xl bg-canvas-base border border-white/10 flex items-center gap-1.5 overflow-x-auto scrollbar-none",
   pills: "flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none",
   cards: "grid gap-2.5",
   minimal: "flex items-center gap-1 border-b border-white/10"
@@ -47,7 +48,7 @@ export function TabsContainer({
   return (
     <div
       role="tablist"
-      className={`${CONTAINER_VARIANTS[variant]} ${colClass} ${widthClass} ${className}`}
+      className={cn(CONTAINER_VARIANTS[variant], colClass, widthClass, className)}
     >
       {children}
     </div>
@@ -80,7 +81,7 @@ const ACTIVE_THEMES: Record<TabTheme, string> = {
   rose: "bg-rose-500 text-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] border-black"
 };
 
-const INACTIVE_STYLES = "bg-[#0b0b0c] text-slate-400 hover:text-white border-white/15 hover:border-white/60 hover:bg-white/[0.06] backdrop-blur-sm";
+const INACTIVE_STYLES = "bg-canvas-base text-slate-400 hover:text-white border-white/15 hover:border-white/60 hover:bg-white/[0.06] backdrop-blur-sm";
 
 /**
  * Universal decoupled Tab Item / Tab Button component following DRY principles.
@@ -124,7 +125,7 @@ export function TabItem({
         aria-selected={active}
         onClick={onClick}
         disabled={disabled}
-        className={`p-3.5 rounded-xl border text-left transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${activeClass} ${className}`}
+        className={cn("p-3.5 rounded-xl border text-left transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed", activeClass, className)}
       >
         <div className="flex items-center justify-between gap-2 mb-1">
           {badge && <span className="text-[10px] uppercase font-mono font-bold tracking-wider opacity-85">{badge}</span>}
@@ -143,7 +144,7 @@ export function TabItem({
       aria-selected={active}
       onClick={onClick}
       disabled={disabled}
-      className={`${sizeClass} rounded-xl font-semibold whitespace-nowrap transition-all duration-200 flex items-center gap-2 border cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed ${activeClass} ${className}`}
+      className={cn(sizeClass, "rounded-xl font-semibold whitespace-nowrap transition-all duration-200 flex items-center gap-2 border cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed", activeClass, className)}
     >
       {icon && <span className="shrink-0">{icon}</span>}
       {badge && <span className="font-mono text-[10px] opacity-80">{badge}</span>}

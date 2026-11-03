@@ -117,7 +117,7 @@ export function OverviewExplorer({ fixedMode }: { fixedMode: ExplorerMode }) {
         </div>
       </div>
 
-      <div className="overflow-x-auto border-2 border-white/30 bg-[#121214]/60 backdrop-blur-xl">
+      <div className="overflow-x-auto border-2 border-white/30 bg-canvas-card/60 backdrop-blur-xl">
         {mode === "countries" ? (
           <table className="w-full text-left text-sm">
             <thead className="bg-white/[0.06] text-slate-300 font-mono text-xs uppercase tracking-wider">

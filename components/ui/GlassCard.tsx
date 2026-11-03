@@ -63,7 +63,7 @@ export function GlassCard({
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`group relative bg-[#121214]/55 backdrop-blur-xl backdrop-saturate-150 border p-6 sm:p-7 shadow-[5px_5px_0_0_rgba(0,0,0,0.6)] ${glowStyles[borderGlow]} ${hoverClass} ${className}`}
+      className={`group relative bg-canvas-card/55 backdrop-blur-xl backdrop-saturate-150 border p-6 sm:p-7 shadow-[5px_5px_0_0_rgba(0,0,0,0.6)] ${glowStyles[borderGlow]} ${hoverClass} ${className}`}
     >
       {/* Glass edge highlight */}
       <div className="absolute top-0 inset-x-0 h-px bg-white/25 pointer-events-none" />

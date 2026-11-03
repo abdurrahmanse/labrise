@@ -107,7 +107,7 @@ export function StepGpuQuantWidget() {
 
         {/* Hardware & Batch Size Guidance */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-          <div className="p-3 rounded-lg bg-[#0b0b0c] border border-white/5 flex items-center gap-2.5">
+          <div className="p-3 rounded-lg bg-canvas-base border border-white/5 flex items-center gap-2.5">
             <Gauge className="w-4 h-4 text-amber-400 shrink-0" />
             <div className="min-w-0">
               <span className="text-[10px] font-mono text-slate-400 uppercase block">
@@ -119,7 +119,7 @@ export function StepGpuQuantWidget() {
             </div>
           </div>
 
-          <div className="p-3 rounded-lg bg-[#0b0b0c] border border-white/5 flex items-center gap-2.5">
+          <div className="p-3 rounded-lg bg-canvas-base border border-white/5 flex items-center gap-2.5">
             <Zap className="w-4 h-4 text-cyan-400 shrink-0" />
             <div className="min-w-0">
               <span className="text-[10px] font-mono text-slate-400 uppercase block">

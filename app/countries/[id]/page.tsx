@@ -41,7 +41,7 @@ async function CountryDetailContent({ params }: Props) {
 
 export default function CountryDetailRoute({ params }: Props) {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#0b0b0c] animate-pulse" />}>
+    <Suspense fallback={<div className="min-h-screen bg-canvas-base animate-pulse" />}>
       <CountryDetailContent params={params} />
     </Suspense>
   );

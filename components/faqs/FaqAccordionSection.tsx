@@ -48,7 +48,7 @@ export function FaqAccordionSection({
   };
 
   return (
-    <section id="faq-list" className="py-20 border-b border-white/5 bg-[#0b0b0c]">
+    <section id="faq-list" className="py-20 border-b border-white/5 bg-canvas-base">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge={faqsHeaderData.badge}
@@ -68,7 +68,7 @@ export function FaqAccordionSection({
             placeholder={faqsHeaderData.searchPlaceholder}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-11 pr-10 py-3.5 rounded-2xl bg-[#121214] border border-white/10 focus:border-cyan-500 text-slate-100 placeholder-slate-500 text-xs sm:text-sm outline-none transition-all shadow-inner"
+            className="w-full pl-11 pr-10 py-3.5 rounded-2xl bg-canvas-card border border-white/10 focus:border-cyan-500 text-slate-100 placeholder-slate-500 text-xs sm:text-sm outline-none transition-all shadow-inner"
           />
           {searchQuery && (
             <button
@@ -108,7 +108,7 @@ export function FaqAccordionSection({
               />
             ))
           ) : (
-            <div className="text-center py-12 px-4 bg-[#121214] rounded-2xl border border-white/10">
+            <div className="text-center py-12 px-4 bg-canvas-card rounded-2xl border border-white/10">
               <p className="text-slate-400 text-sm">
                 No matching questions found for &ldquo;<span className="text-white font-mono">{searchQuery}</span>&rdquo;.
               </p>

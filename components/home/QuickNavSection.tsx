@@ -9,7 +9,7 @@ export function QuickNavSection() {
   const { badge, title, subtitle, ctaText, links } = quickNavData;
 
   return (
-    <section className="py-16 md:py-24 bg-[#0b0b0c]">
+    <section className="py-16 md:py-24 bg-canvas-base">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <SectionHeader

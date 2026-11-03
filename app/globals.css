@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap');
 @import "tailwindcss";
 
+/* Theme switching is class based (next-themes sets .dark / .light on <html>) */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: var(--font-rajdhani), 'Rajdhani', sans-serif;
   --font-heading: var(--font-rajdhani), 'Rajdhani', sans-serif;
@@ -14,6 +17,7 @@
   --color-canvas-card: #121214;
   --color-canvas-card-hover: #18181b;
   --color-canvas-border: rgba(255, 255, 255, 0.16);
+  --color-canvas-ink: #0b0b0c;
 
   --color-accent-indigo: #c6f21f;
   --color-accent-cyan: #e4e4e7;
@@ -195,8 +199,8 @@ body,
 }
 
 body {
-  background-color: #0b0b0c;
-  color: #f4f4f5;
+  background-color: var(--color-canvas-base);
+  color: var(--color-slate-100);
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.6;
@@ -533,4 +537,105 @@ input[type="range"].range-slider::-moz-range-thumb {
   .glass-panel-hover:hover {
     transform: none !important;
   }
+}
+
+
+/* ───────────────────────────────────────────────────────────
+   Light theme
+   The dark palette is the base. In light mode the neutral scale,
+   white/black alpha overlays and canvas colours are swapped, so every
+   existing utility (text-slate-300, border-white/20, bg-canvas-card…)
+   flips without touching component code.
+   ─────────────────────────────────────────────────────────── */
+.light {
+  color-scheme: light;
+  --color-canvas-base: #f4f4f1;
+  --color-canvas-card: #ffffff;
+  --color-canvas-card-hover: #fafaf8;
+  --color-canvas-border: rgba(0, 0, 0, 0.18);
+  --color-white: #0b0b0c;
+
+  --color-slate-50: #0e0e10;
+  --color-slate-100: #18181b;
+  --color-slate-200: #27272a;
+  --color-slate-300: #3f3f46;
+  --color-slate-400: #52525b;
+  --color-slate-500: #71717a;
+  --color-slate-600: #a1a1aa;
+  --color-slate-700: #d4d4d8;
+  --color-slate-800: #e4e4e7;
+  --color-slate-900: #f4f4f5;
+  --color-slate-950: #fafafa;
+  --color-gray-50: #0e0e10;
+  --color-gray-100: #18181b;
+  --color-gray-200: #27272a;
+  --color-gray-300: #3f3f46;
+  --color-gray-400: #52525b;
+  --color-gray-500: #71717a;
+  --color-gray-600: #a1a1aa;
+  --color-gray-700: #d4d4d8;
+  --color-gray-800: #e4e4e7;
+  --color-gray-900: #f4f4f5;
+  --color-gray-950: #fafafa;
+
+  /* Readable status colours on a light canvas */
+  --color-emerald-300: #047857;
+  --color-emerald-400: #059669;
+  --color-amber-300: #b45309;
+  --color-amber-400: #d97706;
+  --color-rose-300: #be123c;
+  --color-rose-400: #e11d48;
+}
+
+.light ::selection {
+  background: #0b0b0c;
+  color: #c6f21f;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #f4f4f1;
+  border-left-color: rgba(0, 0, 0, 0.1);
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: #a1a1aa;
+}
+
+/* Lime is too bright for text on white: use the dark olive for accent text */
+.light .text-indigo-300,
+.light .text-indigo-400,
+.light .hover\:text-indigo-200:hover,
+.light .hover\:text-indigo-300:hover,
+.light .text-purple-300,
+.light .text-purple-400 {
+  color: #4b6106;
+}
+
+/* Lime fills keep dark text; neutralise white-on-fill utilities inside them */
+.light .bg-indigo-400 {
+  color: #0b0b0c;
+}
+
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.65);
+  border-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.15);
+}
+
+.light [class*="border-white/5"]:not(:hover),
+.light [class*="border-white/10"]:not(:hover),
+.light [class*="border-white/[0.0"]:not(:hover) {
+  border-color: rgba(0, 0, 0, 0.16);
+}
+
+.light .bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+}
+
+/* White hover fills become ink in light mode, so their black text needs flipping */
+.light .hover\:bg-white:hover,
+.light .group:hover .group-hover\:bg-white {
+  color: #fafafa;
 }

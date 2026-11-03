@@ -10,7 +10,7 @@ export interface StepDeliverableBannerProps {
  */
 export function StepDeliverableBanner({ deliverable }: StepDeliverableBannerProps) {
   return (
-    <div className="p-4 rounded-xl bg-gradient-to-r from-[#0b0b0c] via-[#121214] to-[#0b0b0c] border border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-lg">
+    <div className="p-4 rounded-xl bg-gradient-to-r from-canvas-base via-canvas-card to-canvas-base border border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-lg">
       <div className="flex items-center gap-3">
         <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shrink-0">
           <Award className="w-5 h-5" />

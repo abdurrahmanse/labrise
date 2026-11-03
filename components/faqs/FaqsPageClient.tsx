@@ -13,7 +13,7 @@ export function FaqsPageClient() {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   return (
-    <main className="min-h-screen bg-[#0b0b0c] text-slate-100">
+    <main className="min-h-screen bg-canvas-base text-slate-100">
       {/* 1. Hero Section */}
       <FaqsHero />
 

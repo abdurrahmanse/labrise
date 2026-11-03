@@ -30,7 +30,7 @@ export function HeaderMobileDrawer({
 
       {/* Drawer panel */}
       <aside
-        className={`fixed top-0 right-0 bottom-0 z-50 w-[300px] max-w-[85vw] flex flex-col lg:hidden bg-[#0b0b0c] border-l border-white/[0.08] shadow-2xl transition-transform duration-300 ease-out ${
+        className={`fixed top-0 right-0 bottom-0 z-50 w-[300px] max-w-[85vw] flex flex-col lg:hidden bg-canvas-base border-l border-white/[0.08] shadow-2xl transition-transform duration-300 ease-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-label="Mobile Navigation Drawer"

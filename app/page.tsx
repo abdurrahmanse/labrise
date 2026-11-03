@@ -58,7 +58,7 @@ export default function HomePage() {
             <div className="font-mono text-xs uppercase tracking-widest text-slate-400 mb-4">What is inside</div>
             <div className="grid grid-cols-3 gap-px bg-white/20 border border-white/20">
               {stats.map((s) => (
-                <div key={s.label} className="bg-[#0b0b0c]/80 p-4">
+                <div key={s.label} className="bg-canvas-base/80 p-4">
                   <div className="text-3xl font-bold text-indigo-400">{s.value}</div>
                   <div className="font-mono text-[11px] uppercase text-slate-400">{s.label}</div>
                 </div>
@@ -86,7 +86,7 @@ export default function HomePage() {
             <li key={s.step}>
               <Link
                 href={s.href}
-                className="group block h-full border-2 border-white/30 bg-[#121214]/60 backdrop-blur-xl p-5 shadow-[4px_4px_0_0_rgba(0,0,0,0.6)] transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[7px_7px_0_0_#c6f21f]"
+                className="group block h-full border-2 border-white/30 bg-canvas-card/60 backdrop-blur-xl p-5 shadow-[4px_4px_0_0_rgba(0,0,0,0.6)] transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[7px_7px_0_0_#c6f21f]"
               >
                 <div className="flex items-center justify-between mb-3">
                   <span className="bg-indigo-400 text-black font-mono font-bold px-2 py-0.5">{String(s.step).padStart(2, "0")}</span>

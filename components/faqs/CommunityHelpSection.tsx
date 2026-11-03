@@ -17,7 +17,7 @@ const ICON_COLORS: Record<string, string> = {
 
 export function CommunityHelpSection() {
   return (
-    <section id="community-help" className="py-20 bg-[#0b0b0c] border-t border-white/10">
+    <section id="community-help" className="py-20 bg-canvas-base border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Launchpad"
@@ -32,7 +32,7 @@ export function CommunityHelpSection() {
               key={c.title}
               variant="default"
               borderGlow="cyan"
-              className="flex flex-col justify-between group bg-[#121214] p-6"
+              className="flex flex-col justify-between group bg-canvas-card p-6"
               icon={renderCommonIcon(c.iconName, `w-5 h-5 ${ICON_COLORS[c.iconName] || "text-indigo-400"}`)}
               title={c.title}
               footer={

@@ -50,7 +50,7 @@ export function StepCard({ step }: StepCardProps) {
   return (
     <GlassCard
       borderGlow={glowVariant}
-      className="p-6 sm:p-8 transition-all duration-300 bg-[#121214]/95 border border-white/10 hover:border-white/20 shadow-2xl relative overflow-hidden group"
+      className="p-6 sm:p-8 transition-all duration-300 bg-canvas-card/95 border border-white/10 hover:border-white/20 shadow-2xl relative overflow-hidden group"
     >
       {/* Top ambient color sheen */}
       <div

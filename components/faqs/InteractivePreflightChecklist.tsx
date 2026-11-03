@@ -30,7 +30,7 @@ export function InteractivePreflightChecklist() {
   const progressPercent = Math.round((completed / preflightChecklistData.length) * 100);
 
   return (
-    <section id="readiness-checklist" className="py-20 border-b border-white/10 bg-[#0b0b0c]">
+    <section id="readiness-checklist" className="py-20 border-b border-white/10 bg-canvas-base">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge={sectionMeta?.badge || "Pre-Flight Audit"}
@@ -43,7 +43,7 @@ export function InteractivePreflightChecklist() {
         <SectionCard
           variant="default"
           borderGlow="emerald"
-          className="bg-[#121214]"
+          className="bg-canvas-card"
           headerClassName="pb-6 mb-6 border-b border-white/10"
           headerRight={
             <Badge variant={completed === preflightChecklistData.length ? "emerald" : "amber"} size="md">
@@ -80,7 +80,7 @@ export function InteractivePreflightChecklist() {
               <span>Readiness Progress</span>
               <span className="font-bold text-emerald-400">{progressPercent}%</span>
             </div>
-            <div className="w-full bg-[#0b0b0c] h-2.5 rounded-full overflow-hidden border border-white/5">
+            <div className="w-full bg-canvas-base h-2.5 rounded-full overflow-hidden border border-white/5">
               <div
                 className="h-full bg-gradient-to-r from-cyan-500 to-emerald-400 transition-all duration-500 ease-out rounded-full"
                 style={{ width: `${progressPercent}%` }}

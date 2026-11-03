@@ -15,7 +15,7 @@ export default function StepsPage() {
     >
       <ol className="grid gap-4 md:grid-cols-2">
         {roadmapSteps.map((s) => (
-          <li key={s.step} className="border-2 border-white/30 bg-[#121214]/60 backdrop-blur-xl p-5 shadow-[4px_4px_0_0_rgba(0,0,0,0.6)]">
+          <li key={s.step} className="border-2 border-white/30 bg-canvas-card/60 backdrop-blur-xl p-5 shadow-[4px_4px_0_0_rgba(0,0,0,0.6)]">
             <div className="flex items-center justify-between mb-3">
               <span className="bg-indigo-400 text-black font-mono font-bold px-2 py-0.5">{String(s.step).padStart(2, "0")}</span>
               <span className="font-mono text-xs text-slate-400">{s.when}</span>

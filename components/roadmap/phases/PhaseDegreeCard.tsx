@@ -20,7 +20,7 @@ export function PhaseDegreeCard({ type, nuance }: PhaseDegreeCardProps) {
   const title = isMasters ? degreeNuances.mastersHeading : degreeNuances.phdHeading;
 
   return (
-    <div className={`p-6 sm:p-7 rounded-2xl bg-[#121214] ${borderColor} border shadow-xl space-y-3`}>
+    <div className={`p-6 sm:p-7 rounded-2xl bg-canvas-card ${borderColor} border shadow-xl space-y-3`}>
       <div className="flex items-center gap-2.5">
         <div className={`w-8 h-8 rounded-lg ${badgeColor} border flex items-center justify-center ${iconColor}`}>
           <Icon className="w-4 h-4" />

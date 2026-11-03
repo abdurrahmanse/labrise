@@ -45,7 +45,7 @@ export function QuickScrollNavigator({
 
   return (
     <div className={`w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${className}`}>
-      <div className="p-2 sm:p-2.5 rounded-2xl bg-[#121214]/95 border border-white/10 backdrop-blur-xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-3">
+      <div className="p-2 sm:p-2.5 rounded-2xl bg-canvas-card/95 border border-white/10 backdrop-blur-xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-3">
         {/* Navigation Anchors Pills */}
         <div className="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 scrollbar-none" role="tablist">
           <div className="flex items-center gap-1.5 px-3 py-1.5 text-slate-400 text-xs font-semibold shrink-0">
@@ -65,7 +65,7 @@ export function QuickScrollNavigator({
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition-all flex items-center gap-2 cursor-pointer ${
                   isActive
                     ? "bg-indigo-400 text-black border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] font-bold"
-                    : "bg-[#0b0b0c]/70 text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 border border-white/5"
+                    : "bg-canvas-base/70 text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 border border-white/5"
                 }`}
               >
                 <span>{anchor.label}</span>

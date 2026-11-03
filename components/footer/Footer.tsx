@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer
       role="contentinfo"
-      className="mt-auto relative z-10 border-t-2 border-white/80 bg-[#0b0b0c]/70 backdrop-blur-xl"
+      className="mt-auto relative z-10 border-t-2 border-white/80 bg-canvas-base/70 backdrop-blur-xl"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <Link href="/" className="font-bold text-lg text-white uppercase tracking-wider">

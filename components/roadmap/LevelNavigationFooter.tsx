@@ -19,14 +19,14 @@ export function LevelNavigationFooter({ currentLevel }: LevelNavigationFooterPro
   const nextLevel = currentIndex < roadmapLevelsData.length - 1 ? roadmapLevelsData[currentIndex + 1] : null;
 
   return (
-    <div className="py-12 border-t border-white/10 bg-[#0b0b0c]">
+    <div className="py-12 border-t border-white/10 bg-canvas-base">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           {/* Previous Level Button */}
           {prevLevel ? (
             <Link
               href={`/roadmap/${prevLevel.slug}`}
-              className="w-full sm:w-auto p-4 rounded-xl bg-[#121214] hover:bg-slate-800 border border-white/10 text-slate-300 hover:text-white transition-all flex items-center gap-3 cursor-pointer group"
+              className="w-full sm:w-auto p-4 rounded-xl bg-canvas-card hover:bg-slate-800 border border-white/10 text-slate-300 hover:text-white transition-all flex items-center gap-3 cursor-pointer group"
             >
               <ChevronLeft className="w-5 h-5 text-indigo-400 group-hover:-translate-x-1 transition-transform" />
               <div className="text-left">
@@ -41,7 +41,7 @@ export function LevelNavigationFooter({ currentLevel }: LevelNavigationFooterPro
           ) : (
             <Link
               href="/roadmap"
-              className="w-full sm:w-auto p-4 rounded-xl bg-[#121214] hover:bg-slate-800 border border-white/10 text-slate-300 hover:text-white transition-all flex items-center gap-3 cursor-pointer group"
+              className="w-full sm:w-auto p-4 rounded-xl bg-canvas-card hover:bg-slate-800 border border-white/10 text-slate-300 hover:text-white transition-all flex items-center gap-3 cursor-pointer group"
             >
               <ChevronLeft className="w-5 h-5 text-indigo-400 group-hover:-translate-x-1 transition-transform" />
               <div className="text-left">
@@ -68,7 +68,7 @@ export function LevelNavigationFooter({ currentLevel }: LevelNavigationFooterPro
           {nextLevel ? (
             <Link
               href={`/roadmap/${nextLevel.slug}`}
-              className="w-full sm:w-auto p-4 rounded-xl bg-[#121214] hover:bg-slate-800 border border-white/10 text-slate-300 hover:text-white transition-all flex items-center justify-between sm:justify-end gap-3 cursor-pointer group text-right"
+              className="w-full sm:w-auto p-4 rounded-xl bg-canvas-card hover:bg-slate-800 border border-white/10 text-slate-300 hover:text-white transition-all flex items-center justify-between sm:justify-end gap-3 cursor-pointer group text-right"
             >
               <div>
                 <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">

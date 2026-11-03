@@ -25,7 +25,7 @@ export function StepResourcesList({ resources }: StepResourcesListProps) {
             href={resource.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-xl bg-[#0b0b0c] border border-white/5 hover:border-indigo-500/40 transition-all flex items-start justify-between gap-3 group/link"
+            className="p-3 rounded-xl bg-canvas-base border border-white/5 hover:border-indigo-500/40 transition-all flex items-start justify-between gap-3 group/link"
           >
             <div className="min-w-0">
               <div className="flex items-center gap-1.5 mb-1">

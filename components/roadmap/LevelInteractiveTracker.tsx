@@ -31,9 +31,9 @@ export function LevelInteractiveTracker({ level }: LevelInteractiveTrackerProps)
   const progressPercent = total > 0 ? Math.round((count / total) * 100) : 0;
 
   return (
-    <section className="py-12 border-b border-white/10 bg-[#0b0b0c]">
+    <section className="py-12 border-b border-white/10 bg-canvas-base">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <GlassCard borderGlow={level.accentColor} className="p-6 sm:p-8 bg-[#121214] border border-white/10 shadow-2xl">
+        <GlassCard borderGlow={level.accentColor} className="p-6 sm:p-8 bg-canvas-card border border-white/10 shadow-2xl">
           {/* Header */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10 mb-6">
             <div>
@@ -75,7 +75,7 @@ export function LevelInteractiveTracker({ level }: LevelInteractiveTrackerProps)
                   className={`p-4 rounded-xl border transition-all cursor-pointer flex flex-col justify-between ${
                     isDone
                       ? "bg-indigo-950/40 border-indigo-500/50 text-white shadow-lg"
-                      : "bg-[#0b0b0c] border-white/5 text-slate-400 hover:border-white/20"
+                      : "bg-canvas-base border-white/5 text-slate-400 hover:border-white/20"
                   }`}
                 >
                   <div>

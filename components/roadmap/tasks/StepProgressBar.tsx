@@ -16,7 +16,7 @@ export function StepProgressBar({
   progressPercent,
 }: StepProgressBarProps) {
   return (
-    <div className="p-3.5 sm:p-4 rounded-xl bg-[#0b0b0c] border border-white/10 mb-5 space-y-2.5">
+    <div className="p-3.5 sm:p-4 rounded-xl bg-canvas-base border border-white/10 mb-5 space-y-2.5">
       <div className="flex items-center justify-between text-xs">
         <div className="flex items-center gap-2">
           <Layers className="w-4 h-4 text-indigo-400" />

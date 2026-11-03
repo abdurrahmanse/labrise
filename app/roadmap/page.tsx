@@ -24,9 +24,9 @@ export default function RoadmapPage() {
   const { pageHero } = roadmapUiData;
 
   return (
-    <main className="min-h-screen bg-[#0b0b0c] text-slate-100 pb-20">
+    <main className="min-h-screen bg-canvas-base text-slate-100 pb-20">
       {/* Dynamic Ambient Background Glow */}
-      <div className="relative overflow-hidden pt-28 pb-14 border-b border-white/[0.08] bg-[#070708]">
+      <div className="relative overflow-hidden pt-28 pb-14 border-b border-white/[0.08] bg-canvas-base">
         {/* 0. Top Glowing Horizon Line */}
         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent pointer-events-none" />
 

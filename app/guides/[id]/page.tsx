@@ -36,7 +36,7 @@ export default async function GuideTopicPage({ params }: Props) {
     >
       <ol className="space-y-3">
         {topic.steps.map((step, i) => (
-          <li key={step} className="flex items-start gap-4 border-2 border-white/30 bg-[#121214]/60 backdrop-blur-xl p-4 shadow-[4px_4px_0_0_rgba(0,0,0,0.6)]">
+          <li key={step} className="flex items-start gap-4 border-2 border-white/30 bg-canvas-card/60 backdrop-blur-xl p-4 shadow-[4px_4px_0_0_rgba(0,0,0,0.6)]">
             <span className="bg-indigo-400 text-black font-mono font-bold px-2 py-0.5">{i + 1}</span>
             <span className="text-lg text-slate-100 font-sans font-normal">{step}</span>
           </li>

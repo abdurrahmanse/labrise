@@ -14,7 +14,7 @@ export function PhaseResourceCard({ resource }: PhaseResourceCardProps) {
       href={resource.url}
       target="_blank"
       rel="noreferrer"
-      className="p-5 rounded-2xl bg-[#121214] border border-white/10 hover:border-teal-500/40 hover:bg-[#1a1a1d] transition-all flex flex-col justify-between group shadow-sm"
+      className="p-5 rounded-2xl bg-canvas-card border border-white/10 hover:border-teal-500/40 hover:bg-canvas-card transition-all flex flex-col justify-between group shadow-sm"
     >
       <div>
         <div className="flex items-center justify-between mb-2">

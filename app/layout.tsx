@@ -18,6 +18,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { AmbientBackground } from "@/components/ui/AmbientBackground";
 
 import { rootMetadata } from "@/data/metadata";
@@ -40,13 +41,16 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${rajdhani.variable} ${rajdhani.className} ${jetbrainsMono.variable} h-full antialiased dark scroll-smooth`}
+      className={`${rajdhani.variable} ${rajdhani.className} ${jetbrainsMono.variable} h-full antialiased scroll-smooth`}
+      suppressHydrationWarning
     >
-      <body className={`${rajdhani.className} min-h-full flex flex-col bg-[#0b0b0c] text-slate-100 selection:bg-indigo-500/25 selection:text-indigo-200 font-semibold relative`}>
-        <AmbientBackground />
-        <Navbar />
-        <div className="flex-1 relative z-10">{children}</div>
-        <Footer />
+      <body className={`${rajdhani.className} min-h-full flex flex-col bg-canvas-base text-slate-100 font-semibold relative`}>
+        <ThemeProvider>
+          <AmbientBackground />
+          <Navbar />
+          <div className="flex-1 relative z-10">{children}</div>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

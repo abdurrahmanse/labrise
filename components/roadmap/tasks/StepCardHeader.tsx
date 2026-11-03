@@ -48,7 +48,7 @@ export function StepCardHeader({
             {priority} Priority
           </Badge>
 
-          <span className="text-xs text-slate-400 flex items-center gap-1.5 font-mono px-2.5 py-0.5 rounded-md bg-[#0b0b0c] border border-white/5">
+          <span className="text-xs text-slate-400 flex items-center gap-1.5 font-mono px-2.5 py-0.5 rounded-md bg-canvas-base border border-white/5">
             <Clock className="w-3.5 h-3.5 text-slate-500" />
             {duration}
           </span>

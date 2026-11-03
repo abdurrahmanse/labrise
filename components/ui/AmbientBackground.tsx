@@ -7,7 +7,7 @@ import React from "react";
 export function AmbientBackground() {
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
-      <div className="absolute inset-0 bg-[#0b0b0c]" />
+      <div className="absolute inset-0 bg-canvas-base" />
 
       <div className="absolute inset-0 bg-grid-pattern opacity-60 [mask-image:linear-gradient(to_bottom,#000_0%,transparent_75%)]" />
 

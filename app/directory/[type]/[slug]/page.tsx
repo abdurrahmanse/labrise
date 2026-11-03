@@ -50,7 +50,7 @@ function Facts({ rows }: { rows: [string, React.ReactNode][] }) {
   return (
     <dl className="grid gap-px border-2 border-white/30 bg-white/20 sm:grid-cols-2">
       {rows.map(([k, v]) => (
-        <div key={k} className="bg-[#121214]/80 backdrop-blur-xl p-4">
+        <div key={k} className="bg-canvas-card/80 backdrop-blur-xl p-4">
           <dt className="font-mono text-xs uppercase tracking-wider text-slate-400">{k}</dt>
           <dd className="mt-1 text-lg font-bold text-white">{v}</dd>
         </div>

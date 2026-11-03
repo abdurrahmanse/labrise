@@ -12,7 +12,7 @@ export function PhaseRationaleCard({ why }: PhaseRationaleCardProps) {
   const { whatWhy } = phaseDetailUiData;
 
   return (
-    <div className="p-6 sm:p-8 rounded-2xl bg-[#121214] border border-white/10 shadow-xl relative overflow-hidden group hover:border-indigo-500/40 transition-colors">
+    <div className="p-6 sm:p-8 rounded-2xl bg-canvas-card border border-white/10 shadow-xl relative overflow-hidden group hover:border-indigo-500/40 transition-colors">
       <div className="flex items-center gap-3 mb-4">
         <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-300 shadow-sm">
           <Compass className="w-5 h-5" />

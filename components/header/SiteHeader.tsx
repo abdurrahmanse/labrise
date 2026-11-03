@@ -6,6 +6,7 @@ import { HeaderBrand } from "./HeaderBrand";
 import { HeaderNav } from "./HeaderNav";
 import { HeaderActions } from "./HeaderActions";
 import { HeaderMobileDrawer } from "./HeaderMobileDrawer";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -20,7 +21,7 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b-2 border-white/80 bg-[#0b0b0c]/70 backdrop-blur-xl backdrop-saturate-150 transition-all duration-200">
+      <header className="sticky top-0 z-50 w-full border-b-2 border-white/80 bg-canvas-base/70 backdrop-blur-xl backdrop-saturate-150 transition-all duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="h-16 flex items-center justify-between gap-4">
             {/* ── Brand Mark ── */}
@@ -30,10 +31,13 @@ export function SiteHeader() {
             <HeaderNav pathname={pathname} />
 
             {/* ── Right-Side Actions (Search, CTA, Hamburger) ── */}
-            <HeaderActions
-              mobileOpen={mobileOpen}
-              onToggle={() => setMobileOpen((prev) => !prev)}
-            />
+            <div className="flex items-center gap-2">
+              <ThemeToggle />
+              <HeaderActions
+                mobileOpen={mobileOpen}
+                onToggle={() => setMobileOpen((prev) => !prev)}
+              />
+            </div>
           </div>
         </div>
       </header>

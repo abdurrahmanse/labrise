@@ -37,9 +37,9 @@ const GLOW_CLASSES: Record<SectionCardGlow, string> = {
 };
 
 const VARIANT_CLASSES: Record<SectionCardVariant, string> = {
-  default: "bg-[#121214]/70 backdrop-blur-xl border shadow-[4px_4px_0_0_rgba(0,0,0,0.6)]",
-  nested: "bg-[#0b0b0c]/80 border border-white/10",
-  bordered: "bg-[#121214]/55 backdrop-blur-xl backdrop-saturate-150 border-2 border-white/40 shadow-[5px_5px_0_0_rgba(255,255,255,0.15)]",
+  default: "bg-canvas-card/70 backdrop-blur-xl border shadow-[4px_4px_0_0_rgba(0,0,0,0.6)]",
+  nested: "bg-canvas-base/80 border border-white/10",
+  bordered: "bg-canvas-card/55 backdrop-blur-xl backdrop-saturate-150 border-2 border-white/40 shadow-[5px_5px_0_0_rgba(255,255,255,0.15)]",
   subtle: "bg-white/[0.03] backdrop-blur-sm border border-white/10"
 };
 

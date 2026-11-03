@@ -9,7 +9,7 @@ export interface StepAcademicContextProps {
  */
 export function StepAcademicContext({ description }: StepAcademicContextProps) {
   return (
-    <div className="text-xs sm:text-sm text-slate-300 leading-relaxed bg-[#0b0b0c]/60 p-4 rounded-xl border border-white/5">
+    <div className="text-xs sm:text-sm text-slate-300 leading-relaxed bg-canvas-base/60 p-4 rounded-xl border border-white/5">
       <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold block mb-1">
         Context & Academic Expectations:
       </span>

@@ -9,7 +9,7 @@ export function HomeHero() {
   const { badge, title, titleGradient, description, primaryCta, secondaryCta, valueBadges } = homeHeroData;
 
   return (
-    <section className="relative pt-12 pb-16 sm:pt-16 sm:pb-20 md:pt-24 md:pb-28 overflow-hidden border-b border-white/[0.08] bg-[#070708]">
+    <section className="relative pt-12 pb-16 sm:pt-16 sm:pb-20 md:pt-24 md:pb-28 overflow-hidden border-b border-white/[0.08] bg-canvas-base">
       {/* 0. Top Glowing Horizon Line */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent pointer-events-none" />
 

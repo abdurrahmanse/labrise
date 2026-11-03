@@ -8,7 +8,7 @@ export const metadata: Metadata = scholarshipsMetadata;
 
 export default function ScholarshipsPage() {
   return (
-    <main className="min-h-screen bg-[#0b0b0c] text-slate-100 py-12 md:py-16">
+    <main className="min-h-screen bg-canvas-base text-slate-100 py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Hero */}
         <div className="max-w-3xl mb-12 space-y-4">
