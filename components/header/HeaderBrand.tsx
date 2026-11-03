@@ -19,14 +19,14 @@ export function HeaderBrand() {
       </div>
 
       {/* Modern Typographic Wordmark */}
-      <div className="flex items-baseline gap-1.5">
+      <div className="flex items-baseline gap-1.5 max-[380px]:hidden">
         <span className="font-heading font-bold text-sm sm:text-base tracking-tight text-white group-hover:text-slate-100 transition-colors">
           {headerData.brand.primary}
           <span className="text-teal-400 ml-1">
             {headerData.brand.secondary}
           </span>
         </span>
-        <span className="hidden xl:inline-block text-[10px] font-mono text-slate-500 uppercase tracking-wider pl-1.5 border-l border-white/10">
+        <span className="hidden 2xl:inline-block text-[10px] font-mono text-slate-500 uppercase tracking-wider pl-1.5 border-l border-white/10">
           {commonText.header.tagline}
         </span>
       </div>

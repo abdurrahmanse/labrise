@@ -711,3 +711,12 @@ input[type="range"].range-slider::-moz-range-thumb {
 .light .hover\:bg-white:hover {
   color: #ffffff;
 }
+
+/* Touch screens: links that stand alone in a list get a taller hit area (WCAG target size). */
+@media (pointer: coarse) {
+  li > a:not([class*="p-"]):not([class*="px-"]):not([class*="py-"]),
+  dd > a:not([class*="p-"]):not([class*="px-"]):not([class*="py-"]) {
+    display: inline-block;
+    padding-block: 0.3rem;
+  }
+}

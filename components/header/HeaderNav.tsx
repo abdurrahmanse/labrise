@@ -22,7 +22,7 @@ export function HeaderNav({ pathname }: HeaderNavProps) {
           <Link
             key={link.href}
             href={link.href}
-            className={`group relative px-3 py-2 rounded-lg text-sm xl:text-[15px] font-bold transition-all duration-150 flex items-center gap-2 ${
+            className={`group relative px-2.5 xl:px-3 py-2 rounded-lg text-sm xl:text-[15px] font-bold transition-all duration-150 flex items-center gap-2 ${
               isActive
                 ? "text-white bg-indigo-600 border border-transparent shadow-[2px_2px_0_0_rgba(15,23,42,0.18)]"
                 : "text-slate-400 hover:text-slate-100 hover:bg-white/[0.04] border border-transparent"

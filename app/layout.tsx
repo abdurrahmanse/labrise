@@ -46,7 +46,7 @@ export default function RootLayout({
       className={`${rajdhani.variable} ${rajdhani.className} ${jetbrainsMono.variable} h-full antialiased scroll-smooth`}
       suppressHydrationWarning
     >
-      <body className={`${rajdhani.className} min-h-full flex flex-col bg-canvas-base text-slate-100 font-semibold relative`}>
+      <body className={`${rajdhani.className} min-h-full flex flex-col overflow-x-clip bg-canvas-base text-slate-100 font-semibold relative`}>
         <AppProviders>
           <JsonLd data={websiteSchema()} />
           <AmbientBackground />
