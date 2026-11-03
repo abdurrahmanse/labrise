@@ -1,6 +1,7 @@
 import type { ProfessorEntry } from "../types";
+import { moreProfessors } from "./professorsMore";
 
-export const professors: ProfessorEntry[] = [
+const baseProfessors: ProfessorEntry[] = [
   { name: "Bernhard Schölkopf", university: "MPI for Intelligent Systems / ELLIS Tübingen", country: "Germany", group: "Machine Learning", email: "bernhard.schoelkopf@tuebingen.mpg.de" },
   { name: "Andreas Geiger", university: "University of Tübingen", country: "Germany", group: "Computer Vision", email: "a.geiger@uni-tuebingen.de" },
   { name: "Matthias Bethge", university: "University of Tübingen", country: "Germany", group: "Machine Learning", email: "matthias.bethge@bethgelab.org" },
@@ -46,3 +47,5 @@ export const professors: ProfessorEntry[] = [
   { name: "Yejin Choi", university: "Stanford University", country: "United States", group: "NLP" },
   { name: "Richard Zemel", university: "Columbia University", country: "United States", group: "Machine Learning", email: "zemel@cs.columbia.edu" }
 ];
+
+export const professors: ProfessorEntry[] = [...baseProfessors, ...moreProfessors];

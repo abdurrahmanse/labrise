@@ -22,7 +22,8 @@ export const moreUniversities: UniversityEntry[] = [
     ["University of Hamburg", "https://www.uni-hamburg.de"],
     ["University of Mannheim", "https://www.uni-mannheim.de"],
     ["Goethe University Frankfurt", "https://www.uni-frankfurt.de"],
-    ["University of Konstanz", "https://www.uni-konstanz.de"]
+    ["University of Konstanz", "https://www.uni-konstanz.de"],
+    ["Technical University of Darmstadt", "https://www.tu-darmstadt.de"]
   ]),
   ...group("Switzerland", "Europe", "Salaried PhD contract", POST, [
     ["University of Zurich", "https://www.uzh.ch"],

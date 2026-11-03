@@ -15,7 +15,9 @@ export const countryByName = (name: string): CountryEntry | undefined =>
 
 /** Professors list their university as free text, e.g. "MPI … / ELLIS Tübingen". */
 export const universityOfProfessor = (p: ProfessorEntry): UniversityEntry | undefined =>
-  universities.find((u) => p.university.includes(u.name) || p.university.includes(u.name.split(" / ")[0]));
+  universities
+    .filter((u) => p.university.includes(u.name) || p.university.includes(u.name.split(" / ")[0]))
+    .sort((a, b) => b.name.length - a.name.length)[0];
 
 export const professorsAtUniversity = (u: UniversityEntry) =>
   professors.filter((p) => universityOfProfessor(p)?.name === u.name);
