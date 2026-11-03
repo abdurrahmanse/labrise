@@ -11,6 +11,7 @@ import { staleTimes } from "@/shared/query/staleTimes";
 import { libraryText as t } from "@/data/text/library";
 import { cn } from "@/lib/utils";
 import { EmptyState } from "@/shared/components/EmptyState";
+import { FilterTabs } from "@/shared/components/FilterTabs";
 import { useMounted } from "@/shared/hooks/useMounted";
 import { describeEntry } from "../lib/entryView";
 import { refKey, useBookmarks, type EntryRef } from "../store/useBookmarks";
@@ -18,9 +19,9 @@ import { useRecentlyViewed } from "../store/useRecentlyViewed";
 
 type Tab = "saved" | "recent";
 
-const tabs: { id: Tab; label: string; Icon: typeof Bookmark }[] = [
-  { id: "saved", label: t.tabs.saved, Icon: Bookmark },
-  { id: "recent", label: t.tabs.recent, Icon: History }
+const TABS = [
+  { value: "saved" as const, label: t.tabs.saved, icon: Bookmark },
+  { value: "recent" as const, label: t.tabs.recent, icon: History }
 ];
 
 /** Loads every listed entry in parallel with useQueries; one failing entry does not block the others. */
@@ -106,13 +107,7 @@ export function SavedBrowser() {
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div role="tablist" className="flex gap-2">
-          {tabs.map(({ id, label, Icon }) => (
-            <button key={id} role="tab" type="button" aria-selected={tab === id} onClick={() => setTab(id)} className={cn("inline-flex cursor-pointer items-center gap-2 px-4 py-2 text-sm font-bold uppercase tracking-wider transition-colors", tab === id ? "bg-indigo-600 text-white" : "bg-white/[0.05] text-slate-200 hover:bg-white/10")}>
-              <Icon className="h-4 w-4" aria-hidden /> {label}
-            </button>
-          ))}
-        </div>
+        <FilterTabs kind="tablist" label={t.title} options={TABS} value={tab} onChange={setTab} />
         {refs.length > 0 && (
           <div className="flex items-center gap-4">
             <span className="font-mono text-xs text-slate-400">{t.count(refs.length)}</span>

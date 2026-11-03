@@ -1,5 +1,4 @@
 import { chromium } from "playwright";
-import fs from "node:fs";
 
 // Usage: npm run build && npx next start -p 3120, then npm run check:responsive
 const BASE = process.env.BASE ?? "http://localhost:3120";

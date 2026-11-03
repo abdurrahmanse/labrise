@@ -4,12 +4,12 @@ import Link from "next/link";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { finderText as t } from "@/data/text/scholarships";
-import { cn } from "@/lib/utils";
 import { ScholarshipCard } from "@/modules/directory/components/cards/ScholarshipCard";
 import { scholarships } from "@/modules/directory/data";
 import { EmptyState } from "@/shared/components/EmptyState";
+import { FilterTabs } from "@/shared/components/FilterTabs";
 
-const LEVELS = ["All", ...Array.from(new Set(scholarships.map((s) => s.level)))];
+const OPTIONS = ["All", ...Array.from(new Set(scholarships.map((s) => s.level)))].map((l) => ({ value: l, label: l === "All" ? t.browse.all : l }));
 
 export function ScholarshipBrowse({ limit }: { limit?: number } = {}) {
   const [level, setLevel] = useState("All");
@@ -18,13 +18,7 @@ export function ScholarshipBrowse({ limit }: { limit?: number } = {}) {
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div role="group" aria-label={t.browse.levelLabel} className="flex flex-wrap gap-2">
-          {LEVELS.map((l) => (
-            <button key={l} type="button" aria-pressed={level === l} onClick={() => setLevel(l)} className={cn("cursor-pointer px-4 py-2 text-sm font-bold uppercase tracking-wider transition-colors", level === l ? "bg-indigo-600 text-white" : "bg-white/[0.05] text-slate-200 hover:bg-white/10")}>
-              {l === "All" ? t.browse.all : l}
-            </button>
-          ))}
-        </div>
+        <FilterTabs options={OPTIONS} value={level} onChange={setLevel} label={t.browse.levelLabel} />
         <span className="font-mono text-xs text-slate-400">{t.browse.shown(Math.min(limit ?? matches.length, matches.length))}</span>
       </div>
 

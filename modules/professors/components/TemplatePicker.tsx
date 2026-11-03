@@ -5,7 +5,10 @@ import { Paperclip, Lightbulb, Ruler, Mail } from "lucide-react";
 import { CopyButton } from "@/components/ui/CopyButton";
 import { coldEmailTemplates } from "@/data/professorsData";
 import { professorsHubText as t } from "@/data/text/professorsHub";
-import { cn } from "@/lib/utils";
+import { FilterTabs } from "@/shared/components/FilterTabs";
+import { Label } from "@/shared/components/Text";
+
+const OPTIONS = coldEmailTemplates.map((x) => ({ value: x.id, label: x.name, icon: Mail }));
 
 export function TemplatePicker() {
   const [id, setId] = useState(coldEmailTemplates[0].id);
@@ -13,17 +16,11 @@ export function TemplatePicker() {
 
   return (
     <div className="space-y-5">
-      <div role="tablist" className="flex flex-wrap gap-2">
-        {coldEmailTemplates.map((x) => (
-          <button key={x.id} role="tab" type="button" aria-selected={x.id === id} onClick={() => setId(x.id)} className={cn("inline-flex cursor-pointer items-center gap-2 px-4 py-2 text-sm font-bold transition-colors", x.id === id ? "bg-indigo-600 text-white" : "bg-white/[0.05] text-slate-200 hover:bg-white/10")}>
-            <Mail className="h-4 w-4" aria-hidden /> {x.name}
-          </button>
-        ))}
-      </div>
+      <FilterTabs kind="tablist" label={t.templates.title} options={OPTIONS} value={id} onChange={setId} />
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
         <div className="space-y-3">
-          <p className="font-sans text-sm font-normal text-slate-400"><span className="font-mono text-xs uppercase tracking-wider text-indigo-300">{t.templates.for}</span> {template.targetAudience}</p>
+          <p className="font-sans text-sm font-normal text-slate-400"><Label tone="accent">{t.templates.for}</Label> {template.targetAudience}</p>
           <pre className="whitespace-pre-wrap border-2 border-indigo-400/60 bg-canvas-base/70 p-5 font-mono text-sm leading-relaxed text-slate-200">{template.body}</pre>
           <CopyButton textToCopy={template.body} label={t.templates.copy} />
         </div>

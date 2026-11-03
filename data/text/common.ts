@@ -12,7 +12,7 @@ export const commonText = {
     tagline: "Fully Funded",
     drawerTagline: "100% Fully Funded Standard"
   },
-  actions: { details: "Details", copy: "Copy", copyDraft: "Copy draft", copied: "Copied!", home: "Home" },
+  actions: { details: "Details", copy: "Copy", copyDraft: "Copy draft", copied: "Copied!", home: "Home", reset: "Reset" },
   pagination: { previous: "Previous", next: "Next", page: (n: number, total: number) => `Page ${n} of ${total}` },
   states: { loading: "Loading…", none: "None listed yet.", clearSearch: "Clear search", searchPlaceholder: "Search..." },
   count: { shown: (n: number) => `${n} shown` }

@@ -1,8 +1,8 @@
-import Link from "next/link";
-import { ArrowRight, type LucideIcon } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 import type { StatusLink } from "@/data/text/status";
 import { ContourPattern } from "../illustrations/ContourPattern";
+import { LinkTile, LinkTileGrid } from "./LinkTile";
 
 interface StatusPageProps {
   code: string;
@@ -47,24 +47,11 @@ export function StatusPage({ code, eyebrow, title, body, Icon, actions, suggesti
         {suggestions && (
           <section className="space-y-4" aria-label={suggestions.title}>
             <h2 className="border-b-2 border-white/80 pb-2 text-2xl font-bold text-white">{suggestions.title}</h2>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <LinkTileGrid>
               {suggestions.links.map(({ href, label, hint, Icon: LinkIcon }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className="group flex items-center gap-4 border-2 border-white/30 bg-canvas-card/60 p-4 backdrop-blur-xl shadow-[4px_4px_0_0_rgba(15,23,42,0.18)] transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[7px_7px_0_0_rgba(58,95,224,0.4)]"
-                >
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center bg-indigo-600 text-white">
-                    <LinkIcon className="h-5 w-5" aria-hidden />
-                  </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="block text-lg font-bold text-white">{label}</span>
-                    <span className="block font-mono text-xs text-slate-400">{hint}</span>
-                  </span>
-                  <ArrowRight className="h-5 w-5 shrink-0 text-slate-400 group-hover:text-indigo-400" aria-hidden />
-                </Link>
+                <LinkTile key={href} href={href} title={label} meta={hint} icon={LinkIcon} />
               ))}
-            </div>
+            </LinkTileGrid>
           </section>
         )}
       </div>
@@ -72,5 +59,3 @@ export function StatusPage({ code, eyebrow, title, body, Icon, actions, suggesti
   );
 }
 
-export const primaryAction =
-  "inline-flex items-center gap-2 border-2 border-transparent bg-indigo-600 px-5 py-3 font-bold uppercase tracking-wider text-sm text-white shadow-[4px_4px_0_0_rgba(15,23,42,0.25)] transition-transform hover:-translate-y-0.5";

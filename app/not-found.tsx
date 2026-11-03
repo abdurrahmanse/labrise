@@ -1,9 +1,9 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { Home } from "lucide-react";
 import { notFoundText as t, quickLinks } from "@/data/text/status";
 import { OpenSearchButton } from "@/shared/components/OpenSearchButton";
-import { StatusPage, primaryAction } from "@/shared/components/StatusPage";
+import { StatusPage } from "@/shared/components/StatusPage";
+import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = { title: t.eyebrow, robots: { index: false } };
 
@@ -17,9 +17,7 @@ export default function NotFound() {
       Icon={t.Icon}
       actions={
         <>
-          <Link href="/" className={primaryAction}>
-            <Home className="h-4 w-4" aria-hidden /> {t.home}
-          </Link>
+          <Button href="/" size="lg" leftIcon={<Home className="h-4 w-4" aria-hidden />}>{t.home}</Button>
           <OpenSearchButton label={t.search} />
         </>
       }

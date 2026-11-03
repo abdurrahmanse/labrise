@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { hubChrome, type JourneyItem, type RelatedItem } from "@/data/text/hubPages";
 import { Block } from "./Block";
+import { LinkTile, LinkTileGrid } from "./LinkTile";
 import { ContourPattern } from "../illustrations/ContourPattern";
 
 interface JourneyHubProps {
@@ -60,18 +61,11 @@ export function JourneyHub({ items, related, badges = {} }: JourneyHubProps) {
 export function RelatedStrip({ items }: { items: RelatedItem[] }) {
   return (
     <Block title={hubChrome.related}>
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <LinkTileGrid>
         {items.map(({ href, title, meta, Icon }) => (
-          <Link key={href} href={href} className="group flex items-center gap-3 border-2 border-white/25 bg-canvas-card/50 p-3 backdrop-blur-xl transition-colors hover:border-indigo-400">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-indigo-600 text-white"><Icon className="h-5 w-5" aria-hidden /></span>
-            <span className="min-w-0 flex-1">
-              <span className="block truncate font-bold text-white">{title}</span>
-              <span className="block truncate font-mono text-xs text-slate-400">{meta}</span>
-            </span>
-            <ArrowRight className="h-4 w-4 shrink-0 text-slate-500 group-hover:text-indigo-400" aria-hidden />
-          </Link>
+          <LinkTile key={href} href={href} title={title} meta={meta} icon={Icon} />
         ))}
-      </div>
+      </LinkTileGrid>
     </Block>
   );
 }
