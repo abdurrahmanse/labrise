@@ -1,12 +1,3 @@
-// Titles, descriptions and navigation labels for the main pages.
-export interface PageText {
-  title: string;
-  description: string;
-  eyebrow: string;
-  heading: string;
-  lead?: string;
-}
-
 export const navLabels = {
   home: "Home",
   directory: "Directory",

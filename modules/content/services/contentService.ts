@@ -10,5 +10,3 @@ export function createContentService(repository: ContentRepository) {
     faqs: () => repository.list("faqs")
   };
 }
-
-export type ContentService = ReturnType<typeof createContentService>;

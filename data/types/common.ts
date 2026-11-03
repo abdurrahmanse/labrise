@@ -9,31 +9,6 @@ export type FundingType =
   | "Institutional Fellowship"
   | "Government Fellowship";
 
-export interface MetricItem {
-  label: string;
-  value: string;
-  sublabel: string;
-  iconName: string;
-}
-
-export interface DiagnosticOption {
-  id: string;
-  label: string;
-  sub: string;
-}
-
-export interface RedFlagRule {
-  term: string;
-  danger: string;
-  safeReplacement: string;
-}
-
-export interface OfferFinancialMetric {
-  label: string;
-  value: string;
-  sub: string;
-}
-
 export interface FaqCategoryCard {
   name: string;
   desc: string;

@@ -13,5 +13,3 @@ export function createScholarshipService(repository: ScholarshipRepository) {
       repository.search({ ...params, page: params.page ?? 1, pageSize: params.pageSize ?? DEFAULT_PAGE_SIZE })
   };
 }
-
-export type ScholarshipService = ReturnType<typeof createScholarshipService>;

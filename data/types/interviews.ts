@@ -1,25 +1,3 @@
-export interface InterviewDefenseCase {
-  id: string;
-  category: "Systems & Memory" | "Model Training & Convergence" | "Inference & Optimization" | "Theory & Foundations";
-  technicalChallenge: string;
-  context: string;
-  task: string;
-  actionTaken: string;
-  quantitativeResult: string;
-  researchInsight: string;
-}
-
-export interface SlideData {
-  number: number;
-  title: string;
-  subtitle: string;
-  timing: string;
-  visualLayout: string;
-  keyPoints: string[];
-  facultyInterruptionQuestion: string;
-  defenseAnswer: string;
-}
-
 export interface FAQItem {
   id: string;
   question: string;

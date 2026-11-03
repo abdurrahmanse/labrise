@@ -22,12 +22,4 @@ export const entryResponseSchema = z.discriminatedUnion("type", [
 ]);
 export type EntryResponse = z.infer<typeof entryResponseSchema>;
 
-export interface EntryByType {
-  countries: CountryEntry;
-  universities: UniversityEntry;
-  professors: ProfessorEntry;
-  scholarships: ScholarshipEntry;
-  providers: ProviderEntry;
-}
-
 export type { DirectoryType };

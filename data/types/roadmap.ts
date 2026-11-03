@@ -86,42 +86,9 @@ export interface Phase {
   stepsCount: number;
 }
 
-export interface HeroEqualizerData {
-  badge: string;
-  status: string;
-  bars: number[];
-}
-
-export interface TimelineSliderItem {
-  id: string;
-  monthIndex: number;
-  phaseNumber: number;
-  timeWindow: string;
-  stageName: string;
-  priorityTitle: string;
-  badge: string;
-  actionBullets: string[];
-  deliverable: string;
-  deadlineTarget: string;
-  accentVariant: "indigo" | "cyan" | "emerald" | "amber" | "purple";
-}
-
 export interface NavAnchorItem {
   id: string;
   label: string;
   count?: string;
   iconName?: string;
-}
-
-export interface DeliverableAuditItem {
-  title: string;
-  phase: string;
-  desc: string;
-}
-
-export interface GpuTactic {
-  title: string;
-  desc: string;
-  code: string;
-  benefit: string;
 }
