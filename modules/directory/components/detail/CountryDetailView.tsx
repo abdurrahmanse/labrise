@@ -28,6 +28,7 @@ export function CountryDetailView({ country }: { country: CountryEntry }) {
     <PageShell
       eyebrow={`Country · ${country.region}`}
       title={country.country}
+      notice={{ subject: country.country }}
       media={<Flag country={country.country} className="h-10 w-14" />}
       lead={detail?.overview}
       back={{ href: "/directory/countries", label: "All countries" }}

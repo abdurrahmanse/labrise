@@ -21,6 +21,7 @@ export function ProviderDetailView({ provider }: { provider: ProviderEntry }) {
     <PageShell
       eyebrow={`Provider · ${provider.kind}`}
       title={provider.name}
+      notice={{ subject: provider.name, source: provider.site }}
       lead={provider.route}
       media={<Flag country={provider.country} className="h-10 w-14" />}
       back={{ href: "/directory/providers", label: "All providers" }}

@@ -48,6 +48,7 @@ export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }
     <PageShell
       eyebrow={`Professor · ${professor.group}`}
       title={professor.name}
+      notice={{ subject: professor.name, caution: professor.email ? undefined : "Affiliation was not re-checked on a live page; confirm it on the university site." }}
       media={<Avatar name={professor.name} size={72} />}
       lead={`${professor.university}, ${professor.country}. Research group: ${professor.group}.`}
       back={{ href: "/directory/professors", label: "All professors" }}

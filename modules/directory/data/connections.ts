@@ -1,8 +1,11 @@
 // How funders connect to places. Each link means "this organisation funds or runs programmes here".
 // Check the provider page for the exact rules. Connections are listed only where they are well known.
 
+import { moreUniversityOnlyProviders } from "./providersMore";
+
 /** Providers tied to a single university. They are not offered across the whole country. */
 export const universityOnlyProviders: Record<string, string> = {
+  ...moreUniversityOnlyProviders,
   "Gates Cambridge Trust": "University of Cambridge",
   "Rhodes Trust": "University of Oxford",
   "Knight-Hennessy Scholars (Stanford University)": "Stanford University",
@@ -17,7 +20,7 @@ export const countryWideEuropeanProviders = [
 
 /** Countries where the European programmes above are available. */
 export const europeanProgrammeCountries = [
-  "Germany", "Sweden", "Netherlands", "Denmark", "Finland", "Belgium", "Austria", "France", "Italy", "Spain", "Ireland", "Hungary"
+  "Germany", "Sweden", "Netherlands", "Denmark", "Finland", "Belgium", "Austria", "France", "Italy", "Spain", "Ireland", "Hungary", "Norway"
 ];
 
 /** Universities that host an ELLIS unit. */

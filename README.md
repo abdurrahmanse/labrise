@@ -100,6 +100,8 @@ Country, university, professor and funder are linked. A country page leads to it
 
 ## Data policy
 
+- Coverage: 27 countries, about 300 universities, about 630 professors and about 90 funding organisations. Every country page lists its universities, professors and funders, and each one has its own detail page.
+- New professor entries carry no email. An address is added only when it is copied from the person's official university page.
 - Professor emails are included **only** when an official university or institute page (or its directory entry) lists them. Others are left empty and link to a search for the official page. Add one with `email: "..."` in `modules/directory/data/professors.ts`.
 - People move. Professors who were retired, on leave or whose affiliation was unclear were removed, and `Richard Zemel` is listed at Columbia University.
 - Deadlines, stipends, fees and scholarship terms are typical ranges and change every cycle. Each page tells the reader to confirm on the official source.

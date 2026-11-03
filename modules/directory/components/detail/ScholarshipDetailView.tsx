@@ -31,6 +31,7 @@ export function ScholarshipDetailView({ scholarship }: { scholarship: Scholarshi
     <PageShell
       eyebrow={`Scholarship · ${scholarship.level}`}
       title={scholarship.name}
+      notice={{ subject: scholarship.name, source: scholarship.site }}
       media={<Flag country={scholarship.host} className="h-10 w-14" />}
       lead={`Hosted in ${scholarship.host}. Covers: ${scholarship.covers}.`}
       back={{ href: "/directory/scholarships", label: "All scholarships" }}

@@ -1,8 +1,9 @@
 import type { ProviderEntry } from "../types";
+import { moreProviders } from "./providersMore";
 
 // Organisations that award scholarships. Requirements are the usual ones, listed briefly.
 // Each programme sets its own rules and changes them every cycle, so every entry links to the official page.
-export const providers: ProviderEntry[] = [
+const baseProviders: ProviderEntry[] = [
   {
     name: "Commonwealth Scholarship Commission",
     supports: "Students from eligible Commonwealth countries who cannot afford UK study",
@@ -469,3 +470,5 @@ export const providers: ProviderEntry[] = [
   }
 
 ];
+
+export const providers: ProviderEntry[] = [...baseProviders, ...moreProviders];

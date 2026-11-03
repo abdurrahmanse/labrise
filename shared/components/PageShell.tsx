@@ -2,6 +2,7 @@ import React, { type ReactNode } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ContourPattern } from "../illustrations/ContourPattern";
+import { DataNotice } from "./DataNotice";
 
 export interface ShellLink {
   href: string;
@@ -17,6 +18,8 @@ interface PageShellProps {
   next?: ShellLink;
   /** Flag, avatar or icon shown beside the title. */
   media?: ReactNode;
+  /** Shows the review date and a correction link. Set on pages that carry directory data. */
+  notice?: { subject: string; source?: string; caution?: string };
   children: React.ReactNode;
 }
 
@@ -24,7 +27,7 @@ const edgeLink =
   "inline-flex items-center gap-2 border-2 border-white/40 bg-white/[0.04] backdrop-blur-md px-4 py-2 font-bold uppercase tracking-wider text-sm text-slate-100 hover:bg-indigo-600 hover:text-white hover:border-transparent";
 
 /** One compact page: heading, a single content block, previous/next links. */
-export function PageShell({ eyebrow, title, lead, back, prev, next, media, children }: PageShellProps) {
+export function PageShell({ eyebrow, title, lead, back, prev, next, media, notice, children }: PageShellProps) {
   return (
     <main className="min-h-screen py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
@@ -44,6 +47,8 @@ export function PageShell({ eyebrow, title, lead, back, prev, next, media, child
         </header>
 
         {children}
+
+        {notice && <DataNotice {...notice} />}
 
         {(prev || next) && (
           <footer className="flex flex-wrap justify-between gap-3 pt-4">

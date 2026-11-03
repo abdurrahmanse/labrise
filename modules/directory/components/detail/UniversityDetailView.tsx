@@ -33,6 +33,7 @@ export function UniversityDetailView({ university }: { university: UniversityEnt
     <PageShell
       eyebrow={`University · ${university.country}`}
       title={university.name}
+      notice={{ subject: university.name, source: university.site }}
       media={<Avatar name={university.name.replace(/^(University of|The) /, "")} size={64} square />}
       lead={`${university.funding}. Typical application window: ${university.deadline}.`}
       back={{ href: "/directory/universities", label: "All universities" }}
