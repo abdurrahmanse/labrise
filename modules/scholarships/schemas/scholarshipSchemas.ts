@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { scholarshipSchema } from "@/modules/directory/catalog";
+import { scholarshipSchema } from "@/modules/directory/contracts";
 import { DEFAULT_PAGE_SIZE, MAX_PAGE_SIZE } from "../constants";
 import { SCHOLARSHIP_SORTS } from "../types/search";
 

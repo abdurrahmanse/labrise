@@ -8,8 +8,8 @@ import nextTs from "eslint-config-next/typescript";
  * Wiring code (core, infrastructure, API routes, tests) implements the module contracts, so it may reach inside.
  */
 const publicEntry = {
-  group: ["@/modules/*/*", "!@/modules/*/server", "!@/modules/search/client", "!@/modules/directory/catalog", "!@/modules/directory/cards"],
-  message: 'Import from "@/modules/<name>" (its public API), or "@/modules/<name>/server" for server-only reads (search has "/client", directory has "/catalog" and "/cards"). Not from inner files.'
+  group: ["@/modules/*/*", "!@/modules/*/server", "!@/modules/search/client", "!@/modules/directory/catalog", "!@/modules/directory/contracts", "!@/modules/directory/cards"],
+  message: 'Import from "@/modules/<name>" (its public API), or "@/modules/<name>/server" for server-only reads (search has "/client", directory has "/catalog", "/contracts" and "/cards"). Not from inner files.'
 };
 
 const wiring = ["core/**", "infrastructure/**", "app/api/**", "**/*.test.ts", "**/*.test.tsx"];

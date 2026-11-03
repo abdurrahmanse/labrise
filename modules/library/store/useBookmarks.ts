@@ -2,7 +2,7 @@
 
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import type { DirectoryType } from "@/modules/directory/catalog";
+import type { DirectoryType } from "@/modules/directory/contracts";
 
 export interface EntryRef {
   type: DirectoryType;

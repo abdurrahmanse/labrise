@@ -2,7 +2,6 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import {
-  directoryTypeSchema,
   countries,
   professors,
   providers,
@@ -13,14 +12,17 @@ import {
   findProvider,
   findScholarship,
   findUniversity,
+  fieldOf,
+  entryMeta
+} from "@/modules/directory/catalog";
+import {
+  directoryTypeSchema,
   countrySlug,
   professorSlug,
   providerSlug,
   scholarshipSlug,
-  universitySlug,
-  fieldOf,
-  entryMeta
-} from "@/modules/directory/catalog";
+  universitySlug
+} from "@/modules/directory/contracts";
 import {
   CountryDetailView,
   ProfessorDetailView,

@@ -1,17 +1,7 @@
 import { getCountryGuides, getDocuments } from "@/modules/content/server";
 import type { MetadataRoute } from "next";
-import {
-  countries,
-  professors,
-  providers,
-  scholarships,
-  universities,
-  countrySlug,
-  professorSlug,
-  providerSlug,
-  scholarshipSlug,
-  universitySlug
-} from "@/modules/directory/catalog";
+import { countries, professors, providers, scholarships, universities } from "@/modules/directory/catalog";
+import { countrySlug, professorSlug, providerSlug, scholarshipSlug, universitySlug } from "@/modules/directory/contracts";
 import { guideTopics } from "@/modules/guides";
 import { roadmapLevelsData } from "@/data/levelsData";
 import { roadmapPhasesData } from "@/data/roadmapPhasesData";

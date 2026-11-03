@@ -1,15 +1,8 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import {
-  directoryTypeSchema,
-  countries,
-  directoryTypes,
-  professors,
-  providers,
-  scholarships,
-  universities
-} from "@/modules/directory/catalog";
+import { countries, directoryTypes, professors, providers, scholarships, universities } from "@/modules/directory/catalog";
+import { directoryTypeSchema } from "@/modules/directory/contracts";
 import { ProfessorsExplorer, CountriesList, ProvidersList, ScholarshipsList, UniversitiesList } from "@/modules/directory";
 import { PageShell } from "@/shared/components/PageShell";
 import { buildMetadata } from "@/modules/seo";

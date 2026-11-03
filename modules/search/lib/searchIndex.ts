@@ -1,15 +1,5 @@
-import {
-  countries,
-  professors,
-  providers,
-  scholarships,
-  universities,
-  countrySlug,
-  professorSlug,
-  providerSlug,
-  scholarshipSlug,
-  universitySlug
-} from "@/modules/directory/catalog";
+import { countries, professors, providers, scholarships, universities } from "@/modules/directory/catalog";
+import { countrySlug, professorSlug, providerSlug, scholarshipSlug, universitySlug } from "@/modules/directory/contracts";
 import type { SearchKind } from "../types";
 
 export type { SearchKind };

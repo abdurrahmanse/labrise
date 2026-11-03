@@ -1,4 +1,4 @@
-import type { EntryResponse } from "@/modules/directory/catalog";
+import type { EntryResponse } from "@/modules/directory/contracts";
 
 /** Title, one line of context and the page link for any entry type. */
 export function describeEntry(r: EntryResponse) {
