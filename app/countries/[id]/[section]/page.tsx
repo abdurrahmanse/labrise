@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { countryGuidesData, getCountryById } from "@/data/countryGuidesData";
+import { getCountryGuide, getCountryGuides } from "@/modules/content/server";
 import { CountryDetailPage } from "@/components/countries/CountryDetailPage";
 import { COUNTRY_SECTIONS, type CountrySection } from "@/components/countries/countrySections";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
@@ -13,13 +13,13 @@ interface Props {
 
 const EXTRA_SECTIONS = COUNTRY_SECTIONS.filter((s) => s.id !== "overview");
 
-export function generateStaticParams() {
-  return countryGuidesData.flatMap((c) => EXTRA_SECTIONS.map((s) => ({ id: c.id, section: s.id })));
+export async function generateStaticParams() {
+  return (await getCountryGuides()).flatMap((c) => EXTRA_SECTIONS.map((s) => ({ id: c.id, section: s.id })));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id, section } = await params;
-  const country = getCountryById(id);
+  const country = await getCountryGuide(id);
   const entry = EXTRA_SECTIONS.find((s) => s.id === section);
   if (!country || !entry) return { title: notFoundTitles.generic };
   return buildMetadata({
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 async function Content({ params }: Props) {
   const { id, section } = await params;
-  const country = getCountryById(id);
+  const country = await getCountryGuide(id);
   const entry = EXTRA_SECTIONS.find((s) => s.id === section);
   if (!country || !entry) notFound();
   return <CountryDetailPage country={country} section={entry.id as CountrySection} />;

@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { countryGuidesData, getCountryById } from "@/data/countryGuidesData";
+import { getCountryGuide, getCountryGuides } from "@/modules/content/server";
 import { CountryDetailPage } from "@/components/countries/CountryDetailPage";
 import { notFoundTitles } from "@/data/text/site";
 
@@ -10,12 +10,12 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return countryGuidesData.map((country) => ({ id: country.id }));
+  return (await getCountryGuides()).map((country) => ({ id: country.id }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
-  const country = getCountryById(id);
+  const country = await getCountryGuide(id);
   if (!country) return { title: notFoundTitles.country };
 
   return {
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 async function CountryDetailContent({ params }: Props) {
   const { id } = await params;
-  const country = getCountryById(id);
+  const country = await getCountryGuide(id);
 
   if (!country) {
     notFound();

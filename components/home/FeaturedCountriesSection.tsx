@@ -1,12 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import { countryGuidesData } from "@/data/countryGuidesData";
+import { getCountryGuides } from "@/modules/content/server";
 import { featuredCountriesData } from "@/data/homeData";
 import { Globe2, ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { FeaturedCountryCard } from "./FeaturedCountryCard";
 
-export function FeaturedCountriesSection() {
+export async function FeaturedCountriesSection() {
+  const countryGuidesData = await getCountryGuides();
   const { badge, title, subtitle, ctaLabel, ctaHref, featuredCountryIds } = featuredCountriesData;
 
   const featured = countryGuidesData.filter((c) =>

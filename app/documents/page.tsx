@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { documentsHubText as t } from "@/data/text/documents";
 import { commonText } from "@/data/text/common";
+import { getDocuments } from "@/modules/content/server";
 import { DocumentsHub } from "@/modules/documents/components/DocumentsHub";
 import { DocumentsProgress } from "@/modules/documents/components/DocumentsProgress";
 import { Block } from "@/shared/components/Block";
@@ -10,11 +11,12 @@ import { surface } from "@/shared/components/Surface";
 
 export const metadata: Metadata = buildMetadata({ title: t.title, description: t.description, path: "/documents" });
 
-export default function DocumentsPage() {
+export default async function DocumentsPage() {
+  const documents = await getDocuments();
   return (
     <PageShell eyebrow={t.eyebrow} title={t.heading} lead={t.lead} back={{ href: "/", label: commonText.actions.home }}>
-      <DocumentsProgress />
-      <DocumentsHub />
+      <DocumentsProgress initialDocuments={documents} />
+      <DocumentsHub initialDocuments={documents} />
       <Block title={t.how.title}>
         <ol className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {t.how.steps.map((step, i) => (

@@ -1,7 +1,8 @@
 import { SCHOLARSHIP_TABS } from "@/components/scholarships/scholarshipTabs";
 import { scholarshipHub, scholarshipSubPages } from "@/data/text/hubPages";
 import { FinderStats } from "@/modules/scholarships/components/FinderStats";
-import { ScholarshipBrowse } from "@/modules/scholarships/components/ScholarshipBrowse";
+import { ScholarshipBrowse } from "@/modules/scholarships";
+import { getScholarshipPage } from "@/modules/scholarships/server";
 import { RelatedStrip } from "@/shared/components/JourneyHub";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
 import { PageShell } from "@/shared/components/PageShell";
@@ -11,7 +12,8 @@ const t = scholarshipSubPages.browse;
 
 export const metadata = buildMetadata({ title: t.title, description: t.description, path: "/scholarships/browse" });
 
-export default function ScholarshipBrowsePage() {
+export default async function ScholarshipBrowsePage() {
+  const firstPage = await getScholarshipPage({ page: 1, pageSize: 12 });
   return (
     <PageShell
       eyebrow={t.eyebrow}
@@ -24,7 +26,7 @@ export default function ScholarshipBrowsePage() {
       <SubNav label={scholarshipHub.eyebrow} items={SCHOLARSHIP_TABS} />
       <>
         <FinderStats />
-        <ScholarshipBrowse />
+        <ScholarshipBrowse initialPage={firstPage} />
       </>
       <RelatedStrip items={scholarshipHub.related} />
     </PageShell>

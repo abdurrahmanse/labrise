@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { countryGuidesData } from "@/data/countryGuidesData";
+import { useCountryGuides, type CountryGuide } from "@/modules/content";
 import { CountryHeader } from "./CountryHeader";
 import { CountryFilters } from "./CountryFilters";
 import { CountryCard } from "./CountryCard";
 import { legacyText } from "@/data/text/legacy";
 
-export function CountryGuidesExplorer() {
+export function CountryGuidesExplorer({ initialCountries }: { initialCountries: CountryGuide[] }) {
+  const { data: countryGuidesData } = useCountryGuides(initialCountries);
   const [selectedRegion, setSelectedRegion] = useState<string>("All");
   const [supervisorFilter, setSupervisorFilter] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");

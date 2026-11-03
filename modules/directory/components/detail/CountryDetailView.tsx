@@ -5,7 +5,7 @@ import { ExternalLinks } from "@/shared/components/ExternalLinks";
 import { Facts } from "@/shared/components/Facts";
 import { PageShell } from "@/shared/components/PageShell";
 import { StepGrid } from "@/shared/components/StepGrid";
-import { getCountryById } from "@/data/countryGuidesData";
+import type { CountryGuide } from "@/modules/content";
 import { countryDetails } from "../../data/countryDetails";
 import { ecosystemOfCountry } from "../../lib/connections";
 import { countrySlug } from "../../lib/slugs";
@@ -20,10 +20,9 @@ import { CountryFacts } from "./CountryFacts";
 import { detailText } from "@/data/text/directory";
 import { EntryActions } from "@/modules/library/components/EntryActions";
 
-export function CountryDetailView({ country }: { country: CountryEntry }) {
+export function CountryDetailView({ country, dossier }: { country: CountryEntry; dossier?: CountryGuide | null }) {
   const slug = countrySlug(country);
   const detail = countryDetails[slug];
-  const dossier = getCountryById(slug);
   const { summaries, professors, funders } = ecosystemOfCountry(country);
 
   return (

@@ -1,23 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { documentsData } from "@/data/documentsData";
+import { useDocuments, type DocumentGuideline } from "@/modules/content";
 import { documentsHubText as t } from "@/data/text/documents";
 import { EmptyState } from "@/shared/components/EmptyState";
 import { FilterTabs } from "@/shared/components/FilterTabs";
 import { DocumentCard } from "./DocumentCard";
 
-const LEVELS = ["All", ...Array.from(new Set(documentsData.map((d) => d.degreeLevel)))];
-const OPTIONS = LEVELS.map((l) => ({ value: l, label: l === "All" ? t.filterAll : l }));
-
-export function DocumentsHub() {
+export function DocumentsHub({ initialDocuments }: { initialDocuments: DocumentGuideline[] }) {
+  const { data: documentsData } = useDocuments(initialDocuments);
   const [level, setLevel] = useState("All");
+  const options = ["All", ...new Set(documentsData.map((d) => d.degreeLevel))].map((l) => ({ value: l, label: l === "All" ? t.filterAll : l }));
   const docs = documentsData.filter((d) => level === "All" || d.degreeLevel === level);
 
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <FilterTabs options={OPTIONS} value={level} onChange={setLevel} label={t.filterLabel} />
+        <FilterTabs options={options} value={level} onChange={setLevel} label={t.filterLabel} />
         <span className="font-mono text-xs text-slate-400">{t.count(docs.length)}</span>
       </div>
       {docs.length === 0 ? (

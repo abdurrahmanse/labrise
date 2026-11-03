@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { documentsData, getDocumentById } from "@/data/documentsData";
+import { getDocument, getDocuments } from "@/modules/content/server";
 import { documentDetailText as t, documentMeta } from "@/data/text/documents";
 import { navLabels } from "@/data/text/site";
 import { DocumentBody } from "@/modules/documents/components/DocumentBody";
@@ -16,18 +16,20 @@ interface Props {
   params: Promise<{ id: string }>;
 }
 
-export function generateStaticParams() {
-  return documentsData.map((d) => ({ id: d.id }));
+export async function generateStaticParams() {
+  return (await getDocuments()).map((d) => ({ id: d.id }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const doc = getDocumentById((await params).id);
+  const doc = await getDocument((await params).id);
   if (!doc) return { title: t.notFound };
   return buildMetadata({ title: t.metaTitle(doc.name), description: doc.what, path: `/documents/${doc.id}` });
 }
 
 async function DocumentPageContent({ params }: Props) {
-  const doc = getDocumentById((await params).id);
+  const { id } = await params;
+  const documentsData = await getDocuments();
+  const doc = documentsData.find((d) => d.id === id);
   if (!doc) notFound();
 
   const index = documentsData.findIndex((d) => d.id === doc.id);
@@ -47,7 +49,7 @@ async function DocumentPageContent({ params }: Props) {
     >
       <JsonLd data={howToSchema(doc.name, doc.what, doc.structure.map((s) => `${s.section}: ${s.guidance}`))} />
       <JsonLd data={breadcrumbSchema([{ name: navLabels.home, path: "/" }, { name: t.back, path: "/documents" }, { name: doc.name, path: `/documents/${doc.id}` }])} />
-      <DocumentBody doc={doc} />
+      <DocumentBody doc={doc} others={documentsData.filter((d) => d.id !== doc.id)} />
     </PageShell>
   );
 }

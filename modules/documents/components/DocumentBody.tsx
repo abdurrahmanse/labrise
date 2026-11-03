@@ -1,20 +1,18 @@
 import Link from "next/link";
 import { AlertTriangle, BadgeCheck, BookOpen } from "lucide-react";
-import type { DocumentGuideline } from "@/data/documentsData";
+import type { DocumentGuideline } from "@/modules/content";
 import { documentDetailText as t, documentMeta } from "@/data/text/documents";
 import { Block } from "@/shared/components/Block";
 import { NumberBadge } from "@/shared/components/IconBadge";
 import { Chips } from "@/shared/components/Chips";
 import { InfoCard } from "@/shared/components/InfoCard";
-import { documentsData } from "@/data/documentsData";
 import { DocumentChecklist } from "./DocumentChecklist";
 import { surface } from "@/shared/components/Surface";
 
 const bullet = "flex gap-3 font-sans text-[length:var(--text-body)] font-normal text-slate-200";
 
-export function DocumentBody({ doc }: { doc: DocumentGuideline }) {
+export function DocumentBody({ doc, others }: { doc: DocumentGuideline; others: DocumentGuideline[] }) {
   const guide = documentMeta[doc.id]?.guide;
-  const others = documentsData.filter((d) => d.id !== doc.id);
 
   return (
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">

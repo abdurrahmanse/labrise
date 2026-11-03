@@ -10,6 +10,7 @@ import { UniversityDetailView } from "@/modules/directory/components/detail/Univ
 import { countries, professors, providers, scholarships, universities } from "@/modules/directory/data";
 import { findCountry, findProfessor, findProvider, findScholarship, findUniversity } from "@/modules/directory/lib/lookups";
 import { countrySlug, professorSlug, providerSlug, scholarshipSlug, universitySlug } from "@/modules/directory/lib/slugs";
+import { getCountryGuide } from "@/modules/content/server";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
 import { JsonLd } from "@/modules/seo/JsonLd";
 import { breadcrumbSchema, personSchema, universitySchema } from "@/modules/seo/schemas";
@@ -72,10 +73,11 @@ async function DirectoryDetailPageContent({ params }: Props) {
   if (parsed.data === "countries") {
     const country = findCountry(slug);
     if (!country) notFound();
+    const dossier = await getCountryGuide(slug);
     return (
       <>
         <JsonLd data={breadcrumbSchema([...crumbs, { name: country.country, path: `/directory/countries/${slug}` }])} />
-        <CountryDetailView country={country} />
+        <CountryDetailView country={country} dossier={dossier} />
       </>
     );
   }

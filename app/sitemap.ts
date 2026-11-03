@@ -1,9 +1,8 @@
-import { documentsData } from "@/data/documentsData";
+import { getCountryGuides, getDocuments } from "@/modules/content/server";
 import type { MetadataRoute } from "next";
 import { countries, professors, providers, scholarships, universities } from "@/modules/directory/data";
 import { countrySlug, professorSlug, providerSlug, scholarshipSlug, universitySlug } from "@/modules/directory/lib/slugs";
 import { guideTopics } from "@/modules/guides/data/topics";
-import { countryGuidesData } from "@/data/countryGuidesData";
 import { roadmapLevelsData } from "@/data/levelsData";
 import { roadmapPhasesData } from "@/data/roadmapPhasesData";
 import { absoluteUrl } from "@/modules/seo/site";
@@ -15,7 +14,8 @@ const staticPaths = [
   "/professors/find", "/professors/supervisor", "/professors/workflow", "/professors/templates", "/scholarships/browse", "/scholarships/workflow", "/planner", "/saved", "/glossary", "/about", "/disclaimer", "/privacy", "/contact"
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const [countryGuidesData, documentsData] = await Promise.all([getCountryGuides(), getDocuments()]);
   const paths = [
     ...staticPaths,
     ...countryGuidesData.map((c) => `/countries/${c.id}`),

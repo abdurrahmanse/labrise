@@ -7,9 +7,10 @@ import Link from "next/link";
 import { FaqAccordionSection } from "./FaqAccordionSection";
 import { FaqCategoryPills } from "./FaqCategoryPills";
 import { faqsNavAnchors } from "@/data/faqsSectionData";
+import type { FAQItem } from "@/modules/content";
 import { legacyText } from "@/data/text/legacy";
 
-export function FaqsPageClient() {
+export function FaqsPageClient({ initialFaqs }: { initialFaqs: FAQItem[] }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   return (
@@ -24,6 +25,7 @@ export function FaqsPageClient() {
 
       {/* 4. Comprehensive Searchable FAQ Accordion */}
       <FaqAccordionSection
+        initialFaqs={initialFaqs}
         selectedCategory={selectedCategory}
         onSelectCategory={setSelectedCategory}
       />

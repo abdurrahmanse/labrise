@@ -4,10 +4,10 @@ import { gcTimes } from "./staleTimes";
 
 const MAX_RETRIES = 2;
 
-/** Retry network problems and timeouts, but never a 404 or a cancelled request. */
+/** The API client already retries safe requests, so only unknown errors are retried here. */
 export function shouldRetry(failureCount: number, error: unknown) {
   if (failureCount >= MAX_RETRIES) return false;
-  return isApiError(error) ? error.retryable : true;
+  return !isApiError(error);
 }
 
 export function createQueryClient() {

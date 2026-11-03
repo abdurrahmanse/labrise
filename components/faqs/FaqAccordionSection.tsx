@@ -6,18 +6,22 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 import { TabsContainer, TabItem } from "@/components/ui/Tabs";
 import { FaqAccordionItem } from "@/components/faqs/FaqAccordionItem";
-import { faqsData, faqsHeaderData } from "@/data/faqs";
+import { faqsHeaderData } from "@/data/faqs";
+import { useFaqs, type FAQItem } from "@/modules/content";
 import { legacyText } from "@/data/text/legacy";
 
 interface FaqAccordionSectionProps {
+  initialFaqs: FAQItem[];
   selectedCategory?: string;
   onSelectCategory?: (category: string) => void;
 }
 
 export function FaqAccordionSection({
+  initialFaqs,
   selectedCategory: externalCategory,
   onSelectCategory: externalSetCategory,
 }: FaqAccordionSectionProps) {
+  const { data: faqsData } = useFaqs(initialFaqs);
   const [internalCategory, setInternalCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
   const [openFaqId, setOpenFaqId] = useState<string | null>(faqsData[0]?.id || null);
