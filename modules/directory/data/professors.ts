@@ -23,7 +23,7 @@ const baseProfessors: ProfessorEntry[] = [
   { name: "Michael Bronstein", university: "University of Oxford", country: "United Kingdom", group: "Geometric Deep Learning" },
   { name: "Yee Whye Teh", university: "University of Oxford", country: "United Kingdom", group: "Machine Learning" },
   { name: "Andrew Zisserman", university: "University of Oxford", country: "United Kingdom", group: "Computer Vision" },
-  { name: "Mirella Lapata", university: "University of Edinburgh", country: "United Kingdom", group: "NLP", email: "Maria.Lapata@ed.ac.uk" },
+  { name: "Mirella Lapata", university: "University of Edinburgh", country: "Scotland", group: "NLP", email: "Maria.Lapata@ed.ac.uk" },
   { name: "Mihaela van der Schaar", university: "University of Cambridge", country: "United Kingdom", group: "ML for Healthcare" },
   { name: "Francis Bach", university: "Inria / ENS Paris", country: "France", group: "Optimization / ML Theory", email: "francis.bach@inria.fr" },
   { name: "Cordelia Schmid", university: "Inria / ENS Paris", country: "France", group: "Computer Vision", email: "Cordelia.Schmid@inria.fr" },

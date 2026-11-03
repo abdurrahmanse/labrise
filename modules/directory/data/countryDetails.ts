@@ -307,5 +307,115 @@ export const countryDetails: Record<string, CountryDetail> = {
     find: [{ label: "Stipendium Hungaricum", href: "https://stipendiumhungaricum.hu" }],
     scholarships: ["Stipendium Hungaricum"],
     tips: ["Eligible only for partner countries: check your country list."]
+  },
+  scotland: {
+    overview: "Scotland's universities (Edinburgh, Glasgow, St Andrews, Heriot-Watt and others) are part of the UK system but run their own funding and degree structure. UK-wide awards such as Chevening and Commonwealth can be used here.",
+    phd: "3–4 years, often with a 4-year first degree structure behind it. Edinburgh and Glasgow have strong AI and data groups.",
+    pay: "Funded studentships come with a tax-free stipend plus fees. Some awards, such as the Edinburgh Global Research Scholarships, cover only the fee difference, so check what each one pays.",
+    language: "English test usually required (IELTS or equivalent).",
+    intake: "Main deadlines are December–January for autumn entry; some awards have their own dates.",
+    visa: "Student visa, with the Graduate route after studies.",
+    find: [{ label: "Edinburgh funding", href: "https://www.ed.ac.uk/student-funding/postgraduate" }, { label: "FindAPhD", href: "https://www.findaphd.com" }],
+    scholarships: ["Chevening (master's)", "Commonwealth Scholarships", "Edinburgh Global Research Scholarships", "James Watt Scholarships (Heriot-Watt)", "St Leonard's Scholarships (St Andrews)"],
+    tips: ["Check whether an award pays only fees or fees plus stipend.", "Several UK awards limit places for international applicants: read the eligibility."]
+  },
+  "czech-republic": {
+    overview: "Public universities in Prague, Brno and Olomouc offer doctoral programmes with a stipend. Programmes taught in Czech are tuition free; English programmes usually charge fees.",
+    phd: "3–4 years in a doctoral programme under a supervisor.",
+    pay: "Doctoral stipend set by the university and faculty; the level varies, so ask the department. The Czech Government offers scholarships for students from developing countries.",
+    language: "English for English-taught programmes; Czech helps in daily life.",
+    intake: "Entrance exams or interviews, usually in spring; check each faculty.",
+    visa: "Long-term visa for studies and a residence permit.",
+    find: [{ label: "Study in the Czech Republic", href: "https://www.studyin.cz" }, { label: "DZS scholarships", href: "https://www.dzs.cz/en" }],
+    scholarships: ["Czech Government Scholarships for Developing Countries"],
+    tips: ["Contact a supervisor before you apply.", "Check whether your programme is taught in English and whether tuition applies."]
+  },
+  poland: {
+    overview: "Doctoral schools at Warsaw, Kraków, Poznań and Wrocław give a monthly stipend to doctoral candidates. NAWA runs scholarships for international students and researchers.",
+    phd: "4 years in a doctoral school with a main supervisor.",
+    pay: "Monthly doctoral stipend or scholarship; amounts depend on the school and funding, so confirm in the recruitment call.",
+    language: "English for most international doctoral schools.",
+    intake: "Recruitment usually in spring and summer for an October start.",
+    visa: "National visa for studies, then a residence permit.",
+    find: [{ label: "Study in Poland", href: "https://studyinpoland.pl" }, { label: "NAWA programmes", href: "https://nawa.gov.pl/en" }],
+    scholarships: ["Banach Scholarship Programme", "Ulam NAWA Programme", "NCN Preludium grants"],
+    tips: ["Read each doctoral school's recruitment rules.", "Contact a possible supervisor early."]
+  },
+  portugal: {
+    overview: "Portugal has strong research at Lisbon, Porto, Coimbra, NOVA and Minho. FCT funds doctoral fellowships through an annual call.",
+    phd: "3–4 years, often in a doctoral programme with a thesis supervisor.",
+    pay: "FCT doctoral fellowships pay a monthly amount and cover tuition. Details change each call.",
+    language: "English in research groups; Portuguese helps in daily life.",
+    intake: "The FCT call runs once a year; many programmes have their own admission rounds.",
+    visa: "Student or research visa, then a residence permit.",
+    find: [{ label: "FCT", href: "https://www.fct.pt/en" }, { label: "EURAXESS Portugal", href: "https://euraxess.ec.europa.eu/jobs" }],
+    scholarships: ["FCT Doctoral Fellowships"],
+    tips: ["Find a supervisor who will back your FCT application.", "Check whether your degree is recognised for the doctoral programme."]
+  },
+  estonia: {
+    overview: "Estonia is a small digital-first country with active research at Tartu and TalTech. Doctoral students are paid a stipend or employed through projects.",
+    phd: "4 years in a doctoral school.",
+    pay: "Doctoral stipend or employment; levels vary, so check the position. Dora Plus supports doctoral mobility.",
+    language: "English for research programmes.",
+    intake: "Tartu and TalTech announce positions through the year; many intakes are autumn.",
+    visa: "Student residence permit or work permit if employed.",
+    find: [{ label: "Study in Estonia", href: "https://studyinestonia.ee" }, { label: "Archimedes Foundation", href: "https://www.archimedes.ee/en" }],
+    scholarships: ["Estonian Research Council funding", "Dora Plus mobility scholarships"],
+    tips: ["Contact the research group before applying.", "Look at project-funded positions as well as doctoral schools."]
+  },
+  luxembourg: {
+    overview: "The University of Luxembourg hires doctoral candidates on employment contracts, many through FNR AFR grants. It is small and well funded, with strong computer science and security groups.",
+    phd: "3–4 years on a salaried contract.",
+    pay: "Among the higher doctoral salaries in Europe because it is a contract, not a stipend.",
+    language: "English in research; French or German help in daily life.",
+    intake: "Rolling per advertised post.",
+    visa: "Authorisation of stay for a researcher or salaried worker.",
+    find: [{ label: "University of Luxembourg PhD", href: "https://www.uni.lu/en" }, { label: "FNR", href: "https://www.fnr.lu" }],
+    scholarships: ["FNR AFR PhD grants"],
+    tips: ["Posts are tied to a project: read the project description carefully.", "Contact the professor with a short, specific email."]
+  },
+  iceland: {
+    overview: "Iceland's universities (Iceland and Reykjavik) hire doctoral candidates mainly through funded projects. Research groups are small and international.",
+    phd: "3–4 years.",
+    pay: "Salary or grant tied to the project. The cost of living is high.",
+    language: "English in research groups.",
+    intake: "Per advertised post.",
+    visa: "Residence permit based on study or employment; Nordic and EEA rules differ.",
+    find: [{ label: "University of Iceland", href: "https://english.hi.is" }, { label: "Reykjavik University", href: "https://en.ru.is" }],
+    scholarships: ["Icelandic Research Fund doctoral student grants"],
+    tips: ["Contact a professor about project funding.", "Plan for living costs before you accept."]
+  },
+  qatar: {
+    overview: "Hamad Bin Khalifa University (HBKU) and Qatar University offer funded graduate programmes. Qatar's funding model is generous but tied to the university and programme.",
+    phd: "3–5 years.",
+    pay: "HBKU offers fully funded places with tuition, stipend and housing in many programmes. QNRF funds some graduate assistant roles.",
+    language: "English.",
+    intake: "Per programme; many close in winter or spring.",
+    visa: "Arranged by the university once you are admitted.",
+    find: [{ label: "HBKU admissions", href: "https://www.hbku.edu.qa" }, { label: "QNRF", href: "https://www.qnrf.org" }],
+    scholarships: ["HBKU Graduate Scholarship", "Graduate Sponsorship Research Award (GSRA)"],
+    tips: ["Check which programmes are fully funded.", "Research fit with the faculty is important."]
+  },
+  "united-arab-emirates": {
+    overview: "MBZUAI, Khalifa University and NYU Abu Dhabi offer fully funded graduate places with strong research resources, especially in AI and engineering.",
+    phd: "3–5 years.",
+    pay: "Tuition waiver plus a monthly stipend; some include housing.",
+    language: "English.",
+    intake: "MBZUAI and Khalifa usually close in winter; check each programme.",
+    visa: "Arranged by the university once you are admitted.",
+    find: [{ label: "MBZUAI admissions", href: "https://mbzuai.ac.ae" }, { label: "Khalifa University", href: "https://www.ku.ac.ae" }],
+    scholarships: ["MBZUAI Scholarships", "Khalifa University Graduate Scholarships"],
+    tips: ["Apply early and show research or project work.", "Match your interests to a named faculty member."]
+  },
+  malaysia: {
+    overview: "Malaysian public universities give international research students scholarships and fellowships at lower living costs than many countries.",
+    phd: "3–4 years for a PhD.",
+    pay: "Allowances differ by scholarship; MIS and university fellowships often cover tuition plus a monthly amount.",
+    language: "English for research programmes; Malay helps in daily life.",
+    intake: "Intakes in several months; scholarship calls have their own dates.",
+    visa: "Student pass issued through the university.",
+    find: [{ label: "Study Malaysia", href: "https://www.studymalaysia.com" }, { label: "MOHE", href: "https://www.mohe.gov.my" }],
+    scholarships: ["Malaysia International Scholarship (MIS)", "MTCP Scholarships"],
+    tips: ["Contact a supervisor first.", "Check which scholarships apply to your nationality."]
   }
 };

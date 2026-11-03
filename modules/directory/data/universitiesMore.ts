@@ -143,7 +143,6 @@ export const moreUniversities: UniversityEntry[] = [
     ["King's College London", "https://www.kcl.ac.uk"],
     ["University of Bristol", "https://www.bristol.ac.uk"],
     ["University of Warwick", "https://warwick.ac.uk"],
-    ["University of Glasgow", "https://www.gla.ac.uk"],
     ["University of Leeds", "https://www.leeds.ac.uk"],
     ["University of Southampton", "https://www.southampton.ac.uk"],
     ["University of Birmingham", "https://www.birmingham.ac.uk"],
@@ -151,6 +150,15 @@ export const moreUniversities: UniversityEntry[] = [
     ["University of Nottingham", "https://www.nottingham.ac.uk"],
     ["Durham University", "https://www.durham.ac.uk"],
     ["London School of Economics", "https://www.lse.ac.uk"]
+  ]),
+  ...group("Scotland", "Europe", "Scholarships / studentships", "Dec–Jan (priority)", [
+    ["University of Glasgow", "https://www.gla.ac.uk"],
+    ["University of St Andrews", "https://www.st-andrews.ac.uk"],
+    ["University of Strathclyde", "https://www.strath.ac.uk"],
+    ["Heriot-Watt University", "https://www.hw.ac.uk"],
+    ["University of Aberdeen", "https://www.abdn.ac.uk"],
+    ["University of Dundee", "https://www.dundee.ac.uk"],
+    ["University of Stirling", "https://www.stir.ac.uk"]
   ]),
   ...group("Ireland", "Europe", "Funded PhD posts", POST, [
     ["University of Galway", "https://www.universityofgalway.ie"],
@@ -289,5 +297,57 @@ export const moreUniversities: UniversityEntry[] = [
     ["University of Pécs", "https://pte.hu"],
     ["Semmelweis University", "https://semmelweis.hu"],
     ["Corvinus University of Budapest", "https://www.uni-corvinus.hu"]
+  ]),
+  ...group("Czech Republic", "Europe", "Doctoral stipend; Czech Government scholarships (limited)", "Spring (entrance exams); varies by faculty", [
+    ["Charles University", "https://cuni.cz/UKEN-1.html"],
+    ["Czech Technical University in Prague", "https://www.cvut.cz/en"],
+    ["Masaryk University", "https://www.muni.cz/en"],
+    ["Brno University of Technology", "https://www.vut.cz/en"],
+    ["Palacký University Olomouc", "https://www.upol.cz/en"]
+  ]),
+  ...group("Poland", "Europe", "Doctoral school stipend; NAWA scholarships", "Spring–summer (doctoral school recruitment)", [
+    ["University of Warsaw", "https://www.uw.edu.pl/en"],
+    ["Jagiellonian University", "https://en.uj.edu.pl"],
+    ["Warsaw University of Technology", "https://www.pw.edu.pl/engpw"],
+    ["AGH University of Krakow", "https://www.agh.edu.pl/en"],
+    ["Adam Mickiewicz University", "https://amu.edu.pl/en"],
+    ["Poznań University of Technology", "https://put.poznan.pl/en"],
+    ["Wrocław University of Science and Technology", "https://pwr.edu.pl/en"]
+  ]),
+  ...group("Portugal", "Europe", "FCT doctoral fellowships; university calls", "Per FCT call and programme", [
+    ["University of Lisbon", "https://www.ulisboa.pt/en"],
+    ["University of Porto", "https://www.up.pt/portal/en"],
+    ["University of Coimbra", "https://www.uc.pt/en"],
+    ["NOVA University Lisbon", "https://www.unl.pt/en"],
+    ["University of Minho", "https://www.uminho.pt/EN"]
+  ]),
+  ...group("Estonia", "Europe", "Doctoral stipend or employment; Estonian Research Council funding", "Per programme; often spring", [
+    ["University of Tartu", "https://ut.ee/en"],
+    ["Tallinn University of Technology", "https://taltech.ee/en"],
+    ["Tallinn University", "https://www.tlu.ee/en"]
+  ]),
+  ...group("Luxembourg", "Europe", "Salaried PhD (FNR AFR / university contract)", POST, [
+    ["University of Luxembourg", "https://www.uni.lu/en"]
+  ]),
+  ...group("Iceland", "Europe", "Doctoral grants; project-funded posts", POST, [
+    ["University of Iceland", "https://english.hi.is"],
+    ["Reykjavik University", "https://en.ru.is"]
+  ]),
+  ...group("Qatar", "Middle East", "Fully funded graduate scholarship (stipend + tuition + housing)", "See the official admissions page", [
+    ["Hamad Bin Khalifa University", "https://www.hbku.edu.qa"],
+    ["Qatar University", "https://www.qu.edu.qa"]
+  ]),
+  ...group("United Arab Emirates", "Middle East", "Fully funded scholarship (stipend + tuition)", "See the official admissions page", [
+    ["MBZUAI", "https://mbzuai.ac.ae"],
+    ["Khalifa University", "https://www.ku.ac.ae"],
+    ["NYU Abu Dhabi", "https://nyuad.nyu.edu"],
+    ["United Arab Emirates University", "https://www.uaeu.ac.ae"]
+  ]),
+  ...group("Malaysia", "Asia", "Malaysia International Scholarship; university fellowships", "Per intake; see the official admissions page", [
+    ["Universiti Malaya", "https://www.um.edu.my"],
+    ["Universiti Putra Malaysia", "https://www.upm.edu.my"],
+    ["Universiti Kebangsaan Malaysia", "https://www.ukm.my"],
+    ["Universiti Sains Malaysia", "https://www.usm.my"],
+    ["Universiti Teknologi Malaysia", "https://www.utm.my"]
   ])
 ];

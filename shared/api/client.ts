@@ -14,6 +14,9 @@ interface RequestOptions<S extends z.ZodType> {
 
 const DEFAULT_TIMEOUT = 10_000;
 
+/** Empty means the site's own /api routes. Set NEXT_PUBLIC_API_BASE_URL to send every call to a separate backend. */
+const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL ?? "").replace(/\/$/, "");
+
 function withParams(path: string, params?: Params) {
   if (!params) return path;
   const search = new URLSearchParams();
@@ -30,7 +33,7 @@ export async function apiGet<S extends z.ZodType>(path: string, { schema, params
   signal?.addEventListener("abort", onAbort);
 
   try {
-    const response = await fetch(withParams(path, params), { signal: timeout.signal, headers: { Accept: "application/json" } });
+    const response = await fetch(`${API_BASE_URL}${withParams(path, params)}`, { signal: timeout.signal, headers: { Accept: "application/json" } });
     if (!response.ok) throw new ApiError("http", `Request failed with ${response.status}`, response.status);
     const parsed = schema.safeParse(await response.json());
     if (!parsed.success) throw new ApiError("parse", "The response did not match the expected shape");

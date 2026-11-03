@@ -3,6 +3,7 @@ import {
   countryWideEuropeanProviders,
   ellisHosts,
   europeanProgrammeCountries,
+  parentCountry,
   universityOnlyProviders
 } from "../data/connections";
 import { providers } from "../data/providers";
@@ -15,7 +16,8 @@ const named = (names: string[]) => providers.filter((p) => names.includes(p.name
 
 /** Organisations that fund or run programmes in a country. */
 export function fundersOfCountry(country: string): ProviderEntry[] {
-  const national = providers.filter((p) => p.country === country && !universityOnlyProviders[p.name]);
+  const nations = [country, parentCountry[country]];
+  const national = providers.filter((p) => nations.includes(p.country) && !universityOnlyProviders[p.name]);
   const european = europeanProgrammeCountries.includes(country) ? named(countryWideEuropeanProviders) : [];
   const universityBased = named(
     Object.entries(universityOnlyProviders)

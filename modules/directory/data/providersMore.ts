@@ -437,8 +437,131 @@ export const moreProviders: ProviderEntry[] = [
     "Apply to the advertised post at the university or institute.",
     ["Master's degree in the field", "Fit with the project"],
     ["CV", "Transcripts", "Motivation letter", "References"],
-    "The host selects the candidate.", "https://nkfih.gov.hu")
+    "The host selects the candidate.", "https://nkfih.gov.hu"),
+
+  // Scotland (UK-wide funders such as Chevening, Commonwealth and UKRI also apply here)
+  entry("Scotland", "Europe", "University scholarship office", "University of Edinburgh Scholarships",
+    "International PhD applicants admitted to the University of Edinburgh", ["Edinburgh Global Research Scholarships"],
+    "Apply for a PhD place first; most awards are considered from that application or a short funding form.",
+    ["Offer or application for a PhD at Edinburgh", "Strong academic record", "Overseas fee status"],
+    ["CV", "Transcripts", "Research proposal", "References"],
+    "Review by the school and the University scholarships office.", "https://www.ed.ac.uk/student-funding/postgraduate"),
+  entry("Scotland", "Europe", "University scholarship office", "Heriot-Watt University Scholarships",
+    "Postgraduate research applicants of any nationality", ["James Watt Scholarships"],
+    "Apply for a PhD at Heriot-Watt and tick the scholarship option on the application.",
+    ["Strong first degree or master's", "Research fit with a Heriot-Watt supervisor", "English ability"],
+    ["CV", "Transcripts", "Research proposal", "References"],
+    "Competitive review by the school.", "https://www.hw.ac.uk/study/fees-funding"),
+  entry("Scotland", "Europe", "University scholarship office", "University of St Andrews Scholarships",
+    "International postgraduate applicants admitted to St Andrews", ["St Leonard's Postgraduate Scholarships"],
+    "Apply for your degree first; the scholarship application is part of the process.",
+    ["Offer or application for a St Andrews research degree", "Excellent academic record", "Research proposal"],
+    ["CV", "Transcripts", "Research proposal", "References"],
+    "School nomination and committee review.", "https://www.st-andrews.ac.uk/subjects/fees-funding"),
+
+  // Czech Republic
+  entry("Czech Republic", "Europe", "Government agency", "DZS - Centre for International Cooperation in Education",
+    "Students from partner developing countries who want to study in the Czech Republic", ["Czech Government Scholarships for Developing Countries"],
+    "Apply through the Czech embassy or the national partner in your country, or via the DZS portal during the call.",
+    ["Citizen of an eligible country", "Admission to a Czech public university", "Fit with the programme's priority fields"],
+    ["Application form", "Transcripts", "Admission proof", "Language proof"],
+    "National selection followed by the Czech university's decision.", "https://www.dzs.cz/en"),
+
+  // Poland
+  entry("Poland", "Europe", "Government agency", "NAWA (Polish National Agency for Academic Exchange)",
+    "International students and researchers coming to Poland", ["Banach Scholarship Programme", "Ulam NAWA Programme"],
+    "Apply during the NAWA call; some programmes require a Polish host institution.",
+    ["Eligible nationality or institution as set in the call", "Host or admission in Poland", "Strong academic or research record"],
+    ["Application form", "Study or research plan", "Host support letter", "References"],
+    "NAWA expert panels review each call.", "https://nawa.gov.pl/en"),
+  entry("Poland", "Europe", "Government research funder", "National Science Centre (NCN)",
+    "Early-career researchers and doctoral candidates in Poland", ["NCN Preludium doctoral research grants"],
+    "A doctoral candidate or future candidate applies with a host institution in Poland.",
+    ["Master's degree", "Research project plan", "Host institution in Poland"],
+    ["Research proposal", "CV", "Host confirmation"],
+    "Peer review by NCN panels.", "https://www.ncn.gov.pl/en"),
+
+  // Portugal
+  entry("Portugal", "Europe", "Government research funder", "FCT - Foundation for Science and Technology",
+    "Doctoral candidates in Portugal, including international ones", ["FCT Doctoral Fellowships"],
+    "Apply during the annual FCT call with a Portuguese host institution and supervisor.",
+    ["Master's degree", "Research plan with a Portuguese supervisor", "Admission to a doctoral programme"],
+    ["CV", "Transcripts", "Research plan", "Supervisor and host letters"],
+    "FCT panel evaluation.", "https://www.fct.pt/en"),
+
+  // Estonia
+  entry("Estonia", "Europe", "Government research funder", "Estonian Research Council",
+    "Researchers and doctoral candidates at Estonian institutions", ["Estonian Research Council doctoral funding"],
+    "Apply to a funded post or project at an Estonian university.",
+    ["Master's degree", "Fit with the project", "English ability"],
+    ["CV", "Transcripts", "Research statement", "References"],
+    "The host university or a panel selects the candidate.", "https://www.etag.ee/en"),
+  entry("Estonia", "Europe", "Government foundation", "Archimedes Foundation",
+    "International students and doctoral candidates going to or leaving Estonia", ["Dora Plus mobility scholarships"],
+    "Apply through your Estonian university during the call.",
+    ["Enrolment at an Estonian university", "Plan for the study or research period"],
+    ["Application form", "Study plan", "Host or university support"],
+    "Archimedes evaluates the applications under the call's rules.", "https://www.archimedes.ee/en"),
+
+  // Luxembourg
+  entry("Luxembourg", "Europe", "Government research funder", "Luxembourg National Research Fund (FNR)",
+    "Doctoral candidates in Luxembourg", ["FNR AFR PhD grants"],
+    "A supervisor at a Luxembourg institution proposes a project and the doctoral candidate is recruited.",
+    ["Master's degree", "Project fit", "English ability"],
+    ["CV", "Transcripts", "Motivation letter", "References"],
+    "The hosting research group recruits within the FNR scheme.", "https://www.fnr.lu"),
+
+  // Iceland
+  entry("Iceland", "Europe", "Government research funder", "Rannís - Icelandic Centre for Research",
+    "Researchers and doctoral candidates in Iceland", ["Icelandic Research Fund doctoral student grants"],
+    "A principal investigator applies for the project and recruits the doctoral candidate.",
+    ["Master's degree", "Position in a funded project", "English ability"],
+    ["CV", "Transcripts", "Research statement"],
+    "Peer review of the project grant.", "https://en.rannis.is"),
+
+  // Qatar
+  entry("Qatar", "Middle East", "University scholarship office", "Hamad Bin Khalifa University (HBKU)",
+    "Graduate students admitted to HBKU", ["HBKU Graduate Scholarship"],
+    "Apply to the HBKU college and programme; funding is considered with the application.",
+    ["Strong academic record", "English test", "Admission to an HBKU graduate programme"],
+    ["CV", "Transcripts", "Statement of purpose", "References", "English test"],
+    "College admissions review.", "https://www.hbku.edu.qa"),
+  entry("Qatar", "Middle East", "Government research funder", "Qatar National Research Fund (QNRF)",
+    "Graduate students working on QNRF-funded projects in Qatar", ["Graduate Sponsorship Research Award (GSRA)"],
+    "A principal investigator in Qatar applies and the student is named in the project.",
+    ["Enrolment in a graduate programme in Qatar", "Place in a funded project"],
+    ["Student CV", "Project plan from the supervisor"],
+    "Decided with the project proposal.", "https://www.qnrf.org"),
+
+  // United Arab Emirates
+  entry("United Arab Emirates", "Middle East", "University scholarship office", "Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)",
+    "Master's and PhD applicants in AI and related fields", ["MBZUAI Scholarships"],
+    "Apply online to a department; admitted students are considered for the scholarship.",
+    ["Strong degree in computer science, maths or a related field", "English test", "Research or project experience helps"],
+    ["CV", "Transcripts", "Statement of purpose", "References", "English test"],
+    "Department review and interview.", "https://mbzuai.ac.ae"),
+  entry("United Arab Emirates", "Middle East", "University scholarship office", "Khalifa University",
+    "Graduate students admitted to Khalifa University", ["Khalifa University Graduate Scholarships"],
+    "Apply online to a college and programme.",
+    ["Strong academic record", "English test", "Research fit"],
+    ["CV", "Transcripts", "Statement of purpose", "References"],
+    "College admissions review.", "https://www.ku.ac.ae"),
+
+  // Malaysia
+  entry("Malaysia", "Asia", "Government ministry", "Ministry of Higher Education Malaysia (MOHE)",
+    "International postgraduate students at Malaysian universities", ["Malaysia International Scholarship (MIS)"],
+    "Apply online through the official study portal during the call.",
+    ["Admission or application to a Malaysian university", "Strong academic record", "Research programme as set in the call"],
+    ["Application form", "Transcripts", "Research proposal", "References"],
+    "National selection panel.", "https://www.studymalaysia.com"),
+  entry("Malaysia", "Asia", "Government programme", "Malaysian Technical Cooperation Programme (MTCP)",
+    "Citizens of partner developing countries", ["MTCP Scholarships"],
+    "Apply through the Malaysian embassy or the national focal point in your country.",
+    ["Citizen of an eligible country", "Admission to a Malaysian university", "Nomination by the national focal point"],
+    ["Application form", "Transcripts", "Admission proof"],
+    "Selection by the Malaysian government with your country's focal point.", "https://www.kln.gov.my")
 ];
+
 
 export const moreUniversityOnlyProviders: Record<string, string> = {
   "ETH Zurich Excellence Scholarship and Opportunity Programme (ESOP)": "ETH Zurich",
@@ -450,5 +573,11 @@ export const moreUniversityOnlyProviders: Record<string, string> = {
   "Schwarzman Scholars": "Tsinghua University",
   "University of Auckland Doctoral Scholarship": "University of Auckland",
   "University of Otago Doctoral Scholarship": "University of Otago",
-  "Koç University Graduate Scholarship": "Koç University"
+  "Koç University Graduate Scholarship": "Koç University",
+  "University of Edinburgh Scholarships": "University of Edinburgh",
+  "Heriot-Watt University Scholarships": "Heriot-Watt University",
+  "University of St Andrews Scholarships": "University of St Andrews",
+  "Hamad Bin Khalifa University (HBKU)": "Hamad Bin Khalifa University",
+  "Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)": "MBZUAI",
+  "Khalifa University": "Khalifa University"
 };

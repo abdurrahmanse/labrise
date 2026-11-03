@@ -20,8 +20,12 @@ export const countryWideEuropeanProviders = [
 
 /** Countries where the European programmes above are available. */
 export const europeanProgrammeCountries = [
-  "Germany", "Sweden", "Netherlands", "Denmark", "Finland", "Belgium", "Austria", "France", "Italy", "Spain", "Ireland", "Hungary", "Norway"
+  "Germany", "Sweden", "Netherlands", "Denmark", "Finland", "Belgium", "Austria", "France", "Italy", "Spain", "Ireland", "Hungary", "Norway",
+  "Czech Republic", "Poland", "Portugal", "Estonia", "Luxembourg", "Iceland"
 ];
+
+/** Nations inside a larger country whose funders also apply: UK-wide programmes work in Scotland. */
+export const parentCountry: Record<string, string> = { Scotland: "United Kingdom" };
 
 /** Universities that host an ELLIS unit. */
 export const ellisHosts = [

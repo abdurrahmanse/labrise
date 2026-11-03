@@ -21,7 +21,7 @@ const baseUniversities: UniversityEntry[] = [
   { name: "NTNU", country: "Norway", region: "Europe", funding: "Salaried PhD", deadline: "Per advertised post", site: "https://ntnu.edu" },
   { name: "University of Oslo", country: "Norway", region: "Europe", funding: "Salaried PhD", deadline: "Per advertised post", site: "https://uio.no" },
   { name: "University of Oxford", country: "United Kingdom", region: "Europe", funding: "Competitive scholarships", deadline: "Early Dec–Jan", site: "https://ox.ac.uk" },
-  { name: "University of Edinburgh", country: "United Kingdom", region: "Europe", funding: "Scholarships / CDT studentships", deadline: "Dec–Jan (priority)", site: "https://www.ed.ac.uk" },
+  { name: "University of Edinburgh", country: "Scotland", region: "Europe", funding: "Scholarships / CDT studentships", deadline: "Dec–Jan (priority)", site: "https://www.ed.ac.uk" },
   { name: "University of Toronto", country: "Canada", region: "North America", funding: "Funding package for research PhD", deadline: "Dec–Jan", site: "https://utoronto.ca" },
   { name: "University of British Columbia", country: "Canada", region: "North America", funding: "Funding package for research PhD", deadline: "Dec–Jan", site: "https://ubc.ca" },
   { name: "University of Waterloo", country: "Canada", region: "North America", funding: "Research assistantship", deadline: "Varies by program", site: "https://uwaterloo.ca" },

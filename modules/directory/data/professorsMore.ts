@@ -141,14 +141,13 @@ export const moreProfessors: ProfessorEntry[] = [
   // United Kingdom
   ...at("University of Oxford", "United Kingdom", [["Philip Torr", V], ["Shimon Whiteson", L], ["Yarin Gal", M], ["Jakob Foerster", L]]),
   ...at("University of Cambridge", "United Kingdom", [["Carl Rasmussen", M], ["Anna Korhonen", N], ["Andreas Vlachos", N]]),
-  ...at("University of Edinburgh", "United Kingdom", [
+  ...at("University of Edinburgh", "Scotland", [
     ["Ivan Titov", N], ["Sharon Goldwater", N], ["Subramanian Ramamoorthy", R], ["Sethu Vijayakumar", R], ["Amos Storkey", M]
   ]),
   ...at("Imperial College London", "United Kingdom", [["Stefanos Zafeiriou", V], ["Ben Glocker", "Computer Vision (medical imaging)"]]),
   ...at("UCL", "United Kingdom", [["Marc Deisenroth", M], ["Tim Rocktäschel", L], ["Lourdes Agapito", V]]),
   ...at("University of Manchester", "United Kingdom", [["Sophia Ananiadou", N], ["Gavin Brown", M]]),
   ...at("University of Bristol", "United Kingdom", [["Peter Flach", M], ["Majid Mirmehdi", V]]),
-  ...at("University of Glasgow", "United Kingdom", [["Iadh Ounis", IR], ["Roderick Murray-Smith", M]]),
   ...at("University of Sheffield", "United Kingdom", [["Nikolaos Aletras", N]]),
   ...at("University of Southampton", "United Kingdom", [["Mahesan Niranjan", M]]),
 
@@ -163,7 +162,7 @@ export const moreProfessors: ProfessorEntry[] = [
   // United States
   ...at("Carnegie Mellon University", "United States", [
     ["Ruslan Salakhutdinov", D], ["Louis-Philippe Morency", M], ["Deva Ramanan", V], ["Abhinav Gupta", V], ["Jun-Yan Zhu", V],
-    ["Zico Kolter", M], ["Emma Strubell", N], ["Maarten Sap", N], ["Eric Xing", M], ["Tuomas Sandholm", "Game theory / AI"]
+    ["Zico Kolter", M], ["Emma Strubell", N], ["Maarten Sap", N], ["Tuomas Sandholm", "Game theory / AI"]
   ]),
   ...at("MIT", "United States", [
     ["Regina Barzilay", N], ["Leslie Kaelbling", R], ["Russ Tedrake", R], ["Daniela Rus", R], ["Phillip Isola", V],
@@ -311,6 +310,63 @@ export const moreProfessors: ProfessorEntry[] = [
     ["Bernard Ghanem", V], ["Peter Richtárik", T], ["Wolfgang Heidrich", V], ["Mohamed Elhoseiny", V], ["Di Wang", T],
     ["Jürgen Schmidhuber", D], ["Panos Kalnis", "Data management / ML"], ["Marco Canini", "Systems / ML"], ["Xin Gao", M], ["Ricardo Henao", M]
   ]),
+
+  // Scotland
+  ...at("University of Glasgow", "Scotland", [["Iadh Ounis", IR], ["Roderick Murray-Smith", M], ["Joemon Jose", IR], ["Craig Macdonald", IR], ["Alessandro Vinciarelli", M]]),
+  ...at("University of St Andrews", "Scotland", [["Ognjen Arandjelović", V], ["Juan Ye", M]]),
+  ...at("University of Strathclyde", "Scotland", [["Leif Azzopardi", IR], ["Yashar Moshfeghi", IR]]),
+  ...at("Heriot-Watt University", "Scotland", [["Oliver Lemon", N], ["Ioannis Konstas", N], ["Yvan Petillot", R], ["Ruth Aylett", "Human-Robot Interaction / AI"]]),
+  ...at("University of Aberdeen", "Scotland", [["Ehud Reiter", N], ["Nir Oren", KR], ["Wamberto Vasconcelos", KR]]),
+  ...at("University of Dundee", "Scotland", [["Stephen McKenna", V], ["Emanuele Trucco", "Computer Vision (medical imaging)"]]),
+
+  // Czech Republic
+  ...at("Charles University", "Czech Republic", [["Ondřej Bojar", N], ["Jan Hajič", N], ["Pavel Pecina", N], ["Ondřej Dušek", N]]),
+  ...at("Czech Technical University in Prague", "Czech Republic", [["Jiří Matas", V], ["Josef Šivic", V], ["Tomáš Pajdla", V], ["Michal Pěchouček", KR], ["Karel Zimmermann", R]]),
+  ...at("Brno University of Technology", "Czech Republic", [["Jan Černocký", "Speech Processing"], ["Lukáš Burget", "Speech Processing"], ["Michal Hradiš", V]]),
+  ...at("Masaryk University", "Czech Republic", [["Petr Sojka", IR], ["Tomáš Brázdil", "Verification / Learning"]]),
+
+  // Poland
+  ...at("University of Warsaw", "Poland", [["Piotr Miłoś", L], ["Piotr Sankowski", T], ["Marek Cygan", M], ["Henryk Michalewski", L]]),
+  ...at("Jagiellonian University", "Poland", [["Jacek Tabor", M], ["Marek Śmieja", M], ["Przemysław Spurek", M]]),
+  ...at("Warsaw University of Technology", "Poland", [["Tomasz Trzciński", V], ["Przemysław Biecek", "Explainable ML"], ["Jacek Mańdziuk", M]]),
+  ...at("Poznań University of Technology", "Poland", [["Krzysztof Krawiec", "Evolutionary computation / ML"], ["Jerzy Stefanowski", M]]),
+  ...at("Wrocław University of Science and Technology", "Poland", [["Maciej Piasecki", N], ["Przemysław Kazienko", N], ["Jan Kocoń", N]]),
+
+  // Portugal
+  ...at("University of Lisbon", "Portugal", [
+    ["Mário Figueiredo", M], ["André Martins", N], ["Alexandre Bernardino", V], ["José Santos-Victor", R], ["Pedro Lima", R], ["Francisco Melo", L], ["Luísa Coheur", N]
+  ]),
+  ...at("University of Porto", "Portugal", [["João Gama", M], ["Pavel Brazdil", M], ["Alípio Jorge", IR], ["Luís Paulo Reis", R]]),
+  ...at("University of Coimbra", "Portugal", [["Penousal Machado", "Evolutionary computation / creative AI"], ["Bernardete Ribeiro", M], ["Jorge Dias", R]]),
+  ...at("NOVA University Lisbon", "Portugal", [["João Leite", KR], ["João Magalhães", IR]]),
+  ...at("University of Minho", "Portugal", [["Paulo Cortez", M], ["Paulo Novais", KR]]),
+
+  // Estonia
+  ...at("University of Tartu", "Estonia", [["Jaak Vilo", M], ["Meelis Kull", M], ["Kairit Sirts", N], ["Mark Fishel", N], ["Raul Vicente", "Computational neuroscience / ML"], ["Tambet Matiisen", L]]),
+  ...at("Tallinn University of Technology", "Estonia", [["Tanel Alumäe", "Speech Processing"], ["Maarja Kruusmaa", R]]),
+
+  // Luxembourg
+  ...at("University of Luxembourg", "Luxembourg", [["Yves Le Traon", "Software testing / ML"], ["Radu State", "ML for security"], ["Jun Pang", M], ["Leon van der Torre", KR], ["Tegawendé Bissyandé", "Software engineering / ML"]]),
+
+  // Iceland
+  ...at("Reykjavik University", "Iceland", [["Yngvi Björnsson", L], ["Kristinn Thórisson", "Artificial General Intelligence"], ["Hannes Högni Vilhjálmsson", "Human-computer interaction / AI"]]),
+
+  // Qatar
+  ...at("Hamad Bin Khalifa University", "Qatar", [["Sanjay Chawla", "Data mining / ML"], ["Yin Yang", "Data management / ML"]]),
+  ...at("Qatar University", "Qatar", [["Tamer Elsayed", IR], ["Somaya Al-Maadeed", V], ["Khaled Shaban", N]]),
+
+  // United Arab Emirates
+  ...at("MBZUAI", "United Arab Emirates", [
+    ["Eric Xing", M], ["Preslav Nakov", N], ["Timothy Baldwin", N], ["Fahad Shahbaz Khan", V], ["Salman Khan", V], ["Kun Zhang", "Causality / ML"], ["Mohammad Yaqub", "Computer Vision (medical imaging)"]
+  ]),
+  ...at("Khalifa University", "United Arab Emirates", [["Lakmal Seneviratne", R], ["Naoufel Werghi", V], ["Yahya Zweiri", R]]),
+  ...at("NYU Abu Dhabi", "United Arab Emirates", [["Nizar Habash", N], ["Talal Rahwan", "Multi-agent AI / computational social science"]]),
+
+  // Malaysia
+  ...at("Universiti Malaya", "Malaysia", [["Chan Chee Seng", V], ["Loo Chu Kiong", "Neural networks / robotics"], ["Sri Devi Ravana", IR]]),
+  ...at("Universiti Kebangsaan Malaysia", "Malaysia", [["Siti Norul Huda Sheikh Abdullah", V], ["Azuraliza Abu Bakar", "Data mining"]]),
+  ...at("Universiti Sains Malaysia", "Malaysia", [["Tan Tien Ping", "Speech / NLP"]]),
+  ...at("Universiti Putra Malaysia", "Malaysia", [["Md Nasir Sulaiman", "Data mining"]]),
 
   // Hungary
   ...at("University of Szeged", "Hungary", [["Richárd Farkas", N], ["Márk Jelasity", M], ["Gábor Berend", N], ["András Kocsor", M]]),
