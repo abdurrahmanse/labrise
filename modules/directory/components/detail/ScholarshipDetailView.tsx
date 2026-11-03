@@ -55,7 +55,7 @@ export function ScholarshipDetailView({ scholarship }: { scholarship: Scholarshi
       lead={detailText.lead.scholarship(scholarship.host, scholarship.covers)}
       back={{ href: "/directory/scholarships", label: detailText.back.scholarships }}
     >
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <div className={tile}>
           <span className={tileIcon}><Layers className="h-5 w-5" aria-hidden /></span>
           <div><p className={label}>{t.highlights.level}</p><p className="font-bold text-white">{scholarship.level}</p></div>
@@ -80,7 +80,7 @@ export function ScholarshipDetailView({ scholarship }: { scholarship: Scholarshi
         </div>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <InfoCard label={t.covers}>
           <p className={body}>{scholarship.covers}</p>
         </InfoCard>
@@ -90,7 +90,7 @@ export function ScholarshipDetailView({ scholarship }: { scholarship: Scholarshi
       </div>
       <p className="font-sans text-sm text-slate-400">{t.officialNote}</p>
 
-      <div className="grid gap-8 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
         <div className="space-y-8">
           {provider && (
             <Block title={t.provider.title} icon={Landmark}>
@@ -120,7 +120,7 @@ export function ScholarshipDetailView({ scholarship }: { scholarship: Scholarshi
 
           {sameHost.length > 0 && (
             <Block title={t.similar.title(scholarship.host)}>
-              <div className="grid gap-4 md:grid-cols-2">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 {sameHost.slice(0, 4).map((s) => <ScholarshipCard key={s.name} scholarship={s} />)}
               </div>
             </Block>

@@ -21,7 +21,7 @@ export function TemplatePicker() {
         ))}
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
         <div className="space-y-3">
           <p className="font-sans text-sm font-normal text-slate-400"><span className="font-mono text-xs uppercase tracking-wider text-indigo-300">{t.templates.for}</span> {template.targetAudience}</p>
           <pre className="whitespace-pre-wrap border-2 border-indigo-400/60 bg-canvas-base/70 p-5 font-mono text-sm leading-relaxed text-slate-200">{template.body}</pre>

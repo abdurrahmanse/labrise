@@ -4,7 +4,7 @@ import { applyHubText as t, compareRows } from "@/data/text/apply";
 /** What changes between the two routes, one card per question. */
 export function CompareRoutes() {
   return (
-    <div className="grid gap-4 md:grid-cols-2">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
       {compareRows.map(({ Icon, label, university, scholarship }) => (
         <section key={label} className="border-2 border-white/20 bg-canvas-card/50 p-4 backdrop-blur-xl">
           <h3 className="mb-3 flex items-center gap-2 text-lg font-bold text-white">

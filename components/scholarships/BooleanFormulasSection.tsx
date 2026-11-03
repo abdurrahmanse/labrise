@@ -38,7 +38,7 @@ export function BooleanFormulasSection() {
                   </div>
                   <span>{formula.title}</span>
                 </h4>
-                <div className="flex gap-1">
+                <div className="flex flex-wrap gap-1">
                   {formula.targetEngines.map((eng, idx) => (
                     <span key={idx} className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-slate-400">
                       {eng}

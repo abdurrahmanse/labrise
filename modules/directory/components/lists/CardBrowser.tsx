@@ -45,7 +45,7 @@ export function CardBrowser<T>({ data, placeholder, keyOf, regionOf, searchText,
       {items.length === 0 ? (
         <EmptyState title={emptyText.noResults} hint={listText.noMatch} />
       ) : (
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
           {items.map((item) => (
             <div key={keyOf(item)} className="contents">
               {renderCard(item)}

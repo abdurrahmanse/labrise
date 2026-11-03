@@ -9,7 +9,7 @@ export function UniversityRoster({ summaries }: { summaries: UniversitySummary[]
   if (summaries.length === 0) return <p className="text-slate-400">{rosterLabels.noUniversities}</p>;
 
   return (
-    <div className="grid gap-4 md:grid-cols-2">
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
       {summaries.map(({ university, professors, funders }) => (
         <Link
           key={university.name}

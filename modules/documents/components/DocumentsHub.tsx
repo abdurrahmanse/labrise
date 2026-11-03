@@ -38,7 +38,7 @@ export function DocumentsHub() {
       {docs.length === 0 ? (
         <EmptyState title={t.empty} />
       ) : (
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
           {docs.map((doc) => (
             <DocumentCard key={doc.id} doc={doc} />
           ))}

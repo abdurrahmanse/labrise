@@ -17,7 +17,7 @@ export function JourneyHub({ items, related, badges = {} }: JourneyHubProps) {
   return (
     <>
       <Block title={hubChrome.journey}>
-        <ol className="grid gap-5 md:grid-cols-2">
+        <ol className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {items.map(({ href, title, body, points, Icon }, i) => (
             <li key={href} className={i === 0 ? "md:col-span-2" : undefined}>
               <Link
@@ -60,7 +60,7 @@ export function JourneyHub({ items, related, badges = {} }: JourneyHubProps) {
 export function RelatedStrip({ items }: { items: RelatedItem[] }) {
   return (
     <Block title={hubChrome.related}>
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {items.map(({ href, title, meta, Icon }) => (
           <Link key={href} href={href} className="group flex items-center gap-3 border-2 border-white/25 bg-canvas-card/50 p-3 backdrop-blur-xl transition-colors hover:border-indigo-400">
             <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-indigo-600 text-white"><Icon className="h-5 w-5" aria-hidden /></span>

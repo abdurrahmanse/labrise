@@ -9,7 +9,7 @@ const PRIORITY_STYLE: Record<ProfileItem["priority"], string> = {
 
 export function ProfileList() {
   return (
-    <div className="grid gap-3 sm:grid-cols-2">
+    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
       {profileChecklist.map((item) => (
         <div key={item.title} className="flex items-start gap-4 border border-white/20 bg-white/[0.03] backdrop-blur-md p-4">
           <span className={`shrink-0 border px-2 py-0.5 font-mono text-[11px] uppercase ${PRIORITY_STYLE[item.priority]}`}>

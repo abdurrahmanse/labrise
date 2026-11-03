@@ -12,7 +12,7 @@ export function FunderList({ funders, empty }: { funders: ProviderEntry[]; empty
   }
 
   return (
-    <div className="grid gap-3 md:grid-cols-2">
+    <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
       {funders.map((p) => (
         <Link
           key={p.name}

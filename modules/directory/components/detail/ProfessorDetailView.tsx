@@ -52,7 +52,7 @@ export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }
       lead={detailText.lead.professor(professor.university, professor.country, professor.group)}
       back={{ href: "/directory/professors", label: detailText.back.professors }}
     >
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <div className={tile}>
           <span className={tileIcon}><Building2 className="h-5 w-5" aria-hidden /></span>
           <div className="min-w-0">
@@ -77,7 +77,7 @@ export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }
         </div>
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
         <div className="space-y-8">
           <Block title={t.contact.title} icon={Mail}>
             <div className="space-y-4 border-2 border-white/25 bg-canvas-card/50 p-5 backdrop-blur-xl">

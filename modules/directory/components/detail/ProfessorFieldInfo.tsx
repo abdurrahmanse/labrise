@@ -10,7 +10,7 @@ export function ProfessorFieldInfo({ field }: { field: FieldInfo }) {
       <Block title={professorDetailText.fieldAbout(field.title)}>
         <p className="text-lg text-slate-200 font-sans font-normal">{field.about}</p>
       </Block>
-      <div className="grid gap-8 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
         <Block title={detailText.blocks.commonTopics}>
           <BulletList items={field.topics} />
         </Block>

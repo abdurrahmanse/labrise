@@ -27,7 +27,7 @@ export function GlossaryBrowser() {
       {matches.length === 0 ? (
         <EmptyState title={emptyText.noResults} hint={t.empty} />
       ) : (
-        <dl className="grid gap-4 md:grid-cols-2">
+        <dl className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {matches.map((g) => (
             <div key={g.term} className="flex flex-col gap-2 bg-canvas-card/70 p-5 backdrop-blur-xl shadow-[4px_4px_0_0_rgba(15,23,42,0.12)]">
               <dt className="flex items-center gap-2 text-xl font-bold text-white">

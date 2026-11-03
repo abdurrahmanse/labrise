@@ -17,7 +17,7 @@ interface LinkCardGridProps {
 
 export function LinkCardGrid({ items, columns = "md:grid-cols-2 lg:grid-cols-3" }: LinkCardGridProps) {
   return (
-    <div className={`grid gap-4 ${columns}`}>
+    <div className={`grid grid-cols-1 gap-4 ${columns}`}>
       {items.map((it) => (
         <Link
           key={it.href}

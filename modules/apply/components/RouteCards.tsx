@@ -14,7 +14,7 @@ export function RouteCards() {
   const doneMap = useApplyProgress((s) => s.done);
 
   return (
-    <div className="grid gap-6 md:grid-cols-2">
+    <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
       {applyTracks.map((track) => {
         const Icon = trackIcons[track.id];
         const info = t.routes[track.id];

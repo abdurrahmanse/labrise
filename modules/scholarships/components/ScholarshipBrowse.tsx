@@ -31,7 +31,7 @@ export function ScholarshipBrowse({ limit }: { limit?: number } = {}) {
       {matches.length === 0 ? (
         <EmptyState title={t.browse.empty} />
       ) : (
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
           {matches.slice(0, limit).map((s) => (
             <ScholarshipCard key={s.name} scholarship={s} />
           ))}

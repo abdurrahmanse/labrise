@@ -27,7 +27,7 @@ export default function ApplyPage() {
       </Block>
 
       <Block title={t.phases.title}>
-        <ol className="grid gap-4 md:grid-cols-4">
+        <ol className="grid grid-cols-1 gap-4 md:grid-cols-4">
           {t.phases.items.map((phase, i) => {
             const Icon = phaseIcons[i];
             return (

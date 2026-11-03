@@ -15,9 +15,9 @@ export function DocumentBody({ doc }: { doc: DocumentGuideline }) {
   const others = documentsData.filter((d) => d.id !== doc.id);
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">
+    <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">
       <div className="space-y-8">
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <InfoCard label={t.what}>
             <p className="font-sans text-[length:var(--text-body)] font-normal text-slate-200">{doc.what}</p>
           </InfoCard>

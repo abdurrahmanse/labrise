@@ -41,7 +41,7 @@ function EntryList({ refs }: { refs: EntryRef[] }) {
           <RotateCcw className="h-4 w-4" aria-hidden /> {t.retryAll(failed.length)}
         </button>
       )}
-      <ul className="grid gap-3 md:grid-cols-2">
+      <ul className="grid grid-cols-1 gap-3 md:grid-cols-2">
         {results.map((result, i) => {
           const ref = refs[i];
           const key = refKey(ref);

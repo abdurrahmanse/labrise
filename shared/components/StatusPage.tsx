@@ -26,7 +26,7 @@ export function StatusPage({ code, eyebrow, title, body, Icon, actions, suggesti
       <ContourPattern className="absolute -left-32 bottom-0 h-64 w-[28rem] rotate-180 opacity-40" />
 
       <div className="relative mx-auto max-w-5xl space-y-12 px-4 sm:px-6 lg:px-8">
-        <section className="grid items-center gap-8 md:grid-cols-[auto_1fr]">
+        <section className="grid grid-cols-1 items-center gap-8 md:grid-cols-[auto_1fr]">
           <div className="relative mx-auto flex h-44 w-44 items-center justify-center border-2 border-white/80 bg-canvas-card/70 backdrop-blur-xl shadow-[8px_8px_0_0_rgba(58,95,224,0.35)] md:h-56 md:w-56">
             <span className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-indigo-600 to-cyan-400" />
             <Icon className="h-24 w-24 text-indigo-400 md:h-32 md:w-32" strokeWidth={1.25} aria-hidden />
@@ -47,7 +47,7 @@ export function StatusPage({ code, eyebrow, title, body, Icon, actions, suggesti
         {suggestions && (
           <section className="space-y-4" aria-label={suggestions.title}>
             <h2 className="border-b-2 border-white/80 pb-2 text-2xl font-bold text-white">{suggestions.title}</h2>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {suggestions.links.map(({ href, label, hint, Icon: LinkIcon }) => (
                 <Link
                   key={href}

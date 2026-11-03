@@ -16,7 +16,7 @@ export function ExploreSection() {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 md:pb-24">
       <SectionHeading title={homeText.explore.title} linkHref="/guides" linkLabel={homeText.explore.linkLabel} />
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         {CARDS.map(({ href, title, Icon, art, meta }) => (
           <Link
             key={href}

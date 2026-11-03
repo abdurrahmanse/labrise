@@ -23,7 +23,7 @@ export function FindProfessors() {
     <div className="space-y-8">
       <div>
         <h3 className="mb-3 font-mono text-xs uppercase tracking-wider text-indigo-300">{t.find.byField}</h3>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {fields.map(([title, n]) => (
             <Link key={title} href={`/directory/professors?field=${encodeURIComponent(title)}`} className={tile}>
               <span className="flex h-10 w-10 shrink-0 items-center justify-center bg-indigo-600 text-white"><IconFor text={title} className="h-5 w-5" /></span>
@@ -38,7 +38,7 @@ export function FindProfessors() {
 
       <div>
         <h3 className="mb-3 font-mono text-xs uppercase tracking-wider text-indigo-300">{t.find.byCountry}</h3>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {byCountry.map(([name, n]) => {
             const country = countries.find((c) => c.country === name);
             if (!country) return null;

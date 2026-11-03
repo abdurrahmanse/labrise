@@ -50,7 +50,7 @@ export function ApplicationList() {
         <Download className="h-4 w-4" aria-hidden /> {t.list.export}
       </button>
 
-      <ul className="grid gap-4 md:grid-cols-2">
+      <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {sorted.map((a) => {
           const days = daysUntil(a.deadline);
           const closed = a.status === "submitted" || a.status === "offer" || a.status === "rejected";

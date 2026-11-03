@@ -33,7 +33,7 @@ export function LevelTasksSection({ level, levelSteps }: LevelTasksSectionProps)
         borderBottom={true}
       />
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
         {levelSteps.map((step) => (
           <Link
             key={step.id}

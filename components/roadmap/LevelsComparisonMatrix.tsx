@@ -19,7 +19,7 @@ export function LevelsComparisonMatrix() {
           subtitle={legacyText.levelsComparisonMatrix.t3}
         />
 
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
           {roadmapLevelsComparisonData.map((row, idx) => {
             const levelObj = roadmapLevelsData[idx];
             return (

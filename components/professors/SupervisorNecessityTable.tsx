@@ -23,7 +23,7 @@ export function SupervisorNecessityTable() {
         </p>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
         {supervisorNecessityByCountry.map((rule, idx) => {
           const isStrict = rule.necessity.includes("Strictly");
           const isRecommended = rule.necessity === "Recommended";

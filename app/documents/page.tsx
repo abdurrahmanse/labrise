@@ -15,7 +15,7 @@ export default function DocumentsPage() {
       <DocumentsProgress />
       <DocumentsHub />
       <Block title={t.how.title}>
-        <ol className="grid gap-4 md:grid-cols-3">
+        <ol className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {t.how.steps.map((step, i) => (
             <li key={step.title} className="border-2 border-white/20 bg-canvas-card/50 p-4 backdrop-blur-xl">
               <span className="mb-2 inline-flex h-8 w-8 items-center justify-center bg-indigo-600 font-mono font-bold text-white">{i + 1}</span>

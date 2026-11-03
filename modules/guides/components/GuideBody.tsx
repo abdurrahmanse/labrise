@@ -15,7 +15,7 @@ interface GuideBodyProps {
 /** Two columns: the guide content on the left, checklist and links on the right. */
 export function GuideBody({ guideId, detail, related }: GuideBodyProps) {
   return (
-    <div className="grid gap-10 lg:grid-cols-[1fr_320px]">
+    <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_320px]">
       <div className="space-y-10 min-w-0">
         <GuideIntroCards why={detail.why} timeline={detail.timeline} />
         <GuideSections sections={detail.sections} />

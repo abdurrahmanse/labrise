@@ -44,7 +44,7 @@ async function ApplyTrackPageContent({ params }: Props) {
     >
       <JsonLd data={howToSchema(track.title, track.summary, track.steps.map((s) => `${s.title}: ${s.detail}`))} />
       <JsonLd data={breadcrumbSchema([{ name: navLabels.home, path: "/" }, { name: pageText.apply.breadcrumb, path: "/apply" }, { name: track.title, path: `/apply/${track.id}` }])} />
-      <div className="grid gap-8 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">
         <TrackStepper track={track} />
         <TrackSidebar track={track} other={other} />
       </div>

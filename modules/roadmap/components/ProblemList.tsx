@@ -2,7 +2,7 @@ import { challenges } from "../data/challenges";
 
 export function ProblemList() {
   return (
-    <div className="grid gap-3 md:grid-cols-2">
+    <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
       {challenges.map((c) => (
         <div key={c.problem} className="border-l-4 border-indigo-400 bg-white/[0.03] p-4">
           <div className="font-bold text-white">{c.problem}</div>

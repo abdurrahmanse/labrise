@@ -43,7 +43,7 @@ export function ApplicationForm() {
   };
 
   return (
-    <form onSubmit={submit} noValidate className="grid gap-4 border-2 border-white/30 bg-canvas-card/60 p-5 backdrop-blur-xl shadow-[4px_4px_0_0_rgba(15,23,42,0.18)] md:grid-cols-[2fr_1fr_1fr_auto] md:items-end">
+    <form onSubmit={submit} noValidate className="grid grid-cols-1 gap-4 border-2 border-white/30 bg-canvas-card/60 p-5 backdrop-blur-xl shadow-[4px_4px_0_0_rgba(15,23,42,0.18)] md:grid-cols-[2fr_1fr_1fr_auto] md:items-end">
       <div>
         <label htmlFor="app-name" className={label}>{t.form.name}</label>
         <input id="app-name" list={listId} value={name} onChange={(e) => onName(e.target.value)} placeholder={t.form.namePlaceholder} className={cn(field, errors.name && "border-rose-400")} />

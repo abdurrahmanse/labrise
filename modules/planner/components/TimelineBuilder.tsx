@@ -24,7 +24,7 @@ export function TimelineBuilder() {
       </div>
 
       {intake ? (
-        <ol className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+        <ol className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
           {timelineSteps.map((step, i) => (
             <li key={step.title} className="border-2 border-white/25 bg-canvas-card/60 p-4 backdrop-blur-xl shadow-[3px_3px_0_0_rgba(15,23,42,0.12)]">
               <div className="mb-2 flex items-center justify-between">

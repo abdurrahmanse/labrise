@@ -12,7 +12,7 @@ export function ProfessorRoster({ professors }: { professors: ProfessorEntry[] }
   if (professors.length === 0) return <p className="text-slate-400">{rosterLabels.noProfessors}</p>;
 
   return (
-    <div className="grid gap-3 md:grid-cols-2">
+    <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
       {professors.map((p) => (
         <div key={p.name} className="flex gap-3 bg-canvas-card/70 backdrop-blur-xl p-4 shadow-[3px_3px_0_0_rgba(15,23,42,0.12)]">
           <Avatar name={p.name} size={44} />

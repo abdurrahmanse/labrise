@@ -15,7 +15,7 @@ export function SupervisorNeed() {
   return (
     <div className="space-y-4">
       <p className="font-sans text-[length:var(--text-body)] font-normal text-slate-300">{t.need.lead}</p>
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         {GROUPS.map(({ key, Icon, tone }) => (
           <section key={key} className="border-2 border-white/20 bg-canvas-card/50 p-4 backdrop-blur-xl">
             <h3 className={`mb-3 flex items-center gap-2 text-lg font-bold ${tone}`}><Icon className="h-5 w-5" aria-hidden /> {t.need.groups[key]}</h3>
