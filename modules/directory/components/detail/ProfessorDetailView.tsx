@@ -14,6 +14,7 @@ import { EMAIL_STEPS } from "./applySteps";
 import { buildEmailDraft } from "./emailDraft";
 import { EmailDraftBox } from "./EmailDraftBox";
 import { ProfessorFieldInfo } from "./ProfessorFieldInfo";
+import { ProfessorTracker } from "../professors/ProfessorTracker";
 
 const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 
@@ -57,6 +58,8 @@ export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }
       <p className="text-sm text-slate-400">
         Emails were taken from official university or institute pages. People move, so confirm on their page before writing.
       </p>
+
+      <ProfessorTracker slug={professorSlug(professor)} />
 
       <ProfessorFieldInfo field={field} />
 

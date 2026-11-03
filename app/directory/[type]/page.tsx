@@ -1,8 +1,10 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { Suspense } from "react";
+import { ProfessorsExplorer } from "@/modules/directory/components/professors/ProfessorsExplorer";
 import { PageShell } from "@/shared/components/PageShell";
 import { directoryTypeSchema } from "@/modules/directory/api/schemas";
-import { CountriesExplorer, ProfessorsExplorer, ScholarshipsExplorer, UniversitiesExplorer } from "@/modules/directory/components/DirectoryExplorer";
+import { CountriesList, ScholarshipsList, UniversitiesList } from "@/modules/directory/components/lists/DirectoryLists";
 import { countries, directoryTypes, professors, scholarships, universities } from "@/modules/directory/data";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
 
@@ -43,10 +45,12 @@ export default async function DirectoryTypePage({ params }: Props) {
       prev={prev && { href: `/directory/${prev.type}`, label: prev.title }}
       next={next && { href: `/directory/${next.type}`, label: next.title }}
     >
-      {parsed.data === "countries" && <CountriesExplorer initialData={countries} />}
-      {parsed.data === "universities" && <UniversitiesExplorer initialData={universities} />}
-      {parsed.data === "scholarships" && <ScholarshipsExplorer initialData={scholarships} />}
-      {parsed.data === "professors" && <ProfessorsExplorer initialData={professors} />}
+      <Suspense fallback={null}>
+        {parsed.data === "countries" && <CountriesList initialData={countries} />}
+        {parsed.data === "universities" && <UniversitiesList initialData={universities} />}
+        {parsed.data === "scholarships" && <ScholarshipsList initialData={scholarships} />}
+        {parsed.data === "professors" && <ProfessorsExplorer initialData={professors} />}
+      </Suspense>
     </PageShell>
   );
 }

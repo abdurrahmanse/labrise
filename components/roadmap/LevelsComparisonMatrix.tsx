@@ -18,70 +18,36 @@ export function LevelsComparisonMatrix() {
           subtitle="Compare the time horizons, target evaluation gatekeepers, critical proof-of-work deliverables, and primary rejection risks across all 5 levels."
         />
 
-        {/* Mobile Swipe Hint */}
-        <div className="text-[11px] font-mono text-slate-400 mb-2 flex items-center justify-end gap-1 md:hidden">
-          <span>Scroll table horizontally &rarr;</span>
-        </div>
-
-        <div className="bg-canvas-card border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[760px] text-left text-xs text-slate-300">
-              <thead className="bg-canvas-base text-[11px] font-bold uppercase tracking-wider text-slate-400 border-b border-white/10">
-                <tr>
-                  <th className="py-4 px-6">Curriculum Level</th>
-                  <th className="py-4 px-6">Timeline</th>
-                  <th className="py-4 px-6">Primary Gatekeeper</th>
-                  <th className="py-4 px-6">Non-Negotiable Proof-of-Work</th>
-                  <th className="py-4 px-6">Primary Rejection Risk</th>
-                  <th className="py-4 px-6 text-right">Deep Dive</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-white/5 font-sans">
-                {roadmapLevelsComparisonData.map((row, idx) => {
-                  const levelObj = roadmapLevelsData[idx];
-                  return (
-                    <tr key={row.level} className="hover:bg-white/[0.02] transition-colors">
-                      <td className="py-4 px-6 font-bold text-white">
-                        <div className="flex items-center gap-2">
-                          <span className="font-mono text-xs px-2 py-0.5 rounded bg-indigo-950 text-indigo-300 border border-indigo-800/40 font-bold">
-                            {row.level}
-                          </span>
-                          <span className="font-heading font-semibold text-slate-200">{row.title}</span>
-                        </div>
-                      </td>
-                      <td className="py-4 px-6 font-mono text-slate-400">
-                        {row.duration}
-                      </td>
-                      <td className="py-4 px-6 text-cyan-300 font-medium">
-                        {row.primaryGatekeeper}
-                      </td>
-                      <td className="py-4 px-6 text-emerald-300 font-medium flex items-center gap-1.5 mt-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                        <span>{row.keyDeliverable}</span>
-                      </td>
-                      <td className="py-4 px-6 text-rose-300 font-mono text-[11px]">
-                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-rose-950/40 border border-rose-800/40">
-                          <ShieldAlert className="w-3 h-3 text-rose-400 shrink-0" />
-                          {row.riskFactor}
-                        </span>
-                      </td>
-                      <td className="py-4 px-6 text-right">
-                        {levelObj && (
-                          <Link
-                            href={`/roadmap/${levelObj.slug}`}
-                            className="inline-flex items-center gap-1 text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition-colors group cursor-pointer"
-                          >
-                            <span>Open</span>
-                            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                          </Link>
-                        )}
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {roadmapLevelsComparisonData.map((row, idx) => {
+            const levelObj = roadmapLevelsData[idx];
+            return (
+              <article key={row.level} className="flex flex-col gap-3 bg-canvas-card/70 backdrop-blur-xl p-5 shadow-[4px_4px_0_0_rgba(15,23,42,0.12)]">
+                <div className="flex items-center justify-between gap-3">
+                  <span className="bg-indigo-600 px-2 py-0.5 font-mono text-xs font-bold text-white">{row.level}</span>
+                  <span className="font-mono text-xs text-slate-400">{row.duration}</span>
+                </div>
+                <h3 className="text-xl font-bold text-white">{row.title}</h3>
+                <p className="text-slate-300">
+                  <span className="font-mono text-xs uppercase tracking-wider text-slate-400">Gatekeeper </span>
+                  <span className="font-bold text-cyan-300">{row.primaryGatekeeper}</span>
+                </p>
+                <p className="flex items-start gap-2 text-emerald-300">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
+                  <span>{row.keyDeliverable}</span>
+                </p>
+                <p className="flex items-start gap-2 text-rose-300">
+                  <ShieldAlert className="mt-0.5 h-4 w-4 shrink-0 text-rose-400" />
+                  <span>{row.riskFactor}</span>
+                </p>
+                {levelObj && (
+                  <Link href={`/roadmap/${levelObj.slug}`} className="mt-auto inline-flex w-fit items-center gap-1.5 pt-2 text-sm font-bold text-indigo-400 hover:text-indigo-200">
+                    Open level <ArrowRight className="h-4 w-4" />
+                  </Link>
+                )}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

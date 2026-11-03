@@ -30,13 +30,13 @@ Open [http://localhost:3000](http://localhost:3000).
 | 6-step roadmap | `/steps` |
 | Profile checklist | `/profile` |
 | Guides (25 topics, grouped) | `/guides`, `/guides/[id]` |
-| Directory | `/directory`, `/directory/[type]`, `/directory/[type]/[slug]` where `type` is `countries`, `universities`, `scholarships` or `professors` |
+| Directory (card lists with search, filters and pagination) | `/directory`, `/directory/[type]`, `/directory/[type]/[slug]` where `type` is `countries`, `universities`, `scholarships` or `professors` |
 | Common problems | `/problems` |
 | Older detailed pages | `/roadmap`, `/countries`, `/scholarships`, `/professors`, `/documents`, `/faqs` |
 | JSON API | `/api/directory/[type]` |
 | SEO | `/sitemap.xml`, `/robots.txt`, `/opengraph-image` |
 
-Every list links to a detail page, and every detail page links onward (country to universities to professors, guide to next guide).
+The professors list is a card grid with filters (region, field, has email, saved only), sorting, pagination, a status tracker (To contact, Emailed, Replied, Not a fit), private notes and CSV export. Every list links to a detail page, and every detail page links onward (country to universities to professors, guide to next guide).
 
 ---
 
@@ -45,8 +45,8 @@ Every list links to a detail page, and every detail page links onward (country t
 - **Next.js 16** (App Router), **React 19**, **TypeScript**
 - **Tailwind CSS 4**, **shadcn/ui-style components** (`cva`, `cn`, Radix `Slot`)
 - **TanStack Query**: directory lists render from bundled data first, then refresh from `/api/directory/[type]`
-- **TanStack Table**: sortable directory tables
-- **Zustand**: remembered region filter and guide checklists (persisted in the browser)
+- **nuqs**: search, filters and page number live in the URL, so any list view can be shared
+- **Zustand**: guide checklists and the professor tracker (save, status, notes), persisted in the browser
 - **Zod**: validates the API type and payload
 - **next-themes**: light (default) and dark theme with a toggle in the header
 - **schema-dts**: typed JSON-LD (HowTo, BreadcrumbList, CollegeOrUniversity, Person, WebSite)
@@ -62,7 +62,7 @@ New code is a modular monolith: each feature owns its data, components, hooks an
 app/                     routes, API handler, sitemap, robots, OG image
 modules/
   directory/             countries, universities, scholarships, professors
-    data/  lib/  api/  hooks/  store/  components/ (columns/, detail/)
+    data/  lib/  api/  hooks/  store/  components/ (cards/, lists/, professors/, detail/)
   guides/                25 guides: data/details/<id>.ts, components, store
   roadmap/               steps, profile checklist, common problems
   home/                  hero and the two home sections

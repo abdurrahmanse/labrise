@@ -22,44 +22,32 @@ export function SupervisorNecessityTable() {
         </p>
       </div>
 
-      <div className="overflow-x-auto rounded-2xl border border-white/10 bg-slate-900/60 shadow-xl">
-        <table className="w-full text-left text-xs border-collapse">
-          <thead>
-            <tr className="border-b border-white/10 bg-slate-950/80 font-mono text-slate-400 text-[11px] uppercase">
-              <th className="p-4">Country / Region</th>
-              <th className="p-4">Degree Scope</th>
-              <th className="p-4">Necessity Status</th>
-              <th className="p-4">Academic Rationale</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-white/5">
-            {supervisorNecessityByCountry.map((rule, idx) => {
-              const isStrict = rule.necessity.includes("Strictly");
-              const isRecommended = rule.necessity === "Recommended";
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {supervisorNecessityByCountry.map((rule, idx) => {
+          const isStrict = rule.necessity.includes("Strictly");
+          const isRecommended = rule.necessity === "Recommended";
 
-              return (
-                <tr key={idx} className="hover:bg-white/[0.02] transition-colors">
-                  <td className="p-4 font-bold text-white whitespace-nowrap">{rule.country}</td>
-                  <td className="p-4 font-mono text-slate-300 whitespace-nowrap">{rule.degreeLevel}</td>
-                  <td className="p-4 whitespace-nowrap">
-                    <span
-                      className={`px-2.5 py-1 rounded-none text-[10px] font-mono font-bold uppercase border ${
-                        isStrict
-                          ? "bg-amber-500/20 text-amber-300 border-amber-500/30"
-                          : isRecommended
-                          ? "bg-teal-500/20 text-teal-300 border-teal-500/30"
-                          : "bg-indigo-500/20 text-indigo-300 border-indigo-500/30"
-                      }`}
-                    >
-                      {rule.necessity}
-                    </span>
-                  </td>
-                  <td className="p-4 text-slate-300 leading-relaxed max-w-md">{rule.rationale}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+          return (
+            <article key={idx} className="flex flex-col gap-3 bg-canvas-card/70 backdrop-blur-xl p-5 shadow-[4px_4px_0_0_rgba(15,23,42,0.12)]">
+              <div className="flex items-start justify-between gap-3">
+                <h4 className="text-xl font-bold text-white">{rule.country}</h4>
+                <span className="shrink-0 font-mono text-xs uppercase tracking-wider text-slate-400">{rule.degreeLevel}</span>
+              </div>
+              <span
+                className={`w-fit px-2.5 py-1 font-mono text-[11px] font-bold uppercase ${
+                  isStrict
+                    ? "bg-amber-500/20 text-amber-300"
+                    : isRecommended
+                    ? "bg-teal-500/20 text-teal-300"
+                    : "bg-indigo-500/20 text-indigo-300"
+                }`}
+              >
+                {rule.necessity}
+              </span>
+              <p className="text-slate-300 leading-relaxed">{rule.rationale}</p>
+            </article>
+          );
+        })}
       </div>
     </div>
   );

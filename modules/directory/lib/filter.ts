@@ -1,4 +1,4 @@
-import type { RegionFilter } from "../store/useDirectoryFilters";
+import type { RegionFilter } from "./regions";
 import type { Region } from "../types";
 
 interface FilterInput<T> {

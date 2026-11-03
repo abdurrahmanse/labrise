@@ -11,6 +11,6 @@ export const directoryData = { countries, universities, professors, scholarships
 export const directoryTypes: { type: DirectoryType; title: string; lead: string }[] = [
   { type: "countries", title: "Countries", lead: "Funded routes and what you get." },
   { type: "universities", title: "Universities", lead: "Funding type and typical deadline." },
-  { type: "professors", title: "Professors", lead: "Copy emails only from the official university page." },
+  { type: "professors", title: "Professors", lead: "Save professors, track your outreach and copy emails taken from official pages." },
   { type: "scholarships", title: "Scholarships", lead: "Major fully funded programs, what they cover and who can apply." }
 ];
