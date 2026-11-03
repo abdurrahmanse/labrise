@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getCountryGuide, getCountryGuides } from "@/modules/content/server";
-import { CountryDetailPage } from "@/components/countries/CountryDetailPage";
+import { CountryDetailPage } from "@/modules/countries";
 import { notFoundTitles } from "@/data/text/site";
 
 interface Props {

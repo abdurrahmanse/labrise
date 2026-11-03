@@ -5,7 +5,7 @@ import { Search, HelpCircle, RotateCcw } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 import { TabsContainer, TabItem } from "@/components/ui/Tabs";
-import { FaqAccordionItem } from "@/components/faqs/FaqAccordionItem";
+import { FaqAccordionItem } from "./FaqAccordionItem";
 import { faqsHeaderData } from "@/data/faqs";
 import { filterFaqs, useFaqs, type FAQItem } from "@/modules/content";
 import { legacyText } from "@/data/text/legacy";

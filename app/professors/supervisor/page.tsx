@@ -1,4 +1,4 @@
-import { PROFESSOR_TABS } from "@/components/professors/professorTabs";
+import { PROFESSOR_TABS } from "@/modules/professors";
 import { professorHub, professorSubPages } from "@/data/text/hubPages";
 import { SupervisorNeed } from "@/modules/professors";
 import { RelatedStrip } from "@/shared/components/JourneyHub";

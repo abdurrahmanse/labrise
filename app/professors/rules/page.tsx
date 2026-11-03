@@ -1,5 +1,5 @@
-import { ProfessorOutreachView } from "@/components/professors/ProfessorOutreachView";
-import { PROFESSOR_TABS } from "@/components/professors/professorTabs";
+import { ProfessorOutreachView } from "@/modules/professors";
+import { PROFESSOR_TABS } from "@/modules/professors";
 import { PageShell } from "@/shared/components/PageShell";
 import { buildMetadata } from "@/modules/seo";
 import { navLabels, pageText } from "@/data/text/site";

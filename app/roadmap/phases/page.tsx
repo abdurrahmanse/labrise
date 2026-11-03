@@ -1,4 +1,4 @@
-import { CompleteRoadmapView } from "@/components/roadmap/CompleteRoadmapView";
+import { CompleteRoadmapView } from "@/modules/roadmap";
 import { PageShell } from "@/shared/components/PageShell";
 import { buildMetadata } from "@/modules/seo";
 import { navLabels, pageText } from "@/data/text/site";

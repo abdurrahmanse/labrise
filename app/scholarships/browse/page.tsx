@@ -1,4 +1,4 @@
-import { SCHOLARSHIP_TABS } from "@/components/scholarships/scholarshipTabs";
+import { SCHOLARSHIP_TABS } from "@/modules/scholarships";
 import { scholarshipHub, scholarshipSubPages } from "@/data/text/hubPages";
 import { FinderStats, ScholarshipBrowse } from "@/modules/scholarships";
 import { getScholarshipPage } from "@/modules/scholarships/server";

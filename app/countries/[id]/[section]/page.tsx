@@ -2,8 +2,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getCountryGuide, getCountryGuides } from "@/modules/content/server";
-import { CountryDetailPage } from "@/components/countries/CountryDetailPage";
-import { COUNTRY_SECTIONS, type CountrySection } from "@/components/countries/countrySections";
+import { CountryDetailPage } from "@/modules/countries";
+import { COUNTRY_SECTIONS, type CountrySection } from "@/modules/countries";
 import { buildMetadata } from "@/modules/seo";
 import { notFoundTitles } from "@/data/text/site";
 
