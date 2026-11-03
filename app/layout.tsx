@@ -26,7 +26,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#090d16",
+  themeColor: "#0b0b0c",
 };
 
 export const metadata: Metadata = rootMetadata;
@@ -42,7 +42,7 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`${rajdhani.variable} ${rajdhani.className} ${jetbrainsMono.variable} h-full antialiased dark scroll-smooth`}
     >
-      <body className={`${rajdhani.className} min-h-full flex flex-col bg-[#090d16] text-slate-100 selection:bg-indigo-500/25 selection:text-indigo-200 font-semibold relative`}>
+      <body className={`${rajdhani.className} min-h-full flex flex-col bg-[#0b0b0c] text-slate-100 selection:bg-indigo-500/25 selection:text-indigo-200 font-semibold relative`}>
         <AmbientBackground />
         <Navbar />
         <div className="flex-1 relative z-10">{children}</div>

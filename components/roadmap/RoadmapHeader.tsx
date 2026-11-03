@@ -12,7 +12,7 @@ export function RoadmapHeader() {
   const { title, subtitle } = roadmapControlsData.header;
 
   return (
-    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#0f1422] to-[#090d16] border border-white/10 p-6 sm:p-8 md:p-10 shadow-2xl">
+    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#121214] to-[#0b0b0c] border border-white/10 p-6 sm:p-8 md:p-10 shadow-2xl">
       <RoadmapHeaderGlow />
 
       <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6">

@@ -25,7 +25,7 @@ export function RoadmapControls({
   filteredCount,
 }: RoadmapControlsProps) {
   return (
-    <div className="p-4 sm:p-5 rounded-2xl bg-[#0f1422]/90 border border-white/10 backdrop-blur-xl shadow-2xl space-y-4">
+    <div className="p-4 sm:p-5 rounded-2xl bg-[#121214]/90 border border-white/10 backdrop-blur-xl shadow-2xl space-y-4">
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <RoadmapSearchField
           value={searchQuery}

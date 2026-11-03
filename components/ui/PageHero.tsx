@@ -40,76 +40,76 @@ const THEME_STYLES: Record<
   }
 > = {
   indigo: {
-    badgeContainer: "bg-indigo-950/80 border-indigo-700/60 shadow-indigo-950/50",
-    badgeText: "text-indigo-300",
+    badgeContainer: "bg-white/[0.06] border-white/40 shadow-transparent",
+    badgeText: "text-slate-100",
     radarPing: "bg-indigo-400",
-    radarDot: "bg-indigo-500",
-    gradient: "from-indigo-400 via-cyan-400 to-emerald-400",
-    defaultHighlightIcon: "text-emerald-400",
+    radarDot: "bg-indigo-400",
+    gradient: "from-indigo-400 via-indigo-300 to-white",
+    defaultHighlightIcon: "text-indigo-400",
     spotlight:
-      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(99, 102, 241, 0.3) 0%, rgba(20, 184, 166, 0.18) 45%, transparent 75%)",
-    orbLeft: "bg-indigo-600/20",
-    orbRight: "bg-teal-500/18",
+      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(198, 242, 31, 0.1) 0%, rgba(255, 255, 255, 0.04) 45%, transparent 75%)",
+    orbLeft: "bg-indigo-400/10",
+    orbRight: "bg-white/5",
   },
   cyan: {
-    badgeContainer: "bg-cyan-950/80 border-cyan-700/60 shadow-cyan-950/50",
-    badgeText: "text-cyan-300",
-    radarPing: "bg-cyan-400",
-    radarDot: "bg-cyan-500",
-    gradient: "from-cyan-400 via-blue-400 to-indigo-400",
-    defaultHighlightIcon: "text-cyan-400",
+    badgeContainer: "bg-white/[0.06] border-white/40 shadow-transparent",
+    badgeText: "text-slate-100",
+    radarPing: "bg-indigo-400",
+    radarDot: "bg-indigo-400",
+    gradient: "from-indigo-400 via-indigo-300 to-white",
+    defaultHighlightIcon: "text-indigo-400",
     spotlight:
-      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(56, 189, 248, 0.3) 0%, rgba(99, 102, 241, 0.18) 45%, transparent 75%)",
-    orbLeft: "bg-cyan-500/20",
-    orbRight: "bg-indigo-600/18",
+      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(198, 242, 31, 0.1) 0%, rgba(255, 255, 255, 0.03) 45%, transparent 75%)",
+    orbLeft: "bg-indigo-400/10",
+    orbRight: "bg-white/5",
   },
   purple: {
-    badgeContainer: "bg-purple-950/80 border-purple-700/60 shadow-purple-950/50",
-    badgeText: "text-purple-300",
-    radarPing: "bg-purple-400",
-    radarDot: "bg-purple-500",
-    gradient: "from-purple-400 via-pink-400 to-indigo-400",
-    defaultHighlightIcon: "text-purple-400",
+    badgeContainer: "bg-white/[0.06] border-white/40 shadow-transparent",
+    badgeText: "text-slate-100",
+    radarPing: "bg-indigo-400",
+    radarDot: "bg-indigo-400",
+    gradient: "from-indigo-400 via-indigo-300 to-white",
+    defaultHighlightIcon: "text-indigo-400",
     spotlight:
-      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(168, 85, 247, 0.3) 0%, rgba(99, 102, 241, 0.18) 45%, transparent 75%)",
-    orbLeft: "bg-purple-600/20",
-    orbRight: "bg-pink-500/18",
+      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(198, 242, 31, 0.1) 0%, rgba(198, 242, 31, 0.04) 45%, transparent 75%)",
+    orbLeft: "bg-indigo-400/10",
+    orbRight: "bg-white/5",
   },
   emerald: {
-    badgeContainer: "bg-emerald-950/80 border-emerald-700/60 shadow-emerald-950/50",
-    badgeText: "text-emerald-300",
-    radarPing: "bg-emerald-400",
-    radarDot: "bg-emerald-500",
-    gradient: "from-emerald-400 via-teal-400 to-cyan-400",
-    defaultHighlightIcon: "text-emerald-400",
+    badgeContainer: "bg-white/[0.06] border-white/40 shadow-transparent",
+    badgeText: "text-slate-100",
+    radarPing: "bg-indigo-400",
+    radarDot: "bg-indigo-400",
+    gradient: "from-indigo-400 via-indigo-300 to-white",
+    defaultHighlightIcon: "text-indigo-400",
     spotlight:
-      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(16, 185, 129, 0.3) 0%, rgba(56, 189, 248, 0.18) 45%, transparent 75%)",
-    orbLeft: "bg-emerald-600/20",
-    orbRight: "bg-teal-500/18",
+      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(198, 242, 31, 0.1) 0%, rgba(255, 255, 255, 0.03) 45%, transparent 75%)",
+    orbLeft: "bg-indigo-400/10",
+    orbRight: "bg-white/5",
   },
   amber: {
-    badgeContainer: "bg-amber-950/80 border-amber-700/60 shadow-amber-950/50",
-    badgeText: "text-amber-300",
-    radarPing: "bg-amber-400",
-    radarDot: "bg-amber-500",
-    gradient: "from-amber-400 via-orange-400 to-rose-400",
-    defaultHighlightIcon: "text-amber-400",
+    badgeContainer: "bg-white/[0.06] border-white/40 shadow-transparent",
+    badgeText: "text-slate-100",
+    radarPing: "bg-indigo-400",
+    radarDot: "bg-indigo-400",
+    gradient: "from-indigo-400 via-indigo-300 to-white",
+    defaultHighlightIcon: "text-indigo-400",
     spotlight:
-      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(245, 158, 11, 0.3) 0%, rgba(239, 68, 68, 0.18) 45%, transparent 75%)",
-    orbLeft: "bg-amber-500/20",
-    orbRight: "bg-rose-500/18",
+      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(198, 242, 31, 0.1) 0%, rgba(255, 255, 255, 0.03) 45%, transparent 75%)",
+    orbLeft: "bg-indigo-400/10",
+    orbRight: "bg-white/5",
   },
   blue: {
-    badgeContainer: "bg-blue-950/80 border-blue-700/60 shadow-blue-950/50",
-    badgeText: "text-blue-300",
-    radarPing: "bg-cyan-400",
-    radarDot: "bg-cyan-500",
-    gradient: "from-blue-400 via-cyan-400 to-emerald-400",
-    defaultHighlightIcon: "text-cyan-400",
+    badgeContainer: "bg-white/[0.06] border-white/40 shadow-transparent",
+    badgeText: "text-slate-100",
+    radarPing: "bg-indigo-400",
+    radarDot: "bg-indigo-400",
+    gradient: "from-indigo-400 via-indigo-300 to-white",
+    defaultHighlightIcon: "text-indigo-400",
     spotlight:
-      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(59, 130, 246, 0.3) 0%, rgba(20, 184, 166, 0.18) 45%, transparent 75%)",
-    orbLeft: "bg-blue-600/20",
-    orbRight: "bg-cyan-500/18",
+      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(198, 242, 31, 0.1) 0%, rgba(255, 255, 255, 0.03) 45%, transparent 75%)",
+    orbLeft: "bg-indigo-400/10",
+    orbRight: "bg-white/5",
   },
 };
 
@@ -137,9 +137,9 @@ export function PageHero({
     (badgeIconName ? renderCommonIcon(badgeIconName, "w-3.5 h-3.5 " + styles.badgeText) : null);
 
   return (
-    <section className="relative overflow-hidden pt-12 sm:pt-16 md:pt-20 pb-12 sm:pb-16 border-b border-white/[0.08] bg-[#060913]">
+    <section className="relative overflow-hidden pt-12 sm:pt-16 md:pt-20 pb-12 sm:pb-16 border-b-2 border-white/80 bg-[#0b0b0c]/70 backdrop-blur-sm">
       {/* 0. Top Glowing Horizon Line */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-indigo-400 to-transparent pointer-events-none" />
 
       {/* 1. Overhead Radial Spotlight Beam */}
       <div
@@ -175,7 +175,7 @@ export function PageHero({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         {/* Radar Badge Ribbon */}
         <div
-          className={`inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 rounded-full border text-xs font-semibold uppercase tracking-wider mb-5 sm:mb-6 shadow-[0_0_24px_-4px_rgba(99,102,241,0.35)] backdrop-blur-xl max-w-[calc(100vw-32px)] hover:border-white/30 transition-all duration-200 ${styles.badgeContainer} ${styles.badgeText}`}
+          className={`inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 rounded-none border text-xs font-semibold uppercase tracking-widest mb-5 sm:mb-6 shadow-[3px_3px_0_0_rgba(198,242,31,0.9)] backdrop-blur-xl max-w-[calc(100vw-32px)] hover:border-white/30 transition-all duration-200 ${styles.badgeContainer} ${styles.badgeText}`}
         >
           <span className="relative flex h-2 w-2 shrink-0">
             <span
@@ -220,9 +220,9 @@ export function PageHero({
               return (
                 <div
                   key={h.label}
-                  className="group flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl bg-gradient-to-b from-white/[0.08] to-white/[0.02] border border-white/10 hover:border-white/20 backdrop-blur-md text-slate-200 hover:text-white font-mono text-[11px] sm:text-xs shadow-md shadow-black/25 hover:shadow-indigo-500/10 hover:-translate-y-0.5 transition-all duration-200"
+                  className="group flex items-center gap-2 px-3.5 sm:px-4 py-2 bg-white/[0.05] border border-white/25 hover:border-indigo-400 backdrop-blur-md text-slate-200 hover:text-white font-mono text-[11px] sm:text-xs shadow-[3px_3px_0_0_rgba(0,0,0,0.6)] hover:-translate-y-0.5 transition-all duration-200"
                 >
-                  <span className="w-5 h-5 rounded-md bg-white/[0.06] border border-white/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                  <span className="w-5 h-5 bg-white/[0.06] border border-white/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                     {hIcon}
                   </span>
                   <span className="tracking-wide font-medium">{h.label}</span>

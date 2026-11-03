@@ -12,7 +12,7 @@ export const metadata: Metadata = homeMetadata;
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#090d16] text-slate-100">
+    <main className="min-h-screen bg-[#0b0b0c] text-slate-100">
       {/* 1. Compelling Hero Section with Exact Prompt Copy & CTAs */}
       <HomeHero />
 

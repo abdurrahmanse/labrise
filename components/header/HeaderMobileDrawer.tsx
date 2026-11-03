@@ -30,7 +30,7 @@ export function HeaderMobileDrawer({
 
       {/* Drawer panel */}
       <aside
-        className={`fixed top-0 right-0 bottom-0 z-50 w-[300px] max-w-[85vw] flex flex-col lg:hidden bg-[#090d16] border-l border-white/[0.08] shadow-2xl transition-transform duration-300 ease-out ${
+        className={`fixed top-0 right-0 bottom-0 z-50 w-[300px] max-w-[85vw] flex flex-col lg:hidden bg-[#0b0b0c] border-l border-white/[0.08] shadow-2xl transition-transform duration-300 ease-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-label="Mobile Navigation Drawer"
@@ -40,7 +40,7 @@ export function HeaderMobileDrawer({
           className="absolute top-0 inset-x-0 h-40 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 120% 60% at 80% 0%, rgba(99,102,241,0.18) 0%, transparent 70%)",
+              "radial-gradient(ellipse 120% 60% at 80% 0%, rgba(198, 242, 31,0.18) 0%, transparent 70%)",
           }}
         />
 
@@ -98,7 +98,7 @@ export function HeaderMobileDrawer({
                   </span>
                   <span className="flex-1 text-sm sm:text-[15px] font-bold">{link.label}</span>
                   {link.badge && (
-                    <span className="text-[10px] font-mono font-bold uppercase px-1.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                    <span className="text-[10px] font-mono font-bold uppercase px-1.5 py-0.5 rounded-none bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
                       {link.badge}
                     </span>
                   )}

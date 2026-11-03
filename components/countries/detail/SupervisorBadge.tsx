@@ -18,7 +18,7 @@ export function SupervisorBadge({ requirement }: SupervisorBadgeProps) {
 
   return (
     <span
-      className={`inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-mono font-semibold border ${color}`}
+      className={`inline-flex items-center px-2.5 py-1 rounded-none text-[11px] font-mono font-semibold border ${color}`}
     >
       {requirement}
     </span>

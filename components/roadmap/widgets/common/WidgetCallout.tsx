@@ -81,7 +81,7 @@ const CALLOUT_STYLES: Record<
     defaultIcon: <Sparkles className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
   },
   neutral: {
-    container: "bg-[#090d16] border-white/5 text-slate-400",
+    container: "bg-[#0b0b0c] border-white/5 text-slate-400",
     titleColor: "text-slate-200",
     defaultIcon: <Sparkles className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
   }

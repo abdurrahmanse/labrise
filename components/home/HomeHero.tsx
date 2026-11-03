@@ -9,7 +9,7 @@ export function HomeHero() {
   const { badge, title, titleGradient, description, primaryCta, secondaryCta, valueBadges } = homeHeroData;
 
   return (
-    <section className="relative pt-12 pb-16 sm:pt-16 sm:pb-20 md:pt-24 md:pb-28 overflow-hidden border-b border-white/[0.08] bg-[#060913]">
+    <section className="relative pt-12 pb-16 sm:pt-16 sm:pb-20 md:pt-24 md:pb-28 overflow-hidden border-b border-white/[0.08] bg-[#070708]">
       {/* 0. Top Glowing Horizon Line */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent pointer-events-none" />
 
@@ -18,7 +18,7 @@ export function HomeHero() {
         className="absolute top-0 inset-x-0 h-[560px] pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(99, 102, 241, 0.3) 0%, rgba(20, 184, 166, 0.18) 45%, transparent 75%)",
+            "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(198, 242, 31, 0.1) 0%, rgba(255, 255, 255, 0.04) 45%, transparent 75%)",
         }}
       />
 
@@ -44,7 +44,7 @@ export function HomeHero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto space-y-5 sm:space-y-6">
           {/* Top badge */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/80 border border-indigo-500/40 text-indigo-300 text-[11px] sm:text-xs font-mono font-medium shadow-[0_0_24px_-4px_rgba(99,102,241,0.35)] backdrop-blur-xl max-w-full overflow-hidden hover:border-indigo-400/60 transition-colors">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-none bg-slate-900/80 border border-indigo-500/40 text-indigo-300 text-[11px] sm:text-xs font-mono font-medium shadow-[3px_3px_0_0_rgba(198,242,31,0.9)] backdrop-blur-xl max-w-full overflow-hidden hover:border-indigo-400/60 transition-colors">
             <span className="flex h-2 w-2 relative shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500" />

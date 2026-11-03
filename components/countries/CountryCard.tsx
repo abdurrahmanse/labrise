@@ -36,7 +36,7 @@ export function CountryCard({ country }: CountryCardProps) {
             <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
               {country.name}
             </h3>
-            <span className="inline-flex items-center gap-1 text-xs font-mono font-medium px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-slate-300">
+            <span className="inline-flex items-center gap-1 text-xs font-mono font-medium px-2 py-0.5 rounded-none bg-white/5 border border-white/10 text-slate-300">
               <Globe2 className="w-3 h-3 text-teal-400/80" />
               <span>{country.region} · {country.code}</span>
             </span>
@@ -68,7 +68,7 @@ export function CountryCard({ country }: CountryCardProps) {
           {/* Stats row */}
           <div className="flex flex-wrap items-center gap-3 pt-1">
             <span
-              className={`inline-flex items-center gap-1 text-[10px] font-mono font-semibold px-2.5 py-0.5 rounded-full border ${supervisorColor}`}
+              className={`inline-flex items-center gap-1 text-[10px] font-mono font-semibold px-2.5 py-0.5 rounded-none border ${supervisorColor}`}
             >
               <Users className="w-3 h-3 shrink-0" />
               <span>{country.supervisorContactRequirement}</span>
@@ -85,7 +85,7 @@ export function CountryCard({ country }: CountryCardProps) {
               </span>
             )}
             {country.assistantshipsAvailable && (
-              <span className="inline-flex items-center gap-1 text-[10px] font-mono text-emerald-400 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+              <span className="inline-flex items-center gap-1 text-[10px] font-mono text-emerald-400 px-2 py-0.5 rounded-none bg-emerald-500/10 border border-emerald-500/20">
                 <Briefcase className="w-3 h-3 shrink-0" />
                 <span>{card.assistantshipsBadge}</span>
               </span>

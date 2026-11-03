@@ -76,7 +76,7 @@ export function StepDecisionMatrixWidget() {
               </h4>
             </div>
 
-            <div className="p-3 rounded-xl bg-[#090d16] border border-white/10 text-right">
+            <div className="p-3 rounded-xl bg-[#0b0b0c] border border-white/10 text-right">
               <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">
                 {decisionMatrixMeta.netFinancialBalanceLabel}
               </span>
@@ -134,7 +134,7 @@ export function StepDecisionMatrixWidget() {
 
         {/* Verdict & Faculty Priority Box */}
         <div className="space-y-3">
-          <div className="p-3.5 rounded-xl bg-[#090d16] border border-white/5 text-xs text-slate-300">
+          <div className="p-3.5 rounded-xl bg-[#0b0b0c] border border-white/5 text-xs text-slate-300">
             <div className="font-semibold text-white mb-1 flex items-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
               {decisionMatrixMeta.evaluationHeader}
@@ -161,7 +161,7 @@ export function StepDecisionMatrixWidget() {
           {selectedRoute.targetRegions.map((region, i) => (
             <span
               key={i}
-              className="text-xs font-mono px-2.5 py-1 rounded-lg bg-[#090d16] text-slate-200 border border-white/10"
+              className="text-xs font-mono px-2.5 py-1 rounded-lg bg-[#0b0b0c] text-slate-200 border border-white/10"
             >
               {region}
             </span>
@@ -170,7 +170,7 @@ export function StepDecisionMatrixWidget() {
       </WidgetSectionCard>
 
       {/* Quick Summary Actionable Advice */}
-      <div className="mt-4 p-3.5 rounded-xl bg-[#0f1422] border border-white/5 flex items-center justify-between text-xs text-slate-400">
+      <div className="mt-4 p-3.5 rounded-xl bg-[#121214] border border-white/5 flex items-center justify-between text-xs text-slate-400">
         <span className="text-slate-300 font-medium">
           {decisionMatrixMeta.decisionRuleFooter.rule}
         </span>

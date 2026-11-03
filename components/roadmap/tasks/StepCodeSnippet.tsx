@@ -10,8 +10,8 @@ export interface StepCodeSnippetProps {
  */
 export function StepCodeSnippet({ snippet }: StepCodeSnippetProps) {
   return (
-    <div className="my-5 rounded-xl border border-white/10 bg-[#060910] overflow-hidden">
-      <div className="px-4 py-2 bg-[#0f1422] border-b border-white/10 flex items-center justify-between">
+    <div className="my-5 rounded-xl border border-white/10 bg-[#070708] overflow-hidden">
+      <div className="px-4 py-2 bg-[#121214] border-b border-white/10 flex items-center justify-between">
         <span className="text-xs font-mono text-slate-300">
           {snippet.caption}
         </span>

@@ -55,7 +55,7 @@ async function PhaseDetailContent({ params }: Props) {
 
 export default function PhaseDetailRoute({ params }: Props) {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#090d16] animate-pulse" />}>
+    <Suspense fallback={<div className="min-h-screen bg-[#0b0b0c] animate-pulse" />}>
       <PhaseDetailContent params={params} />
     </Suspense>
   );

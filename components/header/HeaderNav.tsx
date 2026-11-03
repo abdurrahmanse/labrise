@@ -34,7 +34,7 @@ export function HeaderNav({ pathname }: HeaderNavProps) {
             />
             <span>{link.label}</span>
             {link.badge && (
-              <span className="text-[10px] font-mono font-bold uppercase px-1.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+              <span className="text-[10px] font-mono font-bold uppercase px-1.5 py-0.5 rounded-none bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
                 {link.badge}
               </span>
             )}

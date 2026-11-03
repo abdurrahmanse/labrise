@@ -28,7 +28,7 @@ export function PhaseChecklistSection({
 
   return (
     <section id="checklist" className="scroll-mt-24 space-y-6">
-      <div className="p-6 sm:p-8 rounded-2xl bg-[#0f1422] border border-white/10 shadow-2xl space-y-6">
+      <div className="p-6 sm:p-8 rounded-2xl bg-[#121214] border border-white/10 shadow-2xl space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
           <div>
             <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-teal-400 block mb-1">
@@ -45,7 +45,7 @@ export function PhaseChecklistSection({
             <span className="text-xs font-mono font-bold text-slate-300">
               {completedChecks} {checklistUi.ofSeparator} {totalChecks} {checklistUi.verifiedSuffix}
             </span>
-            <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-teal-500/20 text-teal-300 border border-teal-500/40">
+            <span className="px-3 py-1 rounded-none text-xs font-mono font-bold bg-teal-500/20 text-teal-300 border border-teal-500/40">
               {progressPercent}% {checklistUi.completeSuffix}
             </span>
           </div>

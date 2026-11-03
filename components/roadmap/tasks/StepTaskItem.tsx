@@ -21,7 +21,7 @@ export function StepTaskItem({ item, isChecked, onToggle }: StepTaskItemProps) {
       className={`p-3.5 sm:p-4 rounded-xl border text-xs sm:text-sm cursor-pointer transition-all flex items-start gap-3.5 select-none ${
         isChecked
           ? "bg-emerald-950/25 border-emerald-500/40 text-slate-200 line-through opacity-85 shadow-sm"
-          : "bg-[#090d16] border-white/5 text-slate-300 hover:border-white/20 hover:bg-[#0c111e]"
+          : "bg-[#0b0b0c] border-white/5 text-slate-300 hover:border-white/20 hover:bg-[#0d0d0f]"
       }`}
     >
       <input

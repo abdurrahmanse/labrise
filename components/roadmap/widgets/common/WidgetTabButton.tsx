@@ -62,7 +62,7 @@ export function WidgetTabButton({
         className={`px-3 py-2 rounded-xl text-xs font-mono font-medium transition-all whitespace-nowrap cursor-pointer flex items-center gap-2 border ${
           isActive
             ? `${styles.active}`
-            : "bg-[#0f1422] text-slate-400 border-white/5 hover:border-white/10 hover:text-slate-200"
+            : "bg-[#121214] text-slate-400 border-white/5 hover:border-white/10 hover:text-slate-200"
         } ${className}`}
       >
         {icon}
@@ -77,7 +77,7 @@ export function WidgetTabButton({
       className={`p-3 sm:p-3.5 rounded-xl border text-left transition-all cursor-pointer relative ${
         isActive
           ? styles.active
-          : "bg-[#0f1422] border-white/5 hover:border-white/15 text-slate-400"
+          : "bg-[#121214] border-white/5 hover:border-white/15 text-slate-400"
       } ${className}`}
     >
       {(topLabel || badge) && (

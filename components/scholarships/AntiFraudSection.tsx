@@ -11,7 +11,7 @@ export function AntiFraudSection() {
   return (
     <div className="p-6 sm:p-8 rounded-2xl bg-amber-950/20 border border-amber-500/20 space-y-4">
       <div className="flex items-center gap-2.5">
-        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase bg-amber-500/20 text-amber-300 border border-amber-500/30">
+        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-none text-[10px] font-mono font-bold uppercase bg-amber-500/20 text-amber-300 border border-amber-500/30">
           <ShieldAlert className="w-3.5 h-3.5" />
           <span>{fraudBadge}</span>
         </span>

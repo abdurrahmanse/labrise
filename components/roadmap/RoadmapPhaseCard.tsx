@@ -17,7 +17,7 @@ export function RoadmapPhaseCard({ phase }: RoadmapPhaseCardProps) {
   return (
     <article
       id={phase.id}
-      className="scroll-mt-24 p-5 sm:p-7 rounded-2xl bg-[#0f1422] border border-white/10 hover:border-teal-500/30 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-teal-950/20 flex flex-col justify-between group space-y-6"
+      className="scroll-mt-24 p-5 sm:p-7 rounded-2xl bg-[#121214] border border-white/10 hover:border-teal-500/30 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-teal-950/20 flex flex-col justify-between group space-y-6"
     >
       <PhaseCardHeader phase={phase} />
       <PhaseStrategicObjective what={phase.what} />

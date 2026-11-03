@@ -46,7 +46,7 @@ async function LevelDetailContent({ params }: Props) {
   const levelSteps = stepsData.filter((step) => level.stepIds.includes(step.id));
 
   return (
-    <main className="min-h-screen bg-[#090d16] text-slate-100 pb-20">
+    <main className="min-h-screen bg-[#0b0b0c] text-slate-100 pb-20">
       <LevelHero level={level} />
       <LevelInteractiveTracker level={level} />
       <LevelTasksSection level={level} levelSteps={levelSteps} />
@@ -57,7 +57,7 @@ async function LevelDetailContent({ params }: Props) {
 
 export default function LevelDetailRoute({ params }: Props) {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#090d16] animate-pulse" />}>
+    <Suspense fallback={<div className="min-h-screen bg-[#0b0b0c] animate-pulse" />}>
       <LevelDetailContent params={params} />
     </Suspense>
   );

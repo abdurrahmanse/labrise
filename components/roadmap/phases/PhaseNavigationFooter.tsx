@@ -22,7 +22,7 @@ export function PhaseNavigationFooter({
         {prevPhase ? (
           <Link
             href={`/roadmap/phases/${prevPhase.slug}`}
-            className="w-full sm:w-auto p-4 rounded-xl bg-[#0f1422] hover:bg-[#161d30] border border-white/10 text-slate-300 hover:text-white transition-all flex items-center gap-3 cursor-pointer group"
+            className="w-full sm:w-auto p-4 rounded-xl bg-[#121214] hover:bg-[#1a1a1d] border border-white/10 text-slate-300 hover:text-white transition-all flex items-center gap-3 cursor-pointer group"
           >
             <ChevronLeft className="w-5 h-5 text-teal-400 group-hover:-translate-x-1 transition-transform shrink-0" />
             <div className="text-left">
@@ -38,7 +38,7 @@ export function PhaseNavigationFooter({
         ) : (
           <Link
             href="/roadmap"
-            className="w-full sm:w-auto p-4 rounded-xl bg-[#0f1422] hover:bg-[#161d30] border border-white/10 text-slate-300 hover:text-white transition-all flex items-center gap-3 cursor-pointer group"
+            className="w-full sm:w-auto p-4 rounded-xl bg-[#121214] hover:bg-[#1a1a1d] border border-white/10 text-slate-300 hover:text-white transition-all flex items-center gap-3 cursor-pointer group"
           >
             <ChevronLeft className="w-5 h-5 text-teal-400 group-hover:-translate-x-1 transition-transform shrink-0" />
             <div className="text-left">

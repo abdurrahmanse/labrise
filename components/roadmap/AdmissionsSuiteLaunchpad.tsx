@@ -23,7 +23,7 @@ export function AdmissionsSuiteLaunchpad() {
 
   return (
     <section className="pt-12 border-t border-white/10">
-      <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[#0f1422] to-[#090d16] border border-white/10 shadow-2xl space-y-6">
+      <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[#121214] to-[#0b0b0c] border border-white/10 shadow-2xl space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-teal-400 block mb-1">

@@ -22,12 +22,12 @@ export function Badge({
   shimmer = false
 }: BadgeProps) {
   const variantStyles = {
-    indigo: "bg-indigo-950/70 text-indigo-300 border-indigo-700/60 shadow-indigo-950/50",
-    cyan: "bg-cyan-950/70 text-cyan-300 border-cyan-700/60 shadow-cyan-950/50",
-    teal: "bg-teal-950/70 text-teal-300 border-teal-700/60 shadow-teal-950/50",
+    indigo: "bg-indigo-400/10 text-indigo-300 border-indigo-400/60 shadow-transparent",
+    cyan: "bg-white/[0.06] text-slate-100 border-white/40 shadow-transparent",
+    teal: "bg-white/[0.06] text-slate-100 border-white/40 shadow-transparent",
     emerald: "bg-emerald-950/70 text-emerald-300 border-emerald-700/60 shadow-emerald-950/50",
     amber: "bg-amber-950/70 text-amber-300 border-amber-700/60 shadow-amber-950/50",
-    purple: "bg-purple-950/70 text-purple-300 border-purple-700/60 shadow-purple-950/50",
+    purple: "bg-indigo-400/10 text-indigo-300 border-indigo-400/60 shadow-transparent",
     rose: "bg-rose-950/70 text-rose-300 border-rose-700/60 shadow-rose-950/50",
     slate: "bg-slate-900/80 text-slate-300 border-slate-700/60 shadow-slate-950/50"
   };
@@ -52,7 +52,7 @@ export function Badge({
 
   return (
     <span
-      className={`relative inline-flex items-center rounded-full border shadow-sm transition-all duration-200 overflow-hidden ${variantStyles[variant]} ${sizeStyles[size]} ${shimmerClass} ${className}`}
+      className={`relative inline-flex items-center rounded-none border uppercase tracking-wider backdrop-blur-sm transition-colors duration-150 overflow-hidden ${variantStyles[variant]} ${sizeStyles[size]} ${shimmerClass} ${className}`}
     >
       {pulsingDot && (
         <span className="relative flex h-2 w-2 mr-0.5 shrink-0">

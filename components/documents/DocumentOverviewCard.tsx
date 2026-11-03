@@ -23,7 +23,7 @@ export function DocumentOverviewCard({ document }: DocumentOverviewCardProps) {
             {document.name}
           </h3>
         </div>
-        <span className="inline-flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 self-start sm:self-center">
+        <span className="inline-flex items-center gap-1.5 text-xs font-mono px-3 py-1 rounded-none bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 self-start sm:self-center">
           <GraduationCap className="w-3.5 h-3.5" />
           <span>{document.degreeLevel}</span>
         </span>

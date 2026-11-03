@@ -31,7 +31,7 @@ export function FeaturedCountryCard({ country }: FeaturedCountryCardProps) {
               </span>
             </div>
           </div>
-          <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-slate-300">
+          <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded-none bg-white/5 border border-white/10 text-slate-300">
             {country.code}
           </span>
         </div>

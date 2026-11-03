@@ -16,7 +16,7 @@ export interface TabsContainerProps {
 }
 
 const CONTAINER_VARIANTS: Record<TabVariant, string> = {
-  segmented: "p-1.5 rounded-2xl bg-[#090d16] border border-white/10 flex items-center gap-1.5 overflow-x-auto scrollbar-none",
+  segmented: "p-1.5 rounded-2xl bg-[#0b0b0c] border border-white/10 flex items-center gap-1.5 overflow-x-auto scrollbar-none",
   pills: "flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none",
   cards: "grid gap-2.5",
   minimal: "flex items-center gap-1 border-b border-white/10"
@@ -72,15 +72,15 @@ export interface TabItemProps {
 }
 
 const ACTIVE_THEMES: Record<TabTheme, string> = {
-  indigo: "bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 border-indigo-400/50",
-  cyan: "bg-cyan-600 text-white shadow-lg shadow-cyan-600/30 border-cyan-400/50",
-  emerald: "bg-emerald-600 text-white shadow-lg shadow-emerald-600/30 border-emerald-400/50",
-  amber: "bg-amber-600 text-white shadow-lg shadow-amber-600/30 border-amber-400/50",
-  purple: "bg-purple-600 text-white shadow-lg shadow-purple-600/30 border-purple-400/50",
-  rose: "bg-rose-600 text-white shadow-lg shadow-rose-600/30 border-rose-400/50"
+  indigo: "bg-indigo-400 text-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] border-black",
+  cyan: "bg-white text-black shadow-[3px_3px_0_0_rgba(198,242,31,0.9)] border-black",
+  emerald: "bg-emerald-500 text-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] border-black",
+  amber: "bg-amber-400 text-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] border-black",
+  purple: "bg-indigo-400 text-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] border-black",
+  rose: "bg-rose-500 text-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] border-black"
 };
 
-const INACTIVE_STYLES = "bg-[#090d16] text-slate-400 hover:text-white border-white/5 hover:border-white/15 hover:bg-white/[0.04]";
+const INACTIVE_STYLES = "bg-[#0b0b0c] text-slate-400 hover:text-white border-white/15 hover:border-white/60 hover:bg-white/[0.06] backdrop-blur-sm";
 
 /**
  * Universal decoupled Tab Item / Tab Button component following DRY principles.

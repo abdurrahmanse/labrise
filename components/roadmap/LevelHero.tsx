@@ -20,7 +20,7 @@ export function LevelHero({ level }: LevelHeroProps) {
   const { hero } = levelDetailUiData;
 
   return (
-    <section className="relative overflow-hidden pt-28 pb-16 border-b border-white/[0.08] bg-[#060913]">
+    <section className="relative overflow-hidden pt-28 pb-16 border-b border-white/[0.08] bg-[#070708]">
       {/* 0. Top Glowing Horizon Line */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent pointer-events-none" />
 
@@ -29,7 +29,7 @@ export function LevelHero({ level }: LevelHeroProps) {
         className="absolute top-0 inset-x-0 h-[500px] pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(99, 102, 241, 0.3) 0%, rgba(20, 184, 166, 0.18) 45%, transparent 75%)",
+            "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(198, 242, 31, 0.1) 0%, rgba(255, 255, 255, 0.04) 45%, transparent 75%)",
         }}
       />
 
@@ -57,7 +57,7 @@ export function LevelHero({ level }: LevelHeroProps) {
         <div className="mb-6">
           <Link
             href="/roadmap"
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-white/10 hover:border-indigo-400/50 text-xs font-mono font-medium text-slate-300 hover:text-white transition-all backdrop-blur-md shadow-md group cursor-pointer"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-slate-900/80 border border-white/10 hover:border-indigo-400/50 text-xs font-mono font-medium text-slate-300 hover:text-white transition-all backdrop-blur-md shadow-md group cursor-pointer"
           >
             <ChevronLeft className="w-4 h-4 text-indigo-400 group-hover:-translate-x-0.5 transition-transform" />
             <span>{hero.breadcrumbOverview}</span>
@@ -68,7 +68,7 @@ export function LevelHero({ level }: LevelHeroProps) {
 
         {/* Level Badge, Timeline, Difficulty */}
         <div className="flex flex-wrap items-center gap-3 mb-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-indigo-500/40 text-white text-xs font-mono font-bold shadow-[0_0_20px_-3px_rgba(99,102,241,0.35)] backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none bg-slate-900/80 border border-indigo-500/40 text-white text-xs font-mono font-bold shadow-[3px_3px_0_0_rgba(198,242,31,0.9)] backdrop-blur-md">
             <span className="relative flex h-2 w-2 shrink-0">
               <span className="animate-radar-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
@@ -81,7 +81,7 @@ export function LevelHero({ level }: LevelHeroProps) {
             {level.difficulty} {hero.difficultySuffix}
           </Badge>
 
-          <span className="text-xs font-mono text-slate-300 flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-sm">
+          <span className="text-xs font-mono text-slate-300 flex items-center gap-1.5 px-3 py-1 rounded-none bg-white/[0.05] border border-white/10 backdrop-blur-sm">
             <Clock className="w-3.5 h-3.5 text-slate-400" />
             <span>{level.timeline}</span>
           </span>

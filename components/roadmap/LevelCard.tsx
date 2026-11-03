@@ -22,13 +22,13 @@ export function LevelCard({ level }: LevelCardProps) {
   return (
     <GlassCard
       borderGlow={level.accentColor}
-      className="p-6 sm:p-8 bg-[#0f1422] border border-white/10 flex flex-col justify-between transition-all duration-300 hover:shadow-2xl"
+      className="p-6 sm:p-8 bg-[#121214] border border-white/10 flex flex-col justify-between transition-all duration-300 hover:shadow-2xl"
     >
       <div>
         {/* Header Ribbon: Level Badge, Timeline, Difficulty */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-white/10 mb-5">
           <div className="flex items-center gap-3">
-            <div className="p-3 rounded-2xl bg-[#090d16] border border-white/10 shrink-0 shadow-md">
+            <div className="p-3 rounded-2xl bg-[#0b0b0c] border border-white/10 shrink-0 shadow-md">
               {getLevelIcon(level.iconName)}
             </div>
             <div>
@@ -71,7 +71,7 @@ export function LevelCard({ level }: LevelCardProps) {
             {level.coreCompetencies.map((comp) => (
               <span
                 key={comp}
-                className="text-[11px] px-2.5 py-1 rounded-lg bg-[#090d16] text-slate-300 border border-white/5 font-sans"
+                className="text-[11px] px-2.5 py-1 rounded-lg bg-[#0b0b0c] text-slate-300 border border-white/5 font-sans"
               >
                 {comp}
               </span>
@@ -80,7 +80,7 @@ export function LevelCard({ level }: LevelCardProps) {
         </div>
 
         {/* Milestone Deliverable Box */}
-        <div className="p-4 rounded-xl bg-[#090d16] border border-white/10 mb-6 flex items-start gap-3">
+        <div className="p-4 rounded-xl bg-[#0b0b0c] border border-white/10 mb-6 flex items-start gap-3">
           <Award className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
           <div className="min-w-0 flex-1">
             <span className="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-wider block">

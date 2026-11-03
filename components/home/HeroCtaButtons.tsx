@@ -32,7 +32,7 @@ export function HeroCtaButtons({ primaryCta, secondaryCta }: HeroCtaButtonsProps
       {/* Secondary Action Button (Explore Countries) */}
       <Link
         href={secondaryCta.href}
-        className="group relative inline-flex items-center justify-center gap-3.5 px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl font-heading font-bold text-base sm:text-lg text-slate-100 bg-[#0f1422]/90 hover:bg-[#141b2c] backdrop-blur-xl border border-white/15 hover:border-teal-400/50 shadow-lg shadow-black/40 hover:shadow-teal-500/15 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+        className="group relative inline-flex items-center justify-center gap-3.5 px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl font-heading font-bold text-base sm:text-lg text-slate-100 bg-[#121214]/90 hover:bg-[#18181b] backdrop-blur-xl border border-white/15 hover:border-teal-400/50 shadow-lg shadow-black/40 hover:shadow-teal-500/15 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
       >
         <span className="w-8 h-8 rounded-lg bg-teal-500/15 border border-teal-500/30 flex items-center justify-center shrink-0 text-teal-300 group-hover:bg-teal-500/25 group-hover:scale-105 transition-all duration-200">
           <Globe2 className="w-4 h-4" />

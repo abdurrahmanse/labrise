@@ -49,7 +49,7 @@ export function FundingPillarCard({ pillar }: FundingPillarCardProps) {
               <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">{pillar.title}</h3>
             </div>
           </div>
-          <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium border ${badgeClass}`}>
+          <span className={`px-2.5 py-0.5 rounded-none text-[10px] font-mono font-medium border ${badgeClass}`}>
             {pillar.badge}
           </span>
         </div>

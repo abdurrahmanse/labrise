@@ -16,7 +16,7 @@ export function StepProgressBar({
   progressPercent,
 }: StepProgressBarProps) {
   return (
-    <div className="p-3.5 sm:p-4 rounded-xl bg-[#090d16] border border-white/10 mb-5 space-y-2.5">
+    <div className="p-3.5 sm:p-4 rounded-xl bg-[#0b0b0c] border border-white/10 mb-5 space-y-2.5">
       <div className="flex items-center justify-between text-xs">
         <div className="flex items-center gap-2">
           <Layers className="w-4 h-4 text-indigo-400" />
@@ -29,7 +29,7 @@ export function StepProgressBar({
             {completedCount} of {totalCount} Complete
           </span>
           {progressPercent === 100 ? (
-            <span className="text-[10px] font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-2.5 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
+            <span className="text-[10px] font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-2.5 py-0.5 rounded-none flex items-center gap-1 shadow-sm">
               <Check className="w-3 h-3 text-emerald-400" />
               Step Certified!
             </span>

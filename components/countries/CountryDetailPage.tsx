@@ -24,7 +24,7 @@ interface CountryDetailPageProps {
 
 export function CountryDetailPage({ country }: CountryDetailPageProps) {
   return (
-    <main className="min-h-screen bg-[#090d16] text-slate-100">
+    <main className="min-h-screen bg-[#0b0b0c] text-slate-100">
       {/* ── 1. Hero & Navigation ── */}
       <CountryHeroSection country={country} />
 

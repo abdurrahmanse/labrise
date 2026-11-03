@@ -24,9 +24,9 @@ export default function RoadmapPage() {
   const { pageHero } = roadmapUiData;
 
   return (
-    <main className="min-h-screen bg-[#090d16] text-slate-100 pb-20">
+    <main className="min-h-screen bg-[#0b0b0c] text-slate-100 pb-20">
       {/* Dynamic Ambient Background Glow */}
-      <div className="relative overflow-hidden pt-28 pb-14 border-b border-white/[0.08] bg-[#060913]">
+      <div className="relative overflow-hidden pt-28 pb-14 border-b border-white/[0.08] bg-[#070708]">
         {/* 0. Top Glowing Horizon Line */}
         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent pointer-events-none" />
 
@@ -35,7 +35,7 @@ export default function RoadmapPage() {
           className="absolute top-0 inset-x-0 h-[500px] pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(99, 102, 241, 0.3) 0%, rgba(20, 184, 166, 0.18) 45%, transparent 75%)",
+              "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(198, 242, 31, 0.1) 0%, rgba(255, 255, 255, 0.04) 45%, transparent 75%)",
           }}
         />
 
@@ -61,12 +61,12 @@ export default function RoadmapPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
           {/* Top Pill Badges */}
           <div className="flex flex-wrap items-center gap-2.5">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/80 border border-indigo-500/40 text-indigo-300 text-xs font-mono font-bold shadow-[0_0_20px_-3px_rgba(99,102,241,0.35)] backdrop-blur-md">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none bg-slate-900/80 border border-indigo-500/40 text-indigo-300 text-xs font-mono font-bold shadow-[3px_3px_0_0_rgba(198,242,31,0.9)] backdrop-blur-md">
               <Sparkles className="w-3.5 h-3.5 text-teal-400" />
               <span>{pageHero.badge}</span>
             </span>
 
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-slate-300 text-xs font-mono backdrop-blur-md">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-white/[0.05] border border-white/10 text-slate-300 text-xs font-mono backdrop-blur-md">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
               <span>{pageHero.standardBadge}</span>
             </span>

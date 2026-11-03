@@ -43,7 +43,7 @@ export function SupervisorNecessityTable() {
                   <td className="p-4 font-mono text-slate-300 whitespace-nowrap">{rule.degreeLevel}</td>
                   <td className="p-4 whitespace-nowrap">
                     <span
-                      className={`px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase border ${
+                      className={`px-2.5 py-1 rounded-none text-[10px] font-mono font-bold uppercase border ${
                         isStrict
                           ? "bg-amber-500/20 text-amber-300 border-amber-500/30"
                           : isRecommended

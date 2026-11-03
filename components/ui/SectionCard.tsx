@@ -27,20 +27,20 @@ export interface SectionCardProps {
 }
 
 const GLOW_CLASSES: Record<SectionCardGlow, string> = {
-  none: "border-white/10 hover:border-white/20",
-  indigo: "border-indigo-500/20 hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/10",
-  cyan: "border-cyan-500/20 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10",
-  emerald: "border-emerald-500/20 hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-500/10",
-  amber: "border-amber-500/20 hover:border-amber-500/50 hover:shadow-lg hover:shadow-amber-500/10",
-  purple: "border-purple-500/20 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/10",
-  rose: "border-rose-500/20 hover:border-rose-500/50 hover:shadow-lg hover:shadow-rose-500/10"
+  none: "border-white/20 hover:border-white/60",
+  indigo: "border-indigo-400/40 hover:border-indigo-400 hover:shadow-[5px_5px_0_0_#c6f21f]",
+  cyan: "border-white/30 hover:border-white hover:shadow-[5px_5px_0_0_rgba(255,255,255,0.85)]",
+  emerald: "border-emerald-500/40 hover:border-emerald-400 hover:shadow-[5px_5px_0_0_#10b981]",
+  amber: "border-amber-500/40 hover:border-amber-400 hover:shadow-[5px_5px_0_0_#f59e0b]",
+  purple: "border-indigo-400/40 hover:border-indigo-400 hover:shadow-[5px_5px_0_0_#c6f21f]",
+  rose: "border-rose-500/40 hover:border-rose-400 hover:shadow-[5px_5px_0_0_#f43f5e]"
 };
 
 const VARIANT_CLASSES: Record<SectionCardVariant, string> = {
-  default: "bg-[#0f1422] rounded-2xl border shadow-xl shadow-black/30",
-  nested: "bg-[#090d16] rounded-xl border border-white/5",
-  bordered: "bg-[#0f1422]/60 backdrop-blur-md rounded-2xl border border-white/15 shadow-2xl",
-  subtle: "bg-white/[0.02] rounded-xl border border-white/5"
+  default: "bg-[#121214]/70 backdrop-blur-xl border shadow-[4px_4px_0_0_rgba(0,0,0,0.6)]",
+  nested: "bg-[#0b0b0c]/80 border border-white/10",
+  bordered: "bg-[#121214]/55 backdrop-blur-xl backdrop-saturate-150 border-2 border-white/40 shadow-[5px_5px_0_0_rgba(255,255,255,0.15)]",
+  subtle: "bg-white/[0.03] backdrop-blur-sm border border-white/10"
 };
 
 /**
@@ -75,8 +75,8 @@ export function SectionCard({
       onClick={onClick}
       className={`relative overflow-hidden transition-all duration-300 ${VARIANT_CLASSES[variant]} ${glowClass} ${className}`}
     >
-      {/* Top subtle highlight */}
-      <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent pointer-events-none" />
+      {/* Glass edge highlight */}
+      <div className="absolute top-0 inset-x-0 h-px bg-white/20 pointer-events-none" />
 
       {/* Individual Card Header */}
       <CardHeader

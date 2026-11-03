@@ -12,7 +12,7 @@ export interface PhaseDetailHeroProps {
 
 export function PhaseDetailHero({ phase }: PhaseDetailHeroProps) {
   return (
-    <section className="relative overflow-hidden pt-28 pb-14 border-b border-white/[0.08] bg-[#060913]">
+    <section className="relative overflow-hidden pt-28 pb-14 border-b border-white/[0.08] bg-[#070708]">
       {/* 0. Top Glowing Horizon Line */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent pointer-events-none" />
 
@@ -21,7 +21,7 @@ export function PhaseDetailHero({ phase }: PhaseDetailHeroProps) {
         className="absolute top-0 inset-x-0 h-[500px] pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(99, 102, 241, 0.3) 0%, rgba(20, 184, 166, 0.18) 45%, transparent 75%)",
+            "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(198, 242, 31, 0.1) 0%, rgba(255, 255, 255, 0.04) 45%, transparent 75%)",
         }}
       />
 

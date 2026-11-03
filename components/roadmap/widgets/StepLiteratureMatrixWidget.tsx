@@ -79,7 +79,7 @@ export function StepLiteratureMatrixWidget() {
             {selectedDomain.hotProblems.map((prob, i) => (
               <div
                 key={i}
-                className="p-3 rounded-lg bg-[#090d16] border border-white/5 text-xs text-slate-200 flex items-start gap-2.5"
+                className="p-3 rounded-lg bg-[#0b0b0c] border border-white/5 text-xs text-slate-200 flex items-start gap-2.5"
               >
                 <span className="font-mono text-purple-400 font-bold shrink-0">
                   [GAP 0{i + 1}]
@@ -100,7 +100,7 @@ export function StepLiteratureMatrixWidget() {
             {selectedDomain.foundationalPapers.map((paper, i) => (
               <div
                 key={i}
-                className="p-3.5 rounded-lg bg-[#090d16] border border-white/5 space-y-1.5"
+                className="p-3.5 rounded-lg bg-[#0b0b0c] border border-white/5 space-y-1.5"
               >
                 <div className="flex items-start justify-between gap-2">
                   <span className="text-xs font-bold text-white leading-tight">

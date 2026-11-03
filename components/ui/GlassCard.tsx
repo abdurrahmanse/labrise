@@ -33,27 +33,27 @@ export function GlassCard({
   };
 
   const glowStyles = {
-    none: "border-white/[0.08] hover:border-white/[0.16]",
-    indigo: "border-indigo-500/20 hover:border-indigo-500/50 hover:shadow-xl hover:shadow-indigo-500/10",
-    cyan: "border-cyan-500/20 hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/10",
-    emerald: "border-emerald-500/20 hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/10",
-    purple: "border-purple-500/20 hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-500/10",
-    amber: "border-amber-500/20 hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/10",
-    rose: "border-rose-500/20 hover:border-rose-500/50 hover:shadow-xl hover:shadow-rose-500/10"
+    none: "border-white/20 hover:border-white/70 hover:shadow-[7px_7px_0_0_rgba(255,255,255,0.85)]",
+    indigo: "border-indigo-400/40 hover:border-indigo-400 hover:shadow-[7px_7px_0_0_#c6f21f]",
+    cyan: "border-white/30 hover:border-white hover:shadow-[7px_7px_0_0_rgba(255,255,255,0.85)]",
+    emerald: "border-emerald-500/40 hover:border-emerald-400 hover:shadow-[7px_7px_0_0_#10b981]",
+    purple: "border-indigo-400/40 hover:border-indigo-400 hover:shadow-[7px_7px_0_0_#c6f21f]",
+    amber: "border-amber-500/40 hover:border-amber-400 hover:shadow-[7px_7px_0_0_#f59e0b]",
+    rose: "border-rose-500/40 hover:border-rose-400 hover:shadow-[7px_7px_0_0_#f43f5e]"
   };
 
   const spotlightGlows = {
-    none: "rgba(255, 255, 255, 0.06)",
-    indigo: "rgba(99, 102, 241, 0.15)",
-    cyan: "rgba(6, 182, 212, 0.15)",
+    none: "rgba(255, 255, 255, 0.07)",
+    indigo: "rgba(198, 242, 31, 0.15)",
+    cyan: "rgba(255, 255, 255, 0.15)",
     emerald: "rgba(16, 185, 129, 0.15)",
-    purple: "rgba(168, 85, 247, 0.15)",
+    purple: "rgba(198, 242, 31, 0.15)",
     amber: "rgba(245, 158, 11, 0.15)",
     rose: "rgba(244, 63, 94, 0.15)"
   };
 
   const hoverClass = hoverEffect
-    ? "transition-all duration-300 ease-out hover:-translate-y-1.5"
+    ? "transition-all duration-150 ease-out hover:-translate-x-[3px] hover:-translate-y-[3px]"
     : "";
 
   return (
@@ -63,15 +63,15 @@ export function GlassCard({
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`group relative rounded-2xl bg-[#090e24]/70 backdrop-blur-xl border p-6 sm:p-7 shadow-2xl shadow-black/40 ${glowStyles[borderGlow]} ${hoverClass} ${className}`}
+      className={`group relative bg-[#121214]/55 backdrop-blur-xl backdrop-saturate-150 border p-6 sm:p-7 shadow-[5px_5px_0_0_rgba(0,0,0,0.6)] ${glowStyles[borderGlow]} ${hoverClass} ${className}`}
     >
-      {/* Top Specular Line Accent */}
-      <div className="absolute top-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+      {/* Glass edge highlight */}
+      <div className="absolute top-0 inset-x-0 h-px bg-white/25 pointer-events-none" />
 
       {/* Dynamic Cursor Spotlight Layer */}
       {enableSpotlight && isHovered && (
         <div
-          className="pointer-events-none absolute -inset-px rounded-2xl opacity-100 transition-opacity duration-300"
+          className="pointer-events-none absolute -inset-px opacity-100 transition-opacity duration-300"
           style={{
             background: `radial-gradient(320px circle at ${mousePos.x}px ${mousePos.y}px, ${spotlightGlows[borderGlow]}, transparent 70%)`
           }}

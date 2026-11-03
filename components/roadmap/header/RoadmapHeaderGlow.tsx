@@ -13,7 +13,7 @@ export function RoadmapHeaderGlow() {
         className="absolute top-0 right-1/4 w-96 h-48 pointer-events-none -translate-y-1/2 opacity-25"
         style={{
           background:
-            "radial-gradient(ellipse at center, rgba(20, 184, 166, 0.4) 0%, transparent 70%)",
+            "radial-gradient(ellipse at center, rgba(255, 255, 255, 0.4) 0%, transparent 70%)",
         }}
       />
     </>

@@ -8,7 +8,7 @@ import { roadmapLevelsComparisonData, roadmapLevelsData } from "@/data/levelsDat
 
 export function LevelsComparisonMatrix() {
   return (
-    <section id="levels-matrix" className="py-20 border-b border-white/10 bg-[#090d16]">
+    <section id="levels-matrix" className="py-20 border-b border-white/10 bg-[#0b0b0c]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="Admissions Blueprint"
@@ -23,10 +23,10 @@ export function LevelsComparisonMatrix() {
           <span>Scroll table horizontally &rarr;</span>
         </div>
 
-        <div className="bg-[#0f1422] border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
+        <div className="bg-[#121214] border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[760px] text-left text-xs text-slate-300">
-              <thead className="bg-[#090d16] text-[11px] font-bold uppercase tracking-wider text-slate-400 border-b border-white/10">
+              <thead className="bg-[#0b0b0c] text-[11px] font-bold uppercase tracking-wider text-slate-400 border-b border-white/10">
                 <tr>
                   <th className="py-4 px-6">Curriculum Level</th>
                   <th className="py-4 px-6">Timeline</th>

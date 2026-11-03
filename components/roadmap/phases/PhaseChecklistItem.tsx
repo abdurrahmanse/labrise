@@ -22,7 +22,7 @@ export function PhaseChecklistItem({
       className={`flex items-start gap-3.5 p-3.5 sm:p-4 rounded-xl border transition-all cursor-pointer select-none ${
         isChecked
           ? "bg-teal-950/40 border-teal-500/50 text-teal-100 shadow-md"
-          : "bg-[#090d16] border-white/5 text-slate-300 hover:border-white/20"
+          : "bg-[#0b0b0c] border-white/5 text-slate-300 hover:border-white/20"
       }`}
     >
       <div

@@ -25,7 +25,7 @@ export function PhaseHowStepsSection({ steps }: PhaseHowStepsSectionProps) {
             {howSteps.heading}
           </h2>
         </div>
-        <span className="text-xs font-mono px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-400">
+        <span className="text-xs font-mono px-3 py-1 rounded-none bg-white/5 border border-white/10 text-slate-400">
           {steps.length} {howSteps.milestonesSuffix}
         </span>
       </div>

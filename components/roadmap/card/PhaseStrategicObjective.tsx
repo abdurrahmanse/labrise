@@ -11,7 +11,7 @@ export function PhaseStrategicObjective({ what }: PhaseStrategicObjectiveProps) 
   const { card } = roadmapUiData;
 
   return (
-    <div className="p-3.5 sm:p-4 rounded-xl bg-[#090d16] border border-white/5 space-y-1.5">
+    <div className="p-3.5 sm:p-4 rounded-xl bg-[#0b0b0c] border border-white/5 space-y-1.5">
       <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-teal-400 block">
         {card.strategicMandateLabel}
       </span>

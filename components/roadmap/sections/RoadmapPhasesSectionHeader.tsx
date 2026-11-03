@@ -10,7 +10,7 @@ export function RoadmapPhasesSectionHeader() {
   return (
     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
       <div>
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-950/70 border border-teal-500/30 text-teal-300 text-xs font-mono font-bold mb-2">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-none bg-teal-950/70 border border-teal-500/30 text-teal-300 text-xs font-mono font-bold mb-2">
           <ListOrdered className="w-3.5 h-3.5 text-teal-400" />
           <span>{phasesSection.badge}</span>
         </div>

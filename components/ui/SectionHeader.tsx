@@ -94,7 +94,7 @@ export function SectionHeader({
                 )
               )}
               {counter && (
-                <span className="text-[11px] font-mono text-slate-400 bg-white/[0.04] px-2.5 py-0.5 rounded-full border border-white/5">
+                <span className="text-[11px] font-mono text-slate-400 bg-white/[0.04] px-2.5 py-0.5 rounded-none border border-white/5">
                   {counter}
                 </span>
               )}

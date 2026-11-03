@@ -8,11 +8,11 @@ export const metadata: Metadata = professorsMetadata;
 
 export default function ProfessorsPage() {
   return (
-    <main className="min-h-screen bg-[#090d16] text-slate-100 py-12 md:py-16">
+    <main className="min-h-screen bg-[#0b0b0c] text-slate-100 py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Hero */}
         <div className="max-w-3xl mb-12 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900 border border-indigo-500/30 text-indigo-300 text-xs font-mono font-medium">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-none bg-slate-900 border border-indigo-500/30 text-indigo-300 text-xs font-mono font-medium">
             <Users className="w-3.5 h-3.5" />
             <span>Phase 05 Protocol</span>
             <span className="text-slate-600">|</span>

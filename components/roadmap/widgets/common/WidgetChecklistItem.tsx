@@ -68,7 +68,7 @@ export function WidgetChecklistItem({
       className={`p-3 rounded-lg border flex items-start gap-2.5 text-xs cursor-pointer transition-all select-none ${
         isChecked
           ? `${styles.activeBg} ${styles.activeBorder} ${styles.activeText} shadow-sm`
-          : "bg-[#090d16] border-white/5 text-slate-300 hover:border-white/20 hover:text-white"
+          : "bg-[#0b0b0c] border-white/5 text-slate-300 hover:border-white/20 hover:text-white"
       } ${className}`}
     >
       <div

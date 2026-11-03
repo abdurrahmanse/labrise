@@ -26,7 +26,7 @@ export function WidgetStatCard({
       className={`p-3.5 rounded-lg border transition-all ${
         highlight
           ? "bg-emerald-950/20 border-emerald-500/40 shadow-sm"
-          : "bg-[#090d16] border-white/5"
+          : "bg-[#0b0b0c] border-white/5"
       } ${className}`}
     >
       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wider mb-1 flex items-center gap-1.5">
