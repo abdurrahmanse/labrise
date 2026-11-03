@@ -10,6 +10,8 @@ import type { Region } from "../../types";
 import { RegionChips } from "./RegionChips";
 import { commonText } from "@/data/text/common";
 import { listText } from "@/data/text/directory";
+import { EmptyState } from "@/shared/components/EmptyState";
+import { emptyText } from "@/data/text/status";
 
 interface CardBrowserProps<T> {
   data: T[];
@@ -41,7 +43,7 @@ export function CardBrowser<T>({ data, placeholder, keyOf, regionOf, searchText,
       </div>
 
       {items.length === 0 ? (
-        <p className="py-12 text-center text-slate-400">{listText.noMatch}</p>
+        <EmptyState title={emptyText.noResults} hint={listText.noMatch} />
       ) : (
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {items.map((item) => (

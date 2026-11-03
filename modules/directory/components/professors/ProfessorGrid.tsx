@@ -1,10 +1,12 @@
 import type { ProfessorEntry } from "../../types";
 import { ProfessorCard } from "./ProfessorCard";
 import { listText } from "@/data/text/directory";
+import { EmptyState } from "@/shared/components/EmptyState";
+import { emptyText } from "@/data/text/status";
 
 export function ProfessorGrid({ professors }: { professors: ProfessorEntry[] }) {
   if (professors.length === 0) {
-    return <p className="py-12 text-center text-slate-400">{listText.noProfessors}</p>;
+    return <EmptyState title={emptyText.noResults} hint={listText.noProfessors} />;
   }
 
   return (

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ContourPattern } from "../illustrations/ContourPattern";
 import { DataNotice } from "./DataNotice";
-import { iconFor } from "../lib/iconFor";
+import { IconFor } from "./IconFor";
 
 export interface ShellLink {
   href: string;
@@ -29,7 +29,6 @@ const edgeLink =
 
 /** One compact page: heading, a single content block, previous/next links. */
 export function PageShell({ eyebrow, title, lead, back, prev, next, media, notice, children }: PageShellProps) {
-  const EyebrowIcon = iconFor(eyebrow);
   return (
     <main className="min-h-screen py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
@@ -41,7 +40,7 @@ export function PageShell({ eyebrow, title, lead, back, prev, next, media, notic
             </Link>
           )}
           <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-indigo-400">
-            <EyebrowIcon className="h-4 w-4" aria-hidden />
+            <IconFor text={eyebrow} className="h-4 w-4" />
             {eyebrow}
           </p>
           <div className="relative flex items-center gap-4">

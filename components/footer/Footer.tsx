@@ -3,7 +3,7 @@ import Link from "next/link";
 import { GraduationCap } from "lucide-react";
 import { commonText } from "@/data/text/common";
 import { footerLinksData } from "@/data/navigationData";
-import { iconFor } from "@/shared/lib/iconFor";
+import { IconFor } from "@/shared/components/IconFor";
 
 export function Footer() {
   return (
@@ -20,15 +20,12 @@ export function Footer() {
         </Link>
 
         <nav aria-label={commonText.header.footerNav} className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
-          {footerLinksData.map((l) => {
-            const Icon = iconFor(l.label);
-            return (
+          {footerLinksData.map((l) => (
               <Link key={l.href} href={l.href} className="inline-flex items-center gap-1.5 text-slate-400 hover:text-indigo-300">
-                <Icon className="h-4 w-4" aria-hidden />
+                <IconFor text={l.label} className="h-4 w-4" />
                 {l.label}
               </Link>
-            );
-          })}
+          ))}
         </nav>
 
         <p className="font-mono text-xs text-slate-500">{commonText.footer.tagline}</p>

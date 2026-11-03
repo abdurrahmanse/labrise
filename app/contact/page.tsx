@@ -1,33 +1,35 @@
-import { Block } from "@/shared/components/Block";
+import type { ContactPage, WithContext } from "schema-dts";
 import { PageShell } from "@/shared/components/PageShell";
+import { ContactForm } from "@/modules/contact/components/ContactForm";
+import { ContactSide } from "@/modules/contact/components/ContactSide";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { JsonLd } from "@/modules/seo/JsonLd";
+import { absoluteUrl } from "@/modules/seo/site";
 import { commonText } from "@/data/text/common";
-import { contactText as t } from "@/data/text/pages";
+import { contactInfo, contactPageText as t } from "@/data/text/contact";
 
 export const metadata = buildMetadata({ title: t.title, description: t.description, path: "/contact" });
 
-const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
-const body = "font-sans font-normal text-slate-300 text-[length:var(--text-body)]";
+const schema: WithContext<ContactPage> = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: t.title,
+  url: absoluteUrl("/contact"),
+  mainEntity: {
+    "@type": "Organization",
+    email: contactInfo.email,
+    address: { "@type": "PostalAddress", addressLocality: contactInfo.locality, addressCountry: contactInfo.countryCode }
+  }
+};
 
 export default function ContactPage() {
   return (
     <PageShell eyebrow={t.eyebrow} title={t.heading} lead={t.lead} back={{ href: "/", label: commonText.actions.home }}>
-      <Block title={t.whatToSend.title} icon={t.whatToSend.Icon}>
-        <ul className={`list-disc space-y-2 pl-6 ${body}`}>
-          {t.whatToSend.items.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </Block>
-      <Block title={t.whereToSend.title} icon={t.whereToSend.Icon}>
-        {CONTACT_EMAIL ? (
-          <a href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t.whereToSend.subject)}`} className="font-bold text-indigo-400 hover:text-indigo-200 underline underline-offset-4">
-            {CONTACT_EMAIL}
-          </a>
-        ) : (
-          <p className={body}>{t.whereToSend.notSet}</p>
-        )}
-      </Block>
+      <JsonLd data={schema} />
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
+        <ContactForm />
+        <ContactSide />
+      </div>
     </PageShell>
   );
 }

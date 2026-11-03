@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { iconFor } from "../lib/iconFor";
+import { IconFor } from "./IconFor";
 
 export interface SubNavItem {
   href: string;
@@ -17,7 +17,6 @@ export function SubNav({ items, label }: { items: SubNavItem[]; label: string })
     <nav aria-label={label} className="flex flex-wrap gap-2">
       {items.map((item) => {
         const active = pathname === item.href;
-        const Icon = iconFor(item.label);
         return (
           <Link
             key={item.href}
@@ -25,7 +24,7 @@ export function SubNav({ items, label }: { items: SubNavItem[]; label: string })
             aria-current={active ? "page" : undefined}
             className={`inline-flex items-center gap-2 px-4 py-2 text-sm font-bold uppercase tracking-wider transition-colors ${active ? "bg-indigo-600 text-white" : "bg-white/[0.05] text-slate-200 hover:bg-white/10"}`}
           >
-            <Icon className="h-4 w-4" aria-hidden />
+            <IconFor text={item.label} className="h-4 w-4" />
             {item.label}
           </Link>
         );

@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { Ban, BookOpen, Building2, Cookie, Database, FileWarning, Flag, Globe, HeartHandshake, Lock, Mail, Users } from "lucide-react";
+import { Ban, BookOpen, Building2, Cookie, Database, FileWarning, Flag, Globe, Lock, Users } from "lucide-react";
 
 // Text for the static pages: About, Disclaimer, Privacy and Contact.
 export interface TextSection {
@@ -101,20 +101,6 @@ export const privacyText: StaticPageText = {
     }
   ]
 };
-
-export const contactText = {
-  title: "Contact and corrections",
-  description: "How to report a mistake or suggest a university, professor or funder.",
-  eyebrow: "Contact",
-  heading: "Report a correction",
-  lead: "Help keep the directory accurate.",
-  whatToSend: { title: "What to send", Icon: HeartHandshake, items: [
-    "The page or name that is wrong, and what is wrong with it",
-    "A link to the official page that shows the correct detail",
-    "For a new entry: the name, country and the official page"
-  ] },
-  whereToSend: { title: "Where to send it", Icon: Mail, subject: "Correction", notSet: "The contact address is not set up yet. The site owner can add it as NEXT_PUBLIC_CONTACT_EMAIL." }
-} as const;
 
 export const directoryIndexText = {
   title: "Directory: countries, universities and professors",

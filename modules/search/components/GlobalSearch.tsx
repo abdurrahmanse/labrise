@@ -8,6 +8,7 @@ import { searchEntries } from "../lib/searchEntries";
 import type { SearchItem } from "../lib/searchIndex";
 import { searchText } from "@/data/text/common";
 import { KindIcon } from "./KindIcon";
+import { OPEN_SEARCH_EVENT } from "@/shared/components/OpenSearchButton";
 
 /** Header search: opens with the button or Ctrl/Cmd+K and looks across the whole directory. */
 export function GlobalSearch() {
@@ -38,7 +39,11 @@ export function GlobalSearch() {
       }
     };
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    window.addEventListener(OPEN_SEARCH_EVENT, open);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener(OPEN_SEARCH_EVENT, open);
+    };
   }, [open]);
 
   const go = (entry: SearchItem) => {

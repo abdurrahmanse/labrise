@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { commonText } from "@/data/text/common";
-import { iconFor } from "@/shared/lib/iconFor";
+import { IconFor } from "@/shared/components/IconFor";
 
 interface CardShellProps {
   href: string;
@@ -34,10 +34,9 @@ export function CardShell({ href, eyebrow, title, media, children }: CardShellPr
 }
 
 export function CardFact({ label, value }: { label: string; value: string }) {
-  const Icon = iconFor(label);
   return (
     <p className="flex items-start gap-2">
-      <Icon className="mt-0.5 h-4 w-4 shrink-0 text-indigo-400" aria-hidden />
+      <IconFor text={label} className="mt-0.5 h-4 w-4 shrink-0 text-indigo-400" />
       <span>
         <span className="font-mono text-xs uppercase tracking-wider text-slate-400">{label} </span>
       <span className="font-bold text-slate-100">{value}</span>

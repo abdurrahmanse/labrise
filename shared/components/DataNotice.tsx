@@ -1,6 +1,7 @@
 import { Flag, ShieldCheck } from "lucide-react";
 import { DATA_REVIEWED } from "@/modules/directory/data/review";
 import { noticeText } from "@/data/text/common";
+import { contactInfo } from "@/data/text/contact";
 
 interface DataNoticeProps {
   /** What the page is about, used in the correction message. */
@@ -11,12 +12,11 @@ interface DataNoticeProps {
   caution?: string;
 }
 
-const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL;
 
 /** Review date, a link to the official source and a way to report a mistake. */
 export function DataNotice({ subject, source, caution }: DataNoticeProps) {
   const subjectLine = encodeURIComponent(noticeText.reportSubject(subject));
-  const reportHref = CONTACT_EMAIL ? `mailto:${CONTACT_EMAIL}?subject=${subjectLine}` : "/contact";
+  const reportHref = `mailto:${contactInfo.email}?subject=${subjectLine}`;
 
   return (
     <aside className="flex flex-col gap-2 border border-white/15 bg-white/[0.04] p-4 text-sm text-slate-300 backdrop-blur-md sm:flex-row sm:items-center sm:justify-between">
