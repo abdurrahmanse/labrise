@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Sparkles, Compass, ShieldCheck, Award, GraduationCap, Globe2 } from "lucide-react";
 import { Badge, BadgeVariant } from "./Badge";

@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { quickNavData } from "@/data/homeData";
 import { SectionHeader } from "@/components/ui/SectionHeader";

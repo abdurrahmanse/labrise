@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { homeHeroData } from "@/data/homeData";
 import { HeroCtaButtons } from "./HeroCtaButtons";

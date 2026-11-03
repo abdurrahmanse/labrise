@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { AlertTriangle, CheckCircle2, Award } from "lucide-react";
 import { professorOutreachControlsData } from "@/data/professorsData";

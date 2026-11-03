@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { AlertTriangle, ShieldAlert } from "lucide-react";
 import { scholarshipFinderControlsData } from "@/data/scholarshipsSearchData";

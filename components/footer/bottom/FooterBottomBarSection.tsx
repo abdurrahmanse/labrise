@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { FooterCopyright } from "./FooterCopyright";
 import { FooterAttribution } from "./FooterAttribution";

@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { commonText } from "@/data/text/common";
 

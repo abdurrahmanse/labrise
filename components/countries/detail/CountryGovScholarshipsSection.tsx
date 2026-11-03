@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Award, CheckCircle2, ExternalLink } from "lucide-react";
 import { CountryGuide } from "@/data/countryGuidesData";

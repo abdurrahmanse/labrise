@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Sparkles, AlertTriangle, Lightbulb, CheckCircle2 } from "lucide-react";
 

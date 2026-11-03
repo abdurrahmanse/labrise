@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Award, Briefcase, DollarSign, AlertTriangle, CheckCircle2, Sparkles } from "lucide-react";
 import { FundingPillarItem } from "@/data/homeData";

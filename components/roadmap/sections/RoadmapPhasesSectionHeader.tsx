@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { ListOrdered } from "lucide-react";
 import { roadmapUiData } from "@/data/roadmapUiData";

@@ -1,17 +1,18 @@
 import type { ReactNode } from "react";
 import { IconFor } from "./IconFor";
+import { surface } from "./Surface";
+import { Label } from "./Text";
 
-export const infoCardClass =
-  "border-2 border-white/30 bg-canvas-card/60 backdrop-blur-xl p-5 shadow-[4px_4px_0_0_rgba(15,23,42,0.18)]";
+export const infoCardClass = surface({ tone: "panel", depth: "md", padding: "lg" });
 
 export function InfoCard({ label, children }: { label?: string; children: ReactNode }) {
   return (
     <div className={infoCardClass}>
       {label && (
-        <div className="mb-2 flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-indigo-400">
+        <Label as="div" tone="accent" className="mb-2 flex items-center gap-2">
           <IconFor text={label} className="h-4 w-4" />
           {label}
-        </div>
+        </Label>
       )}
       {children}
     </div>

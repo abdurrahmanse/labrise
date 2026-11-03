@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { PhaseHowToStep } from "@/data/roadmapPhasesData";
 import { roadmapUiData } from "@/data/roadmapUiData";

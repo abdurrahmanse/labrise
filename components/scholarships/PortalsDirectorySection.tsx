@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Globe2, ExternalLink, Building2, Award, ArrowUpRight } from "lucide-react";
 import { verifiedScholarshipPortals, scholarshipFinderControlsData } from "@/data/scholarshipsSearchData";

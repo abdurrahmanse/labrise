@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Award, GraduationCap } from "lucide-react";
 import { CountryDetailSectionTitle } from "./CountryDetailSectionTitle";

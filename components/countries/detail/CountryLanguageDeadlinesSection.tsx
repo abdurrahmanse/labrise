@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { BookOpen, Clock } from "lucide-react";
 import { CountryDetailSectionTitle } from "./CountryDetailSectionTitle";

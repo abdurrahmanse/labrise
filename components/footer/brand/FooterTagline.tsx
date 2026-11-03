@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { footerData } from "@/data/navigationData";
 

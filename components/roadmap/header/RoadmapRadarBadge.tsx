@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Compass, ShieldCheck } from "lucide-react";
 import { roadmapControlsData } from "@/data/roadmapPhasesData";

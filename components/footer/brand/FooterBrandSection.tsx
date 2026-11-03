@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { FooterBrandName } from "./FooterBrandName";
 import { FooterTagline } from "./FooterTagline";

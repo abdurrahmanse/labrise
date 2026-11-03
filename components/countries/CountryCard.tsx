@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import { ExternalLink, ArrowRight, Users, Award, Briefcase, Globe2, BookOpen, Coins } from "lucide-react";

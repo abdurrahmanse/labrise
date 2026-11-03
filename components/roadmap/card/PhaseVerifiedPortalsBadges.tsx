@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { ExternalLink } from "lucide-react";
 import { PhaseOfficialResource } from "@/data/roadmapPhasesData";

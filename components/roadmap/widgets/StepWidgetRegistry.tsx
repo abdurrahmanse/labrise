@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { StepMathDiagnosticWidget } from "./StepMathDiagnosticWidget";
 import { StepSystemsCodeWidget } from "./StepSystemsCodeWidget";

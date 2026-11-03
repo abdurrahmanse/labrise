@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Briefcase, CheckCircle2 } from "lucide-react";
 import { CountryDetailSectionTitle } from "./CountryDetailSectionTitle";

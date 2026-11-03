@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { ScholarshipHeader } from "./ScholarshipHeader";
 import { SearchWorkflowSection } from "./SearchWorkflowSection";

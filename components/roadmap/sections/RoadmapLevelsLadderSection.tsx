@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { roadmapLevelsData } from "@/data/levelsData";
 import { LevelCard } from "../LevelCard";

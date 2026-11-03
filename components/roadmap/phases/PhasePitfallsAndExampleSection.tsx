@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { PhaseMistakesCard } from "./PhaseMistakesCard";
 import { PhaseExampleCard } from "./PhaseExampleCard";

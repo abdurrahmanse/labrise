@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Compass, Globe2, ShieldCheck, Sparkles } from "lucide-react";
 import { HomeHeroBadge } from "@/data/homeData";

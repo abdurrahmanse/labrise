@@ -1,5 +1,3 @@
-"use client";
-
 import { LiveDirectory } from "../LiveDirectory";
 import type { ProfessorEntry } from "../../types";
 import { ProfessorsBrowser } from "./ProfessorsBrowser";

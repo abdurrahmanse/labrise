@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Badge } from "@/components/ui/Badge";
 import { WidgetTheme } from "./WidgetShell";

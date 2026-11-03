@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Terminal, Code2, Sparkles } from "lucide-react";
 import { searchQueryFormulas, scholarshipFinderControlsData } from "@/data/scholarshipsSearchData";

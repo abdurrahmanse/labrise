@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { ListOrdered, GraduationCap, Sparkles } from "lucide-react";
 import { roadmapUiData, RoadmapHeaderChip } from "@/data/roadmapUiData";

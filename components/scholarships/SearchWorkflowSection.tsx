@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Compass } from "lucide-react";
 import { searchWorkflowSteps, scholarshipFinderControlsData } from "@/data/scholarshipsSearchData";

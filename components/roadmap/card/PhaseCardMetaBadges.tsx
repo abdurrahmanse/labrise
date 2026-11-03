@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { Clock, GraduationCap, Award, Compass } from "lucide-react";
 import { roadmapUiData } from "@/data/roadmapUiData";

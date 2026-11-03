@@ -1,5 +1,3 @@
-"use client";
-
 import { SiteHeader } from "./header/SiteHeader";
 
 export default SiteHeader;
