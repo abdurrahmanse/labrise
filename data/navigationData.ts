@@ -84,13 +84,11 @@ export const headerData = {
 };
 
 export const navLinksData: NavLinkItem[] = [
-  { href: "/", label: "Start", iconName: "Compass" },
-  { href: "/roadmap", label: "Roadmap", iconName: "Map" },
-  { href: "/countries", label: "Countries", iconName: "Globe2" },
-  { href: "/scholarships", label: "Scholarships", iconName: "Search" },
-  { href: "/professors", label: "Professors", iconName: "Users" },
-  { href: "/documents", label: "Documents", iconName: "FileCheck" },
-  { href: "/faqs", label: "FAQs", iconName: "HelpCircle" }
+  { href: "/steps", label: "Roadmap", iconName: "Map" },
+  { href: "/profile", label: "Profile", iconName: "ClipboardCheck" },
+  { href: "/guides", label: "Guides", iconName: "BookOpen" },
+  { href: "/directory", label: "Directory", iconName: "Globe2" },
+  { href: "/problems", label: "Problems", iconName: "HelpCircle" }
 ];
 
 export const footerData = {

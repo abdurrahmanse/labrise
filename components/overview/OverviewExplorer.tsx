@@ -6,7 +6,8 @@ import { SearchInput } from "@/components/ui/SearchInput";
 import { TabsContainer, TabItem } from "@/components/ui/Tabs";
 import { countries, professors, universities } from "@/data/overviewData";
 
-type Mode = "countries" | "universities" | "professors";
+export type ExplorerMode = "countries" | "universities" | "professors";
+type Mode = ExplorerMode;
 
 const REGIONS = ["All", "Europe", "North America", "Asia", "Oceania", "Middle East"];
 
@@ -31,8 +32,8 @@ function downloadTracker() {
   URL.revokeObjectURL(url);
 }
 
-export function OverviewExplorer() {
-  const [mode, setMode] = useState<Mode>("countries");
+export function OverviewExplorer({ fixedMode }: { fixedMode: ExplorerMode }) {
+  const mode: Mode = fixedMode;
   const [region, setRegion] = useState("All");
   const [query, setQuery] = useState("");
 
@@ -77,18 +78,7 @@ export function OverviewExplorer() {
 
   return (
     <div className="space-y-5">
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-        <TabsContainer variant="pills" size="sm">
-          <TabItem active={mode === "countries"} onClick={() => setMode("countries")}>
-            Countries ({countries.length})
-          </TabItem>
-          <TabItem active={mode === "universities"} onClick={() => setMode("universities")}>
-            Universities ({universities.length})
-          </TabItem>
-          <TabItem active={mode === "professors"} onClick={() => setMode("professors")}>
-            Professors ({professors.length})
-          </TabItem>
-        </TabsContainer>
+      <div className="flex">
         <SearchInput
           className="w-full lg:max-w-sm"
           value={query}
