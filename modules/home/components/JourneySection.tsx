@@ -11,10 +11,10 @@ export function JourneySection() {
           <li key={s.step}>
             <Link
               href={s.href}
-              className="group block h-full border-2 border-white/30 bg-canvas-card/60 backdrop-blur-xl p-5 shadow-[4px_4px_0_0_rgba(0,0,0,0.6)] transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[7px_7px_0_0_#c6f21f]"
+              className="group block h-full border-2 border-white/30 bg-canvas-card/60 backdrop-blur-xl p-5 shadow-[4px_4px_0_0_rgba(15,23,42,0.18)] transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[7px_7px_0_0_rgba(58,95,224,0.4)]"
             >
               <div className="flex items-center justify-between mb-3">
-                <span className="bg-indigo-400 text-black font-mono font-bold px-2 py-0.5">{String(s.step).padStart(2, "0")}</span>
+                <span className="bg-indigo-600 text-white font-mono font-bold px-2 py-0.5">{String(s.step).padStart(2, "0")}</span>
                 <span className="font-mono text-xs text-slate-400">{s.when}</span>
               </div>
               <div className="text-xl font-bold text-white">{s.title}</div>

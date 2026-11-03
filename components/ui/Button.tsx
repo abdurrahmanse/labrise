@@ -26,23 +26,23 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-indigo-400 hover:bg-indigo-300 text-black border-2 border-black shadow-[4px_4px_0_0_rgba(255,255,255,0.9)] hover:shadow-[2px_2px_0_0_rgba(255,255,255,0.9)] hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none uppercase tracking-wider",
+          "bg-indigo-600 hover:bg-indigo-500 text-white border-2 border-transparent shadow-[4px_4px_0_0_rgba(15,23,42,0.18)] hover:shadow-[2px_2px_0_0_rgba(15,23,42,0.18)] hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none uppercase tracking-wider",
         secondary:
-          "bg-white/[0.06] backdrop-blur-md hover:bg-white/10 text-slate-100 border-2 border-white/40 hover:border-white shadow-[3px_3px_0_0_rgba(255,255,255,0.2)] uppercase tracking-wider",
+          "bg-white/[0.06] backdrop-blur-md hover:bg-white/10 text-slate-100 border-2 border-white/40 hover:border-white shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] uppercase tracking-wider",
         outline:
           "bg-transparent hover:bg-white hover:text-black text-slate-200 border-2 border-white/60 uppercase tracking-wider",
         ghost: "bg-transparent hover:bg-white/5 text-slate-400 hover:text-white border border-transparent",
         danger:
           "bg-rose-950/60 hover:bg-rose-900/60 text-rose-300 border border-rose-500/40 shadow-lg shadow-rose-950/50",
         indigo:
-          "bg-indigo-400/10 hover:bg-indigo-400 hover:text-black text-indigo-300 border-2 border-indigo-400 shadow-[3px_3px_0_0_rgba(198,242,31,0.5)]",
-        cyan: "bg-white/10 hover:bg-white hover:text-black text-white border-2 border-white/70 shadow-[3px_3px_0_0_rgba(255,255,255,0.3)]",
+          "bg-indigo-400/10 hover:bg-indigo-600 hover:text-white text-indigo-300 border-2 border-indigo-400 shadow-[3px_3px_0_0_rgba(58,95,224,0.35)]",
+        cyan: "bg-white/10 hover:bg-white hover:text-black text-white border-2 border-white/70 shadow-[3px_3px_0_0_rgba(15,23,42,0.18)]",
         emerald:
           "bg-emerald-950/50 hover:bg-emerald-900/50 text-emerald-300 border border-emerald-500/40 shadow-md shadow-emerald-950/50",
         amber:
           "bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 shadow-md shadow-amber-950/50",
         purple:
-          "bg-indigo-400/10 hover:bg-indigo-400 hover:text-black text-indigo-300 border-2 border-indigo-400 shadow-[3px_3px_0_0_rgba(198,242,31,0.5)]"
+          "bg-indigo-400/10 hover:bg-indigo-600 hover:text-white text-indigo-300 border-2 border-indigo-400 shadow-[3px_3px_0_0_rgba(58,95,224,0.35)]"
       },
       size: {
         xs: "px-2.5 py-1 text-[11px] gap-1.5",

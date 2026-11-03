@@ -132,5 +132,13 @@ export const guideTopics: GuideTopic[] = [
   { id: "deadlines-timeline", title: "12-month timeline", tag: "Plan", steps: ["12–9 months: area and tests.", "9–6 months: professors and documents.", "6–3 months: referees and early deadlines.", "3–0 months: submit.", "After: compare offers."] },
   { id: "offer-comparison", title: "Compare offers", tag: "After results", steps: ["Funding.", "Supervisor.", "Research fit.", "Location.", "Career outcomes."] },
   { id: "scholarship-scams", title: "Avoid scams", tag: "Stay safe", steps: ["Never pay for an award.", "Check official domains.", "Verify with the department.", "Ignore guarantees.", "Protect your documents."] },
-  { id: "english-and-gre", title: "GRE and other tests", tag: "Only if needed", steps: ["List requirements.", "Check GRE necessity.", "Check Duolingo acceptance.", "Look for waivers.", "Pick the fewest tests."] }
+  { id: "english-and-gre", title: "GRE and other tests", tag: "Only if needed", steps: ["List requirements.", "Check GRE necessity.", "Check Duolingo acceptance.", "Look for waivers.", "Pick the fewest tests."] },
+  { id: "master-vs-phd", title: "Master's or PhD?", tag: "Choose first", steps: ["Career goal.", "Entry rules.", "Funding certainty.", "Research profile.", "Decide."] },
+  { id: "no-research-background", title: "No research background", tag: "Start here", steps: ["Reproduce papers.", "Small project.", "Find a mentor.", "Research internship.", "Honest SOP."] },
+  { id: "publications", title: "First publication", tag: "Strong plus", steps: ["Pick a project.", "Target a workshop.", "Post on arXiv.", "Release code.", "Get feedback."] },
+  { id: "github-portfolio", title: "GitHub and portfolio", tag: "Show your work", steps: ["Pin 3 projects.", "Write READMEs.", "Make it reproducible.", "Build a page.", "Link everywhere."] },
+  { id: "grade-conversion", title: "Grades and conversion", tag: "Give context", steps: ["State the scale.", "Add rank.", "Attach grading key.", "Use official rules.", "Do not self-convert."] },
+  { id: "application-portals", title: "Application portals", tag: "Stay organised", steps: ["List systems.", "Create accounts.", "Track in a sheet.", "Check formats.", "Submit early."] },
+  { id: "arrival-checklist", title: "Arrival checklist", tag: "After the visa", steps: ["Housing.", "Insurance.", "Money.", "Register.", "Meet supervisor."] },
+  { id: "negotiating-and-declining", title: "Negotiate and decline", tag: "After offers", steps: ["Ask in writing.", "Request extension.", "Be realistic.", "Reply promptly.", "Decline kindly."] }
 ];

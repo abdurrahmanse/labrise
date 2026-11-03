@@ -4,9 +4,10 @@ import { useMemo } from "react";
 import { filterEntries } from "../lib/filter";
 import { regionOfProfessor } from "../lib/lookups";
 import { useDirectoryFilters } from "../store/useDirectoryFilters";
-import type { CountryEntry, ProfessorEntry, UniversityEntry } from "../types";
+import type { CountryEntry, ProfessorEntry, ScholarshipEntry, UniversityEntry } from "../types";
 import { countryColumns } from "./columns/countryColumns";
 import { professorColumns } from "./columns/professorColumns";
+import { scholarshipColumns } from "./columns/scholarshipColumns";
 import { universityColumns } from "./columns/universityColumns";
 import { DataTable } from "./DataTable";
 import { LiveDirectory } from "./LiveDirectory";
@@ -73,6 +74,25 @@ function ProfessorsView({ data }: { data: ProfessorEntry[] }) {
     </div>
   );
 }
+
+function ScholarshipsView({ data }: { data: ScholarshipEntry[] }) {
+  const { region, query } = useDirectoryFilters();
+  const rows = useMemo(
+    () => filterEntries({ entries: data, region, query, regionOf: (s) => s.region, searchText: (s) => `${s.name} ${s.host} ${s.level} ${s.covers}` }),
+    [data, region, query]
+  );
+
+  return (
+    <div className="space-y-5">
+      <Toolbar count={rows.length} placeholder="Search scholarship, host, level…" />
+      <DataTable data={rows} columns={scholarshipColumns} />
+    </div>
+  );
+}
+
+export const ScholarshipsExplorer = ({ initialData }: { initialData: ScholarshipEntry[] }) => (
+  <LiveDirectory type="scholarships" initialData={initialData}>{(data) => <ScholarshipsView data={data} />}</LiveDirectory>
+);
 
 export const CountriesExplorer = ({ initialData }: { initialData: CountryEntry[] }) => (
   <LiveDirectory type="countries" initialData={initialData}>{(data) => <CountriesView data={data} />}</LiveDirectory>

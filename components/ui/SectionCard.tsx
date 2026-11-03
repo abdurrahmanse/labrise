@@ -28,16 +28,16 @@ export interface SectionCardProps {
 
 const GLOW_CLASSES: Record<SectionCardGlow, string> = {
   none: "border-white/20 hover:border-white/60",
-  indigo: "border-indigo-400/40 hover:border-indigo-400 hover:shadow-[5px_5px_0_0_#c6f21f]",
-  cyan: "border-white/30 hover:border-white hover:shadow-[5px_5px_0_0_rgba(255,255,255,0.85)]",
+  indigo: "border-indigo-400/40 hover:border-indigo-400 hover:shadow-[5px_5px_0_0_rgba(58,95,224,0.4)]",
+  cyan: "border-white/30 hover:border-white hover:shadow-[5px_5px_0_0_rgba(15,23,42,0.18)]",
   emerald: "border-emerald-500/40 hover:border-emerald-400 hover:shadow-[5px_5px_0_0_#10b981]",
   amber: "border-amber-500/40 hover:border-amber-400 hover:shadow-[5px_5px_0_0_#f59e0b]",
-  purple: "border-indigo-400/40 hover:border-indigo-400 hover:shadow-[5px_5px_0_0_#c6f21f]",
+  purple: "border-indigo-400/40 hover:border-indigo-400 hover:shadow-[5px_5px_0_0_rgba(58,95,224,0.4)]",
   rose: "border-rose-500/40 hover:border-rose-400 hover:shadow-[5px_5px_0_0_#f43f5e]"
 };
 
 const VARIANT_CLASSES: Record<SectionCardVariant, string> = {
-  default: "bg-canvas-card/70 backdrop-blur-xl border shadow-[4px_4px_0_0_rgba(0,0,0,0.6)]",
+  default: "bg-canvas-card/70 backdrop-blur-xl border shadow-[4px_4px_0_0_rgba(15,23,42,0.18)]",
   nested: "bg-canvas-base/80 border border-white/10",
   bordered: "bg-canvas-card/55 backdrop-blur-xl backdrop-saturate-150 border-2 border-white/40 shadow-[5px_5px_0_0_rgba(255,255,255,0.15)]",
   subtle: "bg-white/[0.03] backdrop-blur-sm border border-white/10"

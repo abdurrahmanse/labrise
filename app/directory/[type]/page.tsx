@@ -2,8 +2,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { PageShell } from "@/shared/components/PageShell";
 import { directoryTypeSchema } from "@/modules/directory/api/schemas";
-import { CountriesExplorer, ProfessorsExplorer, UniversitiesExplorer } from "@/modules/directory/components/DirectoryExplorer";
-import { countries, directoryTypes, professors, universities } from "@/modules/directory/data";
+import { CountriesExplorer, ProfessorsExplorer, ScholarshipsExplorer, UniversitiesExplorer } from "@/modules/directory/components/DirectoryExplorer";
+import { countries, directoryTypes, professors, scholarships, universities } from "@/modules/directory/data";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
 
 interface Props {
@@ -45,6 +45,7 @@ export default async function DirectoryTypePage({ params }: Props) {
     >
       {parsed.data === "countries" && <CountriesExplorer initialData={countries} />}
       {parsed.data === "universities" && <UniversitiesExplorer initialData={universities} />}
+      {parsed.data === "scholarships" && <ScholarshipsExplorer initialData={scholarships} />}
       {parsed.data === "professors" && <ProfessorsExplorer initialData={professors} />}
     </PageShell>
   );

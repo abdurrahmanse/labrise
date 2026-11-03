@@ -3,10 +3,11 @@ import type { Metadata } from "next";
 import { directoryTypeSchema } from "@/modules/directory/api/schemas";
 import { CountryDetailView } from "@/modules/directory/components/detail/CountryDetailView";
 import { ProfessorDetailView } from "@/modules/directory/components/detail/ProfessorDetailView";
+import { ScholarshipDetailView } from "@/modules/directory/components/detail/ScholarshipDetailView";
 import { UniversityDetailView } from "@/modules/directory/components/detail/UniversityDetailView";
-import { countries, professors, universities } from "@/modules/directory/data";
-import { findCountry, findProfessor, findUniversity } from "@/modules/directory/lib/lookups";
-import { countrySlug, professorSlug, universitySlug } from "@/modules/directory/lib/slugs";
+import { countries, professors, scholarships, universities } from "@/modules/directory/data";
+import { findCountry, findProfessor, findScholarship, findUniversity } from "@/modules/directory/lib/lookups";
+import { countrySlug, professorSlug, scholarshipSlug, universitySlug } from "@/modules/directory/lib/slugs";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
 import { JsonLd } from "@/modules/seo/JsonLd";
 import { breadcrumbSchema, personSchema, universitySchema } from "@/modules/seo/schemas";
@@ -20,7 +21,8 @@ export function generateStaticParams() {
   return [
     ...countries.map((c) => ({ type: "countries", slug: countrySlug(c) })),
     ...universities.map((u) => ({ type: "universities", slug: universitySlug(u) })),
-    ...professors.map((p) => ({ type: "professors", slug: professorSlug(p) }))
+    ...professors.map((p) => ({ type: "professors", slug: professorSlug(p) })),
+    ...scholarships.map((s) => ({ type: "scholarships", slug: scholarshipSlug(s) }))
   ];
 }
 
@@ -35,6 +37,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (type === "universities") {
     const u = findUniversity(slug);
     if (u) return buildMetadata({ title: `${u.name}: funding and how to apply`, description: `${u.funding}. Typical deadline: ${u.deadline}.`, path });
+  }
+  if (type === "scholarships") {
+    const s = findScholarship(slug);
+    if (s) return buildMetadata({ title: `${s.name}: eligibility, coverage and deadline`, description: `${s.level} in ${s.host}. Covers ${s.covers}.`, path });
   }
   if (type === "professors") {
     const p = findProfessor(slug);
@@ -73,6 +79,17 @@ export default async function DirectoryDetailPage({ params }: Props) {
         <JsonLd data={universitySchema(university.name, university.site, university.country)} />
         <JsonLd data={breadcrumbSchema([...crumbs, { name: university.name, path: `/directory/universities/${slug}` }])} />
         <UniversityDetailView university={university} />
+      </>
+    );
+  }
+
+  if (parsed.data === "scholarships") {
+    const scholarship = findScholarship(slug);
+    if (!scholarship) notFound();
+    return (
+      <>
+        <JsonLd data={breadcrumbSchema([...crumbs, { name: scholarship.name, path: `/directory/scholarships/${slug}` }])} />
+        <ScholarshipDetailView scholarship={scholarship} />
       </>
     );
   }

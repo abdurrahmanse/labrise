@@ -22,7 +22,7 @@ export function GuideChecklist({ guideId, items }: { guideId: string; items: str
                 aria-pressed={done}
                 className="flex w-full items-start gap-3 text-left text-sm font-sans font-normal text-slate-200 cursor-pointer"
               >
-                <span className={`mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center border-2 ${done ? "border-black bg-indigo-400 text-black" : "border-white/50"}`}>
+                <span className={`mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center border-2 ${done ? "border-transparent bg-indigo-600 text-white" : "border-white/50"}`}>
                   {done && <Check className="h-3 w-3" />}
                 </span>
                 <span className={done ? "line-through opacity-60" : ""}>{item}</span>

@@ -29,6 +29,7 @@ export const universities: UniversityEntry[] = [
   { name: "MIT", country: "United States", region: "North America", funding: "RA/TA stipend + tuition", deadline: "Early–mid Dec", site: "https://mit.edu" },
   { name: "Stanford University", country: "United States", region: "North America", funding: "RA/TA stipend + tuition", deadline: "Early–mid Dec", site: "https://stanford.edu" },
   { name: "UIUC", country: "United States", region: "North America", funding: "RA/TA stipend + tuition", deadline: "Dec", site: "https://illinois.edu" },
+  { name: "Columbia University", country: "United States", region: "North America", funding: "RA/TA stipend + tuition", deadline: "Dec", site: "https://columbia.edu" },
   { name: "Georgia Tech", country: "United States", region: "North America", funding: "RA/TA stipend + tuition", deadline: "Dec", site: "https://gatech.edu" },
   { name: "University of Tokyo", country: "Japan", region: "Asia", funding: "MEXT and other scholarships", deadline: "Varies by program", site: "https://u-tokyo.ac.jp" },
   { name: "National University of Singapore", country: "Singapore", region: "Asia", funding: "Research scholarship (stipend + fees)", deadline: "Rounds in Nov and May", site: "https://nus.edu.sg" },

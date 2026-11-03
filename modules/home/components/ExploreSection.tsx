@@ -18,7 +18,7 @@ export function ExploreSection() {
           <Link
             key={href}
             href={href}
-            className="group border-2 border-white/30 bg-white/[0.04] backdrop-blur-xl p-6 shadow-[4px_4px_0_0_rgba(0,0,0,0.6)] transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[7px_7px_0_0_#c6f21f]"
+            className="group border-2 border-white/30 bg-white/[0.04] backdrop-blur-xl p-6 shadow-[4px_4px_0_0_rgba(15,23,42,0.18)] transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[7px_7px_0_0_rgba(58,95,224,0.4)]"
           >
             <Icon className="w-7 h-7 text-indigo-400 mb-4" />
             <div className="text-2xl font-bold text-white">{title}</div>

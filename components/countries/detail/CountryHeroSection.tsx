@@ -22,7 +22,7 @@ export function CountryHeroSection({ country }: CountryHeroSectionProps) {
         className="absolute top-0 inset-x-0 h-[500px] pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(198, 242, 31, 0.1) 0%, rgba(255, 255, 255, 0.04) 45%, transparent 75%)",
+            "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(58, 95, 224, 0.1) 0%, rgba(255, 255, 255, 0.04) 45%, transparent 75%)",
         }}
       />
 
@@ -57,7 +57,7 @@ export function CountryHeroSection({ country }: CountryHeroSectionProps) {
         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8">
           <div className="flex-1 space-y-4 sm:space-y-5">
             {/* Region & Code Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-slate-900/80 border border-indigo-500/40 text-indigo-300 text-[11px] font-mono font-medium shadow-[3px_3px_0_0_rgba(198,242,31,0.9)] backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-slate-900/80 border border-indigo-500/40 text-indigo-300 text-[11px] font-mono font-medium shadow-[3px_3px_0_0_rgba(58,95,224,0.35)] backdrop-blur-md">
               <MapPin className="w-3 h-3 text-indigo-400" />
               <span>
                 {country.region} · {country.code}

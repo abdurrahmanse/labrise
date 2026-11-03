@@ -1,7 +1,7 @@
 import { LinkCardGrid } from "@/shared/components/LinkCardGrid";
 import { Block } from "@/shared/components/Block";
 import { PageShell } from "@/shared/components/PageShell";
-import { countries, professors, universities } from "@/modules/directory/data";
+import { countries, professors, scholarships, universities } from "@/modules/directory/data";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
 
 export const metadata = buildMetadata({
@@ -21,8 +21,9 @@ export default function DirectoryPage() {
       next={{ href: "/problems", label: "Problems" }}
     >
       <LinkCardGrid
-        columns="md:grid-cols-3"
+        columns="md:grid-cols-2"
         items={[
+          { href: "/directory/scholarships", title: "Scholarships", meta: `${scholarships.length} programs` },
           { href: "/directory/countries", title: "Countries", meta: `${countries.length} listed` },
           { href: "/directory/universities", title: "Universities", meta: `${universities.length} listed` },
           { href: "/directory/professors", title: "Professors", meta: `${professors.length} listed` }

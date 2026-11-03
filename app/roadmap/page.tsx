@@ -35,7 +35,7 @@ export default function RoadmapPage() {
           className="absolute top-0 inset-x-0 h-[500px] pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(198, 242, 31, 0.1) 0%, rgba(255, 255, 255, 0.04) 45%, transparent 75%)",
+              "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(58, 95, 224, 0.1) 0%, rgba(255, 255, 255, 0.04) 45%, transparent 75%)",
           }}
         />
 
@@ -61,7 +61,7 @@ export default function RoadmapPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
           {/* Top Pill Badges */}
           <div className="flex flex-wrap items-center gap-2.5">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none bg-slate-900/80 border border-indigo-500/40 text-indigo-300 text-xs font-mono font-bold shadow-[3px_3px_0_0_rgba(198,242,31,0.9)] backdrop-blur-md">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none bg-slate-900/80 border border-indigo-500/40 text-indigo-300 text-xs font-mono font-bold shadow-[3px_3px_0_0_rgba(58,95,224,0.35)] backdrop-blur-md">
               <Sparkles className="w-3.5 h-3.5 text-teal-400" />
               <span>{pageHero.badge}</span>
             </span>

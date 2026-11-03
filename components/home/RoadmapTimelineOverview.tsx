@@ -38,7 +38,7 @@ export function RoadmapTimelineOverview() {
                   onClick={() => setSelectedPhase(phase)}
                   className={`w-full text-left p-3.5 rounded-xl border transition-all duration-200 flex items-center justify-between group cursor-pointer ${
                     isSelected
-                      ? "bg-indigo-400/10 border-indigo-400 shadow-[4px_4px_0_0_#c6f21f]"
+                      ? "bg-indigo-400/10 border-indigo-400 shadow-[4px_4px_0_0_rgba(58,95,224,0.4)]"
                       : "bg-slate-900/40 border-white/[0.06] hover:bg-slate-900/80 hover:border-white/15"
                   }`}
                 >
@@ -46,7 +46,7 @@ export function RoadmapTimelineOverview() {
                     <span
                       className={`w-7 h-7 rounded-lg flex items-center justify-center text-xs font-mono font-bold shrink-0 ${
                         isSelected
-                          ? "bg-indigo-400 text-black"
+                          ? "bg-indigo-600 text-white"
                           : "bg-white/5 text-slate-400 group-hover:text-white"
                       }`}
                     >

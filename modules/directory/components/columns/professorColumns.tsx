@@ -22,7 +22,7 @@ export const professorColumns: ColumnDef<ProfessorEntry>[] = [
           {row.original.email}
         </a>
       ) : (
-        <span className="text-slate-500">On detail page</span>
+        <span className="text-slate-500">Not listed</span>
       )
   }
 ];

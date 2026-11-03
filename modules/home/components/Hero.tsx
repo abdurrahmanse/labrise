@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { HeroPanel } from "./HeroPanel";
 
 const primaryBtn =
-  "inline-flex items-center gap-2 bg-indigo-400 text-black border-2 border-black px-6 py-3 font-bold uppercase tracking-wider shadow-[4px_4px_0_0_rgba(255,255,255,0.9)] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_rgba(255,255,255,0.9)]";
+  "inline-flex items-center gap-2 bg-indigo-600 text-white border-2 border-transparent px-6 py-3 font-bold uppercase tracking-wider shadow-[4px_4px_0_0_rgba(15,23,42,0.18)] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_rgba(15,23,42,0.18)]";
 const ghostBtn =
   "inline-flex items-center gap-2 border-2 border-white/60 px-6 py-3 font-bold uppercase tracking-wider text-slate-100 hover:bg-white hover:text-black";
 

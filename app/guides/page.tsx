@@ -1,6 +1,8 @@
+import { Block } from "@/shared/components/Block";
 import { LinkCardGrid } from "@/shared/components/LinkCardGrid";
 import { PageShell } from "@/shared/components/PageShell";
-import { guideTopics } from "@/modules/guides/data/topics";
+import { guideGroups } from "@/modules/guides/data/groups";
+import { findGuide } from "@/modules/guides/lib/guides";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
 
 export const metadata = buildMetadata({
@@ -18,14 +20,16 @@ export default function GuidesPage() {
       prev={{ href: "/profile", label: "Profile" }}
       next={{ href: "/directory", label: "Directory" }}
     >
-      <LinkCardGrid
-        items={guideTopics.map((g, i) => ({
-          href: `/guides/${g.id}`,
-          title: g.title,
-          meta: g.tag,
-          index: String(i + 1).padStart(2, "0")
-        }))}
-      />
+      {guideGroups.map((group) => (
+        <Block key={group.title} title={group.title}>
+          <LinkCardGrid
+            items={group.ids.flatMap((id) => {
+              const guide = findGuide(id);
+              return guide ? [{ href: `/guides/${id}`, title: guide.title, meta: guide.tag }] : [];
+            })}
+          />
+        </Block>
+      ))}
     </PageShell>
   );
 }

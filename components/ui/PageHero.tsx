@@ -47,7 +47,7 @@ const THEME_STYLES: Record<
     gradient: "from-indigo-400 via-indigo-300 to-white",
     defaultHighlightIcon: "text-indigo-400",
     spotlight:
-      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(198, 242, 31, 0.1) 0%, rgba(255, 255, 255, 0.04) 45%, transparent 75%)",
+      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(58, 95, 224, 0.1) 0%, rgba(255, 255, 255, 0.04) 45%, transparent 75%)",
     orbLeft: "bg-indigo-400/10",
     orbRight: "bg-white/5",
   },
@@ -59,7 +59,7 @@ const THEME_STYLES: Record<
     gradient: "from-indigo-400 via-indigo-300 to-white",
     defaultHighlightIcon: "text-indigo-400",
     spotlight:
-      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(198, 242, 31, 0.1) 0%, rgba(255, 255, 255, 0.03) 45%, transparent 75%)",
+      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(58, 95, 224, 0.1) 0%, rgba(255, 255, 255, 0.03) 45%, transparent 75%)",
     orbLeft: "bg-indigo-400/10",
     orbRight: "bg-white/5",
   },
@@ -71,7 +71,7 @@ const THEME_STYLES: Record<
     gradient: "from-indigo-400 via-indigo-300 to-white",
     defaultHighlightIcon: "text-indigo-400",
     spotlight:
-      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(198, 242, 31, 0.1) 0%, rgba(198, 242, 31, 0.04) 45%, transparent 75%)",
+      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(58, 95, 224, 0.1) 0%, rgba(58, 95, 224, 0.04) 45%, transparent 75%)",
     orbLeft: "bg-indigo-400/10",
     orbRight: "bg-white/5",
   },
@@ -83,7 +83,7 @@ const THEME_STYLES: Record<
     gradient: "from-indigo-400 via-indigo-300 to-white",
     defaultHighlightIcon: "text-indigo-400",
     spotlight:
-      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(198, 242, 31, 0.1) 0%, rgba(255, 255, 255, 0.03) 45%, transparent 75%)",
+      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(58, 95, 224, 0.1) 0%, rgba(255, 255, 255, 0.03) 45%, transparent 75%)",
     orbLeft: "bg-indigo-400/10",
     orbRight: "bg-white/5",
   },
@@ -95,7 +95,7 @@ const THEME_STYLES: Record<
     gradient: "from-indigo-400 via-indigo-300 to-white",
     defaultHighlightIcon: "text-indigo-400",
     spotlight:
-      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(198, 242, 31, 0.1) 0%, rgba(255, 255, 255, 0.03) 45%, transparent 75%)",
+      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(58, 95, 224, 0.1) 0%, rgba(255, 255, 255, 0.03) 45%, transparent 75%)",
     orbLeft: "bg-indigo-400/10",
     orbRight: "bg-white/5",
   },
@@ -107,7 +107,7 @@ const THEME_STYLES: Record<
     gradient: "from-indigo-400 via-indigo-300 to-white",
     defaultHighlightIcon: "text-indigo-400",
     spotlight:
-      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(198, 242, 31, 0.1) 0%, rgba(255, 255, 255, 0.03) 45%, transparent 75%)",
+      "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(58, 95, 224, 0.1) 0%, rgba(255, 255, 255, 0.03) 45%, transparent 75%)",
     orbLeft: "bg-indigo-400/10",
     orbRight: "bg-white/5",
   },
@@ -175,7 +175,7 @@ export function PageHero({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         {/* Radar Badge Ribbon */}
         <div
-          className={`inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 rounded-none border text-xs font-semibold uppercase tracking-widest mb-5 sm:mb-6 shadow-[3px_3px_0_0_rgba(198,242,31,0.9)] backdrop-blur-xl max-w-[calc(100vw-32px)] hover:border-white/30 transition-all duration-200 ${styles.badgeContainer} ${styles.badgeText}`}
+          className={`inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 rounded-none border text-xs font-semibold uppercase tracking-widest mb-5 sm:mb-6 shadow-[3px_3px_0_0_rgba(58,95,224,0.35)] backdrop-blur-xl max-w-[calc(100vw-32px)] hover:border-white/30 transition-all duration-200 ${styles.badgeContainer} ${styles.badgeText}`}
         >
           <span className="relative flex h-2 w-2 shrink-0">
             <span
@@ -220,7 +220,7 @@ export function PageHero({
               return (
                 <div
                   key={h.label}
-                  className="group flex items-center gap-2 px-3.5 sm:px-4 py-2 bg-white/[0.05] border border-white/25 hover:border-indigo-400 backdrop-blur-md text-slate-200 hover:text-white font-mono text-[11px] sm:text-xs shadow-[3px_3px_0_0_rgba(0,0,0,0.6)] hover:-translate-y-0.5 transition-all duration-200"
+                  className="group flex items-center gap-2 px-3.5 sm:px-4 py-2 bg-white/[0.05] border border-white/25 hover:border-indigo-400 backdrop-blur-md text-slate-200 hover:text-white font-mono text-[11px] sm:text-xs shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] hover:-translate-y-0.5 transition-all duration-200"
                 >
                   <span className="w-5 h-5 bg-white/[0.06] border border-white/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                     {hIcon}

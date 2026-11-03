@@ -86,7 +86,7 @@ export function LevelInteractiveTracker({ level }: LevelInteractiveTrackerProps)
                       <div
                         className={`w-5 h-5 rounded-md border flex items-center justify-center transition-all ${
                           isDone
-                            ? "bg-indigo-400 border-black text-black"
+                            ? "bg-indigo-600 border-transparent text-white"
                             : "border-white/20 bg-white/5"
                         }`}
                       >

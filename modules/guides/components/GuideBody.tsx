@@ -3,7 +3,7 @@ import { GuideIntroCards } from "./GuideIntroCards";
 import { GuideMistakes } from "./GuideMistakes";
 import { GuideSections } from "./GuideSections";
 import { GuideSidebar } from "./GuideSidebar";
-import type { GuideDetail } from "../data/details";
+import type { GuideDetail } from "../types";
 import type { GuideTopic } from "../data/topics";
 
 interface GuideBodyProps {

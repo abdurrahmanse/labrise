@@ -73,12 +73,12 @@ export interface TabItemProps {
 }
 
 const ACTIVE_THEMES: Record<TabTheme, string> = {
-  indigo: "bg-indigo-400 text-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] border-black",
-  cyan: "bg-white text-black shadow-[3px_3px_0_0_rgba(198,242,31,0.9)] border-black",
-  emerald: "bg-emerald-500 text-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] border-black",
-  amber: "bg-amber-400 text-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] border-black",
-  purple: "bg-indigo-400 text-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] border-black",
-  rose: "bg-rose-500 text-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] border-black"
+  indigo: "bg-indigo-600 text-white shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] border-transparent",
+  cyan: "bg-cyan-600 text-white shadow-[3px_3px_0_0_rgba(58,95,224,0.35)] border-transparent",
+  emerald: "bg-emerald-600 text-white shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] border-transparent",
+  amber: "bg-amber-600 text-white shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] border-transparent",
+  purple: "bg-indigo-600 text-white shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] border-transparent",
+  rose: "bg-rose-600 text-white shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] border-transparent"
 };
 
 const INACTIVE_STYLES = "bg-canvas-base text-slate-400 hover:text-white border-white/15 hover:border-white/60 hover:bg-white/[0.06] backdrop-blur-sm";

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { InfoCard } from "@/shared/components/InfoCard";
-import type { GuideDetail } from "../data/details";
+import type { GuideDetail } from "../types";
 import type { GuideTopic } from "../data/topics";
 import { GuideChecklist } from "./GuideChecklist";
 

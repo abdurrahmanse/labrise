@@ -23,13 +23,13 @@ export function HeaderNav({ pathname }: HeaderNavProps) {
             href={link.href}
             className={`group relative px-3 py-2 rounded-lg text-sm xl:text-[15px] font-bold transition-all duration-150 flex items-center gap-2 ${
               isActive
-                ? "text-black bg-indigo-400 border border-black shadow-[2px_2px_0_0_rgba(255,255,255,0.85)]"
+                ? "text-white bg-indigo-600 border border-transparent shadow-[2px_2px_0_0_rgba(15,23,42,0.18)]"
                 : "text-slate-400 hover:text-slate-100 hover:bg-white/[0.04] border border-transparent"
             }`}
           >
             <Icon
               className={`w-4 h-4 transition-colors shrink-0 ${
-                isActive ? "text-black" : "text-slate-500 group-hover:text-slate-300"
+                isActive ? "text-white" : "text-slate-500 group-hover:text-slate-300"
               }`}
             />
             <span>{link.label}</span>

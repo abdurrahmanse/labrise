@@ -1,6 +1,6 @@
 import { Block } from "@/shared/components/Block";
 import { StepList } from "@/shared/components/StepList";
-import type { GuideSection } from "../data/details";
+import type { GuideSection } from "../types";
 
 export function GuideSections({ sections }: { sections: GuideSection[] }) {
   return (

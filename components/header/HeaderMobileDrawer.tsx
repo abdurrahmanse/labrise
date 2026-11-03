@@ -40,7 +40,7 @@ export function HeaderMobileDrawer({
           className="absolute top-0 inset-x-0 h-40 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 120% 60% at 80% 0%, rgba(198, 242, 31,0.18) 0%, transparent 70%)",
+              "radial-gradient(ellipse 120% 60% at 80% 0%, rgba(58, 95, 224, 0.18) 0%, transparent 70%)",
           }}
         />
 
@@ -90,7 +90,7 @@ export function HeaderMobileDrawer({
                   <span
                     className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
                       isActive
-                        ? "bg-indigo-400 text-black border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] font-bold"
+                        ? "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] font-bold"
                         : "bg-white/[0.04] text-slate-500 group-hover:text-slate-300"
                     }`}
                   >

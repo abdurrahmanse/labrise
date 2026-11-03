@@ -2,7 +2,7 @@ import { profileChecklist } from "../data/profile";
 import type { ProfileItem } from "../types";
 
 const PRIORITY_STYLE: Record<ProfileItem["priority"], string> = {
-  "Must have": "bg-indigo-400 text-black border-black",
+  "Must have": "bg-indigo-600 text-white border-transparent",
   "Strong plus": "bg-white/10 text-white border-white/40",
   Bonus: "bg-transparent text-slate-400 border-white/20"
 };

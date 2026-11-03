@@ -33,21 +33,21 @@ export function GlassCard({
   };
 
   const glowStyles = {
-    none: "border-white/20 hover:border-white/70 hover:shadow-[7px_7px_0_0_rgba(255,255,255,0.85)]",
-    indigo: "border-indigo-400/40 hover:border-indigo-400 hover:shadow-[7px_7px_0_0_#c6f21f]",
-    cyan: "border-white/30 hover:border-white hover:shadow-[7px_7px_0_0_rgba(255,255,255,0.85)]",
+    none: "border-white/20 hover:border-white/70 hover:shadow-[7px_7px_0_0_rgba(15,23,42,0.18)]",
+    indigo: "border-indigo-400/40 hover:border-indigo-400 hover:shadow-[7px_7px_0_0_rgba(58,95,224,0.4)]",
+    cyan: "border-white/30 hover:border-white hover:shadow-[7px_7px_0_0_rgba(15,23,42,0.18)]",
     emerald: "border-emerald-500/40 hover:border-emerald-400 hover:shadow-[7px_7px_0_0_#10b981]",
-    purple: "border-indigo-400/40 hover:border-indigo-400 hover:shadow-[7px_7px_0_0_#c6f21f]",
+    purple: "border-indigo-400/40 hover:border-indigo-400 hover:shadow-[7px_7px_0_0_rgba(58,95,224,0.4)]",
     amber: "border-amber-500/40 hover:border-amber-400 hover:shadow-[7px_7px_0_0_#f59e0b]",
     rose: "border-rose-500/40 hover:border-rose-400 hover:shadow-[7px_7px_0_0_#f43f5e]"
   };
 
   const spotlightGlows = {
     none: "rgba(255, 255, 255, 0.07)",
-    indigo: "rgba(198, 242, 31, 0.15)",
+    indigo: "rgba(58, 95, 224, 0.15)",
     cyan: "rgba(255, 255, 255, 0.15)",
     emerald: "rgba(16, 185, 129, 0.15)",
-    purple: "rgba(198, 242, 31, 0.15)",
+    purple: "rgba(58, 95, 224, 0.15)",
     amber: "rgba(245, 158, 11, 0.15)",
     rose: "rgba(244, 63, 94, 0.15)"
   };
@@ -63,7 +63,7 @@ export function GlassCard({
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`group relative bg-canvas-card/55 backdrop-blur-xl backdrop-saturate-150 border p-6 sm:p-7 shadow-[5px_5px_0_0_rgba(0,0,0,0.6)] ${glowStyles[borderGlow]} ${hoverClass} ${className}`}
+      className={`group relative bg-canvas-card/55 backdrop-blur-xl backdrop-saturate-150 border p-6 sm:p-7 shadow-[5px_5px_0_0_rgba(15,23,42,0.18)] ${glowStyles[borderGlow]} ${hoverClass} ${className}`}
     >
       {/* Glass edge highlight */}
       <div className="absolute top-0 inset-x-0 h-px bg-white/25 pointer-events-none" />

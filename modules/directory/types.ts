@@ -16,6 +16,8 @@ export interface ProfessorEntry {
   group: string;
   /** Add only addresses copied from the professor's official university page. */
   email?: string;
+  /** Extra guidance for contacting this person. */
+  note?: string;
 }
 
 export interface CountryEntry {
@@ -28,4 +30,15 @@ export interface CountryEntry {
 }
 
 
-export type DirectoryType = "countries" | "universities" | "professors";
+export interface ScholarshipEntry {
+  name: string;
+  host: string;
+  region: Region;
+  level: "Master's" | "PhD" | "Master's & PhD" | "PhD & research";
+  covers: string;
+  eligibility: string;
+  deadline: string;
+  site: string;
+}
+
+export type DirectoryType = "countries" | "universities" | "professors" | "scholarships";

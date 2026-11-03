@@ -10,7 +10,7 @@ export function HeroPanel() {
   ];
 
   return (
-    <aside className="border-2 border-white/40 bg-white/[0.05] backdrop-blur-xl p-6 shadow-[8px_8px_0_0_rgba(198,242,31,0.9)]">
+    <aside className="border-2 border-white/40 bg-white/[0.05] backdrop-blur-xl p-6 shadow-[8px_8px_0_0_rgba(58,95,224,0.35)]">
       <div className="font-mono text-xs uppercase tracking-widest text-slate-400 mb-4">What is inside</div>
       <div className="grid grid-cols-3 gap-px bg-white/20 border border-white/20">
         {stats.map((s) => (

@@ -53,8 +53,9 @@ export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }
           ["Email", <EmailCell key="e" professor={professor} />]
         ]}
       />
+      {professor.note && <p className="text-sm font-bold text-amber-400">{professor.note}</p>}
       <p className="text-sm text-slate-400">
-        Copy the email only from the professor&apos;s official university page. Affiliations change, so confirm there first.
+        Emails were taken from official university or institute pages. People move, so confirm on their page before writing.
       </p>
 
       <ProfessorFieldInfo field={field} />

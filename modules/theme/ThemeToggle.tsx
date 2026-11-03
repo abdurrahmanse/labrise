@@ -27,7 +27,7 @@ export function ThemeToggle() {
       <Moon className="absolute right-2 h-4 w-4 text-slate-400" />
       <span
         className={cn(
-          "relative z-10 flex h-6 w-6 items-center justify-center border-2 border-black bg-indigo-400 text-black transition-transform duration-200",
+          "relative z-10 flex h-6 w-6 items-center justify-center border-2 border-transparent bg-indigo-600 text-white transition-transform duration-200",
           isDark ? "translate-x-[1.9rem]" : "translate-x-0"
         )}
       >

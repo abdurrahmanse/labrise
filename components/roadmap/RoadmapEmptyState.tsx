@@ -26,7 +26,7 @@ export function RoadmapEmptyState({ onReset }: RoadmapEmptyStateProps) {
       </div>
       <button
         onClick={onReset}
-        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-400 hover:bg-indigo-300 text-black border-2 border-black text-xs font-semibold cursor-pointer transition-colors shadow-md"
+        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white border-2 border-transparent text-xs font-semibold cursor-pointer transition-colors shadow-md"
       >
         <RotateCcw className="w-3.5 h-3.5" />
         <span>{resetLabel}</span>

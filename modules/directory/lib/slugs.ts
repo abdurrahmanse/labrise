@@ -1,4 +1,4 @@
-import type { CountryEntry, ProfessorEntry, UniversityEntry } from "../types";
+import type { CountryEntry, ProfessorEntry, ScholarshipEntry, UniversityEntry } from "../types";
 
 export const slugify = (text: string) =>
   text
@@ -12,3 +12,4 @@ export const slugify = (text: string) =>
 export const countrySlug = (c: CountryEntry) => slugify(c.country);
 export const universitySlug = (u: UniversityEntry) => slugify(u.name);
 export const professorSlug = (p: ProfessorEntry) => slugify(p.name);
+export const scholarshipSlug = (s: ScholarshipEntry) => slugify(s.name);

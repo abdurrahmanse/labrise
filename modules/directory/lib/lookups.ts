@@ -1,8 +1,9 @@
 import { countries } from "../data/countries";
 import { professors } from "../data/professors";
+import { scholarships } from "../data/scholarships";
 import { universities } from "../data/universities";
 import type { CountryEntry, ProfessorEntry, UniversityEntry } from "../types";
-import { countrySlug, professorSlug, universitySlug } from "./slugs";
+import { countrySlug, professorSlug, scholarshipSlug, universitySlug } from "./slugs";
 
 export const findCountry = (slug: string) => countries.find((c) => countrySlug(c) === slug);
 export const findUniversity = (slug: string) => universities.find((u) => universitySlug(u) === slug);
@@ -22,3 +23,8 @@ export const universitiesInCountry = (country: string) => universities.filter((u
 export const professorsInCountry = (country: string) => professors.filter((p) => p.country === country);
 
 export const regionOfProfessor = (p: ProfessorEntry) => universityOfProfessor(p)?.region;
+
+export const findScholarship = (slug: string) => scholarships.find((s) => scholarshipSlug(s) === slug);
+
+/** Scholarships hosted by a country (the data uses the country name or "Europe" for EU-wide programs). */
+export const scholarshipsInCountry = (country: string) => scholarships.filter((s) => s.host === country);

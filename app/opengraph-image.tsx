@@ -15,14 +15,14 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: 80,
-          background: "#0b0b0c",
-          color: "#fafafa",
-          border: "12px solid #c6f21f"
+          background: "#f5f6fa",
+          color: "#0f1b3d",
+          border: "12px solid #3a5fe0"
         }}
       >
-        <div style={{ fontSize: 28, color: "#c6f21f", letterSpacing: 6 }}>FULLY FUNDED MASTER&apos;S &amp; PHD</div>
+        <div style={{ fontSize: 28, color: "#3a5fe0", letterSpacing: 6 }}>FULLY FUNDED MASTER&apos;S &amp; PHD</div>
         <div style={{ fontSize: 84, fontWeight: 700, marginTop: 24, lineHeight: 1.05 }}>Scholarship Roadmap</div>
-        <div style={{ fontSize: 34, marginTop: 28, color: "#a1a1aa" }}>Steps, guides, countries, universities, professors</div>
+        <div style={{ fontSize: 34, marginTop: 28, color: "#4a5878" }}>Steps, guides, countries, universities, professors</div>
       </div>
     ),
     size

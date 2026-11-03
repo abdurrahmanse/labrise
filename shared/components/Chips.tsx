@@ -15,7 +15,7 @@ export function Chips({ items }: { items: ChipItem[] }) {
         <Link
           key={item.href}
           href={item.href}
-          className="border-2 border-white/30 bg-white/[0.04] backdrop-blur-md px-3 py-1.5 text-sm font-bold text-slate-100 hover:bg-indigo-400 hover:text-black hover:border-black"
+          className="border-2 border-white/30 bg-white/[0.04] backdrop-blur-md px-3 py-1.5 text-sm font-bold text-slate-100 hover:bg-indigo-600 hover:text-white hover:border-transparent"
         >
           {item.label}
           {item.meta && <span className="ml-2 font-mono text-xs opacity-70">{item.meta}</span>}
