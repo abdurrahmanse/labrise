@@ -11,7 +11,7 @@ import { scholarshipSlug, universitySlug } from "../../lib/slugs";
 import type { ProviderEntry } from "../../types";
 import { Flag } from "../Flag";
 import { detailText } from "@/data/text/directory";
-import { EntryActions } from "@/modules/library/components/EntryActions";
+import { EntryActions } from "@/modules/library";
 import { providerSlug } from "../../lib/slugs";
 
 const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";

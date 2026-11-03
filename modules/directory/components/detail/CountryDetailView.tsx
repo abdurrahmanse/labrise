@@ -18,7 +18,7 @@ import { FunderList } from "../ecosystem/FunderList";
 import { UniversityRoster } from "../ecosystem/UniversityRoster";
 import { CountryFacts } from "./CountryFacts";
 import { detailText } from "@/data/text/directory";
-import { EntryActions } from "@/modules/library/components/EntryActions";
+import { EntryActions } from "@/modules/library";
 
 export function CountryDetailView({ country, dossier }: { country: CountryEntry; dossier?: CountryGuide | null }) {
   const slug = countrySlug(country);

@@ -1,7 +1,7 @@
 "use client";
 
 import { keepPreviousData, useInfiniteQuery } from "@tanstack/react-query";
-import { directoryApi } from "@/modules/directory/api/endpoints";
+import { directoryApi } from "@/modules/directory";
 import { useDebouncedValue } from "@/shared/hooks/useDebouncedValue";
 import { queryKeys } from "@/shared/query/queryKeys";
 import { staleTimes } from "@/shared/query/staleTimes";

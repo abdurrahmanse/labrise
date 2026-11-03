@@ -1,4 +1,4 @@
-import { countries, professors, scholarships, universities } from "@/modules/directory/data";
+import { countries, professors, scholarships, universities } from "@/modules/directory";
 import { homeText } from "@/data/text/site";
 
 export function HeroStats() {

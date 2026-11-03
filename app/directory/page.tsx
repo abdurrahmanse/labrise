@@ -1,8 +1,8 @@
 import { LinkCardGrid } from "@/shared/components/LinkCardGrid";
 import { Block } from "@/shared/components/Block";
 import { PageShell } from "@/shared/components/PageShell";
-import { countries, professors, providers, scholarships, universities } from "@/modules/directory/data";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { countries, professors, providers, scholarships, universities } from "@/modules/directory";
+import { buildMetadata } from "@/modules/seo";
 import { commonText } from "@/data/text/common";
 import { directoryIndexText as t } from "@/data/text/pages";
 import { Award, GraduationCap, Landmark, MapPin, Users } from "lucide-react";

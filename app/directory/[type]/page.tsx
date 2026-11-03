@@ -1,12 +1,22 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { ProfessorsExplorer } from "@/modules/directory/components/professors/ProfessorsExplorer";
+import {
+  ProfessorsExplorer,
+  directoryTypeSchema,
+  CountriesList,
+  ProvidersList,
+  ScholarshipsList,
+  UniversitiesList,
+  countries,
+  directoryTypes,
+  professors,
+  providers,
+  scholarships,
+  universities
+} from "@/modules/directory";
 import { PageShell } from "@/shared/components/PageShell";
-import { directoryTypeSchema } from "@/modules/directory/api/schemas";
-import { CountriesList, ProvidersList, ScholarshipsList, UniversitiesList } from "@/modules/directory/components/lists/DirectoryLists";
-import { countries, directoryTypes, professors, providers, scholarships, universities } from "@/modules/directory/data";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { buildMetadata } from "@/modules/seo";
 import { PageFallback } from "@/shared/components/PageFallback";
 import { navLabels, notFoundTitles, pageText } from "@/data/text/site";
 

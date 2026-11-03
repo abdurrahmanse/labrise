@@ -19,8 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AppProviders } from "@/shared/providers/AppProviders";
-import { JsonLd } from "@/modules/seo/JsonLd";
-import { websiteSchema } from "@/modules/seo/schemas";
+import { JsonLd, websiteSchema } from "@/modules/seo";
 import { AmbientBackground } from "@/components/ui/AmbientBackground";
 
 import { rootMetadata } from "@/data/metadata";

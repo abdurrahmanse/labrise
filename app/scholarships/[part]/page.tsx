@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { ScholarshipFinderView } from "@/components/scholarships/ScholarshipFinderView";
 import { SCHOLARSHIP_TABS, type ScholarshipPart } from "@/components/scholarships/scholarshipTabs";
 import { PageShell } from "@/shared/components/PageShell";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { buildMetadata } from "@/modules/seo";
 import { PageFallback } from "@/shared/components/PageFallback";
 import { navLabels, notFoundTitles, pageText } from "@/data/text/site";
 

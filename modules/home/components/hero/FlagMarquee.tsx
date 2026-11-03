@@ -1,5 +1,4 @@
-import { Flag } from "@/modules/directory/components/Flag";
-import { countries } from "@/modules/directory/data";
+import { Flag, countries } from "@/modules/directory";
 
 /** Endless strip of destination flags. The list is doubled so the loop has no gap. */
 export function FlagMarquee() {

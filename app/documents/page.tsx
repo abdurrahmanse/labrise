@@ -2,11 +2,10 @@ import type { Metadata } from "next";
 import { documentsHubText as t } from "@/data/text/documents";
 import { commonText } from "@/data/text/common";
 import { getDocuments } from "@/modules/content/server";
-import { DocumentsHub } from "@/modules/documents/components/DocumentsHub";
-import { DocumentsProgress } from "@/modules/documents/components/DocumentsProgress";
+import { DocumentsHub, DocumentsProgress } from "@/modules/documents";
 import { Block } from "@/shared/components/Block";
 import { PageShell } from "@/shared/components/PageShell";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { buildMetadata } from "@/modules/seo";
 import { surface } from "@/shared/components/Surface";
 
 export const metadata: Metadata = buildMetadata({ title: t.title, description: t.description, path: "/documents" });

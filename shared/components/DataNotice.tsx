@@ -1,5 +1,5 @@
 import { Flag, ShieldCheck } from "lucide-react";
-import { DATA_REVIEWED } from "@/modules/directory/data/review";
+import { DATA_REVIEWED } from "@/shared/data/review";
 import { noticeText } from "@/data/text/common";
 import { contactInfo } from "@/data/text/contact";
 

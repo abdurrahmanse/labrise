@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { getCountryGuide, getCountryGuides } from "@/modules/content/server";
 import { CountryDetailPage } from "@/components/countries/CountryDetailPage";
 import { COUNTRY_SECTIONS, type CountrySection } from "@/components/countries/countrySections";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { buildMetadata } from "@/modules/seo";
 import { notFoundTitles } from "@/data/text/site";
 
 interface Props {

@@ -20,7 +20,7 @@ import { FunderList } from "../ecosystem/FunderList";
 import { ProfessorRoster } from "../ecosystem/ProfessorRoster";
 import { CountryFacts } from "./CountryFacts";
 import { detailText } from "@/data/text/directory";
-import { EntryActions } from "@/modules/library/components/EntryActions";
+import { EntryActions } from "@/modules/library";
 
 const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 

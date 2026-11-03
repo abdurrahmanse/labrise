@@ -2,14 +2,10 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { PageShell } from "@/shared/components/PageShell";
-import { TrackSidebar } from "@/modules/apply/components/TrackSidebar";
-import { TrackStepper } from "@/modules/apply/components/TrackStepper";
+import { TrackSidebar, TrackStepper, applyTracks, findTrack } from "@/modules/apply";
 import { trackIcons, trackPageText as t } from "@/data/text/apply";
 import { IconTile } from "@/shared/components/IconTile";
-import { applyTracks, findTrack } from "@/modules/apply/data/tracks";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
-import { JsonLd } from "@/modules/seo/JsonLd";
-import { breadcrumbSchema, howToSchema } from "@/modules/seo/schemas";
+import { buildMetadata, JsonLd, breadcrumbSchema, howToSchema } from "@/modules/seo";
 import { PageFallback } from "@/shared/components/PageFallback";
 import { navLabels, notFoundTitles, pageText } from "@/data/text/site";
 

@@ -1,6 +1,6 @@
 import { Block } from "@/shared/components/Block";
 import { PageShell } from "@/shared/components/PageShell";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { buildMetadata } from "@/modules/seo";
 import { commonText } from "@/data/text/common";
 import { aboutText as t } from "@/data/text/pages";
 

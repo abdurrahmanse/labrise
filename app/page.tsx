@@ -1,7 +1,5 @@
-import { ExploreSection } from "@/modules/home/components/ExploreSection";
-import { Hero } from "@/modules/home/components/Hero";
-import { JourneySection } from "@/modules/home/components/JourneySection";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { ExploreSection, Hero, JourneySection } from "@/modules/home";
+import { buildMetadata } from "@/modules/seo";
 
 export const metadata = buildMetadata({
   title: "Fully Funded Scholarship Roadmap",

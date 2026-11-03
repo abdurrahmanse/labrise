@@ -4,7 +4,7 @@ import { detailText } from "@/data/text/directory";
 import { scholarshipDetailText as t } from "@/data/text/scholarships";
 import { Button } from "@/components/ui/Button";
 import { HighlightTiles } from "@/shared/components/StatTiles";
-import { EntryActions } from "@/modules/library/components/EntryActions";
+import { EntryActions } from "@/modules/library";
 import { Block } from "@/shared/components/Block";
 import { IconBadge } from "@/shared/components/IconBadge";
 import { Chips } from "@/shared/components/Chips";

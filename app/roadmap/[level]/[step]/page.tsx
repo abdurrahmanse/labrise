@@ -5,7 +5,7 @@ import { StepCard } from "@/components/roadmap/StepCard";
 import { roadmapLevelsData, getLevelBySlug } from "@/data/levelsData";
 import { getStepById } from "@/data/steps";
 import { PageShell } from "@/shared/components/PageShell";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { buildMetadata } from "@/modules/seo";
 import { PageFallback } from "@/shared/components/PageFallback";
 import { notFoundTitles } from "@/data/text/site";
 

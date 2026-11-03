@@ -1,7 +1,7 @@
 import { CommunityHelpSection } from "@/components/faqs/CommunityHelpSection";
 import { InteractivePreflightChecklist } from "@/components/faqs/InteractivePreflightChecklist";
 import { PageShell } from "@/shared/components/PageShell";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { buildMetadata } from "@/modules/seo";
 import { navLabels, pageText } from "@/data/text/site";
 
 export const metadata = buildMetadata({

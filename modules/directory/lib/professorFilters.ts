@@ -22,18 +22,20 @@ export const fieldOptions = (professors: ProfessorEntry[]) =>
 
 export function filterProfessors(
   professors: ProfessorEntry[],
-  filters: ProfessorFilters,
+  filters: Omit<ProfessorFilters, "sort">,
   tracked: Record<string, TrackedProfessor>
 ) {
   const q = filters.q.trim().toLowerCase();
 
-  return professors
-    .filter((p) => {
-      if (filters.region !== "All" && regionOfProfessor(p) !== filters.region) return false;
-      if (filters.field !== "All" && fieldOf(p.group).title !== filters.field) return false;
-      if (filters.hasEmail && !p.email) return false;
-      if (filters.savedOnly && !getTracked(tracked, professorSlug(p)).saved) return false;
-      return !q || `${p.name} ${p.university} ${p.country} ${p.group}`.toLowerCase().includes(q);
-    })
-    .sort((a, b) => a[filters.sort].localeCompare(b[filters.sort]));
+  return professors.filter((p) => {
+    if (filters.region !== "All" && regionOfProfessor(p) !== filters.region) return false;
+    if (filters.field !== "All" && fieldOf(p.group).title !== filters.field) return false;
+    if (filters.hasEmail && !p.email) return false;
+    if (filters.savedOnly && !getTracked(tracked, professorSlug(p)).saved) return false;
+    return !q || `${p.name} ${p.university} ${p.country} ${p.group}`.toLowerCase().includes(q);
+  });
 }
+
+/** Returns a sorted copy; the input list is left as it is. */
+export const sortProfessors = (professors: ProfessorEntry[], sort: ProfessorSort) =>
+  [...professors].sort((a, b) => a[sort].localeCompare(b[sort]));

@@ -4,7 +4,7 @@ import { CopyButton } from "@/components/ui/CopyButton";
 import { detailText, emailText } from "@/data/text/directory";
 import { noticeText } from "@/data/text/common";
 import { professorProfileText as t } from "@/data/text/professorsHub";
-import { EntryActions } from "@/modules/library/components/EntryActions";
+import { EntryActions } from "@/modules/library";
 import { HighlightTiles } from "@/shared/components/StatTiles";
 import { Avatar } from "@/shared/components/Avatar";
 import { Block } from "@/shared/components/Block";

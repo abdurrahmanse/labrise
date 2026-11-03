@@ -1,20 +1,33 @@
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { directoryTypeSchema } from "@/modules/directory/api/schemas";
-import { CountryDetailView } from "@/modules/directory/components/detail/CountryDetailView";
-import { ProfessorDetailView } from "@/modules/directory/components/detail/ProfessorDetailView";
-import { ProviderDetailView } from "@/modules/directory/components/detail/ProviderDetailView";
-import { ScholarshipDetailView } from "@/modules/directory/components/detail/ScholarshipDetailView";
-import { UniversityDetailView } from "@/modules/directory/components/detail/UniversityDetailView";
-import { countries, professors, providers, scholarships, universities } from "@/modules/directory/data";
-import { findCountry, findProfessor, findProvider, findScholarship, findUniversity } from "@/modules/directory/lib/lookups";
-import { countrySlug, professorSlug, providerSlug, scholarshipSlug, universitySlug } from "@/modules/directory/lib/slugs";
+import {
+  directoryTypeSchema,
+  CountryDetailView,
+  ProfessorDetailView,
+  ProviderDetailView,
+  ScholarshipDetailView,
+  UniversityDetailView,
+  countries,
+  professors,
+  providers,
+  scholarships,
+  universities,
+  findCountry,
+  findProfessor,
+  findProvider,
+  findScholarship,
+  findUniversity,
+  countrySlug,
+  professorSlug,
+  providerSlug,
+  scholarshipSlug,
+  universitySlug,
+  fieldOf,
+  entryMeta
+} from "@/modules/directory";
 import { getCountryGuide } from "@/modules/content/server";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
-import { JsonLd } from "@/modules/seo/JsonLd";
-import { breadcrumbSchema, personSchema, universitySchema } from "@/modules/seo/schemas";
-import { fieldOf } from "@/modules/directory/data/fields";
+import { buildMetadata, JsonLd, breadcrumbSchema, personSchema, universitySchema } from "@/modules/seo";
 import { PageFallback } from "@/shared/components/PageFallback";
 import { navLabels, notFoundTitles } from "@/data/text/site";
 
@@ -34,29 +47,8 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { type, slug } = await params;
-  const path = `/directory/${type}/${slug}`;
-
-  if (type === "countries") {
-    const c = findCountry(slug);
-    if (c) return buildMetadata({ title: `Fully funded study in ${c.country}`, description: `${c.routes}. ${c.funding}.`, path });
-  }
-  if (type === "universities") {
-    const u = findUniversity(slug);
-    if (u) return buildMetadata({ title: `${u.name}: funding and how to apply`, description: `${u.funding}. Typical deadline: ${u.deadline}.`, path });
-  }
-  if (type === "providers") {
-    const p = findProvider(slug);
-    if (p) return buildMetadata({ title: `${p.name}: requirements and how to apply`, description: `${p.programs.join(", ")}. ${p.route}`, path });
-  }
-  if (type === "scholarships") {
-    const s = findScholarship(slug);
-    if (s) return buildMetadata({ title: `${s.name}: eligibility, coverage and deadline`, description: `${s.level} in ${s.host}. Covers ${s.covers}.`, path });
-  }
-  if (type === "professors") {
-    const p = findProfessor(slug);
-    if (p) return buildMetadata({ title: `${p.name}, ${p.university}`, description: `${p.group} research group in ${p.country}. How to approach and what to read.`, path });
-  }
-  return { title: notFoundTitles.generic };
+  const meta = entryMeta(type, slug);
+  return meta ? buildMetadata({ ...meta, path: `/directory/${type}/${slug}` }) : { title: notFoundTitles.generic };
 }
 
 async function DirectoryDetailPageContent({ params }: Props) {

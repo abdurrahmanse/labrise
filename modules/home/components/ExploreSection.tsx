@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Building2, Globe2, Users } from "lucide-react";
 import type { ReactNode } from "react";
-import { countries, professors, universities } from "@/modules/directory/data";
+import { countries, professors, universities } from "@/modules/directory";
 import { CountriesArt, ProfessorsArt, UniversitiesArt } from "./ExploreArt";
 import { SectionHeading } from "./SectionHeading";
 import { homeText } from "@/data/text/site";

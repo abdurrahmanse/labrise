@@ -2,16 +2,19 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { IconTile } from "@/shared/components/IconTile";
-import { guideIcon } from "@/modules/guides/lib/guideIcons";
+import {
+  guideIcon,
+  GuideBody,
+  getGuideDetail,
+  guideTopics,
+  findGuide,
+  guideNeighbours,
+  guideStepTexts,
+  relatedGuides
+} from "@/modules/guides";
 import { PageShell } from "@/shared/components/PageShell";
 import { StepList } from "@/shared/components/StepList";
-import { GuideBody } from "@/modules/guides/components/GuideBody";
-import { getGuideDetail } from "@/modules/guides/data/details";
-import { guideTopics } from "@/modules/guides/data/topics";
-import { findGuide, guideNeighbours, guideStepTexts, relatedGuides } from "@/modules/guides/lib/guides";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
-import { JsonLd } from "@/modules/seo/JsonLd";
-import { breadcrumbSchema, howToSchema } from "@/modules/seo/schemas";
+import { buildMetadata, JsonLd, breadcrumbSchema, howToSchema } from "@/modules/seo";
 import { PageFallback } from "@/shared/components/PageFallback";
 import { navLabels, notFoundTitles, pageText } from "@/data/text/site";
 

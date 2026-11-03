@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { scholarshipHub as t } from "@/data/text/hubPages";
 import { commonText } from "@/data/text/common";
-import { FinderStats } from "@/modules/scholarships/components/FinderStats";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { FinderStats } from "@/modules/scholarships";
+import { buildMetadata } from "@/modules/seo";
 import { JourneyHub } from "@/shared/components/JourneyHub";
 import { PageShell } from "@/shared/components/PageShell";
 import { ProgressBadge } from "@/shared/components/ProgressBadge";

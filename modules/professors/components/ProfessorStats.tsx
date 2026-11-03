@@ -1,7 +1,6 @@
 import { Globe2, GraduationCap, Mail, Users } from "lucide-react";
 import { professorsHubText as t } from "@/data/text/professorsHub";
-import { professors } from "@/modules/directory/data";
-import { fieldOf } from "@/modules/directory/data/fields";
+import { professors, fieldOf } from "@/modules/directory";
 import { StatTiles } from "@/shared/components/StatTiles";
 
 export function ProfessorStats() {

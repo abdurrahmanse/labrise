@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { CircleCheck, CircleHelp, CircleSlash } from "lucide-react";
 import { professorsHubText as t } from "@/data/text/professorsHub";
-import { countries } from "@/modules/directory/data";
-import { countrySlug } from "@/modules/directory/lib/slugs";
+import { countries, countrySlug } from "@/modules/directory";
 import { surface } from "@/shared/components/Surface";
 
 const GROUPS = [

@@ -4,8 +4,8 @@ import { Check } from "lucide-react";
 import { professorOutreachWorkflow } from "@/data/professorsData";
 import { searchWorkflowSteps } from "@/data/scholarshipsSearchData";
 import { hubChrome } from "@/data/text/hubPages";
-import { useOutreachProgress } from "@/modules/professors/store/useOutreachProgress";
-import { useFinderProgress } from "@/modules/scholarships/store/useFinderProgress";
+import { useOutreachProgress } from "@/modules/professors";
+import { useFinderProgress } from "@/modules/scholarships";
 import { useMounted } from "../hooks/useMounted";
 
 /** Shows how many steps of a saved workflow are done. Empty until the visitor has started. */

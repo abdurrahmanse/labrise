@@ -1,11 +1,9 @@
-import type { DirectoryType } from "@/modules/directory/types";
-
 /** One place for every query key, so invalidating or prefetching never relies on a typed-by-hand array. */
 export const queryKeys = {
   directory: {
     all: ["directory"] as const,
-    list: (type: DirectoryType) => ["directory", "list", type] as const,
-    entry: (type: DirectoryType, slug: string) => ["directory", "entry", type, slug] as const
+    list: (type: string) => ["directory", "list", type] as const,
+    entry: (type: string, slug: string) => ["directory", "entry", type, slug] as const
   },
   /** Keys for the content collections in modules/content, one family per collection name. */
   collection: (name: string) => ({

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Compass, FileText, FlaskConical, Globe2, Plane, Users, type LucideIcon } from "lucide-react";
 import { IconTile } from "@/shared/components/IconTile";
-import { roadmapSteps } from "@/modules/roadmap/data/steps";
+import { roadmapSteps } from "@/modules/roadmap";
 import { SectionHeading } from "./SectionHeading";
 import { homeText } from "@/data/text/site";
 import { surface } from "@/shared/components/Surface";

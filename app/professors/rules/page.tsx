@@ -1,7 +1,7 @@
 import { ProfessorOutreachView } from "@/components/professors/ProfessorOutreachView";
 import { PROFESSOR_TABS } from "@/components/professors/professorTabs";
 import { PageShell } from "@/shared/components/PageShell";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { buildMetadata } from "@/modules/seo";
 import { navLabels, pageText } from "@/data/text/site";
 
 export const metadata = buildMetadata({

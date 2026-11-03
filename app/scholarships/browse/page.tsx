@@ -1,10 +1,9 @@
 import { SCHOLARSHIP_TABS } from "@/components/scholarships/scholarshipTabs";
 import { scholarshipHub, scholarshipSubPages } from "@/data/text/hubPages";
-import { FinderStats } from "@/modules/scholarships/components/FinderStats";
-import { ScholarshipBrowse } from "@/modules/scholarships";
+import { FinderStats, ScholarshipBrowse } from "@/modules/scholarships";
 import { getScholarshipPage } from "@/modules/scholarships/server";
 import { RelatedStrip } from "@/shared/components/JourneyHub";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { buildMetadata } from "@/modules/seo";
 import { PageShell } from "@/shared/components/PageShell";
 import { SubNav } from "@/shared/components/SubNav";
 

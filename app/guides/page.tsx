@@ -1,10 +1,8 @@
 import { Block } from "@/shared/components/Block";
 import { LinkCardGrid } from "@/shared/components/LinkCardGrid";
 import { PageShell } from "@/shared/components/PageShell";
-import { guideGroups } from "@/modules/guides/data/groups";
-import { guideIcon } from "@/modules/guides/lib/guideIcons";
-import { findGuide } from "@/modules/guides/lib/guides";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { guideGroups, guideIcon, findGuide } from "@/modules/guides";
+import { buildMetadata } from "@/modules/seo";
 import { navLabels, pageText } from "@/data/text/site";
 
 export const metadata = buildMetadata({

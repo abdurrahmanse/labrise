@@ -2,16 +2,14 @@
 
 import React, { useState, useEffect } from "react";
 import { RoadmapPhase } from "@/data/roadmapPhasesData";
-import {
-  PhaseDetailHero,
-  PhaseWhatWhySection,
-  PhaseHowStepsSection,
-  PhaseResourcesSection,
-  PhasePitfallsAndExampleSection,
-  PhaseDegreeNuancesSection,
-  PhaseChecklistSection,
-  PhaseNavigationFooter,
-} from "./";
+import { PhaseDetailHero } from "./PhaseDetailHero";
+import { PhaseWhatWhySection } from "./PhaseWhatWhySection";
+import { PhaseHowStepsSection } from "./PhaseHowStepsSection";
+import { PhaseResourcesSection } from "./PhaseResourcesSection";
+import { PhasePitfallsAndExampleSection } from "./PhasePitfallsAndExampleSection";
+import { PhaseDegreeNuancesSection } from "./PhaseDegreeNuancesSection";
+import { PhaseChecklistSection } from "./PhaseChecklistSection";
+import { PhaseNavigationFooter } from "./PhaseNavigationFooter";
 
 interface PhaseDetailPageProps {
   phase: RoadmapPhase;

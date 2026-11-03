@@ -1,4 +1,4 @@
-import type { EntryResponse } from "@/modules/directory/api/entry";
+import type { EntryResponse } from "@/modules/directory";
 
 /** Title, one line of context and the page link for any entry type. */
 export function describeEntry(r: EntryResponse) {

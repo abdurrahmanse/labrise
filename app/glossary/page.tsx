@@ -1,6 +1,6 @@
 import { PageShell } from "@/shared/components/PageShell";
-import { GlossaryBrowser } from "@/modules/glossary/components/GlossaryBrowser";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { GlossaryBrowser } from "@/modules/glossary";
+import { buildMetadata } from "@/modules/seo";
 import { commonText } from "@/data/text/common";
 import { glossaryText as t } from "@/data/text/glossary";
 

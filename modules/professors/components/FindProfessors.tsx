@@ -1,10 +1,7 @@
 import { ArrowRight, Bookmark } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { professorsHubText as t } from "@/data/text/professorsHub";
-import { Flag } from "@/modules/directory/components/Flag";
-import { countries, professors } from "@/modules/directory/data";
-import { fieldOf } from "@/modules/directory/data/fields";
-import { countrySlug } from "@/modules/directory/lib/slugs";
+import { Flag, countries, professors, fieldOf, countrySlug } from "@/modules/directory";
 import { LinkTile, LinkTileGrid } from "@/shared/components/LinkTile";
 import { Label } from "@/shared/components/Text";
 

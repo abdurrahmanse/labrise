@@ -1,11 +1,21 @@
 import { getCountryGuides, getDocuments } from "@/modules/content/server";
 import type { MetadataRoute } from "next";
-import { countries, professors, providers, scholarships, universities } from "@/modules/directory/data";
-import { countrySlug, professorSlug, providerSlug, scholarshipSlug, universitySlug } from "@/modules/directory/lib/slugs";
-import { guideTopics } from "@/modules/guides/data/topics";
+import {
+  countries,
+  professors,
+  providers,
+  scholarships,
+  universities,
+  countrySlug,
+  professorSlug,
+  providerSlug,
+  scholarshipSlug,
+  universitySlug
+} from "@/modules/directory";
+import { guideTopics } from "@/modules/guides";
 import { roadmapLevelsData } from "@/data/levelsData";
 import { roadmapPhasesData } from "@/data/roadmapPhasesData";
-import { absoluteUrl } from "@/modules/seo/site";
+import { absoluteUrl } from "@/modules/seo";
 
 const staticPaths = [
   "/", "/steps", "/profile", "/guides", "/directory", "/problems",

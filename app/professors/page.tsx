@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { professorHub as t } from "@/data/text/hubPages";
 import { commonText } from "@/data/text/common";
-import { ProfessorStats } from "@/modules/professors/components/ProfessorStats";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { ProfessorStats } from "@/modules/professors";
+import { buildMetadata } from "@/modules/seo";
 import { JourneyHub } from "@/shared/components/JourneyHub";
 import { PageShell } from "@/shared/components/PageShell";
 import { ProgressBadge } from "@/shared/components/ProgressBadge";

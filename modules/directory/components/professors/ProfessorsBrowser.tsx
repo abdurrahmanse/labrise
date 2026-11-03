@@ -3,7 +3,7 @@
 import { useMemo } from "react";
 import { Pagination } from "@/shared/components/Pagination";
 import { useProfessorFilters } from "../../hooks/useProfessorFilters";
-import { fieldOptions, filterProfessors } from "../../lib/professorFilters";
+import { fieldOptions, filterProfessors, sortProfessors } from "../../lib/professorFilters";
 import { paginate } from "../../lib/paginate";
 import { useProfessorTracker } from "../../store/useProfessorTracker";
 import type { ProfessorEntry } from "../../types";
@@ -17,7 +17,7 @@ export function ProfessorsBrowser({ data }: { data: ProfessorEntry[] }) {
   const tracked = useProfessorTracker((s) => s.entries);
 
   const fields = useMemo(() => fieldOptions(data), [data]);
-  const matches = useMemo(() => filterProfessors(data, filters, tracked), [data, filters, tracked]);
+  const matches = useMemo(() => sortProfessors(filterProfessors(data, filters, tracked), filters.sort), [data, filters, tracked]);
   const { items, pages, current } = paginate(matches, filters.page);
 
   // Any filter change goes back to page 1.

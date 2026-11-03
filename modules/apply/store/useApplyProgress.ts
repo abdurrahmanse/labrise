@@ -1,3 +1,5 @@
+"use client";
+
 import { createProgressStore } from "@/shared/progress/createProgressStore";
 
 export const useApplyProgress = createProgressStore("scholarship-roadmap:apply");

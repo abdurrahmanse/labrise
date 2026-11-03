@@ -1,5 +1,15 @@
-import { countries, professors, providers, scholarships, universities } from "@/modules/directory/data";
-import { countrySlug, professorSlug, providerSlug, scholarshipSlug, universitySlug } from "@/modules/directory/lib/slugs";
+import {
+  countries,
+  professors,
+  providers,
+  scholarships,
+  universities,
+  countrySlug,
+  professorSlug,
+  providerSlug,
+  scholarshipSlug,
+  universitySlug
+} from "@/modules/directory";
 
 export type SearchKind = "Country" | "University" | "Professor" | "Funder" | "Scholarship";
 

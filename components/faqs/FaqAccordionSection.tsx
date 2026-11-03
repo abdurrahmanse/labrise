@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { TabsContainer, TabItem } from "@/components/ui/Tabs";
 import { FaqAccordionItem } from "@/components/faqs/FaqAccordionItem";
 import { faqsHeaderData } from "@/data/faqs";
-import { useFaqs, type FAQItem } from "@/modules/content";
+import { filterFaqs, useFaqs, type FAQItem } from "@/modules/content";
 import { legacyText } from "@/data/text/legacy";
 
 interface FaqAccordionSectionProps {
@@ -37,15 +37,7 @@ export function FaqAccordionSection({
 
   const categories = faqsHeaderData.categories;
 
-  const filteredFaqs = faqsData.filter((faq) => {
-    const matchesCategory = activeCategory === "All" || faq.category === activeCategory;
-    const matchesSearch =
-      searchQuery.trim() === "" ||
-      faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      faq.answer.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      faq.tags.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
-    return matchesCategory && matchesSearch;
-  });
+  const filteredFaqs = filterFaqs(faqsData, activeCategory, searchQuery);
 
   const handleReset = () => {
     setSearchQuery("");

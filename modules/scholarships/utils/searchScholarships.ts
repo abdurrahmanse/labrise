@@ -21,13 +21,22 @@ export function matchesFilters(s: Scholarship, { q, country, level, region }: Sc
   );
 }
 
-/** Filters, sorts and pages a list. The mock repository uses it; a database does the same work in SQL. */
-export function searchScholarships(all: Scholarship[], params: ScholarshipSearchParams): PaginatedResponse<Scholarship> {
-  const pageSize = Math.min(Math.max(params.pageSize ?? DEFAULT_PAGE_SIZE, 1), MAX_PAGE_SIZE);
-  const matches = all.filter((s) => matchesFilters(s, params));
-  if (params.sort) matches.sort((a, b) => sortKey[params.sort!](a).localeCompare(sortKey[params.sort!](b)));
+export const filterScholarships = (all: Scholarship[], params: ScholarshipSearchParams) => all.filter((s) => matchesFilters(s, params));
 
-  const pageCount = Math.max(1, Math.ceil(matches.length / pageSize));
-  const page = Math.min(Math.max(params.page ?? 1, 1), pageCount);
-  return { items: matches.slice((page - 1) * pageSize, page * pageSize), total: matches.length, page, pageSize, pageCount };
+/** Returns a sorted copy; without a sort the order is kept. */
+export function sortScholarships(list: Scholarship[], sort?: ScholarshipSort) {
+  if (!sort) return list;
+  return [...list].sort((a, b) => sortKey[sort](a).localeCompare(sortKey[sort](b)));
 }
+
+/** One page of a list, with the page number clamped into range. */
+export function pageOf(list: Scholarship[], page = 1, requestedSize = DEFAULT_PAGE_SIZE): PaginatedResponse<Scholarship> {
+  const pageSize = Math.min(Math.max(requestedSize, 1), MAX_PAGE_SIZE);
+  const pageCount = Math.max(1, Math.ceil(list.length / pageSize));
+  const current = Math.min(Math.max(page, 1), pageCount);
+  return { items: list.slice((current - 1) * pageSize, current * pageSize), total: list.length, page: current, pageSize, pageCount };
+}
+
+/** Filter, then sort, then page. The mock repository uses it; a database does the same work in SQL. */
+export const searchScholarships = (all: Scholarship[], params: ScholarshipSearchParams) =>
+  pageOf(sortScholarships(filterScholarships(all, params), params.sort), params.page, params.pageSize);

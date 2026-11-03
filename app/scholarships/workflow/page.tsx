@@ -1,8 +1,8 @@
 import { SCHOLARSHIP_TABS } from "@/components/scholarships/scholarshipTabs";
 import { scholarshipHub, scholarshipSubPages } from "@/data/text/hubPages";
-import { WorkflowStepper } from "@/modules/scholarships/components/WorkflowStepper";
+import { WorkflowStepper } from "@/modules/scholarships";
 import { RelatedStrip } from "@/shared/components/JourneyHub";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { buildMetadata } from "@/modules/seo";
 import { PageShell } from "@/shared/components/PageShell";
 import { SubNav } from "@/shared/components/SubNav";
 

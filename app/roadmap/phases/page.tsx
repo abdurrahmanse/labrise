@@ -1,6 +1,6 @@
 import { CompleteRoadmapView } from "@/components/roadmap/CompleteRoadmapView";
 import { PageShell } from "@/shared/components/PageShell";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { buildMetadata } from "@/modules/seo";
 import { navLabels, pageText } from "@/data/text/site";
 
 export const metadata = buildMetadata({

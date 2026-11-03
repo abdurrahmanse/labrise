@@ -1,6 +1,6 @@
 import { PageShell } from "@/shared/components/PageShell";
-import { ProblemList } from "@/modules/roadmap/components/ProblemList";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { ProblemList } from "@/modules/roadmap";
+import { buildMetadata } from "@/modules/seo";
 import { navLabels, pageText } from "@/data/text/site";
 
 export const metadata = buildMetadata({

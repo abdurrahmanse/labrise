@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { ThemeProvider } from "@/modules/theme/ThemeProvider";
+import { ThemeProvider } from "@/modules/theme";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { QueryProvider } from "./QueryProvider";
 

@@ -1,8 +1,8 @@
 import { PROFESSOR_TABS } from "@/components/professors/professorTabs";
 import { professorHub, professorSubPages } from "@/data/text/hubPages";
-import { SupervisorNeed } from "@/modules/professors/components/SupervisorNeed";
+import { SupervisorNeed } from "@/modules/professors";
 import { RelatedStrip } from "@/shared/components/JourneyHub";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { buildMetadata } from "@/modules/seo";
 import { PageShell } from "@/shared/components/PageShell";
 import { SubNav } from "@/shared/components/SubNav";
 

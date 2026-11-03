@@ -3,16 +3,19 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Block } from "@/shared/components/Block";
 import { PageShell } from "@/shared/components/PageShell";
-import { CountryViewTabs } from "@/modules/directory/components/ecosystem/CountryViewTabs";
-import { FunderList } from "@/modules/directory/components/ecosystem/FunderList";
-import { ProfessorRoster } from "@/modules/directory/components/ecosystem/ProfessorRoster";
-import { UniversityRoster } from "@/modules/directory/components/ecosystem/UniversityRoster";
-import { Flag } from "@/modules/directory/components/Flag";
-import { countries } from "@/modules/directory/data";
-import { ecosystemOfCountry } from "@/modules/directory/lib/connections";
-import { findCountry } from "@/modules/directory/lib/lookups";
-import { countrySlug, universitySlug } from "@/modules/directory/lib/slugs";
-import { buildMetadata } from "@/modules/seo/buildMetadata";
+import {
+  CountryViewTabs,
+  FunderList,
+  ProfessorRoster,
+  UniversityRoster,
+  Flag,
+  countries,
+  ecosystemOfCountry,
+  findCountry,
+  countrySlug,
+  universitySlug
+} from "@/modules/directory";
+import { buildMetadata } from "@/modules/seo";
 import { countryViewText, rosterText } from "@/data/text/directory";
 import { PageFallback } from "@/shared/components/PageFallback";
 

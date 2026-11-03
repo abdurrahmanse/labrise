@@ -1,2 +1,1 @@
-/** Month the directory data was last reviewed as a whole. Update it after every review pass. */
-export const DATA_REVIEWED = "November 2026";
+export { DATA_REVIEWED } from "@/shared/data/review";

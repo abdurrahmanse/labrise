@@ -1,4 +1,4 @@
-import { guideTopics } from "@/modules/guides/data/topics";
+import { guideTopics } from "@/modules/guides";
 import { RotatingWord } from "./RotatingWord";
 
 export function HeroHeadline() {

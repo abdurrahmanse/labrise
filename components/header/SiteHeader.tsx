@@ -6,8 +6,8 @@ import { HeaderBrand } from "./HeaderBrand";
 import { HeaderNav } from "./HeaderNav";
 import { HeaderActions } from "./HeaderActions";
 import { HeaderMobileDrawer } from "./HeaderMobileDrawer";
-import { ThemeToggle } from "@/modules/theme/ThemeToggle";
-import { GlobalSearch } from "@/modules/search/components/GlobalSearch";
+import { ThemeToggle } from "@/modules/theme";
+import { GlobalSearch } from "@/modules/search";
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
