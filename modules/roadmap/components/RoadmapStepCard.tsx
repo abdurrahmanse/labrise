@@ -16,11 +16,11 @@ import {
   StepResourcesList,
 } from "./tasks";
 
-interface StepCardProps {
+interface RoadmapStepCardProps {
   step: RoadmapStep;
 }
 
-export function StepCard({ step }: StepCardProps) {
+export function RoadmapStepCard({ step }: RoadmapStepCardProps) {
   const [isExpanded, setIsExpanded] = useState(true);
   const [completedItems, setCompletedItems] = useState<{ [key: string]: boolean }>({});
 
@@ -125,4 +125,4 @@ export function StepCard({ step }: StepCardProps) {
   );
 }
 
-export default StepCard;
+export default RoadmapStepCard;

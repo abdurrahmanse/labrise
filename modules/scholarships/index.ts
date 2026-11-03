@@ -14,3 +14,6 @@ export { FinderProgressBadge } from "./components/FinderProgressBadge";
 export { WorkflowStepper } from "./components/WorkflowStepper";
 export { useFinderProgress } from "./store/useFinderProgress";
 export { ScholarshipBrowse } from "./components/listing/ScholarshipBrowse";
+export { ScholarshipFinderView } from "./components/ScholarshipFinderView";
+export { SCHOLARSHIP_TABS } from "./components/scholarshipTabs";
+export type { ScholarshipPart } from "./components/scholarshipTabs";
