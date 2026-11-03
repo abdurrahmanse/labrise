@@ -1,6 +1,6 @@
 import type { ElementType, HTMLAttributes } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/utils/cn";
 
 export const surface = cva("backdrop-blur-xl", {
   variants: {

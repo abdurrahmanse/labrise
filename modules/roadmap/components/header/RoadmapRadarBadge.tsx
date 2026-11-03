@@ -1,7 +1,7 @@
 import React from "react";
 import { Compass, ShieldCheck } from "lucide-react";
-import { roadmapControlsData } from "@/data/roadmapPhasesData";
-import { roadmapUiData } from "@/data/roadmapUiData";
+import { roadmapControlsData } from "@/content/roadmap/roadmapPhasesData";
+import { roadmapUiData } from "@/content/roadmap/roadmapUiData";
 
 export function RoadmapRadarBadge() {
   const { badge } = roadmapControlsData.header;

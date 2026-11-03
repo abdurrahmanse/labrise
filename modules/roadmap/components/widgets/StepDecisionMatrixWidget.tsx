@@ -11,8 +11,8 @@ import {
   Sparkles,
   ArrowRight
 } from "lucide-react";
-import { Badge } from "@/components/ui/Badge";
-import { degreeRoutesData, decisionMatrixMeta } from "@/data/stepWidgetsData";
+import { Badge } from "@/shared/ui/Badge";
+import { degreeRoutesData, decisionMatrixMeta } from "@/content/roadmap/stepWidgetsData";
 import {
   WidgetShell,
   WidgetHeader,

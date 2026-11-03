@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { COUNTRY_SECTIONS, countrySectionHref, type CountrySection } from "./countrySections";
 import { SubNav } from "@/shared/components/SubNav";
-import { CountryGuide } from "@/data/countryGuidesData";
+import type { CountryGuide } from "@/modules/content";
 import {
   CountryHeroSection,
   CountryOverviewSection,
@@ -17,7 +17,7 @@ import {
   CountryWarningsSection,
   CountryPortalsSection,
 } from "./detail";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 interface CountryDetailPageProps {
   country: CountryGuide;

@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import { Mail, CheckCircle2, Paperclip, Send, MessageSquare, FileText } from "lucide-react";
-import { coldEmailTemplates, professorOutreachControlsData } from "@/data/professorsData";
-import { CopyButton } from "@/components/ui/CopyButton";
-import { legacyText } from "@/data/text/legacy";
+import { coldEmailTemplates, professorOutreachControlsData } from "@/content/professors/professorsData";
+import { CopyButton } from "@/shared/ui/CopyButton";
+import { legacyText } from "@/content/text/legacy";
 
 export function EmailBlueprintsSection() {
   const [activeTemplateId, setActiveTemplateId] = useState(coldEmailTemplates[0].id);

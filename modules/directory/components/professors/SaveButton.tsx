@@ -2,7 +2,7 @@
 
 import { Star } from "lucide-react";
 import { getTracked, useProfessorTracker } from "../../store/useProfessorTracker";
-import { trackerText } from "@/data/text/directory";
+import { trackerText } from "@/content/text/directory";
 
 export function SaveButton({ slug }: { slug: string }) {
   const saved = useProfessorTracker((s) => getTracked(s.entries, slug).saved);

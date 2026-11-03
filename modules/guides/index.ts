@@ -4,6 +4,6 @@
 export { getGuideDetail } from "./data/details";
 export { guideGroups } from "./data/groups";
 export { guideTopics } from "./data/topics";
-export { guideIcon } from "./lib/guideIcons";
-export { findGuide, guideNeighbours, guideStepTexts, relatedGuides } from "./lib/guides";
+export { guideIcon } from "./utils/guideIcons";
+export { findGuide, guideNeighbours, guideStepTexts, relatedGuides } from "./utils/guides";
 export { GuideBody } from "./components/GuideBody";

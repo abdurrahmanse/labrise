@@ -1,5 +1,5 @@
-import { directoryTypeSchema } from "@/modules/directory/api/schemas";
-import { getEntry } from "@/modules/directory/api/entryServer";
+import { getEntryResponseDto } from "@/modules/directory/api/wireServer";
+import { directoryTypeSchema } from "@/modules/directory/schemas/directorySchemas";
 import { fail, ok } from "@/shared/api/respond";
 
 export async function GET(_request: Request, { params }: { params: Promise<{ type: string; slug: string }> }) {
@@ -7,6 +7,6 @@ export async function GET(_request: Request, { params }: { params: Promise<{ typ
   const parsed = directoryTypeSchema.safeParse(type);
   if (!parsed.success) return fail(404, "Unknown directory type");
 
-  const result = getEntry(parsed.data, slug);
-  return result ? ok(result) : fail(404, "Entry not found");
+  const dto = getEntryResponseDto(parsed.data, slug);
+  return dto ? ok(dto) : fail(404, "Entry not found");
 }

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { SearchX, RotateCcw } from "lucide-react";
-import { roadmapUiData } from "@/data/roadmapUiData";
+import { roadmapUiData } from "@/content/roadmap/roadmapUiData";
 
 interface RoadmapEmptyStateProps {
   onReset: () => void;

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { documentsHubText as t } from "@/data/text/documents";
-import { commonText } from "@/data/text/common";
+import { documentsHubText as t } from "@/content/text/documents";
+import { commonText } from "@/content/text/common";
 import { getDocuments } from "@/modules/content/server";
 import { DocumentsHub } from "@/modules/documents/components/DocumentsHub";
 import { DocumentsProgress } from "@/modules/documents/components/DocumentsProgress";

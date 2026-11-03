@@ -3,8 +3,8 @@ import { Block } from "@/shared/components/Block";
 import { PageShell } from "@/shared/components/PageShell";
 import { countries, professors, providers, scholarships, universities } from "@/modules/directory/catalog";
 import { buildMetadata } from "@/modules/seo";
-import { commonText } from "@/data/text/common";
-import { directoryIndexText as t } from "@/data/text/pages";
+import { commonText } from "@/content/text/common";
+import { directoryIndexText as t } from "@/content/text/pages";
 import { Award, GraduationCap, Landmark, MapPin, Users } from "lucide-react";
 
 export const metadata = buildMetadata({ title: t.title, description: t.description, path: "/directory" });

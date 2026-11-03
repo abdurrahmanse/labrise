@@ -1,8 +1,8 @@
 import type { ProfessorEntry } from "../../types";
 import { ProfessorCard } from "./ProfessorCard";
-import { listText } from "@/data/text/directory";
+import { listText } from "@/content/text/directory";
 import { EmptyState } from "@/shared/components/EmptyState";
-import { emptyText } from "@/data/text/status";
+import { emptyText } from "@/content/text/status";
 
 export function ProfessorGrid({ professors }: { professors: ProfessorEntry[] }) {
   if (professors.length === 0) {

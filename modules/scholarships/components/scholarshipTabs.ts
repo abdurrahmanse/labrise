@@ -1,4 +1,4 @@
-import { scholarshipTabs } from "@/data/text/hubPages";
+import { scholarshipTabs } from "@/content/text/hubPages";
 
 export type ScholarshipPart = "workflow" | "formulas" | "portals";
 

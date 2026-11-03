@@ -1,7 +1,8 @@
-import type { EntryResponse } from "@/modules/directory/contracts";
+import type { EntryResult } from "@/modules/directory/contracts";
+import type { EntryView } from "../types";
 
 /** Title, one line of context and the page link for any entry type. */
-export function describeEntry(r: EntryResponse) {
+export function describeEntry(r: EntryResult): EntryView {
   const href = `/directory/${r.type}/${r.slug}`;
   switch (r.type) {
     case "countries":

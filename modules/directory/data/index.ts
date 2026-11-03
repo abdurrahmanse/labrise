@@ -1,4 +1,4 @@
-import type { DirectoryType } from "../types";
+import type { DirectoryEntries, DirectoryType } from "../types";
 import { countries } from "./countries";
 import { professors } from "./professors";
 import { providers } from "./providers";
@@ -7,7 +7,7 @@ import { universities } from "./universities";
 
 export { countries, professors, providers, scholarships, universities };
 
-export const directoryData = { countries, universities, professors, scholarships, providers } as const;
+export const directoryData: DirectoryEntries = { countries, universities, professors, scholarships, providers };
 
 export const directoryTypes: { type: DirectoryType; title: string; lead: string }[] = [
   { type: "countries", title: "Countries", lead: "Funded routes and what you get." },

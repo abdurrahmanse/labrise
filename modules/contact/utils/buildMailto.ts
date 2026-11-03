@@ -1,4 +1,4 @@
-import { contactInfo, contactPageText, contactTopics } from "@/data/text/contact";
+import { contactInfo, contactPageText, contactTopics } from "@/content/text/contact";
 import type { ContactValues } from "./contactSchema";
 
 /** The message as plain text, also shown so it can be copied if the email app does not open. */

@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, Layers, ArrowRight } from "lucide-react";
-import { RoadmapPhase } from "@/data/roadmapPhasesData";
-import { phaseDetailUiData } from "@/data/phaseDetailUiData";
+import type { RoadmapPhase } from "../../types/phase";
+import { phaseDetailUiData } from "@/content/roadmap/phaseDetailUiData";
 
 interface PhaseNavigationFooterProps {
   prevPhase?: RoadmapPhase | null;

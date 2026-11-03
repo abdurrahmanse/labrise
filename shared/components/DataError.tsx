@@ -1,5 +1,5 @@
 import { AlertTriangle } from "lucide-react";
-import { commonText } from "@/data/text/common";
+import { commonText } from "@/content/text/common";
 import { errorMessage } from "@/shared/api/errors";
 
 interface DataErrorProps {

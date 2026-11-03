@@ -1,6 +1,6 @@
 import { ListChecks, Mail, MapPin, ShieldCheck } from "lucide-react";
-import { CopyButton } from "@/components/ui/CopyButton";
-import { contactInfo, contactPageText as t } from "@/data/text/contact";
+import { CopyButton } from "@/shared/ui/CopyButton";
+import { contactInfo, contactPageText as t } from "@/content/text/contact";
 import { IconBadge } from "@/shared/components/IconBadge";
 import { ContourPattern } from "@/shared/illustrations/ContourPattern";
 

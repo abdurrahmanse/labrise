@@ -1,4 +1,4 @@
-import type { Challenge } from "../types";
+import type { Challenge } from "../types/overview";
 
 export const challenges: Challenge[] = [
   { problem: "No reply from professors", fix: "Shorter, more specific emails. Cite their paper. Contact 5–10 per university." },

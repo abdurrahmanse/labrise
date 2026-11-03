@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { CheckCircle2 } from "lucide-react";
-import { researchFitChecklist, professorOutreachControlsData } from "@/data/professorsData";
+import { researchFitChecklist, professorOutreachControlsData } from "@/content/professors/professorsData";
 
 export function ResearchFitChecklistSection() {
   const [checkedFit, setCheckedFit] = useState<Record<string, boolean>>({});

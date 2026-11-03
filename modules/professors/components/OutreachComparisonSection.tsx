@@ -1,7 +1,7 @@
 import React from "react";
 import { AlertTriangle, CheckCircle2, Award } from "lucide-react";
-import { professorOutreachControlsData } from "@/data/professorsData";
-import { legacyText } from "@/data/text/legacy";
+import { professorOutreachControlsData } from "@/content/professors/professorsData";
+import { legacyText } from "@/content/text/legacy";
 
 export function OutreachComparisonSection() {
   const { comparisonTitle, comparisonSubtitle } = professorOutreachControlsData.sections;

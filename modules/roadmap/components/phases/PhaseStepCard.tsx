@@ -1,5 +1,5 @@
 import React from "react";
-import { PhaseHowToStep } from "@/data/roadmapPhasesData";
+import type { PhaseHowToStep } from "../../types/phase";
 
 export interface PhaseStepCardProps {
   step: PhaseHowToStep;

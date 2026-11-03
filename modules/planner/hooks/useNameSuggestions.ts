@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearch } from "@/modules/search/client";
-import { plannableResults } from "../lib/suggestions";
+import { plannableResults } from "../utils/suggestions";
 
 const MIN_CHARS = 2;
 

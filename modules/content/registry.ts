@@ -1,25 +1,44 @@
+import type { Collection } from "@/shared/data/collection";
 import { countryGuides } from "./collections/countryGuides";
 import { documents } from "./collections/documents";
 import { faqs } from "./collections/faqs";
-import type { Collection, ItemOf } from "@/shared/data/collection";
+import type { CountryGuideDto } from "./dto/countryGuideDto";
+import type { DocumentDto } from "./dto/documentDto";
+import type { FaqDto } from "./dto/faqDto";
+import type { CountryGuide } from "./types/countryGuide";
+import type { DocumentGuideline } from "./types/document";
+import type { FAQItem } from "./types/faq";
+
+/** Entity each collection serves, by the slug used in /api/content/{slug}. */
+interface ItemOf {
+  "country-guides": CountryGuide;
+  documents: DocumentGuideline;
+  faqs: FAQItem;
+}
+
+/** Wire format of each collection. */
+interface DtoOf {
+  "country-guides": CountryGuideDto;
+  documents: DocumentDto;
+  faqs: FaqDto;
+}
+
+export type CollectionName = keyof ItemOf;
+export type CollectionItem<N extends CollectionName> = ItemOf[N];
+export type CollectionDto<N extends CollectionName> = DtoOf[N];
+type Collections = { [N in CollectionName]: Collection<ItemOf[N], DtoOf[N]> };
 
 /**
- * Every collection the site serves. The key is the slug used in /api/content/{key}.
- * To add a dataset: write its collection in ./collections, then list it here.
+ * Every collection the site serves. To add a dataset: write its collection in ./collections,
+ * add its entity and DTO to the two interfaces above, then list it here. The compiler checks each entry.
  */
-export const collections = {
+export const collections: Collections = {
   "country-guides": countryGuides,
   documents,
   faqs
-} as const;
-
-export type CollectionName = keyof typeof collections;
-export type CollectionItem<N extends CollectionName> = ItemOf<(typeof collections)[N]>;
+};
 
 export const isCollectionName = (name: string): name is CollectionName => Object.hasOwn(collections, name);
 
-/**
- * Typed access to a collection by name. The registry above is a plain object, so TypeScript cannot
- * connect the name to its item type by itself; this is the one place that states it.
- */
-export const collectionOf = <N extends CollectionName>(name: N) => collections[name] as unknown as Collection<CollectionItem<N>>;
+/** The collection for a name, typed by that name's entity and DTO. */
+export const collectionOf = <N extends CollectionName>(name: N): Collections[N] => collections[name];

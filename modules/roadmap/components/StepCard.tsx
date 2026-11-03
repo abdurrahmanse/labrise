@@ -1,4 +1,4 @@
-import type { RoadmapStepSummary } from "../types";
+import type { RoadmapStepSummary } from "../types/overview";
 import { surface } from "@/shared/components/Surface";
 
 export function StepCard({ step }: { step: RoadmapStepSummary }) {

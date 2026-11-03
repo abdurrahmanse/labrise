@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ArrowRight, Check, Landmark } from "lucide-react";
-import { scholarshipDetailText as t } from "@/data/text/scholarships";
+import { scholarshipDetailText as t } from "@/content/text/scholarships";
 import { Block } from "@/shared/components/Block";
 import { surface } from "@/shared/components/Surface";
-import { providerSlug } from "../../../lib/slugs";
+import { providerSlug } from "../../../utils/slugs";
 import type { ProviderEntry } from "../../../types";
 import { bodyClass, labelClass, linkClass } from "./detailStyles";
 

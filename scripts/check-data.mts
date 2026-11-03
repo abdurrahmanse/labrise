@@ -1,6 +1,6 @@
 import { countries, universities, professors, providers, scholarships } from "../modules/directory/data/index";
-import * as S from "../modules/directory/lib/slugs";
-import { universityOfProfessor } from "../modules/directory/lib/lookups";
+import * as S from "../modules/directory/utils/slugs";
+import { universityOfProfessor } from "../modules/directory/utils/lookups";
 let failures = 0;
 const fail = (n: number) => { failures += n; };
 const dup=(a:string[],n:string)=>{const m=new Map<string,number>();a.forEach(x=>m.set(x,(m.get(x)||0)+1));const d=[...m].filter(([,c])=>c>1);console.log(n,"dups:",d.length,d.slice(0,5));fail(d.length);};

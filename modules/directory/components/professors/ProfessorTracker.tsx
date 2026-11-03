@@ -2,7 +2,7 @@ import { InfoCard } from "@/shared/components/InfoCard";
 import { ProfessorNote } from "./ProfessorNote";
 import { SaveButton } from "./SaveButton";
 import { StatusSelect } from "./StatusSelect";
-import { trackerText } from "@/data/text/directory";
+import { trackerText } from "@/content/text/directory";
 
 /** Save, status and note for one professor. Stored only in this browser. */
 export function ProfessorTracker({ slug }: { slug: string }) {

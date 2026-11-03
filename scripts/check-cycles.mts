@@ -3,7 +3,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { dirname, normalize } from "node:path";
 
 // Finds import cycles between source files (type-only imports are ignored: they vanish at build time).
-const roots = "app components shared core infrastructure modules data lib";
+const roots = "app shared core infrastructure modules content";
 const files = execSync(`git ls-files -co --exclude-standard ${roots}`, { encoding: "utf8" }).split("\n").filter((f) => /\.tsx?$/.test(f));
 const known = new Set(files);
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { ChevronRight } from "lucide-react";
 import { CountryDetailSectionTitle } from "./CountryDetailSectionTitle";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 interface CountrySequenceSectionProps {
   steps: string[];

@@ -1,7 +1,7 @@
 "use client";
 
-import { professorOutreachWorkflow } from "@/data/professorsData";
-import { professorsHubText as t } from "@/data/text/professorsHub";
+import { professorOutreachWorkflow } from "@/content/professors/professorsData";
+import { professorsHubText as t } from "@/content/text/professorsHub";
 import { AccordionStep } from "@/shared/components/AccordionStep";
 import { Body } from "@/shared/components/Text";
 import { ProgressPanel } from "@/shared/components/ProgressPanel";

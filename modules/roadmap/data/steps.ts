@@ -1,4 +1,4 @@
-import type { RoadmapStepSummary } from "../types";
+import type { RoadmapStepSummary } from "../types/overview";
 
 export const roadmapSteps: RoadmapStepSummary[] = [
   {

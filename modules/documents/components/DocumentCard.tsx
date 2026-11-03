@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, ListChecks, Rows3 } from "lucide-react";
-import type { DocumentGuideline } from "@/data/documentsData";
-import { documentMeta, documentsHubText as t } from "@/data/text/documents";
+import type { DocumentGuideline } from "@/modules/content";
+import { documentMeta, documentsHubText as t } from "@/content/text/documents";
 import { IconBadge } from "@/shared/components/IconBadge";
 import { ProgressBar } from "@/shared/components/ProgressBar";
 import { Label, Body } from "@/shared/components/Text";

@@ -1,4 +1,4 @@
-import { professorTabs } from "@/data/text/hubPages";
+import { professorTabs } from "@/content/text/hubPages";
 
 export type ProfessorPart = "outreach" | "rules";
 

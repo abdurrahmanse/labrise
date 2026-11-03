@@ -2,9 +2,9 @@
 
 import React from "react";
 import { ChevronDown, ChevronUp, HelpCircle, Tag } from "lucide-react";
-import { GlassCard } from "@/components/ui/GlassCard";
-import { Badge } from "@/components/ui/Badge";
-import { FAQItem } from "@/data/types";
+import { GlassCard } from "@/shared/ui/GlassCard";
+import { Badge } from "@/shared/ui/Badge";
+import type { FAQItem } from "@/modules/content";
 
 interface FaqAccordionItemProps {
   faq: FAQItem;

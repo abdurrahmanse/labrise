@@ -1,5 +1,5 @@
 import { PROFESSOR_TABS } from "@/modules/professors/components/professorTabs";
-import { professorHub, professorSubPages } from "@/data/text/hubPages";
+import { professorHub, professorSubPages } from "@/content/text/hubPages";
 import { FindProfessors } from "@/modules/professors/components/FindProfessors";
 import { ProfessorStats } from "@/modules/professors/components/ProfessorStats";
 import { RelatedStrip } from "@/shared/components/JourneyHub";

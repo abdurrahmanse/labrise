@@ -1,7 +1,7 @@
 import React from "react";
 import { Search } from "lucide-react";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { scholarshipFinderControlsData } from "@/data/scholarshipsSearchData";
+import { SectionHeader } from "@/shared/ui/SectionHeader";
+import { scholarshipFinderControlsData } from "@/content/scholarships/scholarshipsSearchData";
 
 export function ScholarshipHeader() {
   const { badge, title, subtitle } = scholarshipFinderControlsData.header;

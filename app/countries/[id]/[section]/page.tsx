@@ -5,7 +5,7 @@ import { getCountryGuide, getCountryGuides } from "@/modules/content/server";
 import { CountryDetailPage } from "@/modules/countries/components/CountryDetailPage";
 import { COUNTRY_SECTIONS, type CountrySection } from "@/modules/countries/components/countrySections";
 import { buildMetadata } from "@/modules/seo";
-import { notFoundTitles } from "@/data/text/site";
+import { notFoundTitles } from "@/content/text/site";
 
 interface Props {
   params: Promise<{ id: string; section: string }>;

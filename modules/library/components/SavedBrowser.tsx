@@ -1,7 +1,7 @@
 "use client";
 
 import { Bookmark, History, Trash2 } from "lucide-react";
-import { libraryText as t } from "@/data/text/library";
+import { libraryText as t } from "@/content/text/library";
 import { EmptyState } from "@/shared/components/EmptyState";
 import { FilterTabs } from "@/shared/components/FilterTabs";
 import { useMounted } from "@/shared/hooks/useMounted";

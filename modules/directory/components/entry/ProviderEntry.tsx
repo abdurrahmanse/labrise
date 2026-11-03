@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { JsonLd, breadcrumbSchema } from "@/modules/seo";
-import { findProvider } from "../../lib/lookups";
+import { findProvider } from "../../utils/lookups";
 import { ProviderDetailView } from "../detail/ProviderDetailView";
 import { entryBreadcrumbs } from "./entryBreadcrumbs";
 

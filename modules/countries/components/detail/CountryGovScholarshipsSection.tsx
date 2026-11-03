@@ -1,8 +1,8 @@
 import React from "react";
 import { Award, CheckCircle2, ExternalLink } from "lucide-react";
-import { CountryGuide } from "@/data/countryGuidesData";
+import type { CountryGuide } from "@/modules/content";
 import { CountryDetailSectionTitle } from "./CountryDetailSectionTitle";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 interface CountryGovScholarshipsSectionProps {
   scholarships: CountryGuide["governmentScholarships"];

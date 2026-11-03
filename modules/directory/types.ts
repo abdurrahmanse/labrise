@@ -1,4 +1,6 @@
-export type Region = "Europe" | "North America" | "Asia" | "Oceania" | "Middle East";
+import type { Scholarship } from "@/modules/scholarships/contracts";
+import type { Region } from "@/shared/types/region";
+import type { DIRECTORY_TYPES, ENTRY_KINDS } from "./constants";
 
 export interface UniversityEntry {
   name: string;
@@ -29,17 +31,8 @@ export interface CountryEntry {
   fee: string;
 }
 
-
-export interface ScholarshipEntry {
-  name: string;
-  host: string;
-  region: Region;
-  level: "Master's" | "PhD" | "Master's & PhD" | "PhD & research";
-  covers: string;
-  eligibility: string;
-  deadline: string;
-  site: string;
-}
+/** A scholarship in the directory. The entity belongs to the scholarships module; the directory lists it. */
+export type ScholarshipEntry = Scholarship;
 
 export interface ProviderEntry {
   name: string;
@@ -56,4 +49,27 @@ export interface ProviderEntry {
   site: string;
 }
 
-export type DirectoryType = "countries" | "universities" | "professors" | "scholarships" | "providers";
+export type DirectoryType = (typeof DIRECTORY_TYPES)[number];
+
+/** The entity each directory type lists. */
+export interface EntryOf {
+  countries: CountryEntry;
+  universities: UniversityEntry;
+  professors: ProfessorEntry;
+  scholarships: ScholarshipEntry;
+  providers: ProviderEntry;
+}
+
+/** The full list of entries for each directory type. */
+export type DirectoryEntries = { [T in DirectoryType]: EntryOf[T][] };
+
+/** A link to another directory entry, shown as "related" under an entry and in the saved list. */
+export interface EntryLink {
+  kind: (typeof ENTRY_KINDS)[number];
+  title: string;
+  subtitle: string;
+  href: string;
+}
+
+/** One entry plus the entries it links to, tagged by type so the caller knows which entity it got. */
+export type EntryResult = { [T in DirectoryType]: { type: T; slug: string; entry: EntryOf[T]; related: EntryLink[] } }[DirectoryType];

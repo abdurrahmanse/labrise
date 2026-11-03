@@ -6,7 +6,7 @@ import { PortalsDirectorySection } from "./PortalsDirectorySection";
 import { AntiFraudSection } from "./AntiFraudSection";
 import { SCHOLARSHIP_TABS, type ScholarshipPart } from "./scholarshipTabs";
 import { SubNav } from "@/shared/components/SubNav";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 export function ScholarshipFinderView({ part = "workflow" }: { part?: ScholarshipPart }) {
   return (

@@ -5,12 +5,12 @@ import {
   Award,
   Quote
 } from "lucide-react";
-import { GlassCard } from "@/components/ui/GlassCard";
-import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
-import { RoadmapLevel } from "@/data/types";
+import { GlassCard } from "@/shared/ui/GlassCard";
+import { Badge } from "@/shared/ui/Badge";
+import { Button } from "@/shared/ui/Button";
+import type { RoadmapLevel } from "../types/level";
 import { getLevelIcon, getLevelDifficultyVariant } from "./RoadmapConstants";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 interface LevelCardProps {
   level: RoadmapLevel;

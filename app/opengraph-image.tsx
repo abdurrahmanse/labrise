@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { ogText } from "@/data/text/hubs";
+import { ogText } from "@/content/text/hubs";
 
 export const alt = `${ogText.title}: fully funded Master's and PhD`;
 export const size = { width: 1200, height: 630 };

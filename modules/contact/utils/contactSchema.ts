@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { contactTopics } from "@/data/text/contact";
+import { contactTopics } from "@/content/text/contact";
 
 export const MIN_MESSAGE = 20;
 

@@ -2,8 +2,8 @@
 
 import { useId } from "react";
 import { Plus } from "lucide-react";
-import { plannerText as t } from "@/data/text/planner";
-import { cn } from "@/lib/utils";
+import { plannerText as t } from "@/content/text/planner";
+import { cn } from "@/shared/utils/cn";
 import { surface } from "@/shared/components/Surface";
 import { useApplicationForm } from "../hooks/useApplicationForm";
 import type { ApplicationKind } from "../store/usePlanner";

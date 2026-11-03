@@ -1,6 +1,6 @@
 import React from "react";
 import { ShieldCheck } from "lucide-react";
-import { phaseDetailUiData } from "@/data/phaseDetailUiData";
+import { phaseDetailUiData } from "@/content/roadmap/phaseDetailUiData";
 
 export function PhaseVerificationBadge() {
   const { badges } = phaseDetailUiData;

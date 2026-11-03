@@ -1,9 +1,9 @@
 import React from "react";
 import { Users } from "lucide-react";
-import { CountryGuide } from "@/data/countryGuidesData";
+import type { CountryGuide } from "@/modules/content";
 import { CountryDetailSectionTitle } from "./CountryDetailSectionTitle";
 import { SupervisorBadge } from "./SupervisorBadge";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 interface CountrySupervisorSectionProps {
   requirement: CountryGuide["supervisorContactRequirement"];

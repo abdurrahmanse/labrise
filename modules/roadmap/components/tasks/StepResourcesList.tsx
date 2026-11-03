@@ -1,6 +1,6 @@
 import React from "react";
 import { BookOpen, ExternalLink } from "lucide-react";
-import { ResourceItem } from "@/data/types";
+import type { ResourceItem } from "../../types/step";
 
 export interface StepResourcesListProps {
   resources?: ResourceItem[];

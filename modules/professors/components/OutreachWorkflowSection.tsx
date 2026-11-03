@@ -1,7 +1,7 @@
 import React from "react";
 import { Users } from "lucide-react";
-import { professorOutreachWorkflow, professorOutreachControlsData } from "@/data/professorsData";
-import { legacyText } from "@/data/text/legacy";
+import { professorOutreachWorkflow, professorOutreachControlsData } from "@/content/professors/professorsData";
+import { legacyText } from "@/content/text/legacy";
 
 export function OutreachWorkflowSection() {
   const { workflowTitle, workflowSubtitle } = professorOutreachControlsData.sections;

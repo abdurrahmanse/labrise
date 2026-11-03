@@ -4,7 +4,7 @@ import { InfoCard } from "@/shared/components/InfoCard";
 import type { GuideDetail } from "../types";
 import type { GuideTopic } from "../data/topics";
 import { GuideChecklist } from "./GuideChecklist";
-import { guideSidebarText } from "@/data/text/site";
+import { guideSidebarText } from "@/content/text/site";
 
 const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 

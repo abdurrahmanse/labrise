@@ -1,7 +1,7 @@
 "use client";
 
 import { getTracked, STATUSES, useProfessorTracker, type ProfessorStatus } from "../../store/useProfessorTracker";
-import { trackerText } from "@/data/text/directory";
+import { trackerText } from "@/content/text/directory";
 
 const STATUS_STYLE: Record<ProfessorStatus, string> = {
   "To contact": "text-slate-300",

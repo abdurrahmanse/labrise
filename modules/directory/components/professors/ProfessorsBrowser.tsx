@@ -3,8 +3,8 @@
 import { useMemo } from "react";
 import { Pagination } from "@/shared/components/Pagination";
 import { useProfessorFilters } from "../../hooks/useProfessorFilters";
-import { fieldOptions, filterProfessors, sortProfessors } from "../../lib/professorFilters";
-import { paginate } from "../../lib/paginate";
+import { fieldOptions, filterProfessors, sortProfessors } from "../../utils/professorFilters";
+import { paginate } from "../../utils/paginate";
 import { useProfessorTracker } from "../../store/useProfessorTracker";
 import type { ProfessorEntry } from "../../types";
 import { ExportButton } from "./ExportButton";

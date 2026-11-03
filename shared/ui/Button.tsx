@@ -2,7 +2,7 @@ import * as React from "react";
 import Link from "next/link";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/utils/cn";
 
 export type ButtonVariant =
   | "primary"

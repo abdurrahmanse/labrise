@@ -1,10 +1,10 @@
 "use client";
 
-import { SearchInput } from "@/components/ui/SearchInput";
-import { REGIONS } from "../../lib/regions";
-import { SORTS, type ProfessorFilters, type ProfessorSort } from "../../lib/professorFilters";
-import { toolbarText } from "@/data/text/directory";
-import { commonText } from "@/data/text/common";
+import { SearchInput } from "@/shared/ui/SearchInput";
+import { REGIONS } from "../../utils/regions";
+import { SORTS, type ProfessorFilters, type ProfessorSort } from "../../utils/professorFilters";
+import { toolbarText } from "@/content/text/directory";
+import { commonText } from "@/content/text/common";
 
 interface ProfessorToolbarProps {
   filters: ProfessorFilters;

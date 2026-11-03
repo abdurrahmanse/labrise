@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { buildMailto } from "../lib/buildMailto";
-import type { ContactErrors, ContactValues } from "../lib/contactSchema";
-import { validateContact } from "../lib/validateContact";
+import { buildMailto } from "../utils/buildMailto";
+import type { ContactErrors, ContactValues } from "../utils/contactSchema";
+import { validateContact } from "../utils/validateContact";
 
 const EMPTY: ContactValues = { topic: "correction", name: "", email: "", page: "", message: "" };
 

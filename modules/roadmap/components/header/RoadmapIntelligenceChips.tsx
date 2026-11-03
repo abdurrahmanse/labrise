@@ -1,6 +1,6 @@
 import React from "react";
 import { ListOrdered, GraduationCap, Sparkles } from "lucide-react";
-import { roadmapUiData, RoadmapHeaderChip } from "@/data/roadmapUiData";
+import { roadmapUiData, RoadmapHeaderChip } from "@/content/roadmap/roadmapUiData";
 
 function renderChipIcon(iconName: RoadmapHeaderChip["iconName"]) {
   switch (iconName) {

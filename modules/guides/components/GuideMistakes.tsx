@@ -1,6 +1,6 @@
 import { XCircle } from "lucide-react";
 import { Block } from "@/shared/components/Block";
-import { guideSidebarText } from "@/data/text/site";
+import { guideSidebarText } from "@/content/text/site";
 
 export function GuideMistakes({ mistakes }: { mistakes: string[] }) {
   return (

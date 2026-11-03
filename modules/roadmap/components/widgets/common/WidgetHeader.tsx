@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge } from "@/components/ui/Badge";
+import { Badge } from "@/shared/ui/Badge";
 import { WidgetTheme } from "./WidgetShell";
 
 interface WidgetHeaderProps {

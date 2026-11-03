@@ -1,8 +1,8 @@
 import { Block } from "@/shared/components/Block";
 import { PageShell } from "@/shared/components/PageShell";
 import { buildMetadata } from "@/modules/seo";
-import { commonText } from "@/data/text/common";
-import { aboutText as t } from "@/data/text/pages";
+import { commonText } from "@/content/text/common";
+import { aboutText as t } from "@/content/text/pages";
 
 export const metadata = buildMetadata({ title: t.title, description: t.description, path: "/about" });
 

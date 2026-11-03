@@ -5,8 +5,8 @@ import { ApplicationList } from "@/modules/planner/components/ApplicationList";
 import { PlannerSummary } from "@/modules/planner/components/PlannerSummary";
 import { TimelineBuilder } from "@/modules/planner/components/TimelineBuilder";
 import { buildMetadata } from "@/modules/seo";
-import { commonText } from "@/data/text/common";
-import { plannerText as t } from "@/data/text/planner";
+import { commonText } from "@/content/text/common";
+import { plannerText as t } from "@/content/text/planner";
 
 export const metadata = buildMetadata({ title: t.title, description: t.description, path: "/planner" });
 

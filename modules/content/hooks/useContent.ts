@@ -1,8 +1,8 @@
 "use client";
 
-import type { CountryGuide } from "@/data/countryGuidesData";
-import type { DocumentGuideline } from "@/data/documentsData";
-import type { FAQItem } from "@/data/types";
+import type { CountryGuide } from "../types/countryGuide";
+import type { DocumentGuideline } from "../types/document";
+import type { FAQItem } from "../types/faq";
 import { useCollection, useCollectionItem } from "@/shared/data/useCollection";
 import { countryGuides } from "../collections/countryGuides";
 import { documents } from "../collections/documents";

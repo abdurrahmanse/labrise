@@ -1,4 +1,5 @@
-import type { ProviderEntry, Region } from "../types";
+import type { ProviderEntry } from "../types";
+import type { Region } from "@/shared/types/region";
 
 // More organisations that fund study or research, grouped by the country where the money is used.
 // Rules change every cycle, so each entry links to the official site. Requirements are the usual ones, kept brief.

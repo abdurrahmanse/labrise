@@ -1,12 +1,12 @@
 import { CalendarCheck, FileText } from "lucide-react";
-import { applyHubText as t, phaseIcons } from "@/data/text/apply";
-import { commonText } from "@/data/text/common";
-import { navLabels } from "@/data/text/site";
+import { applyHubText as t, phaseIcons } from "@/content/text/apply";
+import { commonText } from "@/content/text/common";
+import { navLabels } from "@/content/text/site";
 import { CompareRoutes } from "@/modules/apply/components/CompareRoutes";
 import { RouteCards } from "@/modules/apply/components/RouteCards";
 import { buildMetadata } from "@/modules/seo";
 import { Block } from "@/shared/components/Block";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/shared/ui/Button";
 import { IconBadge } from "@/shared/components/IconBadge";
 import { PageShell } from "@/shared/components/PageShell";
 import { surface } from "@/shared/components/Surface";

@@ -1,5 +1,5 @@
 import React from "react";
-import { PhaseOfficialResource } from "@/data/roadmapPhasesData";
+import type { PhaseOfficialResource } from "../../types/phase";
 import { PhaseVerifiedPortalsBadges } from "./PhaseVerifiedPortalsBadges";
 import { PhaseAuditLink } from "./PhaseAuditLink";
 

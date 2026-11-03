@@ -1,6 +1,6 @@
 import React from "react";
 import { Cpu, Sparkles, Target, FileCheck, ShieldCheck } from "lucide-react";
-import { RoadmapLevel } from "@/data/types";
+import type { RoadmapLevel } from "../types/level";
 
 export const LEVEL_ICONS: Record<string, React.ReactNode> = {
   Cpu: <Cpu className="w-5 h-5 text-indigo-400" />,

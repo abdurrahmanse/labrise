@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { CheckCircle2, ArrowRight } from "lucide-react";
-import { roadmapUiData } from "@/data/roadmapUiData";
+import { roadmapUiData } from "@/content/roadmap/roadmapUiData";
 
 export interface PhaseAuditLinkProps {
   slug: string;

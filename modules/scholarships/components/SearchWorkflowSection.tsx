@@ -1,7 +1,7 @@
 import React from "react";
 import { Compass } from "lucide-react";
-import { searchWorkflowSteps, scholarshipFinderControlsData } from "@/data/scholarshipsSearchData";
-import { scholarshipsUiData } from "@/data/scholarshipsUiData";
+import { searchWorkflowSteps, scholarshipFinderControlsData } from "@/content/scholarships/scholarshipsSearchData";
+import { scholarshipsUiData } from "@/content/scholarships/scholarshipsUiData";
 
 export function SearchWorkflowSection() {
   const { workflowTitle, workflowSubtitle } = scholarshipFinderControlsData.sections;

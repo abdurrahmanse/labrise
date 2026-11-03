@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { CalendarRange } from "lucide-react";
-import { plannerText as t, timelineSteps } from "@/data/text/planner";
-import { formatMonth, monthsBefore } from "../lib/dates";
+import { plannerText as t, timelineSteps } from "@/content/text/planner";
+import { formatMonth, monthsBefore } from "../utils/dates";
 import { usePlanner } from "../store/usePlanner";
 import { surface } from "@/shared/components/Surface";
 

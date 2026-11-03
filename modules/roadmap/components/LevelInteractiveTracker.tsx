@@ -2,11 +2,11 @@
 
 import React, { useState } from "react";
 import { Award, Check } from "lucide-react";
-import { GlassCard } from "@/components/ui/GlassCard";
-import { Badge } from "@/components/ui/Badge";
-import { RoadmapLevel } from "@/data/types";
-import { levelDetailUiData } from "@/data/levelDetailUiData";
-import { percentOf } from "@/shared/lib/percent";
+import { GlassCard } from "@/shared/ui/GlassCard";
+import { Badge } from "@/shared/ui/Badge";
+import type { RoadmapLevel } from "../types/level";
+import { levelDetailUiData } from "@/content/roadmap/levelDetailUiData";
+import { percentOf } from "@/shared/utils/percent";
 
 interface LevelInteractiveTrackerProps {
   level: RoadmapLevel;

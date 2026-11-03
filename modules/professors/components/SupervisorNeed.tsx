@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CircleCheck, CircleHelp, CircleSlash } from "lucide-react";
-import { professorsHubText as t } from "@/data/text/professorsHub";
+import { professorsHubText as t } from "@/content/text/professorsHub";
 import { countries } from "@/modules/directory/catalog";
 import { countrySlug } from "@/modules/directory/contracts";
 import { surface } from "@/shared/components/Surface";

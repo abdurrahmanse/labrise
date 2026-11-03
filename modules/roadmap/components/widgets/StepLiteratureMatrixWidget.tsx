@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import { BookOpen, Target, Sparkles, Award, ArrowUpRight } from "lucide-react";
-import { Badge } from "@/components/ui/Badge";
-import { literatureMatrixData, literatureMatrixMeta } from "@/data/stepWidgetsData";
+import { Badge } from "@/shared/ui/Badge";
+import { literatureMatrixData, literatureMatrixMeta } from "@/content/roadmap/stepWidgetsData";
 import {
   WidgetShell,
   WidgetHeader,
@@ -12,7 +12,7 @@ import {
   WidgetSectionCard,
   WidgetCallout
 } from "./common";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 export function StepLiteratureMatrixWidget() {
   const [selectedDomainId, setSelectedDomainId] = useState("efficient-llm");

@@ -1,5 +1,5 @@
 import React from "react";
-import { RoadmapPhase } from "@/data/roadmapPhasesData";
+import type { RoadmapPhase } from "../../types/phase";
 import { PhaseDetailBreadcrumb } from "./PhaseDetailBreadcrumb";
 import { PhaseDetailBadges } from "./PhaseDetailBadges";
 import { PhaseDetailAnchorNav } from "./PhaseDetailAnchorNav";

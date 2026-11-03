@@ -6,13 +6,13 @@ import { Chips } from "@/shared/components/Chips";
 import { Facts } from "@/shared/components/Facts";
 import { PageShell } from "@/shared/components/PageShell";
 import { scholarships } from "../../data/scholarships";
-import { universitiesOfProvider } from "../../lib/connections";
-import { scholarshipSlug, universitySlug } from "../../lib/slugs";
+import { universitiesOfProvider } from "../../utils/connections";
+import { scholarshipSlug, universitySlug } from "../../utils/slugs";
 import type { ProviderEntry } from "../../types";
 import { Flag } from "@/shared/components/Flag";
-import { detailText } from "@/data/text/directory";
+import { detailText } from "@/content/text/directory";
 import { EntryActions } from "@/modules/library";
-import { providerSlug } from "../../lib/slugs";
+import { providerSlug } from "../../utils/slugs";
 
 const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 

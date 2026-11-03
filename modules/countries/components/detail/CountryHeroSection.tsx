@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowLeft, Award, Briefcase, Globe, MapPin } from "lucide-react";
-import { CountryGuide } from "@/data/countryGuidesData";
+import type { CountryGuide } from "@/modules/content";
 import { SupervisorBadge } from "./SupervisorBadge";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 interface CountryHeroSectionProps {
   country: CountryGuide;

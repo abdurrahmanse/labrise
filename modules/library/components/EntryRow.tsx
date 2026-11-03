@@ -1,18 +1,18 @@
 import Link from "next/link";
 import { ArrowRight, Loader2, TriangleAlert } from "lucide-react";
 import type { UseQueryResult } from "@tanstack/react-query";
-import type { EntryResponse } from "@/modules/directory/contracts";
-import { libraryText as t } from "@/data/text/library";
-import { cn } from "@/lib/utils";
-import { describeEntry } from "../lib/entryView";
-import { isMissingEntry } from "../lib/entryQuery";
+import type { EntryResult } from "@/modules/directory/contracts";
+import { libraryText as t } from "@/content/text/library";
+import { cn } from "@/shared/utils/cn";
+import { describeEntry } from "../utils/entryView";
+import { isMissingEntry } from "../utils/entryQuery";
 import type { EntryRef } from "../store/useBookmarks";
 
 const base = "flex items-center gap-4 border-2 bg-canvas-card/60 p-4 backdrop-blur-xl";
 
 interface EntryRowProps {
   entry: EntryRef;
-  result: UseQueryResult<EntryResponse>;
+  result: UseQueryResult<EntryResult>;
 }
 
 /** One saved or recent entry in whichever state its request is in: loading, failed, missing or loaded. */

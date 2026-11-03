@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { countries, professors, universities } from "@/modules/directory/catalog";
 import { CountriesArt, ProfessorsArt, UniversitiesArt } from "./ExploreArt";
 import { SectionHeading } from "./SectionHeading";
-import { homeText } from "@/data/text/site";
+import { homeText } from "@/content/text/site";
 
 const CARDS: { href: string; title: string; Icon: typeof Globe2; art: ReactNode; meta: string }[] = [
   { href: "/directory/countries", title: homeText.stats.countries, Icon: Globe2, art: <CountriesArt />, meta: homeText.explore.countries(countries.length) },

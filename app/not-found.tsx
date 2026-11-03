@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Home } from "lucide-react";
-import { notFoundText as t, quickLinks } from "@/data/text/status";
+import { notFoundText as t, quickLinks } from "@/content/text/status";
 import { OpenSearchButton } from "@/shared/components/OpenSearchButton";
 import { StatusPage } from "@/shared/components/StatusPage";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/shared/ui/Button";
 
 export const metadata: Metadata = { title: t.eyebrow, robots: { index: false } };
 

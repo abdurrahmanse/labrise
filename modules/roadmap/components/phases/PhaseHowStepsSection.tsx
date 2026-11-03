@@ -1,7 +1,7 @@
 import React from "react";
 import { ListOrdered } from "lucide-react";
-import { PhaseHowToStep } from "@/data/roadmapPhasesData";
-import { phaseDetailUiData } from "@/data/phaseDetailUiData";
+import type { PhaseHowToStep } from "../../types/phase";
+import { phaseDetailUiData } from "@/content/roadmap/phaseDetailUiData";
 import { PhaseStepCard } from "./PhaseStepCard";
 
 export interface PhaseHowStepsSectionProps {

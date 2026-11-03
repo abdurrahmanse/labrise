@@ -1,4 +1,4 @@
-import { mockContentRepository } from "@/infrastructure/content/mockContentRepository";
+import { listContentDtos } from "@/infrastructure/content/contentWire";
 import { isCollectionName } from "@/modules/content/registry";
 import { fail, ok } from "@/shared/api/respond";
 
@@ -6,5 +6,5 @@ import { fail, ok } from "@/shared/api/respond";
 export async function GET(_request: Request, { params }: { params: Promise<{ resource: string }> }) {
   const { resource } = await params;
   if (!isCollectionName(resource)) return fail(404, "Unknown resource");
-  return ok(await mockContentRepository.list(resource));
+  return ok(await listContentDtos(resource));
 }

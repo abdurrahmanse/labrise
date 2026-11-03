@@ -2,9 +2,9 @@
 
 import { useEffect } from "react";
 import { Flag, Home, RotateCcw, TriangleAlert } from "lucide-react";
-import { errorText as t, quickLinks } from "@/data/text/status";
+import { errorText as t, quickLinks } from "@/content/text/status";
 import { StatusPage } from "@/shared/components/StatusPage";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/shared/ui/Button";
 
 export default function ErrorPage({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   useEffect(() => {

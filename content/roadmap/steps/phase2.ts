@@ -1,4 +1,4 @@
-import { RoadmapStep } from "../types";
+import type { RoadmapStep } from "@/modules/roadmap";
 
 export const phase2Steps: RoadmapStep[] = [
   {

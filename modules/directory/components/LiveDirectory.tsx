@@ -2,13 +2,13 @@
 
 import type { ReactNode } from "react";
 import { useMounted } from "@/shared/hooks/useMounted";
-import { useDirectory, type DirectoryEntries } from "../hooks/useDirectory";
-import type { DirectoryType } from "../types";
+import { useDirectory } from "../hooks/useDirectory";
+import type { DirectoryType, EntryOf } from "../types";
 
 interface LiveDirectoryProps<T extends DirectoryType> {
   type: T;
-  initialData: DirectoryEntries[T];
-  children: (data: DirectoryEntries[T]) => ReactNode;
+  initialData: EntryOf[T][];
+  children: (data: EntryOf[T][]) => ReactNode;
 }
 
 function Live<T extends DirectoryType>({ type, initialData, children }: LiveDirectoryProps<T>) {

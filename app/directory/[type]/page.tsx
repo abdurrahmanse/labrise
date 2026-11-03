@@ -8,7 +8,7 @@ import { CountriesList, ProvidersList, ScholarshipsList, UniversitiesList } from
 import { PageShell } from "@/shared/components/PageShell";
 import { buildMetadata } from "@/modules/seo";
 import { PageFallback } from "@/shared/components/PageFallback";
-import { navLabels, notFoundTitles, pageText } from "@/data/text/site";
+import { navLabels, notFoundTitles, pageText } from "@/content/text/site";
 
 interface Props {
   params: Promise<{ type: string }>;

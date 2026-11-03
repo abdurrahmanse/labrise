@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
-import { trackPageText as t, trackPhases, type TrackId } from "@/data/text/apply";
-import { cn } from "@/lib/utils";
+import { trackPageText as t, trackPhases, type TrackId } from "@/content/text/apply";
+import { cn } from "@/shared/utils/cn";
 import { CheckBox } from "@/shared/components/CheckRow";
 import { IconBadge } from "@/shared/components/IconBadge";
 import { Body, Label } from "@/shared/components/Text";

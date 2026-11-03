@@ -1,5 +1,5 @@
 import React from "react";
-import { RoadmapPhase } from "@/data/roadmapPhasesData";
+import type { RoadmapPhase } from "../types/phase";
 import {
   PhaseCardHeader,
   PhaseStrategicObjective,

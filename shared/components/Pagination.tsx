@@ -1,5 +1,5 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { commonText } from "@/data/text/common";
+import { commonText } from "@/content/text/common";
 
 interface PaginationProps {
   page: number;

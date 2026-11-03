@@ -1,5 +1,5 @@
 import React from "react";
-import { CountryGuide } from "@/data/countryGuidesData";
+import type { CountryGuide } from "@/modules/content";
 
 interface SupervisorBadgeProps {
   requirement: CountryGuide["supervisorContactRequirement"];

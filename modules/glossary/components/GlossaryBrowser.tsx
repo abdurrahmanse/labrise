@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { BookOpen } from "lucide-react";
-import { SearchInput } from "@/components/ui/SearchInput";
-import { glossaryText as t } from "@/data/text/glossary";
-import { emptyText } from "@/data/text/status";
+import { SearchInput } from "@/shared/ui/SearchInput";
+import { glossaryText as t } from "@/content/text/glossary";
+import { emptyText } from "@/content/text/status";
 import { EmptyState } from "@/shared/components/EmptyState";
 import { glossaryTerms } from "../data/terms";
 import { surface } from "@/shared/components/Surface";

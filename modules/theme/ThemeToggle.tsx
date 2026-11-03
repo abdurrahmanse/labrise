@@ -3,9 +3,9 @@
 import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/utils/cn";
 import { useMounted } from "@/shared/hooks/useMounted";
-import { commonText } from "@/data/text/common";
+import { commonText } from "@/content/text/common";
 
 /** Two-state switch: click anywhere on the track to flip between light and dark. */
 export function ThemeToggle() {

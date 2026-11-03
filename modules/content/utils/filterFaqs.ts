@@ -1,4 +1,4 @@
-import type { FAQItem } from "@/data/types";
+import type { FAQItem } from "../types/faq";
 
 const ALL = "All";
 

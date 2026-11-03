@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { professorHub as t } from "@/data/text/hubPages";
-import { commonText } from "@/data/text/common";
+import { professorHub as t } from "@/content/text/hubPages";
+import { commonText } from "@/content/text/common";
 import { OutreachProgressBadge } from "@/modules/professors/components/OutreachProgressBadge";
 import { ProfessorStats } from "@/modules/professors/components/ProfessorStats";
 import { buildMetadata } from "@/modules/seo";

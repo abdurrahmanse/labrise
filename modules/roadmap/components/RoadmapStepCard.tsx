@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { GlassCard } from "@/components/ui/GlassCard";
-import { RoadmapStep } from "@/data/types";
+import { GlassCard } from "@/shared/ui/GlassCard";
+import type { RoadmapStep } from "../types/step";
 import { StepWidgetRenderer } from "./widgets/StepWidgetRegistry";
-import { percentOf } from "@/shared/lib/percent";
+import { percentOf } from "@/shared/utils/percent";
 import {
   StepCardHeader,
   StepObjectiveBanner,

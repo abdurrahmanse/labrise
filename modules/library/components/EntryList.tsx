@@ -1,7 +1,7 @@
 "use client";
 
 import { RotateCcw } from "lucide-react";
-import { libraryText as t } from "@/data/text/library";
+import { libraryText as t } from "@/content/text/library";
 import { useEntryQueries } from "../hooks/useEntryQueries";
 import { refKey, type EntryRef } from "../store/useBookmarks";
 import { EntryRow } from "./EntryRow";

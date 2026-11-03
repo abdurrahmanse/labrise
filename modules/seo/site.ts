@@ -1,4 +1,4 @@
-import { siteMetadata } from "@/data/metadata";
+import { siteMetadata } from "@/content/site/metadata";
 
 export const site = {
   name: siteMetadata.siteName,

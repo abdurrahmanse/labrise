@@ -1,4 +1,17 @@
-import { FaqCategoryCard, LaunchpadCard } from "./types";
+export interface FaqCategoryCard {
+  name: string;
+  desc: string;
+  tag: string;
+  iconName: string;
+  variant: "purple" | "cyan" | "emerald" | "amber";
+}
+
+export interface LaunchpadCard {
+  title: string;
+  desc: string;
+  href: string;
+  iconName: string;
+}
 
 export const faqsNavAnchors = [
   { id: "readiness-checklist", label: "Pre-Flight Readiness", count: "5 Checks" },

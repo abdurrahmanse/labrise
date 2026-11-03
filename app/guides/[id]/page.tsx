@@ -8,7 +8,7 @@ import { PageShell } from "@/shared/components/PageShell";
 import { StepList } from "@/shared/components/StepList";
 import { buildMetadata, JsonLd, breadcrumbSchema, howToSchema } from "@/modules/seo";
 import { PageFallback } from "@/shared/components/PageFallback";
-import { navLabels, notFoundTitles, pageText } from "@/data/text/site";
+import { navLabels, notFoundTitles, pageText } from "@/content/text/site";
 
 interface Props {
   params: Promise<{ id: string }>;

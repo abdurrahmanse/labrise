@@ -2,13 +2,13 @@
 
 import React, { useState } from "react";
 import { FaqsHero } from "./FaqsHero";
-import { QuickScrollNavigator } from "@/components/ui/QuickScrollNavigator";
+import { QuickScrollNavigator } from "@/shared/ui/QuickScrollNavigator";
 import Link from "next/link";
 import { FaqAccordionSection } from "./FaqAccordionSection";
 import { FaqCategoryPills } from "./FaqCategoryPills";
-import { faqsNavAnchors } from "@/data/faqsSectionData";
+import { faqsNavAnchors } from "@/content/faqs/faqsSectionData";
 import type { FAQItem } from "@/modules/content";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 export function FaqsPageClient({ initialFaqs }: { initialFaqs: FAQItem[] }) {
   const [selectedCategory, setSelectedCategory] = useState("All");

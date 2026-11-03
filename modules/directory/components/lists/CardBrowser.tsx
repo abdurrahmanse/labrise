@@ -1,17 +1,17 @@
 "use client";
 
 import { useMemo, type ReactNode } from "react";
-import { SearchInput } from "@/components/ui/SearchInput";
+import { SearchInput } from "@/shared/ui/SearchInput";
 import { Pagination } from "@/shared/components/Pagination";
 import { useListFilters } from "../../hooks/useListFilters";
-import { filterEntries } from "../../lib/filter";
-import { paginate } from "../../lib/paginate";
-import type { Region } from "../../types";
+import { filterEntries } from "../../utils/filter";
+import { paginate } from "../../utils/paginate";
+import type { Region } from "@/shared/types/region";
 import { RegionChips } from "./RegionChips";
-import { commonText } from "@/data/text/common";
-import { listText } from "@/data/text/directory";
+import { commonText } from "@/content/text/common";
+import { listText } from "@/content/text/directory";
 import { EmptyState } from "@/shared/components/EmptyState";
-import { emptyText } from "@/data/text/status";
+import { emptyText } from "@/content/text/status";
 
 interface CardBrowserProps<T> {
   data: T[];
@@ -27,7 +27,7 @@ export function CardBrowser<T>({ data, placeholder, keyOf, regionOf, searchText,
   const [filters, setFilters] = useListFilters();
 
   const matches = useMemo(
-    () => filterEntries({ entries: data, region: filters.region as never, query: filters.q, regionOf, searchText }),
+    () => filterEntries({ entries: data, region: filters.region, query: filters.q, regionOf, searchText }),
     [data, filters.region, filters.q, regionOf, searchText]
   );
   const { items, pages, current } = paginate(matches, filters.page);

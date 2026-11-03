@@ -1,6 +1,6 @@
 import React from "react";
 import { Layers, Check } from "lucide-react";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 export interface StepProgressBarProps {
   completedCount: number;

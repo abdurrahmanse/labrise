@@ -3,7 +3,7 @@
 import { useId, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2, Search, X } from "lucide-react";
-import { searchText } from "@/data/text/common";
+import { searchText } from "@/content/text/common";
 import { useSearchHistory } from "@/modules/library";
 import { useListNavigation } from "../hooks/useListNavigation";
 import { useSearch } from "../hooks/useSearch";

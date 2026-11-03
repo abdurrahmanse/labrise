@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getCountryGuide, getCountryGuides } from "@/modules/content/server";
 import { CountryDetailPage } from "@/modules/countries/components/CountryDetailPage";
-import { notFoundTitles } from "@/data/text/site";
+import { notFoundTitles } from "@/content/text/site";
 
 interface Props {
   params: Promise<{ id: string }>;

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { findSuggestion, kindOfSuggestion } from "../lib/suggestions";
-import { validateApplication, type ApplicationFormErrors } from "../lib/validateApplication";
+import { findSuggestion, kindOfSuggestion } from "../utils/suggestions";
+import { validateApplication, type ApplicationFormErrors } from "../utils/validateApplication";
 import { usePlanner, type ApplicationKind } from "../store/usePlanner";
 import { useNameSuggestions } from "./useNameSuggestions";
 

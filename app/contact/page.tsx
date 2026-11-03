@@ -3,8 +3,8 @@ import { PageShell } from "@/shared/components/PageShell";
 import { ContactForm } from "@/modules/contact/components/ContactForm";
 import { ContactSide } from "@/modules/contact/components/ContactSide";
 import { buildMetadata, JsonLd, absoluteUrl } from "@/modules/seo";
-import { commonText } from "@/data/text/common";
-import { contactInfo, contactPageText as t } from "@/data/text/contact";
+import { commonText } from "@/content/text/common";
+import { contactInfo, contactPageText as t } from "@/content/text/contact";
 
 export const metadata = buildMetadata({ title: t.title, description: t.description, path: "/contact" });
 

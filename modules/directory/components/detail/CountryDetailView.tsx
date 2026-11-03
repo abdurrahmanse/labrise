@@ -7,8 +7,8 @@ import { PageShell } from "@/shared/components/PageShell";
 import { StepGrid } from "@/shared/components/StepGrid";
 import type { CountryGuide } from "@/modules/content";
 import { countryDetails } from "../../data/countryDetails";
-import { ecosystemOfCountry } from "../../lib/connections";
-import { countrySlug } from "../../lib/slugs";
+import { ecosystemOfCountry } from "../../utils/connections";
+import { countrySlug } from "../../utils/slugs";
 import type { CountryEntry } from "../../types";
 import { Flag } from "@/shared/components/Flag";
 import { APPLY_STEPS } from "./applySteps";
@@ -17,7 +17,7 @@ import { EcosystemTiles } from "../ecosystem/EcosystemTiles";
 import { FunderList } from "../ecosystem/FunderList";
 import { UniversityRoster } from "../ecosystem/UniversityRoster";
 import { CountryFacts } from "./CountryFacts";
-import { detailText } from "@/data/text/directory";
+import { detailText } from "@/content/text/directory";
 import { EntryActions } from "@/modules/library";
 
 export function CountryDetailView({ country, dossier }: { country: CountryEntry; dossier?: CountryGuide | null }) {

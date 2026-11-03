@@ -1,8 +1,8 @@
 "use client";
 
 import { Check, Search, ShieldAlert, ShieldCheck } from "lucide-react";
-import { searchWorkflowSteps } from "@/data/scholarshipsSearchData";
-import { finderText as t } from "@/data/text/scholarships";
+import { searchWorkflowSteps } from "@/content/scholarships/scholarshipsSearchData";
+import { finderText as t } from "@/content/text/scholarships";
 import { AccordionStep } from "@/shared/components/AccordionStep";
 import { IconBadge } from "@/shared/components/IconBadge";
 import { Label } from "@/shared/components/Text";

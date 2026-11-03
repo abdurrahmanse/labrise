@@ -1,6 +1,6 @@
 import React from "react";
 import { Award, FileCheck } from "lucide-react";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 export interface StepDeliverableBannerProps {
   deliverable: string;

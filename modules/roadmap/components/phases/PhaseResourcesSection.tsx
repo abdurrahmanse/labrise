@@ -1,7 +1,7 @@
 import React from "react";
 import { Globe2 } from "lucide-react";
-import { PhaseOfficialResource } from "@/data/roadmapPhasesData";
-import { phaseDetailUiData } from "@/data/phaseDetailUiData";
+import type { PhaseOfficialResource } from "../../types/phase";
+import { phaseDetailUiData } from "@/content/roadmap/phaseDetailUiData";
 import { PhaseResourceCard } from "./PhaseResourceCard";
 
 export interface PhaseResourcesSectionProps {

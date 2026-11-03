@@ -1,5 +1,5 @@
-import { contactPageText as t, contactTopics } from "@/data/text/contact";
-import { cn } from "@/lib/utils";
+import { contactPageText as t, contactTopics } from "@/content/text/contact";
+import { cn } from "@/shared/utils/cn";
 import { labelClass } from "./ContactField";
 
 interface ContactTopicPickerProps {

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { JsonLd, breadcrumbSchema, universitySchema } from "@/modules/seo";
-import { findUniversity } from "../../lib/lookups";
+import { findUniversity } from "../../utils/lookups";
 import { UniversityDetailView } from "../detail/UniversityDetailView";
 import { entryBreadcrumbs } from "./entryBreadcrumbs";
 

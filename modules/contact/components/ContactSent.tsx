@@ -1,9 +1,9 @@
 import { CheckCircle2 } from "lucide-react";
-import { CopyButton } from "@/components/ui/CopyButton";
-import { contactPageText as t } from "@/data/text/contact";
+import { CopyButton } from "@/shared/ui/CopyButton";
+import { contactPageText as t } from "@/content/text/contact";
 import { surface } from "@/shared/components/Surface";
-import { buildMessage } from "../lib/buildMailto";
-import type { ContactValues } from "../lib/contactSchema";
+import { buildMessage } from "../utils/buildMailto";
+import type { ContactValues } from "../utils/contactSchema";
 
 interface ContactSentProps {
   values: ContactValues;

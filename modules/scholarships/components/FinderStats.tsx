@@ -1,5 +1,5 @@
 import { Award, Globe2, Landmark, Layers } from "lucide-react";
-import { finderText as t } from "@/data/text/scholarships";
+import { finderText as t } from "@/content/text/scholarships";
 import { providers, scholarships } from "@/modules/directory/catalog";
 import { StatTiles } from "@/shared/components/StatTiles";
 

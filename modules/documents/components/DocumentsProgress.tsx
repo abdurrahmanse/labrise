@@ -2,8 +2,9 @@
 
 import { useMemo } from "react";
 import { Trophy } from "lucide-react";
-import { useDocuments, type DocumentGuideline } from "@/modules/content";
-import { documentsHubText as t } from "@/data/text/documents";
+import { useDocuments } from "@/modules/content";
+import type { DocumentGuideline } from "@/modules/content";
+import { documentsHubText as t } from "@/content/text/documents";
 import { IconBadge } from "@/shared/components/IconBadge";
 import { ProgressPanel } from "@/shared/components/ProgressPanel";
 import { useProgress } from "@/shared/progress/useProgress";

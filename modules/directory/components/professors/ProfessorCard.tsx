@@ -3,12 +3,12 @@ import { ArrowRight } from "lucide-react";
 import { Avatar } from "@/shared/components/Avatar";
 import { Flag } from "@/shared/components/Flag";
 import { fieldOf } from "../../data/fields";
-import { professorSlug } from "../../lib/slugs";
+import { professorSlug } from "../../utils/slugs";
 import type { ProfessorEntry } from "../../types";
 import { EmailLine } from "./EmailLine";
 import { SaveButton } from "./SaveButton";
 import { StatusSelect } from "./StatusSelect";
-import { commonText } from "@/data/text/common";
+import { commonText } from "@/content/text/common";
 import { surface } from "@/shared/components/Surface";
 
 export function ProfessorCard({ professor }: { professor: ProfessorEntry }) {

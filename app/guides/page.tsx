@@ -3,7 +3,7 @@ import { LinkCardGrid } from "@/shared/components/LinkCardGrid";
 import { PageShell } from "@/shared/components/PageShell";
 import { guideGroups, guideIcon, findGuide } from "@/modules/guides";
 import { buildMetadata } from "@/modules/seo";
-import { navLabels, pageText } from "@/data/text/site";
+import { navLabels, pageText } from "@/content/text/site";
 
 export const metadata = buildMetadata({
   title: pageText.guides.title,

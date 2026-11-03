@@ -1,4 +1,4 @@
-import { navLabels } from "@/data/text/site";
+import { navLabels } from "@/content/text/site";
 import type { DirectoryType } from "../../types";
 
 /** Breadcrumb trail for a directory entry page: Home > Directory > <type> > <entry>. */

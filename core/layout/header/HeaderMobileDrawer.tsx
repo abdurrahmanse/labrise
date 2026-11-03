@@ -3,10 +3,10 @@
 import React from "react";
 import Link from "next/link";
 import { ChevronRight, GraduationCap, X } from "lucide-react";
-import { headerData, navLinksData } from "@/data/navigationData";
-import { getIconComponent } from "@/components/ui/IconUtils";
-import { commonText } from "@/data/text/common";
-import { legacyText } from "@/data/text/legacy";
+import { headerData, navLinksData } from "@/content/site/navigationData";
+import { getIconComponent } from "@/shared/ui/IconUtils";
+import { commonText } from "@/content/text/common";
+import { legacyText } from "@/content/text/legacy";
 
 interface HeaderMobileDrawerProps {
   isOpen: boolean;

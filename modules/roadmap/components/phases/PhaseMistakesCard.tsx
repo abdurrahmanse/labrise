@@ -1,6 +1,6 @@
 import React from "react";
 import { AlertTriangle } from "lucide-react";
-import { phaseDetailUiData } from "@/data/phaseDetailUiData";
+import { phaseDetailUiData } from "@/content/roadmap/phaseDetailUiData";
 
 export interface PhaseMistakesCardProps {
   mistakes: string[];

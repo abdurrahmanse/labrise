@@ -1,7 +1,7 @@
 import React from "react";
 import { ExternalLink } from "lucide-react";
-import { PhaseOfficialResource } from "@/data/roadmapPhasesData";
-import { roadmapUiData } from "@/data/roadmapUiData";
+import type { PhaseOfficialResource } from "../../types/phase";
+import { roadmapUiData } from "@/content/roadmap/roadmapUiData";
 
 export interface PhaseVerifiedPortalsBadgesProps {
   resources: PhaseOfficialResource[];

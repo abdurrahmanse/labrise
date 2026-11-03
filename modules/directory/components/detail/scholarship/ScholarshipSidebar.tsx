@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CalendarCheck } from "lucide-react";
-import { detailText } from "@/data/text/directory";
-import { scholarshipDetailText as t } from "@/data/text/scholarships";
+import { detailText } from "@/content/text/directory";
+import { scholarshipDetailText as t } from "@/content/text/scholarships";
 import { Chips } from "@/shared/components/Chips";
 import { HelpLinks } from "@/shared/components/HelpLinks";
 import { IconBadge } from "@/shared/components/IconBadge";

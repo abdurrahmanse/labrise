@@ -1,4 +1,4 @@
-import { FAQItem } from "./types";
+import type { FAQItem } from "@/modules/content";
 
 export const faqsHeaderData = {
   badge: "Admissions & Funding FAQs",

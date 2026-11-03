@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import { navLinksData } from "@/data/navigationData";
-import { getIconComponent } from "@/components/ui/IconUtils";
-import { commonText } from "@/data/text/common";
+import { navLinksData } from "@/content/site/navigationData";
+import { getIconComponent } from "@/shared/ui/IconUtils";
+import { commonText } from "@/content/text/common";
 
 interface HeaderNavProps {
   pathname: string;

@@ -11,3 +11,7 @@ export { LevelInteractiveTracker } from "./components/LevelInteractiveTracker";
 export { LevelNavigationFooter } from "./components/LevelNavigationFooter";
 export { LevelTasksSection } from "./components/LevelTasksSection";
 export { PhaseDetailPage } from "./components/phases/PhaseDetailPage";
+export type { RoadmapLevel } from "./types/level";
+export type { RoadmapPhase } from "./types/phase";
+export type { PriorityLevel, RoadmapStep } from "./types/step";
+export type { DegreeRouteComparison, GpuQuantPreset, LiteratureMatrixDomain, MathTopicDiagnostic, SystemsBenchmarkMetric, SystemsCodeTab } from "./types/widgets";

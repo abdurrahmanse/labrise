@@ -9,9 +9,10 @@
     "lint": "eslint",
     "check:data": "tsx scripts/check-data.mts",
     "check:responsive": "node scripts/responsive-audit.mjs",
-    "test": "tsx --test shared/**/*.test.ts shared/**/*.test.tsx infrastructure/**/*.test.ts modules/**/*.test.ts",
+    "test": "tsx --test \"shared/**/*.test.ts\" \"shared/**/*.test.tsx\" \"infrastructure/**/*.test.ts\" \"modules/**/*.test.ts\"",
     "check:cycles": "tsx scripts/check-cycles.mts",
-    "check:unused": "tsx scripts/check-unused.mts"
+    "check:unused": "tsx scripts/check-unused.mts",
+    "check:types": "tsx scripts/check-types.mts"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.5.0",

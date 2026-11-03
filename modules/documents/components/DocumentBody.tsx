@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { AlertTriangle, BadgeCheck, BookOpen } from "lucide-react";
 import type { DocumentGuideline } from "@/modules/content";
-import { documentDetailText as t, documentMeta } from "@/data/text/documents";
+import { documentDetailText as t, documentMeta } from "@/content/text/documents";
 import { Block } from "@/shared/components/Block";
 import { NumberBadge } from "@/shared/components/IconBadge";
 import { Chips } from "@/shared/components/Chips";

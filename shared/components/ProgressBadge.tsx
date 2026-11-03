@@ -1,7 +1,7 @@
 "use client";
 
 import { Check } from "lucide-react";
-import { hubChrome } from "@/data/text/hubPages";
+import { hubChrome } from "@/content/text/hubPages";
 import { useMounted } from "../hooks/useMounted";
 
 interface ProgressBadgeProps {

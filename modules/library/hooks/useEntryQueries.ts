@@ -4,7 +4,7 @@ import { useQueries } from "@tanstack/react-query";
 import { directoryApi } from "@/modules/directory/contracts";
 import { queryKeys } from "@/shared/query/queryKeys";
 import { staleTimes } from "@/shared/query/staleTimes";
-import { isMissingEntry } from "../lib/entryQuery";
+import { isMissingEntry } from "../utils/entryQuery";
 import type { EntryRef } from "../store/useBookmarks";
 
 /** Loads every entry in parallel; one failing entry does not block the others. Results keep the order of `refs`. */

@@ -1,5 +1,5 @@
 import React from "react";
-import { roadmapControlsData } from "@/data/roadmapPhasesData";
+import { roadmapControlsData } from "@/content/roadmap/roadmapPhasesData";
 import {
   RoadmapHeaderGlow,
   RoadmapRadarBadge,

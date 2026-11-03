@@ -1,7 +1,7 @@
 import React from "react";
 import { Check } from "lucide-react";
-import { PhaseChecklistItem as PhaseChecklistItemType } from "@/data/roadmapPhasesData";
-import { phaseDetailUiData } from "@/data/phaseDetailUiData";
+import type { PhaseChecklistItem as PhaseChecklistItemType } from "../../types/phase";
+import { phaseDetailUiData } from "@/content/roadmap/phaseDetailUiData";
 
 interface PhaseChecklistItemProps {
   item: PhaseChecklistItemType;

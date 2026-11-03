@@ -1,4 +1,4 @@
-import { ecosystemText, countryViewText } from "@/data/text/directory";
+import { ecosystemText, countryViewText } from "@/content/text/directory";
 import { SubNav } from "@/shared/components/SubNav";
 
 export function countryViewItems(slug: string) {

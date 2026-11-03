@@ -10,3 +10,4 @@ export { SupervisorNeed } from "./components/SupervisorNeed";
 export { TemplatePicker } from "./components/TemplatePicker";
 export { ProfessorOutreachView } from "./components/ProfessorOutreachView";
 export { PROFESSOR_TABS } from "./components/professorTabs";
+export type { OutreachEmailBlueprint, OutreachStep, SupervisorNecessityRule } from "./types/outreach";

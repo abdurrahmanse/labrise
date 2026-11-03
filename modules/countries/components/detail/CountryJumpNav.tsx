@@ -12,7 +12,7 @@ import {
   ExternalLink,
   ChevronRight
 } from "lucide-react";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 const NAV_ITEMS = [
   { href: "#overview", label: "Overview & Philosophy", icon: Compass, color: "text-teal-400" },

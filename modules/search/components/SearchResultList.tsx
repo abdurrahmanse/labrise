@@ -1,14 +1,7 @@
-import { searchText } from "@/data/text/common";
-import { cn } from "@/lib/utils";
-import type { SearchKind } from "../types";
+import { searchText } from "@/content/text/common";
+import { cn } from "@/shared/utils/cn";
+import type { SearchResult } from "../types";
 import { KindIcon } from "./KindIcon";
-
-export interface SearchResult {
-  kind: string;
-  title: string;
-  subtitle: string;
-  href: string;
-}
 
 interface SearchResultListProps {
   listId: string;
@@ -37,8 +30,8 @@ export function SearchResultList({ listId, items, active, onHover, onPick }: Sea
             <span className={cn("block truncate font-sans text-sm font-normal", i === active ? "text-white/80" : "text-slate-400")}>{entry.subtitle}</span>
           </span>
           <span className="inline-flex shrink-0 items-center gap-1.5 font-mono text-xs uppercase tracking-wider opacity-80">
-            <KindIcon kind={entry.kind as SearchKind} />
-            {searchText.kinds[entry.kind as SearchKind]}
+            <KindIcon kind={entry.kind} />
+            {searchText.kinds[entry.kind]}
           </span>
         </li>
       ))}

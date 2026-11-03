@@ -1,16 +1,25 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { collections } from "@/modules/content/registry";
+import { collectionOf, collections, type CollectionName } from "@/modules/content/registry";
 import { mockContentRepository as repo } from "./mockContentRepository";
 
-describe("mockContentRepository", () => {
-  it("every bundled collection passes its own schema", async () => {
-    for (const name of Object.keys(collections) as (keyof typeof collections)[]) {
-      const collection = collections[name];
-      const rows = await repo.list(name);
-      assert.ok(rows.length > 0, `${name} is empty`);
-      for (const row of rows) assert.ok(collection.schema.safeParse(row).success, `${name}: invalid row ${collection.idOf(row as never)}`);
-    }
+const names = Object.keys(collections) as CollectionName[];
+
+/** Sends every row of one collection entity -> DTO -> schema -> entity and returns how many rows it checked. */
+async function roundTrip<N extends CollectionName>(name: N) {
+  const collection = collectionOf(name);
+  const rows = await repo.list(name);
+  for (const entity of rows) {
+    const parsed = collection.schema.safeParse(collection.toDto(entity));
+    assert.ok(parsed.success, `${name}: the DTO of ${collection.idOf(entity)} fails its own schema`);
+    assert.deepEqual(collection.fromDto(parsed.data), entity, `${name}: ${collection.idOf(entity)} changed in the round trip`);
+  }
+  return rows.length;
+}
+
+describe("content collections", () => {
+  it("every bundled row survives entity -> DTO -> schema -> entity unchanged", async () => {
+    for (const name of names) assert.ok((await roundTrip(name)) > 0, `${name} is empty`);
   });
 
   it("gets an item by id ignoring case, and returns null when missing", async () => {

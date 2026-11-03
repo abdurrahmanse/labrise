@@ -2,7 +2,7 @@ import { ProfessorOutreachView } from "@/modules/professors/components/Professor
 import { PROFESSOR_TABS } from "@/modules/professors/components/professorTabs";
 import { PageShell } from "@/shared/components/PageShell";
 import { buildMetadata } from "@/modules/seo";
-import { navLabels, pageText } from "@/data/text/site";
+import { navLabels, pageText } from "@/content/text/site";
 
 export const metadata = buildMetadata({
   title: pageText.professorRules.title,

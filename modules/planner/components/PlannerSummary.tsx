@@ -1,8 +1,8 @@
 "use client";
 
-import { plannerText as t } from "@/data/text/planner";
+import { plannerText as t } from "@/content/text/planner";
 import { useMounted } from "@/shared/hooks/useMounted";
-import { daysUntil } from "../lib/dates";
+import { daysUntil } from "../utils/dates";
 import { usePlanner } from "../store/usePlanner";
 import { surface } from "@/shared/components/Surface";
 

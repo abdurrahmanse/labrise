@@ -1,11 +1,11 @@
 "use client";
 
 import { Send } from "lucide-react";
-import { contactPageText as t } from "@/data/text/contact";
-import { cn } from "@/lib/utils";
+import { contactPageText as t } from "@/content/text/contact";
+import { cn } from "@/shared/utils/cn";
 import { surface } from "@/shared/components/Surface";
 import { useContactForm } from "../hooks/useContactForm";
-import { MIN_MESSAGE } from "../lib/contactSchema";
+import { MIN_MESSAGE } from "../utils/contactSchema";
 import { ContactField, fieldClass } from "./ContactField";
 import { ContactSent } from "./ContactSent";
 import { ContactTopicPicker } from "./ContactTopicPicker";

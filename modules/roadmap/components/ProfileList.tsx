@@ -1,5 +1,5 @@
 import { profileChecklist } from "../data/profile";
-import type { ProfileItem } from "../types";
+import type { ProfileItem } from "../types/overview";
 
 const PRIORITY_STYLE: Record<ProfileItem["priority"], string> = {
   "Must have": "bg-indigo-600 text-white border-transparent",

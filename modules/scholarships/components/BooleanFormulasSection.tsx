@@ -1,8 +1,8 @@
 import React from "react";
 import { Terminal, Code2, Sparkles } from "lucide-react";
-import { searchQueryFormulas, scholarshipFinderControlsData } from "@/data/scholarshipsSearchData";
-import { scholarshipsUiData } from "@/data/scholarshipsUiData";
-import { CopyButton } from "@/components/ui/CopyButton";
+import { searchQueryFormulas, scholarshipFinderControlsData } from "@/content/scholarships/scholarshipsSearchData";
+import { scholarshipsUiData } from "@/content/scholarships/scholarshipsUiData";
+import { CopyButton } from "@/shared/ui/CopyButton";
 
 export function BooleanFormulasSection() {
   const { booleanTitle, booleanSubtitle } = scholarshipFinderControlsData.sections;

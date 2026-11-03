@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/utils/cn";
 
 export const fieldClass =
   "w-full border-2 border-white/30 bg-white/[0.05] px-4 py-3 font-sans text-base font-normal text-slate-100 placeholder-slate-500 outline-none transition-colors focus:border-indigo-400";

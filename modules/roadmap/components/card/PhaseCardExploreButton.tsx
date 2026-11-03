@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { roadmapUiData } from "@/data/roadmapUiData";
+import { roadmapUiData } from "@/content/roadmap/roadmapUiData";
 
 export interface PhaseCardExploreButtonProps {
   slug: string;

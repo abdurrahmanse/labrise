@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { Avatar } from "@/shared/components/Avatar";
-import { CopyButton } from "@/components/ui/CopyButton";
-import { professorSlug } from "../../lib/slugs";
+import { CopyButton } from "@/shared/ui/CopyButton";
+import { professorSlug } from "../../utils/slugs";
 import type { ProfessorEntry } from "../../types";
-import { rosterLabels } from "@/data/text/directory";
-import { commonText } from "@/data/text/common";
+import { rosterLabels } from "@/content/text/directory";
+import { commonText } from "@/content/text/common";
 import { surface } from "@/shared/components/Surface";
 
 /** Professors with their field and email, ready to open or copy. */

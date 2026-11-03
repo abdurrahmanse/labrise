@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
-import { hubChrome, type JourneyItem, type RelatedItem } from "@/data/text/hubPages";
+import { hubChrome, type JourneyItem, type RelatedItem } from "@/content/text/hubPages";
 import { Block } from "./Block";
 import { LinkTile, LinkTileGrid } from "./LinkTile";
 import { ContourPattern } from "../illustrations/ContourPattern";

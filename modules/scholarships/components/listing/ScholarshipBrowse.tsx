@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { finderText as t } from "@/data/text/scholarships";
+import { finderText as t } from "@/content/text/scholarships";
 import type { PaginatedResponse } from "@/shared/api/types";
 import { DataRenderer } from "@/shared/components/DataRenderer";
 import { LoadMoreButton } from "@/shared/components/LoadMoreButton";

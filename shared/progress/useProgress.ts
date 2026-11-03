@@ -1,7 +1,7 @@
 "use client";
 
 import { useMounted } from "../hooks/useMounted";
-import { percentOf } from "../lib/percent";
+import { percentOf } from "../utils/percent";
 import type { ProgressStore } from "./createProgressStore";
 
 /**

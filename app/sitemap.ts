@@ -3,8 +3,8 @@ import type { MetadataRoute } from "next";
 import { countries, professors, providers, scholarships, universities } from "@/modules/directory/catalog";
 import { countrySlug, professorSlug, providerSlug, scholarshipSlug, universitySlug } from "@/modules/directory/contracts";
 import { guideTopics } from "@/modules/guides";
-import { roadmapLevelsData } from "@/data/levelsData";
-import { roadmapPhasesData } from "@/data/roadmapPhasesData";
+import { roadmapLevelsData } from "@/content/roadmap/levelsData";
+import { roadmapPhasesData } from "@/content/roadmap/roadmapPhasesData";
 import { absoluteUrl } from "@/modules/seo";
 
 const staticPaths = [

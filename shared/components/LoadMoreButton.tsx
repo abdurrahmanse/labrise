@@ -1,4 +1,4 @@
-import { commonText } from "@/data/text/common";
+import { commonText } from "@/content/text/common";
 
 interface LoadMoreButtonProps {
   onClick: () => void;

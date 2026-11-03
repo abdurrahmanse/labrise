@@ -1,5 +1,5 @@
 import React from "react";
-import { roadmapLevelsData } from "@/data/levelsData";
+import { roadmapLevelsData } from "@/content/roadmap/levelsData";
 import { LevelCard } from "../LevelCard";
 import { LevelsComparisonMatrix } from "../LevelsComparisonMatrix";
 import { RoadmapLevelsSectionHeader } from "./RoadmapLevelsSectionHeader";

@@ -2,7 +2,7 @@ import React from "react";
 import { Sparkles } from "lucide-react";
 import { PhaseMandateCard } from "./PhaseMandateCard";
 import { PhaseRationaleCard } from "./PhaseRationaleCard";
-import { phaseDetailUiData } from "@/data/phaseDetailUiData";
+import { phaseDetailUiData } from "@/content/roadmap/phaseDetailUiData";
 
 export interface PhaseWhatWhySectionProps {
   what: string;

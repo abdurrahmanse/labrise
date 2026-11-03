@@ -1,6 +1,6 @@
 import React from "react";
 import { cva } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/utils/cn";
 
 export type BadgeVariant = "indigo" | "cyan" | "teal" | "emerald" | "amber" | "purple" | "rose" | "slate";
 

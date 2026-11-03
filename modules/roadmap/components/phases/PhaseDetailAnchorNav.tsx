@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { phaseDetailUiData } from "@/data/phaseDetailUiData";
+import { phaseDetailUiData } from "@/content/roadmap/phaseDetailUiData";
 
 export function PhaseDetailAnchorNav() {
   const { items } = phaseDetailUiData.anchorNav;

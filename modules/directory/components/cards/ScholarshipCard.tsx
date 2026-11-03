@@ -1,8 +1,8 @@
-import { scholarshipSlug } from "../../lib/slugs";
+import { scholarshipSlug } from "../../utils/slugs";
 import type { ScholarshipEntry } from "../../types";
 import { Flag } from "@/shared/components/Flag";
 import { CardFact, CardShell } from "./CardShell";
-import { cardText } from "@/data/text/directory";
+import { cardText } from "@/content/text/directory";
 
 export function ScholarshipCard({ scholarship }: { scholarship: ScholarshipEntry }) {
   return (

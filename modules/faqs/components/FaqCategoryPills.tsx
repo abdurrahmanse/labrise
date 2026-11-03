@@ -2,11 +2,11 @@
 
 import React from "react";
 import { Compass } from "lucide-react";
-import { SectionCard } from "@/components/ui/SectionCard";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { renderCommonIcon } from "@/components/ui/IconUtils";
-import { faqCategoryCardsData } from "@/data/faqsSectionData";
-import { faqsPageData } from "@/data/pagesData";
+import { SectionCard } from "@/shared/ui/SectionCard";
+import { SectionHeading } from "@/shared/ui/SectionHeading";
+import { renderCommonIcon } from "@/shared/ui/IconUtils";
+import { faqCategoryCardsData } from "@/content/faqs/faqsSectionData";
+import { faqsPageData } from "@/content/site/pagesData";
 
 const FAQ_CAT_ICON_COLORS: Record<string, string> = {
   Compass: "text-purple-400",

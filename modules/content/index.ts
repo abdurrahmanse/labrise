@@ -5,6 +5,6 @@
  */
 export { useCountryGuide, useCountryGuides, useDocument, useDocuments, useFaqs } from "./hooks/useContent";
 export { filterFaqs } from "./utils/filterFaqs";
-export type { CountryGuide } from "@/data/countryGuidesData";
-export type { DocumentGuideline } from "@/data/documentsData";
-export type { FAQItem } from "@/data/types";
+export type { CountryGuide } from "./types/countryGuide";
+export type { DocumentGuideline } from "./types/document";
+export type { FAQItem } from "./types/faq";

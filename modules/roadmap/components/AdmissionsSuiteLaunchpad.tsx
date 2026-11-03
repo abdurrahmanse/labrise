@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Compass, Award, Mail, FileText } from "lucide-react";
-import { admissionsLaunchpadData, AdmissionsLaunchpadItem } from "@/data/admissionsLaunchpadData";
+import { admissionsLaunchpadData, AdmissionsLaunchpadItem } from "@/content/roadmap/admissionsLaunchpadData";
 
 function renderIcon(iconName: AdmissionsLaunchpadItem["iconName"]) {
   switch (iconName) {

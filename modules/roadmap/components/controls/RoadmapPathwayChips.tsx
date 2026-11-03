@@ -2,8 +2,8 @@
 
 import React from "react";
 import { GraduationCap, Award, Compass } from "lucide-react";
-import { roadmapControlsData } from "@/data/roadmapPhasesData";
-import { roadmapUiData } from "@/data/roadmapUiData";
+import { roadmapControlsData } from "@/content/roadmap/roadmapPhasesData";
+import { roadmapUiData } from "@/content/roadmap/roadmapUiData";
 
 export interface RoadmapPathwayChipsProps {
   filterDegree: "all" | "masters" | "phd";

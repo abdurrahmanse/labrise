@@ -3,7 +3,7 @@
 import { useCallback, useState } from "react";
 import dynamic from "next/dynamic";
 import { Search } from "lucide-react";
-import { searchText } from "@/data/text/common";
+import { searchText } from "@/content/text/common";
 import { useSearchShortcut } from "../hooks/useSearchShortcut";
 
 /** The dialog and everything it needs (search hook, history, results) load the first time search is opened. */

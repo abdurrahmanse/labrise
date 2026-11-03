@@ -1,5 +1,5 @@
 import { Compass } from "lucide-react";
-import { loadingText as t } from "@/data/text/status";
+import { loadingText as t } from "@/content/text/status";
 
 export default function Loading() {
   return (

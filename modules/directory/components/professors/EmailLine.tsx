@@ -1,8 +1,8 @@
 import { Mail, Search } from "lucide-react";
-import { CopyButton } from "@/components/ui/CopyButton";
+import { CopyButton } from "@/shared/ui/CopyButton";
 import type { ProfessorEntry } from "../../types";
-import { emailText } from "@/data/text/directory";
-import { commonText } from "@/data/text/common";
+import { emailText } from "@/content/text/directory";
+import { commonText } from "@/content/text/common";
 
 export function EmailLine({ professor }: { professor: ProfessorEntry }) {
   if (professor.email) {

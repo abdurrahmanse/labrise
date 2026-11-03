@@ -1,6 +1,6 @@
 "use client";
 
-import { searchWorkflowSteps } from "@/data/scholarshipsSearchData";
+import { searchWorkflowSteps } from "@/content/scholarships/scholarshipsSearchData";
 import { ProgressBadge } from "@/shared/components/ProgressBadge";
 import { useFinderProgress } from "../store/useFinderProgress";
 

@@ -1,9 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowRight, Layers } from "lucide-react";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { RoadmapLevel, RoadmapStep } from "@/data/types";
-import { levelDetailUiData } from "@/data/levelDetailUiData";
+import { SectionHeader } from "@/shared/ui/SectionHeader";
+import type { RoadmapLevel } from "../types/level";
+import type { RoadmapStep } from "../types/step";
+import { levelDetailUiData } from "@/content/roadmap/levelDetailUiData";
 
 interface LevelTasksSectionProps {
   level: RoadmapLevel;

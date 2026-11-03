@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Building2, Landmark, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { ecosystemText } from "@/data/text/directory";
+import { ecosystemText } from "@/content/text/directory";
 import { surface } from "@/shared/components/Surface";
 
 interface Tile {

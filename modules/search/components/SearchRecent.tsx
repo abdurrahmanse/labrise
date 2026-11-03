@@ -1,6 +1,6 @@
 import { Bookmark, History } from "lucide-react";
-import { searchText } from "@/data/text/common";
-import { searchDialogText as d } from "@/data/text/library";
+import { searchText } from "@/content/text/common";
+import { searchDialogText as d } from "@/content/text/library";
 
 interface SearchRecentProps {
   terms: string[];

@@ -1,4 +1,4 @@
-import type { ProfileItem } from "../types";
+import type { ProfileItem } from "../types/overview";
 
 export const profileChecklist: ProfileItem[] = [
   { title: "Strong grades", detail: "Top of your class helps; a clear upward trend also works.", priority: "Must have" },

@@ -1,6 +1,6 @@
 import React from "react";
 import { Layers } from "lucide-react";
-import { roadmapUiData } from "@/data/roadmapUiData";
+import { roadmapUiData } from "@/content/roadmap/roadmapUiData";
 
 export function RoadmapLevelsSectionHeader() {
   const { levelsSection } = roadmapUiData;

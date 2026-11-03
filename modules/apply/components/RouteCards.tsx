@@ -1,8 +1,8 @@
 "use client";
 
 import { ArrowRight, Check } from "lucide-react";
-import { applyHubText as t, trackIcons } from "@/data/text/apply";
-import { Button } from "@/components/ui/Button";
+import { applyHubText as t, trackIcons } from "@/content/text/apply";
+import { Button } from "@/shared/ui/Button";
 import { IconBadge } from "@/shared/components/IconBadge";
 import { ProgressPanel } from "@/shared/components/ProgressPanel";
 import { Body, Label } from "@/shared/components/Text";

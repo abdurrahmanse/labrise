@@ -1,4 +1,4 @@
-import { detailText } from "@/data/text/directory";
+import { detailText } from "@/content/text/directory";
 import { scholarships } from "../data/scholarships";
 import type { ProviderEntry, ScholarshipEntry } from "../types";
 

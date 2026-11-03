@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { RoadmapPhase } from "@/data/roadmapPhasesData";
+import type { RoadmapPhase } from "../../types/phase";
 import { PhaseDetailHero } from "./PhaseDetailHero";
 import { PhaseWhatWhySection } from "./PhaseWhatWhySection";
 import { PhaseHowStepsSection } from "./PhaseHowStepsSection";

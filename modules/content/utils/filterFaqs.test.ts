@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import type { FAQItem } from "@/data/types";
+import type { FAQItem } from "../types/faq";
 import { filterFaqs } from "./filterFaqs";
 
 const faq = (id: string, category: FAQItem["category"], question: string, answer = "a", tags: string[] = []): FAQItem => ({ id, category, question, answer, tags });

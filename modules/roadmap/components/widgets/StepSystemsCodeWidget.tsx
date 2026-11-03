@@ -15,7 +15,7 @@ import {
   systemsTabsData,
   systemsBenchmarkMetricsData,
   systemsCodeMeta
-} from "@/data/stepWidgetsData";
+} from "@/content/roadmap/stepWidgetsData";
 import {
   WidgetShell,
   WidgetHeader,
@@ -23,7 +23,7 @@ import {
   WidgetTabButton,
   WidgetCallout
 } from "./common";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 const METRIC_ICONS: Record<string, React.ReactNode> = {
   Zap: <Zap className="w-4 h-4" />,

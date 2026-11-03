@@ -1,5 +1,18 @@
-import type { ScholarshipEntry } from "@/modules/directory/contracts";
+import type { Region } from "@/shared/types/region";
+import type { SCHOLARSHIP_LEVELS } from "../constants";
 
-/** One scholarship programme, as the site shows it. */
-export type Scholarship = ScholarshipEntry;
-export type ScholarshipLevel = Scholarship["level"];
+export type ScholarshipLevel = (typeof SCHOLARSHIP_LEVELS)[number];
+
+/** One scholarship programme, as the site works with it. */
+export interface Scholarship {
+  name: string;
+  /** Host country, or "Europe" for EU-wide programmes. */
+  host: string;
+  region: Region;
+  level: ScholarshipLevel;
+  covers: string;
+  eligibility: string;
+  deadline: string;
+  /** Official page. */
+  site: string;
+}

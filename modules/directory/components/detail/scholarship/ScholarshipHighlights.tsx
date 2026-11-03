@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { CalendarClock, Globe2, Landmark, Layers } from "lucide-react";
-import { scholarshipDetailText as t } from "@/data/text/scholarships";
+import { scholarshipDetailText as t } from "@/content/text/scholarships";
 import { HighlightTiles } from "@/shared/components/StatTiles";
-import { countryByName } from "../../../lib/lookups";
-import { countrySlug, providerSlug } from "../../../lib/slugs";
+import { countryByName } from "../../../utils/lookups";
+import { countrySlug, providerSlug } from "../../../utils/slugs";
 import type { ProviderEntry, ScholarshipEntry } from "../../../types";
 
 interface ScholarshipHighlightsProps {

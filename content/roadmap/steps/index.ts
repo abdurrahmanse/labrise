@@ -1,4 +1,4 @@
-import { RoadmapStep } from "../types";
+import type { RoadmapStep } from "@/modules/roadmap";
 import { phase0Steps } from "./phase0";
 import { phase1Steps } from "./phase1";
 import { phase2Steps } from "./phase2";

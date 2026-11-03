@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Copy, Check } from "lucide-react";
-import { commonText } from "@/data/text/common";
+import { commonText } from "@/content/text/common";
 
 export interface CopyButtonProps {
   textToCopy: string;

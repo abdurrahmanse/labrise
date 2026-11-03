@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Search, X } from "lucide-react";
-import { commonText } from "@/data/text/common";
+import { commonText } from "@/content/text/common";
 
 export interface SearchInputProps {
   value: string;

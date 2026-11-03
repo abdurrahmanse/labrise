@@ -16,13 +16,13 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "600"],
 });
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { AppProviders } from "@/shared/providers/AppProviders";
+import { Footer } from "@/core/layout/footer/Footer";
+import { SiteHeader } from "@/core/layout/header/SiteHeader";
+import { AppProviders } from "@/core/providers/AppProviders";
 import { JsonLd, websiteSchema } from "@/modules/seo";
-import { AmbientBackground } from "@/components/ui/AmbientBackground";
+import { AmbientBackground } from "@/shared/ui/AmbientBackground";
 
-import { rootMetadata } from "@/data/metadata";
+import { rootMetadata } from "@/content/site/metadata";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -49,7 +49,7 @@ export default function RootLayout({
         <AppProviders>
           <JsonLd data={websiteSchema()} />
           <AmbientBackground />
-          <Navbar />
+          <SiteHeader />
           <div className="flex-1 relative z-10">{children}</div>
           <Footer />
         </AppProviders>

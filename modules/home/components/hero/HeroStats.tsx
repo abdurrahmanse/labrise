@@ -1,5 +1,5 @@
 import { countries, professors, scholarships, universities } from "@/modules/directory/catalog";
-import { homeText } from "@/data/text/site";
+import { homeText } from "@/content/text/site";
 
 export function HeroStats() {
   const stats = [

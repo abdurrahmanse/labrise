@@ -2,8 +2,8 @@
 
 import React from "react";
 import { Clock, ChevronDown, ChevronUp } from "lucide-react";
-import { Badge, BadgeVariant } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
+import { Badge, BadgeVariant } from "@/shared/ui/Badge";
+import { Button } from "@/shared/ui/Button";
 
 export interface StepCardHeaderProps {
   stepNumber: string;

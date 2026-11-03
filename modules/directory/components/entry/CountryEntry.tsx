@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { getCountryGuide } from "@/modules/content/server";
 import { JsonLd, breadcrumbSchema } from "@/modules/seo";
-import { findCountry } from "../../lib/lookups";
+import { findCountry } from "../../utils/lookups";
 import { CountryDetailView } from "../detail/CountryDetailView";
 import { entryBreadcrumbs } from "./entryBreadcrumbs";
 

@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { GraduationCap } from "lucide-react";
-import { commonText } from "@/data/text/common";
-import { footerLinksData } from "@/data/navigationData";
+import { commonText } from "@/content/text/common";
+import { footerLinksData } from "@/content/site/navigationData";
 import { IconFor } from "@/shared/components/IconFor";
 
 export function Footer() {

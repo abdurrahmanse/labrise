@@ -1,11 +1,11 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
-import { SectionCard } from "@/components/ui/SectionCard";
-import { Button } from "@/components/ui/Button";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { renderCommonIcon } from "@/components/ui/IconUtils";
-import { communityLaunchpadData } from "@/data/faqsSectionData";
-import { legacyText } from "@/data/text/legacy";
+import { SectionCard } from "@/shared/ui/SectionCard";
+import { Button } from "@/shared/ui/Button";
+import { SectionHeading } from "@/shared/ui/SectionHeading";
+import { renderCommonIcon } from "@/shared/ui/IconUtils";
+import { communityLaunchpadData } from "@/content/faqs/faqsSectionData";
+import { legacyText } from "@/content/text/legacy";
 
 const ICON_COLORS: Record<string, string> = {
   Compass: "text-indigo-400",

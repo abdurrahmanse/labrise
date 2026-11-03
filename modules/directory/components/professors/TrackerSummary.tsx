@@ -1,9 +1,9 @@
 "use client";
 
 import { getTracked, STATUSES, useProfessorTracker } from "../../store/useProfessorTracker";
-import { professorSlug } from "../../lib/slugs";
+import { professorSlug } from "../../utils/slugs";
 import type { ProfessorEntry } from "../../types";
-import { trackerText } from "@/data/text/directory";
+import { trackerText } from "@/content/text/directory";
 import { surface } from "@/shared/components/Surface";
 
 /** Counts of saved professors by outreach status. */

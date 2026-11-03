@@ -6,7 +6,7 @@ import { countrySlug, directoryTypeSchema, professorSlug, providerSlug, scholars
 import { DirectoryEntry } from "@/modules/directory/components/entry/DirectoryEntry";
 import { buildMetadata } from "@/modules/seo";
 import { PageFallback } from "@/shared/components/PageFallback";
-import { notFoundTitles } from "@/data/text/site";
+import { notFoundTitles } from "@/content/text/site";
 
 interface Props {
   params: Promise<{ type: string; slug: string }>;

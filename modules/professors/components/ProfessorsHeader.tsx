@@ -1,7 +1,7 @@
 import React from "react";
 import { Users } from "lucide-react";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { professorOutreachControlsData } from "@/data/professorsData";
+import { SectionHeader } from "@/shared/ui/SectionHeader";
+import { professorOutreachControlsData } from "@/content/professors/professorsData";
 
 export function ProfessorsHeader() {
   const { badge, title, subtitle } = professorOutreachControlsData.header;

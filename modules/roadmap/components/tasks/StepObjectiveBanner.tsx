@@ -1,5 +1,5 @@
 import React from "react";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 export interface StepObjectiveBannerProps {
   keyObjective: string;

@@ -1,5 +1,5 @@
 import { GraduationCap, Landmark } from "lucide-react";
-import { applyHubText as t, compareRows } from "@/data/text/apply";
+import { applyHubText as t, compareRows } from "@/content/text/apply";
 import { surface } from "@/shared/components/Surface";
 
 /** What changes between the two routes, one card per question. */

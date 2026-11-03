@@ -2,9 +2,9 @@
 
 import React from "react";
 import { CheckCircle2 } from "lucide-react";
-import { ChecklistItem } from "@/data/types";
+import type { ChecklistItem } from "../../types/step";
 import { StepTaskItem } from "./StepTaskItem";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 export interface StepTaskChecklistProps {
   stepId: string;

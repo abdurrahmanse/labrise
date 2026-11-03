@@ -1,7 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import { FaqsPageClient } from "@/modules/faqs/components/FaqsPageClient";
-import { faqsMetadata } from "@/data/metadata";
+import { faqsMetadata } from "@/content/site/metadata";
 import { getFaqs } from "@/modules/content/server";
 
 export const metadata: Metadata = faqsMetadata;

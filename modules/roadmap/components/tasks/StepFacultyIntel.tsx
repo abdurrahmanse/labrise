@@ -1,6 +1,6 @@
 import React from "react";
 import { Sparkles, AlertTriangle } from "lucide-react";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 export interface StepFacultyIntelProps {
   proTips?: string[];

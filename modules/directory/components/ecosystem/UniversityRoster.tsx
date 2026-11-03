@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { Avatar } from "@/shared/components/Avatar";
-import type { UniversitySummary } from "../../lib/connections";
-import { universitySlug } from "../../lib/slugs";
-import { rosterLabels } from "@/data/text/directory";
+import type { UniversitySummary } from "../../utils/connections";
+import { universitySlug } from "../../utils/slugs";
+import { rosterLabels } from "@/content/text/directory";
 import { surface } from "@/shared/components/Surface";
 
 /** Universities in a country with how many professors and funders are connected to each. */

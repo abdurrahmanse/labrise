@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { commonText } from "@/data/text/common";
+import { commonText } from "@/content/text/common";
 
 export interface ChipItem {
   href: string;

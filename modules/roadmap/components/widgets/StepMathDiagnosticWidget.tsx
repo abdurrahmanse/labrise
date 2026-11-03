@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Sigma, BookOpen, Sparkles } from "lucide-react";
-import { mathTopicsData, mathDiagnosticMeta } from "@/data/stepWidgetsData";
+import { mathTopicsData, mathDiagnosticMeta } from "@/content/roadmap/stepWidgetsData";
 import {
   WidgetShell,
   WidgetHeader,
@@ -11,9 +11,9 @@ import {
   WidgetSectionCard,
   WidgetCallout
 } from "./common";
-import { legacyText } from "@/data/text/legacy";
-import { WidgetChecklistItem } from "@/components/ui/WidgetChecklistItem";
-import { percentOf } from "@/shared/lib/percent";
+import { legacyText } from "@/content/text/legacy";
+import { WidgetChecklistItem } from "@/shared/ui/WidgetChecklistItem";
+import { percentOf } from "@/shared/utils/percent";
 
 export function StepMathDiagnosticWidget() {
   const [activeTopicIndex, setActiveTopicIndex] = useState(0);

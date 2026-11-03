@@ -1,33 +1,19 @@
-import { z } from "zod";
-import type { FAQItem } from "@/data/types";
 import { defineCollection } from "@/shared/data/collection";
 import { endpoints } from "@/shared/data/endpoints";
 import { staleTimes } from "@/shared/query/staleTimes";
-
-export const faqSchema = z.object({
-  id: z.string(),
-  question: z.string(),
-  answer: z.string(),
-  category: z.enum([
-    "Eligibility & Tests",
-    "Outreach & Supervisors",
-    "Funding & Finance",
-    "Strategy & Preparation",
-    "Funding & Money",
-    "Admissions & Strategy",
-    "Research & Code",
-    "Testing & Requirements",
-    "Visa & Relocation"
-  ]),
-  tags: z.array(z.string())
-}) satisfies z.ZodType<FAQItem>;
+import type { FaqDto } from "../dto/faqDto";
+import { toFaq, toFaqDto } from "../mappers/faqMapper";
+import { faqDtoSchema } from "../schemas/faqSchema";
+import type { FAQItem } from "../types/faq";
 
 /** Frequently asked questions. */
-export const faqs = defineCollection<FAQItem>({
+export const faqs = defineCollection<FAQItem, FaqDto>({
   name: "faqs",
   path: endpoints.faqs,
-  schema: faqSchema,
+  schema: faqDtoSchema,
+  fromDto: toFaq,
+  toDto: toFaqDto,
   idOf: (faq) => faq.id,
   staleTime: staleTimes.content,
-  local: async () => (await import("@/data/faqs")).faqsData
+  local: async () => (await import("@/content/faqs/faqs")).faqsData
 });

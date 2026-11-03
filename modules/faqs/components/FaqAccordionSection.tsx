@@ -2,13 +2,14 @@
 
 import React, { useState } from "react";
 import { Search, HelpCircle, RotateCcw } from "lucide-react";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { Button } from "@/components/ui/Button";
-import { TabsContainer, TabItem } from "@/components/ui/Tabs";
+import { SectionHeader } from "@/shared/ui/SectionHeader";
+import { Button } from "@/shared/ui/Button";
+import { TabsContainer, TabItem } from "@/shared/ui/Tabs";
 import { FaqAccordionItem } from "./FaqAccordionItem";
-import { faqsHeaderData } from "@/data/faqs";
-import { filterFaqs, useFaqs, type FAQItem } from "@/modules/content";
-import { legacyText } from "@/data/text/legacy";
+import { faqsHeaderData } from "@/content/faqs/faqs";
+import { filterFaqs, useFaqs } from "@/modules/content";
+import type { FAQItem } from "@/modules/content";
+import { legacyText } from "@/content/text/legacy";
 
 interface FaqAccordionSectionProps {
   initialFaqs: FAQItem[];

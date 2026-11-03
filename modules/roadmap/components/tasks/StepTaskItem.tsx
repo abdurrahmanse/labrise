@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ChecklistItem } from "@/data/types";
+import type { ChecklistItem } from "../../types/step";
 
 export interface StepTaskItemProps {
   item: ChecklistItem;

@@ -1,8 +1,8 @@
 import React from "react";
 import { HelpCircle } from "lucide-react";
-import { PageHero } from "@/components/ui/PageHero";
-import { faqsPageData } from "@/data/pagesData";
-import { faqsHeroHighlightsData } from "@/data/faqsSectionData";
+import { PageHero } from "@/shared/ui/PageHero";
+import { faqsPageData } from "@/content/site/pagesData";
+import { faqsHeroHighlightsData } from "@/content/faqs/faqsSectionData";
 
 export function FaqsHero() {
   return (

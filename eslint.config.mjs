@@ -8,8 +8,8 @@ import nextTs from "eslint-config-next/typescript";
  * Wiring code (core, infrastructure, API routes, tests) implements the module contracts, so it may reach inside.
  */
 const publicEntry = {
-  group: ["@/modules/*/*", "!@/modules/*/server", "!@/modules/search/client", "!@/modules/*/catalog", "!@/modules/directory/contracts", "!@/modules/directory/cards"],
-  message: 'Import from "@/modules/<name>" (its public API), or "@/modules/<name>/server" for server-only reads (search has "/client", records-only "/catalog" entries (directory, roadmap), directory "/contracts" and "/cards"). Not from inner files.'
+  group: ["@/modules/*/*", "!@/modules/*/server", "!@/modules/search/client", "!@/modules/*/catalog", "!@/modules/*/contracts", "!@/modules/directory/cards"],
+  message: 'Import from "@/modules/<name>" (its public API), or "@/modules/<name>/server" for server-only reads (search has "/client", records-only "/catalog" entries, "/contracts" entries with types, DTOs and mappers, directory "/cards"). Not from inner files.'
 };
 
 const wiring = ["core/**", "infrastructure/**", "app/api/**", "**/*.test.ts", "**/*.test.tsx"];
@@ -32,12 +32,12 @@ const eslintConfig = defineConfig([
     rules: { "no-restricted-imports": ["error", { patterns: [{ ...publicEntry, group: [...publicEntry.group, "!@/modules/*/components"] }] }] }
   },
   {
-    // Layering: shared infrastructure never depends on feature code. (Repeats modulePatterns: the last matching block wins.)
-    files: ["shared/api/**", "shared/data/**", "shared/query/**", "core/config/**"],
+    // Layering: shared code and core config never depend on feature modules or the site layout. (Repeats modulePatterns: the last matching block wins.)
+    files: ["shared/**", "core/config/**"],
     rules: {
       "no-restricted-imports": [
         "error",
-        { patterns: [...modulePatterns, { group: ["@/modules/*", "@/components/*"], message: "Shared infrastructure must not import feature code." }] }
+        { patterns: [...modulePatterns, { group: ["@/modules/*", "@/core/layout/*"], message: "Shared infrastructure must not import feature code or the site layout." }] }
       ]
     }
   },

@@ -1,6 +1,6 @@
 import React from "react";
-import { PhaseHowToStep } from "@/data/roadmapPhasesData";
-import { roadmapUiData } from "@/data/roadmapUiData";
+import type { PhaseHowToStep } from "../../types/phase";
+import { roadmapUiData } from "@/content/roadmap/roadmapUiData";
 import { PhaseMilestoneChip } from "./PhaseMilestoneChip";
 
 export interface PhaseMilestonesPreviewProps {

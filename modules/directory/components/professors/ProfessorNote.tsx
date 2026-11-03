@@ -1,7 +1,7 @@
 "use client";
 
 import { getTracked, useProfessorTracker } from "../../store/useProfessorTracker";
-import { trackerText } from "@/data/text/directory";
+import { trackerText } from "@/content/text/directory";
 
 export function ProfessorNote({ slug }: { slug: string }) {
   const note = useProfessorTracker((s) => getTracked(s.entries, slug).note);

@@ -1,6 +1,6 @@
 "use client";
 
-import { professorOutreachWorkflow } from "@/data/professorsData";
+import { professorOutreachWorkflow } from "@/content/professors/professorsData";
 import { ProgressBadge } from "@/shared/components/ProgressBadge";
 import { useOutreachProgress } from "../store/useOutreachProgress";
 

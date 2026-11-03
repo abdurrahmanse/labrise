@@ -1,4 +1,4 @@
-import { RoadmapLevel } from "./types";
+import type { RoadmapLevel } from "@/modules/roadmap";
 
 export const roadmapLevelsData: RoadmapLevel[] = [
   {

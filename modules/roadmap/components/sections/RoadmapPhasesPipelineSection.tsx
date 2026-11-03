@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { roadmapPhasesData } from "@/data/roadmapPhasesData";
+import { roadmapPhasesData } from "@/content/roadmap/roadmapPhasesData";
 import { RoadmapControls } from "../RoadmapControls";
 import { RoadmapPhaseCard } from "../RoadmapPhaseCard";
 import { RoadmapEmptyState } from "../RoadmapEmptyState";

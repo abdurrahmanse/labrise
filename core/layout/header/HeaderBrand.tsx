@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { GraduationCap } from "lucide-react";
-import { headerData } from "@/data/navigationData";
-import { commonText } from "@/data/text/common";
+import { headerData } from "@/content/site/navigationData";
+import { commonText } from "@/content/text/common";
 
 export function HeaderBrand() {
   return (

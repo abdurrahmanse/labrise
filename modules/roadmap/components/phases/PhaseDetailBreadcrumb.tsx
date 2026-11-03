@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
-import { RoadmapPhase } from "@/data/roadmapPhasesData";
-import { phaseDetailUiData } from "@/data/phaseDetailUiData";
-import { legacyText } from "@/data/text/legacy";
+import type { RoadmapPhase } from "../../types/phase";
+import { phaseDetailUiData } from "@/content/roadmap/phaseDetailUiData";
+import { legacyText } from "@/content/text/legacy";
 
 export interface PhaseDetailBreadcrumbProps {
   phase: RoadmapPhase;

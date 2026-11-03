@@ -1,6 +1,6 @@
 import React from "react";
 import { GraduationCap } from "lucide-react";
-import { phaseDetailUiData } from "@/data/phaseDetailUiData";
+import { phaseDetailUiData } from "@/content/roadmap/phaseDetailUiData";
 import { PhaseDegreeCard } from "./PhaseDegreeCard";
 
 export interface PhaseDegreeNuancesSectionProps {

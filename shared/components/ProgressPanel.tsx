@@ -1,6 +1,6 @@
 import { RotateCcw } from "lucide-react";
 import type { ReactNode } from "react";
-import { commonText } from "@/data/text/common";
+import { commonText } from "@/content/text/common";
 import { ProgressBar } from "./ProgressBar";
 import { surface } from "@/shared/components/Surface";
 

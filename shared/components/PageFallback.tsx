@@ -1,5 +1,5 @@
 import { Compass } from "lucide-react";
-import { commonText } from "@/data/text/common";
+import { commonText } from "@/content/text/common";
 
 /** Suspense fallback shown while a route reads its URL data. */
 export function PageFallback() {

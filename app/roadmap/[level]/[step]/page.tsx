@@ -2,12 +2,12 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { RoadmapStepCard as StepCard } from "@/modules/roadmap/components/RoadmapStepCard";
-import { roadmapLevelsData, getLevelBySlug } from "@/data/levelsData";
-import { getStepById } from "@/data/steps";
+import { roadmapLevelsData, getLevelBySlug } from "@/content/roadmap/levelsData";
+import { getStepById } from "@/content/roadmap/steps";
 import { PageShell } from "@/shared/components/PageShell";
 import { buildMetadata } from "@/modules/seo";
 import { PageFallback } from "@/shared/components/PageFallback";
-import { notFoundTitles } from "@/data/text/site";
+import { notFoundTitles } from "@/content/text/site";
 
 interface Props {
   params: Promise<{ level: string; step: string }>;

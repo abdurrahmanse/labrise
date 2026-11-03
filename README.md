@@ -30,7 +30,7 @@ A world where a good student never misses a scholarship because they did not kno
 | Common problems and fixes | `/problems` |
 | Contact and corrections | `/contact` |
 
-**In numbers:** 27 countries, about 300 universities, about 630 professors, about 90 funders.
+**In numbers:** 37 countries, about 340 universities, about 730 professors, about 105 funders, 42 scholarships.
 
 Every country links to its universities, professors and funders. Every entry has its own page.
 
@@ -60,7 +60,22 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000). It runs on the bundled data, with no backend needed.
+
+## Project structure
+
+```
+app/              Routes (pages, layouts, API routes)
+modules/          Features: components, hooks, types, schemas, mappers, services per feature
+shared/           Feature-agnostic UI, hooks, utils, API client, query setup
+core/             Config, composition roots, site layout, providers
+infrastructure/   Data sources: bundled data and REST
+content/          Bundled content and UI copy
+```
+
+How the pieces connect, how to plug in a backend, and the rules the linter enforces are in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
+Before pushing: `npx tsc --noEmit && npx eslint . && npm test && npm run build`.
 
 ## License
 

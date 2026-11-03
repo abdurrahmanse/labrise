@@ -1,6 +1,6 @@
 "use client";
 
-import { scholarshipDetailText as t } from "@/data/text/scholarships";
+import { scholarshipDetailText as t } from "@/content/text/scholarships";
 import { stepKey, stepKeys, useApplyProgress } from "@/modules/apply";
 import { CheckRow } from "@/shared/components/CheckRow";
 import { ProgressPanel } from "@/shared/components/ProgressPanel";

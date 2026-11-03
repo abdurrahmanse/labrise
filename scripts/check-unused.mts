@@ -5,7 +5,7 @@ import { dirname, normalize } from "node:path";
 // Lists source files that nothing can reach. Entry points: everything under app/ (pages, layouts, routes, metadata files)
 // and each module's index.ts, which is its public API for other modules even when no route imports it yet.
 // Tests and scripts are not entries, so a file only a test imports is reported too.
-const roots = "app components shared core infrastructure modules data lib";
+const roots = "app shared core infrastructure modules content";
 const files = execSync(`git ls-files -co --exclude-standard ${roots}`, { encoding: "utf8" })
   .split("\n")
   .filter((f) => /\.tsx?$/.test(f) && !/\.test\.tsx?$/.test(f));

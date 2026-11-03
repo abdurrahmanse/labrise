@@ -2,7 +2,7 @@
 
 import { Download } from "lucide-react";
 import { getTracked, useProfessorTracker } from "../../store/useProfessorTracker";
-import { professorSlug } from "../../lib/slugs";
+import { professorSlug } from "../../utils/slugs";
 import type { ProfessorEntry } from "../../types";
 
 const HEADER = ["Name", "University", "Country", "Group", "Official email", "Saved", "Status", "Note"];

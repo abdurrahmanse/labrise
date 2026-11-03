@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
-import { commonText } from "@/data/text/common";
+import { commonText } from "@/content/text/common";
 import { IconFor } from "@/shared/components/IconFor";
 import { usePrefetchHref } from "../../hooks/useDirectoryEntry";
 import { surface } from "@/shared/components/Surface";

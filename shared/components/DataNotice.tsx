@@ -1,7 +1,7 @@
 import { Flag, ShieldCheck } from "lucide-react";
 import { DATA_REVIEWED } from "@/shared/data/review";
-import { noticeText } from "@/data/text/common";
-import { contactInfo } from "@/data/text/contact";
+import { noticeText } from "@/content/text/common";
+import { contactInfo } from "@/content/text/contact";
 
 interface DataNoticeProps {
   /** What the page is about, used in the correction message. */

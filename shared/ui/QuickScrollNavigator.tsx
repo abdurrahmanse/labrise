@@ -2,7 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import { Compass } from "lucide-react";
-import { NavAnchorItem } from "@/data/types";
+
+export interface NavAnchorItem {
+  id: string;
+  label: string;
+  count?: string;
+  iconName?: string;
+}
 
 interface QuickScrollNavigatorProps {
   anchors: NavAnchorItem[];

@@ -1,8 +1,8 @@
-import { countrySlug } from "../../lib/slugs";
+import { countrySlug } from "../../utils/slugs";
 import type { CountryEntry } from "../../types";
 import { Flag } from "@/shared/components/Flag";
 import { CardFact, CardShell } from "./CardShell";
-import { cardText } from "@/data/text/directory";
+import { cardText } from "@/content/text/directory";
 
 export function CountryCard({ country }: { country: CountryEntry }) {
   return (

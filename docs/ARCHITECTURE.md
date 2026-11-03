@@ -1,6 +1,72 @@
-# Data architecture
+# Architecture
 
-One Next.js app (modular monolith). Data reaches the UI through one path, whatever the source.
+One Next.js app, organised as a modular monolith: features are vertical slices (`modules/`), everything else is
+feature-agnostic code that they share.
+
+## Project structure
+
+```
+scholarship-roadmap/
+├── app/                        Routes only: pages, layouts, metadata files, and app/api (the built-in backend)
+├── modules/                    Features, one folder each (anatomy below)
+├── shared/                     Feature-agnostic building blocks
+│   ├── ui/                     Design-system primitives: Button, Tabs, hero, cards
+│   ├── components/             Composite UI many features use: PageShell, DataRenderer, Flag
+│   ├── hooks/                  Generic hooks
+│   ├── utils/                  Pure helpers: cn, percentOf
+│   ├── api/                    HTTP client, interceptors, error types, response helpers
+│   ├── query/                  TanStack Query client, keys, cache times
+│   ├── data/                   Generic data access: Collection, repositories, endpoints
+│   ├── progress/               Saved checklist progress (zustand)
+│   ├── illustrations/          Decorative SVG components
+│   └── types/                  The few app-wide types (Region)
+├── core/                       App-wide wiring
+│   ├── config/                 Environment: public and server-only
+│   ├── container/              Composition roots: which implementation backs each contract
+│   ├── layout/                 Site shell (header, footer)
+│   └── providers/              App-wide React providers (theme, query, URL state)
+├── infrastructure/             Repository implementations: bundled data (mock) and REST
+├── content/                    Bundled content and UI copy, grouped by domain
+│   ├── text/                   UI copy
+│   └── roadmap/ countries/ documents/ faqs/ professors/ scholarships/ site/
+├── public/                     Static files served as-is
+├── docs/                       This document
+├── scripts/                    Repository checks (see "Checks") and the responsive audit
+├── .env.example                Every environment variable, documented
+└── eslint.config.mjs · next.config.ts · tsconfig.json · package.json
+```
+
+Dependencies point one way:
+`app` → `modules` → `shared` · `core` wires `modules` to `infrastructure` · `infrastructure` implements contracts that `modules` own.
+`shared/` and `core/config` never import a module or the site layout; ESLint fails if they do.
+
+### Module anatomy
+
+A module holds everything about one feature. A folder is created when its first file needs it, never empty.
+
+```
+modules/<feature>/
+├── index.ts          Public API: what other modules may import
+├── components/       UI (feature-specific)
+├── hooks/            One hook, one responsibility
+├── store/            Browser state (zustand)
+├── services/         Use cases: pure, they only know the repository contract
+├── repositories/     Contracts (interfaces). Implementations live in infrastructure/
+├── queries/          TanStack Query definitions: key + fetcher + cache time
+├── types/            Domain entities (hand-written interfaces)
+├── schemas/          Zod schemas: wire format (DTO) and request params
+├── dto/              DTO types, inferred from the schemas
+├── mappers/          toX(dto) and toXDto(entity)
+├── utils/            Pure helpers: filtering, sorting, validation, formatting
+├── constants.ts      Lists and limits used by types, schemas and UI
+└── data/             Records that belong to this module only
+```
+
+Extra entries beside `index.ts`, chosen by weight so a page only loads what it uses:
+`server.ts` (cached server reads), `catalog.ts` (records), `contracts.ts` (types, DTOs, mappers), `cards.ts` (cards other modules reuse),
+`client.ts` (search results hook). ESLint allows exactly these.
+
+## Data flow
 
 ```
 UI / Server Components
@@ -16,61 +82,58 @@ UI / Server Components
 The composition roots decide which implementation backs each contract:
 `core/container/server.ts` (server) and `core/container/client.ts` (browser).
 
-## Folders
+## Types and data contracts
 
-| Folder | Holds |
-| :--- | :--- |
-| `app/` | Thin routes. `app/api/**` is the built-in backend used in mock mode. |
-| `modules/<feature>/` | One feature: its `components/`, hooks, services, repositories (contracts), queries, schemas, types, utils, constants. Public API = `index.ts` (+ the extra entries below). |
-| `components/ui/` | Design-system primitives (buttons, tabs, hero, cards) with no feature knowledge. |
-| `components/header`, `components/footer` | The site shell rendered by `app/layout.tsx`. Not a feature. |
-| `shared/` | Code with no business meaning: API client, query client, hooks, generic UI such as `Flag`, `DataRenderer`. |
-| `core/` | Configuration (`core/config`) and composition roots (`core/container`). |
-| `infrastructure/` | Concrete repositories (mock, REST). The only code that knows a data source. |
-| `data/` | Bundled content and UI copy, the mock data the repositories serve. |
+Every module owns the types of its domain and exposes only the ones other modules need.
 
-Feature UI lives in its module: `modules/countries`, `faqs`, `professors`, `scholarships`, `roadmap` (overview, step cards),
-level, phase and widget screens (in `modules/roadmap/components`), `home`, `documents`, `guides`, and so on.
+Flow: backend JSON -> schema validates the DTO -> mapper turns it into an entity -> hooks and components only see entities.
+The built-in `/api` routes run the same mappers the other way (`toXDto`), so they send exactly what a real backend must send.
+If a backend names a field differently, change that one mapper; nothing else moves. Every mapper lists every field,
+so a field added on one side is a compile error.
 
-Folders such as `entities/`, `DTOs/`, `mappers/`, `adapters/`, `actions/` are not created empty. Add one inside a module when
-the first file needs it (for example `mappers/` when a backend's field names differ from the schema).
+- `modules/content`: country guides, documents, FAQs. `registry.ts` ties each collection name to its entity and DTO.
+- `modules/scholarships`: the `Scholarship` entity and its DTO/mappers, exposed through `contracts.ts`.
+  The directory lists scholarships as entries, so its `ScholarshipEntry` is an alias of this entity.
+- `modules/directory`: entries (`types.ts`), DTOs, mappers, and `api/resources.ts`, which pairs each directory type with its schema and mappers.
+- `modules/search`: `SearchResult` / `SearchPage` entities, `SearchResponseDto`, `mappers/searchMapper.ts`.
+- `modules/roadmap`, `professors`, `scholarships`: entities for their content (`types/`).
+- View models stay separate from DTOs: `library/utils/entryView.ts` turns an `EntryResult` into the `EntryView` the saved list shows.
+- `shared/types/region.ts` and `shared/api/types.ts` are the only shared types (a region, a paginated response, an API error body).
+  Anything with business meaning belongs in a module.
+- UI copy typed next to its file in `content/` (page copy, hero text) stays there: those shapes describe static text, not domain entities.
+
+## Module boundaries
+
+Enforced by ESLint (`eslint.config.mjs`):
+
+- Between modules, import `@/modules/<name>` (or one of its listed entries), never inner files.
+- Route files (`app/**`) may import a component file directly (`@/modules/<name>/components/...`): a page then loads only what it renders.
+- `core/`, `infrastructure/`, `app/api` and tests may reach inside a module, because they implement its contracts.
+- A file re-exported through an `index.ts` that uses client-only code (stores, hooks) must start with `"use client"`.
 
 ## Keeping bundles small
 
 Measured with `next analyze`: a plain page used to ship ~945 KB of JavaScript (raw) because the header pulled in the whole directory.
-Rules that keep it small:
 
-- **Module entries are split by weight.** `directory` has `index.ts` (UI components), `cards.ts` (cards other modules reuse),
-  `contracts.ts` (types, schemas, slugs, API client) and `catalog.ts` (the records). Import the lightest one that has what you need.
-  `search` has `index.ts` (header button only) and `client.ts` (results hook). ESLint allows exactly these extra entries.
+- **Entries are split by weight** (see "Module anatomy"). Import the lightest one that has what you need.
 - **Barrels must not mix data and client components.** A server page that imports a barrel re-exporting `"use client"` files
   puts all of them in that page's client manifest, rendered or not. Bundlers also cannot drop unused re-exports of modules
   that run code at load time (the data files do).
 - **Heavy, rarely-used UI loads on demand.** The search dialog is a `next/dynamic` import opened by the header button or Ctrl/Cmd+K.
-- **Shared UI lives in `shared/`.** `Flag` and `ProgressBadge` are used by several features, so they must not live in (or import) one of them.
-
-Boundaries are enforced by ESLint (`eslint.config.mjs`) for every module: between modules, import `@/modules/<name>` (or `/server`, or one of the entries listed above), never inner files.
-Route files (`app/**`) are the exception for UI: a page imports the exact component file it renders (`@/modules/<name>/components/...`). A barrel that re-exports client components makes every page importing it ship all of them, so barrels stay as the module's public API for other modules while pages stay narrow.
-Core, infrastructure, API routes and tests may reach inside because they implement the module contracts. A file re-exported through an `index.ts` that uses client-only code (stores, hooks) must start with `"use client"`, or server pages importing the barrel fail to build.
-Import cycles are checked by `npm run check:cycles`; files nothing reaches (from a route or a module's `index.ts`) by `npm run check:unused`.
-
-## Modules on the new flow
-
-- `modules/content`: country guides, documents, FAQs (`useCountryGuides`, `useDocuments`, `useFaqs`; server `getCountryGuide`, ...).
-- `modules/scholarships`: `useScholarships`, `useInfiniteScholarships`, `useScholarshipDetails`, `useFeaturedScholarships`,
-  `useScholarshipSearch`, `useScholarshipFilters` (URL state). Search, filter, sort and paging run in the repository, not in the browser.
-- `modules/directory`: already had hooks + API routes; it keeps its own `api/` layer and is the next to migrate.
+- **Shared UI lives in `shared/`.** `Flag` and `ProgressBadge` are used by several features, so they live in no single one of them.
 
 ## Connecting a backend
 
 1. Set `NEXT_PUBLIC_API_BASE_URL` (browser) and `API_BASE_URL` (server), and `API_TOKEN` if it needs a bearer token. See `.env.example`.
-2. Make the backend return the JSON in `shared/data/endpoints.ts`:
-   - `GET /api/content/{country-guides|documents|faqs}` -> `Item[]`, and `/{id}` -> `Item` (404 when missing)
+2. Make the backend return the JSON that the mappers expect (the DTO schemas are in each module's `schemas/`):
+   - `GET /api/content/{country-guides|documents|faqs}` -> `Dto[]`, and `/{id}` -> `Dto` (404 when missing)
    - `GET /api/scholarships?q&country&level&region&sort&page&pageSize` -> `{ items, total, page, pageSize, pageCount }`
    - `GET /api/scholarships/featured?limit`, `GET /api/scholarships/{slug}`
+   - `GET /api/directory/{type}` -> `Dto[]`, `GET /api/directory/{type}/{slug}` -> `{ type, slug, entry, related }`
+   - `GET /api/search?q&page` -> `{ query, total, items, nextPage }`
    - errors: `{ "error": { "status": 404, "message": "..." } }`
 3. Different paths? Change them only in `shared/data/endpoints.ts`.
-4. Different field names? Add `mappers/` in the module and map inside the REST repository. Schemas keep validating the result.
+4. Different field names? Change the module's mapper. Schemas keep validating the result.
 5. After the database changes, refresh cached pages: `POST /api/revalidate`, header `x-revalidate-secret: $REVALIDATE_SECRET`, body `{"collection":"faqs"}`.
 6. A database (Prisma, Supabase, SQL) instead of REST: write a repository in `infrastructure/` that satisfies the module's contract and bind it in `core/container/server.ts`. Pages and hooks do not change. Keep the browser on REST: expose the data through route handlers that call that repository.
 
@@ -89,4 +152,13 @@ Import cycles are checked by `npm run check:cycles`; files nothing reaches (from
 
 ## Checks
 
-`npx tsc --noEmit`, `npx eslint .`, `npm test` (node:test via tsx), `npm run check:data`, `npm run check:cycles`, `npm run check:unused`, `npm run build`.
+| Command | Fails when |
+| :--- | :--- |
+| `npx tsc --noEmit` | A type error |
+| `npx eslint .` | A lint error or a broken module boundary |
+| `npm test` | A test fails (node:test through tsx) |
+| `npm run check:cycles` | Files import each other in a loop |
+| `npm run check:unused` | A file is unreachable from a route or a module's `index.ts` |
+| `npm run check:types` | An exported type nothing references (uses the compiler, so a word in a string does not count) |
+| `npm run check:data` | Directory data has duplicate slugs, bad links or broken references |
+| `npm run build` | The production build fails |

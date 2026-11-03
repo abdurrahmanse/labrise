@@ -1,6 +1,6 @@
 "use client";
 
-import { globalErrorText as t } from "@/data/text/status";
+import { globalErrorText as t } from "@/content/text/status";
 
 // Replaces the whole layout when the root layout itself fails, so it styles itself without the site CSS.
 export default function GlobalError({ reset }: { error: Error & { digest?: string }; reset: () => void }) {

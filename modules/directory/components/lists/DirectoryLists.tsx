@@ -1,14 +1,14 @@
 "use client";
 
 import type { CountryEntry, ProviderEntry, ScholarshipEntry, UniversityEntry } from "../../types";
-import { countrySlug, providerSlug, scholarshipSlug, universitySlug } from "../../lib/slugs";
+import { countrySlug, providerSlug, scholarshipSlug, universitySlug } from "../../utils/slugs";
 import { CountryCard } from "../cards/CountryCard";
 import { ProviderCard } from "../cards/ProviderCard";
 import { ScholarshipCard } from "../cards/ScholarshipCard";
 import { UniversityCard } from "../cards/UniversityCard";
 import { LiveDirectory } from "../LiveDirectory";
 import { CardBrowser } from "./CardBrowser";
-import { listText } from "@/data/text/directory";
+import { listText } from "@/content/text/directory";
 
 export function CountriesList({ initialData }: { initialData: CountryEntry[] }) {
   return (

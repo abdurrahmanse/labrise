@@ -1,8 +1,8 @@
-import { providerSlug } from "../../lib/slugs";
+import { providerSlug } from "../../utils/slugs";
 import type { ProviderEntry } from "../../types";
 import { Flag } from "@/shared/components/Flag";
 import { CardFact, CardShell } from "./CardShell";
-import { cardText } from "@/data/text/directory";
+import { cardText } from "@/content/text/directory";
 
 export function ProviderCard({ provider }: { provider: ProviderEntry }) {
   return (

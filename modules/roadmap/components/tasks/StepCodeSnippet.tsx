@@ -1,5 +1,5 @@
 import React from "react";
-import { RoadmapStep } from "@/data/types";
+import type { RoadmapStep } from "../../types/step";
 
 export interface StepCodeSnippetProps {
   snippet: NonNullable<RoadmapStep["codeSnippet"]>;

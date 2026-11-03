@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { CalendarClock, Download, ExternalLink, Trash2 } from "lucide-react";
-import { plannerText as t } from "@/data/text/planner";
+import { plannerText as t } from "@/content/text/planner";
 import { EmptyState } from "@/shared/components/EmptyState";
 import { useMounted } from "@/shared/hooks/useMounted";
-import { cn } from "@/lib/utils";
-import { applicationsToCsv } from "../lib/csv";
-import { daysUntil } from "../lib/dates";
+import { cn } from "@/shared/utils/cn";
+import { applicationsToCsv } from "../utils/csv";
+import { daysUntil } from "../utils/dates";
 import { STATUS_KEYS, usePlanner, type ApplicationStatus } from "../store/usePlanner";
 import { surface } from "@/shared/components/Surface";
 

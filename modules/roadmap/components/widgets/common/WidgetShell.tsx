@@ -1,7 +1,7 @@
 import React from "react";
 
-export type { WidgetTheme } from "@/components/ui/WidgetTheme";
-import type { WidgetTheme } from "@/components/ui/WidgetTheme";
+export type { WidgetTheme } from "@/shared/ui/WidgetTheme";
+import type { WidgetTheme } from "@/shared/ui/WidgetTheme";
 
 interface WidgetShellProps {
   theme?: WidgetTheme;

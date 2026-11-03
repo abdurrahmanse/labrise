@@ -1,7 +1,7 @@
 "use client";
 
 import { parseAsBoolean, parseAsInteger, parseAsString, parseAsStringLiteral, useQueryStates } from "nuqs";
-import { SORTS } from "../lib/professorFilters";
+import { SORTS } from "../utils/professorFilters";
 
 /** Filters and page live in the URL, so a filtered view can be shared or bookmarked. */
 export function useProfessorFilters() {

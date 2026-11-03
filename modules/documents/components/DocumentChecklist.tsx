@@ -1,7 +1,7 @@
 "use client";
 
-import type { DocumentGuideline } from "@/data/documentsData";
-import { documentDetailText as t } from "@/data/text/documents";
+import type { DocumentGuideline } from "@/modules/content";
+import { documentDetailText as t } from "@/content/text/documents";
 import { CheckRow } from "@/shared/components/CheckRow";
 import { ProgressPanel } from "@/shared/components/ProgressPanel";
 import { useProgress } from "@/shared/progress/useProgress";

@@ -11,7 +11,7 @@ import { ProfessorRoster } from "@/modules/directory/components/ecosystem/Profes
 import { UniversityRoster } from "@/modules/directory/components/ecosystem/UniversityRoster";
 import { Flag } from "@/shared/components/Flag";
 import { buildMetadata } from "@/modules/seo";
-import { countryViewText, rosterText } from "@/data/text/directory";
+import { countryViewText, rosterText } from "@/content/text/directory";
 import { PageFallback } from "@/shared/components/PageFallback";
 
 interface Props {

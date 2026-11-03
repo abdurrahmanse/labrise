@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/utils/cn";
 
 export type TabTheme = "indigo" | "cyan" | "emerald" | "amber" | "purple" | "rose";
 export type TabVariant = "pills" | "cards" | "segmented" | "minimal";

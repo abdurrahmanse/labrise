@@ -5,11 +5,11 @@ import {
   Clock,
   Quote
 } from "lucide-react";
-import { Badge } from "@/components/ui/Badge";
-import { RoadmapLevel } from "@/data/types";
-import { levelDetailUiData } from "@/data/levelDetailUiData";
+import { Badge } from "@/shared/ui/Badge";
+import type { RoadmapLevel } from "../types/level";
+import { levelDetailUiData } from "@/content/roadmap/levelDetailUiData";
 import { getLevelIcon, getLevelDifficultyVariant } from "./RoadmapConstants";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 interface LevelHeroProps {
   level: RoadmapLevel;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Globe2, ExternalLink, ArrowRight } from "lucide-react";
-import { PhaseOfficialResource } from "@/data/roadmapPhasesData";
-import { legacyText } from "@/data/text/legacy";
+import type { PhaseOfficialResource } from "../../types/phase";
+import { legacyText } from "@/content/text/legacy";
 
 export interface PhaseResourceCardProps {
   resource: PhaseOfficialResource;

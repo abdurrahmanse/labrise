@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { JsonLd, breadcrumbSchema, scholarshipGrantSchema } from "@/modules/seo";
-import { findScholarship, providerOfScholarship } from "../../lib/lookups";
+import { findScholarship, providerOfScholarship } from "../../utils/lookups";
 import { ScholarshipDetailView } from "../detail/ScholarshipDetailView";
 import { entryBreadcrumbs } from "./entryBreadcrumbs";
 

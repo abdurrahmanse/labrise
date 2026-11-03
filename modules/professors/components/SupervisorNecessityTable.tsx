@@ -1,7 +1,7 @@
 import React from "react";
 import { Globe2 } from "lucide-react";
-import { supervisorNecessityByCountry, professorOutreachControlsData } from "@/data/professorsData";
-import { legacyText } from "@/data/text/legacy";
+import { supervisorNecessityByCountry, professorOutreachControlsData } from "@/content/professors/professorsData";
+import { legacyText } from "@/content/text/legacy";
 
 export function SupervisorNecessityTable() {
   const { necessityTitle, necessitySubtitle } = professorOutreachControlsData.sections;

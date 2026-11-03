@@ -2,15 +2,15 @@
 
 import React, { useState } from "react";
 import { ClipboardCheck, ArrowRight } from "lucide-react";
-import { SectionCard } from "@/components/ui/SectionCard";
-import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { WidgetChecklistItem } from "@/components/ui/WidgetChecklistItem";
-import { preflightChecklistData } from "@/data/faqsSectionData";
-import { faqsPageData } from "@/data/pagesData";
-import { legacyText } from "@/data/text/legacy";
-import { percentOf } from "@/shared/lib/percent";
+import { SectionCard } from "@/shared/ui/SectionCard";
+import { Button } from "@/shared/ui/Button";
+import { Badge } from "@/shared/ui/Badge";
+import { SectionHeading } from "@/shared/ui/SectionHeading";
+import { WidgetChecklistItem } from "@/shared/ui/WidgetChecklistItem";
+import { preflightChecklistData } from "@/content/faqs/faqsSectionData";
+import { faqsPageData } from "@/content/site/pagesData";
+import { legacyText } from "@/content/text/legacy";
+import { percentOf } from "@/shared/utils/percent";
 
 export function InteractivePreflightChecklist() {
   const [checkedItems, setCheckedItems] = useState<{ [key: string]: boolean }>({

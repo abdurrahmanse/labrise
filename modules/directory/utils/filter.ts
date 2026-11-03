@@ -1,5 +1,5 @@
 import type { RegionFilter } from "./regions";
-import type { Region } from "../types";
+import type { Region } from "@/shared/types/region";
 
 interface FilterInput<T> {
   entries: T[];

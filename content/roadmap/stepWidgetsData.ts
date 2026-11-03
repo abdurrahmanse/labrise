@@ -1,11 +1,4 @@
-import {
-  MathTopicDiagnostic,
-  SystemsCodeTab,
-  SystemsBenchmarkMetric,
-  DegreeRouteComparison,
-  GpuQuantPreset,
-  LiteratureMatrixDomain
-} from "./types";
+import type { MathTopicDiagnostic, SystemsCodeTab, SystemsBenchmarkMetric, DegreeRouteComparison, GpuQuantPreset, LiteratureMatrixDomain } from "@/modules/roadmap";
 
 // ============================================================
 // STEP 0.1: MATHEMATICAL RIGOR & DIAGNOSTIC BENCHMARKS DATA

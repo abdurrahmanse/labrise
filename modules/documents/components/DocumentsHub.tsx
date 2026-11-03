@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { useDocuments, type DocumentGuideline } from "@/modules/content";
-import { documentsHubText as t } from "@/data/text/documents";
+import { useDocuments } from "@/modules/content";
+import type { DocumentGuideline } from "@/modules/content";
+import { documentsHubText as t } from "@/content/text/documents";
 import { EmptyState } from "@/shared/components/EmptyState";
 import { FilterTabs } from "@/shared/components/FilterTabs";
 import { DocumentCard } from "./DocumentCard";

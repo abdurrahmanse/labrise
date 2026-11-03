@@ -1,5 +1,5 @@
 import { InfoCard } from "@/shared/components/InfoCard";
-import { guideSidebarText } from "@/data/text/site";
+import { guideSidebarText } from "@/content/text/site";
 
 export function GuideIntroCards({ why, timeline }: { why: string; timeline: string }) {
   return (

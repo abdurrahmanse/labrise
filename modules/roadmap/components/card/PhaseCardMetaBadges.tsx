@@ -1,6 +1,6 @@
 import React from "react";
 import { Clock, GraduationCap, Award, Compass } from "lucide-react";
-import { roadmapUiData } from "@/data/roadmapUiData";
+import { roadmapUiData } from "@/content/roadmap/roadmapUiData";
 
 export interface PhaseCardMetaBadgesProps {
   phaseNumber: number;

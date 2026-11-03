@@ -1,6 +1,6 @@
 import React from "react";
 import { AlertTriangle, ShieldAlert } from "lucide-react";
-import { scholarshipFinderControlsData } from "@/data/scholarshipsSearchData";
+import { scholarshipFinderControlsData } from "@/content/scholarships/scholarshipsSearchData";
 
 export function AntiFraudSection() {
   const { fraudTitle, fraudBadge } = scholarshipFinderControlsData.sections;

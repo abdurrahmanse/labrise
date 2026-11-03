@@ -7,7 +7,7 @@ import { SupervisorNecessityTable } from "./SupervisorNecessityTable";
 import { ResearchFitChecklistSection } from "./ResearchFitChecklistSection";
 import { PROFESSOR_TABS, type ProfessorPart } from "./professorTabs";
 import { SubNav } from "@/shared/components/SubNav";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 export function ProfessorOutreachView({ part = "outreach" }: { part?: ProfessorPart }) {
   return (

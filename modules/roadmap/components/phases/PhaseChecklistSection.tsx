@@ -1,9 +1,9 @@
 import React from "react";
 import { ClipboardCheck } from "lucide-react";
-import { PhaseChecklistItem as PhaseChecklistItemType } from "@/data/roadmapPhasesData";
-import { phaseDetailUiData } from "@/data/phaseDetailUiData";
+import type { PhaseChecklistItem as PhaseChecklistItemType } from "../../types/phase";
+import { phaseDetailUiData } from "@/content/roadmap/phaseDetailUiData";
 import { PhaseChecklistItem } from "./PhaseChecklistItem";
-import { percentOf } from "@/shared/lib/percent";
+import { percentOf } from "@/shared/utils/percent";
 
 interface PhaseChecklistSectionProps {
   phaseNumber: number;

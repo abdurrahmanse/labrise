@@ -1,6 +1,6 @@
-import { REGIONS } from "../../lib/regions";
+import { REGIONS, type RegionFilter } from "../../utils/regions";
 
-export function RegionChips({ value, onChange }: { value: string; onChange: (region: string) => void }) {
+export function RegionChips({ value, onChange }: { value: RegionFilter; onChange: (region: RegionFilter) => void }) {
   return (
     <div className="flex flex-wrap gap-2">
       {REGIONS.map((region) => (

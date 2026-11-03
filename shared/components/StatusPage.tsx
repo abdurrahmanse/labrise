@@ -1,6 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
-import type { StatusLink } from "@/data/text/status";
+import type { StatusLink } from "@/content/text/status";
 import { ContourPattern } from "../illustrations/ContourPattern";
 import { LinkTile, LinkTileGrid } from "./LinkTile";
 

@@ -3,7 +3,7 @@ import { Compass, FileText, FlaskConical, Globe2, Plane, Users, type LucideIcon 
 import { IconTile } from "@/shared/components/IconTile";
 import { roadmapSteps } from "@/modules/roadmap/catalog";
 import { SectionHeading } from "./SectionHeading";
-import { homeText } from "@/data/text/site";
+import { homeText } from "@/content/text/site";
 import { surface } from "@/shared/components/Surface";
 
 const STEP_ICONS: LucideIcon[] = [Compass, FlaskConical, Globe2, Users, FileText, Plane];

@@ -1,7 +1,7 @@
 import React from "react";
 import { Globe2, ExternalLink, Building2, Award, ArrowUpRight } from "lucide-react";
-import { verifiedScholarshipPortals, scholarshipFinderControlsData } from "@/data/scholarshipsSearchData";
-import { legacyText } from "@/data/text/legacy";
+import { verifiedScholarshipPortals, scholarshipFinderControlsData } from "@/content/scholarships/scholarshipsSearchData";
+import { legacyText } from "@/content/text/legacy";
 
 export function PortalsDirectorySection() {
   const { portalsTitle, portalsSubtitle } = scholarshipFinderControlsData.sections;

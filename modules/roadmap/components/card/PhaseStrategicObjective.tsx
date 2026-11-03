@@ -1,5 +1,5 @@
 import React from "react";
-import { roadmapUiData } from "@/data/roadmapUiData";
+import { roadmapUiData } from "@/content/roadmap/roadmapUiData";
 
 export interface PhaseStrategicObjectiveProps {
   what: string;

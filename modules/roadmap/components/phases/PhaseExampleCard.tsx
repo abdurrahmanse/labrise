@@ -1,6 +1,6 @@
 import React from "react";
 import { Lightbulb, CheckCircle2 } from "lucide-react";
-import { phaseDetailUiData } from "@/data/phaseDetailUiData";
+import { phaseDetailUiData } from "@/content/roadmap/phaseDetailUiData";
 
 export interface PhaseExampleCardProps {
   example: string;

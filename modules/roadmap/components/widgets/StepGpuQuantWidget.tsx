@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import { Cpu, Gauge, Zap, CheckCircle2, AlertCircle } from "lucide-react";
-import { Badge } from "@/components/ui/Badge";
-import { gpuQuantPresetsData, gpuQuantMeta } from "@/data/stepWidgetsData";
+import { Badge } from "@/shared/ui/Badge";
+import { gpuQuantPresetsData, gpuQuantMeta } from "@/content/roadmap/stepWidgetsData";
 import {
   WidgetShell,
   WidgetHeader,
@@ -13,7 +13,7 @@ import {
   WidgetStatCard,
   WidgetCallout
 } from "./common";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 export function StepGpuQuantWidget() {
   const [selectedPresetId, setSelectedPresetId] = useState("llama-8b");

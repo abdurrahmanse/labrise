@@ -1,13 +1,13 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { roadmapLevelsData, getLevelBySlug } from "@/data/levelsData";
-import { stepsData } from "@/data/steps";
+import { roadmapLevelsData, getLevelBySlug } from "@/content/roadmap/levelsData";
+import { stepsData } from "@/content/roadmap/steps";
 import { LevelHero } from "@/modules/roadmap/components/LevelHero";
 import { LevelInteractiveTracker } from "@/modules/roadmap/components/LevelInteractiveTracker";
 import { LevelTasksSection } from "@/modules/roadmap/components/LevelTasksSection";
 import { LevelNavigationFooter } from "@/modules/roadmap/components/LevelNavigationFooter";
-import { notFoundTitles } from "@/data/text/site";
+import { notFoundTitles } from "@/content/text/site";
 
 interface Props {
   params: Promise<{ level: string }>;

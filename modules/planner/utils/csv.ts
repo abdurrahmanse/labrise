@@ -1,4 +1,4 @@
-import { plannerText } from "@/data/text/planner";
+import { plannerText } from "@/content/text/planner";
 import type { PlannedApplication } from "../store/usePlanner";
 
 const cell = (value: string) => `"${value.replace(/"/g, '""')}"`;

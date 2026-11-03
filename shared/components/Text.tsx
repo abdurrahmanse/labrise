@@ -1,6 +1,6 @@
 import type { ElementType, ReactNode } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/utils/cn";
 
 const label = cva("font-mono text-xs uppercase tracking-wider", {
   variants: { tone: { muted: "text-slate-400", accent: "text-indigo-300", faint: "text-slate-500" } },

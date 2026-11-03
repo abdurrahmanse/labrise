@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Menu, X } from "lucide-react";
-import { headerData } from "@/data/navigationData";
+import { headerData } from "@/content/site/navigationData";
 
 interface HeaderActionsProps {
   mobileOpen: boolean;

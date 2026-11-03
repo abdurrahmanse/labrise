@@ -1,8 +1,8 @@
-import { scholarshipDetailText as t } from "@/data/text/scholarships";
+import { scholarshipDetailText as t } from "@/content/text/scholarships";
 import { Block } from "@/shared/components/Block";
 import { Chips } from "@/shared/components/Chips";
-import { sameHostScholarships, sameLevelScholarships } from "../../../lib/scholarshipRelations";
-import { scholarshipSlug } from "../../../lib/slugs";
+import { sameHostScholarships, sameLevelScholarships } from "../../../utils/scholarshipRelations";
+import { scholarshipSlug } from "../../../utils/slugs";
 import type { ScholarshipEntry } from "../../../types";
 import { ScholarshipCard } from "../../cards/ScholarshipCard";
 

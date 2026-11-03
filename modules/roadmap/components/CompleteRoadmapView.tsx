@@ -7,7 +7,7 @@ import {
 import { AdmissionsSuiteLaunchpad } from "./AdmissionsSuiteLaunchpad";
 import { ROADMAP_TABS } from "./roadmapTabs";
 import { SubNav } from "@/shared/components/SubNav";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 export function CompleteRoadmapView({ part = "levels" }: { part?: "levels" | "phases" }) {
   return (

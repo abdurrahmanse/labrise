@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Award, CalendarCheck, FileText, Landmark, Lightbulb, PartyPopper, Users } from "lucide-react";
-import { trackPageText as t } from "@/data/text/apply";
+import { trackPageText as t } from "@/content/text/apply";
 import { InfoCard } from "@/shared/components/InfoCard";
 import { ProgressPanel } from "@/shared/components/ProgressPanel";
 import { useProgress } from "@/shared/progress/useProgress";

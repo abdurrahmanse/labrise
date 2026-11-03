@@ -1,9 +1,9 @@
-import { universitySlug } from "../../lib/slugs";
+import { universitySlug } from "../../utils/slugs";
 import type { UniversityEntry } from "../../types";
 import { Avatar } from "@/shared/components/Avatar";
 import { Flag } from "@/shared/components/Flag";
 import { CardFact, CardShell } from "./CardShell";
-import { cardText } from "@/data/text/directory";
+import { cardText } from "@/content/text/directory";
 
 export function UniversityCard({ university }: { university: UniversityEntry }) {
   return (

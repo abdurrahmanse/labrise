@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, Layers } from "lucide-react";
-import { roadmapLevelsData } from "@/data/levelsData";
-import { RoadmapLevel } from "@/data/types";
-import { levelDetailUiData } from "@/data/levelDetailUiData";
+import { roadmapLevelsData } from "@/content/roadmap/levelsData";
+import type { RoadmapLevel } from "../types/level";
+import { levelDetailUiData } from "@/content/roadmap/levelDetailUiData";
 
 interface LevelNavigationFooterProps {
   currentLevel: RoadmapLevel;

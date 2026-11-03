@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { JsonLd, breadcrumbSchema, personSchema } from "@/modules/seo";
 import { fieldOf } from "../../data/fields";
-import { findProfessor } from "../../lib/lookups";
+import { findProfessor } from "../../utils/lookups";
 import { ProfessorDetailView } from "../detail/ProfessorDetailView";
 import { entryBreadcrumbs } from "./entryBreadcrumbs";
 

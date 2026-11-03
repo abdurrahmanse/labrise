@@ -1,4 +1,5 @@
-import type { Region, UniversityEntry } from "../types";
+import type { UniversityEntry } from "../types";
+import type { Region } from "@/shared/types/region";
 
 // Further public universities per country. Funding routes and timing are typical for the country;
 // each programme sets its own rules, so confirm on the university's official admissions page.

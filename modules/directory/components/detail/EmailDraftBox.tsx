@@ -1,5 +1,5 @@
-import { CopyButton } from "@/components/ui/CopyButton";
-import { commonText } from "@/data/text/common";
+import { CopyButton } from "@/shared/ui/CopyButton";
+import { commonText } from "@/content/text/common";
 
 export function EmailDraftBox({ draft }: { draft: string }) {
   return (

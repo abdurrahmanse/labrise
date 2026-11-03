@@ -1,7 +1,7 @@
 import React from "react";
 import { BookOpen, Clock } from "lucide-react";
 import { CountryDetailSectionTitle } from "./CountryDetailSectionTitle";
-import { legacyText } from "@/data/text/legacy";
+import { legacyText } from "@/content/text/legacy";
 
 interface CountryLanguageDeadlinesSectionProps {
   languageRequirements: string;

@@ -1,7 +1,7 @@
 import { PageShell } from "@/shared/components/PageShell";
 import { ProfileList } from "@/modules/roadmap/components/ProfileList";
 import { buildMetadata } from "@/modules/seo";
-import { navLabels, pageText } from "@/data/text/site";
+import { navLabels, pageText } from "@/content/text/site";
 
 export const metadata = buildMetadata({
   title: pageText.profile.title,

@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import { Table, ArrowRight, ShieldAlert, CheckCircle2 } from "lucide-react";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { roadmapLevelsComparisonData, roadmapLevelsData } from "@/data/levelsData";
-import { legacyText } from "@/data/text/legacy";
+import { SectionHeading } from "@/shared/ui/SectionHeading";
+import { roadmapLevelsComparisonData, roadmapLevelsData } from "@/content/roadmap/levelsData";
+import { legacyText } from "@/content/text/legacy";
 
 export function LevelsComparisonMatrix() {
   return (

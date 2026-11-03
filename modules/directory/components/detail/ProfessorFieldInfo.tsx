@@ -1,8 +1,8 @@
 import { BulletList } from "@/shared/components/BulletList";
 import { Block } from "@/shared/components/Block";
 import type { FieldInfo } from "../../data/fields";
-import { detailText } from "@/data/text/directory";
-import { professorDetailText } from "@/data/text/directory";
+import { detailText } from "@/content/text/directory";
+import { professorDetailText } from "@/content/text/directory";
 
 export function ProfessorFieldInfo({ field }: { field: FieldInfo }) {
   return (

@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { Paperclip, Lightbulb, Ruler, Mail } from "lucide-react";
-import { CopyButton } from "@/components/ui/CopyButton";
-import { coldEmailTemplates } from "@/data/professorsData";
-import { professorsHubText as t } from "@/data/text/professorsHub";
+import { CopyButton } from "@/shared/ui/CopyButton";
+import { coldEmailTemplates } from "@/content/professors/professorsData";
+import { professorsHubText as t } from "@/content/text/professorsHub";
 import { FilterTabs } from "@/shared/components/FilterTabs";
 import { Label } from "@/shared/components/Text";
 

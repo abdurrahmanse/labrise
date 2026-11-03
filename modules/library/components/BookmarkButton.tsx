@@ -1,8 +1,8 @@
 "use client";
 
 import { Bookmark } from "lucide-react";
-import { libraryText as t } from "@/data/text/library";
-import { cn } from "@/lib/utils";
+import { libraryText as t } from "@/content/text/library";
+import { cn } from "@/shared/utils/cn";
 import { useMounted } from "@/shared/hooks/useMounted";
 import { useBookmarks, useIsBookmarked, type EntryRef } from "../store/useBookmarks";
 

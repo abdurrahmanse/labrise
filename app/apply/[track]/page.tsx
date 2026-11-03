@@ -5,11 +5,11 @@ import { PageShell } from "@/shared/components/PageShell";
 import { applyTracks, findTrack } from "@/modules/apply";
 import { TrackSidebar } from "@/modules/apply/components/TrackSidebar";
 import { TrackStepper } from "@/modules/apply/components/TrackStepper";
-import { trackIcons, trackPageText as t } from "@/data/text/apply";
+import { trackIcons, trackPageText as t } from "@/content/text/apply";
 import { IconTile } from "@/shared/components/IconTile";
 import { buildMetadata, JsonLd, breadcrumbSchema, howToSchema } from "@/modules/seo";
 import { PageFallback } from "@/shared/components/PageFallback";
-import { navLabels, notFoundTitles, pageText } from "@/data/text/site";
+import { navLabels, notFoundTitles, pageText } from "@/content/text/site";
 
 interface Props {
   params: Promise<{ track: string }>;
