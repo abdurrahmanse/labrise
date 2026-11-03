@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Copy, Check } from "lucide-react";
+import { commonText } from "@/data/text/common";
 
 export interface CopyButtonProps {
   textToCopy: string;
@@ -12,8 +13,8 @@ export interface CopyButtonProps {
 
 export function CopyButton({
   textToCopy,
-  label = "Copy",
-  copiedLabel = "Copied!",
+  label = commonText.actions.copy,
+  copiedLabel = commonText.actions.copied,
   className = ""
 }: CopyButtonProps) {
   const [copied, setCopied] = useState(false);

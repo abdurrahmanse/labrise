@@ -5,6 +5,7 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 import { useMounted } from "@/shared/hooks/useMounted";
+import { commonText } from "@/data/text/common";
 
 /** Two-state switch: click anywhere on the track to flip between light and dark. */
 export function ThemeToggle() {
@@ -19,7 +20,7 @@ export function ThemeToggle() {
       type="button"
       role="switch"
       aria-checked={isDark}
-      aria-label="Toggle dark mode"
+      aria-label={commonText.theme.toggleLabel}
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className="relative flex h-9 w-[4.25rem] shrink-0 cursor-pointer items-center border-2 border-white/40 bg-white/[0.04] px-1 transition-colors hover:border-indigo-400"
     >

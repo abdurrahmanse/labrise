@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { navLinksData } from "@/data/navigationData";
 import { getIconComponent } from "@/components/ui/IconUtils";
+import { commonText } from "@/data/text/common";
 
 interface HeaderNavProps {
   pathname: string;
@@ -11,7 +12,7 @@ interface HeaderNavProps {
 
 export function HeaderNav({ pathname }: HeaderNavProps) {
   return (
-    <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2.5" aria-label="Main navigation">
+    <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2.5" aria-label={commonText.header.mainNav}>
       {navLinksData.map((link) => {
         const Icon = getIconComponent(link.iconName);
         const isActive =

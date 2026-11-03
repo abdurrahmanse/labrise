@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Search, X } from "lucide-react";
+import { commonText } from "@/data/text/common";
 
 export interface SearchInputProps {
   value: string;
@@ -14,7 +15,7 @@ export interface SearchInputProps {
 export function SearchInput({
   value,
   onChange,
-  placeholder = "Search...",
+  placeholder = commonText.states.searchPlaceholder,
   className = "",
   autoFocus = false
 }: SearchInputProps) {
@@ -34,7 +35,7 @@ export function SearchInput({
           type="button"
           onClick={() => onChange("")}
           className="absolute right-3 top-1/2 -translate-y-1/2 p-0.5 rounded-full text-slate-500 hover:text-slate-200 hover:bg-white/10 transition-colors"
-          aria-label="Clear search"
+          aria-label={commonText.states.clearSearch}
         >
           <X className="w-3.5 h-3.5" />
         </button>

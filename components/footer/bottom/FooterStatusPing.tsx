@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { commonText } from "@/data/text/common";
 
 export function FooterStatusPing() {
   return (
@@ -9,7 +10,7 @@ export function FooterStatusPing() {
         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-70" />
         <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
       </span>
-      <span>Live Open Access</span>
+      <span>{commonText.footer.status}</span>
     </div>
   );
 }

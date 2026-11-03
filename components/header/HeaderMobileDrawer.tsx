@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronRight, GraduationCap, X } from "lucide-react";
 import { headerData, navLinksData } from "@/data/navigationData";
 import { getIconComponent } from "@/components/ui/IconUtils";
+import { commonText } from "@/data/text/common";
 
 interface HeaderMobileDrawerProps {
   isOpen: boolean;
@@ -33,7 +34,7 @@ export function HeaderMobileDrawer({
         className={`fixed top-0 right-0 bottom-0 z-50 w-[300px] max-w-[85vw] flex flex-col lg:hidden bg-canvas-base border-l border-white/[0.08] shadow-2xl transition-transform duration-300 ease-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
-        aria-label="Mobile Navigation Drawer"
+        aria-label={commonText.header.mobileDrawerLabel}
       >
         {/* Top radial ambient glow */}
         <div
@@ -56,21 +57,21 @@ export function HeaderMobileDrawer({
                   {headerData.mobileDrawer.title}
                 </p>
                 <p className="text-[10px] text-teal-400 mt-1 font-mono">
-                  100% Fully Funded Standard
+                  {commonText.header.drawerTagline}
                 </p>
               </div>
             </div>
             <button
               onClick={onClose}
               className="w-8 h-8 rounded-lg bg-white/[0.05] border border-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors cursor-pointer"
-              aria-label="Close menu"
+              aria-label={commonText.header.closeMenu}
             >
               <X className="w-4 h-4" />
             </button>
           </div>
 
           {/* Main Navigation Links */}
-          <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto" aria-label="Mobile navigation links">
+          <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto" aria-label={commonText.header.mobileNav}>
             {navLinksData.map((link) => {
               const Icon = getIconComponent(link.iconName);
               const isActive =

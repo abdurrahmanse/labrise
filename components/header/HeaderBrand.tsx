@@ -4,13 +4,14 @@ import React from "react";
 import Link from "next/link";
 import { GraduationCap } from "lucide-react";
 import { headerData } from "@/data/navigationData";
+import { commonText } from "@/data/text/common";
 
 export function HeaderBrand() {
   return (
     <Link
       href="/"
       className="flex items-center gap-2.5 sm:gap-3 group shrink-0"
-      aria-label="Scholarship Roadmap Home"
+      aria-label={commonText.brand.homeLabel}
     >
       {/* Sleek Logo Icon */}
       <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-teal-500 flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 group-hover:shadow-indigo-500/35 transition-all duration-200 shrink-0 border border-white/20">
@@ -26,7 +27,7 @@ export function HeaderBrand() {
           </span>
         </span>
         <span className="hidden xl:inline-block text-[10px] font-mono text-slate-500 uppercase tracking-wider pl-1.5 border-l border-white/10">
-          Fully Funded
+          {commonText.header.tagline}
         </span>
       </div>
     </Link>

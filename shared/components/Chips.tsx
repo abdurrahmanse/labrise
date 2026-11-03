@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { commonText } from "@/data/text/common";
 
 export interface ChipItem {
   href: string;
@@ -7,7 +8,7 @@ export interface ChipItem {
 }
 
 export function Chips({ items }: { items: ChipItem[] }) {
-  if (items.length === 0) return <p className="text-slate-400">None listed yet.</p>;
+  if (items.length === 0) return <p className="text-slate-400">{commonText.states.none}</p>;
 
   return (
     <div className="flex flex-wrap gap-2">

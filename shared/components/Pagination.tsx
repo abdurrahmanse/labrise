@@ -1,4 +1,5 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { commonText } from "@/data/text/common";
 
 interface PaginationProps {
   page: number;
@@ -20,8 +21,8 @@ export function Pagination({ page, pages, onChange }: PaginationProps) {
   const list = visiblePages(page, pages);
 
   return (
-    <nav aria-label="Pagination" className="flex flex-wrap items-center justify-center gap-2">
-      <button type="button" aria-label="Previous page" disabled={page === 1} onClick={() => onChange(page - 1)} className={`${pageButton} bg-white/[0.05] text-slate-200 hover:bg-white/10`}>
+    <nav aria-label={commonText.pagination.page(page, pages)} className="flex flex-wrap items-center justify-center gap-2">
+      <button type="button" aria-label={commonText.pagination.previous} disabled={page === 1} onClick={() => onChange(page - 1)} className={`${pageButton} bg-white/[0.05] text-slate-200 hover:bg-white/10`}>
         <ChevronLeft className="w-4 h-4" />
       </button>
       {list.map((p, i) => (
@@ -37,7 +38,7 @@ export function Pagination({ page, pages, onChange }: PaginationProps) {
           </button>
         </span>
       ))}
-      <button type="button" aria-label="Next page" disabled={page === pages} onClick={() => onChange(page + 1)} className={`${pageButton} bg-white/[0.05] text-slate-200 hover:bg-white/10`}>
+      <button type="button" aria-label={commonText.pagination.next} disabled={page === pages} onClick={() => onChange(page + 1)} className={`${pageButton} bg-white/[0.05] text-slate-200 hover:bg-white/10`}>
         <ChevronRight className="w-4 h-4" />
       </button>
     </nav>
