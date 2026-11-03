@@ -1,6 +1,7 @@
 import type { UniversityEntry } from "../types";
+import { moreUniversities } from "./universitiesMore";
 
-export const universities: UniversityEntry[] = [
+const baseUniversities: UniversityEntry[] = [
   { name: "ETH Zurich", country: "Switzerland", region: "Europe", funding: "Salaried PhD contract", deadline: "Rolling per post", site: "https://ethz.ch" },
   { name: "EPFL", country: "Switzerland", region: "Europe", funding: "Salaried PhD contract", deadline: "Dec–Apr (EDIC/others vary)", site: "https://epfl.ch" },
   { name: "TU Munich", country: "Germany", region: "Europe", funding: "Salaried position or fellowship", deadline: "Rolling per post", site: "https://tum.de" },
@@ -74,3 +75,5 @@ export const universities: UniversityEntry[] = [
   { name: "Monash University", country: "Australia", region: "Oceania", funding: "RTP-type scholarship", deadline: "Varies by round", site: "https://monash.edu" },
   { name: "University of Auckland", country: "New Zealand", region: "Oceania", funding: "Doctoral scholarship", deadline: "Rolling", site: "https://auckland.ac.nz" }
 ];
+
+export const universities: UniversityEntry[] = [...baseUniversities, ...moreUniversities];
