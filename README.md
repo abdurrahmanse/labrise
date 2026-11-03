@@ -30,7 +30,7 @@ A world where a good student never misses a scholarship because they did not kno
 | Common problems and fixes | `/problems` |
 | Contact and corrections | `/contact` |
 
-**In numbers:** 37 countries, about 340 universities, about 730 professors, about 105 funders, 42 scholarships.
+**In numbers:** 38 countries, about 345 universities, about 745 professors, about 110 funders, 44 scholarships.
 
 Every country links to its universities, professors and funders. Every entry has its own page.
 

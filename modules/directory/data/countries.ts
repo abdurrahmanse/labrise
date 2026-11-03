@@ -22,6 +22,7 @@ export const countries: CountryEntry[] = [
   { country: "Estonia", region: "Europe", routes: "Doctoral stipend, Estonian Research Council funding, Dora Plus", funding: "Stipend or employment", supervisor: "Recommended", fee: "None for funded posts" },
   { country: "Luxembourg", region: "Europe", routes: "FNR AFR PhD grants, University of Luxembourg doctoral contracts", funding: "Employment contract, high salary", supervisor: "Required first", fee: "None" },
   { country: "Iceland", region: "Europe", routes: "Project-funded doctoral posts, Icelandic Research Fund grants", funding: "Salary or grant", supervisor: "Required first", fee: "Small" },
+  { country: "Slovenia", region: "Europe", routes: "ARIS young researcher posts, project-funded PhD, Slovenian Government scholarships (CMEPIUS)", funding: "Salary or stipend in funded posts, tuition covered there", supervisor: "Required first", fee: "Small or none" },
   { country: "United States", region: "North America", routes: "RA / TA, Fulbright", funding: "Stipend + tuition waiver", supervisor: "Recommended", fee: "Often $75–$120; waivers exist" },
   { country: "Canada", region: "North America", routes: "Research assistantship, Vanier", funding: "Funding package", supervisor: "Required first", fee: "Often CAD 100–150" },
   { country: "Japan", region: "Asia", routes: "MEXT scholarship, university programs", funding: "Monthly allowance + fees", supervisor: "Recommended", fee: "Often under ¥30,000" },

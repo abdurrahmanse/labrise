@@ -21,7 +21,7 @@ export const countryWideEuropeanProviders = [
 /** Countries where the European programmes above are available. */
 export const europeanProgrammeCountries = [
   "Germany", "Sweden", "Netherlands", "Denmark", "Finland", "Belgium", "Austria", "France", "Italy", "Spain", "Ireland", "Hungary", "Norway",
-  "Czech Republic", "Poland", "Portugal", "Estonia", "Luxembourg", "Iceland"
+  "Czech Republic", "Poland", "Portugal", "Estonia", "Luxembourg", "Iceland", "Slovenia"
 ];
 
 /** Nations inside a larger country whose funders also apply: UK-wide programmes work in Scotland. */

@@ -520,6 +520,20 @@ export const moreProviders: ProviderEntry[] = [
     ["CV", "Transcripts", "Research statement"],
     "Peer review of the project grant.", "https://en.rannis.is"),
 
+  // Slovenia
+  entry("Slovenia", "Europe", "Government research funder", "Slovenian Research and Innovation Agency (ARIS)",
+    "Doctoral candidates at Slovenian universities and institutes", ["ARIS Young Researcher Programme"],
+    "A mentor at a Slovenian institution applies in the ARIS call and recruits the doctoral candidate.",
+    ["Master's degree", "A mentor at a Slovenian institution", "Admission to a doctoral programme", "Conditions of the current call, including residence and eligibility"],
+    ["CV", "Transcripts", "Research statement", "Letter from the mentor"],
+    "The institution selects the candidate within the ARIS call.", "https://www.aris-rs.si/en"),
+  entry("Slovenia", "Europe", "Government agency", "CMEPIUS (Slovenian Centre for Mobility and European Programmes)",
+    "International students who want to study or research in Slovenia", ["Slovenian Government Scholarships (CMEPIUS)"],
+    "Apply through the CMEPIUS call or through your country's ministry, as the call states.",
+    ["Eligible country and degree level as set in the call", "Admission to or a host at a Slovenian institution", "Strong academic record"],
+    ["Application form", "Transcripts", "Study or research plan", "Admission proof"],
+    "Selection by the Slovenian authorities under the call's rules.", "https://www.cmepius.si/en"),
+
   // Qatar
   entry("Qatar", "Middle East", "University scholarship office", "Hamad Bin Khalifa University (HBKU)",
     "Graduate students admitted to HBKU", ["HBKU Graduate Scholarship"],

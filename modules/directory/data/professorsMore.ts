@@ -348,6 +348,12 @@ export const moreProfessors: ProfessorEntry[] = [
   // Luxembourg
   ...at("University of Luxembourg", "Luxembourg", [["Yves Le Traon", "Software testing / ML"], ["Radu State", "ML for security"], ["Jun Pang", M], ["Leon van der Torre", KR], ["Tegawendé Bissyandé", "Software engineering / ML"]]),
 
+  // Slovenia
+  ...at("Jožef Stefan Institute", "Slovenia", [["Dunja Mladenić", N], ["Sašo Džeroski", M], ["Nada Lavrač", M], ["Marko Grobelnik", "AI / text mining"], ["Matjaž Gams", "Artificial Intelligence"]]),
+  ...at("University of Ljubljana", "Slovenia", [["Marko Robnik-Šikonja", N], ["Matej Kristan", V], ["Danijel Skočaj", V], ["Blaž Zupan", "Data mining / bioinformatics"], ["Janez Demšar", M], ["Ivan Bratko", "Artificial Intelligence"]]),
+  ...at("University of Maribor", "Slovenia", [["Janez Brest", "Evolutionary optimisation"], ["Iztok Fister", "Nature-inspired algorithms"]]),
+  ...at("University of Primorska", "Slovenia", [["Andrej Brodnik", "Algorithms / data structures"]]),
+
   // Iceland
   ...at("Reykjavik University", "Iceland", [["Yngvi Björnsson", L], ["Kristinn Thórisson", "Artificial General Intelligence"], ["Hannes Högni Vilhjálmsson", "Human-computer interaction / AI"]]),
 

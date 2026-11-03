@@ -334,6 +334,13 @@ export const moreUniversities: UniversityEntry[] = [
     ["University of Iceland", "https://english.hi.is"],
     ["Reykjavik University", "https://en.ru.is"]
   ]),
+  ...group("Slovenia", "Europe", "ARIS young researcher posts; project-funded doctoral places", "Per programme and ARIS call", [
+    ["University of Ljubljana", "https://www.uni-lj.si/en"],
+    ["University of Maribor", "https://www.um.si/en"],
+    ["University of Primorska", "https://www.upr.si/en"],
+    ["University of Nova Gorica", "https://www.ung.si/en"],
+    ["Jožef Stefan Institute", "https://www.ijs.si/ijsw"]
+  ]),
   ...group("Qatar", "Middle East", "Fully funded graduate scholarship (stipend + tuition + housing)", "See the official admissions page", [
     ["Hamad Bin Khalifa University", "https://www.hbku.edu.qa"],
     ["Qatar University", "https://www.qu.edu.qa"]

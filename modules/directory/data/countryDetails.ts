@@ -385,6 +385,17 @@ export const countryDetails: Record<string, CountryDetail> = {
     scholarships: ["Icelandic Research Fund doctoral student grants"],
     tips: ["Contact a professor about project funding.", "Plan for living costs before you accept."]
   },
+  slovenia: {
+    overview: "Slovenia is small but research-active: the Universities of Ljubljana, Maribor, Primorska and Nova Gorica, and the Jožef Stefan Institute. Doctoral candidates are often funded through ARIS young researcher posts or project funding.",
+    phd: "3–4 years in a doctoral programme under a mentor.",
+    pay: "Funded doctoral posts pay a salary or stipend and cover study costs. The level depends on the call and the project, so check the call.",
+    language: "English-taught doctoral and master's programmes exist at several institutions. Slovenian helps in daily life.",
+    intake: "Doctoral enrolment is usually in autumn. ARIS calls and project posts have their own dates.",
+    visa: "Student or researcher residence permit, arranged with the host institution.",
+    find: [{ label: "ARIS (research agency)", href: "https://www.aris-rs.si/en" }, { label: "CMEPIUS scholarships", href: "https://www.cmepius.si/en" }, { label: "EURAXESS jobs", href: "https://euraxess.ec.europa.eu/jobs" }],
+    scholarships: ["ARIS Young Researcher Programme", "Slovenian Government Scholarships (CMEPIUS)"],
+    tips: ["Find a mentor first: funded posts are tied to a mentor and a project.", "Read the current call for who may apply before you spend time on an application."]
+  },
   qatar: {
     overview: "Hamad Bin Khalifa University (HBKU) and Qatar University offer funded graduate programmes. Qatar's funding model is generous but tied to the university and programme.",
     phd: "3–5 years.",
