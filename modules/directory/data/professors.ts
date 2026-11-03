@@ -2,7 +2,7 @@ import type { ProfessorEntry } from "../types";
 import { moreProfessors } from "./professorsMore";
 
 const baseProfessors: ProfessorEntry[] = [
-  { name: "Bernhard Schölkopf", university: "MPI for Intelligent Systems / ELLIS Tübingen", country: "Germany", group: "Machine Learning", email: "bernhard.schoelkopf@tuebingen.mpg.de" },
+  { name: "Bernhard Schölkopf", university: "MPI for Intelligent Systems / University of Tübingen", country: "Germany", group: "Machine Learning", email: "bernhard.schoelkopf@tuebingen.mpg.de" },
   { name: "Andreas Geiger", university: "University of Tübingen", country: "Germany", group: "Computer Vision", email: "a.geiger@uni-tuebingen.de" },
   { name: "Matthias Bethge", university: "University of Tübingen", country: "Germany", group: "Machine Learning", email: "matthias.bethge@bethgelab.org" },
   { name: "Ulrike von Luxburg", university: "University of Tübingen", country: "Germany", group: "ML Theory", email: "ule@tuebingen.mpg.de" },
