@@ -12,4 +12,4 @@ export { useScholarshipFilters } from "./hooks/useScholarshipFilters";
 export { FinderStats } from "./components/FinderStats";
 export { WorkflowStepper } from "./components/WorkflowStepper";
 export { useFinderProgress } from "./store/useFinderProgress";
-export { ScholarshipBrowse } from "./components/ScholarshipBrowse";
+export { ScholarshipBrowse } from "./components/listing/ScholarshipBrowse";
