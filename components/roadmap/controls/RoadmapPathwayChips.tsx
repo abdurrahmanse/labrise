@@ -27,7 +27,7 @@ export function RoadmapPathwayChips({
         onClick={() => onFilterDegreeChange("all")}
         className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer border ${
           filterDegree === "all"
-            ? "bg-teal-500/20 text-teal-300 border-teal-500/40 shadow-sm"
+            ? "bg-indigo-400 text-black border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] font-bold"
             : "bg-white/[0.03] text-slate-400 border-white/5 hover:text-white hover:border-white/15"
         }`}
       >
@@ -39,7 +39,7 @@ export function RoadmapPathwayChips({
         onClick={() => onFilterDegreeChange("masters")}
         className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer border ${
           filterDegree === "masters"
-            ? "bg-teal-500/20 text-teal-300 border-teal-500/40 shadow-sm"
+            ? "bg-indigo-400 text-black border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] font-bold"
             : "bg-white/[0.03] text-slate-400 border-white/5 hover:text-white hover:border-white/15"
         }`}
       >
@@ -51,7 +51,7 @@ export function RoadmapPathwayChips({
         onClick={() => onFilterDegreeChange("phd")}
         className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer border ${
           filterDegree === "phd"
-            ? "bg-indigo-500/20 text-indigo-300 border-indigo-500/40 shadow-sm"
+            ? "bg-indigo-400 text-black border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] font-bold"
             : "bg-white/[0.03] text-slate-400 border-white/5 hover:text-white hover:border-white/15"
         }`}
       >

@@ -47,7 +47,7 @@ export function FaqCategoryPills({
                 borderGlow={isSelected ? c.variant : "none"}
                 onClick={() => onSelectCategory(isSelected ? "All" : c.name)}
                 className={`cursor-pointer transition-all ${
-                  isSelected ? "bg-slate-900 border-indigo-500/80 shadow-lg shadow-indigo-950" : ""
+                  isSelected ? "bg-indigo-400/10 border-indigo-400 shadow-[4px_4px_0_0_#c6f21f]" : ""
                 }`}
                 icon={renderCommonIcon(c.iconName, `w-5 h-5 ${FAQ_CAT_ICON_COLORS[c.iconName] || "text-purple-400"}`)}
                 badge={c.tag}

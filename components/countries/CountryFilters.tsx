@@ -45,7 +45,7 @@ export function CountryFilters({
               onClick={() => onSelectedRegionChange(reg)}
               className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 selectedRegion === reg
-                  ? "bg-teal-600 text-white shadow-sm"
+                  ? "bg-indigo-400 text-black border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] font-bold"
                   : "text-slate-400 hover:text-white"
               }`}
             >

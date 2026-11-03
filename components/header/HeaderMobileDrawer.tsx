@@ -90,7 +90,7 @@ export function HeaderMobileDrawer({
                   <span
                     className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
                       isActive
-                        ? "bg-teal-500/20 text-teal-300"
+                        ? "bg-indigo-400 text-black border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] font-bold"
                         : "bg-white/[0.04] text-slate-500 group-hover:text-slate-300"
                     }`}
                   >
@@ -104,7 +104,7 @@ export function HeaderMobileDrawer({
                   )}
                   <ChevronRight
                     className={`w-4 h-4 transition-transform group-hover:translate-x-0.5 ${
-                      isActive ? "text-teal-400" : "text-slate-600"
+                      isActive ? "text-indigo-400" : "text-slate-600"
                     }`}
                   />
                 </Link>

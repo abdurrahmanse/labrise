@@ -77,7 +77,7 @@ export function DegreePathwayCard({
           className={`px-2.5 py-1 rounded-full text-[11px] font-mono font-medium shrink-0 ${
             isActive
               ? isMasters
-                ? "bg-teal-500/20 text-teal-300 border border-teal-500/40"
+                ? "bg-indigo-400 text-black border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] font-bold"
                 : "bg-indigo-500/20 text-indigo-300 border border-indigo-500/40"
               : "bg-white/5 text-slate-400"
           }`}
@@ -98,7 +98,7 @@ export function DegreePathwayCard({
               <span
                 className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 mt-0.5 shadow-sm ${
                   isMasters
-                    ? "bg-teal-500/15 text-teal-300 border border-teal-500/30"
+                    ? "bg-indigo-400 text-black border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] font-bold"
                     : "bg-indigo-500/15 text-indigo-300 border border-indigo-500/30"
                 }`}
               >

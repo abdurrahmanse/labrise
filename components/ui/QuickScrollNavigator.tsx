@@ -64,7 +64,7 @@ export function QuickScrollNavigator({
                 onClick={() => scrollToSection(anchor.id)}
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition-all flex items-center gap-2 cursor-pointer ${
                   isActive
-                    ? "bg-cyan-500/15 text-cyan-300 border border-cyan-500/40 shadow-sm shadow-cyan-500/20 font-semibold"
+                    ? "bg-indigo-400 text-black border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] font-bold"
                     : "bg-[#0b0b0c]/70 text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 border border-white/5"
                 }`}
               >
@@ -73,7 +73,7 @@ export function QuickScrollNavigator({
                   <span
                     className={`text-[10px] font-mono px-1.5 py-0.2 rounded ${
                       isActive
-                        ? "bg-cyan-400/20 text-cyan-200"
+                        ? "bg-black/20 text-black"
                         : "bg-slate-800 text-slate-400"
                     }`}
                   >

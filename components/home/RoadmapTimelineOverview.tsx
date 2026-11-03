@@ -38,7 +38,7 @@ export function RoadmapTimelineOverview() {
                   onClick={() => setSelectedPhase(phase)}
                   className={`w-full text-left p-3.5 rounded-xl border transition-all duration-200 flex items-center justify-between group cursor-pointer ${
                     isSelected
-                      ? "bg-indigo-950/80 border-indigo-500/50 shadow-lg shadow-indigo-950/40"
+                      ? "bg-indigo-400/10 border-indigo-400 shadow-[4px_4px_0_0_#c6f21f]"
                       : "bg-slate-900/40 border-white/[0.06] hover:bg-slate-900/80 hover:border-white/15"
                   }`}
                 >
@@ -46,7 +46,7 @@ export function RoadmapTimelineOverview() {
                     <span
                       className={`w-7 h-7 rounded-lg flex items-center justify-center text-xs font-mono font-bold shrink-0 ${
                         isSelected
-                          ? "bg-gradient-to-tr from-indigo-600 to-teal-500 text-white shadow-md shadow-indigo-500/30"
+                          ? "bg-indigo-400 text-black"
                           : "bg-white/5 text-slate-400 group-hover:text-white"
                       }`}
                     >
@@ -67,7 +67,7 @@ export function RoadmapTimelineOverview() {
                   </div>
                   <ChevronRight
                     className={`w-4 h-4 shrink-0 transition-transform ${
-                      isSelected ? "text-teal-400 translate-x-0.5" : "text-slate-600 group-hover:text-slate-400"
+                      isSelected ? "text-indigo-400 translate-x-0.5" : "text-slate-600 group-hover:text-slate-400"
                     }`}
                   />
                 </button>

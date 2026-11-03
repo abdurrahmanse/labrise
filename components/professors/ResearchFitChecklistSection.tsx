@@ -43,7 +43,7 @@ export function ResearchFitChecklistSection() {
               <div
                 className={`w-4 h-4 rounded mt-0.5 flex items-center justify-center transition-colors shrink-0 ${
                   isChecked
-                    ? "bg-teal-500 text-slate-950"
+                    ? "bg-indigo-400 text-black border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] font-bold"
                     : "border border-slate-600 hover:border-slate-400"
                 }`}
               >

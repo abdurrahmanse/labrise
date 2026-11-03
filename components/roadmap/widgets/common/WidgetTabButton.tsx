@@ -17,28 +17,28 @@ interface WidgetTabButtonProps {
 
 const TAB_ACTIVE_STYLES: Record<WidgetTheme, { active: string; topText: string }> = {
   indigo: {
-    active: "bg-indigo-600/30 border-indigo-400 text-white shadow-lg shadow-indigo-950/60 font-semibold",
-    topText: "text-indigo-400"
+    active: "bg-indigo-400 text-black border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] font-bold",
+    topText: "text-black/70"
   },
   cyan: {
-    active: "bg-cyan-500/20 border-cyan-400 text-white shadow-lg shadow-cyan-950/60 font-semibold",
-    topText: "text-cyan-400"
+    active: "bg-indigo-400 text-black border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] font-bold",
+    topText: "text-black/70"
   },
   emerald: {
-    active: "bg-emerald-950/40 border-emerald-500/60 text-white shadow-lg shadow-emerald-950/60 font-semibold",
-    topText: "text-emerald-400"
+    active: "bg-indigo-400 text-black border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] font-bold",
+    topText: "text-black/70"
   },
   amber: {
-    active: "bg-amber-500/20 border-amber-400 text-white shadow-lg shadow-amber-950/60 font-semibold",
-    topText: "text-amber-400"
+    active: "bg-indigo-400 text-black border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] font-bold",
+    topText: "text-black/70"
   },
   purple: {
-    active: "bg-purple-950/40 border-purple-500/60 text-white shadow-lg shadow-purple-950/60 font-semibold",
-    topText: "text-purple-400"
+    active: "bg-indigo-400 text-black border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] font-bold",
+    topText: "text-black/70"
   },
   rose: {
-    active: "bg-rose-950/40 border-rose-500/60 text-white shadow-lg shadow-rose-950/60 font-semibold",
-    topText: "text-rose-400"
+    active: "bg-indigo-400 text-black border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] font-bold",
+    topText: "text-black/70"
   }
 };
 

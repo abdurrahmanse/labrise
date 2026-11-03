@@ -35,11 +35,11 @@ export function EmailBlueprintsSection() {
             onClick={() => setActiveTemplateId(template.id)}
             className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
               activeTemplateId === template.id
-                ? "bg-indigo-600 text-white shadow-sm"
+                ? "bg-indigo-400 text-black border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] font-bold"
                 : "text-slate-400 hover:text-white"
             }`}
           >
-            <FileText className={`w-3 h-3 ${activeTemplateId === template.id ? "text-white" : "text-indigo-400"}`} />
+            <FileText className={`w-3 h-3 ${activeTemplateId === template.id ? "text-black" : "text-indigo-400"}`} />
             <span>{template.name}</span>
           </button>
         ))}

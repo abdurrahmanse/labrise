@@ -28,7 +28,7 @@ export function PhaseChecklistItem({
       <div
         className={`w-5 h-5 rounded-md mt-0.5 flex items-center justify-center transition-colors shrink-0 ${
           isChecked
-            ? "bg-teal-500 text-slate-950 shadow-sm"
+            ? "bg-indigo-400 text-black border-black shadow-[3px_3px_0_0_rgba(255,255,255,0.85)] font-bold"
             : "border border-slate-600 hover:border-slate-400 bg-white/5"
         }`}
       >
