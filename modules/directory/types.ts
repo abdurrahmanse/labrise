@@ -41,4 +41,17 @@ export interface ScholarshipEntry {
   site: string;
 }
 
-export type DirectoryType = "countries" | "universities" | "professors" | "scholarships";
+export interface ProviderEntry {
+  name: string;
+  country: string;
+  region: Region;
+  kind: string;
+  programs: string[];
+  route: string;
+  requirements: string[];
+  documents: string[];
+  selection: string;
+  site: string;
+}
+
+export type DirectoryType = "countries" | "universities" | "professors" | "scholarships" | "providers";

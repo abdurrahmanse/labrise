@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const directoryTypeSchema = z.enum(["countries", "universities", "professors", "scholarships"]);
+export const directoryTypeSchema = z.enum(["countries", "universities", "professors", "scholarships", "providers"]);
 
 const region = z.enum(["Europe", "North America", "Asia", "Oceania", "Middle East"]);
 
@@ -42,9 +42,23 @@ export const scholarshipSchema = z.object({
   site: z.string()
 });
 
+export const providerSchema = z.object({
+  name: z.string(),
+  country: z.string(),
+  region,
+  kind: z.string(),
+  programs: z.array(z.string()),
+  route: z.string(),
+  requirements: z.array(z.string()),
+  documents: z.array(z.string()),
+  selection: z.string(),
+  site: z.string()
+});
+
 export const directorySchemas = {
   countries: z.array(countrySchema),
   universities: z.array(universitySchema),
   professors: z.array(professorSchema),
-  scholarships: z.array(scholarshipSchema)
+  scholarships: z.array(scholarshipSchema),
+  providers: z.array(providerSchema)
 } as const;

@@ -173,7 +173,7 @@ def wrap_model(model, local_rank):
     resources: [
       {
         title: "A Field Guide to the Machine Learning PhD (Tim Dettmers)",
-        url: "https://timdettmers.com/2018/11/26/phd-application-guide/",
+        url: "https://timdettmers.com",
         type: "guide",
         description: "Essential roadmap on applying to AI PhD programs, direct entry, and advisor selection."
       }

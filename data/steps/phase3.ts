@@ -51,7 +51,7 @@ export const phase3Steps: RoadmapStep[] = [
     resources: [
       {
         title: "Writing a Statement of Purpose (MIT EECS Communication Lab)",
-        url: "https://mitcommlab.mit.edu/eecs/use-the-commkit/statement-of-purpose/",
+        url: "https://mitcommlab.mit.edu",
         type: "guide",
         description: "Official MIT EECS guide and rubrics for writing graduate research statements."
       }

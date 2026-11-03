@@ -100,12 +100,7 @@ export const phase5Steps: RoadmapStep[] = [
     ],
     deliverable: "Documented interview response sheet covering the top 10 most common deep learning technical defense scenarios.",
     resources: [
-      {
-        title: "Deep Learning Interviews (Shashank Kalanithi)",
-        url: "https://github.com/shashankkalanithi",
-        type: "guide",
-        description: "Technical interview preparation questions and deep learning intuition."
-      }
+      
     ]
   },
   {
@@ -210,7 +205,7 @@ export const phase5Steps: RoadmapStep[] = [
     resources: [
       {
         title: "Council of Graduate Schools (CGS) April 15 Resolution",
-        url: "https://cgsnet.org/resources/for-institutions/april-15-resolution/",
+        url: "https://cgsnet.org",
         type: "official",
         description: "Official agreement protecting graduate student decision timelines across North America."
       }

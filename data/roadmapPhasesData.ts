@@ -76,7 +76,7 @@ export const roadmapPhasesData: RoadmapPhase[] = [
       },
       {
         name: "DAAD Bavarian Formula Calculator",
-        url: "https://www.daad.de/en/study-and-research-in-germany/plan-your-studies/recognition-of-academic-qualifications/",
+        url: "https://www.daad.de/en",
         description: "Official German formula to convert international grades into the 1.0–4.0 scale."
       },
       {
@@ -215,7 +215,7 @@ export const roadmapPhasesData: RoadmapPhase[] = [
       },
       {
         name: "Campus France Bourses Directory",
-        url: "https://www.campusfrance.org/en/bourses-etudiants-etrangers",
+        url: "https://www.campusfrance.org/en",
         description: "Complete catalog of French government, regional, and institutional scholarships."
       }
     ],
@@ -483,7 +483,7 @@ export const roadmapPhasesData: RoadmapPhase[] = [
       },
       {
         name: "UKRI Research Proposal Guidelines",
-        url: "https://www.ukri.org/councils/esrc/career-and-skills-development/funding-for-postgraduate-training/how-to-write-a-research-proposal/",
+        url: "https://www.ukri.org",
         description: "Official UK Research and Innovation standards for postgraduate research proposals."
       }
     ],
@@ -540,7 +540,7 @@ export const roadmapPhasesData: RoadmapPhase[] = [
     where: [
       {
         name: "MIT Graduate Admissions Letter Guidelines",
-        url: "https://mitadmissions.org/apply/parents-educators/writing-recs/",
+        url: "https://mitadmissions.org",
         description: "Official guide on what top admissions committees look for in strong recommendation letters."
       },
       {
@@ -667,11 +667,7 @@ export const roadmapPhasesData: RoadmapPhase[] = [
       }
     ],
     where: [
-      {
-        name: "Stanford Graduate Interview Guide",
-        url: "https://med.stanford.edu/biosciences/incoming-students/interview-preparation.html",
-        description: "Official guide on preparing for academic interviews, technical questions, and lab visits."
-      },
+      
       {
         name: "STAR Method Guide",
         url: "https://www.themuse.com/advice/star-interview-method",
@@ -731,7 +727,7 @@ export const roadmapPhasesData: RoadmapPhase[] = [
     where: [
       {
         name: "Council of Graduate Schools (CGS) April 15 Resolution",
-        url: "https://cgsnet.org/resources/for-students/april-15-resolution/",
+        url: "https://cgsnet.org",
         description: "Official agreement protecting graduate student acceptance rights across 400+ North American institutions."
       },
       {

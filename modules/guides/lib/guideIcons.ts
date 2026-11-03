@@ -1,7 +1,7 @@
 import {
   Banknote, BookOpen, Briefcase, CalendarClock, ClipboardCheck, Compass, FileCheck, FileText, FlaskConical,
   GitBranch, GraduationCap, Handshake, Home, Languages, Mail, MessagesSquare, Newspaper, Plane, Scale, ScrollText,
-  Search, ShieldAlert, Sigma, type LucideIcon
+  Search, ShieldAlert, Sigma, Stamp, Wallet, type LucideIcon
 } from "lucide-react";
 
 const ICONS: Record<string, LucideIcon> = {
@@ -16,6 +16,8 @@ const ICONS: Record<string, LucideIcon> = {
   "reference-letter": Handshake,
   "proof-letters": FileCheck,
   "grade-conversion": Sigma,
+  "document-attestation": Stamp,
+  "budget-planning": Wallet,
   ielts: Languages,
   toefl: Languages,
   "english-and-gre": GraduationCap,

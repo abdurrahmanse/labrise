@@ -2,8 +2,8 @@ import { Avatar } from "@/shared/components/Avatar";
 import { Flag } from "@/modules/directory/components/Flag";
 
 const FLAGS = ["Germany", "Japan", "Canada", "Australia", "Sweden", "Switzerland"];
-const SCHOOLS = ["ETH Zurich", "KTH", "TU Delft", "Toronto", "Tokyo", "Oxford"];
-const PEOPLE = ["Andreas Geiger", "Fei-Fei Li", "Yoshua Bengio", "Cordelia Schmid", "Tom Mitchell", "Mirella Lapata"];
+const SCHOOLS = ["North", "South", "East", "West", "Central", "Coast"];
+const PEOPLE = ["Ada Lin", "Ben Okoye", "Carla Mendes", "Dev Rao", "Eli Novak", "Fay Tanaka"];
 
 /** Overlapping row of small images that hints at what a card contains. */
 function Row({ children }: { children: React.ReactNode }) {

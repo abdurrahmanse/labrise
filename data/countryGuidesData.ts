@@ -67,7 +67,7 @@ export const countryGuidesData: CountryGuide[] = [
       },
       {
         name: "Deutschlandstipendium",
-        url: "https://www.deutschlandstipendium.de/deutschlandstipendium/en/home/home_node.html",
+        url: "https://www.deutschlandstipendium.de",
         description: "National merit scholarship awarded directly by universities, co-funded by government and private donors.",
         coverage: "€300/month stipend for at least two semesters.",
         degreeLevel: "Master's & PhD"
@@ -135,7 +135,7 @@ export const countryGuidesData: CountryGuide[] = [
       },
       {
         name: "Make Our Planet Great Again (MOPGA)",
-        url: "https://www.campusfrance.org/en/mopga-make-our-planet-great-again",
+        url: "https://www.campusfrance.org/en",
         description: "Doctoral and research grants in climate change, earth systems, and energy transition.",
         coverage: "Monthly research allowance, travel grant, and laboratory support.",
         degreeLevel: "PhD Only"
@@ -352,7 +352,7 @@ export const countryGuidesData: CountryGuide[] = [
     ],
     officialPortals: [
       { name: "Study in Norway", url: "https://studyinnorway.no/", description: "Official Norwegian government guide for international students." },
-      { name: "Jobbnorge", url: "https://www.jobbnorge.no/en/available-jobs", description: "Primary national portal for all Norwegian university PhD Fellow vacancies." },
+      { name: "Jobbnorge", url: "https://www.jobbnorge.no", description: "Primary national portal for all Norwegian university PhD Fellow vacancies." },
       { name: "UDI (Directorate of Immigration)", url: "https://www.udi.no/en/", description: "Official immigration authority for Norwegian residence and work permits." }
     ],
     applicationSequence: [
@@ -383,7 +383,7 @@ export const countryGuidesData: CountryGuide[] = [
     governmentScholarships: [
       {
         name: "Danish Government Scholarships",
-        url: "https://ufm.dk/en/education/programmes-and-education-institutions/scholarships-and-loans/the-cultural-agreements-programme",
+        url: "https://ufm.dk",
         description: "Targeted scholarships for high-achieving non-EU students from selected partner nations.",
         coverage: "Full or partial tuition fee waivers and monthly living contributions.",
         degreeLevel: "Master's Only"
@@ -525,7 +525,7 @@ export const countryGuidesData: CountryGuide[] = [
       },
       {
         name: "VLIR-UOS Scholarships",
-        url: "https://www.vliruos.be/en/scholarships/6",
+        url: "https://www.vliruos.be",
         description: "Full awards for students from developing nations pursuing selected international master's programs.",
         coverage: "100% tuition, monthly allowance, housing, travel, and comprehensive insurance.",
         degreeLevel: "Master's Only"
@@ -646,7 +646,7 @@ export const countryGuidesData: CountryGuide[] = [
     governmentScholarships: [
       {
         name: "MAECI Grants for Foreign Citizens",
-        url: "https://studyinitaly.esteri.it/en/call-for-procedure",
+        url: "https://studyinitaly.esteri.it",
         description: "Italian Ministry of Foreign Affairs scholarships to foster international cultural and scientific cooperation.",
         coverage: "€900/month living stipend + university tuition exemption + health insurance.",
         degreeLevel: "Master's & PhD"
@@ -720,7 +720,7 @@ export const countryGuidesData: CountryGuide[] = [
       },
       {
         name: "ISTA PhD Fellowships",
-        url: "https://ista.ac.at/en/education/phd-program/",
+        url: "https://ista.ac.at",
         description: "Fully funded international PhD program in computer science, biology, physics, math, and neuroscience.",
         coverage: "Full international researcher salary, health insurance, and subsidized campus housing.",
         degreeLevel: "PhD Only"
@@ -750,7 +750,7 @@ export const countryGuidesData: CountryGuide[] = [
     officialPortals: [
       { name: "Grants.at Database", url: "https://grants.at/en/", description: "Austria's official and largest online database for scholarships and research grants." },
       { name: "OeAD Agency", url: "https://oead.at/en/", description: "Central Austrian service agency for international academic mobility." },
-      { name: "ISTA PhD Portal", url: "https://ista.ac.at/en/education/phd-program/", description: "Direct portal for Austria's premier science and technology institute." }
+      { name: "ISTA PhD Portal", url: "https://ista.ac.at", description: "Direct portal for Austria's premier science and technology institute." }
     ],
     applicationSequence: [
       "Search for programs and funding opportunities on Grants.at and university websites.",
@@ -816,7 +816,7 @@ export const countryGuidesData: CountryGuide[] = [
       "UKRI studentships have a statutory 30% cap on international candidates, making competition high."
     ],
     officialPortals: [
-      { name: "Jobs.ac.uk PhD Directory", url: "https://www.jobs.ac.uk/categories/phd", description: "The premier UK academic job board listing active university PhD studentships." },
+      { name: "Jobs.ac.uk PhD Directory", url: "https://www.jobs.ac.uk", description: "The premier UK academic job board listing active university PhD studentships." },
       { name: "Chevening Portal", url: "https://www.chevening.org/", description: "Official application and information portal for Chevening scholarships." },
       { name: "FindAPhD.com", url: "https://www.findaphd.com/", description: "Searchable directory of funded doctoral projects across the UK." }
     ],
@@ -881,7 +881,7 @@ export const countryGuidesData: CountryGuide[] = [
     officialPortals: [
       { name: "EducationUSA", url: "https://educationusa.state.gov/", description: "U.S. Department of State network of 430+ international advising centers." },
       { name: "Fulbright Foreign Student Portal", url: "https://foreign.fulbrightonline.org/", description: "Official application guidelines and participating country commissions." },
-      { name: "CGS April 15 Resolution", url: "https://cgsnet.org/resources/for-students/cgs-april-15-resolution/", description: "Council of Graduate Schools resolution protecting student funding decision rights." }
+      { name: "CGS April 15 Resolution", url: "https://cgsnet.org", description: "Council of Graduate Schools resolution protecting student funding decision rights." }
     ],
     applicationSequence: [
       "Select 8–10 target universities balanced across Reach, Match, and Safety tiers.",
@@ -982,7 +982,7 @@ export const countryGuidesData: CountryGuide[] = [
     governmentScholarships: [
       {
         name: "MEXT Monbukagakusho Scholarship",
-        url: "https://www.studyinjapan.go.jp/en/planning/scholarship/mext-scholarships/",
+        url: "https://www.studyinjapan.go.jp/en",
         description: "Flagship Japanese government award for international graduate research students.",
         coverage: "100% tuition waiver, monthly stipend of ¥144,000 (Master's) or ¥145,000 (PhD), and round-trip airfare.",
         degreeLevel: "Master's & PhD"
@@ -1050,7 +1050,7 @@ export const countryGuidesData: CountryGuide[] = [
     governmentScholarships: [
       {
         name: "Global Korea Scholarship (GKS Graduate)",
-        url: "https://www.studyinkorea.go.kr/en/sub/gks/allnew_invite.do",
+        url: "https://www.studyinkorea.go.kr",
         description: "National Institute for International Education (NIIED) flagship full-ride scholarship.",
         coverage: "Full tuition, ₩1,000,000–₩1,300,000/mo living stipend, flights, settlement allowance, and 1-year Korean language training.",
         degreeLevel: "Master's & PhD"
@@ -1079,7 +1079,7 @@ export const countryGuidesData: CountryGuide[] = [
     ],
     officialPortals: [
       { name: "Study in Korea (NIIED)", url: "https://www.studyinkorea.go.kr/", description: "Official Korean government portal for international students and GKS notices." },
-      { name: "National Research Foundation (NRF)", url: "https://www.nrf.re.kr/eng/index", description: "Korea's leading agency for academic research grants and BK21 funding." }
+      { name: "National Research Foundation (NRF)", url: "https://www.nrf.re.kr", description: "Korea's leading agency for academic research grants and BK21 funding." }
     ],
     applicationSequence: [
       "Choose GKS route: Embassy Track (via local embassy) or University Track (directly to university) in February.",
@@ -1177,7 +1177,7 @@ export const countryGuidesData: CountryGuide[] = [
     governmentScholarships: [
       {
         name: "Singapore International Graduate Award (SINGA)",
-        url: "https://www.a-star.edu.sg/Scholarships/for-graduate-studies/singapore-international-graduate-award-singa",
+        url: "https://www.a-star.edu.sg/Scholarships",
         description: "Partnership between A*STAR, NUS, NTU, and SUTD for international PhD candidates in science and engineering.",
         coverage: "Full tuition coverage, monthly stipend of SGD 2,700 (increasing to SGD 3,200 after qualifying exam), airfare grant, and settling-in allowance.",
         degreeLevel: "PhD Only"
@@ -1205,7 +1205,7 @@ export const countryGuidesData: CountryGuide[] = [
       "Ministry of Education (MOE) tuition grants for certain Master's programs carry a 3-year service obligation in Singapore."
     ],
     officialPortals: [
-      { name: "A*STAR SINGA Portal", url: "https://www.a-star.edu.sg/Scholarships/for-graduate-studies/singapore-international-graduate-award-singa", description: "Official application page for the Singapore International Graduate Award." },
+      { name: "A*STAR SINGA Portal", url: "https://www.a-star.edu.sg/Scholarships", description: "Official application page for the Singapore International Graduate Award." },
       { name: "NUS Graduate School", url: "https://nusgs.nus.edu.sg/", description: "Graduate admissions and research scholarship portal of NUS." },
       { name: "NTU Graduate College", url: "https://www.ntu.edu.sg/graduate-college", description: "Official portal for Nanyang Technological University research scholarships." }
     ],
@@ -1338,7 +1338,7 @@ export const countryGuidesData: CountryGuide[] = [
     officialPortals: [
       { name: "Study with New Zealand", url: "https://www.studywithnewzealand.govt.nz/", description: "The official government website for international students in New Zealand." },
       { name: "Manaaki New Zealand Scholarships", url: "https://www.manaakinzscholarships.govt.nz/", description: "Official MFAT portal for New Zealand Government international scholarships." },
-      { name: "Immigration New Zealand", url: "https://www.immigration.govt.nz/new-zealand-visas/visas/visa/fee-paying-student-visa", description: "Official visa information for doctoral and master's students." }
+      { name: "Immigration New Zealand", url: "https://www.immigration.govt.nz", description: "Official visa information for doctoral and master's students." }
     ],
     applicationSequence: [
       "Review faculty research directories at New Zealand universities (Auckland, Otago, VUW, Canterbury).",

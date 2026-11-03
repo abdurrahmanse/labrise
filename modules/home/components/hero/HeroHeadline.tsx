@@ -1,3 +1,4 @@
+import { guideTopics } from "@/modules/guides/data/topics";
 import { RotatingWord } from "./RotatingWord";
 
 export function HeroHeadline() {
@@ -14,7 +15,7 @@ export function HeroHeadline() {
         Your path to a fully funded <RotatingWord />
       </h1>
       <p className="max-w-xl text-lg text-slate-300 font-sans font-normal">
-        Six clear steps, ten ready guides, and a real directory of countries, universities, scholarships and professors.
+        {`Six clear steps, ${guideTopics.length} guides, and a directory of countries, universities, scholarships and professors.`}
       </p>
     </div>
   );

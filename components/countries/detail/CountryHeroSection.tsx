@@ -5,7 +5,6 @@ import Link from "next/link";
 import { ArrowLeft, Award, Briefcase, Globe, MapPin } from "lucide-react";
 import { CountryGuide } from "@/data/countryGuidesData";
 import { SupervisorBadge } from "./SupervisorBadge";
-import { CountryJumpNav } from "./CountryJumpNav";
 
 interface CountryHeroSectionProps {
   country: CountryGuide;
@@ -119,7 +118,6 @@ export function CountryHeroSection({ country }: CountryHeroSectionProps) {
           </div>
 
           {/* Table of contents Jump Nav (Desktop / Laptop View) */}
-          <CountryJumpNav />
         </div>
       </div>
     </section>

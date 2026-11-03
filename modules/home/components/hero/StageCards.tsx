@@ -1,6 +1,5 @@
 import { Check } from "lucide-react";
 import { Flag } from "@/modules/directory/components/Flag";
-import { Avatar } from "@/shared/components/Avatar";
 import { FloatingCard } from "./FloatingCard";
 
 export function ScholarshipStageCard() {
@@ -16,17 +15,21 @@ export function ScholarshipStageCard() {
   );
 }
 
+const STATUSES = ["To contact", "Emailed", "Replied"];
+
+/** Shows the outreach tracker feature, not a real person or message. */
 export function ProfessorStageCard() {
   return (
     <FloatingCard className="bottom-0 right-0 w-[34%] animate-float-reverse">
-      <div className="flex items-center gap-3">
-        <Avatar name="Andreas Geiger" size={44} />
-        <div className="min-w-0">
-          <div className="font-bold text-white">Prof. reply</div>
-          <div className="text-sm text-slate-300">Happy to talk.</div>
-        </div>
-      </div>
-      <span className="mt-3 inline-block bg-emerald-500/15 px-2 py-0.5 font-mono text-xs uppercase text-emerald-400">Replied</span>
+      <div className="mb-2 font-mono text-xs uppercase tracking-wider text-indigo-300">Outreach tracker</div>
+      <ul className="space-y-1.5">
+        {STATUSES.map((s) => (
+          <li key={s} className="flex items-center justify-between text-sm font-bold text-slate-200">
+            {s}
+            <span className="h-2 w-8 bg-indigo-400/40" />
+          </li>
+        ))}
+      </ul>
     </FloatingCard>
   );
 }

@@ -107,12 +107,7 @@ export const phase1Steps: RoadmapStep[] = [
         type: "tool",
         description: "Host machine learning applications and interactive Gradio apps for free."
       },
-      {
-        title: "Papers with Code - Official Reproducibility Checklist",
-        url: "https://github.com/paperswithcode/reproducing",
-        type: "guide",
-        description: "Standards and guidelines for building reproducible machine learning codebases."
-      }
+      
     ]
   },
   {

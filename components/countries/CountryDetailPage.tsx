@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { SubNav } from "@/shared/components/SubNav";
 import { CountryGuide } from "@/data/countryGuidesData";
 import {
   CountryHeroSection,
@@ -18,65 +19,57 @@ import {
   CountryPortalsSection,
 } from "./detail";
 
+export type CountrySection = "overview" | "funding" | "apply";
+
+export const COUNTRY_SECTIONS: { id: CountrySection; label: string }[] = [
+  { id: "overview", label: "Overview" },
+  { id: "funding", label: "Funding" },
+  { id: "apply", label: "How to apply" }
+];
+
+export const countrySectionHref = (countryId: string, section: CountrySection) =>
+  section === "overview" ? `/countries/${countryId}` : `/countries/${countryId}/${section}`;
+
 interface CountryDetailPageProps {
   country: CountryGuide;
+  section?: CountrySection;
 }
 
-export function CountryDetailPage({ country }: CountryDetailPageProps) {
+export function CountryDetailPage({ country, section = "overview" }: CountryDetailPageProps) {
   return (
     <main className="min-h-screen bg-canvas-base text-slate-100">
-      {/* ── 1. Hero & Navigation ── */}
       <CountryHeroSection country={country} />
 
-      {/* ── 2. Page Content Sections (Responsive across 5 devices) ── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-16 space-y-12 sm:space-y-14">
-        {/* 1. Overview & Funding Philosophy */}
-        <CountryOverviewSection
-          summary={country.summary}
-          fundingPhilosophy={country.fundingPhilosophy}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-16 space-y-10">
+        <SubNav
+          label={`${country.name} guide sections`}
+          items={COUNTRY_SECTIONS.map((s) => ({ href: countrySectionHref(country.id, s.id), label: s.label }))}
         />
 
-        {/* 2. Common Funding Routes */}
-        <CountryFundingRoutesSection routes={country.commonFundingRoutes} />
+        {section === "overview" && (
+          <>
+            <CountryOverviewSection summary={country.summary} fundingPhilosophy={country.fundingPhilosophy} />
+            <CountryFundingRoutesSection routes={country.commonFundingRoutes} />
+            <CountrySupervisorSection requirement={country.supervisorContactRequirement} notes={country.supervisorContactNotes} />
+          </>
+        )}
 
-        {/* 3. Government & University Scholarships */}
-        <CountryGovScholarshipsSection
-          scholarships={country.governmentScholarships}
-          universityScholarships={country.universityScholarships}
-        />
+        {section === "funding" && (
+          <>
+            <CountryGovScholarshipsSection scholarships={country.governmentScholarships} universityScholarships={country.universityScholarships} />
+            <CountryDegreeModelsSection mastersFundingModel={country.mastersFundingModel} phdFundingModel={country.phdFundingModel} />
+            <CountryAssistantshipsSection available={country.assistantshipsAvailable} detail={country.assistantshipsDetail} />
+          </>
+        )}
 
-        {/* 4. PhD & Master's Funding Models */}
-        <CountryDegreeModelsSection
-          mastersFundingModel={country.mastersFundingModel}
-          phdFundingModel={country.phdFundingModel}
-        />
-
-        {/* 5. Research Assistantships */}
-        <CountryAssistantshipsSection
-          available={country.assistantshipsAvailable}
-          detail={country.assistantshipsDetail}
-        />
-
-        {/* 6. Supervisor Contact Guidance */}
-        <CountrySupervisorSection
-          requirement={country.supervisorContactRequirement}
-          notes={country.supervisorContactNotes}
-        />
-
-        {/* 7. Language Requirements & Typical Deadlines */}
-        <CountryLanguageDeadlinesSection
-          languageRequirements={country.languageRequirements}
-          typicalApplicationDeadlines={country.typicalApplicationDeadlines}
-        />
-
-        {/* 8. Step-by-Step Application Sequence */}
-        <CountrySequenceSection steps={country.applicationSequence} />
-
-        {/* 9. Critical Warnings & Limitations */}
-        <CountryWarningsSection limitations={country.importantLimitations} />
-
-        {/* 10. Official Portals & Authoritative Resources */}
-        <CountryPortalsSection portals={country.officialPortals} />
+        {section === "apply" && (
+          <>
+            <CountryLanguageDeadlinesSection languageRequirements={country.languageRequirements} typicalApplicationDeadlines={country.typicalApplicationDeadlines} />
+            <CountrySequenceSection steps={country.applicationSequence} />
+            <CountryWarningsSection limitations={country.importantLimitations} />
+            <CountryPortalsSection portals={country.officialPortals} />
+          </>
+        )}
 
         {/* ── Page Footer Navigation ── */}
         <div className="pt-8 border-t border-white/[0.07] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">

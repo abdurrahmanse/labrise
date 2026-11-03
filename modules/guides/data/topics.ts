@@ -140,5 +140,7 @@ export const guideTopics: GuideTopic[] = [
   { id: "grade-conversion", title: "Grades and conversion", tag: "Give context", steps: ["State the scale.", "Add rank.", "Attach grading key.", "Use official rules.", "Do not self-convert."] },
   { id: "application-portals", title: "Application portals", tag: "Stay organised", steps: ["List systems.", "Create accounts.", "Track in a sheet.", "Check formats.", "Submit early."] },
   { id: "arrival-checklist", title: "Arrival checklist", tag: "After the visa", steps: ["Housing.", "Insurance.", "Money.", "Register.", "Meet supervisor."] },
-  { id: "negotiating-and-declining", title: "Negotiate and decline", tag: "After offers", steps: ["Ask in writing.", "Request extension.", "Be realistic.", "Reply promptly.", "Decline kindly."] }
+  { id: "negotiating-and-declining", title: "Negotiate and decline", tag: "After offers", steps: ["Ask in writing.", "Request extension.", "Be realistic.", "Reply promptly.", "Decline kindly."] },
+  { id: "document-attestation", title: "Attestation and translation", tag: "Ask early", steps: ["Ask what is required.", "Request originals.", "Certify translations.", "Apostille if required.", "Keep scans."] },
+  { id: "budget-planning", title: "Budget and costs", tag: "Plan the numbers", steps: ["List pre-arrival costs.", "Confirm net income.", "Estimate monthly costs.", "Plan a first-month buffer.", "Compare offers."] }
 ];

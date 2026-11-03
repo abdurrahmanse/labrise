@@ -2,13 +2,14 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { directorySchemas } from "../api/schemas";
-import type { CountryEntry, DirectoryType, ProfessorEntry, ScholarshipEntry, UniversityEntry } from "../types";
+import type { CountryEntry, DirectoryType, ProfessorEntry, ProviderEntry, ScholarshipEntry, UniversityEntry } from "../types";
 
 export interface DirectoryEntries {
   countries: CountryEntry[];
   universities: UniversityEntry[];
   professors: ProfessorEntry[];
   scholarships: ScholarshipEntry[];
+  providers: ProviderEntry[];
 }
 
 async function fetchDirectory<T extends DirectoryType>(type: T): Promise<DirectoryEntries[T]> {

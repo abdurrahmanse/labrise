@@ -273,7 +273,7 @@ export const verifiedScholarshipPortals: VerifiedScholarshipPortal[] = [
     name: "MEXT Japanese Government Scholarships",
     countryOrRegion: "Japan",
     governingBody: "Ministry of Education, Culture, Sports, Science and Technology (MEXT)",
-    url: "https://www.studyinjapan.go.jp/en/planning/scholarship/mext-scholarships/",
+    url: "https://www.studyinjapan.go.jp/en",
     coverageType: "Full Tuition + Living Stipend",
     notes: "Japanese full-ride scholarship covering 100% university tuition, monthly living allowance, and round-trip flights."
   },
@@ -282,7 +282,7 @@ export const verifiedScholarshipPortals: VerifiedScholarshipPortal[] = [
     name: "Global Korea Scholarship (GKS)",
     countryOrRegion: "South Korea",
     governingBody: "National Institute for International Education (NIIED)",
-    url: "https://www.studyinkorea.go.kr/en/sub/gks/allnew_invite.do",
+    url: "https://www.studyinkorea.go.kr",
     coverageType: "Full Tuition + Living Stipend",
     notes: "Full-ride Korean government program covering tuition, living stipend, airfare, settlement grant, and language training."
   },
@@ -291,7 +291,7 @@ export const verifiedScholarshipPortals: VerifiedScholarshipPortal[] = [
     name: "Singapore International Graduate Award (SINGA)",
     countryOrRegion: "Singapore",
     governingBody: "Agency for Science, Technology and Research (A*STAR) & NUS / NTU",
-    url: "https://www.a-star.edu.sg/Scholarships/for-graduate-studies/singapore-international-graduate-award-singa",
+    url: "https://www.a-star.edu.sg/Scholarships",
     coverageType: "Full Tuition + Living Stipend",
     notes: "Premier biomedical and physical sciences PhD award in Singapore providing full tuition and SGD 2,700–3,200/month."
   },

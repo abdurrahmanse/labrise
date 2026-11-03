@@ -14,7 +14,7 @@ export const countryDetails: Record<string, CountryDetail> = {
   germany: {
     overview: "Public universities and research institutes such as Max Planck hire PhD candidates as employees. There is no tuition at most public universities.",
     phd: "Typically 3–4 years, usually in a research group under one professor. Either a structured program or an individual doctorate.",
-    pay: "Salaried posts (often 50–100% positions) with salary in the range of roughly €2,000–€3,500 per month before tax. DAAD scholarships use fixed monthly rates.",
+    pay: "Salaried posts on the TV-L E13 scale, often 50–100% positions. Gross pay is roughly €2,000–€4,300 per month depending on the percentage. DAAD scholarships use fixed monthly rates.",
     language: "English is enough for most research groups. German helps in daily life.",
     intake: "Rolling. Positions are advertised year-round, often with start dates in spring or autumn.",
     visa: "National visa for research or a job-seeker visa, then a residence permit. EU Blue Card does not apply to doctoral posts, check the university's international office.",
@@ -57,7 +57,7 @@ export const countryDetails: Record<string, CountryDetail> = {
   },
   denmark: {
     overview: "PhD fellows are paid employees at universities such as Copenhagen, DTU and Aarhus.",
-    phd: "3 years after a 5+3 or 3+2 structure; some start with a 2-year master's integrated path.",
+    phd: "Typically 3 years after a master's degree.",
     pay: "Roughly DKK 30,000–38,000 per month before tax.",
     language: "English accepted.",
     intake: "Posts advertised with fixed deadlines, many in spring and autumn.",
@@ -91,7 +91,7 @@ export const countryDetails: Record<string, CountryDetail> = {
   belgium: {
     overview: "KU Leuven and Ghent offer salaried PhD positions and scholarships.",
     phd: "4 years.",
-    pay: "Roughly €2,500–3,000 per month net-equivalent.",
+    pay: "Roughly €2,500–3,000 per month.",
     language: "English in research groups.",
     intake: "Rolling plus fellowship calls.",
     visa: "Researcher permit.",
@@ -105,7 +105,7 @@ export const countryDetails: Record<string, CountryDetail> = {
     pay: "Roughly €2,000–3,000 per month depending on institution.",
     language: "English for research.",
     intake: "Rolling; ISTA has fixed deadlines (around the turn of the year).",
-    visa: "Red-White-Red Card or researcher permit.",
+    visa: "Residence permit for students or researchers, arranged with the university.",
     find: [{ label: "ISTA graduate school", href: "https://ista.ac.at" }, { label: "EURAXESS", href: "https://euraxess.ec.europa.eu/jobs" }],
     scholarships: ["OeAD scholarships"],
     tips: ["ISTA is highly selective: strong research profile needed."]
@@ -172,7 +172,7 @@ export const countryDetails: Record<string, CountryDetail> = {
     language: "TOEFL or IELTS usually required. GRE optional or dropped at many places.",
     intake: "Applications in autumn, deadlines mostly December for autumn start.",
     visa: "F-1 student visa with I-20.",
-    find: [{ label: "CS Rankings (find faculty)", href: "https://csrankings.org" }, { label: "Department admissions pages", href: "https://www.usnews.com" }],
+    find: [{ label: "CS Rankings (find faculty)", href: "https://csrankings.org" }],
     scholarships: ["Fulbright (foreign student program)", "University fellowships"],
     tips: ["Admission is by committee; contacting professors helps but is not always required.", "Apply to 8–12 programs across tiers.", "Ask for application fee waivers."]
   },
@@ -225,7 +225,7 @@ export const countryDetails: Record<string, CountryDetail> = {
     phd: "4 years.",
     pay: "Roughly SGD 2,700–3,500 per month plus tuition waiver.",
     language: "English.",
-    intake: "Two rounds, around November and May.",
+    intake: "Two application rounds a year. Check each university's graduate admissions page.",
     visa: "Student pass.",
     find: [{ label: "NUS Graduate", href: "https://nus.edu.sg" }, { label: "NTU Graduate", href: "https://ntu.edu.sg" }],
     scholarships: ["NUS Research Scholarship", "NTU Research Scholarship", "A*STAR ARAP/SINGA"],
@@ -245,7 +245,7 @@ export const countryDetails: Record<string, CountryDetail> = {
   taiwan: {
     overview: "Government scholarships and university programs fund international students.",
     phd: "3–4 years.",
-    pay: "Monthly allowance around NT$30,000 for PhD scholarships.",
+    pay: "Monthly allowance, roughly NT$15,000 (master's) to NT$20,000 (PhD). Check the current rate.",
     language: "English programs exist.",
     intake: "Applications usually February–March.",
     visa: "Resident visa.",
@@ -278,7 +278,7 @@ export const countryDetails: Record<string, CountryDetail> = {
   turkey: {
     overview: "Türkiye Scholarships cover tuition, housing and a stipend.",
     phd: "3–4 years.",
-    pay: "Monthly stipend roughly TRY 8,000+ (changes often) plus housing, insurance.",
+    pay: "Monthly stipend (set each year), plus housing, tuition and health insurance.",
     language: "English or Turkish programs.",
     intake: "Applications January–February.",
     visa: "Student visa arranged through the program.",
@@ -300,7 +300,7 @@ export const countryDetails: Record<string, CountryDetail> = {
   hungary: {
     overview: "Stipendium Hungaricum covers tuition and living costs for selected countries.",
     phd: "3–4 years.",
-    pay: "Monthly stipend roughly HUF 140,000+ plus accommodation allowance.",
+    pay: "Monthly stipend (about HUF 140,000 for doctoral students), plus accommodation support.",
     language: "English programs.",
     intake: "Applications January–February.",
     visa: "Student residence permit.",

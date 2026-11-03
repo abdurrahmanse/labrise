@@ -23,6 +23,8 @@ import { applicationPortalsGuide } from "./application-portals";
 import { noResearchBackgroundGuide } from "./no-research-background";
 import { arrivalChecklistGuide } from "./arrival-checklist";
 import { negotiatingAndDecliningGuide } from "./negotiating-and-declining";
+import { documentAttestationGuide } from "./document-attestation";
+import { budgetPlanningGuide } from "./budget-planning";
 import type { GuideDetail } from "../../types";
 
 export const guideDetails: GuideDetail[] = [
@@ -50,7 +52,9 @@ export const guideDetails: GuideDetail[] = [
   applicationPortalsGuide,
   noResearchBackgroundGuide,
   arrivalChecklistGuide,
-  negotiatingAndDecliningGuide
+  negotiatingAndDecliningGuide,
+  documentAttestationGuide,
+  budgetPlanningGuide
 ];
 
 export const getGuideDetail = (id: string) => guideDetails.find((g) => g.id === id);
