@@ -414,7 +414,14 @@ export const guideTopics: GuideTopic[] = [
       "Prepare: study plan, funding, plan to return.",
       "Answer short, honest and in your own words."
     ]
-  }
+  },
+  { id: "cold-email", title: "Cold email to professors", tag: "150–200 words", steps: ["Check the lab is hiring.", "Read two recent papers.", "Write a short specific email.", "Attach your CV.", "Follow up once."] },
+  { id: "interview-prep", title: "Research interview", tag: "Before offers", steps: ["Summarise your projects.", "Read the professor's papers.", "Review fundamentals.", "Prepare questions.", "Test your setup."] },
+  { id: "funding-types", title: "Types of funding", tag: "Know the model", steps: ["Salaried PhD.", "Stipend and tuition waiver.", "Government scholarship.", "Fellowship.", "Check what is covered."] },
+  { id: "deadlines-timeline", title: "12-month timeline", tag: "Plan", steps: ["12–9 months: area and tests.", "9–6 months: professors and documents.", "6–3 months: referees and early deadlines.", "3–0 months: submit.", "After: compare offers."] },
+  { id: "offer-comparison", title: "Compare offers", tag: "After results", steps: ["Funding.", "Supervisor.", "Research fit.", "Location.", "Career outcomes."] },
+  { id: "scholarship-scams", title: "Avoid scams", tag: "Stay safe", steps: ["Never pay for an award.", "Check official domains.", "Verify with the department.", "Ignore guarantees.", "Protect your documents."] },
+  { id: "english-and-gre", title: "GRE and other tests", tag: "Only if needed", steps: ["List requirements.", "Check GRE necessity.", "Check Duolingo acceptance.", "Look for waivers.", "Pick the fewest tests."] }
 ];
 
 // ── Lookup helpers for directory detail pages ──
