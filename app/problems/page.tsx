@@ -1,8 +1,12 @@
-import type { Metadata } from "next";
-import { PageShell } from "@/components/overview/PageShell";
-import { challenges } from "@/data/overviewData";
+import { PageShell } from "@/shared/components/PageShell";
+import { ProblemList } from "@/modules/roadmap/components/ProblemList";
+import { buildMetadata } from "@/modules/seo/buildMetadata";
 
-export const metadata: Metadata = { title: "Common Problems" };
+export const metadata = buildMetadata({
+  title: "Common scholarship application problems and fixes",
+  description: "No replies, low GPA, no publications, fees and scams: what to do about each.",
+  path: "/problems"
+});
 
 export default function ProblemsPage() {
   return (
@@ -12,14 +16,7 @@ export default function ProblemsPage() {
       back={{ href: "/", label: "Home" }}
       prev={{ href: "/directory", label: "Directory" }}
     >
-      <div className="grid gap-3 md:grid-cols-2">
-        {challenges.map((c) => (
-          <div key={c.problem} className="border-l-4 border-indigo-400 bg-white/[0.03] p-4">
-            <div className="font-bold text-white">{c.problem}</div>
-            <div className="text-sm text-slate-300 font-sans font-normal">{c.fix}</div>
-          </div>
-        ))}
-      </div>
+      <ProblemList />
     </PageShell>
   );
 }

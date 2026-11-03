@@ -4,16 +4,13 @@ import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
+import { useMounted } from "@/shared/hooks/useMounted";
 
 /** Two-state switch: click anywhere on the track to flip between light and dark. */
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
   // next-themes only knows the theme on the client; avoid a hydration mismatch.
-  const mounted = React.useSyncExternalStore(
-    () => () => {},
-    () => true,
-    () => false
-  );
+  const mounted = useMounted();
 
   const isDark = !mounted || resolvedTheme !== "light";
 

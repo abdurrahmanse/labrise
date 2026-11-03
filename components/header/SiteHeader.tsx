@@ -6,7 +6,7 @@ import { HeaderBrand } from "./HeaderBrand";
 import { HeaderNav } from "./HeaderNav";
 import { HeaderActions } from "./HeaderActions";
 import { HeaderMobileDrawer } from "./HeaderMobileDrawer";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { ThemeToggle } from "@/modules/theme/ThemeToggle";
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);

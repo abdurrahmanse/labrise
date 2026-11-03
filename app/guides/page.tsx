@@ -1,8 +1,13 @@
-import type { Metadata } from "next";
-import { LinkCardGrid, PageShell } from "@/components/overview/PageShell";
-import { guideTopics } from "@/data/overviewData";
+import { LinkCardGrid } from "@/shared/components/LinkCardGrid";
+import { PageShell } from "@/shared/components/PageShell";
+import { guideTopics } from "@/modules/guides/data/topics";
+import { buildMetadata } from "@/modules/seo/buildMetadata";
 
-export const metadata: Metadata = { title: "Guides" };
+export const metadata = buildMetadata({
+  title: "Guides: CV, SOP, IELTS, visa and more",
+  description: "Step-by-step guides for every part of a fully funded scholarship application.",
+  path: "/guides"
+});
 
 export default function GuidesPage() {
   return (

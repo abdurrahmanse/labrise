@@ -18,7 +18,9 @@ const jetbrainsMono = JetBrains_Mono({
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import { AppProviders } from "@/shared/providers/AppProviders";
+import { JsonLd } from "@/modules/seo/JsonLd";
+import { websiteSchema } from "@/modules/seo/schemas";
 import { AmbientBackground } from "@/components/ui/AmbientBackground";
 
 import { rootMetadata } from "@/data/metadata";
@@ -45,12 +47,13 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className={`${rajdhani.className} min-h-full flex flex-col bg-canvas-base text-slate-100 font-semibold relative`}>
-        <ThemeProvider>
+        <AppProviders>
+          <JsonLd data={websiteSchema()} />
           <AmbientBackground />
           <Navbar />
           <div className="flex-1 relative z-10">{children}</div>
           <Footer />
-        </ThemeProvider>
+        </AppProviders>
       </body>
     </html>
   );

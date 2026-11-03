@@ -1,36 +1,38 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { PageShell } from "@/components/overview/PageShell";
-import { OverviewExplorer, type ExplorerMode } from "@/components/overview/OverviewExplorer";
+import { PageShell } from "@/shared/components/PageShell";
+import { directoryTypeSchema } from "@/modules/directory/api/schemas";
+import { CountriesExplorer, ProfessorsExplorer, UniversitiesExplorer } from "@/modules/directory/components/DirectoryExplorer";
+import { countries, directoryTypes, professors, universities } from "@/modules/directory/data";
+import { buildMetadata } from "@/modules/seo/buildMetadata";
 
 interface Props {
   params: Promise<{ type: string }>;
 }
 
-const TYPES: { type: ExplorerMode; title: string; lead: string }[] = [
-  { type: "countries", title: "Countries", lead: "Funded routes and what you get." },
-  { type: "universities", title: "Universities", lead: "Funding type and typical deadline." },
-  { type: "professors", title: "Professors", lead: "Copy emails only from the official university page." }
-];
-
 export function generateStaticParams() {
-  return TYPES.map((t) => ({ type: t.type }));
+  return directoryTypes.map((t) => ({ type: t.type }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { type } = await params;
-  const entry = TYPES.find((t) => t.type === type);
-  return { title: entry ? `${entry.title} Directory` : "Directory not found" };
+  const entry = directoryTypes.find((t) => t.type === type);
+  if (!entry) return { title: "Directory not found" };
+  return buildMetadata({
+    title: `${entry.title} directory for fully funded study`,
+    description: entry.lead,
+    path: `/directory/${entry.type}`
+  });
 }
 
 export default async function DirectoryTypePage({ params }: Props) {
-  const { type } = await params;
-  const idx = TYPES.findIndex((t) => t.type === type);
-  if (idx === -1) notFound();
+  const parsed = directoryTypeSchema.safeParse((await params).type);
+  if (!parsed.success) notFound();
 
-  const entry = TYPES[idx];
-  const prev = TYPES[idx - 1];
-  const next = TYPES[idx + 1];
+  const index = directoryTypes.findIndex((t) => t.type === parsed.data);
+  const entry = directoryTypes[index];
+  const prev = directoryTypes[index - 1];
+  const next = directoryTypes[index + 1];
 
   return (
     <PageShell
@@ -38,10 +40,12 @@ export default async function DirectoryTypePage({ params }: Props) {
       title={entry.title}
       lead={entry.lead}
       back={{ href: "/directory", label: "Directory" }}
-      prev={prev ? { href: `/directory/${prev.type}`, label: prev.title } : undefined}
-      next={next ? { href: `/directory/${next.type}`, label: next.title } : undefined}
+      prev={prev && { href: `/directory/${prev.type}`, label: prev.title }}
+      next={next && { href: `/directory/${next.type}`, label: next.title }}
     >
-      <OverviewExplorer fixedMode={entry.type} />
+      {parsed.data === "countries" && <CountriesExplorer initialData={countries} />}
+      {parsed.data === "universities" && <UniversitiesExplorer initialData={universities} />}
+      {parsed.data === "professors" && <ProfessorsExplorer initialData={professors} />}
     </PageShell>
   );
 }

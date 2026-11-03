@@ -1,0 +1,31 @@
+import type { CountryEntry } from "../types";
+
+export const countries: CountryEntry[] = [
+  { country: "Germany", region: "Europe", routes: "Salaried PhD, DAAD, Max Planck / IMPRS", funding: "Salary or stipend, no tuition at most public universities", supervisor: "Required first", fee: "Often none; uni-assist for some" },
+  { country: "Switzerland", region: "Europe", routes: "Salaried PhD at ETH, EPFL, UZH", funding: "Employment contract, high salary", supervisor: "Required first", fee: "Small or none" },
+  { country: "Sweden", region: "Europe", routes: "Salaried PhD, Swedish Institute (master's)", funding: "Employment with salary", supervisor: "Not needed", fee: "None for PhD posts" },
+  { country: "Netherlands", region: "Europe", routes: "Salaried PhD, Orange Knowledge-type grants", funding: "Employment contract", supervisor: "Not needed", fee: "None for PhD posts" },
+  { country: "Denmark", region: "Europe", routes: "Salaried PhD, Danish government grants", funding: "Employment with salary", supervisor: "Not needed", fee: "None for PhD posts" },
+  { country: "Norway", region: "Europe", routes: "Salaried PhD", funding: "Employment with salary", supervisor: "Not needed", fee: "None" },
+  { country: "Finland", region: "Europe", routes: "Salaried doctoral researcher", funding: "Employment with salary", supervisor: "Recommended", fee: "None for PhD posts" },
+  { country: "Belgium", region: "Europe", routes: "KU Leuven / Ghent PhD, VLIR-UOS", funding: "Salary or scholarship", supervisor: "Required first", fee: "Small or none" },
+  { country: "Austria", region: "Europe", routes: "Salaried PhD, ISTA", funding: "Employment or stipend", supervisor: "Required first", fee: "None to small" },
+  { country: "France", region: "Europe", routes: "Doctoral contract, Eiffel scholarship", funding: "Salary-level contract", supervisor: "Required first", fee: "Small or none" },
+  { country: "Italy", region: "Europe", routes: "Funded PhD scholarship calls", funding: "Stipend + tuition waiver", supervisor: "Recommended", fee: "Small or none" },
+  { country: "Spain", region: "Europe", routes: "FPI / FPU contracts, university calls", funding: "PhD contract", supervisor: "Required first", fee: "Small or none" },
+  { country: "United Kingdom", region: "Europe", routes: "Chevening, Commonwealth, CDT studentships", funding: "Stipend + fees", supervisor: "Recommended", fee: "Often £0–£75" },
+  { country: "Ireland", region: "Europe", routes: "Funded PhD posts (SFI, Irish Research Council)", funding: "Stipend + fees", supervisor: "Required first", fee: "Small or none" },
+  { country: "United States", region: "North America", routes: "RA / TA, Fulbright", funding: "Stipend + tuition waiver", supervisor: "Recommended", fee: "Often $75–$120; waivers exist" },
+  { country: "Canada", region: "North America", routes: "Research assistantship, Vanier", funding: "Funding package", supervisor: "Required first", fee: "Often CAD 100–150" },
+  { country: "Japan", region: "Asia", routes: "MEXT scholarship, university programs", funding: "Monthly allowance + fees", supervisor: "Recommended", fee: "Often under ¥30,000" },
+  { country: "South Korea", region: "Asia", routes: "GKS, KAIST / SNU programs", funding: "Stipend + tuition", supervisor: "Recommended", fee: "Small" },
+  { country: "China", region: "Asia", routes: "CSC, university scholarships", funding: "Stipend + tuition + housing", supervisor: "Required first", fee: "Small or none" },
+  { country: "Singapore", region: "Asia", routes: "NUS / NTU research scholarship, A*STAR", funding: "Stipend + fees", supervisor: "Recommended", fee: "Small" },
+  { country: "Hong Kong", region: "Asia", routes: "HKPFS and university studentships", funding: "Monthly stipend + travel", supervisor: "Recommended", fee: "Small" },
+  { country: "Taiwan", region: "Asia", routes: "Taiwan Scholarship, MOE programs", funding: "Monthly allowance + fees", supervisor: "Recommended", fee: "Small" },
+  { country: "Australia", region: "Oceania", routes: "RTP, Australia Awards", funding: "Stipend + tuition waiver", supervisor: "Required first", fee: "Often none" },
+  { country: "New Zealand", region: "Oceania", routes: "University doctoral scholarships, NZ Scholarships", funding: "Stipend + fees", supervisor: "Required first", fee: "Often none" },
+  { country: "Turkey", region: "Middle East", routes: "Türkiye Scholarships", funding: "Stipend + tuition + housing", supervisor: "Not needed", fee: "None" },
+  { country: "Saudi Arabia", region: "Middle East", routes: "KAUST fellowship", funding: "Stipend + tuition + housing", supervisor: "Recommended", fee: "None" },
+  { country: "Hungary", region: "Europe", routes: "Stipendium Hungaricum", funding: "Stipend + tuition + housing", supervisor: "Recommended", fee: "None" }
+];

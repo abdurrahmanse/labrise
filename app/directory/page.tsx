@@ -1,8 +1,14 @@
-import type { Metadata } from "next";
-import { LinkCardGrid, PageShell } from "@/components/overview/PageShell";
-import { countries, professors, universities } from "@/data/overviewData";
+import { LinkCardGrid } from "@/shared/components/LinkCardGrid";
+import { Block } from "@/shared/components/Block";
+import { PageShell } from "@/shared/components/PageShell";
+import { countries, professors, universities } from "@/modules/directory/data";
+import { buildMetadata } from "@/modules/seo/buildMetadata";
 
-export const metadata: Metadata = { title: "Directory" };
+export const metadata = buildMetadata({
+  title: "Directory: countries, universities and professors",
+  description: "Browse funded destinations, universities and professors with details for each.",
+  path: "/directory"
+});
 
 export default function DirectoryPage() {
   return (
@@ -22,8 +28,7 @@ export default function DirectoryPage() {
           { href: "/directory/professors", title: "Professors", meta: `${professors.length} listed` }
         ]}
       />
-      <div className="space-y-3 pt-4">
-        <h2 className="text-xl font-bold text-white border-b border-white/20 pb-2">More resources</h2>
+      <Block title="More resources">
         <LinkCardGrid
           items={[
             { href: "/countries", title: "Country dossiers", meta: "20 detailed guides" },
@@ -32,7 +37,7 @@ export default function DirectoryPage() {
             { href: "/documents", title: "Documents", meta: "Required papers" }
           ]}
         />
-      </div>
+      </Block>
     </PageShell>
   );
 }
