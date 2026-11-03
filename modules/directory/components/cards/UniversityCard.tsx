@@ -3,6 +3,7 @@ import type { UniversityEntry } from "../../types";
 import { Avatar } from "@/shared/components/Avatar";
 import { Flag } from "../Flag";
 import { CardFact, CardShell } from "./CardShell";
+import { cardText } from "@/data/text/directory";
 
 export function UniversityCard({ university }: { university: UniversityEntry }) {
   return (
@@ -14,8 +15,8 @@ export function UniversityCard({ university }: { university: UniversityEntry }) 
         </span>
       }
     >
-      <CardFact label="Funding" value={university.funding} />
-      <CardFact label="Deadline" value={university.deadline} />
+      <CardFact label={cardText.university.funding} value={university.funding} />
+      <CardFact label={cardText.university.deadline} value={university.deadline} />
     </CardShell>
   );
 }

@@ -2,6 +2,7 @@ import { providerSlug } from "../../lib/slugs";
 import type { ProviderEntry } from "../../types";
 import { Flag } from "../Flag";
 import { CardFact, CardShell } from "./CardShell";
+import { cardText } from "@/data/text/directory";
 
 export function ProviderCard({ provider }: { provider: ProviderEntry }) {
   return (
@@ -11,9 +12,9 @@ export function ProviderCard({ provider }: { provider: ProviderEntry }) {
       title={provider.name}
       media={<Flag country={provider.country} className="h-8 w-12" />}
     >
-      <CardFact label="Supports" value={provider.supports} />
-      <CardFact label="Programmes" value={provider.programs.join(", ")} />
-      <CardFact label="How to apply" value={provider.route} />
+      <CardFact label={cardText.provider.supports} value={provider.supports} />
+      <CardFact label={cardText.provider.programmes} value={provider.programs.join(", ")} />
+      <CardFact label={cardText.provider.route} value={provider.route} />
     </CardShell>
   );
 }

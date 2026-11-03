@@ -153,3 +153,32 @@ export const detailText = {
 export const rosterText = {
   universityDetails: "University details and funding →"
 } as const;
+
+export const rosterLabels = {
+  noProfessors: "No professors are listed here yet.",
+  emailSeeDetails: "Email: see the details page",
+  noUniversities: "No universities are listed for this country yet.",
+  noFunders: "No organisation is listed for this place yet. Check the university's own funding page.",
+  professorCount: (n: number) => `${n} professors`,
+  funderCount: (n: number) => `${n} funders`,
+  requirements: "Requirements"
+} as const;
+
+export const countryViewText = {
+  overview: "Overview",
+  titles: { universities: "Universities", professors: "Professors", funding: "Funding organisations" },
+  notFound: "Not found",
+  eyebrow: (country: string, region: string) => `${country} · ${region}`,
+  metaTitle: (view: string, country: string) => `${view} in ${country}`,
+  metaDescription: (view: string, country: string) => `${view} connected to fully funded study in ${country}.`,
+  fundingBlock: "Who funds study here",
+  fundingHint: "Many PhD posts in this country are paid directly by the university or a professor's grant. See the country overview for the usual routes.",
+  fundingEmpty: "No national organisation is listed. Look at the university's own funding pages and the funding types guide."
+} as const;
+
+export const professorDetailText = {
+  facts: { university: "University", country: "Country", group: "Group", email: "Email" },
+  emailHint: "Emails were taken from official university or institute pages. People move, so confirm on their page before writing.",
+  fieldAbout: (field: string) => `About the field: ${field}`,
+  moreIn: (group: string) => `More in ${group}`
+} as const;

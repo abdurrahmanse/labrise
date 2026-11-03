@@ -2,10 +2,11 @@ import Link from "next/link";
 import { Avatar } from "@/shared/components/Avatar";
 import type { UniversitySummary } from "../../lib/connections";
 import { universitySlug } from "../../lib/slugs";
+import { rosterLabels } from "@/data/text/directory";
 
 /** Universities in a country with how many professors and funders are connected to each. */
 export function UniversityRoster({ summaries }: { summaries: UniversitySummary[] }) {
-  if (summaries.length === 0) return <p className="text-slate-400">No universities are listed for this country yet.</p>;
+  if (summaries.length === 0) return <p className="text-slate-400">{rosterLabels.noUniversities}</p>;
 
   return (
     <div className="grid gap-4 md:grid-cols-2">
@@ -20,8 +21,8 @@ export function UniversityRoster({ summaries }: { summaries: UniversitySummary[]
             <div className="text-xl font-bold text-white">{university.name}</div>
             <div className="text-slate-300">{university.funding}</div>
             <div className="mt-2 flex flex-wrap gap-2 font-mono text-xs uppercase tracking-wider">
-              <span className="bg-indigo-400/10 px-2 py-1 text-indigo-300">{professors.length} professors</span>
-              <span className="bg-cyan-400/10 px-2 py-1 text-cyan-300">{funders.length} funders</span>
+              <span className="bg-indigo-400/10 px-2 py-1 text-indigo-300">{rosterLabels.professorCount(professors.length)}</span>
+              <span className="bg-cyan-400/10 px-2 py-1 text-cyan-300">{rosterLabels.funderCount(funders.length)}</span>
             </div>
           </div>
         </Link>

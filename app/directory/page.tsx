@@ -3,42 +3,34 @@ import { Block } from "@/shared/components/Block";
 import { PageShell } from "@/shared/components/PageShell";
 import { countries, professors, providers, scholarships, universities } from "@/modules/directory/data";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { commonText } from "@/data/text/common";
+import { directoryIndexText as t } from "@/data/text/pages";
+import { Award, GraduationCap, Landmark, MapPin, Users } from "lucide-react";
 
-export const metadata = buildMetadata({
-  title: "Directory: countries, universities and professors",
-  description: "Browse funded destinations, universities and professors with details for each.",
-  path: "/directory"
-});
+export const metadata = buildMetadata({ title: t.title, description: t.description, path: "/directory" });
 
 export default function DirectoryPage() {
   return (
     <PageShell
-      eyebrow="Directory"
-      title="Where to apply, whom to contact"
-      lead="Confirm funding and deadlines on the official page."
-      back={{ href: "/", label: "Home" }}
-      prev={{ href: "/guides", label: "Guides" }}
-      next={{ href: "/problems", label: "Problems" }}
+      eyebrow={t.eyebrow}
+      title={t.heading}
+      lead={t.lead}
+      back={{ href: "/", label: commonText.actions.home }}
+      prev={{ href: "/guides", label: t.prev }}
+      next={{ href: "/problems", label: t.next }}
     >
       <LinkCardGrid
         columns="md:grid-cols-2"
         items={[
-          { href: "/directory/providers", title: "Scholarship providers", meta: `${providers.length} government and foundation funders, with requirements` },
-          { href: "/directory/scholarships", title: "Scholarships", meta: `${scholarships.length} programs` },
-          { href: "/directory/countries", title: "Countries", meta: `${countries.length} listed` },
-          { href: "/directory/universities", title: "Universities", meta: `${universities.length} listed` },
-          { href: "/directory/professors", title: "Professors", meta: `${professors.length} listed` }
+          { href: "/directory/providers", icon: Landmark, ...t.cards.providers(providers.length) },
+          { href: "/directory/scholarships", icon: Award, ...t.cards.scholarships(scholarships.length) },
+          { href: "/directory/countries", icon: MapPin, ...t.cards.countries(countries.length) },
+          { href: "/directory/universities", icon: GraduationCap, ...t.cards.universities(universities.length) },
+          { href: "/directory/professors", icon: Users, ...t.cards.professors(professors.length) }
         ]}
       />
-      <Block title="More resources">
-        <LinkCardGrid
-          items={[
-            { href: "/countries", title: "Country dossiers", meta: "20 detailed guides" },
-            { href: "/scholarships", title: "Scholarship finder", meta: "Search workflow" },
-            { href: "/professors", title: "Email templates", meta: "Cold email and checklist" },
-            { href: "/documents", title: "Documents", meta: "Required papers" }
-          ]}
-        />
+      <Block title={t.more.title}>
+        <LinkCardGrid items={t.more.items.map((item) => ({ ...item }))} />
       </Block>
     </PageShell>
   );

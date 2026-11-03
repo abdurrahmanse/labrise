@@ -1,9 +1,10 @@
 import type { ProfessorEntry } from "../../types";
 import { ProfessorCard } from "./ProfessorCard";
+import { listText } from "@/data/text/directory";
 
 export function ProfessorGrid({ professors }: { professors: ProfessorEntry[] }) {
   if (professors.length === 0) {
-    return <p className="py-12 text-center text-slate-400">No professors match. Clear the search or filters.</p>;
+    return <p className="py-12 text-center text-slate-400">{listText.noProfessors}</p>;
   }
 
   return (

@@ -4,10 +4,12 @@ import { Avatar } from "@/shared/components/Avatar";
 import { CopyButton } from "@/components/ui/CopyButton";
 import { professorSlug } from "../../lib/slugs";
 import type { ProfessorEntry } from "../../types";
+import { rosterLabels } from "@/data/text/directory";
+import { commonText } from "@/data/text/common";
 
 /** Professors with their field and email, ready to open or copy. */
 export function ProfessorRoster({ professors }: { professors: ProfessorEntry[] }) {
-  if (professors.length === 0) return <p className="text-slate-400">No professors are listed here yet.</p>;
+  if (professors.length === 0) return <p className="text-slate-400">{rosterLabels.noProfessors}</p>;
 
   return (
     <div className="grid gap-3 md:grid-cols-2">
@@ -24,10 +26,10 @@ export function ProfessorRoster({ professors }: { professors: ProfessorEntry[] }
                 <a href={`mailto:${p.email}`} className="inline-flex items-center gap-1 break-all text-indigo-400 hover:text-indigo-200">
                   <Mail className="h-4 w-4 shrink-0" /> {p.email}
                 </a>
-                <CopyButton textToCopy={p.email} label="Copy" />
+                <CopyButton textToCopy={p.email} label={commonText.actions.copy} />
               </div>
             ) : (
-              <div className="mt-1 text-sm text-slate-400">Email: see the details page</div>
+              <div className="mt-1 text-sm text-slate-400">{rosterLabels.emailSeeDetails}</div>
             )}
           </div>
         </div>

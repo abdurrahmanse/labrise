@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Building2, Landmark, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { ecosystemText } from "@/data/text/directory";
 
 interface Tile {
   href: string;
@@ -12,9 +13,9 @@ interface Tile {
 /** Three entry points under one country: its universities, professors and funders. */
 export function EcosystemTiles({ slug, universities, professors, funders }: { slug: string; universities: number; professors: number; funders: number }) {
   const tiles: Tile[] = [
-    { href: `/directory/countries/${slug}/universities`, label: "Universities", count: universities, Icon: Building2 },
-    { href: `/directory/countries/${slug}/professors`, label: "Professors", count: professors, Icon: Users },
-    { href: `/directory/countries/${slug}/funding`, label: "Funding organisations", count: funders, Icon: Landmark }
+    { href: `/directory/countries/${slug}/universities`, label: ecosystemText.universities, count: universities, Icon: Building2 },
+    { href: `/directory/countries/${slug}/professors`, label: ecosystemText.professors, count: professors, Icon: Users },
+    { href: `/directory/countries/${slug}/funding`, label: ecosystemText.funding, count: funders, Icon: Landmark }
   ];
 
   return (

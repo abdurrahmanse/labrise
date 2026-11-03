@@ -19,6 +19,7 @@ import { APPLY_STEPS } from "./applySteps";
 import { FunderList } from "../ecosystem/FunderList";
 import { ProfessorRoster } from "../ecosystem/ProfessorRoster";
 import { CountryFacts } from "./CountryFacts";
+import { detailText } from "@/data/text/directory";
 
 const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 
@@ -31,60 +32,60 @@ export function UniversityDetailView({ university }: { university: UniversityEnt
 
   return (
     <PageShell
-      eyebrow={`University · ${university.country}`}
+      eyebrow={detailText.eyebrow.university(university.country)}
       title={university.name}
       notice={{ subject: university.name, source: university.site }}
       media={<Avatar name={university.name.replace(/^(University of|The) /, "")} size={64} square />}
-      lead={`${university.funding}. Typical application window: ${university.deadline}.`}
-      back={{ href: "/directory/universities", label: "All universities" }}
+      lead={detailText.lead.university(university.funding, university.deadline)}
+      back={{ href: "/directory/universities", label: detailText.back.universities }}
     >
       <Facts
         rows={[
-          ["Country", country ? <Link key="c" href={`/directory/countries/${countrySlug(country)}`} className={linkClass}>{university.country}</Link> : university.country],
-          ["Region", university.region],
-          ["Funding", university.funding],
-          ["Typical deadline", university.deadline],
+          [detailText.facts.country, country ? <Link key="c" href={`/directory/countries/${countrySlug(country)}`} className={linkClass}>{university.country}</Link> : university.country],
+          [detailText.facts.region, university.region],
+          [detailText.facts.funding, university.funding],
+          [detailText.facts.typicalDeadline, university.deadline],
           [
-            "Official site",
+            detailText.facts.officialSite,
             <a key="s" href={university.site} target="_blank" rel="noopener noreferrer" className={`${linkClass} inline-flex items-center gap-1`}>
               {university.site.replace("https://", "")} <ExternalLink className="w-4 h-4" />
             </a>
           ],
-          ...(country ? ([["Professor first?", country.supervisor], ["Application fee", country.fee]] as [string, React.ReactNode][]) : [])
+          ...(country ? ([[detailText.facts.professorFirstShort, country.supervisor], [detailText.facts.applicationFee, country.fee]] as [string, React.ReactNode][]) : [])
         ]}
       />
-      <p className="text-sm text-slate-400">Deadlines and funding change every cycle. Confirm on the official site.</p>
+      <p className="text-sm text-slate-400">{detailText.hints.deadlines}</p>
 
       {detail && (
         <>
-          <Block title={`Studying in ${university.country}`}>
+          <Block title={detailText.blocks.studyingIn(university.country)}>
             <CountryFacts detail={detail} />
           </Block>
-          <Block title="Funding programs to check">
+          <Block title={detailText.blocks.fundingToCheck}>
             <BulletList items={detail.scholarships} />
           </Block>
-          <Block title="Where to find open positions">
-            <ExternalLinks items={[{ label: `${university.name} website`, href: university.site }, ...detail.find]} />
+          <Block title={detailText.blocks.openPositions}>
+            <ExternalLinks items={[{ label: detailText.hints.website(university.name), href: university.site }, ...detail.find]} />
           </Block>
-          <Block title="Tips">
+          <Block title={detailText.blocks.tipsShort}>
             <BulletList items={detail.tips} />
           </Block>
         </>
       )}
 
-      <Block title={`Professors (${profs.length})`}>
+      <Block title={detailText.blocks.professors(profs.length)}>
         <ProfessorRoster professors={profs} />
       </Block>
-      <Block title="Funding organisations connected here">
+      <Block title={detailText.blocks.fundersHere}>
         <FunderList funders={funders} />
-        <p className="text-sm text-slate-400">Open an organisation to see its requirements and how to apply.</p>
+        <p className="text-sm text-slate-400">{detailText.hints.openOrg}</p>
       </Block>
       {others.length > 0 && (
-        <Block title={`More in ${university.country}`}>
+        <Block title={detailText.blocks.moreIn(university.country)}>
           <Chips items={others.map((u) => ({ href: `/directory/universities/${universitySlug(u)}`, label: u.name }))} />
         </Block>
       )}
-      <Block title="How to apply">
+      <Block title={detailText.blocks.howToApply}>
         <StepGrid steps={APPLY_STEPS} />
       </Block>
     </PageShell>

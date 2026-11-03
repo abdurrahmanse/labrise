@@ -6,6 +6,8 @@ import { Search, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { searchEntries } from "../lib/searchEntries";
 import type { SearchItem } from "../lib/searchIndex";
+import { searchText } from "@/data/text/common";
+import { KindIcon } from "./KindIcon";
 
 /** Header search: opens with the button or Ctrl/Cmd+K and looks across the whole directory. */
 export function GlobalSearch() {
@@ -63,16 +65,16 @@ export function GlobalSearch() {
       <button
         type="button"
         onClick={open}
-        aria-label="Search the directory"
+        aria-label={searchText.open}
         className="flex h-9 cursor-pointer items-center gap-2 border-2 border-white/40 bg-white/[0.04] px-2.5 text-slate-300 transition-colors hover:border-indigo-400 hover:text-indigo-300"
       >
         <Search className="h-4 w-4" />
-        <kbd className="hidden font-mono text-xs text-slate-400 lg:inline">Ctrl K</kbd>
+        <kbd className="hidden font-mono text-xs text-slate-400 lg:inline">{searchText.shortcut}</kbd>
       </button>
 
       <dialog
         ref={dialogRef}
-        aria-label="Search the directory"
+        aria-label={searchText.open}
         onClose={() => setQuery("")}
         onClick={(e) => e.target === dialogRef.current && close()}
         className="m-0 mx-auto mt-[10vh] w-[min(40rem,calc(100vw-2rem))] border-2 border-white/80 bg-canvas-base p-0 text-slate-100 shadow-[6px_6px_0_0_rgba(15,23,42,0.25)] backdrop:bg-black/50 backdrop:backdrop-blur-sm"
@@ -91,10 +93,10 @@ export function GlobalSearch() {
             aria-expanded={results.length > 0}
             aria-controls={listId}
             aria-activedescendant={results[active] ? `${listId}-${active}` : undefined}
-            placeholder="Search countries, universities, professors, funders…"
+            placeholder={searchText.placeholder}
             className="min-w-0 flex-1 bg-transparent text-lg outline-none placeholder:text-slate-500"
           />
-          <button type="button" onClick={close} aria-label="Close search" className="cursor-pointer text-slate-400 hover:text-white">
+          <button type="button" onClick={close} aria-label={searchText.close} className="cursor-pointer text-slate-400 hover:text-white">
             <X className="h-5 w-5" />
           </button>
         </div>
@@ -119,16 +121,18 @@ export function GlobalSearch() {
                   {entry.subtitle}
                 </span>
               </span>
-              <span className="shrink-0 font-mono text-xs uppercase tracking-wider opacity-80">{entry.kind}</span>
+              <span className="inline-flex shrink-0 items-center gap-1.5 font-mono text-xs uppercase tracking-wider opacity-80"><KindIcon kind={entry.kind} />
+                {searchText.kinds[entry.kind]}
+              </span>
             </li>
           ))}
         </ul>
 
         {query.trim() !== "" && index && results.length === 0 && (
-          <p className="px-4 py-6 text-center font-sans font-normal text-slate-400">No match. Try a country, university or professor name.</p>
+          <p className="px-4 py-6 text-center font-sans font-normal text-slate-400">{searchText.empty}</p>
         )}
         {query.trim() === "" && (
-          <p className="px-4 py-6 text-center font-sans font-normal text-slate-400">Type to search the whole directory.</p>
+          <p className="px-4 py-6 text-center font-sans font-normal text-slate-400">{searchText.hint}</p>
         )}
       </dialog>
     </>

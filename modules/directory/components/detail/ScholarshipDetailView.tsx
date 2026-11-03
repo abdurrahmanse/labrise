@@ -11,15 +11,16 @@ import { countrySlug, providerSlug, scholarshipSlug } from "../../lib/slugs";
 import type { ScholarshipEntry } from "../../types";
 
 import { Flag } from "../Flag";
+import { detailText } from "@/data/text/directory";
 
 const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 
 const STEPS = [
-  { label: "Read the official page" },
-  { label: "Check eligibility" },
-  { label: "Prepare CV and SOP", href: "/guides/sop" },
-  { label: "Arrange referees", href: "/guides/reference-letter" },
-  { label: "Submit before the deadline", href: "/guides/application-portals" }
+  { label: detailText.scholarshipSteps.official },
+  { label: detailText.scholarshipSteps.eligibility },
+  { label: detailText.scholarshipSteps.documents, href: "/guides/sop" },
+  { label: detailText.scholarshipSteps.referees, href: "/guides/reference-letter" },
+  { label: detailText.scholarshipSteps.submit, href: "/guides/application-portals" }
 ];
 
 export function ScholarshipDetailView({ scholarship }: { scholarship: ScholarshipEntry }) {
@@ -29,45 +30,45 @@ export function ScholarshipDetailView({ scholarship }: { scholarship: Scholarshi
 
   return (
     <PageShell
-      eyebrow={`Scholarship · ${scholarship.level}`}
+      eyebrow={detailText.eyebrow.scholarship(scholarship.level)}
       title={scholarship.name}
       notice={{ subject: scholarship.name, source: scholarship.site }}
       media={<Flag country={scholarship.host} className="h-10 w-14" />}
-      lead={`Hosted in ${scholarship.host}. Covers: ${scholarship.covers}.`}
-      back={{ href: "/directory/scholarships", label: "All scholarships" }}
+      lead={detailText.lead.scholarship(scholarship.host, scholarship.covers)}
+      back={{ href: "/directory/scholarships", label: detailText.back.scholarships }}
     >
       <Facts
         rows={[
-          ["Level", scholarship.level],
-          ["Host", country ? <Link key="h" href={`/directory/countries/${countrySlug(country)}`} className={linkClass}>{scholarship.host}</Link> : scholarship.host],
-          ...(provider ? ([["Awarded by", <Link key="p" href={`/directory/providers/${providerSlug(provider)}`} className={linkClass}>{provider.name}</Link>]] as [string, React.ReactNode][]) : []),
-          ["Covers", scholarship.covers],
-          ["Typical deadline", scholarship.deadline],
-          ["Who can apply", scholarship.eligibility],
+          [detailText.facts.level, scholarship.level],
+          [detailText.facts.host, country ? <Link key="h" href={`/directory/countries/${countrySlug(country)}`} className={linkClass}>{scholarship.host}</Link> : scholarship.host],
+          ...(provider ? ([[detailText.facts.awardedBy, <Link key="p" href={`/directory/providers/${providerSlug(provider)}`} className={linkClass}>{provider.name}</Link>]] as [string, React.ReactNode][]) : []),
+          [detailText.facts.covers, scholarship.covers],
+          [detailText.facts.typicalDeadline, scholarship.deadline],
+          [detailText.facts.whoCanApply, scholarship.eligibility],
           [
-            "Official page",
+            detailText.facts.officialPage,
             <a key="s" href={scholarship.site} target="_blank" rel="noopener noreferrer" className={`${linkClass} inline-flex items-center gap-1`}>
               {scholarship.site.replace("https://", "")} <ExternalLink className="w-4 h-4" />
             </a>
           ]
         ]}
       />
-      <p className="text-sm text-slate-400">Amounts, eligibility and deadlines change every cycle. Confirm on the official page.</p>
+      <p className="text-sm text-slate-400">{detailText.hints.amounts}</p>
 
-      <Block title="How to apply">
+      <Block title={detailText.blocks.howToApply}>
         <StepGrid steps={STEPS} />
       </Block>
-      <Block title="Read next">
+      <Block title={detailText.blocks.readNext}>
         <Chips
           items={[
-            { href: "/guides/funding-types", label: "Types of funding" },
-            { href: "/guides/scholarship-scams", label: "Avoid scams" },
-            { href: "/guides/deadlines-timeline", label: "12-month timeline" }
+            { href: "/guides/funding-types", label: detailText.readNext.fundingTypes },
+            { href: "/guides/scholarship-scams", label: detailText.readNext.scams },
+            { href: "/guides/deadlines-timeline", label: detailText.readNext.timeline }
           ]}
         />
       </Block>
       {similar.length > 0 && (
-        <Block title={`More hosted in ${scholarship.host}`}>
+        <Block title={detailText.blocks.moreHostedIn(scholarship.host)}>
           <Chips items={similar.map((s) => ({ href: `/directory/scholarships/${scholarshipSlug(s)}`, label: s.name }))} />
         </Block>
       )}

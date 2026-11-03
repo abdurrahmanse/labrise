@@ -3,6 +3,8 @@
 import { SearchInput } from "@/components/ui/SearchInput";
 import { REGIONS } from "../../lib/regions";
 import { SORTS, type ProfessorFilters, type ProfessorSort } from "../../lib/professorFilters";
+import { toolbarText } from "@/data/text/directory";
+import { commonText } from "@/data/text/common";
 
 interface ProfessorToolbarProps {
   filters: ProfessorFilters;
@@ -24,33 +26,33 @@ function Toggle({ label, on, onClick }: { label: string; on: boolean; onClick: (
 export function ProfessorToolbar({ filters, fields, count, onChange }: ProfessorToolbarProps) {
   return (
     <div className="space-y-3">
-      <SearchInput value={filters.q} onChange={(q) => onChange({ q })} placeholder="Search name, university, country, field…" className="w-full lg:max-w-md" />
+      <SearchInput value={filters.q} onChange={(q) => onChange({ q })} placeholder={toolbarText.search} className="w-full lg:max-w-md" />
       <div className="flex flex-wrap items-center gap-2">
-        <select aria-label="Region" value={filters.region} onChange={(e) => onChange({ region: e.target.value })} className={control}>
+        <select aria-label={toolbarText.region} value={filters.region} onChange={(e) => onChange({ region: e.target.value })} className={control}>
           {REGIONS.map((r) => (
             <option key={r} value={r}>
-              {r === "All" ? "All regions" : r}
+              {r === "All" ? toolbarText.allRegions : r}
             </option>
           ))}
         </select>
-        <select aria-label="Field" value={filters.field} onChange={(e) => onChange({ field: e.target.value })} className={control}>
-          <option value="All">All fields</option>
+        <select aria-label={toolbarText.field} value={filters.field} onChange={(e) => onChange({ field: e.target.value })} className={control}>
+          <option value="All">{toolbarText.allFields}</option>
           {fields.map((f) => (
             <option key={f} value={f}>
               {f}
             </option>
           ))}
         </select>
-        <select aria-label="Sort" value={filters.sort} onChange={(e) => onChange({ sort: e.target.value as ProfessorSort })} className={control}>
+        <select aria-label={toolbarText.sort} value={filters.sort} onChange={(e) => onChange({ sort: e.target.value as ProfessorSort })} className={control}>
           {SORTS.map((s) => (
             <option key={s} value={s}>
-              Sort: {s}
+              {toolbarText.sortOption(s)}
             </option>
           ))}
         </select>
-        <Toggle label="Has email" on={filters.hasEmail} onClick={() => onChange({ hasEmail: !filters.hasEmail })} />
-        <Toggle label="Saved only" on={filters.savedOnly} onClick={() => onChange({ savedOnly: !filters.savedOnly })} />
-        <span className="ml-auto font-mono text-xs text-slate-400">{count} shown</span>
+        <Toggle label={toolbarText.hasEmail} on={filters.hasEmail} onClick={() => onChange({ hasEmail: !filters.hasEmail })} />
+        <Toggle label={toolbarText.savedOnly} on={filters.savedOnly} onClick={() => onChange({ savedOnly: !filters.savedOnly })} />
+        <span className="ml-auto font-mono text-xs text-slate-400">{commonText.count.shown(count)}</span>
       </div>
     </div>
   );

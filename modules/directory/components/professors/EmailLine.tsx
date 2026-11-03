@@ -1,6 +1,8 @@
 import { Mail, Search } from "lucide-react";
 import { CopyButton } from "@/components/ui/CopyButton";
 import type { ProfessorEntry } from "../../types";
+import { emailText } from "@/data/text/directory";
+import { commonText } from "@/data/text/common";
 
 export function EmailLine({ professor }: { professor: ProfessorEntry }) {
   if (professor.email) {
@@ -9,15 +11,15 @@ export function EmailLine({ professor }: { professor: ProfessorEntry }) {
         <a href={`mailto:${professor.email}`} className="inline-flex items-center gap-1.5 text-indigo-400 hover:text-indigo-200 break-all">
           <Mail className="h-4 w-4 shrink-0" /> {professor.email}
         </a>
-        <CopyButton textToCopy={professor.email} label="Copy" />
+        <CopyButton textToCopy={professor.email} label={commonText.actions.copy} />
       </div>
     );
   }
 
-  const query = encodeURIComponent(`${professor.name} ${professor.university} faculty page email`);
+  const query = encodeURIComponent(emailText.searchQuery(professor.name, professor.university));
   return (
     <a href={`https://www.google.com/search?q=${query}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-slate-400 hover:text-indigo-300">
-      <Search className="h-4 w-4" /> Find official email
+      <Search className="h-4 w-4" /> {emailText.findOfficial}
     </a>
   );
 }

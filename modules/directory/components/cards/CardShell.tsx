@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
+import { commonText } from "@/data/text/common";
+import { iconFor } from "@/shared/lib/iconFor";
 
 interface CardShellProps {
   href: string;
@@ -25,17 +27,21 @@ export function CardShell({ href, eyebrow, title, media, children }: CardShellPr
       </h3>
       <div className="space-y-2 text-slate-300">{children}</div>
       <Link href={href} className="mt-auto inline-flex w-fit items-center gap-1.5 pt-2 text-sm font-bold text-indigo-400 hover:text-indigo-200">
-        Details <ArrowRight className="h-4 w-4" />
+        {commonText.actions.details} <ArrowRight className="h-4 w-4" />
       </Link>
     </article>
   );
 }
 
 export function CardFact({ label, value }: { label: string; value: string }) {
+  const Icon = iconFor(label);
   return (
-    <p>
-      <span className="font-mono text-xs uppercase tracking-wider text-slate-400">{label} </span>
+    <p className="flex items-start gap-2">
+      <Icon className="mt-0.5 h-4 w-4 shrink-0 text-indigo-400" aria-hidden />
+      <span>
+        <span className="font-mono text-xs uppercase tracking-wider text-slate-400">{label} </span>
       <span className="font-bold text-slate-100">{value}</span>
+      </span>
     </p>
   );
 }

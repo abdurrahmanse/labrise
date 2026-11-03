@@ -8,6 +8,7 @@ import type { ProfessorEntry } from "../../types";
 import { EmailLine } from "./EmailLine";
 import { SaveButton } from "./SaveButton";
 import { StatusSelect } from "./StatusSelect";
+import { commonText } from "@/data/text/common";
 
 export function ProfessorCard({ professor }: { professor: ProfessorEntry }) {
   const slug = professorSlug(professor);
@@ -38,7 +39,7 @@ export function ProfessorCard({ professor }: { professor: ProfessorEntry }) {
       <div className="mt-auto flex items-center justify-between gap-3 pt-2">
         <StatusSelect slug={slug} />
         <Link href={`/directory/professors/${slug}`} className="inline-flex items-center gap-1.5 text-sm font-bold text-indigo-400 hover:text-indigo-200">
-          Details <ArrowRight className="h-4 w-4" />
+          {commonText.actions.details} <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
     </article>

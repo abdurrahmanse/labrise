@@ -8,6 +8,7 @@ import { ScholarshipCard } from "../cards/ScholarshipCard";
 import { UniversityCard } from "../cards/UniversityCard";
 import { LiveDirectory } from "../LiveDirectory";
 import { CardBrowser } from "./CardBrowser";
+import { listText } from "@/data/text/directory";
 
 export function CountriesList({ initialData }: { initialData: CountryEntry[] }) {
   return (
@@ -15,7 +16,7 @@ export function CountriesList({ initialData }: { initialData: CountryEntry[] }) 
       {(data) => (
         <CardBrowser
           data={data}
-          placeholder="Search country, route, funding…"
+          placeholder={listText.countries}
           keyOf={countrySlug}
           regionOf={(c) => c.region}
           searchText={(c) => `${c.country} ${c.routes} ${c.funding}`}
@@ -32,7 +33,7 @@ export function UniversitiesList({ initialData }: { initialData: UniversityEntry
       {(data) => (
         <CardBrowser
           data={data}
-          placeholder="Search university, country, funding…"
+          placeholder={listText.universities}
           keyOf={universitySlug}
           regionOf={(u) => u.region}
           searchText={(u) => `${u.name} ${u.country} ${u.funding}`}
@@ -49,7 +50,7 @@ export function ScholarshipsList({ initialData }: { initialData: ScholarshipEntr
       {(data) => (
         <CardBrowser
           data={data}
-          placeholder="Search scholarship, host, level…"
+          placeholder={listText.scholarships}
           keyOf={scholarshipSlug}
           regionOf={(s) => s.region}
           searchText={(s) => `${s.name} ${s.host} ${s.level} ${s.covers}`}
@@ -66,7 +67,7 @@ export function ProvidersList({ initialData }: { initialData: ProviderEntry[] })
       {(data) => (
         <CardBrowser
           data={data}
-          placeholder="Search organisation, programme, country, or try: need-based, government…"
+          placeholder={listText.providers}
           keyOf={providerSlug}
           regionOf={(p) => p.region}
           searchText={(p) => `${p.name} ${p.country} ${p.kind} ${p.supports} ${p.programs.join(" ")}`}

@@ -3,11 +3,12 @@ import { ArrowRight } from "lucide-react";
 import { providerSlug } from "../../lib/slugs";
 import type { ProviderEntry } from "../../types";
 import { Flag } from "../Flag";
+import { rosterLabels } from "@/data/text/directory";
 
 /** Funding organisations as small cards, each linking to its requirements. */
 export function FunderList({ funders, empty }: { funders: ProviderEntry[]; empty?: string }) {
   if (funders.length === 0) {
-    return <p className="text-slate-400">{empty ?? "No organisation is listed for this place yet. Check the university's own funding page."}</p>;
+    return <p className="text-slate-400">{empty ?? rosterLabels.noFunders}</p>;
   }
 
   return (
@@ -23,7 +24,7 @@ export function FunderList({ funders, empty }: { funders: ProviderEntry[]; empty
             <div className="font-bold text-white">{p.name}</div>
             <div className="text-sm text-slate-300">{p.programs.join(", ")}</div>
             <div className="mt-1 inline-flex items-center gap-1 text-sm font-bold text-indigo-400">
-              Requirements <ArrowRight className="h-4 w-4" />
+              {rosterLabels.requirements} <ArrowRight className="h-4 w-4" />
             </div>
           </div>
         </Link>

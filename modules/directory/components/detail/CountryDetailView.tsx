@@ -17,6 +17,7 @@ import { EcosystemTiles } from "../ecosystem/EcosystemTiles";
 import { FunderList } from "../ecosystem/FunderList";
 import { UniversityRoster } from "../ecosystem/UniversityRoster";
 import { CountryFacts } from "./CountryFacts";
+import { detailText } from "@/data/text/directory";
 
 export function CountryDetailView({ country }: { country: CountryEntry }) {
   const slug = countrySlug(country);
@@ -26,12 +27,12 @@ export function CountryDetailView({ country }: { country: CountryEntry }) {
 
   return (
     <PageShell
-      eyebrow={`Country · ${country.region}`}
+      eyebrow={detailText.eyebrow.country(country.region)}
       title={country.country}
       notice={{ subject: country.country }}
       media={<Flag country={country.country} className="h-10 w-14" />}
       lead={detail?.overview}
-      back={{ href: "/directory/countries", label: "All countries" }}
+      back={{ href: "/directory/countries", label: detailText.back.countries }}
     >
       <CountryViewTabs slug={slug} />
 
@@ -39,26 +40,26 @@ export function CountryDetailView({ country }: { country: CountryEntry }) {
 
       <Facts
         rows={[
-          ["Funded routes", country.routes],
-          ["What you get", country.funding],
-          ["Contact a professor first?", country.supervisor],
-          ["Application fee", country.fee]
+          [detailText.facts.fundedRoutes, country.routes],
+          [detailText.facts.whatYouGet, country.funding],
+          [detailText.facts.professorFirst, country.supervisor],
+          [detailText.facts.applicationFee, country.fee]
         ]}
       />
 
       {detail && (
         <>
-          <Block title="Study and life">
+          <Block title={detailText.blocks.studyAndLife}>
             <CountryFacts detail={detail} />
-            <p className="text-sm text-slate-400">Figures are typical ranges. Confirm on the official pages below.</p>
+            <p className="text-sm text-slate-400">{detailText.hints.figures}</p>
           </Block>
-          <Block title="Scholarships and funding programs">
+          <Block title={detailText.blocks.scholarshipsPrograms}>
             <BulletList items={detail.scholarships} />
           </Block>
-          <Block title="Where to find positions">
+          <Block title={detailText.blocks.findPositions}>
             <ExternalLinks items={detail.find} />
           </Block>
-          <Block title="Tips for applicants">
+          <Block title={detailText.blocks.tips}>
             <BulletList items={detail.tips} />
           </Block>
         </>
@@ -67,18 +68,18 @@ export function CountryDetailView({ country }: { country: CountryEntry }) {
       {dossier && (
         <p>
           <Link href={`/countries/${dossier.id}`} className="text-indigo-400 hover:text-indigo-200 underline underline-offset-4">
-            Open the full {country.country} dossier →
+            {detailText.hints.dossier(country.country)}
           </Link>
         </p>
       )}
 
-      <Block title="Universities">
+      <Block title={detailText.blocks.universities}>
         <UniversityRoster summaries={summaries.slice(0, 4)} />
       </Block>
-      <Block title="Who funds study here">
-        <FunderList funders={funders.slice(0, 4)} empty="No national organisation is listed. See the funding organisations tab for details." />
+      <Block title={detailText.blocks.whoFunds}>
+        <FunderList funders={funders.slice(0, 4)} empty={detailText.hints.noFunders} />
       </Block>
-      <Block title="How to apply">
+      <Block title={detailText.blocks.howToApply}>
         <StepGrid steps={APPLY_STEPS} />
       </Block>
     </PageShell>

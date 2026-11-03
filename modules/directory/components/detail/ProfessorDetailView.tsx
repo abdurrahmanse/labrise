@@ -19,6 +19,9 @@ import { EmailDraftBox } from "./EmailDraftBox";
 import { FunderList } from "../ecosystem/FunderList";
 import { ProfessorFieldInfo } from "./ProfessorFieldInfo";
 import { ProfessorTracker } from "../professors/ProfessorTracker";
+import { detailText } from "@/data/text/directory";
+import { noticeText } from "@/data/text/common";
+import { emailText, professorDetailText } from "@/data/text/directory";
 
 const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 
@@ -30,10 +33,10 @@ function EmailCell({ professor }: { professor: ProfessorEntry }) {
       </a>
     );
   }
-  const query = encodeURIComponent(`${professor.name} ${professor.university} faculty page email`);
+  const query = encodeURIComponent(emailText.searchQuery(professor.name, professor.university));
   return (
     <a href={`https://www.google.com/search?q=${query}`} target="_blank" rel="noopener noreferrer" className={`${linkClass} inline-flex items-center gap-1`}>
-      <Search className="w-4 h-4" /> Find on official page
+      <Search className="w-4 h-4" /> {emailText.findOnPage}
     </a>
   );
 }
@@ -46,24 +49,24 @@ export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }
 
   return (
     <PageShell
-      eyebrow={`Professor · ${professor.group}`}
+      eyebrow={detailText.eyebrow.professor(professor.group)}
       title={professor.name}
-      notice={{ subject: professor.name, caution: professor.email ? undefined : "Affiliation was not re-checked on a live page; confirm it on the university site." }}
+      notice={{ subject: professor.name, caution: professor.email ? undefined : noticeText.professorCaution }}
       media={<Avatar name={professor.name} size={72} />}
-      lead={`${professor.university}, ${professor.country}. Research group: ${professor.group}.`}
-      back={{ href: "/directory/professors", label: "All professors" }}
+      lead={detailText.lead.professor(professor.university, professor.country, professor.group)}
+      back={{ href: "/directory/professors", label: detailText.back.professors }}
     >
       <Facts
         rows={[
-          ["University", university ? <Link key="u" href={`/directory/universities/${universitySlug(university)}`} className={linkClass}>{professor.university}</Link> : professor.university],
-          ["Country", <span key="c" className="inline-flex items-center gap-2"><Flag country={professor.country} className="h-4 w-6" /> {professor.country}</span>],
-          ["Group", professor.group],
-          ["Email", <EmailCell key="e" professor={professor} />]
+          [professorDetailText.facts.university, university ? <Link key="u" href={`/directory/universities/${universitySlug(university)}`} className={linkClass}>{professor.university}</Link> : professor.university],
+          [professorDetailText.facts.country, <span key="c" className="inline-flex items-center gap-2"><Flag country={professor.country} className="h-4 w-6" /> {professor.country}</span>],
+          [professorDetailText.facts.group, professor.group],
+          [professorDetailText.facts.email, <EmailCell key="e" professor={professor} />]
         ]}
       />
       {professor.note && <p className="text-sm font-bold text-amber-400">{professor.note}</p>}
       <p className="text-sm text-slate-400">
-        Emails were taken from official university or institute pages. People move, so confirm on their page before writing.
+        {professorDetailText.emailHint}
       </p>
 
       <ProfessorTracker slug={professorSlug(professor)} />
@@ -71,20 +74,20 @@ export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }
       <ProfessorFieldInfo field={field} />
 
       {funders.length > 0 && (
-        <Block title="Funding routes at this university">
+        <Block title={detailText.blocks.fundingRoutes}>
           <FunderList funders={funders} />
         </Block>
       )}
 
-      <Block title="Before you email">
+      <Block title={detailText.blocks.beforeEmail}>
         <StepGrid steps={EMAIL_STEPS} />
       </Block>
-      <Block title="Starter email draft">
+      <Block title={detailText.blocks.starterEmail}>
         <EmailDraftBox draft={buildEmailDraft(professor)} />
       </Block>
 
       {peers.length > 0 && (
-        <Block title={`More in ${professor.group}`}>
+        <Block title={professorDetailText.moreIn(professor.group)}>
           <Chips items={peers.map((p) => ({ href: `/directory/professors/${professorSlug(p)}`, label: p.name }))} />
         </Block>
       )}

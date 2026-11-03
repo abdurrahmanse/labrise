@@ -8,6 +8,8 @@ import { filterEntries } from "../../lib/filter";
 import { paginate } from "../../lib/paginate";
 import type { Region } from "../../types";
 import { RegionChips } from "./RegionChips";
+import { commonText } from "@/data/text/common";
+import { listText } from "@/data/text/directory";
 
 interface CardBrowserProps<T> {
   data: T[];
@@ -34,12 +36,12 @@ export function CardBrowser<T>({ data, placeholder, keyOf, regionOf, searchText,
         <SearchInput value={filters.q} onChange={(q) => setFilters({ q, page: 1 })} placeholder={placeholder} className="w-full lg:max-w-md" />
         <div className="flex flex-wrap items-center justify-between gap-3">
           <RegionChips value={filters.region} onChange={(region) => setFilters({ region, page: 1 })} />
-          <span className="font-mono text-xs text-slate-400">{matches.length} shown</span>
+          <span className="font-mono text-xs text-slate-400">{commonText.count.shown(matches.length)}</span>
         </div>
       </div>
 
       {items.length === 0 ? (
-        <p className="py-12 text-center text-slate-400">No matches. Clear the search or region filter.</p>
+        <p className="py-12 text-center text-slate-400">{listText.noMatch}</p>
       ) : (
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {items.map((item) => (

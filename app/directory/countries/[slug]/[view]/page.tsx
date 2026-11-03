@@ -13,6 +13,7 @@ import { ecosystemOfCountry } from "@/modules/directory/lib/connections";
 import { findCountry } from "@/modules/directory/lib/lookups";
 import { countrySlug, universitySlug } from "@/modules/directory/lib/slugs";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { countryViewText, rosterText } from "@/data/text/directory";
 
 interface Props {
   params: Promise<{ slug: string; view: string }>;
@@ -21,11 +22,7 @@ interface Props {
 const VIEWS = ["universities", "professors", "funding"] as const;
 type View = (typeof VIEWS)[number];
 
-const TITLES: Record<View, string> = {
-  universities: "Universities",
-  professors: "Professors",
-  funding: "Funding organisations"
-};
+const TITLES: Record<View, string> = countryViewText.titles;
 
 export function generateStaticParams() {
   return countries.flatMap((c) => VIEWS.map((view) => ({ slug: countrySlug(c), view })));
@@ -34,10 +31,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, view } = await params;
   const country = findCountry(slug);
-  if (!country || !VIEWS.includes(view as View)) return { title: "Not found" };
+  if (!country || !VIEWS.includes(view as View)) return { title: countryViewText.notFound };
   return buildMetadata({
-    title: `${TITLES[view as View]} in ${country.country}`,
-    description: `${TITLES[view as View]} connected to fully funded study in ${country.country}.`,
+    title: countryViewText.metaTitle(TITLES[view as View], country.country),
+    description: countryViewText.metaDescription(TITLES[view as View], country.country),
     path: `/directory/countries/${slug}/${view}`
   });
 }
@@ -51,7 +48,7 @@ async function CountryViewPageContent({ params }: Props) {
 
   return (
     <PageShell
-      eyebrow={`${country.country} · ${country.region}`}
+      eyebrow={countryViewText.eyebrow(country.country, country.region)}
       title={TITLES[view as View]}
       media={<Flag country={country.country} className="h-10 w-14" />}
       back={{ href: `/directory/countries/${slug}`, label: country.country }}
@@ -68,7 +65,7 @@ async function CountryViewPageContent({ params }: Props) {
               <Block key={university.name} title={university.name}>
                 <ProfessorRoster professors={list} />
                 <a href={`/directory/universities/${universitySlug(university)}`} className="text-sm font-bold text-indigo-400 hover:text-indigo-200">
-                  University details and funding →
+                  {rosterText.universityDetails}
                 </a>
               </Block>
             ))
@@ -77,9 +74,9 @@ async function CountryViewPageContent({ params }: Props) {
         ))}
 
       {view === "funding" && (
-        <Block title="Who funds study here">
-          <FunderList funders={funders} empty="No national organisation is listed. Look at the university&apos;s own funding pages and the funding types guide." />
-          <p className="text-sm text-slate-400">Many PhD posts in this country are paid directly by the university or a professor&apos;s grant. See the country overview for the usual routes.</p>
+        <Block title={countryViewText.fundingBlock}>
+          <FunderList funders={funders} empty={countryViewText.fundingEmpty} />
+          <p className="text-sm text-slate-400">{countryViewText.fundingHint}</p>
         </Block>
       )}
     </PageShell>

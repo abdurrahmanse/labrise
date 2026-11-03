@@ -1,6 +1,7 @@
 "use client";
 
 import { getTracked, STATUSES, useProfessorTracker, type ProfessorStatus } from "../../store/useProfessorTracker";
+import { trackerText } from "@/data/text/directory";
 
 const STATUS_STYLE: Record<ProfessorStatus, string> = {
   "To contact": "text-slate-300",
@@ -15,7 +16,7 @@ export function StatusSelect({ slug }: { slug: string }) {
 
   return (
     <select
-      aria-label="Outreach status"
+      aria-label={trackerText.statusLabel}
       value={status}
       onChange={(e) => setStatus(slug, e.target.value as ProfessorStatus)}
       className={`bg-white/[0.05] px-2 py-1.5 text-sm font-bold cursor-pointer outline-none ${STATUS_STYLE[status]}`}
