@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { RoadmapStep } from "@/data/types";
 import { StepWidgetRenderer } from "./widgets/StepWidgetRegistry";
+import { percentOf } from "@/shared/lib/percent";
 import {
   StepCardHeader,
   StepObjectiveBanner,
@@ -36,10 +37,7 @@ export function RoadmapStepCard({ step }: RoadmapStepCardProps) {
     (_, idx) => !!completedItems[`${step.id}-${idx}`]
   ).length;
 
-  const progressPercent =
-    step.checklist.length > 0
-      ? Math.round((completedCount / step.checklist.length) * 100)
-      : 0;
+  const progressPercent = percentOf(completedCount, step.checklist.length);
 
   const glowVariant = step.stepNumber.startsWith("0.1")
     ? "indigo"

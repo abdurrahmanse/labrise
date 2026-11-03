@@ -3,6 +3,7 @@ import { ClipboardCheck } from "lucide-react";
 import { PhaseChecklistItem as PhaseChecklistItemType } from "@/data/roadmapPhasesData";
 import { phaseDetailUiData } from "@/data/phaseDetailUiData";
 import { PhaseChecklistItem } from "./PhaseChecklistItem";
+import { percentOf } from "@/shared/lib/percent";
 
 interface PhaseChecklistSectionProps {
   phaseNumber: number;
@@ -23,8 +24,7 @@ export function PhaseChecklistSection({
   const completedChecks = checklist.filter(
     (item) => checkedItems[item.id]
   ).length;
-  const progressPercent =
-    totalChecks > 0 ? Math.round((completedChecks / totalChecks) * 100) : 0;
+  const progressPercent = percentOf(completedChecks, totalChecks);
 
   return (
     <section id="checklist" className="scroll-mt-24 space-y-6">

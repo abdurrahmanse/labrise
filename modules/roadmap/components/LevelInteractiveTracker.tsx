@@ -6,6 +6,7 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
 import { RoadmapLevel } from "@/data/types";
 import { levelDetailUiData } from "@/data/levelDetailUiData";
+import { percentOf } from "@/shared/lib/percent";
 
 interface LevelInteractiveTrackerProps {
   level: RoadmapLevel;
@@ -28,7 +29,7 @@ export function LevelInteractiveTracker({ level }: LevelInteractiveTrackerProps)
 
   const total = level.milestones.length;
   const count = Object.values(completedMilestones).filter(Boolean).length;
-  const progressPercent = total > 0 ? Math.round((count / total) * 100) : 0;
+  const progressPercent = percentOf(count, total);
 
   return (
     <section className="py-12 border-b border-white/10 bg-canvas-base">

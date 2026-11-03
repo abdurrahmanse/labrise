@@ -13,6 +13,7 @@ import {
 } from "./common";
 import { legacyText } from "@/data/text/legacy";
 import { WidgetChecklistItem } from "@/components/ui/WidgetChecklistItem";
+import { percentOf } from "@/shared/lib/percent";
 
 export function StepMathDiagnosticWidget() {
   const [activeTopicIndex, setActiveTopicIndex] = useState(0);
@@ -34,9 +35,7 @@ export function StepMathDiagnosticWidget() {
     (_, i) => !!masteredConcepts[`${activeTopic.id}-${i}`]
   ).length;
 
-  const topicMasteryPercent = Math.round(
-    (topicMasteredCount / activeTopic.concepts.length) * 100
-  );
+  const topicMasteryPercent = percentOf(topicMasteredCount, activeTopic.concepts.length);
 
   return (
     <WidgetShell theme="indigo">

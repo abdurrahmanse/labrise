@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import { afterEach, describe, it } from "node:test";
 import { z } from "zod";
-import { addRequestInterceptor, apiClient, setAuthTokenProvider } from "./client";
+import { apiClient } from "./client";
+import { addRequestInterceptor, setAuthTokenProvider } from "./interceptors";
 import { ApiError } from "./errors";
 
 const realFetch = globalThis.fetch;

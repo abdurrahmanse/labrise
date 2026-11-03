@@ -1,9 +1,9 @@
 import type { z } from "zod";
 import { publicEnv } from "@/core/config/env";
 import { ApiError } from "./errors";
+import { applyAuthToken, runRequestInterceptors, runResponseInterceptors, type HttpMethod, type PreparedRequest } from "./interceptors";
 import type { ApiErrorBody } from "./types";
 
-export type HttpMethod = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
 type Params = Record<string, string | number | boolean | undefined>;
 
 export interface RequestOptions<S extends z.ZodType> {
@@ -23,43 +23,9 @@ export interface RequestOptions<S extends z.ZodType> {
   retries?: number;
 }
 
-/** What interceptors see and may change before the request is sent. */
-export interface PreparedRequest {
-  url: string;
-  method: HttpMethod;
-  headers: Record<string, string>;
-  body?: string;
-}
-
-export type RequestInterceptor = (request: PreparedRequest) => PreparedRequest | Promise<PreparedRequest>;
-export type ResponseInterceptor = (response: Response, request: PreparedRequest) => Response | Promise<Response>;
-
 const DEFAULT_TIMEOUT = 10_000;
 const DEFAULT_GET_RETRIES = 2;
 const RETRY_BASE_DELAY = 300;
-
-const requestInterceptors = new Set<RequestInterceptor>();
-const responseInterceptors = new Set<ResponseInterceptor>();
-
-/** Runs on every request, for example to add headers or log. Returns a function that removes it. */
-export function addRequestInterceptor(interceptor: RequestInterceptor) {
-  requestInterceptors.add(interceptor);
-  return () => void requestInterceptors.delete(interceptor);
-}
-
-/** Runs on every response, for example to react to a 401. Returns a function that removes it. */
-export function addResponseInterceptor(interceptor: ResponseInterceptor) {
-  responseInterceptors.add(interceptor);
-  return () => void responseInterceptors.delete(interceptor);
-}
-
-type TokenProvider = () => string | null | undefined | Promise<string | null | undefined>;
-let tokenProvider: TokenProvider | null = null;
-
-/** Registers where the browser gets its auth token from. Every request then carries `Authorization: Bearer …`. */
-export function setAuthTokenProvider(provider: TokenProvider | null) {
-  tokenProvider = provider;
-}
 
 function withParams(path: string, params?: Params) {
   if (!params) return path;
@@ -75,17 +41,13 @@ async function prepare(method: HttpMethod, path: string, options: RequestOptions
   const headers: Record<string, string> = { Accept: "application/json", ...options.headers };
   if (options.body !== undefined) headers["Content-Type"] = "application/json";
 
-  let request: PreparedRequest = {
+  const request: PreparedRequest = {
     url: `${options.baseUrl ?? publicEnv.apiBaseUrl}${withParams(path, options.params)}`,
     method,
     headers,
     body: options.body === undefined ? undefined : JSON.stringify(options.body)
   };
-
-  const token = tokenProvider && !headers.Authorization ? await tokenProvider() : null;
-  if (token) request = { ...request, headers: { ...request.headers, Authorization: `Bearer ${token}` } };
-  for (const interceptor of requestInterceptors) request = await interceptor(request);
-  return request;
+  return runRequestInterceptors(await applyAuthToken(request));
 }
 
 async function readError(response: Response): Promise<ApiError> {
@@ -107,8 +69,10 @@ async function attempt<S extends z.ZodType>(method: HttpMethod, path: string, op
 
   try {
     const request = await prepare(method, path, options);
-    let response = await fetch(request.url, { method, headers: request.headers, body: request.body, signal: timeout.signal });
-    for (const interceptor of responseInterceptors) response = await interceptor(response, request);
+    const response = await runResponseInterceptors(
+      await fetch(request.url, { method, headers: request.headers, body: request.body, signal: timeout.signal }),
+      request
+    );
     if (!response.ok) throw await readError(response);
     if (response.status === 204) return options.schema.parse(undefined);
     const parsed = options.schema.safeParse(await response.json());

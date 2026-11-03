@@ -1,38 +1,12 @@
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import {
-  countries,
-  professors,
-  providers,
-  scholarships,
-  universities,
-  findCountry,
-  findProfessor,
-  findProvider,
-  findScholarship,
-  findUniversity,
-  providerOfScholarship,
-  fieldOf,
-  entryMeta
-} from "@/modules/directory/catalog";
-import {
-  directoryTypeSchema,
-  countrySlug,
-  professorSlug,
-  providerSlug,
-  scholarshipSlug,
-  universitySlug
-} from "@/modules/directory/contracts";
-import { CountryDetailView } from "@/modules/directory/components/detail/CountryDetailView";
-import { ProfessorDetailView } from "@/modules/directory/components/detail/ProfessorDetailView";
-import { ProviderDetailView } from "@/modules/directory/components/detail/ProviderDetailView";
-import { ScholarshipDetailView } from "@/modules/directory/components/detail/ScholarshipDetailView";
-import { UniversityDetailView } from "@/modules/directory/components/detail/UniversityDetailView";
-import { getCountryGuide } from "@/modules/content/server";
-import { buildMetadata, JsonLd, breadcrumbSchema, personSchema, scholarshipGrantSchema, universitySchema } from "@/modules/seo";
+import { countries, entryMeta, professors, providers, scholarships, universities } from "@/modules/directory/catalog";
+import { countrySlug, directoryTypeSchema, professorSlug, providerSlug, scholarshipSlug, universitySlug } from "@/modules/directory/contracts";
+import { DirectoryEntry } from "@/modules/directory/components/entry/DirectoryEntry";
+import { buildMetadata } from "@/modules/seo";
 import { PageFallback } from "@/shared/components/PageFallback";
-import { navLabels, notFoundTitles } from "@/data/text/site";
+import { notFoundTitles } from "@/data/text/site";
 
 interface Props {
   params: Promise<{ type: string; slug: string }>;
@@ -58,70 +32,7 @@ async function DirectoryDetailPageContent({ params }: Props) {
   const { type, slug } = await params;
   const parsed = directoryTypeSchema.safeParse(type);
   if (!parsed.success) notFound();
-
-  const crumbs = [
-    { name: navLabels.home, path: "/" },
-    { name: navLabels.directory, path: "/directory" },
-    { name: parsed.data, path: `/directory/${parsed.data}` }
-  ];
-
-  if (parsed.data === "countries") {
-    const country = findCountry(slug);
-    if (!country) notFound();
-    const dossier = await getCountryGuide(slug);
-    return (
-      <>
-        <JsonLd data={breadcrumbSchema([...crumbs, { name: country.country, path: `/directory/countries/${slug}` }])} />
-        <CountryDetailView country={country} dossier={dossier} />
-      </>
-    );
-  }
-
-  if (parsed.data === "universities") {
-    const university = findUniversity(slug);
-    if (!university) notFound();
-    return (
-      <>
-        <JsonLd data={universitySchema(university.name, university.site, university.country)} />
-        <JsonLd data={breadcrumbSchema([...crumbs, { name: university.name, path: `/directory/universities/${slug}` }])} />
-        <UniversityDetailView university={university} />
-      </>
-    );
-  }
-
-  if (parsed.data === "providers") {
-    const provider = findProvider(slug);
-    if (!provider) notFound();
-    return (
-      <>
-        <JsonLd data={breadcrumbSchema([...crumbs, { name: provider.name, path: `/directory/providers/${slug}` }])} />
-        <ProviderDetailView provider={provider} />
-      </>
-    );
-  }
-
-  if (parsed.data === "scholarships") {
-    const scholarship = findScholarship(slug);
-    if (!scholarship) notFound();
-    const funder = providerOfScholarship(scholarship.name)?.name;
-    return (
-      <>
-        <JsonLd data={scholarshipGrantSchema(scholarship.name, `${scholarship.covers}. ${scholarship.eligibility}`, scholarship.site, funder)} />
-        <JsonLd data={breadcrumbSchema([...crumbs, { name: scholarship.name, path: `/directory/scholarships/${slug}` }])} />
-        <ScholarshipDetailView scholarship={scholarship} />
-      </>
-    );
-  }
-
-  const professor = findProfessor(slug);
-  if (!professor) notFound();
-  return (
-    <>
-      <JsonLd data={personSchema(professor.name, professor.university, fieldOf(professor.group).title)} />
-      <JsonLd data={breadcrumbSchema([...crumbs, { name: professor.name, path: `/directory/professors/${slug}` }])} />
-      <ProfessorDetailView professor={professor} />
-    </>
-  );
+  return <DirectoryEntry type={parsed.data} slug={slug} />;
 }
 
 export default function DirectoryDetailPage({ params }: Props) {

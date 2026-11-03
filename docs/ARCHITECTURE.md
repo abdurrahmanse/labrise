@@ -21,11 +21,16 @@ The composition roots decide which implementation backs each contract:
 | Folder | Holds |
 | :--- | :--- |
 | `app/` | Thin routes. `app/api/**` is the built-in backend used in mock mode. |
-| `modules/<feature>/` | One feature: components, hooks, services, repositories (contracts), queries, schemas, types, utils, constants. Public API = `index.ts` (+ `server.ts`). |
-| `shared/` | Code with no business meaning: API client, query client, UI primitives. |
+| `modules/<feature>/` | One feature: its `components/`, hooks, services, repositories (contracts), queries, schemas, types, utils, constants. Public API = `index.ts` (+ the extra entries below). |
+| `components/ui/` | Design-system primitives (buttons, tabs, hero, cards) with no feature knowledge. |
+| `components/header`, `components/footer` | The site shell rendered by `app/layout.tsx`. Not a feature. |
+| `shared/` | Code with no business meaning: API client, query client, hooks, generic UI such as `Flag`, `DataRenderer`. |
 | `core/` | Configuration (`core/config`) and composition roots (`core/container`). |
 | `infrastructure/` | Concrete repositories (mock, REST). The only code that knows a data source. |
-| `data/` | Bundled content and UI copy (the mock data). |
+| `data/` | Bundled content and UI copy, the mock data the repositories serve. |
+
+Feature UI lives in its module: `modules/countries`, `faqs`, `professors`, `scholarships`, `roadmap` (overview, step cards),
+level, phase and widget screens (in `modules/roadmap/components`), `home`, `documents`, `guides`, and so on.
 
 Folders such as `entities/`, `DTOs/`, `mappers/`, `adapters/`, `actions/` are not created empty. Add one inside a module when
 the first file needs it (for example `mappers/` when a backend's field names differ from the schema).
@@ -44,9 +49,10 @@ Rules that keep it small:
 - **Heavy, rarely-used UI loads on demand.** The search dialog is a `next/dynamic` import opened by the header button or Ctrl/Cmd+K.
 - **Shared UI lives in `shared/`.** `Flag` and `ProgressBadge` are used by several features, so they must not live in (or import) one of them.
 
-Boundaries are enforced by ESLint (`eslint.config.mjs`) for every module: outside a module, import `@/modules/<name>` (or `/server`, or one of the entries listed above), never inner files.
+Boundaries are enforced by ESLint (`eslint.config.mjs`) for every module: between modules, import `@/modules/<name>` (or `/server`, or one of the entries listed above), never inner files.
+Route files (`app/**`) are the exception for UI: a page imports the exact component file it renders (`@/modules/<name>/components/...`). A barrel that re-exports client components makes every page importing it ship all of them, so barrels stay as the module's public API for other modules while pages stay narrow.
 Core, infrastructure, API routes and tests may reach inside because they implement the module contracts. A file re-exported through an `index.ts` that uses client-only code (stores, hooks) must start with `"use client"`, or server pages importing the barrel fail to build.
-Import cycles are checked by `npm run check:cycles`.
+Import cycles are checked by `npm run check:cycles`; files nothing reaches (from a route or a module's `index.ts`) by `npm run check:unused`.
 
 ## Modules on the new flow
 
@@ -83,4 +89,4 @@ Import cycles are checked by `npm run check:cycles`.
 
 ## Checks
 
-`npx tsc --noEmit`, `npx eslint .`, `npm test` (node:test via tsx), `npm run check:data`, `npm run check:cycles`, `npm run build`.
+`npx tsc --noEmit`, `npx eslint .`, `npm test` (node:test via tsx), `npm run check:data`, `npm run check:cycles`, `npm run check:unused`, `npm run build`.

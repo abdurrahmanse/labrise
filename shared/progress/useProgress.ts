@@ -1,6 +1,7 @@
 "use client";
 
 import { useMounted } from "../hooks/useMounted";
+import { percentOf } from "../lib/percent";
 import type { ProgressStore } from "./createProgressStore";
 
 /**
@@ -25,6 +26,6 @@ export function useProgress(store: ProgressStore, ids: readonly (string | number
     reset: (all = false) => reset(all ? undefined : keys),
     done,
     total,
-    percent: total ? Math.round((done / total) * 100) : 0
+    percent: percentOf(done, total)
   };
 }

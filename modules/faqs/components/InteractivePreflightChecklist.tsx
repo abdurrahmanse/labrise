@@ -10,6 +10,7 @@ import { WidgetChecklistItem } from "@/components/ui/WidgetChecklistItem";
 import { preflightChecklistData } from "@/data/faqsSectionData";
 import { faqsPageData } from "@/data/pagesData";
 import { legacyText } from "@/data/text/legacy";
+import { percentOf } from "@/shared/lib/percent";
 
 export function InteractivePreflightChecklist() {
   const [checkedItems, setCheckedItems] = useState<{ [key: string]: boolean }>({
@@ -28,7 +29,7 @@ export function InteractivePreflightChecklist() {
   };
 
   const completed = Object.values(checkedItems).filter(Boolean).length;
-  const progressPercent = Math.round((completed / preflightChecklistData.length) * 100);
+  const progressPercent = percentOf(completed, preflightChecklistData.length);
 
   return (
     <section id="readiness-checklist" className="py-20 border-b border-white/10 bg-canvas-base">
