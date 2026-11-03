@@ -10,9 +10,8 @@ import { scholarships } from "@/modules/directory/data";
 import { EmptyState } from "@/shared/components/EmptyState";
 
 const LEVELS = ["All", ...Array.from(new Set(scholarships.map((s) => s.level)))];
-const PREVIEW = 6;
 
-export function ScholarshipBrowse() {
+export function ScholarshipBrowse({ limit }: { limit?: number } = {}) {
   const [level, setLevel] = useState("All");
   const matches = scholarships.filter((s) => level === "All" || s.level === level);
 
@@ -26,14 +25,14 @@ export function ScholarshipBrowse() {
             </button>
           ))}
         </div>
-        <span className="font-mono text-xs text-slate-400">{t.browse.shown(Math.min(PREVIEW, matches.length))}</span>
+        <span className="font-mono text-xs text-slate-400">{t.browse.shown(Math.min(limit ?? matches.length, matches.length))}</span>
       </div>
 
       {matches.length === 0 ? (
         <EmptyState title={t.browse.empty} />
       ) : (
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {matches.slice(0, PREVIEW).map((s) => (
+          {matches.slice(0, limit).map((s) => (
             <ScholarshipCard key={s.name} scholarship={s} />
           ))}
         </div>

@@ -25,6 +25,7 @@ import { EMAIL_STEPS } from "./applySteps";
 import { buildEmailDraft } from "./emailDraft";
 import { EmailDraftBox } from "./EmailDraftBox";
 import { ProfessorFieldInfo } from "./ProfessorFieldInfo";
+import { HelpLinks } from "@/shared/components/HelpLinks";
 
 const tile = "flex items-start gap-3 bg-canvas-card/70 p-4 backdrop-blur-xl shadow-[3px_3px_0_0_rgba(15,23,42,0.12)]";
 const tileIcon = "flex h-10 w-10 shrink-0 items-center justify-center bg-indigo-600 text-white";
@@ -110,6 +111,7 @@ export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }
 
         <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
           <ProfessorTracker slug={slug} />
+          <HelpLinks title={t.help.title} links={t.help.links} />
           {colleagues.length > 0 && (
             <InfoCard label={t.peers.university(university?.name ?? professor.university)}>
               <Chips items={colleagues.map((p) => ({ href: `/directory/professors/${professorSlug(p)}`, label: p.name }))} />

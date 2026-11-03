@@ -1,0 +1,28 @@
+import { PROFESSOR_TABS } from "@/components/professors/professorTabs";
+import { professorHub, professorSubPages } from "@/data/text/hubPages";
+import { TemplatePicker } from "@/modules/professors/components/TemplatePicker";
+import { RelatedStrip } from "@/shared/components/JourneyHub";
+import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { PageShell } from "@/shared/components/PageShell";
+import { SubNav } from "@/shared/components/SubNav";
+
+const t = professorSubPages.templates;
+
+export const metadata = buildMetadata({ title: t.title, description: t.description, path: "/professors/templates" });
+
+export default function ProfessorTemplatesPage() {
+  return (
+    <PageShell
+      eyebrow={t.eyebrow}
+      title={t.heading}
+      lead={t.lead}
+      back={{ href: "/professors", label: professorHub.eyebrow }}
+      prev={PROFESSOR_TABS[3]}
+      next={PROFESSOR_TABS[5]}
+    >
+      <SubNav label={professorHub.eyebrow} items={PROFESSOR_TABS} />
+      <TemplatePicker />
+      <RelatedStrip items={professorHub.related} />
+    </PageShell>
+  );
+}

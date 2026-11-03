@@ -65,5 +65,14 @@ export const professorProfileText = {
   field: { title: "About the field" },
   funding: "Funding routes at this university",
   peers: { title: (group: string) => `More in ${group}`, university: (name: string) => `More at ${name}` },
-  readFirst: "Read first"
+  readFirst: "Read first",
+  help: {
+    title: "Outreach help",
+    links: [
+      { href: "/professors/templates", label: "Email templates" },
+      { href: "/professors/workflow", label: "Outreach workflow" },
+      { href: "/professors/supervisor", label: "Supervisor rules by country" },
+      { href: "/apply/university", label: "Apply to a university" }
+    ]
+  }
 } as const;

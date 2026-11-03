@@ -63,5 +63,14 @@ export const scholarshipDetailText = {
   },
   similar: { title: (host: string) => `More scholarships in ${host}`, level: "Other awards at this level" },
   planner: "Add the deadline to your planner",
+  help: {
+    title: "Search safely",
+    links: [
+      { href: "/scholarships/workflow", label: "Scholarship search workflow" },
+      { href: "/scholarships/portals", label: "Official portals and safety" },
+      { href: "/scholarships/formulas", label: "Search formulas" },
+      { href: "/apply/scholarship", label: "Apply to a scholarship" }
+    ]
+  },
   readNext: "Read next"
 } as const;

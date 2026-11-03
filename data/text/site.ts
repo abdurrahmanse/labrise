@@ -19,9 +19,9 @@ export const navLabels = {
   profileChecklist: "Profile checklist",
   allFaqs: "All FAQs",
   fiveLevels: "5 levels",
-  outreach: "Outreach and emails",
+  outreach: "Professor outreach",
   professorDirectory: "Professor directory",
-  workflow: "11-step workflow"
+  workflow: "Scholarship finder"
 } as const;
 
 export const notFoundTitles = {

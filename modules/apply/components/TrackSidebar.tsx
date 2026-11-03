@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { CalendarCheck, FileText, Landmark, Lightbulb, PartyPopper, RotateCcw } from "lucide-react";
+import { Award, CalendarCheck, FileText, Landmark, Lightbulb, PartyPopper, RotateCcw, Users } from "lucide-react";
 import { trackPageText as t } from "@/data/text/apply";
 import { ProgressBar } from "@/modules/documents/components/ProgressBar";
 import { InfoCard } from "@/shared/components/InfoCard";
@@ -53,6 +53,11 @@ export function TrackSidebar({ track, other }: { track: ApplyTrack; other?: Appl
 
       <InfoCard label={t.tools}>
         <div className="space-y-2">
+          {track.id === "university" ? (
+            <Link href="/professors" className={tool}><Users className="h-5 w-5 text-indigo-400" aria-hidden /> {t.findProfessors}</Link>
+          ) : (
+            <Link href="/scholarships" className={tool}><Award className="h-5 w-5 text-indigo-400" aria-hidden /> {t.searchScholarships}</Link>
+          )}
           <Link href="/planner" className={tool}><CalendarCheck className="h-5 w-5 text-indigo-400" aria-hidden /> {t.planner}</Link>
           <Link href="/documents" className={tool}><FileText className="h-5 w-5 text-indigo-400" aria-hidden /> {t.documents}</Link>
           <Link href="/directory/providers" className={tool}><Landmark className="h-5 w-5 text-indigo-400" aria-hidden /> {t.directory}</Link>

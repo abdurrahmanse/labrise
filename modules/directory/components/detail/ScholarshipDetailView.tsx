@@ -14,6 +14,7 @@ import type { ScholarshipEntry } from "../../types";
 import { ScholarshipCard } from "../cards/ScholarshipCard";
 import { Flag } from "../Flag";
 import { ScholarshipChecklist } from "./ScholarshipChecklist";
+import { HelpLinks } from "@/shared/components/HelpLinks";
 
 const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 const tile = "flex items-start gap-3 bg-canvas-card/70 p-4 backdrop-blur-xl shadow-[3px_3px_0_0_rgba(15,23,42,0.12)]";
@@ -139,6 +140,7 @@ export function ScholarshipDetailView({ scholarship }: { scholarship: Scholarshi
             <span className={tileIcon}><CalendarCheck className="h-5 w-5" aria-hidden /></span>
             {t.planner}
           </Link>
+          <HelpLinks title={t.help.title} links={t.help.links} />
           <InfoCard label={t.readNext}>
             <Chips
               items={[

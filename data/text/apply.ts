@@ -84,6 +84,8 @@ export const trackPageText = {
   saved: "Saved in this browser only.",
   tips: "Keep in mind",
   tools: "Helpful tools",
+  findProfessors: "Find professors",
+  searchScholarships: "Search for scholarships",
   planner: "Plan your deadlines",
   documents: "Prepare your documents",
   directory: "Browse the directory",
