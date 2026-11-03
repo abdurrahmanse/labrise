@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ScholarshipFinderView } from "@/components/scholarships/ScholarshipFinderView";
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return buildMetadata({ title: entry.title, description: "Part of the scholarship finder guide.", path: `/scholarships/${entry.id}` });
 }
 
-export default async function ScholarshipPartPage({ params }: Props) {
+async function ScholarshipPartPageContent({ params }: Props) {
   const { part } = await params;
   const entry = PARTS.find((p) => p.id === part);
   if (!entry) notFound();
@@ -41,5 +42,13 @@ export default async function ScholarshipPartPage({ params }: Props) {
     >
       <ScholarshipFinderView part={entry.id} />
     </PageShell>
+  );
+}
+
+export default function ScholarshipPartPage({ params }: Props) {
+  return (
+    <Suspense fallback={<div className="mx-auto min-h-[60vh] max-w-7xl px-4 py-16 text-slate-400">Loading…</div>}>
+      <ScholarshipPartPageContent params={params} />
+    </Suspense>
   );
 }

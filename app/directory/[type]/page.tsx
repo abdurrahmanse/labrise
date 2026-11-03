@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-export default async function DirectoryTypePage({ params }: Props) {
+async function DirectoryTypePageContent({ params }: Props) {
   const parsed = directoryTypeSchema.safeParse((await params).type);
   if (!parsed.success) notFound();
 
@@ -53,5 +53,13 @@ export default async function DirectoryTypePage({ params }: Props) {
         {parsed.data === "professors" && <ProfessorsExplorer initialData={professors} />}
       </Suspense>
     </PageShell>
+  );
+}
+
+export default function DirectoryTypePage({ params }: Props) {
+  return (
+    <Suspense fallback={<div className="mx-auto min-h-[60vh] max-w-7xl px-4 py-16 text-slate-400">Loading…</div>}>
+      <DirectoryTypePageContent params={params} />
+    </Suspense>
   );
 }

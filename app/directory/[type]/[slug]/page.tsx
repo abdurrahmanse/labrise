@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { directoryTypeSchema } from "@/modules/directory/api/schemas";
@@ -55,7 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return { title: "Not found" };
 }
 
-export default async function DirectoryDetailPage({ params }: Props) {
+async function DirectoryDetailPageContent({ params }: Props) {
   const { type, slug } = await params;
   const parsed = directoryTypeSchema.safeParse(type);
   if (!parsed.success) notFound();
@@ -119,5 +120,13 @@ export default async function DirectoryDetailPage({ params }: Props) {
       <JsonLd data={breadcrumbSchema([...crumbs, { name: professor.name, path: `/directory/professors/${slug}` }])} />
       <ProfessorDetailView professor={professor} />
     </>
+  );
+}
+
+export default function DirectoryDetailPage({ params }: Props) {
+  return (
+    <Suspense fallback={<div className="mx-auto min-h-[60vh] max-w-7xl px-4 py-16 text-slate-400">Loading…</div>}>
+      <DirectoryDetailPageContent params={params} />
+    </Suspense>
   );
 }

@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { IconTile } from "@/shared/components/IconTile";
@@ -31,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-export default async function GuideTopicPage({ params }: Props) {
+async function GuideTopicPageContent({ params }: Props) {
   const { id } = await params;
   const topic = findGuide(id);
   if (!topic) notFound();
@@ -64,5 +65,13 @@ export default async function GuideTopicPage({ params }: Props) {
         <StepList items={topic.steps.map((detail) => ({ detail }))} />
       )}
     </PageShell>
+  );
+}
+
+export default function GuideTopicPage({ params }: Props) {
+  return (
+    <Suspense fallback={<div className="mx-auto min-h-[60vh] max-w-7xl px-4 py-16 text-slate-400">Loading…</div>}>
+      <GuideTopicPageContent params={params} />
+    </Suspense>
   );
 }

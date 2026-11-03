@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Block } from "@/shared/components/Block";
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return buildMetadata({ title: `${track.title}: step by step`, description: track.summary, path: `/apply/${track.id}` });
 }
 
-export default async function ApplyTrackPage({ params }: Props) {
+async function ApplyTrackPageContent({ params }: Props) {
   const track = findTrack((await params).track);
   if (!track) notFound();
 
@@ -44,5 +45,13 @@ export default async function ApplyTrackPage({ params }: Props) {
         <BulletList items={track.tips} />
       </Block>
     </PageShell>
+  );
+}
+
+export default function ApplyTrackPage({ params }: Props) {
+  return (
+    <Suspense fallback={<div className="mx-auto min-h-[60vh] max-w-7xl px-4 py-16 text-slate-400">Loading…</div>}>
+      <ApplyTrackPageContent params={params} />
+    </Suspense>
   );
 }

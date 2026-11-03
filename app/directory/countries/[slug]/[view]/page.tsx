@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Block } from "@/shared/components/Block";
@@ -41,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-export default async function CountryViewPage({ params }: Props) {
+async function CountryViewPageContent({ params }: Props) {
   const { slug, view } = await params;
   const country = findCountry(slug);
   if (!country || !VIEWS.includes(view as View)) notFound();
@@ -82,5 +83,13 @@ export default async function CountryViewPage({ params }: Props) {
         </Block>
       )}
     </PageShell>
+  );
+}
+
+export default function CountryViewPage({ params }: Props) {
+  return (
+    <Suspense fallback={<div className="mx-auto min-h-[60vh] max-w-7xl px-4 py-16 text-slate-400">Loading…</div>}>
+      <CountryViewPageContent params={params} />
+    </Suspense>
   );
 }

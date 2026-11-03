@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { StepCard } from "@/components/roadmap/StepCard";
@@ -21,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return buildMetadata({ title: stepData.title, description: stepData.keyObjective.slice(0, 160), path: `/roadmap/${level}/${step}` });
 }
 
-export default async function LevelStepPage({ params }: Props) {
+async function LevelStepPageContent({ params }: Props) {
   const { level: levelSlug, step: stepId } = await params;
   const level = getLevelBySlug(levelSlug);
   const step = getStepById(stepId);
@@ -42,5 +43,13 @@ export default async function LevelStepPage({ params }: Props) {
     >
       <StepCard step={step} />
     </PageShell>
+  );
+}
+
+export default function LevelStepPage({ params }: Props) {
+  return (
+    <Suspense fallback={<div className="mx-auto min-h-[60vh] max-w-7xl px-4 py-16 text-slate-400">Loading…</div>}>
+      <LevelStepPageContent params={params} />
+    </Suspense>
   );
 }
