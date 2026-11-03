@@ -24,7 +24,7 @@ const edgeLink =
 export function PageShell({ eyebrow, title, lead, back, prev, next, children }: PageShellProps) {
   return (
     <main className="min-h-screen py-12 md:py-16">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <header className="space-y-3 border-b-2 border-white/80 pb-6">
           {back && (
             <Link href={back.href} className="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-indigo-300">

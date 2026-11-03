@@ -1,38 +1,31 @@
-"use client";
-
 import React from "react";
-import { FooterContainer, FooterGrid } from "./layout";
-import { FooterBrandSection } from "./brand";
-import {
-  FooterNavigationSection,
-  FooterToolsSection,
-  FooterDatabasesSection,
-} from "./links";
-import { FooterBottomBarSection } from "./bottom";
+import Link from "next/link";
+import { footerLinksData } from "@/data/navigationData";
 
 export function Footer() {
   return (
-    <FooterContainer>
-      {/* 4-Column Responsive Grid across 5 device tiers */}
-      <FooterGrid>
-        {/* Brand Column Section */}
-        <div className="sm:col-span-2 lg:col-span-1">
-          <FooterBrandSection />
-        </div>
+    <footer
+      role="contentinfo"
+      className="mt-auto relative z-10 border-t-2 border-white/80 bg-[#0b0b0c]/70 backdrop-blur-xl"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+        <Link href="/" className="font-bold text-lg text-white uppercase tracking-wider">
+          Scholarship <span className="text-indigo-400">Roadmap</span>
+        </Link>
 
-        {/* Roadmap Pathways Navigation Section */}
-        <FooterNavigationSection />
+        <nav aria-label="Footer" className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+          {footerLinksData.map((l) => (
+            <Link key={l.href} href={l.href} className="text-slate-400 hover:text-indigo-300">
+              {l.label}
+            </Link>
+          ))}
+        </nav>
 
-        {/* Guides & Toolkits Directory Section */}
-        <FooterToolsSection />
-
-        {/* Official Portals & Databases Section */}
-        <FooterDatabasesSection />
-      </FooterGrid>
-
-      {/* Bottom Bar Section (Copyright, Attribution, Status Ping, Back to Top) */}
-      <FooterBottomBarSection />
-    </FooterContainer>
+        <p className="font-mono text-xs text-slate-500">
+          Free and open
+        </p>
+      </div>
+    </footer>
   );
 }
 

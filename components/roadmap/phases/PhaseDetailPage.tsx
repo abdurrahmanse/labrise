@@ -60,7 +60,7 @@ export function PhaseDetailPage({
       {/* 1. HERO SECTION */}
       <PhaseDetailHero phase={phase} />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 space-y-14 sm:space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 space-y-14 sm:space-y-16">
         {/* 2. SECTION: MANDATE & RATIONALE */}
         <PhaseWhatWhySection
           what={phase.what}

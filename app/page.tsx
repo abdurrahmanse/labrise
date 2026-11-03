@@ -18,7 +18,7 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen py-14 md:py-20">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <header className="space-y-5 max-w-3xl">
           <p className="font-mono text-xs uppercase tracking-widest text-indigo-400">Fully funded Master&apos;s &amp; PhD</p>
           <h1 className="text-4xl sm:text-6xl font-bold text-white leading-tight">
@@ -42,7 +42,13 @@ export default function HomePage() {
             { index: "02", href: "/profile", title: "Profile checklist", meta: "What you need to have" },
             { index: "03", href: "/guides", title: "Guides", meta: "CV, SOP, IELTS, visa…" },
             { index: "04", href: "/directory", title: "Directory", meta: "Countries, universities, professors" },
-            { index: "05", href: "/problems", title: "Common problems", meta: "And how to fix them" }
+            { index: "05", href: "/problems", title: "Common problems", meta: "And how to fix them" },
+            { index: "06", href: "/roadmap", title: "Full 13-phase roadmap", meta: "Detailed levels and phases" },
+            { index: "07", href: "/countries", title: "Country guides", meta: "20 detailed dossiers" },
+            { index: "08", href: "/scholarships", title: "Scholarship finder", meta: "11-step search" },
+            { index: "09", href: "/professors", title: "Professor outreach", meta: "Email templates and checklist" },
+            { index: "10", href: "/documents", title: "Documents", meta: "SOP, CV and checklists" },
+            { index: "11", href: "/faqs", title: "FAQs", meta: "Admissions and funding" }
           ]}
         />
       </div>

@@ -69,7 +69,7 @@ export const headerData = {
     },
     ctaButton: {
       label: "Start Here",
-      href: "/"
+      href: "/steps"
     },
     menuAriaLabel: "Toggle navigation menu"
   },
@@ -84,11 +84,27 @@ export const headerData = {
 };
 
 export const navLinksData: NavLinkItem[] = [
-  { href: "/steps", label: "Roadmap", iconName: "Map" },
-  { href: "/profile", label: "Profile", iconName: "ClipboardCheck" },
+  { href: "/roadmap", label: "Roadmap", iconName: "Map" },
   { href: "/guides", label: "Guides", iconName: "BookOpen" },
-  { href: "/directory", label: "Directory", iconName: "Globe2" },
-  { href: "/problems", label: "Problems", iconName: "HelpCircle" }
+  { href: "/directory", label: "Directory", iconName: "Building2" },
+  { href: "/countries", label: "Countries", iconName: "Globe2" },
+  { href: "/professors", label: "Professors", iconName: "Users" },
+  { href: "/documents", label: "Documents", iconName: "FileCheck" },
+  { href: "/faqs", label: "FAQs", iconName: "HelpCircle" }
+];
+
+/** Every page, used by the simple footer. */
+export const footerLinksData: NavLinkItem[] = [
+  { href: "/steps", label: "6 Steps", iconName: "" },
+  { href: "/profile", label: "Profile", iconName: "" },
+  { href: "/guides", label: "Guides", iconName: "" },
+  { href: "/directory", label: "Directory", iconName: "" },
+  { href: "/countries", label: "Countries", iconName: "" },
+  { href: "/scholarships", label: "Scholarships", iconName: "" },
+  { href: "/professors", label: "Professors", iconName: "" },
+  { href: "/documents", label: "Documents", iconName: "" },
+  { href: "/faqs", label: "FAQs", iconName: "" },
+  { href: "/problems", label: "Problems", iconName: "" }
 ];
 
 export const footerData = {
