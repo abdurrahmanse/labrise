@@ -7,6 +7,7 @@ import { contactPageText as t, contactTopics } from "@/data/text/contact";
 import { cn } from "@/lib/utils";
 import { buildMailto, buildMessage } from "../lib/buildMailto";
 import { contactSchema, MIN_MESSAGE, type ContactErrors, type ContactValues } from "../lib/contactSchema";
+import { surface } from "@/shared/components/Surface";
 
 const EMPTY: ContactValues = { topic: "correction", name: "", email: "", page: "", message: "" };
 
@@ -40,7 +41,7 @@ export function ContactForm() {
   if (sent) {
     const { subject, body } = buildMessage(sent);
     return (
-      <div className="space-y-5 border-2 border-white/30 bg-canvas-card/60 p-6 backdrop-blur-xl shadow-[4px_4px_0_0_rgba(15,23,42,0.18)]" role="status">
+      <div className={surface({ tone: "panel", depth: "md", padding: "xl", className: "space-y-5" })} role="status">
         <div className="flex items-start gap-4">
           <span className="flex h-12 w-12 shrink-0 items-center justify-center bg-emerald-500 text-white">
             <CheckCircle2 className="h-7 w-7" aria-hidden />
@@ -71,7 +72,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={submit} noValidate className="space-y-6 border-2 border-white/30 bg-canvas-card/60 p-6 backdrop-blur-xl shadow-[4px_4px_0_0_rgba(15,23,42,0.18)]">
+    <form onSubmit={submit} noValidate className={surface({ tone: "panel", depth: "md", padding: "xl", className: "space-y-6" })}>
       <h2 className="flex items-center gap-3 text-2xl font-bold text-white">
         <span className="flex h-9 w-9 items-center justify-center bg-indigo-600 text-white">
           <Send className="h-5 w-5" aria-hidden />

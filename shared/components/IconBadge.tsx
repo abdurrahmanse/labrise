@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+import type { ReactNode } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
@@ -16,15 +17,22 @@ const badge = cva("flex shrink-0 items-center justify-center bg-indigo-600 text-
 });
 
 interface IconBadgeProps extends VariantProps<typeof badge> {
-  icon: LucideIcon;
+  /** An icon, or children for anything else that belongs in the square (an icon picked by rule, a number). */
+  icon?: LucideIcon;
+  children?: ReactNode;
   className?: string;
 }
 
-/** The square blue tile with an icon that marks headings, cards and tiles across the site. */
-export function IconBadge({ icon: Icon, size, shadow, className }: IconBadgeProps) {
+/** The square blue tile that marks headings, cards and tiles across the site. */
+export function IconBadge({ icon: Icon, children, size, shadow, className }: IconBadgeProps) {
+  return <span className={cn(badge({ size, shadow }), className)}>{Icon ? <Icon aria-hidden /> : children}</span>;
+}
+
+/** The same tile holding a step number. */
+export function NumberBadge({ children, size = "md", className }: { children: ReactNode; size?: "sm" | "md" | "lg"; className?: string }) {
   return (
-    <span className={cn(badge({ size, shadow }), className)}>
-      <Icon aria-hidden />
-    </span>
+    <IconBadge size={size} className={cn("font-mono font-bold", className)}>
+      {children}
+    </IconBadge>
   );
 }

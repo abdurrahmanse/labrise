@@ -9,6 +9,7 @@ import { Body, Label } from "@/shared/components/Text";
 import { useProgress } from "@/shared/progress/useProgress";
 import { applyTracks, type ApplyTrack } from "../data/tracks";
 import { stepKeys, useApplyProgress } from "../store/useApplyProgress";
+import { surface } from "@/shared/components/Surface";
 
 function RouteCard({ track }: { track: ApplyTrack }) {
   const Icon = trackIcons[track.id];
@@ -16,7 +17,7 @@ function RouteCard({ track }: { track: ApplyTrack }) {
   const { done, total, percent } = useProgress(useApplyProgress, stepKeys(track.id, track.steps.length));
 
   return (
-    <article className="relative flex flex-col gap-4 border-2 border-white/30 bg-canvas-card/60 p-6 pt-8 backdrop-blur-xl shadow-[6px_6px_0_0_rgba(58,95,224,0.25)]">
+    <article className={surface({ tone: "panel", depth: "none", padding: "xl", className: "relative flex flex-col gap-4 pt-8 shadow-[6px_6px_0_0_rgba(58,95,224,0.25)]" })}>
       <span className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-indigo-600 to-cyan-400" />
       <div className="flex items-center justify-between gap-3">
         <IconBadge icon={Icon} size="xl" shadow />

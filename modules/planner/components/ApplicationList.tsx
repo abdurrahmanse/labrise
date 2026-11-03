@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { applicationsToCsv } from "../lib/csv";
 import { daysUntil } from "../lib/dates";
 import { STATUS_KEYS, usePlanner, type ApplicationStatus } from "../store/usePlanner";
+import { surface } from "@/shared/components/Surface";
 
 const STATUS_STYLE: Record<ApplicationStatus, string> = {
   planning: "text-slate-300",
@@ -55,7 +56,7 @@ export function ApplicationList() {
           const days = daysUntil(a.deadline);
           const closed = a.status === "submitted" || a.status === "offer" || a.status === "rejected";
           return (
-            <li key={a.id} className="flex flex-col gap-3 bg-canvas-card/70 p-5 backdrop-blur-xl shadow-[4px_4px_0_0_rgba(15,23,42,0.12)]">
+            <li key={a.id} className={surface({ tone: "glass", depth: "soft", padding: "lg", className: "flex flex-col gap-3" })}>
               <div className="flex items-start justify-between gap-3">
                 <div className="min-w-0">
                   <p className="font-mono text-xs uppercase tracking-wider text-indigo-300">{t.form.kinds[a.kind]}</p>

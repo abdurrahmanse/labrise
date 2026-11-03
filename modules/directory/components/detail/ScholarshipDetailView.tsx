@@ -2,8 +2,11 @@ import Link from "next/link";
 import { ArrowRight, CalendarCheck, CalendarClock, Check, ExternalLink, Globe2, Landmark, Layers } from "lucide-react";
 import { detailText } from "@/data/text/directory";
 import { scholarshipDetailText as t } from "@/data/text/scholarships";
+import { Button } from "@/components/ui/Button";
+import { HighlightTiles } from "@/shared/components/StatTiles";
 import { EntryActions } from "@/modules/library/components/EntryActions";
 import { Block } from "@/shared/components/Block";
+import { IconBadge } from "@/shared/components/IconBadge";
 import { Chips } from "@/shared/components/Chips";
 import { InfoCard } from "@/shared/components/InfoCard";
 import { PageShell } from "@/shared/components/PageShell";
@@ -15,10 +18,9 @@ import { ScholarshipCard } from "../cards/ScholarshipCard";
 import { Flag } from "../Flag";
 import { ScholarshipChecklist } from "./ScholarshipChecklist";
 import { HelpLinks } from "@/shared/components/HelpLinks";
+import { surface } from "@/shared/components/Surface";
 
 const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
-const tile = "flex items-start gap-3 bg-canvas-card/70 p-4 backdrop-blur-xl shadow-[3px_3px_0_0_rgba(15,23,42,0.12)]";
-const tileIcon = "flex h-10 w-10 shrink-0 items-center justify-center bg-indigo-600 text-white";
 const label = "font-mono text-xs uppercase tracking-wider text-slate-400";
 const body = "font-sans text-[length:var(--text-body)] font-normal text-slate-200";
 
@@ -46,39 +48,21 @@ export function ScholarshipDetailView({ scholarship }: { scholarship: Scholarshi
       actions={
         <>
           <EntryActions type="scholarships" slug={slug} />
-          <a href={scholarship.site} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border-2 border-transparent bg-indigo-600 px-5 py-2 text-sm font-bold uppercase tracking-wider text-white shadow-[4px_4px_0_0_rgba(15,23,42,0.25)] transition-transform hover:-translate-y-0.5">
-            {t.official} <ExternalLink className="h-4 w-4" aria-hidden />
-          </a>
+          <Button href={scholarship.site} target="_blank" rightIcon={<ExternalLink className="h-4 w-4" aria-hidden />}>{t.official}</Button>
         </>
       }
       media={<Flag country={scholarship.host} className="h-10 w-14" />}
       lead={detailText.lead.scholarship(scholarship.host, scholarship.covers)}
       back={{ href: "/directory/scholarships", label: detailText.back.scholarships }}
     >
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <div className={tile}>
-          <span className={tileIcon}><Layers className="h-5 w-5" aria-hidden /></span>
-          <div><p className={label}>{t.highlights.level}</p><p className="font-bold text-white">{scholarship.level}</p></div>
-        </div>
-        <div className={tile}>
-          <span className={tileIcon}><CalendarClock className="h-5 w-5" aria-hidden /></span>
-          <div><p className={label}>{t.highlights.deadline}</p><p className="font-bold text-white">{scholarship.deadline}</p></div>
-        </div>
-        <div className={tile}>
-          <span className={tileIcon}><Globe2 className="h-5 w-5" aria-hidden /></span>
-          <div>
-            <p className={label}>{t.highlights.host}</p>
-            <p className="font-bold text-white">{country ? <Link href={`/directory/countries/${countrySlug(country)}`} className="hover:text-indigo-300">{scholarship.host}</Link> : scholarship.host}</p>
-          </div>
-        </div>
-        <div className={tile}>
-          <span className={tileIcon}><Landmark className="h-5 w-5" aria-hidden /></span>
-          <div>
-            <p className={label}>{t.highlights.provider}</p>
-            <p className="font-bold text-white">{provider ? <Link href={`/directory/providers/${providerSlug(provider)}`} className="hover:text-indigo-300">{provider.name}</Link> : "—"}</p>
-          </div>
-        </div>
-      </div>
+      <HighlightTiles
+        items={[
+          { Icon: Layers, label: t.highlights.level, children: scholarship.level },
+          { Icon: CalendarClock, label: t.highlights.deadline, children: scholarship.deadline },
+          { Icon: Globe2, label: t.highlights.host, children: country ? <Link href={`/directory/countries/${countrySlug(country)}`} className="hover:text-indigo-300">{scholarship.host}</Link> : scholarship.host },
+          { Icon: Landmark, label: t.highlights.provider, children: provider ? <Link href={`/directory/providers/${providerSlug(provider)}`} className="hover:text-indigo-300">{provider.name}</Link> : "—" }
+        ]}
+      />
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <InfoCard label={t.covers}>
@@ -94,7 +78,7 @@ export function ScholarshipDetailView({ scholarship }: { scholarship: Scholarshi
         <div className="space-y-8">
           {provider && (
             <Block title={t.provider.title} icon={Landmark}>
-              <div className="space-y-4 border-2 border-white/25 bg-canvas-card/50 p-5 backdrop-blur-xl">
+              <div className={surface({ tone: "quiet", depth: "none", padding: "lg", className: "space-y-4" })}>
                 <div>
                   <p className={label}>{t.provider.route}</p>
                   <p className={body}>{provider.route}</p>
@@ -137,7 +121,7 @@ export function ScholarshipDetailView({ scholarship }: { scholarship: Scholarshi
             <ScholarshipChecklist slug={slug} items={checklist} />
           </InfoCard>
           <Link href="/planner" className="flex items-center gap-3 border-2 border-white/25 bg-white/[0.03] p-4 font-bold text-slate-100 hover:border-indigo-400">
-            <span className={tileIcon}><CalendarCheck className="h-5 w-5" aria-hidden /></span>
+            <IconBadge icon={CalendarCheck} />
             {t.planner}
           </Link>
           <HelpLinks title={t.help.title} links={t.help.links} />

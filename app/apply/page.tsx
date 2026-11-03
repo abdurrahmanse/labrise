@@ -9,6 +9,7 @@ import { Block } from "@/shared/components/Block";
 import { Button } from "@/components/ui/Button";
 import { IconBadge } from "@/shared/components/IconBadge";
 import { PageShell } from "@/shared/components/PageShell";
+import { surface } from "@/shared/components/Surface";
 
 export const metadata = buildMetadata({ title: t.title, description: t.description, path: "/apply" });
 
@@ -30,7 +31,7 @@ export default function ApplyPage() {
           {t.phases.items.map((phase, i) => {
             const Icon = phaseIcons[i];
             return (
-              <li key={phase.title} className="relative border-2 border-white/20 bg-canvas-card/50 p-4 backdrop-blur-xl">
+              <li key={phase.title} className={surface({ tone: "quiet", depth: "none", padding: "md", className: "relative" })}>
                 <IconBadge icon={Icon} className="mb-3" />
                 <p className="font-mono text-xs text-indigo-300">0{i + 1}</p>
                 <h3 className="text-lg font-bold text-white">{phase.title}</h3>

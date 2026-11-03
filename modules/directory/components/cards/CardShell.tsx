@@ -6,6 +6,7 @@ import type { ReactNode } from "react";
 import { commonText } from "@/data/text/common";
 import { IconFor } from "@/shared/components/IconFor";
 import { usePrefetchHref } from "../../hooks/useDirectoryEntry";
+import { surface } from "@/shared/components/Surface";
 
 interface CardShellProps {
   href: string;
@@ -20,7 +21,7 @@ interface CardShellProps {
 export function CardShell({ href, eyebrow, title, media, children }: CardShellProps) {
   const prefetch = usePrefetchHref(href);
   return (
-    <article onMouseEnter={prefetch} onFocus={prefetch} className="group relative flex flex-col gap-3 bg-canvas-card/70 backdrop-blur-xl p-5 pt-6 shadow-[4px_4px_0_0_rgba(15,23,42,0.12)] transition-all duration-150 hover:-translate-y-1 hover:shadow-[6px_6px_0_0_rgba(58,95,224,0.3)]">
+    <article onMouseEnter={prefetch} onFocus={prefetch} className={surface({ tone: "glass", depth: "soft", padding: "lg", className: "group relative flex flex-col gap-3 pt-6 transition-all duration-150 hover:-translate-y-1 hover:shadow-[6px_6px_0_0_rgba(58,95,224,0.3)]" })}>
       <span className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-indigo-600 to-cyan-400" />
       <div className="flex items-center gap-3">
         {media}

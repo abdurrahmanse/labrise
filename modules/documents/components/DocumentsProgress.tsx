@@ -7,6 +7,7 @@ import { IconBadge } from "@/shared/components/IconBadge";
 import { ProgressPanel } from "@/shared/components/ProgressPanel";
 import { useProgress } from "@/shared/progress/useProgress";
 import { useDocumentChecklist } from "../store/useDocumentChecklist";
+import { surface } from "@/shared/components/Surface";
 
 export const ALL_CHECK_IDS = documentsData.flatMap((d) => d.checklistItems.map((i) => i.id));
 
@@ -15,7 +16,7 @@ export function DocumentsProgress() {
   const { done, total, percent, reset } = useProgress(useDocumentChecklist, ALL_CHECK_IDS);
 
   return (
-    <section aria-label={t.progress.title} className="space-y-3 border-2 border-white/30 bg-canvas-card/60 p-5 backdrop-blur-xl shadow-[4px_4px_0_0_rgba(15,23,42,0.18)]">
+    <section aria-label={t.progress.title} className={surface({ tone: "panel", depth: "md", padding: "lg", className: "space-y-3" })}>
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-4">
           <IconBadge icon={Trophy} size="lg" />

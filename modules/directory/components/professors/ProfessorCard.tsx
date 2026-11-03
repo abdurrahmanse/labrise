@@ -9,12 +9,13 @@ import { EmailLine } from "./EmailLine";
 import { SaveButton } from "./SaveButton";
 import { StatusSelect } from "./StatusSelect";
 import { commonText } from "@/data/text/common";
+import { surface } from "@/shared/components/Surface";
 
 export function ProfessorCard({ professor }: { professor: ProfessorEntry }) {
   const slug = professorSlug(professor);
 
   return (
-    <article className="flex flex-col gap-4 bg-canvas-card/70 backdrop-blur-xl p-5 shadow-[4px_4px_0_0_rgba(15,23,42,0.12)]">
+    <article className={surface({ tone: "glass", depth: "soft", padding: "lg", className: "flex flex-col gap-4" })}>
       <div className="flex items-start justify-between gap-3">
         <Avatar name={professor.name} size={56} />
         <div className="min-w-0 flex-1">

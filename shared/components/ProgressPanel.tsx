@@ -2,6 +2,7 @@ import { RotateCcw } from "lucide-react";
 import type { ReactNode } from "react";
 import { commonText } from "@/data/text/common";
 import { ProgressBar } from "./ProgressBar";
+import { surface } from "@/shared/components/Surface";
 
 interface ProgressPanelProps {
   label: string;
@@ -36,5 +37,5 @@ export function ProgressPanel({ label, summary, percent, onReset, canReset = tru
       {note && <p className="font-mono text-xs text-slate-500">{note}</p>}
     </div>
   );
-  return bare ? body : <div className="border-2 border-white/30 bg-canvas-card/60 p-5 backdrop-blur-xl shadow-[4px_4px_0_0_rgba(15,23,42,0.18)]">{body}</div>;
+  return bare ? body : <div className={surface({ tone: "panel", depth: "md", padding: "lg" })}>{body}</div>;
 }

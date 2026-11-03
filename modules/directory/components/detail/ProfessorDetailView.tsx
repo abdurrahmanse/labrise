@@ -5,6 +5,7 @@ import { detailText, emailText } from "@/data/text/directory";
 import { noticeText } from "@/data/text/common";
 import { professorProfileText as t } from "@/data/text/professorsHub";
 import { EntryActions } from "@/modules/library/components/EntryActions";
+import { HighlightTiles } from "@/shared/components/StatTiles";
 import { Avatar } from "@/shared/components/Avatar";
 import { Block } from "@/shared/components/Block";
 import { Chips } from "@/shared/components/Chips";
@@ -26,10 +27,8 @@ import { buildEmailDraft } from "./emailDraft";
 import { EmailDraftBox } from "./EmailDraftBox";
 import { ProfessorFieldInfo } from "./ProfessorFieldInfo";
 import { HelpLinks } from "@/shared/components/HelpLinks";
+import { surface } from "@/shared/components/Surface";
 
-const tile = "flex items-start gap-3 bg-canvas-card/70 p-4 backdrop-blur-xl shadow-[3px_3px_0_0_rgba(15,23,42,0.12)]";
-const tileIcon = "flex h-10 w-10 shrink-0 items-center justify-center bg-indigo-600 text-white";
-const label = "font-mono text-xs uppercase tracking-wider text-slate-400";
 const link = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 
 export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }) {
@@ -52,35 +51,19 @@ export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }
       lead={detailText.lead.professor(professor.university, professor.country, professor.group)}
       back={{ href: "/directory/professors", label: detailText.back.professors }}
     >
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <div className={tile}>
-          <span className={tileIcon}><Building2 className="h-5 w-5" aria-hidden /></span>
-          <div className="min-w-0">
-            <p className={label}>{t.highlights.university}</p>
-            <p className="font-bold text-white">{university ? <Link href={`/directory/universities/${universitySlug(university)}`} className="hover:text-indigo-300">{university.name}</Link> : professor.university}</p>
-          </div>
-        </div>
-        <div className={tile}>
-          <span className={tileIcon}><Globe2 className="h-5 w-5" aria-hidden /></span>
-          <div>
-            <p className={label}>{t.highlights.country}</p>
-            <p className="flex items-center gap-2 font-bold text-white"><Flag country={professor.country} className="h-4 w-6" /> {professor.country}</p>
-          </div>
-        </div>
-        <div className={tile}>
-          <span className={tileIcon}><GraduationCap className="h-5 w-5" aria-hidden /></span>
-          <div><p className={label}>{t.highlights.field}</p><p className="font-bold text-white">{field.title}</p></div>
-        </div>
-        <div className={tile}>
-          <span className={tileIcon}>{professor.email ? <Mail className="h-5 w-5" aria-hidden /> : <MailQuestion className="h-5 w-5" aria-hidden />}</span>
-          <div><p className={label}>{t.highlights.email}</p><p className="font-bold text-white">{professor.email ? t.emailListed : t.emailMissing}</p></div>
-        </div>
-      </div>
+      <HighlightTiles
+        items={[
+          { Icon: Building2, label: t.highlights.university, children: university ? <Link href={`/directory/universities/${universitySlug(university)}`} className="hover:text-indigo-300">{university.name}</Link> : professor.university },
+          { Icon: Globe2, label: t.highlights.country, children: <span className="flex items-center gap-2"><Flag country={professor.country} className="h-4 w-6" /> {professor.country}</span> },
+          { Icon: GraduationCap, label: t.highlights.field, children: field.title },
+          { Icon: professor.email ? Mail : MailQuestion, label: t.highlights.email, children: professor.email ? t.emailListed : t.emailMissing }
+        ]}
+      />
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
         <div className="space-y-8">
           <Block title={t.contact.title} icon={Mail}>
-            <div className="space-y-4 border-2 border-white/25 bg-canvas-card/50 p-5 backdrop-blur-xl">
+            <div className={surface({ tone: "quiet", depth: "none", padding: "lg", className: "space-y-4" })}>
               {professor.email ? (
                 <div className="flex flex-wrap items-center gap-3">
                   <a href={`mailto:${professor.email}`} className={`break-all text-lg font-bold ${link}`}>{professor.email}</a>

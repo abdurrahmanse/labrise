@@ -4,6 +4,7 @@ import { IconTile } from "@/shared/components/IconTile";
 import { roadmapSteps } from "@/modules/roadmap/data/steps";
 import { SectionHeading } from "./SectionHeading";
 import { homeText } from "@/data/text/site";
+import { surface } from "@/shared/components/Surface";
 
 const STEP_ICONS: LucideIcon[] = [Compass, FlaskConical, Globe2, Users, FileText, Plane];
 
@@ -16,7 +17,7 @@ export function JourneySection() {
           <li key={s.step}>
             <Link
               href={s.href}
-              className="group block h-full border-2 border-white/30 bg-canvas-card/60 backdrop-blur-xl p-5 shadow-[4px_4px_0_0_rgba(15,23,42,0.18)] transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[7px_7px_0_0_rgba(58,95,224,0.4)]"
+              className={surface({ tone: "panel", depth: "md", padding: "lg", className: "group block h-full transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[7px_7px_0_0_rgba(58,95,224,0.4)]" })}
             >
               <div className="flex items-center justify-between mb-4">
                 <IconTile icon={STEP_ICONS[s.step - 1]} size={52} />

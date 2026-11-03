@@ -2,7 +2,7 @@ import type { ElementType, HTMLAttributes } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
-const surface = cva("backdrop-blur-xl", {
+export const surface = cva("backdrop-blur-xl", {
   variants: {
     tone: {
       glass: "bg-canvas-card/70",
@@ -13,6 +13,7 @@ const surface = cva("backdrop-blur-xl", {
     depth: {
       none: "",
       sm: "shadow-[3px_3px_0_0_rgba(15,23,42,0.12)]",
+      soft: "shadow-[4px_4px_0_0_rgba(15,23,42,0.12)]",
       md: "shadow-[4px_4px_0_0_rgba(15,23,42,0.18)]",
       lg: "shadow-[6px_6px_0_0_rgba(58,95,224,0.25)]"
     },

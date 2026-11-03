@@ -5,6 +5,8 @@ import { hubChrome, type JourneyItem, type RelatedItem } from "@/data/text/hubPa
 import { Block } from "./Block";
 import { LinkTile, LinkTileGrid } from "./LinkTile";
 import { ContourPattern } from "../illustrations/ContourPattern";
+import { IconBadge } from "@/shared/components/IconBadge";
+import { surface } from "@/shared/components/Surface";
 
 interface JourneyHubProps {
   items: JourneyItem[];
@@ -23,14 +25,12 @@ export function JourneyHub({ items, related, badges = {} }: JourneyHubProps) {
             <li key={href} className={i === 0 ? "md:col-span-2" : undefined}>
               <Link
                 href={href}
-                className="group relative flex h-full gap-5 overflow-hidden border-2 border-white/30 bg-canvas-card/60 p-6 backdrop-blur-xl shadow-[5px_5px_0_0_rgba(15,23,42,0.18)] transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[8px_8px_0_0_rgba(58,95,224,0.4)]"
+                className={surface({ tone: "panel", depth: "none", padding: "xl", className: "group relative flex h-full gap-5 overflow-hidden shadow-[5px_5px_0_0_rgba(15,23,42,0.18)] transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[8px_8px_0_0_rgba(58,95,224,0.4)]" })}
               >
                 <span className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-indigo-600 to-cyan-400" />
                 {i === 0 && <ContourPattern className="absolute -right-10 -top-4 hidden h-48 w-80 opacity-40 md:block" />}
                 <span className="pointer-events-none absolute -bottom-6 right-4 select-none text-8xl font-bold text-white/[0.05]">{String(i + 1).padStart(2, "0")}</span>
-                <span className="relative flex h-14 w-14 shrink-0 items-center justify-center bg-indigo-600 text-white shadow-[3px_3px_0_0_rgba(15,23,42,0.2)]">
-                  <Icon className="h-7 w-7" aria-hidden />
-                </span>
+                <IconBadge icon={Icon} size="xl" />
                 <span className="relative min-w-0 flex-1 space-y-2">
                   <span className="flex flex-wrap items-center gap-3">
                     <span className="font-mono text-xs uppercase tracking-wider text-indigo-300">{i === 0 ? hubChrome.start : String(i + 1).padStart(2, "0")}</span>

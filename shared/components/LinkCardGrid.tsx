@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, type LucideIcon } from "lucide-react";
 import { IconTile } from "./IconTile";
+import { surface } from "@/shared/components/Surface";
 
 export interface LinkCardItem {
   href: string;
@@ -22,7 +23,7 @@ export function LinkCardGrid({ items, columns = "md:grid-cols-2 lg:grid-cols-3" 
         <Link
           key={it.href}
           href={it.href}
-          className="group flex items-center justify-between gap-4 border-2 border-white/30 bg-canvas-card/60 backdrop-blur-xl p-5 shadow-[4px_4px_0_0_rgba(15,23,42,0.18)] transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[7px_7px_0_0_rgba(58,95,224,0.4)]"
+          className={surface({ tone: "panel", depth: "md", padding: "lg", className: "group flex items-center justify-between gap-4 transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[7px_7px_0_0_rgba(58,95,224,0.4)]" })}
         >
           <div className="flex items-center gap-4 min-w-0">
             {it.icon && <IconTile icon={it.icon} />}

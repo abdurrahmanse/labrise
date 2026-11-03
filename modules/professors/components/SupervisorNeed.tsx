@@ -3,6 +3,7 @@ import { CircleCheck, CircleHelp, CircleSlash } from "lucide-react";
 import { professorsHubText as t } from "@/data/text/professorsHub";
 import { countries } from "@/modules/directory/data";
 import { countrySlug } from "@/modules/directory/lib/slugs";
+import { surface } from "@/shared/components/Surface";
 
 const GROUPS = [
   { key: "Required first", Icon: CircleCheck, tone: "text-amber-400" },
@@ -17,7 +18,7 @@ export function SupervisorNeed() {
       <p className="font-sans text-[length:var(--text-body)] font-normal text-slate-300">{t.need.lead}</p>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         {GROUPS.map(({ key, Icon, tone }) => (
-          <section key={key} className="border-2 border-white/20 bg-canvas-card/50 p-4 backdrop-blur-xl">
+          <section key={key} className={surface({ tone: "quiet", depth: "none", padding: "md" })}>
             <h3 className={`mb-3 flex items-center gap-2 text-lg font-bold ${tone}`}><Icon className="h-5 w-5" aria-hidden /> {t.need.groups[key]}</h3>
             <ul className="flex flex-wrap gap-2">
               {countries.filter((c) => c.supervisor === key).map((c) => (

@@ -8,6 +8,7 @@ import { glossaryText as t } from "@/data/text/glossary";
 import { emptyText } from "@/data/text/status";
 import { EmptyState } from "@/shared/components/EmptyState";
 import { glossaryTerms } from "../data/terms";
+import { surface } from "@/shared/components/Surface";
 
 export function GlossaryBrowser() {
   const [query, setQuery] = useState("");
@@ -29,7 +30,7 @@ export function GlossaryBrowser() {
       ) : (
         <dl className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {matches.map((g) => (
-            <div key={g.term} className="flex flex-col gap-2 bg-canvas-card/70 p-5 backdrop-blur-xl shadow-[4px_4px_0_0_rgba(15,23,42,0.12)]">
+            <div key={g.term} className={surface({ tone: "glass", depth: "soft", padding: "lg", className: "flex flex-col gap-2" })}>
               <dt className="flex items-center gap-2 text-xl font-bold text-white">
                 <BookOpen className="h-5 w-5 shrink-0 text-indigo-400" aria-hidden />
                 {g.term}

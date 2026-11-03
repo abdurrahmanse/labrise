@@ -4,6 +4,7 @@ import { plannerText as t } from "@/data/text/planner";
 import { useMounted } from "@/shared/hooks/useMounted";
 import { daysUntil } from "../lib/dates";
 import { usePlanner } from "../store/usePlanner";
+import { surface } from "@/shared/components/Surface";
 
 export function PlannerSummary() {
   const mounted = useMounted();
@@ -23,7 +24,7 @@ export function PlannerSummary() {
   return (
     <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
       {tiles.map((tile) => (
-        <div key={tile.label} className="bg-canvas-card/70 p-4 shadow-[3px_3px_0_0_rgba(15,23,42,0.12)]">
+        <div key={tile.label} className={surface({ tone: "glass", depth: "sm", padding: "md" })}>
           <div className="text-2xl font-bold text-white">{tile.value}</div>
           <div className="font-mono text-xs uppercase tracking-wider text-slate-400">{tile.label}</div>
         </div>

@@ -6,6 +6,7 @@ import { DocumentsProgress } from "@/modules/documents/components/DocumentsProgr
 import { Block } from "@/shared/components/Block";
 import { PageShell } from "@/shared/components/PageShell";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { surface } from "@/shared/components/Surface";
 
 export const metadata: Metadata = buildMetadata({ title: t.title, description: t.description, path: "/documents" });
 
@@ -17,7 +18,7 @@ export default function DocumentsPage() {
       <Block title={t.how.title}>
         <ol className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {t.how.steps.map((step, i) => (
-            <li key={step.title} className="border-2 border-white/20 bg-canvas-card/50 p-4 backdrop-blur-xl">
+            <li key={step.title} className={surface({ tone: "quiet", depth: "none", padding: "md" })}>
               <span className="mb-2 inline-flex h-8 w-8 items-center justify-center bg-indigo-600 font-mono font-bold text-white">{i + 1}</span>
               <h3 className="text-lg font-bold text-white">{step.title}</h3>
               <p className="mt-1 font-sans text-[length:var(--text-body)] font-normal text-slate-300">{step.body}</p>

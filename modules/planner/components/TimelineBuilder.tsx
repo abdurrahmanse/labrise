@@ -5,6 +5,7 @@ import { CalendarRange } from "lucide-react";
 import { plannerText as t, timelineSteps } from "@/data/text/planner";
 import { formatMonth, monthsBefore } from "../lib/dates";
 import { usePlanner } from "../store/usePlanner";
+import { surface } from "@/shared/components/Surface";
 
 const field =
   "border-2 border-white/30 bg-white/[0.05] px-4 py-3 font-sans text-base text-slate-100 outline-none transition-colors focus:border-indigo-400";
@@ -26,7 +27,7 @@ export function TimelineBuilder() {
       {intake ? (
         <ol className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
           {timelineSteps.map((step, i) => (
-            <li key={step.title} className="border-2 border-white/25 bg-canvas-card/60 p-4 backdrop-blur-xl shadow-[3px_3px_0_0_rgba(15,23,42,0.12)]">
+            <li key={step.title} className={surface({ tone: "panel", depth: "sm", padding: "md" })}>
               <div className="mb-2 flex items-center justify-between">
                 <span className="bg-indigo-600 px-2 py-0.5 font-mono text-sm font-bold text-white">{i + 1}</span>
                 <span className="inline-flex items-center gap-1.5 font-mono text-xs text-indigo-300">

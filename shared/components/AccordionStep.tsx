@@ -4,6 +4,7 @@ import { ChevronDown } from "lucide-react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { CheckBox } from "./CheckRow";
+import { NumberBadge } from "./IconBadge";
 
 interface AccordionStepProps {
   number: string | number;
@@ -22,7 +23,7 @@ export function AccordionStep({ number, title, summary, done, onToggle, toggleLa
     <li className={cn("border-2 backdrop-blur-xl transition-colors", done ? "border-indigo-400/60 bg-indigo-600/10" : "border-white/25 bg-canvas-card/60")}>
       <details className="group">
         <summary className="flex cursor-pointer list-none items-start gap-4 p-4">
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center bg-indigo-600 font-mono font-bold text-white">{number}</span>
+          <NumberBadge>{number}</NumberBadge>
           <span className="min-w-0 flex-1">
             <span className={cn("block text-lg font-bold", done ? "text-slate-400 line-through" : "text-white")}>{title}</span>
             <span className="mt-1 block font-sans text-[length:var(--text-body)] font-normal text-slate-300">{summary}</span>

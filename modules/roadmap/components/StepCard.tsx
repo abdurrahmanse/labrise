@@ -1,8 +1,9 @@
 import type { RoadmapStepSummary } from "../types";
+import { surface } from "@/shared/components/Surface";
 
 export function StepCard({ step }: { step: RoadmapStepSummary }) {
   return (
-    <li className="border-2 border-white/30 bg-canvas-card/60 backdrop-blur-xl p-5 shadow-[4px_4px_0_0_rgba(15,23,42,0.18)]">
+    <li className={surface({ tone: "panel", depth: "md", padding: "lg" })}>
       <div className="flex items-center justify-between mb-3">
         <span className="bg-indigo-600 text-white font-mono font-bold px-2 py-0.5">{String(step.step).padStart(2, "0")}</span>
         <span className="font-mono text-xs text-slate-400">{step.when}</span>

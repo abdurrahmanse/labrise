@@ -3,10 +3,12 @@ import { AlertTriangle, BadgeCheck, BookOpen } from "lucide-react";
 import type { DocumentGuideline } from "@/data/documentsData";
 import { documentDetailText as t, documentMeta } from "@/data/text/documents";
 import { Block } from "@/shared/components/Block";
+import { NumberBadge } from "@/shared/components/IconBadge";
 import { Chips } from "@/shared/components/Chips";
 import { InfoCard } from "@/shared/components/InfoCard";
 import { documentsData } from "@/data/documentsData";
 import { DocumentChecklist } from "./DocumentChecklist";
+import { surface } from "@/shared/components/Surface";
 
 const bullet = "flex gap-3 font-sans text-[length:var(--text-body)] font-normal text-slate-200";
 
@@ -29,10 +31,8 @@ export function DocumentBody({ doc }: { doc: DocumentGuideline }) {
         <Block title={t.structure}>
           <ol className="space-y-3">
             {doc.structure.map((s, i) => (
-              <li key={s.section} className="flex gap-4 border-2 border-white/20 bg-canvas-card/50 p-4 backdrop-blur-xl">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center bg-indigo-600 font-mono font-bold text-white" aria-label={t.step(i + 1)}>
-                  {i + 1}
-                </span>
+              <li key={s.section} className={surface({ tone: "quiet", depth: "none", padding: "md", className: "flex gap-4" })}>
+                <NumberBadge>{i + 1}</NumberBadge>
                 <div>
                   <h3 className="text-lg font-bold text-white">{s.section.replace(/^\d+\.\s*/, "")}</h3>
                   <p className="mt-1 font-sans text-[length:var(--text-body)] font-normal text-slate-300">{s.guidance}</p>
@@ -69,7 +69,7 @@ export function DocumentBody({ doc }: { doc: DocumentGuideline }) {
         </InfoCard>
 
         {guide && (
-          <Link href={`/guides/${guide}`} className="flex items-center gap-3 border-2 border-white/30 bg-canvas-card/60 p-4 font-bold text-white backdrop-blur-xl hover:border-indigo-400">
+          <Link href={`/guides/${guide}`} className={surface({ tone: "panel", depth: "none", padding: "md", className: "flex items-center gap-3 font-bold text-white hover:border-indigo-400" })}>
             <span className="flex h-10 w-10 items-center justify-center bg-indigo-600 text-white"><BookOpen className="h-5 w-5" aria-hidden /></span>
             {t.guide}
           </Link>

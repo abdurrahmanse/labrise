@@ -6,6 +6,7 @@ import { professorSlug } from "../../lib/slugs";
 import type { ProfessorEntry } from "../../types";
 import { rosterLabels } from "@/data/text/directory";
 import { commonText } from "@/data/text/common";
+import { surface } from "@/shared/components/Surface";
 
 /** Professors with their field and email, ready to open or copy. */
 export function ProfessorRoster({ professors }: { professors: ProfessorEntry[] }) {
@@ -14,7 +15,7 @@ export function ProfessorRoster({ professors }: { professors: ProfessorEntry[] }
   return (
     <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
       {professors.map((p) => (
-        <div key={p.name} className="flex gap-3 bg-canvas-card/70 backdrop-blur-xl p-4 shadow-[3px_3px_0_0_rgba(15,23,42,0.12)]">
+        <div key={p.name} className={surface({ tone: "glass", depth: "sm", padding: "md", className: "flex gap-3" })}>
           <Avatar name={p.name} size={44} />
           <div className="min-w-0 flex-1">
             <Link href={`/directory/professors/${professorSlug(p)}`} className="font-bold text-white hover:text-indigo-300">
