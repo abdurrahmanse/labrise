@@ -1,10 +1,11 @@
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { Block } from "@/shared/components/Block";
-import { BulletList } from "@/shared/components/BulletList";
 import { PageShell } from "@/shared/components/PageShell";
-import { TrackSteps } from "@/modules/apply/components/TrackSteps";
+import { TrackSidebar } from "@/modules/apply/components/TrackSidebar";
+import { TrackStepper } from "@/modules/apply/components/TrackStepper";
+import { trackIcons, trackPageText as t } from "@/data/text/apply";
+import { IconTile } from "@/shared/components/IconTile";
 import { applyTracks, findTrack } from "@/modules/apply/data/tracks";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
 import { JsonLd } from "@/modules/seo/JsonLd";
@@ -23,7 +24,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const track = findTrack((await params).track);
   if (!track) return { title: notFoundTitles.generic };
-  return buildMetadata({ title: pageText.apply.stepByStep(track.title), description: track.summary, path: `/apply/${track.id}` });
+  return buildMetadata({ title: t.metaTitle(track.title), description: track.summary, path: `/apply/${track.id}` });
 }
 
 async function ApplyTrackPageContent({ params }: Props) {
@@ -34,18 +35,19 @@ async function ApplyTrackPageContent({ params }: Props) {
 
   return (
     <PageShell
-      eyebrow={pageText.apply.steps(track.steps.length)}
+      eyebrow={t.eyebrow(track.steps.length)}
       title={track.title}
       lead={track.summary}
-      back={{ href: "/apply", label: navLabels.howToApply }}
+      media={<IconTile icon={trackIcons[track.id]} size={56} />}
+      back={{ href: "/apply", label: t.back }}
       next={other && { href: `/apply/${other.id}`, label: other.title }}
     >
       <JsonLd data={howToSchema(track.title, track.summary, track.steps.map((s) => `${s.title}: ${s.detail}`))} />
       <JsonLd data={breadcrumbSchema([{ name: navLabels.home, path: "/" }, { name: pageText.apply.breadcrumb, path: "/apply" }, { name: track.title, path: `/apply/${track.id}` }])} />
-      <TrackSteps steps={track.steps} />
-      <Block title={pageText.apply.keepInMind}>
-        <BulletList items={track.tips} />
-      </Block>
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">
+        <TrackStepper track={track} />
+        <TrackSidebar track={track} other={other} />
+      </div>
     </PageShell>
   );
 }

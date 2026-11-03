@@ -256,6 +256,23 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../app/documents/[id]/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/documents/[id]">> = Specific
+  const handler = {} as typeof import("../../app/documents/[id]/page.js")
+  type __Check = __IsExpected<typeof handler>
+  
+  type __ParamMatchingValue =
+    typeof handler extends { unstable_paramMatching: infer Matcher } ? Matcher :
+    typeof handler extends { unstable_generateParamMatching: (...args: any[]) => infer Matcher } ? Awaited<Matcher> : {}
+  type __InvalidParamMatchingKeys = Exclude<keyof __ParamMatchingValue, keyof ParamMap["/documents/[id]"]>
+  type __AssertNoInvalidParamMatchingKeys<Invalid extends never> = Invalid
+  const __paramMatchingKeyCheck: __AssertNoInvalidParamMatchingKeys<__InvalidParamMatchingKeys> | undefined = undefined
+  void __paramMatchingKeyCheck
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../app/documents/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/documents">> = Specific
@@ -596,6 +613,23 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../app/saved/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/saved">> = Specific
+  const handler = {} as typeof import("../../app/saved/page.js")
+  type __Check = __IsExpected<typeof handler>
+  
+  type __ParamMatchingValue =
+    typeof handler extends { unstable_paramMatching: infer Matcher } ? Matcher :
+    typeof handler extends { unstable_generateParamMatching: (...args: any[]) => infer Matcher } ? Awaited<Matcher> : {}
+  type __InvalidParamMatchingKeys = Exclude<keyof __ParamMatchingValue, keyof ParamMap["/saved"]>
+  type __AssertNoInvalidParamMatchingKeys<Invalid extends never> = Invalid
+  const __paramMatchingKeyCheck: __AssertNoInvalidParamMatchingKeys<__InvalidParamMatchingKeys> | undefined = undefined
+  void __paramMatchingKeyCheck
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../app/scholarships/[part]/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/scholarships/[part]">> = Specific
@@ -664,10 +698,30 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../app/api/directory/[type]/[slug]/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/directory/[type]/[slug]">> = Specific
+  const handler = {} as typeof import("../../app/api/directory/[type]/[slug]/route.js")
+  type __Check = __IsExpected<typeof handler>
+  
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../app/api/directory/[type]/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/directory/[type]">> = Specific
   const handler = {} as typeof import("../../app/api/directory/[type]/route.js")
+  type __Check = __IsExpected<typeof handler>
+  
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/api/search/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/search">> = Specific
+  const handler = {} as typeof import("../../app/api/search/route.js")
   type __Check = __IsExpected<typeof handler>
   
   // @ts-ignore

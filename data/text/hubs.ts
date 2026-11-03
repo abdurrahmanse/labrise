@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { CheckCircle2, FileCheck, Layers, Mail, Search, ShieldCheck, Terminal, Users } from "lucide-react";
+import { CheckCircle2, Mail, Search, ShieldCheck, Terminal, Users } from "lucide-react";
 
 // Header text for the three long guide pages: documents, professors and scholarships.
 export interface HubText {
@@ -10,19 +10,6 @@ export interface HubText {
   intro: string;
   points: { Icon: LucideIcon; label: string }[];
 }
-
-export const documentsHub: HubText = {
-  Icon: FileCheck,
-  phase: "Phase 06 Dossier Preparation",
-  tagline: "Universal & Degree-Specific Documents",
-  title: "Required Documents Guide & Checklists",
-  intro: "A comprehensive, rigorous dossier preparation guide covering Academic CVs, 5-part Statements of Purpose, Research Proposals, Letters of Recommendation, official transcripts, and language test documentation.",
-  points: [
-    { Icon: Layers, label: "Structural Blueprints" },
-    { Icon: ShieldCheck, label: "Disqualification Traps Avoidance" },
-    { Icon: CheckCircle2, label: "Client-Side Readiness Checklists" }
-  ]
-};
 
 export const professorsHub: HubText = {
   Icon: Users,

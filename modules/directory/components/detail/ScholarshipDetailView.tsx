@@ -12,6 +12,7 @@ import type { ScholarshipEntry } from "../../types";
 
 import { Flag } from "../Flag";
 import { detailText } from "@/data/text/directory";
+import { EntryActions } from "@/modules/library/components/EntryActions";
 
 const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 
@@ -33,6 +34,7 @@ export function ScholarshipDetailView({ scholarship }: { scholarship: Scholarshi
       eyebrow={detailText.eyebrow.scholarship(scholarship.level)}
       title={scholarship.name}
       notice={{ subject: scholarship.name, source: scholarship.site }}
+      actions={<EntryActions type="scholarships" slug={scholarshipSlug(scholarship)} />}
       media={<Flag country={scholarship.host} className="h-10 w-14" />}
       lead={detailText.lead.scholarship(scholarship.host, scholarship.covers)}
       back={{ href: "/directory/scholarships", label: detailText.back.scholarships }}

@@ -1,16 +1,13 @@
 "use client";
 
-import { useEffect, useId, useState } from "react";
+import { useId, useState } from "react";
 import { Plus } from "lucide-react";
 import { plannerText as t } from "@/data/text/planner";
 import { cn } from "@/lib/utils";
+import { useSearch } from "@/modules/search/hooks/useSearch";
 import { usePlanner, type ApplicationKind } from "../store/usePlanner";
 
-interface Suggestion {
-  title: string;
-  kind: ApplicationKind;
-  href: string;
-}
+const KIND_OF: Record<string, ApplicationKind> = { University: "university", Scholarship: "scholarship", Funder: "scholarship" };
 
 const field =
   "w-full border-2 border-white/30 bg-white/[0.05] px-4 py-3 font-sans text-base text-slate-100 placeholder-slate-500 outline-none transition-colors focus:border-indigo-400";
@@ -23,21 +20,15 @@ export function ApplicationForm() {
   const [deadline, setDeadline] = useState("");
   const [kind, setKind] = useState<ApplicationKind>("university");
   const [errors, setErrors] = useState<{ name?: boolean; deadline?: boolean }>({});
-  const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
-
-  // Names from the directory load on first use so the planner page stays light.
-  useEffect(() => {
-    void import("@/modules/search/lib/searchIndex").then((m) => {
-      const wanted: Record<string, ApplicationKind> = { University: "university", Scholarship: "scholarship", Funder: "scholarship" };
-      setSuggestions(m.buildSearchIndex().flatMap((i) => (wanted[i.kind] ? [{ title: i.title, kind: wanted[i.kind], href: i.href }] : [])));
-    });
-  }, []);
+  // Names come from the search API while typing, so the page does not ship the whole directory.
+  const search = useSearch(name, name.trim().length >= 2);
+  const suggestions = search.items.filter((i) => KIND_OF[i.kind]);
 
   const onName = (value: string) => {
     setName(value);
     setErrors((e) => ({ ...e, name: false }));
     const match = suggestions.find((s) => s.title.toLowerCase() === value.trim().toLowerCase());
-    if (match) setKind(match.kind);
+    if (match) setKind(KIND_OF[match.kind]);
   };
 
   const submit = (e: React.FormEvent) => {

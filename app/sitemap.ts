@@ -1,3 +1,4 @@
+import { documentsData } from "@/data/documentsData";
 import type { MetadataRoute } from "next";
 import { countries, professors, providers, scholarships, universities } from "@/modules/directory/data";
 import { countrySlug, professorSlug, providerSlug, scholarshipSlug, universitySlug } from "@/modules/directory/lib/slugs";
@@ -11,7 +12,7 @@ const staticPaths = [
   "/", "/steps", "/profile", "/guides", "/directory", "/problems",
   "/directory/countries", "/directory/universities", "/directory/professors", "/directory/scholarships", "/directory/providers", "/apply", "/apply/university", "/apply/scholarship",
   "/roadmap", "/roadmap/phases", "/scholarships/formulas", "/scholarships/portals", "/professors/rules", "/faqs/checklist", "/scholarships", "/professors", "/documents", "/faqs",
-  "/planner", "/glossary", "/about", "/disclaimer", "/privacy", "/contact"
+  "/planner", "/saved", "/glossary", "/about", "/disclaimer", "/privacy", "/contact"
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -23,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...roadmapLevelsData.flatMap((l) => l.stepIds.map((id) => `/roadmap/${l.slug}/${id}`)),
     ...roadmapPhasesData.map((p) => `/roadmap/phases/${p.slug}`),
     ...guideTopics.map((g) => `/guides/${g.id}`),
+    ...documentsData.map((d) => `/documents/${d.id}`),
     ...countries.map((c) => `/directory/countries/${countrySlug(c)}`),
     ...universities.map((u) => `/directory/universities/${universitySlug(u)}`),
     ...professors.map((p) => `/directory/professors/${professorSlug(p)}`),

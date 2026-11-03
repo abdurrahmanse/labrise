@@ -22,6 +22,7 @@ import { ProfessorTracker } from "../professors/ProfessorTracker";
 import { detailText } from "@/data/text/directory";
 import { noticeText } from "@/data/text/common";
 import { emailText, professorDetailText } from "@/data/text/directory";
+import { EntryActions } from "@/modules/library/components/EntryActions";
 
 const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 
@@ -53,6 +54,7 @@ export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }
       title={professor.name}
       notice={{ subject: professor.name, caution: professor.email ? undefined : noticeText.professorCaution }}
       media={<Avatar name={professor.name} size={72} />}
+      actions={<EntryActions type="professors" slug={professorSlug(professor)} />}
       lead={detailText.lead.professor(professor.university, professor.country, professor.group)}
       back={{ href: "/directory/professors", label: detailText.back.professors }}
     >

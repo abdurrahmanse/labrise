@@ -1,15 +1,14 @@
 import "server-only";
-import { countries, professors, providers, scholarships, universities } from "../data";
+import { countries, professors, providers, universities } from "../data";
 import { fundersOfUniversity, universitiesOfProvider } from "../lib/connections";
 import { findCountry, findProfessor, findProvider, findScholarship, findUniversity, professorsAtUniversity, providerOfScholarship, universitiesInCountry, universityOfProfessor } from "../lib/lookups";
-import { countrySlug, professorSlug, providerSlug, scholarshipSlug, universitySlug } from "../lib/slugs";
+import { countrySlug, professorSlug, providerSlug, universitySlug } from "../lib/slugs";
 import type { DirectoryType } from "../types";
 import type { EntryResponse, RelatedItem } from "./entry";
 
 const uni = (u: (typeof universities)[number]): RelatedItem => ({ kind: "University", title: u.name, subtitle: u.country, href: `/directory/universities/${universitySlug(u)}` });
 const prof = (p: (typeof professors)[number]): RelatedItem => ({ kind: "Professor", title: p.name, subtitle: `${p.university}, ${p.country}`, href: `/directory/professors/${professorSlug(p)}` });
 const funder = (p: (typeof providers)[number]): RelatedItem => ({ kind: "Funder", title: p.name, subtitle: `${p.country} · ${p.kind}`, href: `/directory/providers/${providerSlug(p)}` });
-const sch = (s: (typeof scholarships)[number]): RelatedItem => ({ kind: "Scholarship", title: s.name, subtitle: `${s.host} · ${s.level}`, href: `/directory/scholarships/${scholarshipSlug(s)}` });
 const country = (c: (typeof countries)[number]): RelatedItem => ({ kind: "Country", title: c.country, subtitle: c.region, href: `/directory/countries/${countrySlug(c)}` });
 
 const LIMIT = 8;

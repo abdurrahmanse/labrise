@@ -1,18 +1,30 @@
 import type { Metadata } from "next";
-import { DocumentsGuideView } from "@/components/documents/DocumentsGuideView";
-import { documentsMetadata } from "@/data/metadata";
-import { documentsHub } from "@/data/text/hubs";
-import { HubHeader } from "@/shared/components/HubHeader";
+import { documentsHubText as t } from "@/data/text/documents";
+import { commonText } from "@/data/text/common";
+import { DocumentsHub } from "@/modules/documents/components/DocumentsHub";
+import { DocumentsProgress } from "@/modules/documents/components/DocumentsProgress";
+import { Block } from "@/shared/components/Block";
+import { PageShell } from "@/shared/components/PageShell";
+import { buildMetadata } from "@/modules/seo/buildMetadata";
 
-export const metadata: Metadata = documentsMetadata;
+export const metadata: Metadata = buildMetadata({ title: t.title, description: t.description, path: "/documents" });
 
 export default function DocumentsPage() {
   return (
-    <main className="min-h-screen bg-canvas-base py-12 text-slate-100 md:py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <HubHeader hub={documentsHub} />
-        <DocumentsGuideView />
-      </div>
-    </main>
+    <PageShell eyebrow={t.eyebrow} title={t.heading} lead={t.lead} back={{ href: "/", label: commonText.actions.home }}>
+      <DocumentsProgress />
+      <DocumentsHub />
+      <Block title={t.how.title}>
+        <ol className="grid gap-4 md:grid-cols-3">
+          {t.how.steps.map((step, i) => (
+            <li key={step.title} className="border-2 border-white/20 bg-canvas-card/50 p-4 backdrop-blur-xl">
+              <span className="mb-2 inline-flex h-8 w-8 items-center justify-center bg-indigo-600 font-mono font-bold text-white">{i + 1}</span>
+              <h3 className="text-lg font-bold text-white">{step.title}</h3>
+              <p className="mt-1 font-sans text-[length:var(--text-body)] font-normal text-slate-300">{step.body}</p>
+            </li>
+          ))}
+        </ol>
+      </Block>
+    </PageShell>
   );
 }

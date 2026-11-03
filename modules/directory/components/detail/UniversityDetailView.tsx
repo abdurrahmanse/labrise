@@ -20,6 +20,7 @@ import { FunderList } from "../ecosystem/FunderList";
 import { ProfessorRoster } from "../ecosystem/ProfessorRoster";
 import { CountryFacts } from "./CountryFacts";
 import { detailText } from "@/data/text/directory";
+import { EntryActions } from "@/modules/library/components/EntryActions";
 
 const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 
@@ -35,6 +36,7 @@ export function UniversityDetailView({ university }: { university: UniversityEnt
       eyebrow={detailText.eyebrow.university(university.country)}
       title={university.name}
       notice={{ subject: university.name, source: university.site }}
+      actions={<EntryActions type="universities" slug={universitySlug(university)} />}
       media={<Avatar name={university.name.replace(/^(University of|The) /, "")} size={64} square />}
       lead={detailText.lead.university(university.funding, university.deadline)}
       back={{ href: "/directory/universities", label: detailText.back.universities }}

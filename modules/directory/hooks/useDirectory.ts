@@ -1,31 +1,21 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { directorySchemas } from "../api/schemas";
-import type { CountryEntry, DirectoryType, ProfessorEntry, ProviderEntry, ScholarshipEntry, UniversityEntry } from "../types";
+import { queryKeys } from "@/shared/query/queryKeys";
+import { staleTimes } from "@/shared/query/staleTimes";
+import { directoryApi } from "../api/endpoints";
+import type { DirectoryType } from "../types";
+import type { DirectoryEntries } from "./directoryTypes";
 
-export interface DirectoryEntries {
-  countries: CountryEntry[];
-  universities: UniversityEntry[];
-  professors: ProfessorEntry[];
-  scholarships: ScholarshipEntry[];
-  providers: ProviderEntry[];
-}
-
-async function fetchDirectory<T extends DirectoryType>(type: T): Promise<DirectoryEntries[T]> {
-  const response = await fetch(`/api/directory/${type}`);
-  if (!response.ok) throw new Error(`Failed to load ${type}`);
-  // Validate the payload so a bad response fails loudly instead of rendering garbage.
-  return directorySchemas[type].parse(await response.json()) as DirectoryEntries[T];
-}
+export type { DirectoryEntries } from "./directoryTypes";
 
 /** Server-rendered rows are used first (good for SEO), then TanStack Query keeps them fresh. */
 export function useDirectory<T extends DirectoryType>(type: T, initialData: DirectoryEntries[T]) {
   const query = useQuery({
-    queryKey: ["directory", type],
-    queryFn: () => fetchDirectory(type),
+    queryKey: queryKeys.directory.list(type),
+    queryFn: ({ signal }) => directoryApi.list(type, signal),
     initialData,
-    staleTime: 60 * 60 * 1000
+    staleTime: staleTimes.directory
   });
   return { ...query, data: query.data ?? initialData };
 }

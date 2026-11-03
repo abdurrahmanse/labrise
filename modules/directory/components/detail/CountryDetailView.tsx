@@ -18,6 +18,7 @@ import { FunderList } from "../ecosystem/FunderList";
 import { UniversityRoster } from "../ecosystem/UniversityRoster";
 import { CountryFacts } from "./CountryFacts";
 import { detailText } from "@/data/text/directory";
+import { EntryActions } from "@/modules/library/components/EntryActions";
 
 export function CountryDetailView({ country }: { country: CountryEntry }) {
   const slug = countrySlug(country);
@@ -30,6 +31,7 @@ export function CountryDetailView({ country }: { country: CountryEntry }) {
       eyebrow={detailText.eyebrow.country(country.region)}
       title={country.country}
       notice={{ subject: country.country }}
+      actions={<EntryActions type="countries" slug={slug} />}
       media={<Flag country={country.country} className="h-10 w-14" />}
       lead={detail?.overview}
       back={{ href: "/directory/countries", label: detailText.back.countries }}

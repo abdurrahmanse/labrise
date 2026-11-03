@@ -106,6 +106,7 @@ export const footerLinksData: NavLinkItem[] = [
   { href: "/faqs", label: "FAQs", iconName: "" },
   { href: "/problems", label: "Problems", iconName: "" },
   { href: "/planner", label: "Planner", iconName: "" },
+  { href: "/saved", label: "Saved", iconName: "" },
   { href: "/glossary", label: "Glossary", iconName: "" },
   { href: "/about", label: "About", iconName: "" },
   { href: "/disclaimer", label: "Disclaimer", iconName: "" },

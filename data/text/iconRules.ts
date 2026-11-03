@@ -8,6 +8,7 @@ import {
 // Add a rule here to give a new word its own icon everywhere it appears.
 export const iconRules: [pattern: RegExp, icon: LucideIcon][] = [
   [/planner|plan\b|calendar/i, CalendarCheck],
+  [/saved|bookmark|shortlist/i, Bookmark],
   [/glossary|term|word|dictionary/i, BookA],
   [/mistake|avoid|scam|risk|problem|warning|caution/i, TriangleAlert],
   [/why/i, CircleHelp],

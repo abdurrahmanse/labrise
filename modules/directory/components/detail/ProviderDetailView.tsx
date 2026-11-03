@@ -11,6 +11,8 @@ import { scholarshipSlug, universitySlug } from "../../lib/slugs";
 import type { ProviderEntry } from "../../types";
 import { Flag } from "../Flag";
 import { detailText } from "@/data/text/directory";
+import { EntryActions } from "@/modules/library/components/EntryActions";
+import { providerSlug } from "../../lib/slugs";
 
 const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 
@@ -23,6 +25,7 @@ export function ProviderDetailView({ provider }: { provider: ProviderEntry }) {
       eyebrow={detailText.eyebrow.provider(provider.kind)}
       title={provider.name}
       notice={{ subject: provider.name, source: provider.site }}
+      actions={<EntryActions type="providers" slug={providerSlug(provider)} />}
       lead={provider.route}
       media={<Flag country={provider.country} className="h-10 w-14" />}
       back={{ href: "/directory/providers", label: detailText.back.providers }}
