@@ -6,9 +6,11 @@ export interface ExternalLinkItem {
 }
 
 export function ExternalLinks({ items }: { items: ExternalLinkItem[] }) {
+  // The same page can arrive from two sources, so repeat links are dropped.
+  const unique = items.filter((item, i) => items.findIndex((x) => x.href === item.href) === i);
   return (
     <ul className="flex flex-wrap gap-3">
-      {items.map((item) => (
+      {unique.map((item) => (
         <li key={item.href}>
           <a
             href={item.href}
