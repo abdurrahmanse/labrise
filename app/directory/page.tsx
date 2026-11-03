@@ -22,6 +22,17 @@ export default function DirectoryPage() {
           { href: "/directory/professors", title: "Professors", meta: `${professors.length} listed` }
         ]}
       />
+      <div className="space-y-3 pt-4">
+        <h2 className="text-xl font-bold text-white border-b border-white/20 pb-2">More resources</h2>
+        <LinkCardGrid
+          items={[
+            { href: "/countries", title: "Country dossiers", meta: "20 detailed guides" },
+            { href: "/scholarships", title: "Scholarship finder", meta: "Search workflow" },
+            { href: "/professors", title: "Email templates", meta: "Cold email and checklist" },
+            { href: "/documents", title: "Documents", meta: "Required papers" }
+          ]}
+        />
+      </div>
     </PageShell>
   );
 }

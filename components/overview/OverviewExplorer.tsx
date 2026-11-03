@@ -4,7 +4,15 @@ import React, { useMemo, useState } from "react";
 import { Download, ExternalLink, Search } from "lucide-react";
 import { SearchInput } from "@/components/ui/SearchInput";
 import { TabsContainer, TabItem } from "@/components/ui/Tabs";
-import { countries, professors, universities } from "@/data/overviewData";
+import Link from "next/link";
+import {
+  countries,
+  countrySlug,
+  professors,
+  professorSlug,
+  universities,
+  universitySlug
+} from "@/data/overviewData";
 
 export type ExplorerMode = "countries" | "universities" | "professors";
 type Mode = ExplorerMode;
@@ -124,7 +132,7 @@ export function OverviewExplorer({ fixedMode }: { fixedMode: ExplorerMode }) {
             <tbody>
               {filteredCountries.map((c) => (
                 <tr key={c.country} className="border-t border-white/10 hover:bg-white/[0.04]">
-                  <td className="px-4 py-3 text-white font-bold">{c.country}</td>
+                  <td className="px-4 py-3 font-bold"><Link href={`/directory/countries/${countrySlug(c)}`} className="text-white hover:text-indigo-300 underline decoration-white/30 underline-offset-4">{c.country}</Link></td>
                   <td className="px-4 py-3 text-slate-300">{c.routes}</td>
                   <td className="px-4 py-3 text-slate-300">{c.funding}</td>
                   <td className="px-4 py-3 text-slate-300">{c.supervisor}</td>
@@ -147,7 +155,7 @@ export function OverviewExplorer({ fixedMode }: { fixedMode: ExplorerMode }) {
             <tbody>
               {filteredUniversities.map((u) => (
                 <tr key={u.name} className="border-t border-white/10 hover:bg-white/[0.04]">
-                  <td className="px-4 py-3 text-white font-bold">{u.name}</td>
+                  <td className="px-4 py-3 font-bold"><Link href={`/directory/universities/${universitySlug(u)}`} className="text-white hover:text-indigo-300 underline decoration-white/30 underline-offset-4">{u.name}</Link></td>
                   <td className="px-4 py-3 text-slate-300">{u.country}</td>
                   <td className="px-4 py-3 text-slate-300">{u.funding}</td>
                   <td className="px-4 py-3 text-slate-300">{u.deadline}</td>
@@ -174,7 +182,7 @@ export function OverviewExplorer({ fixedMode }: { fixedMode: ExplorerMode }) {
             <tbody>
               {filteredProfessors.map((p) => (
                 <tr key={p.name} className="border-t border-white/10 hover:bg-white/[0.04]">
-                  <td className="px-4 py-3 text-white font-bold">{p.name}</td>
+                  <td className="px-4 py-3 font-bold"><Link href={`/directory/professors/${professorSlug(p)}`} className="text-white hover:text-indigo-300 underline decoration-white/30 underline-offset-4">{p.name}</Link></td>
                   <td className="px-4 py-3 text-slate-300">{p.university}</td>
                   <td className="px-4 py-3 text-slate-300">{p.country}</td>
                   <td className="px-4 py-3 text-slate-300">{p.group}</td>

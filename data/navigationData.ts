@@ -84,12 +84,9 @@ export const headerData = {
 };
 
 export const navLinksData: NavLinkItem[] = [
-  { href: "/roadmap", label: "Roadmap", iconName: "Map" },
+  { href: "/steps", label: "Roadmap", iconName: "Map" },
   { href: "/guides", label: "Guides", iconName: "BookOpen" },
   { href: "/directory", label: "Directory", iconName: "Building2" },
-  { href: "/countries", label: "Countries", iconName: "Globe2" },
-  { href: "/professors", label: "Professors", iconName: "Users" },
-  { href: "/documents", label: "Documents", iconName: "FileCheck" },
   { href: "/faqs", label: "FAQs", iconName: "HelpCircle" }
 ];
 
