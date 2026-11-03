@@ -3,7 +3,7 @@ import type { SearchItem } from "./searchIndex";
 export const MAX_RESULTS = 30;
 
 /** Title matches rank above other matches; every word of the query must appear somewhere. */
-export function searchEntries(index: SearchItem[], query: string): SearchItem[] {
+export function searchEntries(index: SearchItem[], query: string, limit = MAX_RESULTS): SearchItem[] {
   const words = query.toLowerCase().split(/\s+/).filter(Boolean);
   if (words.length === 0) return [];
 
@@ -20,6 +20,6 @@ export function searchEntries(index: SearchItem[], query: string): SearchItem[] 
 
   return scored
     .sort((a, b) => b.score - a.score || a.entry.title.localeCompare(b.entry.title))
-    .slice(0, MAX_RESULTS)
+    .slice(0, limit)
     .map((s) => s.entry);
 }
