@@ -1,12 +1,14 @@
 import type { LucideIcon } from "lucide-react";
 import {
-  Award, BookOpen, Bookmark, Brain, CalendarClock, CircleHelp, Clock, ExternalLink, FileText, Globe, GraduationCap, Landmark,
+  Award, BookA, BookOpen, CalendarCheck, Bookmark, Brain, CalendarClock, CircleHelp, Clock, ExternalLink, FileText, Globe, GraduationCap, Landmark,
   Layers, Lightbulb, ListChecks, Mail, MapPin, Medal, Send, Sparkles, StickyNote, TriangleAlert, Users, Wallet
 } from "lucide-react";
 
 // Which icon goes with which kind of heading or label. The first matching rule wins.
 // Add a rule here to give a new word its own icon everywhere it appears.
 export const iconRules: [pattern: RegExp, icon: LucideIcon][] = [
+  [/planner|plan\b|calendar/i, CalendarCheck],
+  [/glossary|term|word|dictionary/i, BookA],
   [/mistake|avoid|scam|risk|problem|warning|caution/i, TriangleAlert],
   [/why/i, CircleHelp],
   [/when to|how long|timeline|deadline|window|date|schedule/i, CalendarClock],

@@ -1,0 +1,50 @@
+"use client";
+
+import Link from "next/link";
+import { useMemo, useState } from "react";
+import { BookOpen } from "lucide-react";
+import { SearchInput } from "@/components/ui/SearchInput";
+import { glossaryText as t } from "@/data/text/glossary";
+import { emptyText } from "@/data/text/status";
+import { EmptyState } from "@/shared/components/EmptyState";
+import { glossaryTerms } from "../data/terms";
+
+export function GlossaryBrowser() {
+  const [query, setQuery] = useState("");
+
+  const matches = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return glossaryTerms.filter((g) => !q || `${g.term} ${g.full ?? ""} ${g.meaning}`.toLowerCase().includes(q));
+  }, [query]);
+
+  return (
+    <div className="space-y-6">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <SearchInput value={query} onChange={setQuery} placeholder={t.search} className="w-full lg:max-w-md" />
+        <span className="font-mono text-xs text-slate-400">{t.count(matches.length)}</span>
+      </div>
+
+      {matches.length === 0 ? (
+        <EmptyState title={emptyText.noResults} hint={t.empty} />
+      ) : (
+        <dl className="grid gap-4 md:grid-cols-2">
+          {matches.map((g) => (
+            <div key={g.term} className="flex flex-col gap-2 bg-canvas-card/70 p-5 backdrop-blur-xl shadow-[4px_4px_0_0_rgba(15,23,42,0.12)]">
+              <dt className="flex items-center gap-2 text-xl font-bold text-white">
+                <BookOpen className="h-5 w-5 shrink-0 text-indigo-400" aria-hidden />
+                {g.term}
+              </dt>
+              {g.full && <p className="font-mono text-xs uppercase tracking-wider text-indigo-300">{g.full}</p>}
+              <dd className="font-sans text-[length:var(--text-body)] font-normal text-slate-300">{g.meaning}</dd>
+              {g.guide && (
+                <Link href={`/guides/${g.guide}`} className="mt-auto w-fit text-sm font-bold text-indigo-400 hover:text-indigo-200">
+                  {t.guide} →
+                </Link>
+              )}
+            </div>
+          ))}
+        </dl>
+      )}
+    </div>
+  );
+}

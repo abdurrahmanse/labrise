@@ -123,7 +123,9 @@ export const directoryIndexText = {
       { href: "/countries", title: "Country dossiers", meta: "20 detailed guides" },
       { href: "/scholarships", title: "Scholarship finder", meta: "Search workflow" },
       { href: "/professors", title: "Email templates", meta: "Cold email and checklist" },
-      { href: "/documents", title: "Documents", meta: "Required papers" }
+      { href: "/documents", title: "Documents", meta: "Required papers" },
+      { href: "/planner", title: "Application planner", meta: "Deadlines and timeline" },
+      { href: "/glossary", title: "Glossary", meta: "SOP, LoR, RA and more" }
     ]
   }
 } as const;

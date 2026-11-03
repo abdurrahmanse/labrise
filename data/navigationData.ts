@@ -88,6 +88,7 @@ export const navLinksData: NavLinkItem[] = [
   { href: "/apply", label: "Apply", iconName: "ClipboardCheck" },
   { href: "/guides", label: "Guides", iconName: "BookOpen" },
   { href: "/directory", label: "Directory", iconName: "Building2" },
+  { href: "/planner", label: "Planner", iconName: "ClipboardCheck" },
   { href: "/faqs", label: "FAQs", iconName: "HelpCircle" }
 ];
 
@@ -104,6 +105,8 @@ export const footerLinksData: NavLinkItem[] = [
   { href: "/documents", label: "Documents", iconName: "" },
   { href: "/faqs", label: "FAQs", iconName: "" },
   { href: "/problems", label: "Problems", iconName: "" },
+  { href: "/planner", label: "Planner", iconName: "" },
+  { href: "/glossary", label: "Glossary", iconName: "" },
   { href: "/about", label: "About", iconName: "" },
   { href: "/disclaimer", label: "Disclaimer", iconName: "" },
   { href: "/privacy", label: "Privacy", iconName: "" },
