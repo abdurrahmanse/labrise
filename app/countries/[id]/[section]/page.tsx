@@ -2,7 +2,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { countryGuidesData, getCountryById } from "@/data/countryGuidesData";
-import { COUNTRY_SECTIONS, CountryDetailPage, type CountrySection } from "@/components/countries/CountryDetailPage";
+import { CountryDetailPage } from "@/components/countries/CountryDetailPage";
+import { COUNTRY_SECTIONS, type CountrySection } from "@/components/countries/countrySections";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
 
 interface Props {

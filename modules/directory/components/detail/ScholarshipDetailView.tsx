@@ -6,8 +6,8 @@ import { Facts } from "@/shared/components/Facts";
 import { PageShell } from "@/shared/components/PageShell";
 import { StepGrid } from "@/shared/components/StepGrid";
 import { scholarships } from "../../data/scholarships";
-import { countryByName } from "../../lib/lookups";
-import { countrySlug, scholarshipSlug } from "../../lib/slugs";
+import { countryByName, providerOfScholarship } from "../../lib/lookups";
+import { countrySlug, providerSlug, scholarshipSlug } from "../../lib/slugs";
 import type { ScholarshipEntry } from "../../types";
 
 import { Flag } from "../Flag";
@@ -24,6 +24,7 @@ const STEPS = [
 
 export function ScholarshipDetailView({ scholarship }: { scholarship: ScholarshipEntry }) {
   const country = countryByName(scholarship.host);
+  const provider = providerOfScholarship(scholarship.name);
   const similar = scholarships.filter((s) => s.host === scholarship.host && s.name !== scholarship.name);
 
   return (
@@ -38,6 +39,7 @@ export function ScholarshipDetailView({ scholarship }: { scholarship: Scholarshi
         rows={[
           ["Level", scholarship.level],
           ["Host", country ? <Link key="h" href={`/directory/countries/${countrySlug(country)}`} className={linkClass}>{scholarship.host}</Link> : scholarship.host],
+          ...(provider ? ([["Awarded by", <Link key="p" href={`/directory/providers/${providerSlug(provider)}`} className={linkClass}>{provider.name}</Link>]] as [string, React.ReactNode][]) : []),
           ["Covers", scholarship.covers],
           ["Typical deadline", scholarship.deadline],
           ["Who can apply", scholarship.eligibility],

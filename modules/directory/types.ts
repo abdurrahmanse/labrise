@@ -43,6 +43,8 @@ export interface ScholarshipEntry {
 
 export interface ProviderEntry {
   name: string;
+  /** Who the organisation mainly supports. */
+  supports: string;
   country: string;
   region: Region;
   kind: string;

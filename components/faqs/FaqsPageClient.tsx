@@ -3,10 +3,9 @@
 import React, { useState } from "react";
 import { FaqsHero } from "./FaqsHero";
 import { QuickScrollNavigator } from "@/components/ui/QuickScrollNavigator";
-import { InteractivePreflightChecklist } from "./InteractivePreflightChecklist";
+import Link from "next/link";
 import { FaqAccordionSection } from "./FaqAccordionSection";
 import { FaqCategoryPills } from "./FaqCategoryPills";
-import { CommunityHelpSection } from "./CommunityHelpSection";
 import { faqsNavAnchors } from "@/data/faqsSectionData";
 
 export function FaqsPageClient() {
@@ -22,9 +21,6 @@ export function FaqsPageClient() {
         <QuickScrollNavigator anchors={faqsNavAnchors} />
       </div>
 
-      {/* 3. Pre-Flight Readiness Checklist */}
-      <InteractivePreflightChecklist />
-
       {/* 4. Comprehensive Searchable FAQ Accordion */}
       <FaqAccordionSection
         selectedCategory={selectedCategory}
@@ -37,8 +33,11 @@ export function FaqsPageClient() {
         onSelectCategory={setSelectedCategory}
       />
 
-      {/* 6. Launchpad Navigation */}
-      <CommunityHelpSection />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <Link href="/faqs/checklist" className="inline-flex items-center gap-2 font-bold text-indigo-400 hover:text-indigo-200">
+          Pre-flight readiness checklist →
+        </Link>
+      </div>
     </main>
   );
 }

@@ -5,6 +5,7 @@ import type { ProviderEntry } from "../types";
 export const providers: ProviderEntry[] = [
   {
     name: "Commonwealth Scholarship Commission",
+    supports: "Students from eligible Commonwealth countries who cannot afford UK study",
     country: "United Kingdom", region: "Europe", kind: "Government body",
     programs: ["Commonwealth Scholarships"],
     route: "Through a nominating body in your country, or directly for some programmes.",
@@ -20,6 +21,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "DAAD (German Academic Exchange Service)",
+    supports: "International graduates, by programme",
     country: "Germany", region: "Europe", kind: "Government-funded agency",
     programs: ["DAAD Scholarships"],
     route: "Direct online application on the DAAD portal. Some programmes need admission to a German university first.",
@@ -35,6 +37,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "Chevening (UK Foreign, Commonwealth & Development Office)",
+    supports: "Future leaders from eligible countries",
     country: "United Kingdom", region: "Europe", kind: "Government programme",
     programs: ["Chevening Scholarships"],
     route: "Direct online application to Chevening, plus applications to three UK universities.",
@@ -51,6 +54,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "Fulbright Commissions and the U.S. Department of State",
+    supports: "Graduates from participating countries",
     country: "United States", region: "North America", kind: "Government programme",
     programs: ["Fulbright Foreign Student Program"],
     route: "Apply through the Fulbright Commission or US embassy in your own country.",
@@ -66,6 +70,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "MEXT (Ministry of Education, Japan)",
+    supports: "International students at graduate level",
     country: "Japan", region: "Asia", kind: "Government ministry",
     programs: ["MEXT Scholarship"],
     route: "Embassy route in your country, or university recommendation route through a Japanese university.",
@@ -81,6 +86,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "NIIED (Global Korea Scholarship)",
+    supports: "International graduate students",
     country: "South Korea", region: "Asia", kind: "Government agency",
     programs: ["Global Korea Scholarship (GKS)"],
     route: "Through the Korean embassy in your country or through selected Korean universities.",
@@ -96,6 +102,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "China Scholarship Council (CSC)",
+    supports: "International students at master's and PhD level",
     country: "China", region: "Asia", kind: "Government agency",
     programs: ["Chinese Government Scholarship (CSC)"],
     route: "Apply via the CSC portal and the host university's agency channel, or via your embassy.",
@@ -111,6 +118,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "Campus France (Eiffel Programme)",
+    supports: "Top international master's and PhD students",
     country: "France", region: "Europe", kind: "Government agency",
     programs: ["Eiffel Excellence Scholarship"],
     route: "A French institution nominates you. You cannot apply directly.",
@@ -126,6 +134,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "Swiss Federal Commission for Scholarships for Foreign Students",
+    supports: "Foreign researchers with a Swiss host",
     country: "Switzerland", region: "Europe", kind: "Government body",
     programs: ["Swiss Government Excellence Scholarships"],
     route: "Through the Swiss embassy or the national authority of your country, with a Swiss host professor.",
@@ -141,6 +150,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "Swedish Institute",
+    supports: "Professionals from eligible countries",
     country: "Sweden", region: "Europe", kind: "Government agency",
     programs: ["Swedish Institute Scholarships"],
     route: "First apply for a master's programme through the Swedish admissions portal, then apply to SI.",
@@ -156,6 +166,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "European Education and Culture Executive Agency (Erasmus+)",
+    supports: "Students of any nationality in joint master's programmes",
     country: "Europe", region: "Europe", kind: "Intergovernmental body",
     programs: ["Erasmus Mundus Joint Masters"],
     route: "Apply directly to the joint master's consortium you choose.",
@@ -171,6 +182,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "Australian Government (DFAT)",
+    supports: "Students from developing countries who will return home",
     country: "Australia", region: "Oceania", kind: "Government department",
     programs: ["Australia Awards"],
     route: "Apply online or through the Australia Awards office in your country.",
@@ -186,6 +198,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "Presidency for Turks Abroad and Related Communities",
+    supports: "International students at all levels",
     country: "Turkey", region: "Middle East", kind: "Government agency",
     programs: ["Türkiye Scholarships"],
     route: "Online application on the national portal, choosing programmes and universities.",
@@ -201,6 +214,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "Tempus Public Foundation",
+    supports: "Students from partner countries",
     country: "Hungary", region: "Europe", kind: "Government foundation",
     programs: ["Stipendium Hungaricum"],
     route: "Through your national sending authority and the Tempus application system.",
@@ -216,6 +230,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "Canadian Tri-agency (Vanier CGS)",
+    supports: "Doctoral students with research and leadership strengths",
     country: "Canada", region: "North America", kind: "Government programme",
     programs: ["Vanier Canada Graduate Scholarships"],
     route: "A Canadian university nominates you. You cannot apply directly.",
@@ -231,6 +246,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "Gates Cambridge Trust",
+    supports: "Non-UK students admitted to Cambridge",
     country: "United Kingdom", region: "Europe", kind: "Foundation",
     programs: ["Gates Cambridge Scholarship"],
     route: "Apply to the University of Cambridge and indicate Gates Cambridge on the form.",
@@ -246,6 +262,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "Rhodes Trust",
+    supports: "Students from eligible constituencies",
     country: "United Kingdom", region: "Europe", kind: "Foundation",
     programs: ["Rhodes Scholarship"],
     route: "Apply through your constituency (country or region) to the Rhodes Trust.",
@@ -261,6 +278,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "European Commission (Marie Skłodowska-Curie Actions)",
+    supports: "Early-career researchers moving to a new country",
     country: "Europe", region: "Europe", kind: "Intergovernmental body",
     programs: ["Marie Skłodowska-Curie Doctoral Networks"],
     route: "Apply to individual doctoral positions advertised by the network on EURAXESS.",
@@ -276,6 +294,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "ELLIS (European Laboratory for Learning and Intelligent Systems)",
+    supports: "Machine learning doctoral candidates",
     country: "Europe", region: "Europe", kind: "Research network",
     programs: ["ELLIS PhD Program"],
     route: "Apply once on the ELLIS portal, choosing supervisors.",
@@ -291,6 +310,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "Agency for Science, Technology and Research (A*STAR)",
+    supports: "Research-focused graduate students",
     country: "Singapore", region: "Asia", kind: "Government agency",
     programs: ["A*STAR Graduate Scholarships"],
     route: "Online application on the A*STAR scholarships portal.",
@@ -306,6 +326,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "Research Grants Council (Hong Kong)",
+    supports: "Excellent doctoral applicants worldwide",
     country: "Hong Kong", region: "Asia", kind: "Government body",
     programs: ["Hong Kong PhD Fellowship Scheme (HKPFS)"],
     route: "Apply through the HKPFS application of a participating Hong Kong university.",
@@ -321,6 +342,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "Ministry of Education (Taiwan)",
+    supports: "International students admitted to Taiwanese universities",
     country: "Taiwan", region: "Asia", kind: "Government ministry",
     programs: ["Taiwan Scholarship (MOE)"],
     route: "Apply through the university or the programme's online system.",
@@ -336,6 +358,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "King Abdullah University of Science and Technology (KAUST)",
+    supports: "Admitted graduate students",
     country: "Saudi Arabia", region: "Middle East", kind: "University",
     programs: ["KAUST Fellowship"],
     route: "Apply to KAUST. Fellowship is part of admission.",
@@ -351,6 +374,7 @@ export const providers: ProviderEntry[] = [
   },
   {
     name: "Knight-Hennessy Scholars (Stanford University)",
+    supports: "Graduate students with leadership potential",
     country: "United States", region: "North America", kind: "University programme",
     programs: ["Knight-Hennessy Scholars"],
     route: "Apply to the programme and to a Stanford graduate programme.",
@@ -363,5 +387,85 @@ export const providers: ProviderEntry[] = [
     documents: ["Essays", "Transcripts", "Three references", "Video questions"],
     selection: "Multi-stage review and interviews.",
     site: "https://knight-hennessy.stanford.edu"
+  },  {
+    name: "Mastercard Foundation Scholars Program",
+    supports: "Academically talented students from low-income backgrounds, mainly from Africa",
+    country: "Canada", region: "North America", kind: "Foundation (need-based)",
+    programs: ["Mastercard Foundation Scholars Program"],
+    route: "Apply to a partner university. Each partner runs its own selection.",
+    requirements: [
+      "Strong academic results",
+      "Financial need",
+      "Leadership and a commitment to give back to your community",
+      "Meet the partner university's admission rules"
+    ],
+    documents: ["Partner university application", "Evidence of financial need", "References", "Personal statement"],
+    selection: "Selection by the partner university, using the programme's criteria.",
+    site: "https://mastercardfdn.org"
+  },
+  {
+    name: "Aga Khan Foundation (International Scholarship Programme)",
+    supports: "Postgraduate students with strong results and little other funding",
+    country: "Switzerland", region: "Europe", kind: "Foundation (need-based)",
+    programs: ["AKF International Scholarship Programme"],
+    route: "Apply through the Aga Khan Foundation office or the online form for your country, if your country is listed.",
+    requirements: [
+      "National of one of the programme's eligible countries",
+      "Excellent academic record and admission to a master's programme abroad",
+      "No other means of paying for the study",
+      "Awards are partly a grant and partly a loan"
+    ],
+    documents: ["Application form", "Admission letter or application proof", "Financial need statement", "Transcripts and references"],
+    selection: "Review by the Foundation, then interviews for shortlisted candidates.",
+    site: "https://www.akdn.org"
+  },
+  {
+    name: "Islamic Development Bank (Scholarship Programme)",
+    supports: "Students from member countries, in selected fields",
+    country: "Saudi Arabia", region: "Middle East", kind: "Development bank",
+    programs: ["IsDB Scholarship Programme"],
+    route: "Apply online on the IsDB scholarship portal when a call is open.",
+    requirements: [
+      "National of an IsDB member country",
+      "Academic record that meets the call",
+      "Study in the fields named in the call",
+      "Meet the age and language rules of the call"
+    ],
+    documents: ["Application form", "Transcripts and degree", "Admission proof where required", "References"],
+    selection: "Screening by IsDB, then final selection.",
+    site: "https://www.isdb.org"
+  },
+  {
+    name: "World Bank (Joint Japan/World Bank Graduate Scholarship Program)",
+    supports: "Development professionals from World Bank member countries",
+    country: "United States", region: "North America", kind: "Development bank",
+    programs: ["Joint Japan/World Bank Graduate Scholarship Program"],
+    route: "Apply to a participating university programme, then to the scholarship, following the call.",
+    requirements: [
+      "National of a World Bank member developing country",
+      "Bachelor's degree and several years of development-related work experience",
+      "Admission to a participating master's programme",
+      "Plan to return home and apply what you learn"
+    ],
+    documents: ["Application form", "Admission proof", "Work experience letters", "References"],
+    selection: "Review by the programme team and the participating university.",
+    site: "https://www.worldbank.org/en/programs/scholarships"
+  },
+  {
+    name: "The Rotary Foundation",
+    supports: "Students working for peace and community development",
+    country: "United States", region: "North America", kind: "Foundation",
+    programs: ["Rotary Peace Fellowships", "Rotary Global Grant Scholarships"],
+    route: "Peace Fellowships: apply online. Global Grants: a local Rotary club must sponsor you.",
+    requirements: [
+      "Peace Fellowships: bachelor's degree and relevant work experience, with a commitment to peace",
+      "Global Grants: study that fits one of Rotary's areas of focus",
+      "Sponsor from a Rotary club or district where the programme requires it",
+      "Plan for service after your studies"
+    ],
+    documents: ["Application and essays", "Transcripts", "References", "Admission proof where asked"],
+    selection: "Rotary district and committee review, then interviews.",
+    site: "https://www.rotary.org"
   }
+
 ];

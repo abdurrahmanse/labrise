@@ -9,12 +9,15 @@ import { PageShell } from "@/shared/components/PageShell";
 import { StepGrid } from "@/shared/components/StepGrid";
 import { countryDetails } from "../../data/countryDetails";
 import { countries } from "../../data/countries";
+import { fundersOfUniversity } from "../../lib/connections";
 import { professorsAtUniversity } from "../../lib/lookups";
-import { countrySlug, professorSlug, universitySlug } from "../../lib/slugs";
+import { countrySlug, universitySlug } from "../../lib/slugs";
 import type { UniversityEntry } from "../../types";
 import { universities } from "../../data/universities";
 import { Avatar } from "@/shared/components/Avatar";
 import { APPLY_STEPS } from "./applySteps";
+import { FunderList } from "../ecosystem/FunderList";
+import { ProfessorRoster } from "../ecosystem/ProfessorRoster";
 import { CountryFacts } from "./CountryFacts";
 
 const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
@@ -23,6 +26,7 @@ export function UniversityDetailView({ university }: { university: UniversityEnt
   const country = countries.find((c) => c.country === university.country);
   const detail = country ? countryDetails[countrySlug(country)] : undefined;
   const profs = professorsAtUniversity(university);
+  const funders = fundersOfUniversity(university);
   const others = universities.filter((u) => u.country === university.country && u.name !== university.name);
 
   return (
@@ -67,8 +71,12 @@ export function UniversityDetailView({ university }: { university: UniversityEnt
         </>
       )}
 
-      <Block title={`Professors listed (${profs.length})`}>
-        <Chips items={profs.map((p) => ({ href: `/directory/professors/${professorSlug(p)}`, label: p.name, meta: p.group }))} />
+      <Block title={`Professors (${profs.length})`}>
+        <ProfessorRoster professors={profs} />
+      </Block>
+      <Block title="Funding organisations connected here">
+        <FunderList funders={funders} />
+        <p className="text-sm text-slate-400">Open an organisation to see its requirements and how to apply.</p>
       </Block>
       {others.length > 0 && (
         <Block title={`More in ${university.country}`}>

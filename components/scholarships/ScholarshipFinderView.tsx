@@ -6,24 +6,26 @@ import { SearchWorkflowSection } from "./SearchWorkflowSection";
 import { BooleanFormulasSection } from "./BooleanFormulasSection";
 import { PortalsDirectorySection } from "./PortalsDirectorySection";
 import { AntiFraudSection } from "./AntiFraudSection";
+import { SCHOLARSHIP_TABS, type ScholarshipPart } from "./scholarshipTabs";
+import { SubNav } from "@/shared/components/SubNav";
 
-export function ScholarshipFinderView() {
+export function ScholarshipFinderView({ part = "workflow" }: { part?: ScholarshipPart }) {
   return (
-    <div className="space-y-12">
-      {/* 1. Header */}
-      <ScholarshipHeader />
-
-      {/* 2. 11-Step Discovery Workflow */}
-      <SearchWorkflowSection />
-
-      {/* 3. Boolean Search Formulas */}
-      <BooleanFormulasSection />
-
-      {/* 4. Verified Directory */}
-      <PortalsDirectorySection />
-
-      {/* 5. Anti-Fraud Notice */}
-      <AntiFraudSection />
+    <div className="space-y-10">
+      <SubNav label="Scholarship finder sections" items={SCHOLARSHIP_TABS} />
+      {part === "workflow" && (
+        <>
+          <ScholarshipHeader />
+          <SearchWorkflowSection />
+        </>
+      )}
+      {part === "formulas" && <BooleanFormulasSection />}
+      {part === "portals" && (
+        <>
+          <PortalsDirectorySection />
+          <AntiFraudSection />
+        </>
+      )}
     </div>
   );
 }

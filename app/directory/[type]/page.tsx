@@ -4,8 +4,8 @@ import { Suspense } from "react";
 import { ProfessorsExplorer } from "@/modules/directory/components/professors/ProfessorsExplorer";
 import { PageShell } from "@/shared/components/PageShell";
 import { directoryTypeSchema } from "@/modules/directory/api/schemas";
-import { CountriesList, ScholarshipsList, UniversitiesList } from "@/modules/directory/components/lists/DirectoryLists";
-import { countries, directoryTypes, professors, scholarships, universities } from "@/modules/directory/data";
+import { CountriesList, ProvidersList, ScholarshipsList, UniversitiesList } from "@/modules/directory/components/lists/DirectoryLists";
+import { countries, directoryTypes, professors, providers, scholarships, universities } from "@/modules/directory/data";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
 
 interface Props {
@@ -48,6 +48,7 @@ export default async function DirectoryTypePage({ params }: Props) {
       <Suspense fallback={null}>
         {parsed.data === "countries" && <CountriesList initialData={countries} />}
         {parsed.data === "universities" && <UniversitiesList initialData={universities} />}
+        {parsed.data === "providers" && <ProvidersList initialData={providers} />}
         {parsed.data === "scholarships" && <ScholarshipsList initialData={scholarships} />}
         {parsed.data === "professors" && <ProfessorsExplorer initialData={professors} />}
       </Suspense>

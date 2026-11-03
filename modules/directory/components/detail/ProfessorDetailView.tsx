@@ -7,6 +7,7 @@ import { PageShell } from "@/shared/components/PageShell";
 import { StepGrid } from "@/shared/components/StepGrid";
 import { professors } from "../../data/professors";
 import { fieldOf } from "../../data/fields";
+import { fundersOfUniversity } from "../../lib/connections";
 import { universityOfProfessor } from "../../lib/lookups";
 import { professorSlug, universitySlug } from "../../lib/slugs";
 import type { ProfessorEntry } from "../../types";
@@ -15,6 +16,7 @@ import { Flag } from "../Flag";
 import { EMAIL_STEPS } from "./applySteps";
 import { buildEmailDraft } from "./emailDraft";
 import { EmailDraftBox } from "./EmailDraftBox";
+import { FunderList } from "../ecosystem/FunderList";
 import { ProfessorFieldInfo } from "./ProfessorFieldInfo";
 import { ProfessorTracker } from "../professors/ProfessorTracker";
 
@@ -39,6 +41,7 @@ function EmailCell({ professor }: { professor: ProfessorEntry }) {
 export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }) {
   const university = universityOfProfessor(professor);
   const field = fieldOf(professor.group);
+  const funders = university ? fundersOfUniversity(university) : [];
   const peers = professors.filter((p) => p.group === professor.group && p.name !== professor.name).slice(0, 8);
 
   return (
@@ -65,6 +68,12 @@ export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }
       <ProfessorTracker slug={professorSlug(professor)} />
 
       <ProfessorFieldInfo field={field} />
+
+      {funders.length > 0 && (
+        <Block title="Funding routes at this university">
+          <FunderList funders={funders} />
+        </Block>
+      )}
 
       <Block title="Before you email">
         <StepGrid steps={EMAIL_STEPS} />

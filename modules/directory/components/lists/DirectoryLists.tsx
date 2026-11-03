@@ -1,8 +1,9 @@
 "use client";
 
-import type { CountryEntry, ScholarshipEntry, UniversityEntry } from "../../types";
-import { countrySlug, scholarshipSlug, universitySlug } from "../../lib/slugs";
+import type { CountryEntry, ProviderEntry, ScholarshipEntry, UniversityEntry } from "../../types";
+import { countrySlug, providerSlug, scholarshipSlug, universitySlug } from "../../lib/slugs";
 import { CountryCard } from "../cards/CountryCard";
+import { ProviderCard } from "../cards/ProviderCard";
 import { ScholarshipCard } from "../cards/ScholarshipCard";
 import { UniversityCard } from "../cards/UniversityCard";
 import { LiveDirectory } from "../LiveDirectory";
@@ -53,6 +54,23 @@ export function ScholarshipsList({ initialData }: { initialData: ScholarshipEntr
           regionOf={(s) => s.region}
           searchText={(s) => `${s.name} ${s.host} ${s.level} ${s.covers}`}
           renderCard={(s) => <ScholarshipCard scholarship={s} />}
+        />
+      )}
+    </LiveDirectory>
+  );
+}
+
+export function ProvidersList({ initialData }: { initialData: ProviderEntry[] }) {
+  return (
+    <LiveDirectory type="providers" initialData={initialData}>
+      {(data) => (
+        <CardBrowser
+          data={data}
+          placeholder="Search organisation, programme, country, or try: need-based, government…"
+          keyOf={providerSlug}
+          regionOf={(p) => p.region}
+          searchText={(p) => `${p.name} ${p.country} ${p.kind} ${p.supports} ${p.programs.join(" ")}`}
+          renderCard={(p) => <ProviderCard provider={p} />}
         />
       )}
     </LiveDirectory>

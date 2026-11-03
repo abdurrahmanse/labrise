@@ -29,8 +29,9 @@ Open [http://localhost:3000](http://localhost:3000).
 | Home | `/` |
 | 6-step roadmap | `/steps` |
 | Profile checklist | `/profile` |
-| Guides (25 topics, grouped) | `/guides`, `/guides/[id]` |
-| Directory (card lists with search, filters and pagination) | `/directory`, `/directory/[type]`, `/directory/[type]/[slug]` where `type` is `countries`, `universities`, `scholarships` or `professors` |
+| How to apply (university and scholarship routes) | `/apply`, `/apply/[track]` |
+| Guides (27 topics, grouped) | `/guides`, `/guides/[id]` |
+| Directory (card lists with search, filters and pagination) | `/directory`, `/directory/[type]`, `/directory/[type]/[slug]` where `type` is `countries`, `universities`, `providers`, `scholarships` or `professors` |
 | Common problems | `/problems` |
 | Older detailed pages | `/roadmap`, `/countries`, `/scholarships`, `/professors`, `/documents`, `/faqs` |
 | JSON API | `/api/directory/[type]` |
@@ -63,8 +64,9 @@ app/                     routes, API handler, sitemap, robots, OG image
 modules/
   directory/             countries, universities, scholarships, professors
     data/  lib/  api/  hooks/  store/  components/ (cards/, lists/, professors/, detail/)
-  guides/                25 guides: data/details/<id>.ts, components, store
+  guides/                27 guides: data/details/<id>.ts, components, store
   roadmap/               steps, profile checklist, common problems
+  apply/                 the two application tracks
   home/                  hero and the two home sections
   seo/                   buildMetadata, JsonLd, schema builders
   theme/                 ThemeProvider, ThemeToggle
@@ -87,6 +89,12 @@ Minimalism, brutalism and glassmorphism, with an academic palette and the **Rajd
 - **Glass:** frosted translucent surfaces (`backdrop-blur`) over soft colour washes.
 - **Type scale:** one body size for all paragraph and detail text, one label size, and separate card and page title sizes. They are set as CSS variables in `app/globals.css` (`--text-body`, `--text-label`, `--text-card-title`).
 - **Theming:** the dark palette is the base. `.light` swaps the neutral scale and overlays so utilities flip without component changes.
+
+---
+
+## Connections
+
+Country, university, professor and funder are linked. A country page leads to its universities, professors and funding organisations. A university page lists its professors and the funders connected to it. A funder page lists its requirements and the universities where it applies. The rules live in `modules/directory/data/connections.ts`.
 
 ---
 

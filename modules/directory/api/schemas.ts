@@ -44,6 +44,7 @@ export const scholarshipSchema = z.object({
 
 export const providerSchema = z.object({
   name: z.string(),
+  supports: z.string(),
   country: z.string(),
   region,
   kind: z.string(),

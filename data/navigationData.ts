@@ -85,6 +85,7 @@ export const headerData = {
 
 export const navLinksData: NavLinkItem[] = [
   { href: "/steps", label: "Roadmap", iconName: "Map" },
+  { href: "/apply", label: "Apply", iconName: "ClipboardCheck" },
   { href: "/guides", label: "Guides", iconName: "BookOpen" },
   { href: "/directory", label: "Directory", iconName: "Building2" },
   { href: "/faqs", label: "FAQs", iconName: "HelpCircle" }
@@ -94,6 +95,7 @@ export const navLinksData: NavLinkItem[] = [
 export const footerLinksData: NavLinkItem[] = [
   { href: "/steps", label: "6 Steps", iconName: "" },
   { href: "/profile", label: "Profile", iconName: "" },
+  { href: "/apply", label: "How to apply", iconName: "" },
   { href: "/guides", label: "Guides", iconName: "" },
   { href: "/directory", label: "Directory", iconName: "" },
   { href: "/countries", label: "Countries", iconName: "" },

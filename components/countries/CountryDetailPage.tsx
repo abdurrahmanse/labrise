@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { COUNTRY_SECTIONS, countrySectionHref, type CountrySection } from "./countrySections";
 import { SubNav } from "@/shared/components/SubNav";
 import { CountryGuide } from "@/data/countryGuidesData";
 import {
@@ -18,17 +19,6 @@ import {
   CountryWarningsSection,
   CountryPortalsSection,
 } from "./detail";
-
-export type CountrySection = "overview" | "funding" | "apply";
-
-export const COUNTRY_SECTIONS: { id: CountrySection; label: string }[] = [
-  { id: "overview", label: "Overview" },
-  { id: "funding", label: "Funding" },
-  { id: "apply", label: "How to apply" }
-];
-
-export const countrySectionHref = (countryId: string, section: CountrySection) =>
-  section === "overview" ? `/countries/${countryId}` : `/countries/${countryId}/${section}`;
 
 interface CountryDetailPageProps {
   country: CountryGuide;

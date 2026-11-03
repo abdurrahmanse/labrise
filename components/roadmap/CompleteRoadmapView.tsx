@@ -7,14 +7,21 @@ import {
   RoadmapLevelsLadderSection,
 } from "./sections";
 import { AdmissionsSuiteLaunchpad } from "./AdmissionsSuiteLaunchpad";
+import { ROADMAP_TABS } from "./roadmapTabs";
+import { SubNav } from "@/shared/components/SubNav";
 
-export function CompleteRoadmapView() {
+export function CompleteRoadmapView({ part = "levels" }: { part?: "levels" | "phases" }) {
   return (
-    <div className="space-y-16">
+    <div className="space-y-12">
       <RoadmapHeader />
-      <RoadmapPhasesPipelineSection />
-      <RoadmapLevelsLadderSection />
-      <AdmissionsSuiteLaunchpad />
+      <SubNav label="Roadmap views" items={ROADMAP_TABS} />
+      {part === "levels" && (
+        <>
+          <RoadmapLevelsLadderSection />
+          <AdmissionsSuiteLaunchpad />
+        </>
+      )}
+      {part === "phases" && <RoadmapPhasesPipelineSection />}
     </div>
   );
 }

@@ -1,26 +1,28 @@
 import Link from "next/link";
 import { BulletList } from "@/shared/components/BulletList";
 import { Block } from "@/shared/components/Block";
-import { Chips } from "@/shared/components/Chips";
 import { ExternalLinks } from "@/shared/components/ExternalLinks";
 import { Facts } from "@/shared/components/Facts";
 import { PageShell } from "@/shared/components/PageShell";
 import { StepGrid } from "@/shared/components/StepGrid";
 import { getCountryById } from "@/data/countryGuidesData";
 import { countryDetails } from "../../data/countryDetails";
-import { professorsInCountry, universitiesInCountry } from "../../lib/lookups";
-import { countrySlug, professorSlug, universitySlug } from "../../lib/slugs";
+import { ecosystemOfCountry } from "../../lib/connections";
+import { countrySlug } from "../../lib/slugs";
 import type { CountryEntry } from "../../types";
 import { Flag } from "../Flag";
 import { APPLY_STEPS } from "./applySteps";
+import { CountryViewTabs } from "../ecosystem/CountryViewTabs";
+import { EcosystemTiles } from "../ecosystem/EcosystemTiles";
+import { FunderList } from "../ecosystem/FunderList";
+import { UniversityRoster } from "../ecosystem/UniversityRoster";
 import { CountryFacts } from "./CountryFacts";
 
 export function CountryDetailView({ country }: { country: CountryEntry }) {
   const slug = countrySlug(country);
   const detail = countryDetails[slug];
   const dossier = getCountryById(slug);
-  const unis = universitiesInCountry(country.country);
-  const profs = professorsInCountry(country.country);
+  const { summaries, professors, funders } = ecosystemOfCountry(country);
 
   return (
     <PageShell
@@ -30,6 +32,10 @@ export function CountryDetailView({ country }: { country: CountryEntry }) {
       lead={detail?.overview}
       back={{ href: "/directory/countries", label: "All countries" }}
     >
+      <CountryViewTabs slug={slug} />
+
+      <EcosystemTiles slug={slug} universities={summaries.length} professors={professors.length} funders={funders.length} />
+
       <Facts
         rows={[
           ["Funded routes", country.routes],
@@ -65,11 +71,11 @@ export function CountryDetailView({ country }: { country: CountryEntry }) {
         </p>
       )}
 
-      <Block title={`Universities (${unis.length})`}>
-        <Chips items={unis.map((u) => ({ href: `/directory/universities/${universitySlug(u)}`, label: u.name }))} />
+      <Block title="Universities">
+        <UniversityRoster summaries={summaries.slice(0, 4)} />
       </Block>
-      <Block title={`Professors (${profs.length})`}>
-        <Chips items={profs.map((p) => ({ href: `/directory/professors/${professorSlug(p)}`, label: p.name, meta: p.group }))} />
+      <Block title="Who funds study here">
+        <FunderList funders={funders.slice(0, 4)} empty="No national organisation is listed. See the funding organisations tab for details." />
       </Block>
       <Block title="How to apply">
         <StepGrid steps={APPLY_STEPS} />

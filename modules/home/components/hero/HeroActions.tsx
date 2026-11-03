@@ -12,8 +12,8 @@ export function HeroActions() {
       <Link href="/steps" className={primary}>
         Start step 1 <ArrowRight className="h-5 w-5" />
       </Link>
-      <Link href="/directory/professors" className={ghost}>
-        Find professors
+      <Link href="/apply" className={ghost}>
+        How to apply
       </Link>
     </div>
   );

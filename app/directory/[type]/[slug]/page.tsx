@@ -3,11 +3,12 @@ import type { Metadata } from "next";
 import { directoryTypeSchema } from "@/modules/directory/api/schemas";
 import { CountryDetailView } from "@/modules/directory/components/detail/CountryDetailView";
 import { ProfessorDetailView } from "@/modules/directory/components/detail/ProfessorDetailView";
+import { ProviderDetailView } from "@/modules/directory/components/detail/ProviderDetailView";
 import { ScholarshipDetailView } from "@/modules/directory/components/detail/ScholarshipDetailView";
 import { UniversityDetailView } from "@/modules/directory/components/detail/UniversityDetailView";
-import { countries, professors, scholarships, universities } from "@/modules/directory/data";
-import { findCountry, findProfessor, findScholarship, findUniversity } from "@/modules/directory/lib/lookups";
-import { countrySlug, professorSlug, scholarshipSlug, universitySlug } from "@/modules/directory/lib/slugs";
+import { countries, professors, providers, scholarships, universities } from "@/modules/directory/data";
+import { findCountry, findProfessor, findProvider, findScholarship, findUniversity } from "@/modules/directory/lib/lookups";
+import { countrySlug, professorSlug, providerSlug, scholarshipSlug, universitySlug } from "@/modules/directory/lib/slugs";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
 import { JsonLd } from "@/modules/seo/JsonLd";
 import { breadcrumbSchema, personSchema, universitySchema } from "@/modules/seo/schemas";
@@ -22,7 +23,8 @@ export function generateStaticParams() {
     ...countries.map((c) => ({ type: "countries", slug: countrySlug(c) })),
     ...universities.map((u) => ({ type: "universities", slug: universitySlug(u) })),
     ...professors.map((p) => ({ type: "professors", slug: professorSlug(p) })),
-    ...scholarships.map((s) => ({ type: "scholarships", slug: scholarshipSlug(s) }))
+    ...scholarships.map((s) => ({ type: "scholarships", slug: scholarshipSlug(s) })),
+    ...providers.map((p) => ({ type: "providers", slug: providerSlug(p) }))
   ];
 }
 
@@ -37,6 +39,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (type === "universities") {
     const u = findUniversity(slug);
     if (u) return buildMetadata({ title: `${u.name}: funding and how to apply`, description: `${u.funding}. Typical deadline: ${u.deadline}.`, path });
+  }
+  if (type === "providers") {
+    const p = findProvider(slug);
+    if (p) return buildMetadata({ title: `${p.name}: requirements and how to apply`, description: `${p.programs.join(", ")}. ${p.route}`, path });
   }
   if (type === "scholarships") {
     const s = findScholarship(slug);
@@ -79,6 +85,17 @@ export default async function DirectoryDetailPage({ params }: Props) {
         <JsonLd data={universitySchema(university.name, university.site, university.country)} />
         <JsonLd data={breadcrumbSchema([...crumbs, { name: university.name, path: `/directory/universities/${slug}` }])} />
         <UniversityDetailView university={university} />
+      </>
+    );
+  }
+
+  if (parsed.data === "providers") {
+    const provider = findProvider(slug);
+    if (!provider) notFound();
+    return (
+      <>
+        <JsonLd data={breadcrumbSchema([...crumbs, { name: provider.name, path: `/directory/providers/${slug}` }])} />
+        <ProviderDetailView provider={provider} />
       </>
     );
   }
