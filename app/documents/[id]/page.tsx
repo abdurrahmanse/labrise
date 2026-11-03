@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { getDocument, getDocuments } from "@/modules/content/server";
 import { documentDetailText as t, documentMeta } from "@/data/text/documents";
 import { navLabels } from "@/data/text/site";
-import { DocumentBody } from "@/modules/documents";
+import { DocumentBody } from "@/modules/documents/components/DocumentBody";
 import { buildMetadata, JsonLd, breadcrumbSchema, howToSchema } from "@/modules/seo";
 import { IconTile } from "@/shared/components/IconTile";
 import { PageFallback } from "@/shared/components/PageFallback";

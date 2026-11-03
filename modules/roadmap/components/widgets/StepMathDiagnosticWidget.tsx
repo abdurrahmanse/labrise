@@ -9,10 +9,10 @@ import {
   WidgetTabs,
   WidgetTabButton,
   WidgetSectionCard,
-  WidgetChecklistItem,
   WidgetCallout
 } from "./common";
 import { legacyText } from "@/data/text/legacy";
+import { WidgetChecklistItem } from "@/components/ui/WidgetChecklistItem";
 
 export function StepMathDiagnosticWidget() {
   const [activeTopicIndex, setActiveTopicIndex] = useState(0);

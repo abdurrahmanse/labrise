@@ -1,6 +1,9 @@
 import { Block } from "@/shared/components/Block";
 import { PageShell } from "@/shared/components/PageShell";
-import { ApplicationForm, ApplicationList, PlannerSummary, TimelineBuilder } from "@/modules/planner";
+import { ApplicationForm } from "@/modules/planner/components/ApplicationForm";
+import { ApplicationList } from "@/modules/planner/components/ApplicationList";
+import { PlannerSummary } from "@/modules/planner/components/PlannerSummary";
+import { TimelineBuilder } from "@/modules/planner/components/TimelineBuilder";
 import { buildMetadata } from "@/modules/seo";
 import { commonText } from "@/data/text/common";
 import { plannerText as t } from "@/data/text/planner";

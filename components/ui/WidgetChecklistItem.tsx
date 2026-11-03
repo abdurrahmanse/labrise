@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Check, CheckCircle2 } from "lucide-react";
-import { WidgetTheme } from "./WidgetShell";
+import type { WidgetTheme } from "./WidgetTheme";
 
 interface WidgetChecklistItemProps {
   isChecked: boolean;

@@ -24,13 +24,11 @@ import {
   scholarshipSlug,
   universitySlug
 } from "@/modules/directory/contracts";
-import {
-  CountryDetailView,
-  ProfessorDetailView,
-  ProviderDetailView,
-  ScholarshipDetailView,
-  UniversityDetailView
-} from "@/modules/directory";
+import { CountryDetailView } from "@/modules/directory/components/detail/CountryDetailView";
+import { ProfessorDetailView } from "@/modules/directory/components/detail/ProfessorDetailView";
+import { ProviderDetailView } from "@/modules/directory/components/detail/ProviderDetailView";
+import { ScholarshipDetailView } from "@/modules/directory/components/detail/ScholarshipDetailView";
+import { UniversityDetailView } from "@/modules/directory/components/detail/UniversityDetailView";
 import { getCountryGuide } from "@/modules/content/server";
 import { buildMetadata, JsonLd, breadcrumbSchema, personSchema, scholarshipGrantSchema, universitySchema } from "@/modules/seo";
 import { PageFallback } from "@/shared/components/PageFallback";

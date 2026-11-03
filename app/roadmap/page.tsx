@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import { CompleteRoadmapView } from "@/modules/roadmap";
+import { CompleteRoadmapView } from "@/modules/roadmap/components/CompleteRoadmapView";
 import { roadmapMetadata } from "@/data/metadata";
 import { roadmapUiData, RoadmapPageHeroMetric } from "@/data/roadmapUiData";
 import { CheckCircle2, ShieldCheck, Sparkles, Layers, ListOrdered, Award } from "lucide-react";

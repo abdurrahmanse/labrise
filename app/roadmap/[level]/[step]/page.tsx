@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { RoadmapStepCard as StepCard } from "@/modules/roadmap";
+import { RoadmapStepCard as StepCard } from "@/modules/roadmap/components/RoadmapStepCard";
 import { roadmapLevelsData, getLevelBySlug } from "@/data/levelsData";
 import { getStepById } from "@/data/steps";
 import { PageShell } from "@/shared/components/PageShell";

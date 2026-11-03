@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { roadmapLevelsData, getLevelBySlug } from "@/data/levelsData";
 import { stepsData } from "@/data/steps";
-import { LevelHero } from "@/modules/roadmap";
-import { LevelInteractiveTracker } from "@/modules/roadmap";
-import { LevelTasksSection } from "@/modules/roadmap";
-import { LevelNavigationFooter } from "@/modules/roadmap";
+import { LevelHero } from "@/modules/roadmap/components/LevelHero";
+import { LevelInteractiveTracker } from "@/modules/roadmap/components/LevelInteractiveTracker";
+import { LevelTasksSection } from "@/modules/roadmap/components/LevelTasksSection";
+import { LevelNavigationFooter } from "@/modules/roadmap/components/LevelNavigationFooter";
 import { notFoundTitles } from "@/data/text/site";
 
 interface Props {

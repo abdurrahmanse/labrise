@@ -6,7 +6,7 @@ import { SectionCard } from "@/components/ui/SectionCard";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { WidgetChecklistItem } from "@/modules/roadmap";
+import { WidgetChecklistItem } from "@/components/ui/WidgetChecklistItem";
 import { preflightChecklistData } from "@/data/faqsSectionData";
 import { faqsPageData } from "@/data/pagesData";
 import { legacyText } from "@/data/text/legacy";

@@ -2,16 +2,8 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { IconTile } from "@/shared/components/IconTile";
-import {
-  guideIcon,
-  GuideBody,
-  getGuideDetail,
-  guideTopics,
-  findGuide,
-  guideNeighbours,
-  guideStepTexts,
-  relatedGuides
-} from "@/modules/guides";
+import { guideIcon, getGuideDetail, guideTopics, findGuide, guideNeighbours, guideStepTexts, relatedGuides } from "@/modules/guides";
+import { GuideBody } from "@/modules/guides/components/GuideBody";
 import { PageShell } from "@/shared/components/PageShell";
 import { StepList } from "@/shared/components/StepList";
 import { buildMetadata, JsonLd, breadcrumbSchema, howToSchema } from "@/modules/seo";

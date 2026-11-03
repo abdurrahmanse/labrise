@@ -1,6 +1,7 @@
-import { PROFESSOR_TABS } from "@/modules/professors";
+import { PROFESSOR_TABS } from "@/modules/professors/components/professorTabs";
 import { professorHub, professorSubPages } from "@/data/text/hubPages";
-import { FindProfessors, ProfessorStats } from "@/modules/professors";
+import { FindProfessors } from "@/modules/professors/components/FindProfessors";
+import { ProfessorStats } from "@/modules/professors/components/ProfessorStats";
 import { RelatedStrip } from "@/shared/components/JourneyHub";
 import { buildMetadata } from "@/modules/seo";
 import { PageShell } from "@/shared/components/PageShell";

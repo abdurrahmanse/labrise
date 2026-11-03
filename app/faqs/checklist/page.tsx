@@ -1,5 +1,5 @@
-import { CommunityHelpSection } from "@/modules/faqs";
-import { InteractivePreflightChecklist } from "@/modules/faqs";
+import { CommunityHelpSection } from "@/modules/faqs/components/CommunityHelpSection";
+import { InteractivePreflightChecklist } from "@/modules/faqs/components/InteractivePreflightChecklist";
 import { PageShell } from "@/shared/components/PageShell";
 import { buildMetadata } from "@/modules/seo";
 import { navLabels, pageText } from "@/data/text/site";

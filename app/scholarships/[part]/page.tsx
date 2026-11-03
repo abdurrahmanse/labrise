@@ -1,8 +1,8 @@
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { ScholarshipFinderView } from "@/modules/scholarships";
-import { SCHOLARSHIP_TABS, type ScholarshipPart } from "@/modules/scholarships";
+import { ScholarshipFinderView } from "@/modules/scholarships/components/ScholarshipFinderView";
+import { SCHOLARSHIP_TABS, type ScholarshipPart } from "@/modules/scholarships/components/scholarshipTabs";
 import { PageShell } from "@/shared/components/PageShell";
 import { buildMetadata } from "@/modules/seo";
 import { PageFallback } from "@/shared/components/PageFallback";

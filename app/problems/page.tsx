@@ -1,5 +1,5 @@
 import { PageShell } from "@/shared/components/PageShell";
-import { ProblemList } from "@/modules/roadmap";
+import { ProblemList } from "@/modules/roadmap/components/ProblemList";
 import { buildMetadata } from "@/modules/seo";
 import { navLabels, pageText } from "@/data/text/site";
 

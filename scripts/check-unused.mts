@@ -2,7 +2,8 @@ import { execSync } from "node:child_process";
 import { existsSync, readFileSync } from "node:fs";
 import { dirname, normalize } from "node:path";
 
-// Lists source files that no route can reach. Entry points: everything under app/ (pages, layouts, routes, metadata files).
+// Lists source files that nothing can reach. Entry points: everything under app/ (pages, layouts, routes, metadata files)
+// and each module's index.ts, which is its public API for other modules even when no route imports it yet.
 // Tests and scripts are not entries, so a file only a test imports is reported too.
 const roots = "app components shared core infrastructure modules data lib";
 const files = execSync(`git ls-files -co --exclude-standard ${roots}`, { encoding: "utf8" })
@@ -19,7 +20,7 @@ function resolve(from: string, spec: string) {
 // Static imports, re-exports and dynamic import("...") calls.
 const importRe = /(?:^|\n)\s*(?:import|export)\s+[^;"]*?from\s+"([^"]+)"|(?:^|\n)\s*import\s+"([^"]+)"|import\(\s*"([^"]+)"\s*\)/g;
 const reached = new Set<string>();
-const queue = files.filter((f) => f.startsWith("app/"));
+const queue = files.filter((f) => f.startsWith("app/") || /^modules\/[^/]+\/index\.ts$/.test(f));
 for (const f of queue) reached.add(f);
 while (queue.length) {
   const file = queue.pop()!;
@@ -34,7 +35,7 @@ while (queue.length) {
 
 const unused = files.filter((f) => !reached.has(f));
 if (unused.length) {
-  console.error(`${unused.length} file(s) no route can reach:\n${unused.map((f) => `  ${f}`).join("\n")}`);
+  console.error(`${unused.length} file(s) nothing can reach:\n${unused.map((f) => `  ${f}`).join("\n")}`);
   process.exit(1);
 }
-console.log(`All ${files.length} files are reachable from a route.`);
+console.log(`All ${files.length} files are reachable from a route or a module's public API.`);

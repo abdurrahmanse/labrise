@@ -1,5 +1,5 @@
 import { PageShell } from "@/shared/components/PageShell";
-import { ProfileList } from "@/modules/roadmap";
+import { ProfileList } from "@/modules/roadmap/components/ProfileList";
 import { buildMetadata } from "@/modules/seo";
 import { navLabels, pageText } from "@/data/text/site";
 

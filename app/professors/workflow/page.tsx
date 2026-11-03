@@ -1,6 +1,6 @@
-import { PROFESSOR_TABS } from "@/modules/professors";
+import { PROFESSOR_TABS } from "@/modules/professors/components/professorTabs";
 import { professorHub, professorSubPages } from "@/data/text/hubPages";
-import { OutreachStepper } from "@/modules/professors";
+import { OutreachStepper } from "@/modules/professors/components/OutreachStepper";
 import { RelatedStrip } from "@/shared/components/JourneyHub";
 import { buildMetadata } from "@/modules/seo";
 import { PageShell } from "@/shared/components/PageShell";

@@ -8,8 +8,8 @@ import nextTs from "eslint-config-next/typescript";
  * Wiring code (core, infrastructure, API routes, tests) implements the module contracts, so it may reach inside.
  */
 const publicEntry = {
-  group: ["@/modules/*/*", "!@/modules/*/server", "!@/modules/search/client", "!@/modules/directory/catalog", "!@/modules/directory/contracts", "!@/modules/directory/cards"],
-  message: 'Import from "@/modules/<name>" (its public API), or "@/modules/<name>/server" for server-only reads (search has "/client", directory has "/catalog", "/contracts" and "/cards"). Not from inner files.'
+  group: ["@/modules/*/*", "!@/modules/*/server", "!@/modules/search/client", "!@/modules/*/catalog", "!@/modules/directory/contracts", "!@/modules/directory/cards"],
+  message: 'Import from "@/modules/<name>" (its public API), or "@/modules/<name>/server" for server-only reads (search has "/client", records-only "/catalog" entries (directory, roadmap), directory "/contracts" and "/cards"). Not from inner files.'
 };
 
 const wiring = ["core/**", "infrastructure/**", "app/api/**", "**/*.test.ts", "**/*.test.tsx"];
@@ -23,6 +23,13 @@ const eslintConfig = defineConfig([
     files: ["**/*.{ts,tsx}"],
     ignores: wiring,
     rules: { "no-restricted-imports": ["error", { patterns: modulePatterns }] }
+  },
+  {
+    // Route files render one page, so they import the exact components they show instead of a module's whole barrel.
+    // A barrel that re-exports client components makes every page importing it ship all of them.
+    files: ["app/**/*.{ts,tsx}"],
+    ignores: ["app/api/**"],
+    rules: { "no-restricted-imports": ["error", { patterns: [{ ...publicEntry, group: [...publicEntry.group, "!@/modules/*/components"] }] }] }
   },
   {
     // Layering: shared infrastructure never depends on feature code. (Repeats modulePatterns: the last matching block wins.)

@@ -1,5 +1,5 @@
 import { PageShell } from "@/shared/components/PageShell";
-import { SavedBrowser } from "@/modules/library";
+import { SavedBrowser } from "@/modules/library/components/SavedBrowser";
 import { buildMetadata } from "@/modules/seo";
 import { commonText } from "@/data/text/common";
 import { libraryText as t } from "@/data/text/library";

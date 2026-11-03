@@ -1,6 +1,7 @@
 import React from "react";
 
-export type WidgetTheme = "indigo" | "cyan" | "emerald" | "amber" | "purple" | "rose";
+export type { WidgetTheme } from "@/components/ui/WidgetTheme";
+import type { WidgetTheme } from "@/components/ui/WidgetTheme";
 
 interface WidgetShellProps {
   theme?: WidgetTheme;

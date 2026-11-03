@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import { FaqsPageClient } from "@/modules/faqs";
+import { FaqsPageClient } from "@/modules/faqs/components/FaqsPageClient";
 import { faqsMetadata } from "@/data/metadata";
 import { getFaqs } from "@/modules/content/server";
 

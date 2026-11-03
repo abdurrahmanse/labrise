@@ -1,5 +1,5 @@
 import { PageShell } from "@/shared/components/PageShell";
-import { StepsGrid } from "@/modules/roadmap";
+import { StepsGrid } from "@/modules/roadmap/components/StepsGrid";
 import { buildMetadata } from "@/modules/seo";
 import { navLabels, pageText } from "@/data/text/site";
 

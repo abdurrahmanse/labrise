@@ -1,6 +1,7 @@
 import type { ContactPage, WithContext } from "schema-dts";
 import { PageShell } from "@/shared/components/PageShell";
-import { ContactForm, ContactSide } from "@/modules/contact";
+import { ContactForm } from "@/modules/contact/components/ContactForm";
+import { ContactSide } from "@/modules/contact/components/ContactSide";
 import { buildMetadata, JsonLd, absoluteUrl } from "@/modules/seo";
 import { commonText } from "@/data/text/common";
 import { contactInfo, contactPageText as t } from "@/data/text/contact";
