@@ -1,4 +1,4 @@
-import type { BreadcrumbList, CollegeOrUniversity, HowTo, Person, WebSite, WithContext } from "schema-dts";
+import type { BreadcrumbList, CollegeOrUniversity, HowTo, MonetaryGrant, Person, WebSite, WithContext } from "schema-dts";
 import { absoluteUrl, site } from "./site";
 
 export const websiteSchema = (): WithContext<WebSite> => ({
@@ -43,4 +43,14 @@ export const personSchema = (name: string, affiliation: string, field: string): 
   jobTitle: "Professor",
   affiliation: { "@type": "Organization", name: affiliation },
   knowsAbout: field
+});
+
+/** A scholarship as a grant. `funder` is the organisation that awards it, when the directory lists one. */
+export const scholarshipGrantSchema = (name: string, description: string, url: string, funder?: string): WithContext<MonetaryGrant> => ({
+  "@context": "https://schema.org",
+  "@type": "MonetaryGrant",
+  name,
+  description,
+  url,
+  ...(funder ? { funder: { "@type": "Organization", name: funder } } : {})
 });

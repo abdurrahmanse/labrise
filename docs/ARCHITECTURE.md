@@ -30,9 +30,22 @@ The composition roots decide which implementation backs each contract:
 Folders such as `entities/`, `DTOs/`, `mappers/`, `adapters/`, `actions/` are not created empty. Add one inside a module when
 the first file needs it (for example `mappers/` when a backend's field names differ from the schema).
 
-Boundaries are enforced by ESLint (`eslint.config.mjs`) for every module: outside a module, import `@/modules/<name>` (or `@/modules/<name>/server`), never inner files.
-Core, infrastructure, API routes and tests may reach inside because they implement the module contracts. One documented exception: `modules/library/components/SavedBrowser.tsx` imports directory's HTTP client directly, so the two barrels do not import each other.
-A file re-exported through an `index.ts` that uses client-only code (stores, hooks) must start with `"use client"`, or server pages importing the barrel fail to build.
+## Keeping bundles small
+
+Measured with `next analyze`: a plain page used to ship ~945 KB of JavaScript (raw) because the header pulled in the whole directory.
+Rules that keep it small:
+
+- **Module entries are split by weight.** `directory` has `index.ts` (UI components), `cards.ts` (cards other modules reuse),
+  `contracts.ts` (types, schemas, slugs, API client) and `catalog.ts` (the records). Import the lightest one that has what you need.
+  `search` has `index.ts` (header button only) and `client.ts` (results hook). ESLint allows exactly these extra entries.
+- **Barrels must not mix data and client components.** A server page that imports a barrel re-exporting `"use client"` files
+  puts all of them in that page's client manifest, rendered or not. Bundlers also cannot drop unused re-exports of modules
+  that run code at load time (the data files do).
+- **Heavy, rarely-used UI loads on demand.** The search dialog is a `next/dynamic` import opened by the header button or Ctrl/Cmd+K.
+- **Shared UI lives in `shared/`.** `Flag` and `ProgressBadge` are used by several features, so they must not live in (or import) one of them.
+
+Boundaries are enforced by ESLint (`eslint.config.mjs`) for every module: outside a module, import `@/modules/<name>` (or `/server`, or one of the entries listed above), never inner files.
+Core, infrastructure, API routes and tests may reach inside because they implement the module contracts. A file re-exported through an `index.ts` that uses client-only code (stores, hooks) must start with `"use client"`, or server pages importing the barrel fail to build.
 Import cycles are checked by `npm run check:cycles`.
 
 ## Modules on the new flow

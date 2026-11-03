@@ -12,6 +12,7 @@ import {
   findProvider,
   findScholarship,
   findUniversity,
+  providerOfScholarship,
   fieldOf,
   entryMeta
 } from "@/modules/directory/catalog";
@@ -31,7 +32,7 @@ import {
   UniversityDetailView
 } from "@/modules/directory";
 import { getCountryGuide } from "@/modules/content/server";
-import { buildMetadata, JsonLd, breadcrumbSchema, personSchema, universitySchema } from "@/modules/seo";
+import { buildMetadata, JsonLd, breadcrumbSchema, personSchema, scholarshipGrantSchema, universitySchema } from "@/modules/seo";
 import { PageFallback } from "@/shared/components/PageFallback";
 import { navLabels, notFoundTitles } from "@/data/text/site";
 
@@ -104,8 +105,10 @@ async function DirectoryDetailPageContent({ params }: Props) {
   if (parsed.data === "scholarships") {
     const scholarship = findScholarship(slug);
     if (!scholarship) notFound();
+    const funder = providerOfScholarship(scholarship.name)?.name;
     return (
       <>
+        <JsonLd data={scholarshipGrantSchema(scholarship.name, `${scholarship.covers}. ${scholarship.eligibility}`, scholarship.site, funder)} />
         <JsonLd data={breadcrumbSchema([...crumbs, { name: scholarship.name, path: `/directory/scholarships/${slug}` }])} />
         <ScholarshipDetailView scholarship={scholarship} />
       </>
