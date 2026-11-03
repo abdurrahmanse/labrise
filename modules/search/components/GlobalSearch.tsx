@@ -24,7 +24,7 @@ export function GlobalSearch() {
         onPointerEnter={() => void loadSearchDialog()}
         onFocus={() => void loadSearchDialog()}
         aria-label={searchText.open}
-        className="flex h-9 cursor-pointer items-center gap-2 border-2 border-white/40 bg-white/[0.04] px-2.5 text-slate-300 transition-colors hover:border-indigo-400 hover:text-indigo-300"
+        className="flex h-9 cursor-pointer items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3 text-slate-300 transition-colors hover:border-indigo-400 hover:text-indigo-300"
       >
         <Search className="h-4 w-4" />
         <kbd className="hidden whitespace-nowrap font-mono text-xs text-slate-400 lg:inline">{searchText.shortcut}</kbd>

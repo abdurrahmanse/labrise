@@ -3,6 +3,8 @@ export interface NavLinkItem {
   label: string;
   iconName: string;
   badge?: string;
+  /** Other path prefixes that also mark this link as the current section. */
+  matches?: string[];
 }
 
 export interface StatusTickerItem {
@@ -74,6 +76,7 @@ export const headerData = {
     menuAriaLabel: "Toggle navigation menu"
   },
   mobileDrawer: {
+    moreTitle: "More",
     title: "Scholarship Roadmap",
     subtitle: "Navigate fully funded graduate programs worldwide",
     ctaButton: {
@@ -83,13 +86,24 @@ export const headerData = {
   }
 };
 
+/** The main navigation: the four places a visitor starts from. Everything else is in "more" and the footer. */
 export const navLinksData: NavLinkItem[] = [
-  { href: "/steps", label: "Roadmap", iconName: "Map" },
-  { href: "/apply", label: "Apply", iconName: "ClipboardCheck" },
-  { href: "/guides", label: "Guides", iconName: "BookOpen" },
-  { href: "/directory", label: "Directory", iconName: "Building2" },
-  { href: "/planner", label: "Planner", iconName: "ClipboardCheck" },
-  { href: "/faqs", label: "FAQs", iconName: "HelpCircle" }
+  { href: "/steps", label: "Roadmap", iconName: "Map", matches: ["/roadmap", "/profile", "/apply"] },
+  { href: "/guides", label: "Guides", iconName: "BookOpen", matches: ["/documents", "/problems", "/glossary"] },
+  { href: "/directory", label: "Directory", iconName: "Building2", matches: ["/countries", "/scholarships", "/professors"] },
+  { href: "/planner", label: "Planner", iconName: "ClipboardCheck", matches: ["/saved"] }
+];
+
+/** The call to action beside the navigation. */
+export const supportLinkData: NavLinkItem = { href: "/support", label: "Support", iconName: "HeartHandshake" };
+
+/** Pages that are not in the main navigation but still need a way in on small screens. */
+export const moreLinksData: NavLinkItem[] = [
+  { href: "/apply", label: "How to apply", iconName: "" },
+  { href: "/faqs", label: "FAQs", iconName: "" },
+  { href: "/saved", label: "Saved", iconName: "" },
+  { href: "/about", label: "About", iconName: "" },
+  { href: "/contact", label: "Contact", iconName: "" }
 ];
 
 /** Every page, used by the simple footer. */
@@ -111,6 +125,7 @@ export const footerLinksData: NavLinkItem[] = [
   { href: "/about", label: "About", iconName: "" },
   { href: "/disclaimer", label: "Disclaimer", iconName: "" },
   { href: "/privacy", label: "Privacy", iconName: "" },
+  { href: "/support", label: "Support", iconName: "" },
   { href: "/contact", label: "Contact", iconName: "" }
 ];
 
