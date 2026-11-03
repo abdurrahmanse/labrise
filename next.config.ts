@@ -6,6 +6,15 @@ const nextConfig: NextConfig = {
     agentFeedback: true,
   },
   cacheComponents: true,
+  // Old addresses that now live elsewhere. Done here, before any page renders.
+  async redirects() {
+    return [
+      { source: "/countries", destination: "/directory/countries", permanent: true },
+      { source: "/programs", destination: "/directory/countries", permanent: true },
+      { source: "/toolkit", destination: "/documents", permanent: true },
+      { source: "/interviews", destination: "/roadmap#phase-10", permanent: true }
+    ];
+  },
   async headers() {
     return [
       {
