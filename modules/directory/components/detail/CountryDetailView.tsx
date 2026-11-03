@@ -11,6 +11,7 @@ import { countryDetails } from "../../data/countryDetails";
 import { professorsInCountry, universitiesInCountry } from "../../lib/lookups";
 import { countrySlug, professorSlug, universitySlug } from "../../lib/slugs";
 import type { CountryEntry } from "../../types";
+import { Flag } from "../Flag";
 import { APPLY_STEPS } from "./applySteps";
 import { CountryFacts } from "./CountryFacts";
 
@@ -25,6 +26,7 @@ export function CountryDetailView({ country }: { country: CountryEntry }) {
     <PageShell
       eyebrow={`Country · ${country.region}`}
       title={country.country}
+      media={<Flag country={country.country} className="h-10 w-14" />}
       lead={detail?.overview}
       back={{ href: "/directory/countries", label: "All countries" }}
     >

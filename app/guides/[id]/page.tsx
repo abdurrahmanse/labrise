@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { IconTile } from "@/shared/components/IconTile";
+import { guideIcon } from "@/modules/guides/lib/guideIcons";
 import { PageShell } from "@/shared/components/PageShell";
 import { StepList } from "@/shared/components/StepList";
 import { GuideBody } from "@/modules/guides/components/GuideBody";
@@ -43,6 +45,7 @@ export default async function GuideTopicPage({ params }: Props) {
       eyebrow={topic.tag}
       title={topic.title}
       lead={detail?.summary}
+      media={<IconTile icon={guideIcon(id)} size={56} />}
       back={{ href: "/guides", label: "All guides" }}
       prev={prev && { href: `/guides/${prev.id}`, label: prev.title }}
       next={next && { href: `/guides/${next.id}`, label: next.title }}

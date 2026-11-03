@@ -2,6 +2,7 @@ import { Block } from "@/shared/components/Block";
 import { LinkCardGrid } from "@/shared/components/LinkCardGrid";
 import { PageShell } from "@/shared/components/PageShell";
 import { guideGroups } from "@/modules/guides/data/groups";
+import { guideIcon } from "@/modules/guides/lib/guideIcons";
 import { findGuide } from "@/modules/guides/lib/guides";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
 
@@ -25,7 +26,7 @@ export default function GuidesPage() {
           <LinkCardGrid
             items={group.ids.flatMap((id) => {
               const guide = findGuide(id);
-              return guide ? [{ href: `/guides/${id}`, title: guide.title, meta: guide.tag }] : [];
+              return guide ? [{ href: `/guides/${id}`, title: guide.title, meta: guide.tag, icon: guideIcon(id) }] : [];
             })}
           />
         </Block>

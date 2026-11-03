@@ -13,6 +13,7 @@ import { professorsAtUniversity } from "../../lib/lookups";
 import { countrySlug, professorSlug, universitySlug } from "../../lib/slugs";
 import type { UniversityEntry } from "../../types";
 import { universities } from "../../data/universities";
+import { Avatar } from "@/shared/components/Avatar";
 import { APPLY_STEPS } from "./applySteps";
 import { CountryFacts } from "./CountryFacts";
 
@@ -28,6 +29,7 @@ export function UniversityDetailView({ university }: { university: UniversityEnt
     <PageShell
       eyebrow={`University · ${university.country}`}
       title={university.name}
+      media={<Avatar name={university.name.replace(/^(University of|The) /, "")} size={64} square />}
       lead={`${university.funding}. Typical application window: ${university.deadline}.`}
       back={{ href: "/directory/universities", label: "All universities" }}
     >

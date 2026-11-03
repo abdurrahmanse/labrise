@@ -10,6 +10,8 @@ import { fieldOf } from "../../data/fields";
 import { universityOfProfessor } from "../../lib/lookups";
 import { professorSlug, universitySlug } from "../../lib/slugs";
 import type { ProfessorEntry } from "../../types";
+import { Avatar } from "@/shared/components/Avatar";
+import { Flag } from "../Flag";
 import { EMAIL_STEPS } from "./applySteps";
 import { buildEmailDraft } from "./emailDraft";
 import { EmailDraftBox } from "./EmailDraftBox";
@@ -43,13 +45,14 @@ export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }
     <PageShell
       eyebrow={`Professor · ${professor.group}`}
       title={professor.name}
+      media={<Avatar name={professor.name} size={72} />}
       lead={`${professor.university}, ${professor.country}. Research group: ${professor.group}.`}
       back={{ href: "/directory/professors", label: "All professors" }}
     >
       <Facts
         rows={[
           ["University", university ? <Link key="u" href={`/directory/universities/${universitySlug(university)}`} className={linkClass}>{professor.university}</Link> : professor.university],
-          ["Country", professor.country],
+          ["Country", <span key="c" className="inline-flex items-center gap-2"><Flag country={professor.country} className="h-4 w-6" /> {professor.country}</span>],
           ["Group", professor.group],
           ["Email", <EmailCell key="e" professor={professor} />]
         ]}

@@ -4,7 +4,7 @@ export const countries: CountryEntry[] = [
   { country: "Germany", region: "Europe", routes: "Salaried PhD, DAAD, Max Planck / IMPRS", funding: "Salary or stipend, no tuition at most public universities", supervisor: "Required first", fee: "Often none; uni-assist for some" },
   { country: "Switzerland", region: "Europe", routes: "Salaried PhD at ETH, EPFL, UZH", funding: "Employment contract, high salary", supervisor: "Required first", fee: "Small or none" },
   { country: "Sweden", region: "Europe", routes: "Salaried PhD, Swedish Institute (master's)", funding: "Employment with salary", supervisor: "Not needed", fee: "None for PhD posts" },
-  { country: "Netherlands", region: "Europe", routes: "Salaried PhD, Orange Knowledge-type grants", funding: "Employment contract", supervisor: "Not needed", fee: "None for PhD posts" },
+  { country: "Netherlands", region: "Europe", routes: "Salaried PhD, Holland Scholarship (partial)", funding: "Employment contract", supervisor: "Not needed", fee: "None for PhD posts" },
   { country: "Denmark", region: "Europe", routes: "Salaried PhD, Danish government grants", funding: "Employment with salary", supervisor: "Not needed", fee: "None for PhD posts" },
   { country: "Norway", region: "Europe", routes: "Salaried PhD", funding: "Employment with salary", supervisor: "Not needed", fee: "None" },
   { country: "Finland", region: "Europe", routes: "Salaried doctoral researcher", funding: "Employment with salary", supervisor: "Recommended", fee: "None for PhD posts" },

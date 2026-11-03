@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { Avatar } from "@/shared/components/Avatar";
+import { Flag } from "../Flag";
 import { fieldOf } from "../../data/fields";
 import { professorSlug } from "../../lib/slugs";
 import type { ProfessorEntry } from "../../types";
@@ -13,14 +15,15 @@ export function ProfessorCard({ professor }: { professor: ProfessorEntry }) {
   return (
     <article className="flex flex-col gap-4 bg-canvas-card/70 backdrop-blur-xl p-5 shadow-[4px_4px_0_0_rgba(15,23,42,0.12)]">
       <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
+        <Avatar name={professor.name} size={56} />
+        <div className="min-w-0 flex-1">
           <h3 className="text-xl font-bold text-white">
             <Link href={`/directory/professors/${slug}`} className="hover:text-indigo-300">
               {professor.name}
             </Link>
           </h3>
           <p className="text-slate-300">{professor.university}</p>
-          <p className="font-mono text-xs uppercase tracking-wider text-slate-400">{professor.country}</p>
+          <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-slate-400"><Flag country={professor.country} className="h-3.5 w-5" /> {professor.country}</p>
         </div>
         <SaveButton slug={slug} />
       </div>

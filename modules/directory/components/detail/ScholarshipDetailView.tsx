@@ -10,6 +10,8 @@ import { countryByName } from "../../lib/lookups";
 import { countrySlug, scholarshipSlug } from "../../lib/slugs";
 import type { ScholarshipEntry } from "../../types";
 
+import { Flag } from "../Flag";
+
 const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 
 const STEPS = [
@@ -28,6 +30,7 @@ export function ScholarshipDetailView({ scholarship }: { scholarship: Scholarshi
     <PageShell
       eyebrow={`Scholarship · ${scholarship.level}`}
       title={scholarship.name}
+      media={<Flag country={scholarship.host} className="h-10 w-14" />}
       lead={`Hosted in ${scholarship.host}. Covers: ${scholarship.covers}.`}
       back={{ href: "/directory/scholarships", label: "All scholarships" }}
     >

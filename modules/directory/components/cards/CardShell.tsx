@@ -6,15 +6,20 @@ interface CardShellProps {
   href: string;
   eyebrow: string;
   title: string;
+  /** Flag, avatar or icon shown at the top of the card. */
+  media?: ReactNode;
   children: ReactNode;
 }
 
 /** Shared look for directory cards: a coloured top edge, title, facts and a details link. */
-export function CardShell({ href, eyebrow, title, children }: CardShellProps) {
+export function CardShell({ href, eyebrow, title, media, children }: CardShellProps) {
   return (
     <article className="group relative flex flex-col gap-3 bg-canvas-card/70 backdrop-blur-xl p-5 pt-6 shadow-[4px_4px_0_0_rgba(15,23,42,0.12)] transition-all duration-150 hover:-translate-y-1 hover:shadow-[6px_6px_0_0_rgba(58,95,224,0.3)]">
       <span className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-indigo-600 to-cyan-400" />
-      <p className="font-mono text-xs uppercase tracking-wider text-indigo-300">{eyebrow}</p>
+      <div className="flex items-center gap-3">
+        {media}
+        <p className="font-mono text-xs uppercase tracking-wider text-indigo-300">{eyebrow}</p>
+      </div>
       <h3 className="text-xl font-bold text-white">
         <Link href={href} className="hover:text-indigo-300">{title}</Link>
       </h3>
