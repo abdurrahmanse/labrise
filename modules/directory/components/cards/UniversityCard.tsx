@@ -1,7 +1,7 @@
 import { universitySlug } from "../../lib/slugs";
 import type { UniversityEntry } from "../../types";
 import { Avatar } from "@/shared/components/Avatar";
-import { Flag } from "../Flag";
+import { Flag } from "@/shared/components/Flag";
 import { CardFact, CardShell } from "./CardShell";
 import { cardText } from "@/data/text/directory";
 

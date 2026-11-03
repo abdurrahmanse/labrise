@@ -3,18 +3,9 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Block } from "@/shared/components/Block";
 import { PageShell } from "@/shared/components/PageShell";
-import {
-  CountryViewTabs,
-  FunderList,
-  ProfessorRoster,
-  UniversityRoster,
-  Flag,
-  countries,
-  ecosystemOfCountry,
-  findCountry,
-  countrySlug,
-  universitySlug
-} from "@/modules/directory";
+import { countries, ecosystemOfCountry, findCountry, countrySlug, universitySlug } from "@/modules/directory/catalog";
+import { CountryViewTabs, FunderList, ProfessorRoster, UniversityRoster } from "@/modules/directory";
+import { Flag } from "@/shared/components/Flag";
 import { buildMetadata } from "@/modules/seo";
 import { countryViewText, rosterText } from "@/data/text/directory";
 import { PageFallback } from "@/shared/components/PageFallback";

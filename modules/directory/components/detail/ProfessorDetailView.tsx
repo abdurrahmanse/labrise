@@ -20,7 +20,7 @@ import { professorsAtUniversity, universityOfProfessor } from "../../lib/lookups
 import { professorSlug, universitySlug } from "../../lib/slugs";
 import type { ProfessorEntry } from "../../types";
 import { FunderList } from "../ecosystem/FunderList";
-import { Flag } from "../Flag";
+import { Flag } from "@/shared/components/Flag";
 import { ProfessorTracker } from "../professors/ProfessorTracker";
 import { EMAIL_STEPS } from "./applySteps";
 import { buildEmailDraft } from "./emailDraft";

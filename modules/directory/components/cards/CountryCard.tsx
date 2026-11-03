@@ -1,6 +1,6 @@
 import { countrySlug } from "../../lib/slugs";
 import type { CountryEntry } from "../../types";
-import { Flag } from "../Flag";
+import { Flag } from "@/shared/components/Flag";
 import { CardFact, CardShell } from "./CardShell";
 import { cardText } from "@/data/text/directory";
 

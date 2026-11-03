@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Avatar } from "@/shared/components/Avatar";
-import { Flag } from "../Flag";
+import { Flag } from "@/shared/components/Flag";
 import { fieldOf } from "../../data/fields";
 import { professorSlug } from "../../lib/slugs";
 import type { ProfessorEntry } from "../../types";

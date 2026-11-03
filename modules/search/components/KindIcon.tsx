@@ -1,5 +1,5 @@
 import { Award, GraduationCap, Landmark, MapPin, Users, type LucideIcon } from "lucide-react";
-import type { SearchKind } from "../lib/searchIndex";
+import type { SearchKind } from "../types";
 
 const ICONS: Record<SearchKind, LucideIcon> = {
   Country: MapPin,

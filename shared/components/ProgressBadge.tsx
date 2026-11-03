@@ -1,28 +1,24 @@
 "use client";
 
 import { Check } from "lucide-react";
-import { professorOutreachWorkflow } from "@/data/professorsData";
-import { searchWorkflowSteps } from "@/data/scholarshipsSearchData";
 import { hubChrome } from "@/data/text/hubPages";
-import { useOutreachProgress } from "@/modules/professors";
-import { useFinderProgress } from "@/modules/scholarships";
 import { useMounted } from "../hooks/useMounted";
 
-/** Shows how many steps of a saved workflow are done. Empty until the visitor has started. */
-export function ProgressBadge({ kind }: { kind: "outreach" | "finder" }) {
-  const mounted = useMounted();
-  const outreach = useOutreachProgress((s) => s.done);
-  const finder = useFinderProgress((s) => s.done);
-  if (!mounted) return null;
+interface ProgressBadgeProps {
+  /** Steps ticked so far, by step id. */
+  done: Record<string, boolean>;
+  total: number;
+}
 
-  const map = kind === "outreach" ? outreach : finder;
-  const total = kind === "outreach" ? professorOutreachWorkflow.length : searchWorkflowSteps.length;
-  const done = Object.values(map).filter(Boolean).length;
-  if (done === 0) return null;
+/** "3/11 done" pill for a saved workflow. Empty until the visitor has started. The feature module supplies the numbers. */
+export function ProgressBadge({ done, total }: ProgressBadgeProps) {
+  const mounted = useMounted();
+  const count = Object.values(done).filter(Boolean).length;
+  if (!mounted || count === 0) return null;
 
   return (
     <span className="inline-flex items-center gap-1 bg-emerald-500/15 px-2 py-0.5 font-mono text-xs text-emerald-400">
-      <Check className="h-3.5 w-3.5" aria-hidden /> {hubChrome.doneOf(done, total)}
+      <Check className="h-3.5 w-3.5" aria-hidden /> {hubChrome.doneOf(count, total)}
     </span>
   );
 }

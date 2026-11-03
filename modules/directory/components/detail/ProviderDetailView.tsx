@@ -9,7 +9,7 @@ import { scholarships } from "../../data/scholarships";
 import { universitiesOfProvider } from "../../lib/connections";
 import { scholarshipSlug, universitySlug } from "../../lib/slugs";
 import type { ProviderEntry } from "../../types";
-import { Flag } from "../Flag";
+import { Flag } from "@/shared/components/Flag";
 import { detailText } from "@/data/text/directory";
 import { EntryActions } from "@/modules/library";
 import { providerSlug } from "../../lib/slugs";

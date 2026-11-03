@@ -2,19 +2,15 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import {
-  ProfessorsExplorer,
   directoryTypeSchema,
-  CountriesList,
-  ProvidersList,
-  ScholarshipsList,
-  UniversitiesList,
   countries,
   directoryTypes,
   professors,
   providers,
   scholarships,
   universities
-} from "@/modules/directory";
+} from "@/modules/directory/catalog";
+import { ProfessorsExplorer, CountriesList, ProvidersList, ScholarshipsList, UniversitiesList } from "@/modules/directory";
 import { PageShell } from "@/shared/components/PageShell";
 import { buildMetadata } from "@/modules/seo";
 import { PageFallback } from "@/shared/components/PageFallback";

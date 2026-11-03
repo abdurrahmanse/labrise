@@ -4,7 +4,7 @@ import { useId, useState } from "react";
 import { Plus } from "lucide-react";
 import { plannerText as t } from "@/data/text/planner";
 import { cn } from "@/lib/utils";
-import { useSearch } from "@/modules/search";
+import { useSearch } from "@/modules/search/client";
 import { usePlanner, type ApplicationKind } from "../store/usePlanner";
 import { surface } from "@/shared/components/Surface";
 

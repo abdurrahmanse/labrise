@@ -3,11 +3,6 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import {
   directoryTypeSchema,
-  CountryDetailView,
-  ProfessorDetailView,
-  ProviderDetailView,
-  ScholarshipDetailView,
-  UniversityDetailView,
   countries,
   professors,
   providers,
@@ -25,6 +20,13 @@ import {
   universitySlug,
   fieldOf,
   entryMeta
+} from "@/modules/directory/catalog";
+import {
+  CountryDetailView,
+  ProfessorDetailView,
+  ProviderDetailView,
+  ScholarshipDetailView,
+  UniversityDetailView
 } from "@/modules/directory";
 import { getCountryGuide } from "@/modules/content/server";
 import { buildMetadata, JsonLd, breadcrumbSchema, personSchema, universitySchema } from "@/modules/seo";

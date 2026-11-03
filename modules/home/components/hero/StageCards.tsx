@@ -1,5 +1,5 @@
 import { Check } from "lucide-react";
-import { Flag } from "@/modules/directory";
+import { Flag } from "@/shared/components/Flag";
 import { FloatingCard } from "./FloatingCard";
 
 export function ScholarshipStageCard() {

@@ -1,4 +1,4 @@
-import { scholarshipSlug } from "@/modules/directory";
+import { scholarshipSlug } from "@/modules/directory/catalog";
 import { scholarships } from "@/modules/directory/data";
 import { FEATURED_SCHOLARSHIPS } from "@/modules/scholarships/constants";
 import type { ScholarshipRepository } from "@/modules/scholarships/repositories/ScholarshipRepository";

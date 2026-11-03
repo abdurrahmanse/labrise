@@ -1,4 +1,4 @@
-import { ScholarshipCard } from "@/modules/directory";
+import { ScholarshipCard } from "@/modules/directory/cards";
 import type { Scholarship } from "../../types/scholarship";
 
 /** Responsive grid of scholarship cards. */

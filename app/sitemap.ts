@@ -11,7 +11,7 @@ import {
   providerSlug,
   scholarshipSlug,
   universitySlug
-} from "@/modules/directory";
+} from "@/modules/directory/catalog";
 import { guideTopics } from "@/modules/guides";
 import { roadmapLevelsData } from "@/data/levelsData";
 import { roadmapPhasesData } from "@/data/roadmapPhasesData";

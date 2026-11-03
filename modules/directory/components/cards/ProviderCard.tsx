@@ -1,6 +1,6 @@
 import { providerSlug } from "../../lib/slugs";
 import type { ProviderEntry } from "../../types";
-import { Flag } from "../Flag";
+import { Flag } from "@/shared/components/Flag";
 import { CardFact, CardShell } from "./CardShell";
 import { cardText } from "@/data/text/directory";
 

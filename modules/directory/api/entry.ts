@@ -30,12 +30,4 @@ export interface EntryByType {
   providers: ProviderEntry;
 }
 
-export const searchResponseSchema = z.object({
-  query: z.string(),
-  total: z.number(),
-  items: z.array(relatedItemSchema.extend({ kind: relatedItemSchema.shape.kind })),
-  nextPage: z.number().nullable()
-});
-export type SearchResponse = z.infer<typeof searchResponseSchema>;
-
 export type { DirectoryType };

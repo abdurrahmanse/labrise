@@ -1,4 +1,4 @@
-import type { ScholarshipEntry } from "@/modules/directory";
+import type { ScholarshipEntry } from "@/modules/directory/catalog";
 
 /** One scholarship programme, as the site shows it. */
 export type Scholarship = ScholarshipEntry;

@@ -1,7 +1,7 @@
 import { LinkCardGrid } from "@/shared/components/LinkCardGrid";
 import { Block } from "@/shared/components/Block";
 import { PageShell } from "@/shared/components/PageShell";
-import { countries, professors, providers, scholarships, universities } from "@/modules/directory";
+import { countries, professors, providers, scholarships, universities } from "@/modules/directory/catalog";
 import { buildMetadata } from "@/modules/seo";
 import { commonText } from "@/data/text/common";
 import { directoryIndexText as t } from "@/data/text/pages";

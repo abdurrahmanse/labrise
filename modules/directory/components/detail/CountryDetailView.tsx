@@ -10,7 +10,7 @@ import { countryDetails } from "../../data/countryDetails";
 import { ecosystemOfCountry } from "../../lib/connections";
 import { countrySlug } from "../../lib/slugs";
 import type { CountryEntry } from "../../types";
-import { Flag } from "../Flag";
+import { Flag } from "@/shared/components/Flag";
 import { APPLY_STEPS } from "./applySteps";
 import { CountryViewTabs } from "../ecosystem/CountryViewTabs";
 import { EcosystemTiles } from "../ecosystem/EcosystemTiles";

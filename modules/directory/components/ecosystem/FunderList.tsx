@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { providerSlug } from "../../lib/slugs";
 import type { ProviderEntry } from "../../types";
-import { Flag } from "../Flag";
+import { Flag } from "@/shared/components/Flag";
 import { rosterLabels } from "@/data/text/directory";
 import { surface } from "@/shared/components/Surface";
 

@@ -1,6 +1,6 @@
 import { searchText } from "@/data/text/common";
 import { cn } from "@/lib/utils";
-import type { SearchKind } from "../lib/searchIndex";
+import type { SearchKind } from "../types";
 import { KindIcon } from "./KindIcon";
 
 export interface SearchResult {

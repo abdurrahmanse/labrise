@@ -9,7 +9,7 @@ import { applicationChecklist } from "../../lib/scholarshipRelations";
 import { providerOfScholarship } from "../../lib/lookups";
 import { scholarshipSlug } from "../../lib/slugs";
 import type { ScholarshipEntry } from "../../types";
-import { Flag } from "../Flag";
+import { Flag } from "@/shared/components/Flag";
 import { bodyClass } from "./scholarship/detailStyles";
 import { ScholarshipHighlights } from "./scholarship/ScholarshipHighlights";
 import { ScholarshipProviderBlock } from "./scholarship/ScholarshipProviderBlock";

@@ -1,5 +1,5 @@
 import { Avatar } from "@/shared/components/Avatar";
-import { Flag } from "@/modules/directory";
+import { Flag } from "@/shared/components/Flag";
 
 const FLAGS = ["Germany", "Japan", "Canada", "Australia", "Sweden", "Switzerland"];
 const SCHOOLS = ["North", "South", "East", "West", "Central", "Coast"];

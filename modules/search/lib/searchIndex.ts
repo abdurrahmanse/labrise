@@ -9,9 +9,10 @@ import {
   providerSlug,
   scholarshipSlug,
   universitySlug
-} from "@/modules/directory";
+} from "@/modules/directory/catalog";
+import type { SearchKind } from "../types";
 
-export type SearchKind = "Country" | "University" | "Professor" | "Funder" | "Scholarship";
+export type { SearchKind };
 
 export interface SearchItem {
   kind: SearchKind;

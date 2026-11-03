@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useQueries } from "@tanstack/react-query";
 import { useState } from "react";
 import { ArrowRight, Bookmark, History, Loader2, RotateCcw, Trash2, TriangleAlert } from "lucide-react";
-import { directoryApi } from "@/modules/directory/api/endpoints";
+import { directoryApi } from "@/modules/directory/catalog";
 import { isApiError } from "@/shared/api/errors";
 import { queryKeys } from "@/shared/query/queryKeys";
 import { staleTimes } from "@/shared/query/staleTimes";
