@@ -9,11 +9,12 @@ import { SupervisorNecessityTable } from "./SupervisorNecessityTable";
 import { ResearchFitChecklistSection } from "./ResearchFitChecklistSection";
 import { PROFESSOR_TABS, type ProfessorPart } from "./professorTabs";
 import { SubNav } from "@/shared/components/SubNav";
+import { legacyText } from "@/data/text/legacy";
 
 export function ProfessorOutreachView({ part = "outreach" }: { part?: ProfessorPart }) {
   return (
     <div className="space-y-10">
-      <SubNav label="Professor outreach sections" items={PROFESSOR_TABS} />
+      <SubNav label={legacyText.professorOutreachView.t0} items={PROFESSOR_TABS} />
       {part === "outreach" && (
         <>
           <ProfessorsHeader />

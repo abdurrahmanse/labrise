@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Mail, CheckCircle2, Paperclip, Send, MessageSquare, FileText } from "lucide-react";
 import { coldEmailTemplates, professorOutreachControlsData } from "@/data/professorsData";
 import { CopyButton } from "@/components/ui/CopyButton";
+import { legacyText } from "@/data/text/legacy";
 
 export function EmailBlueprintsSection() {
   const [activeTemplateId, setActiveTemplateId] = useState(coldEmailTemplates[0].id);
@@ -17,7 +18,7 @@ export function EmailBlueprintsSection() {
       <div className="border-b border-white/10 pb-4">
         <div className="flex items-center gap-2 text-indigo-400 font-mono text-xs font-bold uppercase tracking-wider mb-1">
           <Mail className="w-4 h-4" />
-          <span>Email Blueprints</span>
+          <span>{legacyText.emailBlueprintsSection.t0}</span>
         </div>
         <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
           {blueprintsTitle}
@@ -54,14 +55,14 @@ export function EmailBlueprintsSection() {
               Audience: {currentTemplate.targetAudience} • Target: {currentTemplate.wordCount}
             </span>
           </div>
-          <CopyButton textToCopy={currentTemplate.body} label="Copy Email Template" />
+          <CopyButton textToCopy={currentTemplate.body} label={legacyText.emailBlueprintsSection.t5} />
         </div>
 
         {/* Subject Lines */}
         <div className="space-y-2">
           <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-slate-400 block">
             <MessageSquare className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Recommended Subject Lines:</span>
+            <span>{legacyText.emailBlueprintsSection.t1}</span>
           </span>
           <div className="space-y-1.5">
             {currentTemplate.subjectLines.map((subj, idx) => (
@@ -70,7 +71,7 @@ export function EmailBlueprintsSection() {
                 className="p-2.5 rounded-lg bg-slate-950 font-mono text-xs text-cyan-300 border border-white/5 flex items-center justify-between"
               >
                 <span>{subj}</span>
-                <CopyButton textToCopy={subj} label="Copy" className="px-2 py-0.5 text-[10px]" />
+                <CopyButton textToCopy={subj} label={legacyText.emailBlueprintsSection.t6} className="px-2 py-0.5 text-[10px]" />
               </div>
             ))}
           </div>
@@ -80,7 +81,7 @@ export function EmailBlueprintsSection() {
         <div className="space-y-2">
           <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-slate-400 block">
             <Mail className="w-3.5 h-3.5 text-indigo-400" />
-            <span>Email Body (Fill Bracketed Placeholders):</span>
+            <span>{legacyText.emailBlueprintsSection.t2}</span>
           </span>
           <pre className="p-4 sm:p-5 rounded-xl bg-slate-950 font-mono text-xs text-slate-200 border border-white/5 whitespace-pre-wrap leading-relaxed overflow-x-auto select-all">
             {currentTemplate.body}
@@ -92,7 +93,7 @@ export function EmailBlueprintsSection() {
           <div className="p-3.5 rounded-xl bg-slate-950/60 border border-white/5 space-y-1.5">
             <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-teal-400 block">
               <Paperclip className="w-3 h-3 text-teal-400" />
-              <span>Required Attachments:</span>
+              <span>{legacyText.emailBlueprintsSection.t3}</span>
             </span>
             <ul className="space-y-1 text-xs text-slate-300">
               {currentTemplate.recommendedAttachments.map((att, idx) => (
@@ -107,7 +108,7 @@ export function EmailBlueprintsSection() {
           <div className="p-3.5 rounded-xl bg-slate-950/60 border border-white/5 space-y-1.5">
             <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-indigo-400 block">
               <Send className="w-3 h-3 text-indigo-400" />
-              <span>Sending Guidelines:</span>
+              <span>{legacyText.emailBlueprintsSection.t4}</span>
             </span>
             <ul className="space-y-1 text-xs text-slate-300">
               {currentTemplate.tips.map((tip, idx) => (

@@ -3,13 +3,14 @@ import { Compass, FileText, FlaskConical, Globe2, Plane, Users, type LucideIcon 
 import { IconTile } from "@/shared/components/IconTile";
 import { roadmapSteps } from "@/modules/roadmap/data/steps";
 import { SectionHeading } from "./SectionHeading";
+import { homeText } from "@/data/text/site";
 
 const STEP_ICONS: LucideIcon[] = [Compass, FlaskConical, Globe2, Users, FileText, Plane];
 
 export function JourneySection() {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
-      <SectionHeading title="Your path in 6 steps" linkHref="/steps" linkLabel="See all steps" />
+      <SectionHeading title={homeText.journey.title} linkHref="/steps" linkLabel={homeText.journey.linkLabel} />
       <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {roadmapSteps.map((s) => (
           <li key={s.step}>

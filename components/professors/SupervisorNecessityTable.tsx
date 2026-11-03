@@ -3,6 +3,7 @@
 import React from "react";
 import { Globe2 } from "lucide-react";
 import { supervisorNecessityByCountry, professorOutreachControlsData } from "@/data/professorsData";
+import { legacyText } from "@/data/text/legacy";
 
 export function SupervisorNecessityTable() {
   const { necessityTitle, necessitySubtitle } = professorOutreachControlsData.sections;
@@ -12,7 +13,7 @@ export function SupervisorNecessityTable() {
       <div className="border-b border-white/10 pb-4">
         <div className="flex items-center gap-2 text-indigo-400 font-mono text-xs font-bold uppercase tracking-wider mb-1">
           <Globe2 className="w-4 h-4" />
-          <span>Global Institutional Norms</span>
+          <span>{legacyText.supervisorNecessityTable.t0}</span>
         </div>
         <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
           {necessityTitle}

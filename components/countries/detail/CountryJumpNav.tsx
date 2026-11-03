@@ -14,6 +14,7 @@ import {
   ExternalLink,
   ChevronRight
 } from "lucide-react";
+import { legacyText } from "@/data/text/legacy";
 
 const NAV_ITEMS = [
   { href: "#overview", label: "Overview & Philosophy", icon: Compass, color: "text-teal-400" },
@@ -35,11 +36,11 @@ export function CountryJumpNav() {
         <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center justify-between">
           <span className="flex items-center gap-1.5">
             <Compass className="w-3.5 h-3.5 text-teal-400" />
-            <span>Page Sections</span>
+            <span>{legacyText.countryJumpNav.t0}</span>
           </span>
-          <span className="text-[10px] text-teal-400 font-normal">Quick Jump</span>
+          <span className="text-[10px] text-teal-400 font-normal">{legacyText.countryJumpNav.t1}</span>
         </h2>
-        <nav className="space-y-1.5" aria-label="Country detail page sections">
+        <nav className="space-y-1.5" aria-label={legacyText.countryJumpNav.t2}>
           {NAV_ITEMS.map((item) => {
             const ItemIcon = item.icon;
             return (

@@ -1,21 +1,22 @@
 import { PageShell } from "@/shared/components/PageShell";
 import { StepsGrid } from "@/modules/roadmap/components/StepsGrid";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { navLabels, pageText } from "@/data/text/site";
 
 export const metadata = buildMetadata({
-  title: "6-step roadmap to a fully funded scholarship",
-  description: "What to do and when, from building your base to applying and deciding.",
+  title: pageText.steps.title,
+  description: pageText.steps.description,
   path: "/steps"
 });
 
 export default function StepsPage() {
   return (
     <PageShell
-      eyebrow="Roadmap"
-      title="6 steps, in order"
-      lead="Start about 2 years before."
-      back={{ href: "/", label: "Home" }}
-      next={{ href: "/profile", label: "Profile checklist" }}
+      eyebrow={pageText.steps.eyebrow}
+      title={pageText.steps.heading}
+      lead={pageText.steps.lead}
+      back={{ href: "/", label: navLabels.home }}
+      next={{ href: "/profile", label: navLabels.profileChecklist }}
     >
       <StepsGrid />
     </PageShell>

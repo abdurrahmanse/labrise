@@ -5,6 +5,7 @@ import { countryGuidesData } from "@/data/countryGuidesData";
 import { CountryHeader } from "./CountryHeader";
 import { CountryFilters } from "./CountryFilters";
 import { CountryCard } from "./CountryCard";
+import { legacyText } from "@/data/text/legacy";
 
 export function CountryGuidesExplorer() {
   const [selectedRegion, setSelectedRegion] = useState<string>("All");
@@ -52,9 +53,9 @@ export function CountryGuidesExplorer() {
       <div className="space-y-4">
         {filteredCountries.length === 0 ? (
           <div className="text-center py-16 rounded-2xl bg-slate-900/40 border border-white/5 space-y-3">
-            <h3 className="text-base font-bold text-white">No countries match your search</h3>
+            <h3 className="text-base font-bold text-white">{legacyText.countryGuidesExplorer.t0}</h3>
             <p className="text-xs text-slate-400">
-              Try searching with different keywords or reset your filters.
+              {legacyText.countryGuidesExplorer.t1}
             </p>
             <button
               onClick={() => {
@@ -64,7 +65,7 @@ export function CountryGuidesExplorer() {
               }}
               className="px-4 py-2 rounded-xl bg-teal-600 text-white text-xs font-semibold cursor-pointer"
             >
-              Reset Filters
+              {legacyText.countryGuidesExplorer.t2}
             </button>
           </div>
         ) : (

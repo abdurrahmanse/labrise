@@ -5,14 +5,16 @@ import { ScholarshipFinderView } from "@/components/scholarships/ScholarshipFind
 import { SCHOLARSHIP_TABS, type ScholarshipPart } from "@/components/scholarships/scholarshipTabs";
 import { PageShell } from "@/shared/components/PageShell";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { PageFallback } from "@/shared/components/PageFallback";
+import { navLabels, notFoundTitles, pageText } from "@/data/text/site";
 
 interface Props {
   params: Promise<{ part: string }>;
 }
 
 const PARTS: { id: ScholarshipPart; title: string }[] = [
-  { id: "formulas", title: "Scholarship search formulas" },
-  { id: "portals", title: "Official portals and fraud warnings" }
+  { id: "formulas", title: pageText.scholarshipFinder.parts.formulas },
+  { id: "portals", title: pageText.scholarshipFinder.parts.portals }
 ];
 
 export function generateStaticParams() {
@@ -22,8 +24,8 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { part } = await params;
   const entry = PARTS.find((p) => p.id === part);
-  if (!entry) return { title: "Not found" };
-  return buildMetadata({ title: entry.title, description: "Part of the scholarship finder guide.", path: `/scholarships/${entry.id}` });
+  if (!entry) return { title: notFoundTitles.generic };
+  return buildMetadata({ title: entry.title, description: pageText.scholarshipFinder.partDescription, path: `/scholarships/${entry.id}` });
 }
 
 async function ScholarshipPartPageContent({ params }: Props) {
@@ -34,9 +36,9 @@ async function ScholarshipPartPageContent({ params }: Props) {
 
   return (
     <PageShell
-      eyebrow="Scholarship finder"
+      eyebrow={pageText.scholarshipFinder.eyebrow}
       title={entry.title}
-      back={{ href: "/scholarships", label: "11-step workflow" }}
+      back={{ href: "/scholarships", label: navLabels.workflow }}
       prev={SCHOLARSHIP_TABS[index - 1]}
       next={SCHOLARSHIP_TABS[index + 1]}
     >
@@ -47,7 +49,7 @@ async function ScholarshipPartPageContent({ params }: Props) {
 
 export default function ScholarshipPartPage({ params }: Props) {
   return (
-    <Suspense fallback={<div className="mx-auto min-h-[60vh] max-w-7xl px-4 py-16 text-slate-400">Loading…</div>}>
+    <Suspense fallback={<PageFallback />}>
       <ScholarshipPartPageContent params={params} />
     </Suspense>
   );

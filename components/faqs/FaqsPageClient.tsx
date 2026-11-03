@@ -7,6 +7,7 @@ import Link from "next/link";
 import { FaqAccordionSection } from "./FaqAccordionSection";
 import { FaqCategoryPills } from "./FaqCategoryPills";
 import { faqsNavAnchors } from "@/data/faqsSectionData";
+import { legacyText } from "@/data/text/legacy";
 
 export function FaqsPageClient() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -35,7 +36,7 @@ export function FaqsPageClient() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <Link href="/faqs/checklist" className="inline-flex items-center gap-2 font-bold text-indigo-400 hover:text-indigo-200">
-          Pre-flight readiness checklist →
+          {legacyText.faqsPageClient.t0}
         </Link>
       </div>
     </main>

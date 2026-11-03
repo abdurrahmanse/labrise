@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/Badge";
 import { RoadmapLevel } from "@/data/types";
 import { levelDetailUiData } from "@/data/levelDetailUiData";
 import { getLevelIcon, getLevelDifficultyVariant } from "./RoadmapConstants";
+import { legacyText } from "@/data/text/legacy";
 
 interface LevelHeroProps {
   level: RoadmapLevel;
@@ -115,25 +116,25 @@ export function LevelHero({ level }: LevelHeroProps) {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl">
           <div className="group relative p-4 rounded-2xl bg-gradient-to-b from-white/[0.07] to-white/[0.015] border border-white/10 hover:border-white/20 backdrop-blur-md shadow-lg shadow-black/25 hover:shadow-indigo-500/10 hover:-translate-y-1 transition-all duration-300">
             <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block mb-1">
-              Curriculum Scope
+              {legacyText.levelHero.t0}
             </span>
             <div className="text-xl font-bold font-mono text-white">
               {level.totalSteps} In-Depth Tasks
             </div>
             <span className="text-[11px] text-slate-400 font-sans mt-0.5 block">
-              Granular technical checklists
+              {legacyText.levelHero.t1}
             </span>
           </div>
 
           <div className="group relative p-4 rounded-2xl bg-gradient-to-b from-white/[0.07] to-white/[0.015] border border-white/10 hover:border-white/20 backdrop-blur-md shadow-lg shadow-black/25 hover:shadow-cyan-500/10 hover:-translate-y-1 transition-all duration-300">
             <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block mb-1">
-              Time Commitment
+              {legacyText.levelHero.t2}
             </span>
             <div className="text-xl font-bold font-mono text-cyan-300">
               {level.estimatedHours}
             </div>
             <span className="text-[11px] text-slate-400 font-sans mt-0.5 block">
-              Self-directed research sprint
+              {legacyText.levelHero.t3}
             </span>
           </div>
 
@@ -145,7 +146,7 @@ export function LevelHero({ level }: LevelHeroProps) {
               {level.keyDeliverable}
             </div>
             <span className="text-[11px] text-slate-400 font-sans mt-0.5 block">
-              Non-negotiable milestone
+              {legacyText.levelHero.t4}
             </span>
           </div>
         </div>

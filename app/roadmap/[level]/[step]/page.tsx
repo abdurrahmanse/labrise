@@ -6,6 +6,8 @@ import { roadmapLevelsData, getLevelBySlug } from "@/data/levelsData";
 import { getStepById } from "@/data/steps";
 import { PageShell } from "@/shared/components/PageShell";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { PageFallback } from "@/shared/components/PageFallback";
+import { notFoundTitles } from "@/data/text/site";
 
 interface Props {
   params: Promise<{ level: string; step: string }>;
@@ -18,7 +20,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { level, step } = await params;
   const stepData = getStepById(step);
-  if (!stepData) return { title: "Not found" };
+  if (!stepData) return { title: notFoundTitles.generic };
   return buildMetadata({ title: stepData.title, description: stepData.keyObjective.slice(0, 160), path: `/roadmap/${level}/${step}` });
 }
 
@@ -48,7 +50,7 @@ async function LevelStepPageContent({ params }: Props) {
 
 export default function LevelStepPage({ params }: Props) {
   return (
-    <Suspense fallback={<div className="mx-auto min-h-[60vh] max-w-7xl px-4 py-16 text-slate-400">Loading…</div>}>
+    <Suspense fallback={<PageFallback />}>
       <LevelStepPageContent params={params} />
     </Suspense>
   );

@@ -13,6 +13,7 @@ import {
   WidgetStatCard,
   WidgetCallout
 } from "./common";
+import { legacyText } from "@/data/text/legacy";
 
 export function StepGpuQuantWidget() {
   const [selectedPresetId, setSelectedPresetId] = useState("llama-8b");
@@ -71,11 +72,11 @@ export function StepGpuQuantWidget() {
             <div className="flex items-center gap-1.5 font-mono text-xs">
               {selectedPreset.freeTierCompatible ? (
                 <span className="text-emerald-400 flex items-center gap-1 bg-emerald-950/40 px-2.5 py-1 rounded-lg border border-emerald-500/30">
-                  <CheckCircle2 className="w-3.5 h-3.5" /> 100% Free Cloud Tier
+                  <CheckCircle2 className="w-3.5 h-3.5" /> {legacyText.stepGpuQuantWidget.t0}
                 </span>
               ) : (
                 <span className="text-amber-400 flex items-center gap-1 bg-amber-950/40 px-2.5 py-1 rounded-lg border border-amber-500/30">
-                  <AlertCircle className="w-3.5 h-3.5" /> Multi-GPU / Low-Cost
+                  <AlertCircle className="w-3.5 h-3.5" /> {legacyText.stepGpuQuantWidget.t1}
                 </span>
               )}
             </div>
@@ -85,9 +86,9 @@ export function StepGpuQuantWidget() {
         {/* VRAM Memory Footprint Comparison Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <WidgetStatCard
-            label="FP16 Baseline"
+            label={legacyText.stepGpuQuantWidget.t4}
             value={`${selectedPreset.fp16VramGB.toFixed(1)} GB`}
-            sublabel="Requires A100/H100 Node"
+            sublabel={legacyText.stepGpuQuantWidget.t5}
             valueColor="text-rose-400"
           />
           <WidgetStatCard
@@ -97,9 +98,9 @@ export function StepGpuQuantWidget() {
             valueColor="text-amber-400"
           />
           <WidgetStatCard
-            label="QLoRA 4-Bit NF4 (Optimal)"
+            label={legacyText.stepGpuQuantWidget.t6}
             value={`${selectedPreset.qloraVramGB.toFixed(1)} GB`}
-            sublabel="Fits in standard 16GB VRAM!"
+            sublabel={legacyText.stepGpuQuantWidget.t7}
             valueColor="text-emerald-400"
             highlight
           />
@@ -111,7 +112,7 @@ export function StepGpuQuantWidget() {
             <Gauge className="w-4 h-4 text-amber-400 shrink-0" />
             <div className="min-w-0">
               <span className="text-[10px] font-mono text-slate-400 uppercase block">
-                Target Cloud Hardware
+                {legacyText.stepGpuQuantWidget.t2}
               </span>
               <span className="text-xs text-white font-medium truncate block">
                 {selectedPreset.minRecommendedGpu}
@@ -123,7 +124,7 @@ export function StepGpuQuantWidget() {
             <Zap className="w-4 h-4 text-cyan-400 shrink-0" />
             <div className="min-w-0">
               <span className="text-[10px] font-mono text-slate-400 uppercase block">
-                Harness Optimization
+                {legacyText.stepGpuQuantWidget.t3}
               </span>
               <span className="text-xs text-white font-medium truncate block">
                 {selectedPreset.batchSizeLimit}

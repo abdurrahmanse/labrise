@@ -3,6 +3,7 @@
 import React from "react";
 import { Briefcase, CheckCircle2 } from "lucide-react";
 import { CountryDetailSectionTitle } from "./CountryDetailSectionTitle";
+import { legacyText } from "@/data/text/legacy";
 
 interface CountryAssistantshipsSectionProps {
   available: boolean;
@@ -19,7 +20,7 @@ export function CountryAssistantshipsSection({
     <section id="assistantships" className="scroll-mt-24">
       <CountryDetailSectionTitle
         icon={<Briefcase className="w-5 h-5" />}
-        title="Research Assistantships"
+        title={legacyText.countryAssistantshipsSection.t0}
         color="emerald"
       />
       <div className="mt-5 sm:mt-6 p-5 sm:p-6 rounded-2xl bg-emerald-950/20 border border-emerald-500/20 shadow-lg">

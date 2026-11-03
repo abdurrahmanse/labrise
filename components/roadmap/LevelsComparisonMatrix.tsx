@@ -5,17 +5,18 @@ import Link from "next/link";
 import { Table, ArrowRight, ShieldAlert, CheckCircle2 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { roadmapLevelsComparisonData, roadmapLevelsData } from "@/data/levelsData";
+import { legacyText } from "@/data/text/legacy";
 
 export function LevelsComparisonMatrix() {
   return (
     <section id="levels-matrix" className="py-20 border-b border-white/10 bg-canvas-base">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="Admissions Blueprint"
+          badge={legacyText.levelsComparisonMatrix.t1}
           badgeVariant="cyan"
           badgeIcon={<Table className="w-3.5 h-3.5 text-cyan-400" />}
-          title="The 5-Level Strategy & Evaluation Matrix"
-          subtitle="Compare the time horizons, target evaluation gatekeepers, critical proof-of-work deliverables, and primary rejection risks across all 5 levels."
+          title={legacyText.levelsComparisonMatrix.t2}
+          subtitle={legacyText.levelsComparisonMatrix.t3}
         />
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -29,7 +30,7 @@ export function LevelsComparisonMatrix() {
                 </div>
                 <h3 className="text-xl font-bold text-white">{row.title}</h3>
                 <p className="text-slate-300">
-                  <span className="font-mono text-xs uppercase tracking-wider text-slate-400">Gatekeeper </span>
+                  <span className="font-mono text-xs uppercase tracking-wider text-slate-400">{legacyText.levelsComparisonMatrix.t0} </span>
                   <span className="font-bold text-cyan-300">{row.primaryGatekeeper}</span>
                 </p>
                 <p className="flex items-start gap-2 text-emerald-300">

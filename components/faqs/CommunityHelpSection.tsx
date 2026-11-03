@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { renderCommonIcon } from "@/components/ui/IconUtils";
 import { communityLaunchpadData } from "@/data/faqsSectionData";
+import { legacyText } from "@/data/text/legacy";
 
 const ICON_COLORS: Record<string, string> = {
   Compass: "text-indigo-400",
@@ -20,10 +21,10 @@ export function CommunityHelpSection() {
     <section id="community-help" className="py-20 bg-canvas-base border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="Launchpad"
+          badge={legacyText.communityHelpSection.t1}
           badgeVariant="indigo"
-          title="Ready to Secure Your 100% Fully Funded Position?"
-          subtitle="Continue exploring the complete end-to-end knowledge base for prospective AI graduate researchers."
+          title={legacyText.communityHelpSection.t2}
+          subtitle={legacyText.communityHelpSection.t3}
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -43,7 +44,7 @@ export function CommunityHelpSection() {
                   rightIcon={<ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />}
                   className="text-cyan-400 hover:text-cyan-300 p-0 hover:bg-transparent"
                 >
-                  Explore section
+                  {legacyText.communityHelpSection.t0}
                 </Button>
               }
             >

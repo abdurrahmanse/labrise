@@ -80,6 +80,24 @@ Each file does one small job. To add a guide, create `modules/guides/data/detail
 
 ---
 
+## Text and icons
+
+All interface text lives in `data/text/`, not in components. Components only read it.
+
+| File | Holds |
+| :--- | :--- |
+| `common.ts` | Brand, header/footer, buttons, search and data-notice text |
+| `directory.ts` | Cards, list placeholders, toolbars, detail-page headings and hints |
+| `site.ts` | Page titles, descriptions and navigation labels |
+| `pages.ts`, `contact.ts`, `hubs.ts` | About, Disclaimer, Privacy, Contact (with the contact email and location) and the guide-page headers |
+| `status.ts` | 404, error, loading and empty-result screens |
+| `legacy.ts` | Text for the older country, roadmap and FAQ pages |
+| `iconRules.ts` | Which icon goes with which heading or label (`IconFor` reads it) |
+
+To reword something, edit the matching file. To give a new heading word its own icon, add a rule to `iconRules.ts`.
+
+---
+
 ## Design system
 
 Minimalism, brutalism and glassmorphism, with an academic palette and the **Rajdhani** font (unchanged).

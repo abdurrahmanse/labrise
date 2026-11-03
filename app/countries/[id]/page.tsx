@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { countryGuidesData, getCountryById } from "@/data/countryGuidesData";
 import { CountryDetailPage } from "@/components/countries/CountryDetailPage";
+import { notFoundTitles } from "@/data/text/site";
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -15,7 +16,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const country = getCountryById(id);
-  if (!country) return { title: "Country Not Found" };
+  if (!country) return { title: notFoundTitles.country };
 
   return {
     title: `${country.name} Scholarship Guide — Fully Funded Master's & PhD`,

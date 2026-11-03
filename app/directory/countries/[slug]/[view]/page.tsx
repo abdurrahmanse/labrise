@@ -14,6 +14,7 @@ import { findCountry } from "@/modules/directory/lib/lookups";
 import { countrySlug, universitySlug } from "@/modules/directory/lib/slugs";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
 import { countryViewText, rosterText } from "@/data/text/directory";
+import { PageFallback } from "@/shared/components/PageFallback";
 
 interface Props {
   params: Promise<{ slug: string; view: string }>;
@@ -85,7 +86,7 @@ async function CountryViewPageContent({ params }: Props) {
 
 export default function CountryViewPage({ params }: Props) {
   return (
-    <Suspense fallback={<div className="mx-auto min-h-[60vh] max-w-7xl px-4 py-16 text-slate-400">Loading…</div>}>
+    <Suspense fallback={<PageFallback />}>
       <CountryViewPageContent params={params} />
     </Suspense>
   );

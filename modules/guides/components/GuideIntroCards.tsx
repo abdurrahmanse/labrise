@@ -1,12 +1,13 @@
 import { InfoCard } from "@/shared/components/InfoCard";
+import { guideSidebarText } from "@/data/text/site";
 
 export function GuideIntroCards({ why, timeline }: { why: string; timeline: string }) {
   return (
     <div className="grid gap-4 md:grid-cols-2">
-      <InfoCard label="Why it matters">
+      <InfoCard label={guideSidebarText.why}>
         <p className="text-slate-200 font-sans font-normal">{why}</p>
       </InfoCard>
-      <InfoCard label="When to do it">
+      <InfoCard label={guideSidebarText.when}>
         <p className="text-slate-200 font-sans font-normal">{timeline}</p>
       </InfoCard>
     </div>

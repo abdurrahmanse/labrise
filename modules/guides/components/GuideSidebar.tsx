@@ -4,6 +4,7 @@ import { InfoCard } from "@/shared/components/InfoCard";
 import type { GuideDetail } from "../types";
 import type { GuideTopic } from "../data/topics";
 import { GuideChecklist } from "./GuideChecklist";
+import { guideSidebarText } from "@/data/text/site";
 
 const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 
@@ -19,7 +20,7 @@ export function GuideSidebar({ guideId, detail, related }: GuideSidebarProps) {
       <GuideChecklist guideId={guideId} items={detail.checklist} />
 
       {detail.links && (
-        <InfoCard label="Links">
+        <InfoCard label={guideSidebarText.links}>
           <ul className="space-y-2 text-sm">
             {detail.links.map((link) => (
               <li key={link.href}>
@@ -37,7 +38,7 @@ export function GuideSidebar({ guideId, detail, related }: GuideSidebarProps) {
       )}
 
       {related.length > 0 && (
-        <InfoCard label="Read next">
+        <InfoCard label={guideSidebarText.readNext}>
           <ul className="space-y-2 text-sm">
             {related.map((g) => (
               <li key={g.id}>

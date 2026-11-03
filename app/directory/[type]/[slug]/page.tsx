@@ -14,6 +14,8 @@ import { buildMetadata } from "@/modules/seo/buildMetadata";
 import { JsonLd } from "@/modules/seo/JsonLd";
 import { breadcrumbSchema, personSchema, universitySchema } from "@/modules/seo/schemas";
 import { fieldOf } from "@/modules/directory/data/fields";
+import { PageFallback } from "@/shared/components/PageFallback";
+import { navLabels, notFoundTitles } from "@/data/text/site";
 
 interface Props {
   params: Promise<{ type: string; slug: string }>;
@@ -53,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const p = findProfessor(slug);
     if (p) return buildMetadata({ title: `${p.name}, ${p.university}`, description: `${p.group} research group in ${p.country}. How to approach and what to read.`, path });
   }
-  return { title: "Not found" };
+  return { title: notFoundTitles.generic };
 }
 
 async function DirectoryDetailPageContent({ params }: Props) {
@@ -62,8 +64,8 @@ async function DirectoryDetailPageContent({ params }: Props) {
   if (!parsed.success) notFound();
 
   const crumbs = [
-    { name: "Home", path: "/" },
-    { name: "Directory", path: "/directory" },
+    { name: navLabels.home, path: "/" },
+    { name: navLabels.directory, path: "/directory" },
     { name: parsed.data, path: `/directory/${parsed.data}` }
   ];
 
@@ -125,7 +127,7 @@ async function DirectoryDetailPageContent({ params }: Props) {
 
 export default function DirectoryDetailPage({ params }: Props) {
   return (
-    <Suspense fallback={<div className="mx-auto min-h-[60vh] max-w-7xl px-4 py-16 text-slate-400">Loading…</div>}>
+    <Suspense fallback={<PageFallback />}>
       <DirectoryDetailPageContent params={params} />
     </Suspense>
   );

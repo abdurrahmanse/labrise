@@ -8,11 +8,12 @@ import { PortalsDirectorySection } from "./PortalsDirectorySection";
 import { AntiFraudSection } from "./AntiFraudSection";
 import { SCHOLARSHIP_TABS, type ScholarshipPart } from "./scholarshipTabs";
 import { SubNav } from "@/shared/components/SubNav";
+import { legacyText } from "@/data/text/legacy";
 
 export function ScholarshipFinderView({ part = "workflow" }: { part?: ScholarshipPart }) {
   return (
     <div className="space-y-10">
-      <SubNav label="Scholarship finder sections" items={SCHOLARSHIP_TABS} />
+      <SubNav label={legacyText.scholarshipFinderView.t0} items={SCHOLARSHIP_TABS} />
       {part === "workflow" && (
         <>
           <ScholarshipHeader />

@@ -3,6 +3,7 @@
 import React from "react";
 import { Globe2, ExternalLink, ArrowRight } from "lucide-react";
 import { PhaseOfficialResource } from "@/data/roadmapPhasesData";
+import { legacyText } from "@/data/text/legacy";
 
 export interface PhaseResourceCardProps {
   resource: PhaseOfficialResource;
@@ -30,7 +31,7 @@ export function PhaseResourceCard({ resource }: PhaseResourceCardProps) {
       </div>
 
       <div className="pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-teal-400 font-medium">
-        <span>Open Official Resource</span>
+        <span>{legacyText.phaseResourceCard.t0}</span>
         <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
       </div>
     </a>

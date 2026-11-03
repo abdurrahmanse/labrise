@@ -3,6 +3,7 @@
 import React from "react";
 import { Globe2, ExternalLink, Building2, Award, ArrowUpRight } from "lucide-react";
 import { verifiedScholarshipPortals, scholarshipFinderControlsData } from "@/data/scholarshipsSearchData";
+import { legacyText } from "@/data/text/legacy";
 
 export function PortalsDirectorySection() {
   const { portalsTitle, portalsSubtitle } = scholarshipFinderControlsData.sections;
@@ -12,7 +13,7 @@ export function PortalsDirectorySection() {
       <div className="border-b border-white/10 pb-4">
         <div className="flex items-center gap-2 text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider mb-1">
           <Globe2 className="w-4 h-4" />
-          <span>Verified Directory</span>
+          <span>{legacyText.portalsDirectorySection.t0}</span>
         </div>
         <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
           {portalsTitle}
@@ -55,7 +56,7 @@ export function PortalsDirectorySection() {
             <div className="pt-3 border-t border-white/5 flex items-center justify-between text-xs text-emerald-400 font-semibold group-hover:text-emerald-300">
               <span className="inline-flex items-center gap-1.5">
                 <ExternalLink className="w-3.5 h-3.5" />
-                <span>Open Official Portal</span>
+                <span>{legacyText.portalsDirectorySection.t1}</span>
               </span>
               <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </div>

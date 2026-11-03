@@ -2,16 +2,17 @@ import { CommunityHelpSection } from "@/components/faqs/CommunityHelpSection";
 import { InteractivePreflightChecklist } from "@/components/faqs/InteractivePreflightChecklist";
 import { PageShell } from "@/shared/components/PageShell";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { navLabels, pageText } from "@/data/text/site";
 
 export const metadata = buildMetadata({
-  title: "Pre-flight readiness checklist",
-  description: "Check that you are ready before you send applications.",
+  title: pageText.checklist.title,
+  description: pageText.checklist.description,
   path: "/faqs/checklist"
 });
 
 export default function FaqChecklistPage() {
   return (
-    <PageShell eyebrow="FAQs" title="Pre-flight checklist" back={{ href: "/faqs", label: "All FAQs" }} next={{ href: "/apply", label: "How to apply" }}>
+    <PageShell eyebrow={pageText.checklist.eyebrow} title={pageText.checklist.heading} back={{ href: "/faqs", label: navLabels.allFaqs }} next={{ href: "/apply", label: navLabels.howToApply }}>
       <InteractivePreflightChecklist />
       <CommunityHelpSection />
     </PageShell>

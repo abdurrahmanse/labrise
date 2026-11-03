@@ -1,20 +1,21 @@
 import { PageShell } from "@/shared/components/PageShell";
 import { ProblemList } from "@/modules/roadmap/components/ProblemList";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { navLabels, pageText } from "@/data/text/site";
 
 export const metadata = buildMetadata({
-  title: "Common scholarship application problems and fixes",
-  description: "No replies, low GPA, no publications, fees and scams: what to do about each.",
+  title: pageText.problems.title,
+  description: pageText.problems.description,
   path: "/problems"
 });
 
 export default function ProblemsPage() {
   return (
     <PageShell
-      eyebrow="Problems"
-      title="Common problems and fixes"
-      back={{ href: "/", label: "Home" }}
-      prev={{ href: "/directory", label: "Directory" }}
+      eyebrow={pageText.problems.eyebrow}
+      title={pageText.problems.heading}
+      back={{ href: "/", label: navLabels.home }}
+      prev={{ href: "/directory", label: navLabels.directory }}
     >
       <ProblemList />
     </PageShell>

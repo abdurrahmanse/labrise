@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import { RoadmapPhase } from "@/data/roadmapPhasesData";
 import { phaseDetailUiData } from "@/data/phaseDetailUiData";
+import { legacyText } from "@/data/text/legacy";
 
 export interface PhaseDetailBreadcrumbProps {
   phase: RoadmapPhase;
@@ -14,7 +15,7 @@ export function PhaseDetailBreadcrumb({ phase }: PhaseDetailBreadcrumbProps) {
   const { hero, navigationFooter, badges } = phaseDetailUiData;
 
   return (
-    <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-xs font-mono">
+    <nav aria-label={legacyText.phaseDetailBreadcrumb.t0} className="mb-6 flex flex-wrap items-center gap-2 text-xs font-mono">
       <Link
         href="/roadmap"
         className="inline-flex items-center gap-1.5 text-slate-400 hover:text-white transition-colors group"

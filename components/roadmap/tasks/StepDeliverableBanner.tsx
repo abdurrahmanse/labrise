@@ -1,5 +1,6 @@
 import React from "react";
 import { Award, FileCheck } from "lucide-react";
+import { legacyText } from "@/data/text/legacy";
 
 export interface StepDeliverableBannerProps {
   deliverable: string;
@@ -17,7 +18,7 @@ export function StepDeliverableBanner({ deliverable }: StepDeliverableBannerProp
         </div>
         <div>
           <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block font-bold">
-            Tangible Proof-of-Work Requirement
+            {legacyText.stepDeliverableBanner.t0}
           </span>
           <span className="text-xs sm:text-sm font-semibold text-white">
             {deliverable}
@@ -27,7 +28,7 @@ export function StepDeliverableBanner({ deliverable }: StepDeliverableBannerProp
 
       <span className="text-[11px] font-mono px-3 py-1 rounded-lg bg-emerald-950/60 text-emerald-300 border border-emerald-700/40 shrink-0 self-start sm:self-center flex items-center gap-1.5">
         <FileCheck className="w-3.5 h-3.5" />
-        Required for Level Advance
+        {legacyText.stepDeliverableBanner.t1}
       </span>
     </div>
   );

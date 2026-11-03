@@ -3,6 +3,7 @@
 import React from "react";
 import { ChevronRight } from "lucide-react";
 import { CountryDetailSectionTitle } from "./CountryDetailSectionTitle";
+import { legacyText } from "@/data/text/legacy";
 
 interface CountrySequenceSectionProps {
   steps: string[];
@@ -13,7 +14,7 @@ export function CountrySequenceSection({ steps }: CountrySequenceSectionProps) {
     <section id="sequence" className="scroll-mt-24">
       <CountryDetailSectionTitle
         icon={<ChevronRight className="w-5 h-5" />}
-        title="Application Sequence"
+        title={legacyText.countrySequenceSection.t0}
         color="teal"
       />
       <div className="mt-5 sm:mt-6 space-y-2.5 sm:space-y-3">

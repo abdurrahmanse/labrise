@@ -6,6 +6,7 @@ import { ChevronRight, GraduationCap, X } from "lucide-react";
 import { headerData, navLinksData } from "@/data/navigationData";
 import { getIconComponent } from "@/components/ui/IconUtils";
 import { commonText } from "@/data/text/common";
+import { legacyText } from "@/data/text/legacy";
 
 interface HeaderMobileDrawerProps {
   isOpen: boolean;
@@ -116,10 +117,10 @@ export function HeaderMobileDrawer({
           {/* Bottom Info Note */}
           <div className="p-4 border-t border-white/[0.07] bg-slate-950/40">
             <p className="text-center text-[11px] text-slate-400 font-medium">
-              100% Fully Funded Educational Guide
+              {legacyText.headerMobileDrawer.t0}
             </p>
             <p className="text-center text-[10px] text-slate-500 font-mono mt-1">
-              Free · Open Access · No Account Required
+              {legacyText.headerMobileDrawer.t1}
             </p>
           </div>
         </div>

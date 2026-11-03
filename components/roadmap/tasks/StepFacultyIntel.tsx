@@ -1,5 +1,6 @@
 import React from "react";
 import { Sparkles, AlertTriangle } from "lucide-react";
+import { legacyText } from "@/data/text/legacy";
 
 export interface StepFacultyIntelProps {
   proTips?: string[];
@@ -43,7 +44,7 @@ export function StepFacultyIntel({ proTips, commonPitfalls }: StepFacultyIntelPr
         <div className="p-4 sm:p-5 rounded-xl bg-rose-950/20 border border-rose-500/30 space-y-2">
           <div className="text-xs font-bold text-rose-300 flex items-center gap-2 font-mono">
             <AlertTriangle className="w-4 h-4 text-rose-400" />
-            <span>Fatal Rejection Traps To Avoid:</span>
+            <span>{legacyText.stepFacultyIntel.t0}</span>
           </div>
           <div className="space-y-2">
             {commonPitfalls.map((pitfall, i) => (

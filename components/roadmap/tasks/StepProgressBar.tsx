@@ -1,5 +1,6 @@
 import React from "react";
 import { Layers, Check } from "lucide-react";
+import { legacyText } from "@/data/text/legacy";
 
 export interface StepProgressBarProps {
   completedCount: number;
@@ -21,7 +22,7 @@ export function StepProgressBar({
         <div className="flex items-center gap-2">
           <Layers className="w-4 h-4 text-indigo-400" />
           <span className="text-slate-300 font-semibold uppercase tracking-wider text-[11px]">
-            Step Milestone Completion:
+            {legacyText.stepProgressBar.t0}
           </span>
         </div>
         <div className="flex items-center gap-2">
@@ -31,7 +32,7 @@ export function StepProgressBar({
           {progressPercent === 100 ? (
             <span className="text-[10px] font-bold text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-2.5 py-0.5 rounded-none flex items-center gap-1 shadow-sm">
               <Check className="w-3 h-3 text-emerald-400" />
-              Step Certified!
+              {legacyText.stepProgressBar.t1}
             </span>
           ) : (
             <span className="font-mono text-[11px] font-bold text-cyan-400">

@@ -19,6 +19,7 @@ import {
   CountryWarningsSection,
   CountryPortalsSection,
 } from "./detail";
+import { legacyText } from "@/data/text/legacy";
 
 interface CountryDetailPageProps {
   country: CountryGuide;
@@ -68,7 +69,7 @@ export function CountryDetailPage({ country, section = "overview" }: CountryDeta
             className="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-teal-300 transition-colors group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
-            <span>Back to All Destinations</span>
+            <span>{legacyText.countryDetailPage.t0}</span>
           </Link>
           <p className="text-xs font-mono text-slate-500">
             {country.flag} {country.name} · {country.region} · {country.code}

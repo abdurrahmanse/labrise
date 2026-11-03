@@ -4,6 +4,7 @@ import React from "react";
 import { Award, CheckCircle2, ExternalLink } from "lucide-react";
 import { CountryGuide } from "@/data/countryGuidesData";
 import { CountryDetailSectionTitle } from "./CountryDetailSectionTitle";
+import { legacyText } from "@/data/text/legacy";
 
 interface CountryGovScholarshipsSectionProps {
   scholarships: CountryGuide["governmentScholarships"];
@@ -20,7 +21,7 @@ export function CountryGovScholarshipsSection({
     <section id="gov-scholarships" className="scroll-mt-24">
       <CountryDetailSectionTitle
         icon={<Award className="w-5 h-5" />}
-        title="Government Scholarship Programs"
+        title={legacyText.countryGovScholarshipsSection.t3}
         color="emerald"
       />
       <div className="mt-5 sm:mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
@@ -40,7 +41,7 @@ export function CountryGovScholarshipsSection({
               <div className="flex items-start gap-2 p-3 rounded-xl bg-teal-500/10 border border-teal-500/20">
                 <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" />
                 <p className="text-xs text-teal-200 font-mono leading-relaxed">
-                  <strong>Coverage:</strong> {sch.coverage}
+                  <strong>{legacyText.countryGovScholarshipsSection.t0}</strong> {sch.coverage}
                 </p>
               </div>
             </div>
@@ -50,7 +51,7 @@ export function CountryGovScholarshipsSection({
               rel="noreferrer"
               className="inline-flex items-center gap-2 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors border-t border-white/5 pt-3 mt-auto group"
             >
-              <span>Visit Official Portal</span>
+              <span>{legacyText.countryGovScholarshipsSection.t1}</span>
               <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
             </a>
           </div>
@@ -60,7 +61,7 @@ export function CountryGovScholarshipsSection({
       {universityScholarships && (
         <div className="mt-4 p-4 sm:p-5 rounded-2xl bg-slate-900/50 border border-white/5">
           <p className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 mb-2">
-            University-Level Scholarships
+            {legacyText.countryGovScholarshipsSection.t2}
           </p>
           <p className="text-sm text-slate-300 leading-relaxed">{universityScholarships}</p>
         </div>

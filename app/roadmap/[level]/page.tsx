@@ -7,6 +7,7 @@ import { LevelHero } from "@/components/roadmap/LevelHero";
 import { LevelInteractiveTracker } from "@/components/roadmap/LevelInteractiveTracker";
 import { LevelTasksSection } from "@/components/roadmap/LevelTasksSection";
 import { LevelNavigationFooter } from "@/components/roadmap/LevelNavigationFooter";
+import { notFoundTitles } from "@/data/text/site";
 
 interface Props {
   params: Promise<{ level: string }>;
@@ -21,7 +22,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { level: levelSlug } = await params;
   const level = getLevelBySlug(levelSlug);
-  if (!level) return { title: "Curriculum Level Not Found" };
+  if (!level) return { title: notFoundTitles.level };
 
   return {
     title: `Level ${level.levelNumber}: ${level.shortTitle} — AI Scholarship Roadmap`,

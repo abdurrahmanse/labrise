@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { RoadmapLevel } from "@/data/types";
 import { getLevelIcon, getLevelDifficultyVariant } from "./RoadmapConstants";
+import { legacyText } from "@/data/text/legacy";
 
 interface LevelCardProps {
   level: RoadmapLevel;
@@ -65,7 +66,7 @@ export function LevelCard({ level }: LevelCardProps) {
         {/* Core Competencies Pills */}
         <div className="mb-6">
           <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400 block mb-2.5">
-            Core Technical Competencies:
+            {legacyText.levelCard.t0}
           </span>
           <div className="flex flex-wrap gap-1.5">
             {level.coreCompetencies.map((comp) => (
@@ -84,7 +85,7 @@ export function LevelCard({ level }: LevelCardProps) {
           <Award className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
           <div className="min-w-0 flex-1">
             <span className="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-wider block">
-              Non-Negotiable Level Proof-of-Work:
+              {legacyText.levelCard.t1}
             </span>
             <p className="text-xs text-white font-medium mt-0.5 leading-snug">
               {level.keyDeliverable}

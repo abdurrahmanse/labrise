@@ -9,6 +9,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { WidgetChecklistItem } from "@/components/roadmap/widgets/common";
 import { preflightChecklistData } from "@/data/faqsSectionData";
 import { faqsPageData } from "@/data/pagesData";
+import { legacyText } from "@/data/text/legacy";
 
 export function InteractivePreflightChecklist() {
   const [checkedItems, setCheckedItems] = useState<{ [key: string]: boolean }>({
@@ -52,7 +53,7 @@ export function InteractivePreflightChecklist() {
           }
           title={
             <div>
-              <span className="text-xs uppercase font-bold text-slate-400 block">Pre-Flight Audit</span>
+              <span className="text-xs uppercase font-bold text-slate-400 block">{legacyText.interactivePreflightChecklist.t0}</span>
               <span className="text-2xl font-heading font-bold text-white font-mono mt-0.5 block">
                 {completed} of {preflightChecklistData.length} Verified
               </span>
@@ -61,7 +62,7 @@ export function InteractivePreflightChecklist() {
           footer={
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs w-full">
               <span className="text-slate-400">
-                Need to review the complete application timeline?
+                {legacyText.interactivePreflightChecklist.t1}
               </span>
               <Button
                 href="/roadmap"
@@ -69,7 +70,7 @@ export function InteractivePreflightChecklist() {
                 size="md"
                 rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
               >
-                Back to Phase 0 in Roadmap
+                {legacyText.interactivePreflightChecklist.t2}
               </Button>
             </div>
           }
@@ -77,7 +78,7 @@ export function InteractivePreflightChecklist() {
           {/* Progress Bar */}
           <div className="mb-6 space-y-1.5">
             <div className="flex justify-between text-[11px] text-slate-400 font-mono">
-              <span>Readiness Progress</span>
+              <span>{legacyText.interactivePreflightChecklist.t3}</span>
               <span className="font-bold text-emerald-400">{progressPercent}%</span>
             </div>
             <div className="w-full bg-canvas-base h-2.5 rounded-full overflow-hidden border border-white/5">

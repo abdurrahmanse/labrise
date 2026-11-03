@@ -4,17 +4,18 @@ import type { ReactNode } from "react";
 import { countries, professors, universities } from "@/modules/directory/data";
 import { CountriesArt, ProfessorsArt, UniversitiesArt } from "./ExploreArt";
 import { SectionHeading } from "./SectionHeading";
+import { homeText } from "@/data/text/site";
 
 const CARDS: { href: string; title: string; Icon: typeof Globe2; art: ReactNode; meta: string }[] = [
-  { href: "/directory/countries", title: "Countries", Icon: Globe2, art: <CountriesArt />, meta: `${countries.length} funded destinations` },
-  { href: "/directory/universities", title: "Universities", Icon: Building2, art: <UniversitiesArt />, meta: `${universities.length} with details` },
-  { href: "/directory/professors", title: "Professors", Icon: Users, art: <ProfessorsArt />, meta: `${professors.length} with contact route` }
+  { href: "/directory/countries", title: homeText.stats.countries, Icon: Globe2, art: <CountriesArt />, meta: homeText.explore.countries(countries.length) },
+  { href: "/directory/universities", title: homeText.stats.universities, Icon: Building2, art: <UniversitiesArt />, meta: homeText.explore.universities(universities.length) },
+  { href: "/directory/professors", title: homeText.stats.professors, Icon: Users, art: <ProfessorsArt />, meta: homeText.explore.professors(professors.length) }
 ];
 
 export function ExploreSection() {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 md:pb-24">
-      <SectionHeading title="Explore where to apply" linkHref="/guides" linkLabel="All guides" />
+      <SectionHeading title={homeText.explore.title} linkHref="/guides" linkLabel={homeText.explore.linkLabel} />
       <div className="grid gap-4 md:grid-cols-3">
         {CARDS.map(({ href, title, Icon, art, meta }) => (
           <Link

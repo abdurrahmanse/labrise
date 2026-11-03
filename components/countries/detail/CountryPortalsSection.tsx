@@ -4,6 +4,7 @@ import React from "react";
 import { ExternalLink, Globe } from "lucide-react";
 import { CountryGuide } from "@/data/countryGuidesData";
 import { CountryDetailSectionTitle } from "./CountryDetailSectionTitle";
+import { legacyText } from "@/data/text/legacy";
 
 interface CountryPortalsSectionProps {
   portals: CountryGuide["officialPortals"];
@@ -16,7 +17,7 @@ export function CountryPortalsSection({ portals }: CountryPortalsSectionProps) {
     <section id="portals" className="scroll-mt-24">
       <CountryDetailSectionTitle
         icon={<Globe className="w-5 h-5" />}
-        title="Official Portals & Resources"
+        title={legacyText.countryPortalsSection.t1}
         color="indigo"
       />
       <div className="mt-5 sm:mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
@@ -40,7 +41,7 @@ export function CountryPortalsSection({ portals }: CountryPortalsSectionProps) {
               </p>
             </div>
             <span className="text-[11px] font-mono text-indigo-400/80 group-hover:text-indigo-300 flex items-center gap-1 pt-2 border-t border-white/5">
-              <span>Visit Portal</span>
+              <span>{legacyText.countryPortalsSection.t0}</span>
               <span>&rarr;</span>
             </span>
           </a>

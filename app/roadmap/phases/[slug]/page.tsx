@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { roadmapPhasesData, getPhaseBySlug } from "@/data/roadmapPhasesData";
 import { PhaseDetailPage } from "@/components/roadmap/phases";
+import { notFoundTitles } from "@/data/text/site";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -15,7 +16,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const phase = getPhaseBySlug(slug);
-  if (!phase) return { title: "Phase Not Found" };
+  if (!phase) return { title: notFoundTitles.phase };
 
   return {
     title: `Phase ${phase.number}: ${phase.title} — Scholarship Roadmap`,

@@ -3,6 +3,7 @@
 import React from "react";
 import { AlertTriangle, CheckCircle2, Award } from "lucide-react";
 import { professorOutreachControlsData } from "@/data/professorsData";
+import { legacyText } from "@/data/text/legacy";
 
 export function OutreachComparisonSection() {
   const { comparisonTitle, comparisonSubtitle } = professorOutreachControlsData.sections;
@@ -13,7 +14,7 @@ export function OutreachComparisonSection() {
       <div className="border-b border-white/10 pb-4">
         <div className="flex items-center gap-2 text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider mb-1">
           <Award className="w-4 h-4" />
-          <span>Real-World Evaluation</span>
+          <span>{legacyText.outreachComparisonSection.t0}</span>
         </div>
         <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
           {comparisonTitle}

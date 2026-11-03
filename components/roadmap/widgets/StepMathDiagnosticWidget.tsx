@@ -12,6 +12,7 @@ import {
   WidgetChecklistItem,
   WidgetCallout
 } from "./common";
+import { legacyText } from "@/data/text/legacy";
 
 export function StepMathDiagnosticWidget() {
   const [activeTopicIndex, setActiveTopicIndex] = useState(0);
@@ -92,7 +93,7 @@ export function StepMathDiagnosticWidget() {
               {mathDiagnosticMeta.conceptsHeader}
             </span>
             <span className="text-[10px] font-mono text-slate-500">
-              Click concept to mark mastered
+              {legacyText.stepMathDiagnosticWidget.t0}
             </span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">

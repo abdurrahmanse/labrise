@@ -12,6 +12,7 @@ import {
   WidgetSectionCard,
   WidgetCallout
 } from "./common";
+import { legacyText } from "@/data/text/legacy";
 
 export function StepLiteratureMatrixWidget() {
   const [selectedDomainId, setSelectedDomainId] = useState("efficient-llm");
@@ -49,7 +50,7 @@ export function StepLiteratureMatrixWidget() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
               <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">
-                Active Specialization
+                {legacyText.stepLiteratureMatrixWidget.t0}
               </span>
               <h5 className="text-sm sm:text-base font-heading font-bold text-white">
                 {selectedDomain.domain}
@@ -58,7 +59,7 @@ export function StepLiteratureMatrixWidget() {
 
             <div className="flex items-center gap-1.5 flex-wrap">
               <span className="text-[10px] font-mono text-slate-400 uppercase mr-1">
-                Primary Venues:
+                {legacyText.stepLiteratureMatrixWidget.t1}
               </span>
               {selectedDomain.recommendedVenues.map((v) => (
                 <Badge key={v} variant="purple" size="sm">
@@ -94,7 +95,7 @@ export function StepLiteratureMatrixWidget() {
         <div>
           <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5 mb-2.5">
             <Award className="w-3.5 h-3.5 text-cyan-400" />
-            Benchmark Papers Every Applicant Must Master:
+            {legacyText.stepLiteratureMatrixWidget.t2}
           </span>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             {selectedDomain.foundationalPapers.map((paper, i) => (
@@ -122,7 +123,7 @@ export function StepLiteratureMatrixWidget() {
         {/* Whiteboard Defense Pitch Strategy */}
         <div className="p-4 rounded-xl bg-purple-950/30 border border-purple-500/40">
           <span className="text-[10px] font-mono uppercase font-bold text-purple-300 block mb-1">
-            Faculty Whiteboard Formulation Pitch:
+            {legacyText.stepLiteratureMatrixWidget.t3}
           </span>
           <p className="text-xs font-mono text-slate-200 leading-relaxed italic">
             &ldquo;{selectedDomain.whiteboardAttackAngle}&rdquo;

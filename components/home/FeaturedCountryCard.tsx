@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { ArrowRight, Users, GraduationCap, Globe2, Compass } from "lucide-react";
 import { CountryGuide } from "@/data/countryGuidesData";
+import { legacyText } from "@/data/text/legacy";
 
 export interface FeaturedCountryCardProps {
   country: CountryGuide;
@@ -45,7 +46,7 @@ export function FeaturedCountryCard({ country }: FeaturedCountryCardProps) {
             <div className="w-5 h-5 rounded-md bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
               <Users className="w-3 h-3 text-slate-300" />
             </div>
-            <strong className="text-slate-300">Supervisor:</strong>
+            <strong className="text-slate-300">{legacyText.featuredCountryCard.t0}</strong>
             <span className={isStrictSupervisor ? "text-amber-400" : "text-teal-400"}>
               {country.supervisorContactRequirement}
             </span>
@@ -54,7 +55,7 @@ export function FeaturedCountryCard({ country }: FeaturedCountryCardProps) {
             <div className="w-5 h-5 rounded-md bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
               <GraduationCap className="w-3 h-3 text-slate-300" />
             </div>
-            <strong className="text-slate-300">PhD Model:</strong>
+            <strong className="text-slate-300">{legacyText.featuredCountryCard.t1}</strong>
             <span className="text-slate-400 truncate">{country.phdFundingModel.split(".")[0]}</span>
           </div>
         </div>
@@ -63,7 +64,7 @@ export function FeaturedCountryCard({ country }: FeaturedCountryCardProps) {
       <div className="flex items-center justify-between pt-3 border-t border-white/5 text-xs text-teal-400 font-semibold group-hover:text-teal-300">
         <span className="inline-flex items-center gap-1.5">
           <Compass className="w-3.5 h-3.5" />
-          <span>View Country Guide</span>
+          <span>{legacyText.featuredCountryCard.t2}</span>
         </span>
         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
       </div>

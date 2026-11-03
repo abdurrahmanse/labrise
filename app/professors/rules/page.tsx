@@ -2,21 +2,22 @@ import { ProfessorOutreachView } from "@/components/professors/ProfessorOutreach
 import { PROFESSOR_TABS } from "@/components/professors/professorTabs";
 import { PageShell } from "@/shared/components/PageShell";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { navLabels, pageText } from "@/data/text/site";
 
 export const metadata = buildMetadata({
-  title: "Professor outreach: rules by country and fit checklist",
-  description: "When a supervisor must agree first, what strong outreach looks like, and a research-fit checklist.",
+  title: pageText.professorRules.title,
+  description: pageText.professorRules.description,
   path: "/professors/rules"
 });
 
 export default function ProfessorRulesPage() {
   return (
     <PageShell
-      eyebrow="Professor outreach"
-      title="Rules and fit"
-      back={{ href: "/professors", label: "Outreach and emails" }}
+      eyebrow={pageText.professorRules.eyebrow}
+      title={pageText.professorRules.heading}
+      back={{ href: "/professors", label: navLabels.outreach }}
       prev={PROFESSOR_TABS[0]}
-      next={{ href: "/directory/professors", label: "Professor directory" }}
+      next={{ href: "/directory/professors", label: navLabels.professorDirectory }}
     >
       <ProfessorOutreachView part="rules" />
     </PageShell>

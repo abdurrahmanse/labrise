@@ -4,6 +4,7 @@ import React from "react";
 import { CheckCircle2 } from "lucide-react";
 import { ChecklistItem } from "@/data/types";
 import { StepTaskItem } from "./StepTaskItem";
+import { legacyText } from "@/data/text/legacy";
 
 export interface StepTaskChecklistProps {
   stepId: string;
@@ -26,10 +27,10 @@ export function StepTaskChecklist({
       <div className="flex items-center justify-between mb-3">
         <span className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5 font-mono">
           <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-          Actionable Tasks Checklist:
+          {legacyText.stepTaskChecklist.t0}
         </span>
         <span className="text-[11px] text-slate-500 font-mono">
-          Click any task to mark completed
+          {legacyText.stepTaskChecklist.t1}
         </span>
       </div>
 

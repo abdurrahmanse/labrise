@@ -124,7 +124,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="contact-message" className={labelClass}>{t.form.message}</label>
-        <textarea id="contact-message" rows={6} value={values.message} onChange={(e) => set("message", e.target.value)} placeholder={t.form.messagePlaceholder} aria-invalid={errors.message} className={cn(fieldClass, "resize-y", errors.message && "border-rose-400")} />
+        <textarea id="contact-message" rows={4} value={values.message} onChange={(e) => set("message", e.target.value)} placeholder={t.form.messagePlaceholder} aria-invalid={errors.message} className={cn(fieldClass, "resize-y", errors.message && "border-rose-400")} />
         <div className="mt-1 flex justify-between gap-3 text-sm">
           <span className="text-rose-400">{errors.message ? t.errors.message(MIN_MESSAGE) : ""}</span>
           <span className="font-mono text-xs text-slate-500">{t.form.counter(values.message.trim().length, MIN_MESSAGE)}</span>

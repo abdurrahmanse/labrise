@@ -7,6 +7,8 @@ import { directoryTypeSchema } from "@/modules/directory/api/schemas";
 import { CountriesList, ProvidersList, ScholarshipsList, UniversitiesList } from "@/modules/directory/components/lists/DirectoryLists";
 import { countries, directoryTypes, professors, providers, scholarships, universities } from "@/modules/directory/data";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { PageFallback } from "@/shared/components/PageFallback";
+import { navLabels, notFoundTitles, pageText } from "@/data/text/site";
 
 interface Props {
   params: Promise<{ type: string }>;
@@ -19,9 +21,9 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { type } = await params;
   const entry = directoryTypes.find((t) => t.type === type);
-  if (!entry) return { title: "Directory not found" };
+  if (!entry) return { title: notFoundTitles.directory };
   return buildMetadata({
-    title: `${entry.title} directory for fully funded study`,
+    title: pageText.directoryType.metaTitle(entry.title),
     description: entry.lead,
     path: `/directory/${entry.type}`
   });
@@ -38,10 +40,10 @@ async function DirectoryTypePageContent({ params }: Props) {
 
   return (
     <PageShell
-      eyebrow="Directory"
+      eyebrow={pageText.directoryType.eyebrow}
       title={entry.title}
       lead={entry.lead}
-      back={{ href: "/directory", label: "Directory" }}
+      back={{ href: "/directory", label: navLabels.directory }}
       prev={prev && { href: `/directory/${prev.type}`, label: prev.title }}
       next={next && { href: `/directory/${next.type}`, label: next.title }}
     >
@@ -58,7 +60,7 @@ async function DirectoryTypePageContent({ params }: Props) {
 
 export default function DirectoryTypePage({ params }: Props) {
   return (
-    <Suspense fallback={<div className="mx-auto min-h-[60vh] max-w-7xl px-4 py-16 text-slate-400">Loading…</div>}>
+    <Suspense fallback={<PageFallback />}>
       <DirectoryTypePageContent params={params} />
     </Suspense>
   );

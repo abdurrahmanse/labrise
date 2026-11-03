@@ -5,6 +5,7 @@ import { countryGuidesData, getCountryById } from "@/data/countryGuidesData";
 import { CountryDetailPage } from "@/components/countries/CountryDetailPage";
 import { COUNTRY_SECTIONS, type CountrySection } from "@/components/countries/countrySections";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { notFoundTitles } from "@/data/text/site";
 
 interface Props {
   params: Promise<{ id: string; section: string }>;
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id, section } = await params;
   const country = getCountryById(id);
   const entry = EXTRA_SECTIONS.find((s) => s.id === section);
-  if (!country || !entry) return { title: "Not found" };
+  if (!country || !entry) return { title: notFoundTitles.generic };
   return buildMetadata({
     title: `${country.name}: ${entry.label}`,
     description: country.headline,

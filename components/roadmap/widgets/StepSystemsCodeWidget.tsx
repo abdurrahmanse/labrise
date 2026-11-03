@@ -23,6 +23,7 @@ import {
   WidgetTabButton,
   WidgetCallout
 } from "./common";
+import { legacyText } from "@/data/text/legacy";
 
 const METRIC_ICONS: Record<string, React.ReactNode> = {
   Zap: <Zap className="w-4 h-4" />,
@@ -136,12 +137,12 @@ export function StepSystemsCodeWidget() {
             {copied ? (
               <>
                 <Check className="w-3.5 h-3.5 text-emerald-400" />
-                <span className="text-emerald-400">Copied!</span>
+                <span className="text-emerald-400">{legacyText.stepSystemsCodeWidget.t0}</span>
               </>
             ) : (
               <>
                 <Copy className="w-3.5 h-3.5 text-slate-400" />
-                <span>Copy Code</span>
+                <span>{legacyText.stepSystemsCodeWidget.t1}</span>
               </>
             )}
           </button>

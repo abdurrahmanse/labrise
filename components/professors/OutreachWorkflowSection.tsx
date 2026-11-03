@@ -3,6 +3,7 @@
 import React from "react";
 import { Users } from "lucide-react";
 import { professorOutreachWorkflow, professorOutreachControlsData } from "@/data/professorsData";
+import { legacyText } from "@/data/text/legacy";
 
 export function OutreachWorkflowSection() {
   const { workflowTitle, workflowSubtitle } = professorOutreachControlsData.sections;
@@ -12,7 +13,7 @@ export function OutreachWorkflowSection() {
       <div className="border-b border-white/10 pb-4">
         <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs font-bold uppercase tracking-wider mb-1">
           <Users className="w-4 h-4" />
-          <span>Outreach Protocol</span>
+          <span>{legacyText.outreachWorkflowSection.t0}</span>
         </div>
         <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
           {workflowTitle}

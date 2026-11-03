@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { TabsContainer, TabItem } from "@/components/ui/Tabs";
 import { FaqAccordionItem } from "@/components/faqs/FaqAccordionItem";
 import { faqsData, faqsHeaderData } from "@/data/faqs";
+import { legacyText } from "@/data/text/legacy";
 
 interface FaqAccordionSectionProps {
   selectedCategory?: string;
@@ -74,7 +75,7 @@ export function FaqAccordionSection({
             <button
               onClick={() => setSearchQuery("")}
               className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white text-xs cursor-pointer"
-              title="Clear search"
+              title={legacyText.faqAccordionSection.t0}
             >
               ✕
             </button>

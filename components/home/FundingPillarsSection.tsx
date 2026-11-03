@@ -7,6 +7,7 @@ import { fundingPillarsData } from "@/data/homeData";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { FundingPillarCard } from "./FundingPillarCard";
 import { InfoCallout } from "@/components/ui/InfoCallout";
+import { legacyText } from "@/data/text/legacy";
 
 export function FundingPillarsSection() {
   const { badge, title, subtitle, pillars, callout } = fundingPillarsData;
@@ -45,7 +46,7 @@ export function FundingPillarsSection() {
             href="/roadmap#phase-03"
             className="inline-flex items-center gap-2 text-sm font-semibold text-teal-400 hover:text-teal-300 transition-colors group"
           >
-            <span>Learn how to audit funding offers in Phase 03</span>
+            <span>{legacyText.fundingPillarsSection.t0}</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

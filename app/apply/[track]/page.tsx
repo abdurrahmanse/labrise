@@ -9,6 +9,8 @@ import { applyTracks, findTrack } from "@/modules/apply/data/tracks";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
 import { JsonLd } from "@/modules/seo/JsonLd";
 import { breadcrumbSchema, howToSchema } from "@/modules/seo/schemas";
+import { PageFallback } from "@/shared/components/PageFallback";
+import { navLabels, notFoundTitles, pageText } from "@/data/text/site";
 
 interface Props {
   params: Promise<{ track: string }>;
@@ -20,8 +22,8 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const track = findTrack((await params).track);
-  if (!track) return { title: "Not found" };
-  return buildMetadata({ title: `${track.title}: step by step`, description: track.summary, path: `/apply/${track.id}` });
+  if (!track) return { title: notFoundTitles.generic };
+  return buildMetadata({ title: pageText.apply.stepByStep(track.title), description: track.summary, path: `/apply/${track.id}` });
 }
 
 async function ApplyTrackPageContent({ params }: Props) {
@@ -32,16 +34,16 @@ async function ApplyTrackPageContent({ params }: Props) {
 
   return (
     <PageShell
-      eyebrow={`${track.steps.length} steps`}
+      eyebrow={pageText.apply.steps(track.steps.length)}
       title={track.title}
       lead={track.summary}
-      back={{ href: "/apply", label: "How to apply" }}
+      back={{ href: "/apply", label: navLabels.howToApply }}
       next={other && { href: `/apply/${other.id}`, label: other.title }}
     >
       <JsonLd data={howToSchema(track.title, track.summary, track.steps.map((s) => `${s.title}: ${s.detail}`))} />
-      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Apply", path: "/apply" }, { name: track.title, path: `/apply/${track.id}` }])} />
+      <JsonLd data={breadcrumbSchema([{ name: navLabels.home, path: "/" }, { name: pageText.apply.breadcrumb, path: "/apply" }, { name: track.title, path: `/apply/${track.id}` }])} />
       <TrackSteps steps={track.steps} />
-      <Block title="Keep in mind">
+      <Block title={pageText.apply.keepInMind}>
         <BulletList items={track.tips} />
       </Block>
     </PageShell>
@@ -50,7 +52,7 @@ async function ApplyTrackPageContent({ params }: Props) {
 
 export default function ApplyTrackPage({ params }: Props) {
   return (
-    <Suspense fallback={<div className="mx-auto min-h-[60vh] max-w-7xl px-4 py-16 text-slate-400">Loading…</div>}>
+    <Suspense fallback={<PageFallback />}>
       <ApplyTrackPageContent params={params} />
     </Suspense>
   );

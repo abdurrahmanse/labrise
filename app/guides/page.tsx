@@ -5,21 +5,22 @@ import { guideGroups } from "@/modules/guides/data/groups";
 import { guideIcon } from "@/modules/guides/lib/guideIcons";
 import { findGuide } from "@/modules/guides/lib/guides";
 import { buildMetadata } from "@/modules/seo/buildMetadata";
+import { navLabels, pageText } from "@/data/text/site";
 
 export const metadata = buildMetadata({
-  title: "Guides: CV, SOP, IELTS, visa and more",
-  description: "Step-by-step guides for every part of a fully funded scholarship application.",
+  title: pageText.guides.title,
+  description: pageText.guides.description,
   path: "/guides"
 });
 
 export default function GuidesPage() {
   return (
     <PageShell
-      eyebrow="Guides"
-      title="Pick a topic"
-      back={{ href: "/", label: "Home" }}
-      prev={{ href: "/profile", label: "Profile" }}
-      next={{ href: "/directory", label: "Directory" }}
+      eyebrow={pageText.guides.eyebrow}
+      title={pageText.guides.heading}
+      back={{ href: "/", label: navLabels.home }}
+      prev={{ href: "/profile", label: navLabels.profile }}
+      next={{ href: "/directory", label: navLabels.directory }}
     >
       {guideGroups.map((group) => (
         <Block key={group.title} title={group.title}>

@@ -12,6 +12,8 @@ import { findGuide, guideNeighbours, guideStepTexts, relatedGuides } from "@/mod
 import { buildMetadata } from "@/modules/seo/buildMetadata";
 import { JsonLd } from "@/modules/seo/JsonLd";
 import { breadcrumbSchema, howToSchema } from "@/modules/seo/schemas";
+import { PageFallback } from "@/shared/components/PageFallback";
+import { navLabels, notFoundTitles, pageText } from "@/data/text/site";
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -24,9 +26,9 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const topic = findGuide(id);
-  if (!topic) return { title: "Guide not found" };
+  if (!topic) return { title: notFoundTitles.guide };
   return buildMetadata({
-    title: `${topic.title}: step-by-step guide`,
+    title: pageText.guides.stepByStep(topic.title),
     description: getGuideDetail(id)?.summary ?? topic.steps.join(" "),
     path: `/guides/${id}`
   });
@@ -47,15 +49,15 @@ async function GuideTopicPageContent({ params }: Props) {
       title={topic.title}
       lead={detail?.summary}
       media={<IconTile icon={guideIcon(id)} size={56} />}
-      back={{ href: "/guides", label: "All guides" }}
+      back={{ href: "/guides", label: navLabels.allGuides }}
       prev={prev && { href: `/guides/${prev.id}`, label: prev.title }}
       next={next && { href: `/guides/${next.id}`, label: next.title }}
     >
       <JsonLd data={howToSchema(topic.title, description, guideStepTexts(id))} />
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Guides", path: "/guides" },
+          { name: navLabels.home, path: "/" },
+          { name: pageText.guides.breadcrumb, path: "/guides" },
           { name: topic.title, path: `/guides/${id}` }
         ])}
       />
@@ -70,7 +72,7 @@ async function GuideTopicPageContent({ params }: Props) {
 
 export default function GuideTopicPage({ params }: Props) {
   return (
-    <Suspense fallback={<div className="mx-auto min-h-[60vh] max-w-7xl px-4 py-16 text-slate-400">Loading…</div>}>
+    <Suspense fallback={<PageFallback />}>
       <GuideTopicPageContent params={params} />
     </Suspense>
   );

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, Award, Briefcase, Globe, MapPin } from "lucide-react";
 import { CountryGuide } from "@/data/countryGuidesData";
 import { SupervisorBadge } from "./SupervisorBadge";
+import { legacyText } from "@/data/text/legacy";
 
 interface CountryHeroSectionProps {
   country: CountryGuide;
@@ -50,7 +51,7 @@ export function CountryHeroSection({ country }: CountryHeroSectionProps) {
           className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-none bg-slate-900/80 border border-white/10 hover:border-teal-400/50 text-xs font-mono text-slate-300 hover:text-white transition-all mb-6 sm:mb-8 backdrop-blur-md shadow-md group"
         >
           <ArrowLeft className="w-3.5 h-3.5 text-teal-400 group-hover:-translate-x-0.5 transition-transform" />
-          <span>Back to All Destinations</span>
+          <span>{legacyText.countryHeroSection.t0}</span>
         </Link>
 
         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8">
@@ -76,7 +77,7 @@ export function CountryHeroSection({ country }: CountryHeroSectionProps) {
                   {country.name}
                 </h1>
                 <p className="text-xs sm:text-sm text-slate-400 mt-1 font-mono">
-                  Fully Funded Graduate Scholarship Guide
+                  {legacyText.countryHeroSection.t1}
                 </p>
               </div>
             </div>
@@ -88,7 +89,7 @@ export function CountryHeroSection({ country }: CountryHeroSectionProps) {
 
             {/* Supervisor Rule Banner */}
             <div className="flex items-center gap-3 flex-wrap pt-1">
-              <span className="text-xs font-mono text-slate-400">Supervisor Contact Rule:</span>
+              <span className="text-xs font-mono text-slate-400">{legacyText.countryHeroSection.t2}</span>
               <SupervisorBadge requirement={country.supervisorContactRequirement} />
             </div>
 
@@ -97,7 +98,7 @@ export function CountryHeroSection({ country }: CountryHeroSectionProps) {
               {country.assistantshipsAvailable && (
                 <div className="flex items-center gap-2 text-xs text-emerald-300 bg-gradient-to-b from-emerald-500/15 to-emerald-500/5 border border-emerald-500/25 px-3.5 py-2 rounded-xl font-mono backdrop-blur-sm shadow-md">
                   <Briefcase className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Assistantships Available</span>
+                  <span>{legacyText.countryHeroSection.t3}</span>
                 </div>
               )}
               <div className="flex items-center gap-2 text-xs text-indigo-300 bg-gradient-to-b from-indigo-500/15 to-indigo-500/5 border border-indigo-500/25 px-3.5 py-2 rounded-xl font-mono backdrop-blur-sm shadow-md">

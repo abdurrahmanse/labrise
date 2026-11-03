@@ -1,11 +1,12 @@
 import { countries, professors, scholarships, universities } from "@/modules/directory/data";
+import { homeText } from "@/data/text/site";
 
 export function HeroStats() {
   const stats = [
-    { label: "Countries", value: countries.length },
-    { label: "Universities", value: universities.length },
-    { label: "Scholarships", value: scholarships.length },
-    { label: "Professors", value: professors.length }
+    { label: homeText.stats.countries, value: countries.length },
+    { label: homeText.stats.universities, value: universities.length },
+    { label: homeText.stats.scholarships, value: scholarships.length },
+    { label: homeText.stats.professors, value: professors.length }
   ];
 
   return (

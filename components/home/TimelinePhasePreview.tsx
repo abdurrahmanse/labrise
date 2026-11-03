@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { Clock, ArrowRight } from "lucide-react";
 import { RoadmapPhase } from "@/data/roadmapPhasesData";
+import { legacyText } from "@/data/text/legacy";
 
 export interface TimelinePhasePreviewProps {
   selectedPhase: RoadmapPhase;
@@ -38,13 +39,13 @@ export function TimelinePhasePreview({ selectedPhase }: TimelinePhasePreviewProp
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
           <div className="p-4 rounded-xl bg-slate-950/70 border border-white/5 space-y-1">
             <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-teal-400 block">
-              What to do
+              {legacyText.timelinePhasePreview.t0}
             </span>
             <p className="text-xs text-slate-300 leading-relaxed font-sans">{selectedPhase.what}</p>
           </div>
           <div className="p-4 rounded-xl bg-slate-950/70 border border-white/5 space-y-1">
             <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-indigo-400 block">
-              Why it matters
+              {legacyText.timelinePhasePreview.t1}
             </span>
             <p className="text-xs text-slate-300 leading-relaxed font-sans">{selectedPhase.why}</p>
           </div>
@@ -53,7 +54,7 @@ export function TimelinePhasePreview({ selectedPhase }: TimelinePhasePreviewProp
         {/* Action Steps Preview */}
         <div className="space-y-2">
           <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 block">
-            Core Action Sequence:
+            {legacyText.timelinePhasePreview.t2}
           </span>
           <div className="space-y-2">
             {selectedPhase.how.slice(0, 3).map((item, idx) => (
@@ -73,13 +74,13 @@ export function TimelinePhasePreview({ selectedPhase }: TimelinePhasePreviewProp
         {/* Nuance Pills */}
         <div className="p-3.5 rounded-xl bg-indigo-950/40 border border-indigo-500/20 text-xs text-slate-300 space-y-1.5">
           <div className="flex items-center gap-2 text-indigo-300 font-semibold text-[11px] font-mono">
-            <span>Pathway Differentiation</span>
+            <span>{legacyText.timelinePhasePreview.t3}</span>
           </div>
           <p className="text-[11px] text-slate-300 leading-relaxed">
-            <strong className="text-teal-300">Master&apos;s:</strong> {selectedPhase.mastersNuance}
+            <strong className="text-teal-300">{legacyText.timelinePhasePreview.t4}</strong> {selectedPhase.mastersNuance}
           </p>
           <p className="text-[11px] text-slate-300 leading-relaxed">
-            <strong className="text-indigo-300">PhD:</strong> {selectedPhase.phdNuance}
+            <strong className="text-indigo-300">{legacyText.timelinePhasePreview.t5}</strong> {selectedPhase.phdNuance}
           </p>
         </div>
       </div>
@@ -95,7 +96,7 @@ export function TimelinePhasePreview({ selectedPhase }: TimelinePhasePreviewProp
         </Link>
 
         <span className="text-[11px] text-slate-400 font-mono text-center sm:text-right">
-          Checklist + Official Portals
+          {legacyText.timelinePhasePreview.t6}
         </span>
       </div>
     </div>

@@ -1,9 +1,10 @@
 import { XCircle } from "lucide-react";
 import { Block } from "@/shared/components/Block";
+import { guideSidebarText } from "@/data/text/site";
 
 export function GuideMistakes({ mistakes }: { mistakes: string[] }) {
   return (
-    <Block title="Common mistakes">
+    <Block title={guideSidebarText.mistakes}>
       <ul className="space-y-2">
         {mistakes.map((m) => (
           <li key={m} className="flex gap-3 text-slate-200 font-sans font-normal">
