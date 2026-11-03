@@ -7,6 +7,7 @@ import { HeaderNav } from "./HeaderNav";
 import { HeaderActions } from "./HeaderActions";
 import { HeaderMobileDrawer } from "./HeaderMobileDrawer";
 import { ThemeToggle } from "@/modules/theme/ThemeToggle";
+import { GlobalSearch } from "@/modules/search/components/GlobalSearch";
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -32,6 +33,7 @@ export function SiteHeader() {
 
             {/* ── Right-Side Actions (Search, CTA, Hamburger) ── */}
             <div className="flex items-center gap-2">
+              <GlobalSearch />
               <ThemeToggle />
               <HeaderActions
                 mobileOpen={mobileOpen}

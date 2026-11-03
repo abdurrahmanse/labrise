@@ -10,7 +10,8 @@ import { absoluteUrl } from "@/modules/seo/site";
 const staticPaths = [
   "/", "/steps", "/profile", "/guides", "/directory", "/problems",
   "/directory/countries", "/directory/universities", "/directory/professors", "/directory/scholarships", "/directory/providers", "/apply", "/apply/university", "/apply/scholarship",
-  "/roadmap", "/roadmap/phases", "/scholarships/formulas", "/scholarships/portals", "/professors/rules", "/faqs/checklist", "/scholarships", "/professors", "/documents", "/faqs"
+  "/roadmap", "/roadmap/phases", "/scholarships/formulas", "/scholarships/portals", "/professors/rules", "/faqs/checklist", "/scholarships", "/professors", "/documents", "/faqs",
+  "/about", "/disclaimer", "/privacy", "/contact"
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

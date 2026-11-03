@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Flag, ShieldCheck } from "lucide-react";
 import { DATA_REVIEWED } from "@/modules/directory/data/review";
 
