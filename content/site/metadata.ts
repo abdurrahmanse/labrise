@@ -11,10 +11,11 @@ export const siteMetadata = {
   defaultTitle: `${brand.name}: Fully Funded AI/ML & CS Research Roadmap`,
   titleTemplate: `%s | ${brand.name}`,
   defaultDescription:
-    "FundedCS is a free roadmap for Computer Science students in AI/ML research and engineering: choose a country, find AI/ML professors and funders, prepare your CV and statement of purpose, and apply for a fully funded Master's or PhD.",
+    "AIGradPath is a free roadmap for Computer Science students in AI/ML research and engineering: choose a country, find AI/ML professors and funders, prepare your CV and statement of purpose, and apply for a fully funded Master's or PhD.",
   locale: brand.locale,
   keywords: [
-    "FundedCS",
+    "AIGradPath",
+    "AI Grad Path",
     "fully funded PhD in machine learning",
     "fully funded PhD in artificial intelligence",
     "funded AI research PhD positions",

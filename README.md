@@ -1,4 +1,4 @@
-# FundedCS
+# AIGradPath
 
 A free roadmap to a fully funded Master's or PhD in **AI/ML research and engineering**, for Computer Science students.
 
@@ -6,7 +6,7 @@ A free roadmap to a fully funded Master's or PhD in **AI/ML research and enginee
 
 ## About
 
-FundedCS shows Computer Science students how to win a funded research place abroad, step by step. It brings the plan, the guides and a directory of AI/ML professors, universities and funders into one simple site. It covers AI/ML research and engineering only, not other fields.
+AIGradPath shows Computer Science students how to win a funded research place abroad, step by step. It brings the plan, the guides and a directory of AI/ML professors, universities and funders into one simple site. It covers AI/ML research and engineering only, not other fields.
 
 ## Mission
 

@@ -39,7 +39,7 @@ export const scholarshipsHub: HubText = {
 };
 
 export const ogText = {
-  eyebrow: "FULLY FUNDED CS MASTER'S & PHD",
+  eyebrow: "FULLY FUNDED AI/ML MASTER'S & PHD",
   title: brand.name,
-  subtitle: "Countries, CS professors, funders and a step-by-step roadmap"
+  subtitle: "AI/ML professors, funders and a step-by-step research roadmap"
 } as const;

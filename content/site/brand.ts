@@ -1,10 +1,10 @@
 // The one place that names the site. Change the name here and every page, title, logo label and share card follows.
 // The site address comes from NEXT_PUBLIC_SITE_URL once a real domain is registered.
 export const brand = {
-  /** A coined, searchable word: "Funded" + "CS". */
-  name: "FundedCS",
-  first: "Funded",
-  second: "CS",
+  /** A coined, searchable word: "AI" + "Grad" (graduate study) + "Path" (the roadmap). */
+  name: "AIGradPath",
+  first: "AIGrad",
+  second: "Path",
   /** Short line used under the logo and in share cards. */
   tagline: "Fully funded AI/ML & Computer Science research roadmap",
   /** Who the site is for. */
@@ -16,7 +16,7 @@ export const brand = {
   /** Who writes to us. */
   contactEmail: "abdurrahmansoftw@gmail.com",
   /** Names people may also type when they look for the site. */
-  alternateNames: ["Funded CS", "FundedCS Roadmap"]
+  alternateNames: ["AI Grad Path", "AIGradPath Roadmap"]
 } as const;
 
 export const brandTitle = (page?: string) => (page ? `${page} | ${brand.name}` : `${brand.name}: ${brand.tagline}`);
