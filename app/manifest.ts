@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
 import { siteMetadata } from "@/content/site/metadata";
+import { brand } from "@/content/site/brand";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: siteMetadata.siteName,
+    name: `${siteMetadata.siteName}: ${brand.tagline}`,
     short_name: siteMetadata.siteName,
     description: siteMetadata.defaultDescription,
     start_url: "/",

@@ -19,7 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
 import { Footer } from "@/core/layout/footer/Footer";
 import { SiteHeader } from "@/core/layout/header/SiteHeader";
 import { AppProviders } from "@/core/providers/AppProviders";
-import { JsonLd, websiteSchema } from "@/modules/seo";
+import { JsonLd, organizationSchema, websiteSchema } from "@/modules/seo";
 import { AmbientBackground } from "@/shared/ui/AmbientBackground";
 
 import { rootMetadata } from "@/content/site/metadata";
@@ -48,6 +48,7 @@ export default function RootLayout({
       <body className={`${rajdhani.className} min-h-full flex flex-col overflow-x-clip bg-canvas-base text-slate-100 font-semibold relative`}>
         <AppProviders>
           <JsonLd data={websiteSchema()} />
+          <JsonLd data={organizationSchema()} />
           <AmbientBackground />
           <SiteHeader />
           <div className="flex-1 relative z-10">{children}</div>

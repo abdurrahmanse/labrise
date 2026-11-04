@@ -3,5 +3,5 @@
  */
 export { JsonLd } from "./JsonLd";
 export { buildMetadata } from "./buildMetadata";
-export { breadcrumbSchema, howToSchema, personSchema, scholarshipGrantSchema, universitySchema, websiteSchema } from "./schemas";
+export { breadcrumbSchema, howToSchema, personSchema, scholarshipGrantSchema, universitySchema, websiteSchema, organizationSchema } from "./schemas";
 export { absoluteUrl } from "./site";

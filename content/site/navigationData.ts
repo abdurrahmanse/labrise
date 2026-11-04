@@ -1,3 +1,4 @@
+import { brand } from "@/content/site/brand";
 export interface NavLinkItem {
   href: string;
   label: string;
@@ -36,13 +37,13 @@ export const liveStatusTickerData: StatusTickerItem[] = [
   {
     id: "verified-countries",
     badge: "Global Roadmap",
-    text: "20 Country Guides Across Europe, North America, Asia & Oceania with Official Portals",
+    text: "Country guides across Europe, North America, Asia & Oceania with official portals for AI/ML and CS research applicants",
     variant: "purple"
   },
   {
     id: "open-access",
     badge: "100% Free & Open",
-    text: "No Login, No Account, No Fees: A Pure Educational Roadmap for Scholars Worldwide",
+    text: "No login, no account, no fees: a free roadmap for AI/ML and CS research scholars worldwide",
     variant: "amber"
   }
 ];
@@ -56,10 +57,10 @@ export const liveIndicatorData = {
 
 export const headerData = {
   brand: {
-    primary: "Scholarship",
-    secondary: "Roadmap",
+    primary: brand.first,
+    secondary: brand.second,
     badge: "Open Access Guide",
-    tagline: "Fully Funded Master's & PhD"
+    tagline: "Fully Funded AI/ML & CS Research"
   },
   actions: {
     statusBadge: "Fully Funded Guide",
@@ -77,8 +78,8 @@ export const headerData = {
   },
   mobileDrawer: {
     moreTitle: "More",
-    title: "Scholarship Roadmap",
-    subtitle: "Navigate fully funded graduate programs worldwide",
+    title: brand.name,
+    subtitle: "Fully funded AI/ML and CS research programs worldwide",
     ctaButton: {
       label: "Start 13-Phase Roadmap",
       href: "/roadmap"
@@ -131,8 +132,8 @@ export const footerLinksData: NavLinkItem[] = [
 
 export const footerData = {
   brand: {
-    name: "Scholarship Roadmap",
-    tagline: "The comprehensive, open-access educational roadmap guiding international students to fully funded Master's and PhD scholarships worldwide.",
+    name: brand.name,
+    tagline: "A free, open-access roadmap that guides Computer Science students in AI/ML research and engineering to fully funded Master's and PhD programs worldwide.",
     badge: "100% Fully Funded Standard"
   },
   roadmapNavigation: [
@@ -144,9 +145,9 @@ export const footerData = {
     { href: "/roadmap#phase-11", label: "Phase 11: Funding Offer Audit" }
   ],
   directoryAndTools: [
-    { href: "/countries", label: "20 Country Funding Guides" },
+    { href: "/directory/countries", label: "Country Funding Guides" },
     { href: "/scholarships", label: "11-Step Scholarship Finder" },
-    { href: "/professors", label: "Professor Cold Email Generator" },
+    { href: "/professors", label: "AI/ML Professor Outreach & Email Templates" },
     { href: "/documents", label: "Required Documents & SOP Blueprint" },
     { href: "/faqs", label: "Admissions & Funding FAQs" }
   ],
@@ -162,6 +163,6 @@ export const footerData = {
     tools: "Guides & Toolkits",
     databases: "Official Portals"
   },
-  subtext: "Crafted for ambitious Master's & PhD scholars worldwide",
-  copyright: "© 2026 Scholarship Roadmap. Free, open-access educational resource. Not affiliated with any commercial agency."
+  subtext: "Built for ambitious AI/ML and Computer Science research applicants",
+  copyright: `© 2026 ${brand.name}. Free, open-access educational resource for AI/ML and Computer Science research applicants. Not affiliated with any commercial agency.`
 };

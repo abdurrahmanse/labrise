@@ -436,38 +436,6 @@ const baseProviders: ProviderEntry[] = [
     selection: "Screening by IsDB, then final selection.",
     site: "https://www.isdb.org"
   },
-  {
-    name: "World Bank (Joint Japan/World Bank Graduate Scholarship Program)",
-    supports: "Development professionals from World Bank member countries",
-    country: "United States", region: "North America", kind: "Development bank",
-    programs: ["Joint Japan/World Bank Graduate Scholarship Program"],
-    route: "Apply to a participating university programme, then to the scholarship, following the call.",
-    requirements: [
-      "National of a World Bank member developing country",
-      "Bachelor's degree and several years of development-related work experience",
-      "Admission to a participating master's programme",
-      "Plan to return home and apply what you learn"
-    ],
-    documents: ["Application form", "Admission proof", "Work experience letters", "References"],
-    selection: "Review by the programme team and the participating university.",
-    site: "https://www.worldbank.org/en/programs/scholarships"
-  },
-  {
-    name: "The Rotary Foundation",
-    supports: "Students working for peace and community development",
-    country: "United States", region: "North America", kind: "Foundation",
-    programs: ["Rotary Peace Fellowships", "Rotary Global Grant Scholarships"],
-    route: "Peace Fellowships: apply online. Global Grants: a local Rotary club must sponsor you.",
-    requirements: [
-      "Peace Fellowships: bachelor's degree and relevant work experience, with a commitment to peace",
-      "Global Grants: study that fits one of Rotary's areas of focus",
-      "Sponsor from a Rotary club or district where the programme requires it",
-      "Plan for service after your studies"
-    ],
-    documents: ["Application and essays", "Transcripts", "References", "Admission proof where asked"],
-    selection: "Rotary district and committee review, then interviews.",
-    site: "https://www.rotary.org"
-  }
 
 ];
 

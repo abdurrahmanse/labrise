@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${country.name} Scholarship Guide — Fully Funded Master's & PhD`,
     description: `${country.headline}. Complete guide to fully funded scholarships, government awards, PhD employment contracts, and official application portals for ${country.name}.`,
     openGraph: {
-      title: `${country.flag} ${country.name} — Fully Funded Scholarship Roadmap`,
+      title: `${country.flag} ${country.name} — Fully Funded CS Master's & PhD`,
       description: country.summary.slice(0, 160),
       type: "article",
     },

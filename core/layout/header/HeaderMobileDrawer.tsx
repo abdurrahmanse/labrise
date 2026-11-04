@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { GraduationCap, X } from "lucide-react";
+import { X } from "lucide-react";
 import { headerData, moreLinksData, navLinksData } from "@/content/site/navigationData";
 import { commonText } from "@/content/text/common";
 import { legacyText } from "@/content/text/legacy";
@@ -9,6 +9,7 @@ import { cn } from "@/shared/utils/cn";
 import { HeaderSupportLink } from "./HeaderSupportLink";
 import { isActiveLink } from "./isActiveLink";
 import { useEscapeKey } from "./useEscapeKey";
+import { Logo } from "@/shared/ui/Logo";
 
 interface HeaderMobileDrawerProps {
   isOpen: boolean;
@@ -42,9 +43,7 @@ export function HeaderMobileDrawer({ isOpen, onClose, pathname }: HeaderMobileDr
       >
         <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
           <div className="flex items-center gap-2.5">
-            <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-teal-500 text-white">
-              <GraduationCap className="h-4 w-4" />
-            </span>
+            <Logo size={32} />
             <p className="font-heading text-sm font-bold leading-none text-white">{headerData.mobileDrawer.title}</p>
           </div>
           <button

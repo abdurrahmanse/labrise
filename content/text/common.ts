@@ -1,6 +1,7 @@
+import { brand } from "@/content/site/brand";
 // Text used on many pages. Change wording here; components only read it.
 export const commonText = {
-  brand: { first: "Scholarship", second: "Roadmap", homeLabel: "Scholarship Roadmap Home" },
+  brand: { first: brand.first, second: brand.second, homeLabel: `${brand.name} home` },
   footer: { tagline: "Free and open", backToTop: "Back to top", backToTopLabel: "Back to top of page", status: "Live Open Access" },
   theme: { toggleLabel: "Toggle dark mode" },
   header: {

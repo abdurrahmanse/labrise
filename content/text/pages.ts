@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import { Ban, BookOpen, Building2, Cookie, Database, FileWarning, Flag, Globe, Lock, Users } from "lucide-react";
+import { brand } from "@/content/site/brand";
 
 // Text for the static pages: About, Disclaimer, Privacy and Contact.
 export interface TextSection {
@@ -18,17 +19,17 @@ export interface StaticPageText {
 }
 
 export const aboutText: StaticPageText = {
-  title: "About Scholarship Roadmap",
+  title: `About ${brand.name}`,
   description: "What this site is, who it is for and how its directory is built.",
   eyebrow: "About",
-  heading: "A free guide to funded study abroad",
-  lead: "A step-by-step roadmap and a directory of countries, universities, professors and funders.",
+  heading: "A free guide to funded AI/ML and CS research abroad",
+  lead: "A step-by-step roadmap and a directory of countries, AI/ML professors and funders for Master's and PhD applicants.",
   sections: [
     {
       title: "What it is",
       Icon: BookOpen,
       paragraphs: [
-        "Scholarship Roadmap helps students plan a fully funded Master's or PhD abroad. It explains each step, from choosing a field to the visa, and lists the countries, universities, professors and funding organisations connected to each route."
+        `${brand.name} helps Computer Science students plan a fully funded Master's or PhD abroad. It is built for AI/ML research and engineering: it explains each step, from choosing a research area to the visa, and lists the countries, universities, AI/ML professors and funding organisations connected to each route. It does not cover other fields.`
       ]
     },
     {

@@ -392,7 +392,7 @@ export const countryDetails: Record<string, CountryDetail> = {
     language: "English-taught doctoral and master's programmes exist at several institutions. Slovenian helps in daily life.",
     intake: "Doctoral enrolment is usually in autumn. ARIS calls and project posts have their own dates.",
     visa: "Student or researcher residence permit, arranged with the host institution.",
-    find: [{ label: "ARIS (research agency)", href: "https://www.aris-rs.si/en" }, { label: "CMEPIUS scholarships", href: "https://www.cmepius.si/en" }, { label: "EURAXESS jobs", href: "https://euraxess.ec.europa.eu/jobs" }],
+    find: [{ label: "ARIS (research agency)", href: "https://www.aris-rs.si/en" }, { label: "CMEPIUS scholarships", href: "https://www.cmepius.si" }, { label: "EURAXESS jobs", href: "https://euraxess.ec.europa.eu/jobs" }],
     scholarships: ["ARIS Young Researcher Programme", "Slovenian Government Scholarships (CMEPIUS)"],
     tips: ["Find a mentor first: funded posts are tied to a mentor and a project.", "Read the current call for who may apply before you spend time on an application."]
   },

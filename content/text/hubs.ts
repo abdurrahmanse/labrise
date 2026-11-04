@@ -1,3 +1,4 @@
+import { brand } from "@/content/site/brand";
 import type { LucideIcon } from "lucide-react";
 import { CheckCircle2, Mail, Search, ShieldCheck, Terminal, Users } from "lucide-react";
 
@@ -38,7 +39,7 @@ export const scholarshipsHub: HubText = {
 };
 
 export const ogText = {
-  eyebrow: "FULLY FUNDED MASTER'S & PHD",
-  title: "Scholarship Roadmap",
-  subtitle: "Steps, guides, countries, universities, professors"
+  eyebrow: "FULLY FUNDED CS MASTER'S & PHD",
+  title: brand.name,
+  subtitle: "Countries, CS professors, funders and a step-by-step roadmap"
 } as const;

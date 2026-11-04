@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "fundedcs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,7 +12,9 @@
     "test": "tsx --test \"shared/**/*.test.ts\" \"shared/**/*.test.tsx\" \"infrastructure/**/*.test.ts\" \"modules/**/*.test.ts\"",
     "check:cycles": "tsx scripts/check-cycles.mts",
     "check:unused": "tsx scripts/check-unused.mts",
-    "check:types": "tsx scripts/check-types.mts"
+    "check:types": "tsx scripts/check-types.mts",
+    "verify:links": "tsx scripts/verify-links.mts",
+    "verify:professors": "tsx scripts/verify-professors.mts"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.5.0",

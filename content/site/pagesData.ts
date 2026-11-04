@@ -47,7 +47,7 @@ export const homePageData: MultiPageData = {
   hero: {
     badge: "100% Full-Ride Master's & PhD Computer Science Roadmap",
     title: "The Fully Funded Computer Science",
-    highlightWord: "Scholarship Roadmap",
+    highlightWord: "Master's & PhD Roadmap",
     subtitle: "The canonical end-to-end blueprint for Computer Science students: build a high-impact research profile, identify top universities and labs, connect with funded professors, craft high-yield cold outreach, and secure 100% full-ride funding abroad.",
     primaryCta: { label: "Explore Step-by-Step Roadmap", href: "/roadmap" },
     secondaryCta: { label: "What Profile Looks Like", href: "#cs-profile-blueprint" },
@@ -233,8 +233,8 @@ export const homePageData: MultiPageData = {
 export const roadmapPageData: MultiPageData = {
   pageId: "roadmap",
   slug: "/roadmap",
-  title: "Step-by-Step AI/ML Scholarship Roadmap",
-  metaDescription: "Detailed chronological phase-by-phase execution guide for winning fully funded AI research positions abroad.",
+  title: "Step-by-Step Computer Science Funding Roadmap",
+  metaDescription: "A phase-by-phase guide for Computer Science students winning fully funded Master's and PhD research positions abroad.",
   hero: {
     badge: "5-Level Structured Postgraduate Architecture",
     title: "5 Distinct Levels to Full-Ride",

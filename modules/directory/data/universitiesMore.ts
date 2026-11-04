@@ -250,7 +250,7 @@ export const moreUniversities: UniversityEntry[] = [
     ["National Sun Yat-sen University", "https://www.nsysu.edu.tw"],
     ["National Taiwan University of Science and Technology", "https://www.ntust.edu.tw"],
     ["National Chengchi University", "https://www.nccu.edu.tw"],
-    ["National Taiwan Normal University", "https://www.ntnu.edu.tw"]
+    ["National Taiwan Normal University", "https://en.ntnu.edu.tw"]
   ]),
   ...group("Australia", "Oceania", "RTP-type scholarship", "Varies by round", [
     ["UNSW Sydney", "https://www.unsw.edu.au"],
@@ -309,7 +309,7 @@ export const moreUniversities: UniversityEntry[] = [
   ...group("Poland", "Europe", "Doctoral school stipend; NAWA scholarships", "Spring–summer (doctoral school recruitment)", [
     ["University of Warsaw", "https://www.uw.edu.pl/en"],
     ["Jagiellonian University", "https://en.uj.edu.pl"],
-    ["Warsaw University of Technology", "https://www.pw.edu.pl/engpw"],
+    ["Warsaw University of Technology", "https://www.pw.edu.pl"],
     ["AGH University of Krakow", "https://www.agh.edu.pl/en"],
     ["Adam Mickiewicz University", "https://amu.edu.pl/en"],
     ["Poznań University of Technology", "https://put.poznan.pl/en"],

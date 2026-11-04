@@ -87,12 +87,6 @@ export const moreProviders: ProviderEntry[] = [
     "The hiring group selects the candidate.", "https://www.nwo.nl"),
 
   // Denmark
-  entry("Denmark", "Europe", "Foundation", "Novo Nordisk Foundation",
-    "Doctoral researchers and fellows in Danish life-science and health programmes", ["Novo Nordisk Foundation PhD programmes"],
-    "Apply to a programme or advertised post at the host institution.",
-    ["Master's degree in a relevant science", "Strong academic record", "Fit with the programme"],
-    ["CV", "Transcripts", "Research statement", "References"],
-    "Selection by the host programme.", "https://novonordiskfonden.dk"),
   entry("Denmark", "Europe", "Government research funder", "Independent Research Fund Denmark",
     "Research projects in Denmark that fund doctoral and postdoctoral posts", ["Project grants that fund PhD posts"],
     "Apply to advertised university posts that name the fund.",
@@ -211,12 +205,6 @@ export const moreProviders: ProviderEntry[] = [
     "Panel review and interviews.", "https://fundacionlacaixa.org"),
 
   // United Kingdom
-  entry("United Kingdom", "Europe", "Foundation", "Wellcome Trust",
-    "Doctoral researchers in health-related research", ["Wellcome-funded PhD programmes"],
-    "Apply to the university programme that holds the funding.",
-    ["Strong degree in a relevant field", "Fit with the research theme", "Meets the university's entry rules"],
-    ["CV", "Transcripts", "Research statement", "References"],
-    "The programme selects candidates through interview.", "https://wellcome.org"),
   entry("United Kingdom", "Europe", "Government research funder", "UK Research and Innovation (UKRI)",
     "Doctoral researchers in UK universities through studentship funding", ["UKRI funded studentships"],
     "Apply to a studentship advertised by a UK university or doctoral training partnership.",
@@ -265,12 +253,6 @@ export const moreProviders: ProviderEntry[] = [
     ["Enrolled or admitted at a Québec university", "Strong academic record", "Research plan"],
     ["Application form", "Transcripts", "Research plan", "References"],
     "Committee review in competition.", "https://frq.gouv.qc.ca"),
-  entry("Canada", "North America", "Foundation", "Pierre Elliott Trudeau Foundation",
-    "Doctoral candidates in the humanities and social sciences at Canadian universities", ["Trudeau Foundation Scholarships"],
-    "Your university nominates you; check the foundation page for how to apply.",
-    ["Doctoral study in humanities or social sciences", "Social or public engagement", "Nomination by your university"],
-    ["Application form", "Research proposal", "References"],
-    "Review and interviews.", "https://www.trudeaufoundation.ca"),
 
   // Japan
   entry("Japan", "Asia", "Government agency", "Japan Society for the Promotion of Science (JSPS)",
@@ -290,7 +272,7 @@ export const moreProviders: ProviderEntry[] = [
     "Apply through a Rotary club in Japan or your university, as set by the foundation.",
     ["Enrolled at a Japanese institution", "Good academic record", "Interest in cultural exchange"],
     ["Application form", "Transcripts", "Enrolment proof"],
-    "Rotary district review and interview.", "https://www.rotary-yoneyama-ms.or.jp"),
+    "Rotary district review and interview.", "https://www.rotary-yoneyama.or.jp"),
 
   // South Korea
   entry("South Korea", "Asia", "Government agency", "Korea International Cooperation Agency (KOICA)",
@@ -305,27 +287,9 @@ export const moreProviders: ProviderEntry[] = [
     ["Admission to a Korean graduate programme", "Fit with the lab"],
     ["CV", "Transcripts", "Study plan"],
     "The professor and department select the student.", "https://www.nrf.re.kr"),
-  entry("South Korea", "Asia", "Foundation", "Korea Foundation",
-    "Researchers and students in Korea studies and international exchange", ["Korea Foundation fellowships"],
-    "Apply online during the call for the fellowship that fits your project.",
-    ["Eligibility depends on the fellowship", "Research or study plan on Korea-related topics"],
-    ["Application form", "Study plan", "References"],
-    "Panel review.", "https://www.kf.or.kr"),
 
   // China
-  entry("China", "Asia", "University programme", "Yenching Academy of Peking University",
-    "Students from around the world who want to study China at master's level", ["Yenching Academy Scholarship"],
-    "Apply through the Yenching Academy online portal during the call.",
-    ["Bachelor's degree", "Strong academic record", "Interest in China and a global perspective"],
-    ["Application form", "Transcripts", "Essays", "References"],
-    "Document review and interviews.", "https://yenchingacademy.pku.edu.cn"),
 
-  entry("China", "Asia", "University programme", "Schwarzman Scholars",
-    "Future leaders from around the world for a one-year master's at Tsinghua University", ["Schwarzman Scholars"],
-    "Apply online to the Schwarzman Scholars programme during the call.",
-    ["Bachelor's degree completed", "Leadership record", "Strong academic results", "English ability"],
-    ["Application form", "Transcripts", "Essays", "References", "Video submission where asked"],
-    "Application review followed by interviews.", "https://www.schwarzmanscholars.org"),
 
   // Singapore
   entry("Singapore", "Asia", "University programme", "NUS Research Scholarship",
@@ -362,12 +326,6 @@ export const moreProviders: ProviderEntry[] = [
     ["Citizen of a partner country", "Relevant degree", "Admission to the course"],
     ["Application form", "Transcripts", "Study plan", "References"],
     "Review by ICDF and the host university.", "https://www.icdf.org.tw"),
-  entry("Taiwan", "Asia", "Government ministry", "Ministry of Foreign Affairs (Taiwan)",
-    "Scholars and graduate students in Taiwan studies", ["Taiwan Fellowship"],
-    "Apply through the Taiwan representative office in your country.",
-    ["Research plan related to Taiwan or Asia", "Eligible nationality", "Host institution in Taiwan"],
-    ["Application form", "Research plan", "CV", "Host invitation"],
-    "Review by the ministry.", "https://www.mofa.gov.tw"),
   entry("Taiwan", "Asia", "Government research funder", "National Science and Technology Council (NSTC)",
     "Research projects in Taiwan that can fund graduate research", ["NSTC-funded research posts"],
     "You apply to the lab; the grant pays the research costs.",
@@ -452,13 +410,13 @@ export const moreProviders: ProviderEntry[] = [
     "Apply for a PhD at Heriot-Watt and tick the scholarship option on the application.",
     ["Strong first degree or master's", "Research fit with a Heriot-Watt supervisor", "English ability"],
     ["CV", "Transcripts", "Research proposal", "References"],
-    "Competitive review by the school.", "https://www.hw.ac.uk/study/fees-funding"),
+    "Competitive review by the school.", "https://www.hw.ac.uk/study/fees-and-funding"),
   entry("Scotland", "Europe", "University scholarship office", "University of St Andrews Scholarships",
     "International postgraduate applicants admitted to St Andrews", ["St Leonard's Postgraduate Scholarships"],
     "Apply for your degree first; the scholarship application is part of the process.",
     ["Offer or application for a St Andrews research degree", "Excellent academic record", "Research proposal"],
     ["CV", "Transcripts", "Research proposal", "References"],
-    "School nomination and committee review.", "https://www.st-andrews.ac.uk/subjects/fees-funding"),
+    "School nomination and committee review.", "https://www.st-andrews.ac.uk/study/fees-and-funding/"),
 
   // Czech Republic
   entry("Czech Republic", "Europe", "Government agency", "DZS - Centre for International Cooperation in Education",
@@ -532,7 +490,7 @@ export const moreProviders: ProviderEntry[] = [
     "Apply through the CMEPIUS call or through your country's ministry, as the call states.",
     ["Eligible country and degree level as set in the call", "Admission to or a host at a Slovenian institution", "Strong academic record"],
     ["Application form", "Transcripts", "Study or research plan", "Admission proof"],
-    "Selection by the Slovenian authorities under the call's rules.", "https://www.cmepius.si/en"),
+    "Selection by the Slovenian authorities under the call's rules.", "https://www.cmepius.si"),
 
   // Qatar
   entry("Qatar", "Middle East", "University scholarship office", "Hamad Bin Khalifa University (HBKU)",
@@ -580,12 +538,10 @@ export const moreProviders: ProviderEntry[] = [
 
 export const moreUniversityOnlyProviders: Record<string, string> = {
   "ETH Zurich Excellence Scholarship and Opportunity Programme (ESOP)": "ETH Zurich",
-  "Yenching Academy of Peking University": "Peking University",
   "NUS Research Scholarship": "National University of Singapore",
   "NTU Research Scholarship": "Nanyang Technological University",
   "HKU Presidential PhD Scholar Programme": "University of Hong Kong",
   "CUHK Postgraduate Studentships": "Chinese University of Hong Kong",
-  "Schwarzman Scholars": "Tsinghua University",
   "University of Auckland Doctoral Scholarship": "University of Auckland",
   "University of Otago Doctoral Scholarship": "University of Otago",
   "Koç University Graduate Scholarship": "Koç University",
