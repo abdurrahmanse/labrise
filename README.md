@@ -1,20 +1,20 @@
-# Scholarship Roadmap
+# FundedCS
 
-A free guide to fully funded Master's and PhD study abroad.
+A free roadmap to a fully funded Master's or PhD in **AI/ML research and engineering**, for Computer Science students.
 
 ---
 
 ## About
 
-Scholarship Roadmap shows students how to win a funded place abroad, step by step. It brings the plan, the guides and the directory into one simple site.
+FundedCS shows Computer Science students how to win a funded research place abroad, step by step. It brings the plan, the guides and a directory of AI/ML professors, universities and funders into one simple site. It covers AI/ML research and engineering only, not other fields.
 
 ## Mission
 
-Make funded study abroad clear and fair for every student, whatever their background.
+Make funded AI/ML research study abroad clear and fair for every Computer Science student, whatever their background.
 
 ## Vision
 
-A world where a good student never misses a scholarship because they did not know where to look or what to do next.
+A world where a good student never misses a funded research place because they did not know where to look or what to do next.
 
 ---
 
@@ -26,7 +26,7 @@ A world where a good student never misses a scholarship because they did not kno
 | Profile checklist | `/profile` |
 | How to apply | `/apply` |
 | 27 guides (CV, SOP, IELTS, visa and more) | `/guides` |
-| Countries, universities, professors, funders, scholarships | `/directory` |
+| Countries, universities, AI/ML professors, funders, scholarships | `/directory` |
 | Common problems and fixes | `/problems` |
 | Contact and corrections | `/contact` |
 
@@ -36,11 +36,11 @@ Every country links to its universities, professors and funders. Every entry has
 
 ## Who it is for
 
-Students who want a funded Master's or PhD abroad and need a clear path.
+Computer Science students who want a funded Master's or PhD in AI/ML research or engineering abroad and need a clear path.
 
 ## Our promise
 
-- **Real data only.** Entries come from official pages.
+- **Real data only.** Entries come from official pages, and the links and professor affiliations are re-checked with `npm run verify:links` and `npm run verify:professors`.
 - **No made-up emails.** A professor's email is shown only if an official page lists it.
 - **Always check the source.** Each page shows its review date and a link to the official site.
 - **Free and private.** No account. Your notes stay in your browser.

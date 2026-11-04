@@ -20,8 +20,8 @@ export const phase2Steps: RoadmapStep[] = [
       },
       {
         id: "c-2-1-2",
-        task: "Audit NIH RePORTER & NSF Award Search",
-        detail: "Search US grant databases for active awards funded through 2026–2030 to confirm the lab has liquid capital."
+        task: "Audit NSF Award Search & ERC grants",
+        detail: "Search the NSF and ERC grant databases for active awards funded through 2026–2030 to confirm the lab has liquid capital."
       },
       {
         id: "c-2-1-3",

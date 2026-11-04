@@ -295,7 +295,7 @@ export const roadmapPageData: MultiPageData = {
         },
         {
           title: "Step 2.1: Mapping Labs on CSRankings.org",
-          description: "Identify institutions holding active NSF/NIH/ERC grants in your AI subfield.",
+          description: "Identify institutions holding active NSF/ERC/DFG grants in your AI subfield.",
           tag: "Phase 2 • 3 Weeks",
           bulletPoints: ["Filter CSRankings by AI subfield", "Audit NSF Award Search & CORDIS", "3 Dream / 5 Target / 2 Safe ratio", "35+ faculty database"]
         },
@@ -482,7 +482,7 @@ export const programsPageData: MultiPageData = {
       highlights: [
         "Step 1: Open csrankings.org and select AI, Machine Learning, Computer Vision, and NLP",
         "Step 2: Expand university names to reveal individual faculty publication volume at NeurIPS/ICML/CVPR",
-        "Step 3: Search NIH RePORTER and NSF Award Search to confirm the professor has active awards through 2026–2030",
+        "Step 3: Search NSF Award Search or the ERC grants database to confirm the professor has active awards through 2026–2030",
         "Step 4: Check EU CORDIS for ERC Starting/Consolidator Grants (€1.5M–€2.5M) which mandate hiring PhD researchers"
       ]
     },

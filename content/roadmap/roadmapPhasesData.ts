@@ -424,7 +424,7 @@ export const roadmapPhasesData: RoadmapPhase[] = [
       },
       {
         step: "Detail Your Proposed Methodology",
-        detail: "Describe your experimental design, datasets, algorithms, laboratory assays, or statistical models clearly."
+        detail: "Describe your experimental design, datasets, algorithms, baselines, ablation studies, or statistical models clearly."
       },
       {
         step: "Provide a Feasible 3-Year Timeline",

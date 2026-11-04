@@ -291,6 +291,44 @@ export const moreProviders: ProviderEntry[] = [
   // China
 
 
+  // AI/ML research programmes
+  entry("Germany", "Europe", "Research school", "International Max Planck Research School for Intelligent Systems (IMPRS-IS)",
+    "PhD applicants in machine learning, robotics and computer vision at Tübingen and Stuttgart", ["IMPRS-IS Funded PhD Positions"],
+    "Apply through the IMPRS-IS online portal during the yearly call, usually in autumn.",
+    ["Master's degree (or about to finish) in computer science, engineering or a related field", "Strong research interest in intelligent systems", "Names of preferred supervisors from the school's faculty"],
+    ["CV", "Unofficial transcripts", "Two-page motivation letter", "Three referees, ideally research advisors"],
+    "Committee review, then interviews. Funding comes through an employment contract.", "https://imprs.is.mpg.de"),
+  entry("Switzerland", "Europe", "University programme", "ETH AI Center Doctoral Fellowships",
+    "Doctoral candidates in AI research at ETH Zurich", ["ETH AI Center Doctoral Fellowships"],
+    "Apply through the ETH AI Center online portal, and meet ETH's general doctoral admission rules.",
+    ["Master's degree in a relevant field completed (or about to be) before the fellowship starts", "Excellent academic track record", "Research that fits the ETH AI Center's goals"],
+    ["CV", "Transcripts", "Research statement", "References"],
+    "Review by the ETH AI Center with the supervising professors.", "https://ai.ethz.ch"),
+  entry("Canada", "North America", "Research institute", "Vector Institute (Vector Scholarship in Artificial Intelligence)",
+    "Master's students entering AI-focused programmes at Ontario universities", ["Vector Scholarship in Artificial Intelligence"],
+    "You cannot apply to Vector directly. Your master's programme nominates you during the nomination window.",
+    ["Admitted to a Vector-recognised AI master's programme in Ontario, or an individual AI-focused plan", "Entrance scholarship: not open to students already enrolled", "Strong academic merit"],
+    ["Admission to the programme", "Nomination from the programme", "Transcripts"],
+    "Vector reviews the nominations from each programme.", "https://vectorinstitute.ai"),
+  entry("United States", "North America", "Industry fellowship", "Google PhD Fellowship",
+    "PhD students doing research in computer science and related fields, including AI and machine learning", ["Google PhD Fellowship"],
+    "You do not apply to Google. Your university runs an internal selection and nominates you.",
+    ["Full-time PhD student at a university that may nominate", "Nominated by your university, which has a small yearly limit", "Rules on coursework and region differ by cycle"],
+    ["CV", "Research statement", "Recommendation letters (usually two or three)"],
+    "Universities nominate, then Google selects the fellows.", "https://research.google/programs-and-events/phd-fellowship/"),
+  entry("United States", "North America", "Industry fellowship", "NVIDIA Graduate Fellowship Program",
+    "PhD students whose research relates to NVIDIA's areas, including deep learning and AI", ["NVIDIA Graduate Fellowship"],
+    "Apply through NVIDIA's research site during the yearly call.",
+    ["PhD student who has completed at least one year of doctoral study", "Research relevant to NVIDIA's research areas", "An NVIDIA internship is part of the programme"],
+    ["CV", "Research summary", "Recommendation letters"],
+    "NVIDIA reviews student quality, research quality and relevance.", "https://research.nvidia.com/graduate-fellowships"),
+  entry("United States", "North America", "Industry fellowship", "Apple Scholars in AI/ML PhD Fellowship",
+    "PhD students working in AI and machine learning topics Apple lists each year", ["Apple Scholars in AI/ML PhD Fellowship"],
+    "Only by nomination: Apple invites selected universities, and each one nominates its own students.",
+    ["Full-time PhD student at an invited university", "Research in the AI/ML topic areas of the current call", "No other full industry fellowship for the same period"],
+    ["Nomination package from your university", "CV", "Research proposal", "Recommendation letters"],
+    "Apple reviews the nominated research.", "https://machinelearning.apple.com"),
+
   // Singapore
   entry("Singapore", "Asia", "University programme", "NUS Research Scholarship",
     "Research students at the National University of Singapore", ["NUS Research Scholarship"],
@@ -537,6 +575,7 @@ export const moreProviders: ProviderEntry[] = [
 
 
 export const moreUniversityOnlyProviders: Record<string, string> = {
+  "ETH AI Center Doctoral Fellowships": "ETH Zurich",
   "ETH Zurich Excellence Scholarship and Opportunity Programme (ESOP)": "ETH Zurich",
   "NUS Research Scholarship": "National University of Singapore",
   "NTU Research Scholarship": "Nanyang Technological University",

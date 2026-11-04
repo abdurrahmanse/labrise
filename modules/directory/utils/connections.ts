@@ -4,6 +4,7 @@ import {
   ellisHosts,
   europeanProgrammeCountries,
   parentCountry,
+  phdFellowshipProviders,
   universityOnlyProviders
 } from "../data/connections";
 import { providers } from "../data/providers";
@@ -24,7 +25,7 @@ export function fundersOfCountry(country: string): ProviderEntry[] {
       .filter(([, uni]) => universities.find((u) => u.name === uni)?.country === country)
       .map(([name]) => name)
   );
-  return dedupe([...national, ...european, ...universityBased]);
+  return dedupe([...national, ...european, ...universityBased, ...named(phdFellowshipProviders)]);
 }
 
 /** Organisations connected to one university: national ones, university-only ones and ELLIS. */

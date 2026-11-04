@@ -25,7 +25,7 @@ export const moreProfessors: ProfessorEntry[] = [
   ...at("RWTH Aachen", "Germany", [["Bastian Leibe", V]]),
   ...at("University of Freiburg", "Germany", [["Frank Hutter", M], ["Thomas Brox", V]]),
   ...at("University of Tübingen", "Germany", [["Matthias Hein", M], ["Philipp Hennig", M], ["Georg Martius", R]]),
-  ...at("Saarland University / CISPA", "Germany", [["Bernt Schiele", V], ["Dietrich Klakow", N], ["Thorsten Holz", "Security / Systems"]]),
+  ...at("Saarland University / CISPA", "Germany", [["Bernt Schiele", V], ["Dietrich Klakow", N], ]),
   ...at("Heidelberg University", "Germany", [["Carsten Rother", V], ["Ullrich Köthe", M]]),
   ...at("TU Munich", "Germany", [["Nassir Navab", "Computer Vision (medical imaging)"]]),
   ...at("University of Stuttgart", "Germany", [["Steffen Staab", KR]]),
@@ -69,7 +69,7 @@ export const moreProfessors: ProfessorEntry[] = [
     ["Jes Frellsen", M], ["Morten Mørup", M], ["Lars Kai Hansen", M], ["Thomas Bolander", KR]
   ]),
   ...at("Aarhus University", "Denmark", [["Ira Assent", M]]),
-  ...at("Aalborg University", "Denmark", [["Christian S. Jensen", "Data management / ML"], ["Kim Guldstrand Larsen", "Verification / AI"]]),
+  ...at("Aalborg University", "Denmark", [["Christian S. Jensen", "Data management / ML"], ]),
   ...at("IT University of Copenhagen", "Denmark", [["Sebastian Risi", "Machine Learning / Evolutionary AI"]]),
 
   // Norway
@@ -79,7 +79,7 @@ export const moreProfessors: ProfessorEntry[] = [
   ]),
   ...at("NTNU", "Norway", [["Kerstin Bach", M], ["Heri Ramampiaro", IR], ["Frank Lindseth", V], ["Anders Kofod-Petersen", KR]]),
   ...at("UiT The Arctic University of Norway", "Norway", [["Robert Jenssen", M], ["Michael Kampffmeyer", D]]),
-  ...at("University of Bergen", "Norway", [["Pinar Heggernes", "Algorithms / ML Theory"]]),
+  ...at("University of Bergen", "Norway", []),
   ...at("Norwegian University of Life Sciences", "Norway", [["Kristian Hovde Liland", M]]),
 
   // Finland
@@ -104,11 +104,10 @@ export const moreProfessors: ProfessorEntry[] = [
 
   // Austria
   ...at("Johannes Kepler University Linz", "Austria", [["Sepp Hochreiter", D], ["Günter Klambauer", M], ["Johannes Brandstetter", D]]),
-  ...at("TU Wien", "Austria", [["Thomas Eiter", KR], ["Allan Hanbury", IR], ["Ezio Bartocci", "Verification / ML"]]),
+  ...at("TU Wien", "Austria", [["Thomas Eiter", KR], ["Allan Hanbury", IR], ]),
   ...at("Graz University of Technology", "Austria", [["Horst Bischof", V], ["Thomas Pock", V]]),
   ...at("Institute of Science and Technology Austria", "Austria", [
-    ["Christoph Lampert", M], ["Dan Alistarh", "ML Theory / Systems"], ["Krishnendu Chatterjee", "Verification / AI"], ["Thomas Henzinger", "Verification / AI"]
-  ]),
+    ["Christoph Lampert", M], ["Dan Alistarh", "ML Theory / Systems"], ]),
   ...at("University of Vienna", "Austria", [["Benjamin Roth", N], ["Sebastian Tschiatschek", M]]),
   ...at("University of Innsbruck", "Austria", [["Justus Piater", R]]),
 
@@ -323,7 +322,7 @@ export const moreProfessors: ProfessorEntry[] = [
   ...at("Charles University", "Czech Republic", [["Ondřej Bojar", N], ["Jan Hajič", N], ["Pavel Pecina", N], ["Ondřej Dušek", N]]),
   ...at("Czech Technical University in Prague", "Czech Republic", [["Jiří Matas", V], ["Josef Šivic", V], ["Tomáš Pajdla", V], ["Michal Pěchouček", KR], ["Karel Zimmermann", R]]),
   ...at("Brno University of Technology", "Czech Republic", [["Jan Černocký", "Speech Processing"], ["Lukáš Burget", "Speech Processing"], ["Michal Hradiš", V]]),
-  ...at("Masaryk University", "Czech Republic", [["Petr Sojka", IR], ["Tomáš Brázdil", "Verification / Learning"]]),
+  ...at("Masaryk University", "Czech Republic", [["Petr Sojka", IR], ]),
 
   // Poland
   ...at("University of Warsaw", "Poland", [["Piotr Miłoś", L], ["Piotr Sankowski", T], ["Marek Cygan", M], ["Henryk Michalewski", L]]),
@@ -351,8 +350,8 @@ export const moreProfessors: ProfessorEntry[] = [
   // Slovenia
   ...at("Jožef Stefan Institute", "Slovenia", [["Dunja Mladenić", N], ["Sašo Džeroski", M], ["Nada Lavrač", M], ["Marko Grobelnik", "AI / text mining"], ["Matjaž Gams", "Artificial Intelligence"]]),
   ...at("University of Ljubljana", "Slovenia", [["Marko Robnik-Šikonja", N], ["Matej Kristan", V], ["Danijel Skočaj", V], ["Blaž Zupan", "Data mining / bioinformatics"], ["Janez Demšar", M], ["Ivan Bratko", "Artificial Intelligence"]]),
-  ...at("University of Maribor", "Slovenia", [["Janez Brest", "Evolutionary optimisation"], ["Iztok Fister", "Nature-inspired algorithms"]]),
-  ...at("University of Primorska", "Slovenia", [["Andrej Brodnik", "Algorithms / data structures"]]),
+  ...at("University of Maribor", "Slovenia", []),
+  ...at("University of Primorska", "Slovenia", []),
 
   // Iceland
   ...at("Reykjavik University", "Iceland", [["Yngvi Björnsson", L], ["Kristinn Thórisson", "Artificial General Intelligence"], ["Hannes Högni Vilhjálmsson", "Human-computer interaction / AI"]]),

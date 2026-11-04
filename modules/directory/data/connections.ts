@@ -27,6 +27,9 @@ export const europeanProgrammeCountries = [
 /** Nations inside a larger country whose funders also apply: UK-wide programmes work in Scotland. */
 export const parentCountry: Record<string, string> = { Scotland: "United Kingdom" };
 
+/** Industry fellowships a PhD student can win from inside a PhD, through a nominating university. */
+export const phdFellowshipProviders = ["Google PhD Fellowship", "NVIDIA Graduate Fellowship Program", "Apple Scholars in AI/ML PhD Fellowship"];
+
 /** Universities that host an ELLIS unit. */
 export const ellisHosts = [
   "University of Tübingen", "ETH Zurich", "EPFL", "University of Amsterdam", "University of Oxford",

@@ -10,14 +10,14 @@ export const professorOutreachWorkflow: OutreachStep[] = [
   {
     stepNumber: 2,
     title: "Find Active Faculty via Recent Papers",
-    shortDesc: "Identify actively publishing professors on Google Scholar, PubMed, or Scopus.",
+    shortDesc: "Identify actively publishing professors on Google Scholar, DBLP, arXiv or OpenReview.",
     detailedProtocol: "Search for professors who published peer-reviewed papers in your research niche within the last 18–24 months. Focus on tenure-track Assistant Professors (who actively recruit and have new funding) and active Associate/Full Professors."
   },
   {
     stepNumber: 3,
     title: "Review Their Recent Publications & Grants",
     shortDesc: "Analyze 2 recent papers from the target professor's laboratory.",
-    detailedProtocol: "Read the abstract, methodology, and conclusion of their two latest papers. Check the 'Acknowledgments' section to identify their active research grants (e.g. NSF, NIH, ERC, DFG, NSERC), and check their lab site for open positions."
+    detailedProtocol: "Read the abstract, methodology, and conclusion of their two latest papers. Check the 'Acknowledgments' section to identify their active research grants (e.g. NSF, ERC, DFG, NSERC), and check their lab site for open positions."
   },
   {
     stepNumber: 4,
@@ -199,7 +199,7 @@ export const supervisorNecessityByCountry: SupervisorNecessityRule[] = [
 
 export const researchFitChecklist = [
   { id: "fit-1", label: "Confirmed the professor has published in your target niche within the last 18–24 months", tip: "Check their Google Scholar profile for 2024–2026 papers." },
-  { id: "fit-2", label: "Identified their active research funding source (e.g., NSF, ERC, NIH, industry grant)", tip: "Look in the Acknowledgments section of their latest publications." },
+  { id: "fit-2", label: "Identified their active research funding source (e.g., NSF, ERC, DFG, an industry grant)", tip: "Look in the Acknowledgments section of their latest publications." },
   { id: "fit-3", label: "Read at least 2 full papers to understand their core methodological frameworks", tip: "Be ready to cite specific algorithms, equations, or experimental setups." },
   { id: "fit-4", label: "Verified whether their department rules mandate prior supervisor outreach", tip: "Avoid emailing faculty when the website says 'Admissions are centralized'." },
   { id: "fit-5", label: "Drafted a personalized email under 220 words with zero generic flattery", tip: "Customize paragraph 2 completely for each individual academic." }

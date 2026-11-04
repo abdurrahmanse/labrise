@@ -55,11 +55,11 @@ export const searchWorkflowSteps: SearchWorkflowStep[] = [
     category: "Discovery",
     summary: "Find professors who hold multi-year research grants capable of hiring graduate research assistants.",
     actionableInstructions: [
-      "Check grant databases: NSF Awards Search (USA), NIH RePORTER (USA), ERC Grants (Europe), and DFG (Germany).",
-      "Search for grants awarded in your field in the last 12–24 months; newly funded labs frequently recruit researchers.",
+      "Check grant databases: NSF Awards Search (USA), ERC Grants (Europe), DFG GEPRIS (Germany), and NSERC (Canada).",
+      "Search for AI/ML grants awarded in the last 12–24 months; newly funded labs frequently recruit researchers.",
       "Review author affiliations in recent papers published in top open-access journals in your area."
     ],
-    keyToolsOrKeywords: ["NSF Awards", "ERC Grants", "NIH RePORTER", "DFG GEPRIS"]
+    keyToolsOrKeywords: ["NSF Awards", "ERC Grants", "NSERC", "DFG GEPRIS"]
   },
   {
     number: 6,

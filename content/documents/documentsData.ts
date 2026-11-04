@@ -334,15 +334,15 @@ export const documentsData: DocumentGuideline[] = [
     badge: "Selective Requirement",
     degreeLevel: "Universal",
     what: "Graduate Record Examination (GRE General) measuring Quantitative Reasoning, Verbal Reasoning, and Analytical Writing.",
-    why: "While many programs are now 'GRE Optional', a strong Quantitative score (165–170) can help strengthen applications to competitive STEM and economics programs.",
+    why: "While many programs are now 'GRE Optional', a strong Quantitative score (165–170) can help strengthen applications to competitive computer science and engineering programs.",
     structure: [
       {
         section: "Quantitative Reasoning (130–170)",
-        guidance: "Target: 164–170 for STEM, engineering, computer science, and economics."
+        guidance: "Target: 164–170 for computer science, machine learning and engineering programs."
       },
       {
         section: "Verbal Reasoning (130–170)",
-        guidance: "Target: 155–162 for humanities and social sciences; 150+ for engineering."
+        guidance: "Verbal matters less for AI/ML and engineering programs; 150+ is usually enough."
       },
       {
         section: "Analytical Writing (0.0–6.0)",
