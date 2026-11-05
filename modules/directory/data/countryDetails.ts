@@ -428,5 +428,83 @@ export const countryDetails: Record<string, CountryDetail> = {
     find: [{ label: "Study Malaysia", href: "https://www.studymalaysia.com" }, { label: "MOHE", href: "https://www.mohe.gov.my" }],
     scholarships: ["Malaysia International Scholarship (MIS)", "MTCP Scholarships"],
     tips: ["Contact a supervisor first.", "Check which scholarships apply to your nationality."]
+  },
+  israel: {
+    overview: "Technion, the Weizmann Institute, Tel Aviv University and the Hebrew University are research-intensive and strong in engineering and computing. Research students are usually funded through school scholarships and the supervisor's grants.",
+    phd: "About 3–5 years. Research tracks end with a thesis.",
+    pay: "The Technion Graduate School offers scholarships to research Master's and PhD students on merit. The Weizmann Institute's Feinberg Graduate School waives tuition and pays stipends to full-time students without outside support. Amounts change, so check each school.",
+    language: "Graduate research programmes are often taught in English. Check each department.",
+    intake: "Annual cycles, many in winter or spring. Check each school.",
+    visa: "A student visa is arranged with the university once you are admitted.",
+    find: [{ label: "Technion Graduate School", href: "https://graduate.technion.ac.il/en/" }, { label: "Weizmann Feinberg Graduate School", href: "https://www.weizmann.ac.il/feinberg/" }],
+    scholarships: ["Technion Graduate School Scholarships", "Weizmann Feinberg Graduate School Stipends"],
+    tips: ["Contact a supervisor before you apply and ask about funding.", "Read the school's current scholarship rules, since amounts and eligibility change."]
+  },
+  egypt: {
+    overview: "Cairo University, the American University in Cairo, Alexandria University and the Egypt-Japan University of Science and Technology (E-JUST) offer graduate research programmes in engineering and sciences.",
+    phd: "About 3–5 years.",
+    pay: "E-JUST runs fully funded postgraduate scholarships, including a programme for African students with tuition, travel, accommodation, insurance and a stipend. Funding at other universities varies by programme.",
+    language: "E-JUST teaches in English. Other universities mix English and Arabic.",
+    intake: "E-JUST calls often close in winter. Check each university.",
+    visa: "A student visa is arranged through the university and the Egyptian embassy.",
+    find: [{ label: "E-JUST international scholarships", href: "https://ejust.edu.eg/international-scholarships" }],
+    scholarships: ["E-JUST TICAD8 Postgraduate Scholarship"],
+    tips: ["Read the nationality rules of each scholarship carefully.", "Ask a professor whether funding is attached to the project."]
+  },
+  jordan: {
+    overview: "The University of Jordan, Jordan University of Science and Technology, Princess Sumaya University for Technology and the German Jordanian University offer graduate engineering programmes.",
+    phd: "About 3–4 years.",
+    pay: "Funding for international students varies by university, usually through research or teaching assistantships. Confirm the terms in writing before you accept.",
+    language: "Engineering programmes are often taught in English. Check each department.",
+    intake: "Usually autumn and spring intakes.",
+    visa: "A student residency permit is arranged with the university.",
+    find: [{ label: "Jordan University of Science and Technology", href: "https://www.just.edu.jo/" }],
+    scholarships: [],
+    tips: ["Ask about funding directly with the department.", "Check whether the degree is recognised in the country where you plan to work."]
+  },
+  lebanon: {
+    overview: "The American University of Beirut (AUB) and the Lebanese American University have research-active engineering faculties.",
+    phd: "About 3–5 years.",
+    pay: "AUB's engineering faculty funds some PhD students through the dean's office programmes. Terms change, so confirm the current rules with the faculty.",
+    language: "English.",
+    intake: "Usually autumn and spring.",
+    visa: "A student residency is arranged with the university.",
+    find: [{ label: "AUB graduate admissions", href: "https://www.aub.edu.lb/" }],
+    scholarships: ["AUB Engineering PhD Funding"],
+    tips: ["Ask the faculty which funding applies to international PhD students.", "Check current travel advice for Lebanon before you plan."]
+  },
+  kuwait: {
+    overview: "Kuwait University and the Gulf University for Science and Technology offer graduate programmes in engineering and sciences.",
+    phd: "About 3–4 years.",
+    pay: "Funding for international students is limited and many scholarships are for Kuwaiti nationals. Check each university.",
+    language: "Engineering programmes are mostly taught in English.",
+    intake: "Usually autumn and spring.",
+    visa: "A student residency is arranged with the university.",
+    find: [{ label: "Kuwait University", href: "https://www.ku.edu.kw/" }],
+    scholarships: [],
+    tips: ["Confirm funding before you apply.", "Ask whether the programme accepts international research students."]
+  },
+  oman: {
+    overview: "Sultan Qaboos University is the main research university, with engineering and science graduate programmes.",
+    phd: "About 3–4 years.",
+    pay: "Government scholarships mainly serve Omani and Gulf nationals and students from partner countries. Confirm what applies to you.",
+    language: "Engineering programmes are mostly taught in English.",
+    intake: "Usually autumn and spring.",
+    visa: "A student residency is arranged with the university.",
+    find: [{ label: "Sultan Qaboos University", href: "https://www.squ.edu.om/" }],
+    scholarships: [],
+    tips: ["Check eligibility by nationality.", "Ask the department whether research funding exists for international students."]
+  },
+  bahrain: {
+    overview: "The University of Bahrain and the Arabian Gulf University offer graduate programmes, mostly in the Gulf region.",
+    phd: "About 3–4 years.",
+    pay: "Funding for international research students varies by programme. Confirm the terms with the university.",
+    language: "English in most engineering programmes.",
+    intake: "Usually autumn and spring.",
+    visa: "A student residency is arranged with the university.",
+    find: [{ label: "University of Bahrain", href: "https://www.uob.edu.bh/" }],
+    scholarships: [],
+    tips: ["Ask about research assistantships directly.", "Compare with funded routes in neighbouring countries."]
   }
+
 };

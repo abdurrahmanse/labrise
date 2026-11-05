@@ -34,7 +34,7 @@ export function FaqCategoryPills({
           badgeVariant="indigo"
           badgeIcon={<Compass className="w-3.5 h-3.5 text-indigo-400" />}
           title={sectionMeta?.title || "Explore Admissions Intelligence by Category"}
-          subtitle={sectionMeta?.subtitle || "Click any category below to immediately filter verified answers from AI admissions committees and faculty."}
+          subtitle={sectionMeta?.subtitle || "Click any category below to immediately filter verified answers about research admissions and funding."}
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

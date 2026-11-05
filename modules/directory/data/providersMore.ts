@@ -570,11 +570,40 @@ export const moreProviders: ProviderEntry[] = [
     "Apply through the Malaysian embassy or the national focal point in your country.",
     ["Citizen of an eligible country", "Admission to a Malaysian university", "Nomination by the national focal point"],
     ["Application form", "Transcripts", "Admission proof"],
-    "Selection by the Malaysian government with your country's focal point.", "https://www.kln.gov.my")
+    "Selection by the Malaysian government with your country's focal point.", "https://www.kln.gov.my"),
+  // Middle East
+  entry("Israel", "Middle East", "University programme", "Weizmann Institute of Science (Feinberg Graduate School)",
+    "Graduate students in science and engineering-related research at the Weizmann Institute", ["Weizmann Feinberg Graduate School Stipends"],
+    "Apply to the Feinberg Graduate School through its online admissions portal during the yearly call.",
+    ["Strong undergraduate record in a relevant field", "English test score as set by the school", "Interest in a research group at the institute"],
+    ["CV", "Transcripts", "Statement of purpose", "Recommendation letters"],
+    "Committee review, then interviews. Full-time students without outside support are eligible for a stipend.", "https://www.weizmann.ac.il/feinberg/"),
+  entry("Israel", "Middle East", "University programme", "Technion Graduate School",
+    "Research Master's and PhD students at the Technion", ["Technion Graduate School Scholarships"],
+    "Apply to the department at the Technion; scholarships are considered through the Graduate School.",
+    ["High academic achievement", "Research track (thesis) rather than a non-thesis track", "International students may also be considered for Lady Davis fellowships"],
+    ["CV", "Transcripts", "Recommendation letters", "Research interests statement"],
+    "The department admits you, and the Graduate School reviews scholarships on merit and budget.", "https://graduate.technion.ac.il/en/"),
+  entry("Egypt", "Middle East", "University programme", "Egypt-Japan University of Science and Technology (E-JUST)",
+    "Postgraduate students at E-JUST, including a fully funded programme for African students", ["E-JUST TICAD8 Postgraduate Scholarship"],
+    "Apply through E-JUST's online application system during the call. The call asks for a research proposal.",
+    ["Non-Egyptian African applicant for the TICAD8 programme", "Endorsement of the application by your home institution", "Strong academic record in a relevant field"],
+    ["Application form", "Research proposal", "Transcripts", "Endorsement letter from your institution"],
+    "Primary screening, then an online interview. The scholarship covers tuition, flights, accommodation, insurance and a stipend.", "https://ejust.edu.eg/international-scholarships"),
+  entry("Lebanon", "Middle East", "University programme", "American University of Beirut (Engineering PhD funding)",
+    "PhD students in the engineering faculty at AUB", ["AUB Engineering PhD Funding"],
+    "Apply to the PhD programme at AUB, then ask the faculty which dean's office funding applies to you.",
+    ["Master's degree or equivalent in a related field", "Three recommendation letters", "Funding terms change; confirm the current ones with the faculty"],
+    ["Online application", "Official transcripts", "Three recommendation letters"],
+    "Admission by the department, then funding decisions by the faculty.", "https://www.aub.edu.lb/")
 ];
 
 
 export const moreUniversityOnlyProviders: Record<string, string> = {
+  "Weizmann Institute of Science (Feinberg Graduate School)": "Weizmann Institute of Science",
+  "Technion Graduate School": "Technion – Israel Institute of Technology",
+  "Egypt-Japan University of Science and Technology (E-JUST)": "Egypt-Japan University of Science and Technology",
+  "American University of Beirut (Engineering PhD funding)": "American University of Beirut",
   "ETH AI Center Doctoral Fellowships": "ETH Zurich",
   "ETH Zurich Excellence Scholarship and Opportunity Programme (ESOP)": "ETH Zurich",
   "NUS Research Scholarship": "National University of Singapore",

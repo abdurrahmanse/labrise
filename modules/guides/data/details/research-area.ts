@@ -10,7 +10,7 @@ export const researchAreaGuide: GuideDetail = {
       heading: "Find your direction",
       items: [
         { title: "List what you enjoyed", detail: "Write down the 3–5 courses, projects or thesis parts you enjoyed most, and why. Look for the common thread: data, theory, systems, language, images, robots." },
-        { title: "Read widely, then narrow", detail: "Skim 15–20 recent papers on arXiv or from top venues (NeurIPS, ICML, ICLR, CVPR, ACL). Mark the ones you could explain to a friend. Those point to your area." },
+        { title: "Read widely, then narrow", detail: "Skim 15–20 recent papers from the leading journals and conferences of your field. Mark the ones you could explain to a friend. Those point to your area." },
         { title: "Move from area to sub-topic", detail: "'Machine learning' is too broad. 'Efficient fine-tuning of language models' or 'uncertainty estimation for medical images' is a direction a professor can respond to." },
         { title: "Check the supply", detail: "Search 10 professors who work on it. If you find fewer than 10, widen slightly. If hundreds, narrow it." }
       ]
@@ -24,7 +24,7 @@ export const researchAreaGuide: GuideDetail = {
       ]
     }
   ],
-  example: { label: "Good vs weak", text: "Weak: 'I am interested in AI.'\nBetter: 'I work on making vision models robust to distribution shift in medical imaging, and I want to study test-time adaptation.'" },
+  example: { label: "Good vs weak", text: "Weak: 'I am interested in energy.'\nBetter: 'I study degradation of lithium-ion cells under fast charging, and I want to separate the contributions of lithium plating and electrolyte decomposition.'" },
   mistakes: ["Choosing a trending topic with no background in it.", "Listing five unrelated interests.", "Copying a professor's abstract as your own interest.", "Changing area completely after emailing."],
   checklist: ["One area and one sub-topic written down", "Two-sentence summary ready", "10+ professors found", "3 key papers read in detail"],
   related: ["cv", "sop", "cold-email"]

@@ -27,7 +27,7 @@ export const contactTopics: ContactTopic[] = [
 
 export const contactPageText = {
   title: "Contact and corrections",
-  description: "Write to the AIGradPath team in Dhaka, Bangladesh. Report a mistake, suggest a university, professor or funder, or ask a question.",
+  description: "Write to the ResearchBound team in Dhaka, Bangladesh. Report a mistake, suggest a university, professor or funder, or ask a question.",
   eyebrow: "Contact",
   heading: "Let's keep the directory accurate",
   lead: "Found a mistake, know a funder we missed, or have a question? Write to us. Every correction is checked against the official source before it goes live.",

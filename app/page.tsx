@@ -4,7 +4,7 @@ import { JourneySection } from "@/modules/home/components/JourneySection";
 import { buildMetadata } from "@/modules/seo";
 
 export const metadata = buildMetadata({
-  title: "Fully Funded Computer Science Master's & PhD Roadmap",
+  title: "Fully Funded Research Master's & PhD Roadmap for Engineers",
   description:
     "Step-by-step guide to a fully funded Master's or PhD: roadmap, guides, countries, universities and professors.",
   path: "/"

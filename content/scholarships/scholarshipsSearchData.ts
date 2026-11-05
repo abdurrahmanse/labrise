@@ -56,7 +56,7 @@ export const searchWorkflowSteps: SearchWorkflowStep[] = [
     summary: "Find professors who hold multi-year research grants capable of hiring graduate research assistants.",
     actionableInstructions: [
       "Check grant databases: NSF Awards Search (USA), ERC Grants (Europe), DFG GEPRIS (Germany), and NSERC (Canada).",
-      "Search for AI/ML grants awarded in the last 12–24 months; newly funded labs frequently recruit researchers.",
+      "Search for grants in your field awarded in the last 12–24 months; newly funded labs frequently recruit researchers.",
       "Review author affiliations in recent papers published in top open-access journals in your area."
     ],
     keyToolsOrKeywords: ["NSF Awards", "ERC Grants", "NSERC", "DFG GEPRIS"]
@@ -69,7 +69,7 @@ export const searchWorkflowSteps: SearchWorkflowStep[] = [
     actionableInstructions: [
       "Use site: filters to restrict results to university domains: site:.edu, site:.ac.uk, site:.edu.au.",
       "Enclose exact phrases in quotes: \"fully funded\" \"master's\" OR \"full tuition waiver\" \"monthly stipend\".",
-      "Combine subject keywords with intake year: site:.ac.uk \"PhD studentship\" \"Computer Science\" 2026."
+      "Combine subject keywords with intake year: site:.ac.uk \"PhD studentship\" \"Engineering\" 2026."
     ],
     keyToolsOrKeywords: ["site:.edu", "filetype:pdf", "\"fully funded\"", "\"tuition waiver\""]
   },
@@ -141,7 +141,7 @@ export const searchQueryFormulas: SearchQueryFormula[] = [
     title: "North American Fully Funded PhD Search",
     purpose: "Find US and Canadian university department pages offering full tuition remission and guaranteed graduate assistantships.",
     query: "site:.edu \"fully funded\" OR \"full tuition waiver\" \"monthly stipend\" PhD [Your Field]",
-    exampleFilled: "site:.edu \"fully funded\" OR \"full tuition waiver\" \"monthly stipend\" PhD \"Computer Science\"",
+    exampleFilled: "site:.edu \"fully funded\" OR \"full tuition waiver\" \"monthly stipend\" PhD \"Engineering\"",
     targetEngines: ["Google", "Bing", "DuckDuckGo"]
   },
   {

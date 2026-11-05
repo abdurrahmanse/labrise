@@ -14,5 +14,5 @@ In my [thesis / project] I [one sentence with a measurable result]. I think this
 Do you expect funded PhD openings for [year]? If so, may I send more details or arrange a 15-minute call? My CV is attached.
 
 Thank you for your time.
-[Your name] | [GitHub / Scholar link]`;
+[Your name] | [Portfolio / Google Scholar link]`;
 }

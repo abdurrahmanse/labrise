@@ -75,7 +75,7 @@ export const roadmapUiData: RoadmapUiData = {
     badge: "100% Fully Funded Guide",
     standardBadge: "Free & Open Access",
     title: "The Step-by-Step",
-    titleGradient: "CS Funding Roadmap",
+    titleGradient: "Research Funding Roadmap",
     description:
       "A clear 13-phase journey from understanding your academic profile to securing full tuition waivers, living stipends, and visa approval. Click any phase to see exact steps, official portals, and interactive checklists.",
     metrics: [

@@ -2,28 +2,28 @@ import type { GuideDetail } from "../../types";
 
 export const githubPortfolioGuide: GuideDetail = {
   id: "github-portfolio",
-  summary: "A tidy GitHub profile and a one-page personal site let professors verify your skills in minutes.",
-  why: "Professors rarely have time to ask for proof. A link they can open shows your code quality and research interests.",
+  summary: "A short project portfolio and a one-page personal site let professors check your work in minutes.",
+  why: "Professors rarely have time to ask for proof. A link they can open shows the quality of your work and your research interests.",
   timeline: "Spend a weekend cleaning up, then update after each project.",
   sections: [
     {
-      heading: "GitHub",
+      heading: "Project portfolio",
       items: [
-        { title: "Pin 3–4 best repositories", detail: "Choose research-style projects: a reproduction, a thesis project, a tool you built." },
-        { title: "Write a real README", detail: "Problem, method, results table, how to run, and a short conclusion." },
-        { title: "Make it reproducible", detail: "Include requirements, seeds and a script that recreates the main result." },
-        { title: "Clean the profile", detail: "Real name, photo, short bio with your research area." }
+        { title: "Pick 3–4 best projects", detail: "Choose research-style projects: a thesis, a reproduction of a published result, a prototype or a design you tested." },
+        { title: "Write a short project page", detail: "Problem, method, key figure or results table, your own contribution and what you would do next." },
+        { title: "Make it repeatable", detail: "Share the data, code or design files, the settings you used and a note on how to recreate the main result." },
+        { title: "Use a permanent home", detail: "Put code on GitHub and data or design files on a repository such as Zenodo that gives a permanent link." }
       ]
     },
     {
       heading: "Personal page",
       items: [
-        { title: "One page is enough", detail: "Short bio, research interests, projects with links, CV PDF and contact email." },
-        { title: "Link everywhere", detail: "Add it to your CV, emails and SOP." }
+        { title: "One page is enough", detail: "Short bio, research interests, projects with links, CV PDF, ORCID and contact email." },
+        { title: "Link everywhere", detail: "Add it to your CV, emails and statement of purpose." }
       ]
     }
   ],
-  mistakes: ["Empty or forked-only repositories.", "No README or results.", "Hard-coded local paths."],
-  checklist: ["3 pinned projects", "READMEs with results", "Personal page live", "Links in CV"],
+  mistakes: ["Empty projects with no results.", "Broken or login-only links.", "Hard-coded local paths in shared code."],
+  checklist: ["3 documented projects", "Results on every page", "Personal page live", "Links in CV"],
   related: ["publications", "cv", "cold-email"]
 };

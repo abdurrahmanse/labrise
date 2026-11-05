@@ -8,24 +8,6 @@ export interface MathTopicDiagnostic {
   sampleProof: string;
 }
 
-export interface SystemsCodeTab {
-  id: string;
-  label: string;
-  fileName: string;
-  language: string;
-  description: string;
-  code: string;
-  highlights: string[];
-}
-
-export interface SystemsBenchmarkMetric {
-  id: string;
-  label: string;
-  value: string;
-  iconName: string;
-  variant: "cyan" | "emerald" | "purple" | "amber";
-}
-
 export interface DegreeRouteComparison {
   id: string;
   title: string;
@@ -48,19 +30,6 @@ export interface DegreeRouteComparison {
     title: string;
     desc: string;
   };
-}
-
-export interface GpuQuantPreset {
-  id: string;
-  name: string;
-  parameters: string;
-  fp16VramGB: number;
-  qloraVramGB: number;
-  quant8bitVramGB: number;
-  minRecommendedGpu: string;
-  freeTierCompatible: boolean;
-  batchSizeLimit: string;
-  notes: string;
 }
 
 export interface LiteratureMatrixDomain {

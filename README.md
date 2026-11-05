@@ -1,16 +1,16 @@
-# AIGradPath
+# ResearchBound
 
-A free roadmap to a fully funded Master's or PhD in **AI/ML research and engineering**, for Computer Science students.
+A free roadmap to a fully funded **research** Master's or PhD abroad, for engineering students in any department.
 
 ---
 
 ## About
 
-AIGradPath shows Computer Science students how to win a funded research place abroad, step by step. It brings the plan, the guides and a directory of AI/ML professors, universities and funders into one simple site. It covers AI/ML research and engineering only, not other fields.
+ResearchBound shows engineering students how to win a funded research place abroad, step by step. It brings the plan, the guides and a directory of research professors, universities and funders into one simple site. Research is the focus: research Master's and PhD programmes, in any engineering department.
 
 ## Mission
 
-Make funded AI/ML research study abroad clear and fair for every Computer Science student, whatever their background.
+Make funded research study abroad clear and fair for every engineering student, whatever their background.
 
 ## Vision
 
@@ -26,21 +26,22 @@ A world where a good student never misses a funded research place because they d
 | Profile checklist | `/profile` |
 | How to apply | `/apply` |
 | 27 guides (CV, SOP, IELTS, visa and more) | `/guides` |
-| Countries, universities, AI/ML professors, funders, scholarships | `/directory` |
+| Countries, universities, research professors, funders, scholarships | `/directory` |
 | Common problems and fixes | `/problems` |
 | Contact and corrections | `/contact` |
 
-**In numbers:** 38 countries, about 345 universities, about 745 professors, about 110 funders, 44 scholarships.
+**In numbers:** 45 countries, about 400 universities, about 1,170 professors, about 110 funders, 53 scholarships.
 
 Every country links to its universities, professors and funders. Every entry has its own page.
 
 ## Who it is for
 
-Computer Science students who want a funded Master's or PhD in AI/ML research or engineering abroad and need a clear path.
+Engineering students, in any department, who want a funded research Master's or PhD abroad and need a clear path.
 
 ## Our promise
 
-- **Real data only.** Entries come from official pages, and the links and professor affiliations are re-checked with `npm run verify:links` and `npm run verify:professors`.
+- **Real data only.** Entries come from official pages. Links are re-checked with `npm run verify:links`, and professors are checked against OpenAlex with `npm run verify:professors`.
+- **Research only.** Funders limited to other fields (humanities, health, peace studies, regional studies) are left out. Entries that need a human look are marked on their page.
 - **No made-up emails.** A professor's email is shown only if an official page lists it.
 - **Always check the source.** Each page shows its review date and a link to the official site.
 - **Free and private.** No account. Your notes stay in your browser.
@@ -52,6 +53,17 @@ Found a mistake or want to suggest an entry? Use the contact page or write to ab
 Based in Dhaka, Bangladesh.
 
 ---
+
+## Keeping the data honest
+
+| Command | What it does |
+| :--- | :--- |
+| `npm run check:data` | Finds duplicates, bad links, unlinked professors and country mismatches |
+| `npm run verify:links` | Visits every official link in the directory |
+| `npm run verify:professors` | Compares each professor with OpenAlex (name, institution, country) |
+| `npm run discover:professors -- --missing 2` | Finds engineering researchers for universities that have few professors |
+
+OpenAlex allows about 1,000 calls a day without a key, so the last two work in batches.
 
 ## Run it
 

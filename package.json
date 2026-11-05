@@ -14,7 +14,8 @@
     "check:unused": "tsx scripts/check-unused.mts",
     "check:types": "tsx scripts/check-types.mts",
     "verify:links": "tsx scripts/verify-links.mts",
-    "verify:professors": "tsx scripts/verify-professors.mts"
+    "verify:professors": "tsx scripts/verify-professors.mts",
+    "discover:professors": "tsx scripts/discover-professors.mts"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.5.0",

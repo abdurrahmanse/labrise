@@ -1,60 +1,62 @@
 import type { RoadmapStep } from "@/modules/roadmap";
 
+// Phase 6: visa and arrival. Written for engineering research applicants in any department.
 export const phase6Steps: RoadmapStep[] = [
   {
     id: "step-6-1",
     phaseId: "phase-6",
     stepNumber: "6.1",
     title: "Securing Official Immigration Sponsorship Documents",
-    shortTitle: "Immigration Sponsorship",
-    subtitle: "Obtain Form I-20, CAS, or European hosting agreements backed by your fully funded scholarship letter",
+    shortTitle: "Visa Documents",
+    subtitle: "Collect the admission, funding and financial proof your visa needs",
     duration: "4 Weeks",
     priority: "Crucial",
-    keyObjective: "Receive official government immigration sponsorship paperwork from your university's International Student Office.",
-    description: "Once your funding contract is signed, the university will initiate your immigration documents. Because your tuition is waived and your stipend covers living costs, you generally do not need to show personal bank deposits.",
+    keyObjective: "Hold every document your visa application needs before you book the appointment.",
+    description:
+      "Each country issues its own acceptance document and asks for proof of funds. In the United States this is the I-20 and the SEVIS fee, in the UK it is the CAS, and in many European countries it is an admission letter with proof of funding. Start as soon as you accept.",
     checklist: [
       {
         id: "c-6-1-1",
-        task: "Submit Financial Certification Package",
-        detail: "Upload your official fully funded scholarship/assistantship award letter to the university's international portal."
+        task: "Request the Admission Document",
+        detail: "Ask the international office for the document your visa needs and check that your name and dates are correct."
       },
       {
         id: "c-6-1-2",
-        task: "Receive US Form I-20 (F-1) or DS-2019 (J-1)",
-        detail: "Verify that personal details match your passport character-for-character and pay the SEVIS I-901 fee."
+        task: "Prepare Proof of Funds",
+        detail: "Collect the funding letter, scholarship letter and any bank statements that the embassy asks for."
       },
       {
         id: "c-6-1-3",
-        task: "Obtain UK CAS & ATAS Certificate",
-        detail: "If heading to the UK, apply for Academic Technology Approval Scheme (ATAS) clearance required for advanced AI research."
+        task: "Pay the Official Fees",
+        detail: "Use only the official government payment pages for visa and immigration fees."
       },
       {
         id: "c-6-1-4",
-        task: "Secure European Hosting Agreement (Convention d'Accueil)",
-        detail: "For salaried PhD positions in Europe, obtain your formal research hosting agreement to apply for a scientific employment residence permit."
+        task: "Check Special Clearance Rules",
+        detail: "Some research subjects need extra security clearance, such as ATAS for certain UK programmes."
       }
     ],
     proTips: [
-      "Keep digital and physical copies of your signed scholarship award letter in your carry-on luggage when traveling through international ports of entry.",
-      "Check passport validity—it must be valid for at least 6 months beyond your intended stay."
+      "Make a checklist from the embassy website and tick items as you collect them.",
+      "Keep digital and paper copies of everything."
     ],
     commonPitfalls: [
-      "Waiting too long to apply for UK ATAS clearance, which can take 6–8 weeks during summer peak periods.",
-      "Having discrepancies between the spelling of your name on your passport versus your university admission certificate."
+      "Using an unofficial website to pay a visa fee.",
+      "Booking an appointment before the documents are ready."
     ],
-    deliverable: "Official issued Form I-20 / CAS / European Hosting Agreement + SEVIS I-901 payment receipt.",
+    deliverable: "A complete visa folder with admission document, funding proof and fee receipts.",
     resources: [
-      {
-        title: "FMJfee.com - Official SEVIS I-901 Fee Payment",
-        url: "https://www.fmjfee.com/",
-        type: "official",
-        description: "Official US government payment portal for international student SEVIS fees."
-      },
       {
         title: "UK Academic Technology Approval Scheme (ATAS)",
         url: "https://www.gov.uk/guidance/academic-technology-approval-scheme",
         type: "official",
-        description: "Mandatory security clearance application for postgraduate research in sensitive computing fields."
+        description: "Official guidance on the security clearance that some UK research degrees require."
+      },
+      {
+        title: "US Department of State: Student Visas",
+        url: "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+        type: "official",
+        description: "Official steps and documents for US student visas."
       }
     ]
   },
@@ -62,50 +64,51 @@ export const phase6Steps: RoadmapStep[] = [
     id: "step-6-2",
     phaseId: "phase-6",
     stepNumber: "6.2",
-    title: "Clearing the Technology Alert List (TAL) via Open-Science Documentation",
-    shortTitle: "TAL Visa Clearance",
-    subtitle: "Navigate export control scrutiny and prevent administrative processing delays at consular visa interviews",
+    title: "Clearing Security Review for Sensitive Research Fields",
+    shortTitle: "Security Clearance",
+    subtitle: "Explain your research clearly if your field is on a security watch list",
     duration: "4 Weeks",
     priority: "Crucial",
-    keyObjective: "Prepare a bulletproof consular visa interview package that demonstrates your AI research is fundamental, open-source, and unclassified.",
-    description: "Artificial intelligence, machine learning, and advanced microelectronics are scrutinized under US and global export control regimes (Technology Alert List). International graduate students in AI risk multi-month administrative delays (INA section 221g) if their research is perceived as dual-use or proprietary.",
+    keyObjective: "Avoid avoidable delays by describing your research factually and with documents.",
+    description:
+      "Some engineering fields, such as advanced materials, aerospace, nuclear, certain electronics and communications, can lead to extra security checks, for example administrative processing in the United States or ATAS in the UK. A short, factual description of your research, your supervisor's letter and your publications usually helps.",
     checklist: [
       {
         id: "c-6-2-1",
-        task: "Obtain Advisor Open-Science Research Statement",
-        detail: "Secure a signed letter from your future PI on university letterhead confirming that all work is fundamental, unclassified, and intended for public academic conference release."
+        task: "Check Whether Your Field Is Listed",
+        detail: "Read the official lists and ask the international office whether your subject may need extra review."
       },
       {
         id: "c-6-2-2",
-        task: "Formulate Layperson Research Explanation",
-        detail: "Practice explaining your research in plain English without using buzzwords like 'autonomous weapon systems' or 'surveillance tracking'."
+        task: "Prepare a Factual Summary",
+        detail: "Write a plain-language description of your planned research in a few sentences."
       },
       {
         id: "c-6-2-3",
-        task: "Prepare Clean Document Binder",
-        detail: "Include I-20/CAS, advisor's bio, funding letter, transcripts, CV, and copy of your published papers."
+        task: "Ask for a Supervisor Letter",
+        detail: "A short letter from the professor describing the project and its academic purpose can help."
       },
       {
         id: "c-6-2-4",
-        task: "Articulate Clear Non-Immigrant Intent",
-        detail: "Be prepared to discuss your long-term scientific career aspirations and professional trajectory."
+        task: "Allow Extra Time",
+        detail: "Apply as early as possible and plan for possible delays when you fix your travel dates."
       }
     ],
     proTips: [
-      "When asked 'What will you research?', say: 'I will be researching fundamental mathematical optimization algorithms for open-source machine learning systems.' This is technically accurate and avoids export control red flags.",
-      "Bring the printout of your advisor's academic webpage highlighting their open-access publications."
+      "Describe the research by its scientific purpose, in neutral words.",
+      "Carry your admission letter, funding letter and summary to the interview."
     ],
     commonPitfalls: [
-      "Using sensationalist media phrases like 'building superintelligent military drones' or 'hacking neural networks'.",
-      "Arriving at the consular window without an official signed research statement from your future department."
+      "Using dramatic or military-sounding words to describe ordinary research.",
+      "Booking flights before the clearance is complete."
     ],
-    deliverable: "Successful consular visa interview resulting in an approved student or researcher visa stamp in your passport.",
+    deliverable: "A one-paragraph research summary, a supervisor letter and a safe travel date.",
     resources: [
       {
-        title: "US Department of State - Student Visas",
+        title: "US Department of State: Student Visas",
         url: "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
         type: "official",
-        description: "Official guidelines, appointment booking, and documentation requirements for US visas."
+        description: "Official information on student visa steps and processing."
       }
     ]
   },
@@ -113,50 +116,51 @@ export const phase6Steps: RoadmapStep[] = [
     id: "step-6-3",
     phaseId: "phase-6",
     stepNumber: "6.3",
-    title: "Relocation, Multi-Currency Banking & Laboratory Onboarding",
-    shortTitle: "Lab & Compute Onboarding",
-    subtitle: "Set up international banking, secure graduate housing, and configure your laboratory workstation",
+    title: "Relocation, Banking & Laboratory Onboarding",
+    shortTitle: "Arrival & Onboarding",
+    subtitle: "Settle in, open a bank account and get access to your lab",
     duration: "4 Weeks",
     priority: "Crucial",
-    keyObjective: "Execute a smooth arrival and transition directly into active research productivity within your new laboratory.",
-    description: "The final step transforms you from an applicant into an active graduate researcher. Establish your local bank direct deposit for stipend payments, obtain university health clearance, and set up your compute credentials on the departmental Slurm cluster.",
+    keyObjective: "Be ready to start research in the first week: housing, money, access and a plan with your supervisor.",
+    description:
+      "Plan housing, a local bank account and health insurance before you land. In the first week, complete the university registration, receive lab safety training and access cards, and meet your supervisor to agree on goals for the first year.",
     checklist: [
       {
         id: "c-6-3-1",
-        task: "Set Up Multi-Currency Travel Banking",
-        detail: "Load an international card (Wise, Revolut) with initial buffer funds ($1,500–$2,500) to cover upfront security deposits before your first monthly stipend arrives."
+        task: "Arrange Housing and Insurance",
+        detail: "Book temporary housing first, then search for a longer place with help from the university housing office."
       },
       {
         id: "c-6-3-2",
-        task: "Secure Graduate Housing",
-        detail: "Reserve on-campus graduate housing or secure a vetted shared lease within biking distance or public transit of the computer science building."
+        task: "Open a Local Bank Account",
+        detail: "Bring your passport, admission letter and proof of address, and set up a way to receive your stipend or salary."
       },
       {
         id: "c-6-3-3",
-        task: "Complete Immunization & Health Clearances",
-        detail: "Upload translated vaccination histories and complete mandatory university screenings (Tuberculosis blood test, MMR)."
+        task: "Complete Registration and Safety Training",
+        detail: "Register at the university, finish the required lab safety courses and get your access cards and accounts."
       },
       {
         id: "c-6-3-4",
-        task: "Configure Departmental Slurm & Workstation Access",
-        detail: "Obtain institutional computing credentials, set up SSH keys for the lab's GPU cluster, and align with your PI on Year 1 conference deadlines."
+        task: "Agree on Year-One Goals",
+        detail: "Meet your supervisor to agree on the first project, the first courses and a plan for the first paper."
       }
     ],
     proTips: [
-      "Ask senior PhD students in your lab for advice on the best local banks that process international Social Security Numbers (SSN) and graduate payroll with minimal fees.",
-      "Aim to arrive 10 days before orientation to recover from jet lag, furnish your apartment, and explore the lab before classes begin."
+      "Join the department's student group and ask older students for practical tips.",
+      "Keep some savings in cash or a travel card until your first payment arrives."
     ],
     commonPitfalls: [
-      "Relying on cash instead of setting up a local bank account immediately—graduate stipends can only be paid via direct deposit.",
-      "Failing to register for classes early, which can temporarily delay health insurance coverage activation."
+      "Arriving without a place to stay for the first weeks.",
+      "Starting lab work before the safety training is complete."
     ],
-    deliverable: "Active local bank account with direct deposit linked, housing lease executed, and SSH access verified on lab GPU clusters.",
+    deliverable: "Housing, a bank account, registration complete and a written plan for your first year.",
     resources: [
       {
-        title: "Wise International Banking",
+        title: "Wise: International Banking",
         url: "https://wise.com/",
         type: "tool",
-        description: "Low-fee multi-currency accounts and foreign exchange for international relocations."
+        description: "A way to send and hold money in several currencies while you set up a local account."
       }
     ]
   }

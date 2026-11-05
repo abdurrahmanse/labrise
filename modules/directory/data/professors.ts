@@ -1,4 +1,5 @@
 import type { ProfessorEntry } from "../types";
+import { discoveredProfessors } from "./professorsDiscovered";
 import { moreProfessors } from "./professorsMore";
 
 const baseProfessors: ProfessorEntry[] = [
@@ -48,4 +49,4 @@ const baseProfessors: ProfessorEntry[] = [
   { name: "Richard Zemel", university: "Columbia University", country: "United States", group: "Machine Learning", email: "zemel@cs.columbia.edu" }
 ];
 
-export const professors: ProfessorEntry[] = [...baseProfessors, ...moreProfessors];
+export const professors: ProfessorEntry[] = [...baseProfessors, ...moreProfessors, ...discoveredProfessors];

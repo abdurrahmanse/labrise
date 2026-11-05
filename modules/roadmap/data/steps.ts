@@ -6,14 +6,14 @@ export const roadmapSteps: RoadmapStepSummary[] = [
     href: "/guides/research-area",
     title: "Build your base",
     when: "12–24 months before",
-    actions: ["Strong math + core CS/ML courses", "Pick one research area", "Keep your GPA up"]
+    actions: ["Strong math + core courses of your field", "Pick one research area", "Keep your GPA up"]
   },
   {
     step: 2,
     href: "/guides/cv",
     title: "Create proof of research",
     when: "9–18 months before",
-    actions: ["1–2 projects on GitHub", "Reproduce one paper", "Aim for a workshop paper or preprint"]
+    actions: ["1–2 documented projects", "Reproduce one published result", "Aim for a conference paper, journal paper or preprint"]
   },
   {
     step: 3,

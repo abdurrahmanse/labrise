@@ -37,13 +37,13 @@ export const liveStatusTickerData: StatusTickerItem[] = [
   {
     id: "verified-countries",
     badge: "Global Roadmap",
-    text: "Country guides across Europe, North America, Asia & Oceania with official portals for AI/ML and CS research applicants",
+    text: "Country guides across Europe, North America, Asia & Oceania with official portals for engineering research applicants",
     variant: "purple"
   },
   {
     id: "open-access",
     badge: "100% Free & Open",
-    text: "No login, no account, no fees: a free roadmap for AI/ML and CS research scholars worldwide",
+    text: "No login, no account, no fees: a free roadmap for engineering research scholars worldwide",
     variant: "amber"
   }
 ];
@@ -60,7 +60,7 @@ export const headerData = {
     primary: brand.first,
     secondary: brand.second,
     badge: "Open Access Guide",
-    tagline: "Fully Funded AI/ML & CS Research"
+    tagline: "Fully Funded Engineering Research"
   },
   actions: {
     statusBadge: "Fully Funded Guide",
@@ -79,7 +79,7 @@ export const headerData = {
   mobileDrawer: {
     moreTitle: "More",
     title: brand.name,
-    subtitle: "Fully funded AI/ML and CS research programs worldwide",
+    subtitle: "Fully funded engineering research programs worldwide",
     ctaButton: {
       label: "Start 13-Phase Roadmap",
       href: "/roadmap"
@@ -133,7 +133,7 @@ export const footerLinksData: NavLinkItem[] = [
 export const footerData = {
   brand: {
     name: brand.name,
-    tagline: "A free, open-access roadmap that guides Computer Science students in AI/ML research and engineering to fully funded Master's and PhD programs worldwide.",
+    tagline: "A free, open-access roadmap that guides engineering students to fully funded research Master's and PhD programs worldwide.",
     badge: "100% Fully Funded Standard"
   },
   roadmapNavigation: [
@@ -147,7 +147,7 @@ export const footerData = {
   directoryAndTools: [
     { href: "/directory/countries", label: "Country Funding Guides" },
     { href: "/scholarships", label: "11-Step Scholarship Finder" },
-    { href: "/professors", label: "AI/ML Professor Outreach & Email Templates" },
+    { href: "/professors", label: "Research Professor Outreach & Email Templates" },
     { href: "/documents", label: "Required Documents & SOP Blueprint" },
     { href: "/faqs", label: "Admissions & Funding FAQs" }
   ],
@@ -163,6 +163,6 @@ export const footerData = {
     tools: "Guides & Toolkits",
     databases: "Official Portals"
   },
-  subtext: "Built for ambitious AI/ML and Computer Science research applicants",
-  copyright: `© 2026 ${brand.name}. Free, open-access educational resource for AI/ML and Computer Science research applicants. Not affiliated with any commercial agency.`
+  subtext: "Built for ambitious engineering research applicants",
+  copyright: `© 2026 ${brand.name}. Free, open-access educational resource for engineering research applicants. Not affiliated with any commercial agency.`
 };

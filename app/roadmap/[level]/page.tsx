@@ -25,10 +25,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!level) return { title: notFoundTitles.level };
 
   return {
-    title: `Level ${level.levelNumber}: ${level.shortTitle} — CS Funding Roadmap`,
+    title: `Level ${level.levelNumber}: ${level.shortTitle} — Research Funding Roadmap`,
     description: `${level.tagline} Step-by-step technical execution, proof-of-work milestones, code loops, and faculty review criteria for Level ${level.levelNumber}.`,
     openGraph: {
-      title: `Level 0${level.levelNumber}: ${level.title} — CS Funding Roadmap`,
+      title: `Level 0${level.levelNumber}: ${level.title} — Research Funding Roadmap`,
       description: level.objective.slice(0, 160),
       type: "article",
     },

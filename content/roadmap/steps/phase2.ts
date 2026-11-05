@@ -1,60 +1,62 @@
 import type { RoadmapStep } from "@/modules/roadmap";
 
+// Phase 2: find and reach research groups. Written for engineering research applicants in any department.
 export const phase2Steps: RoadmapStep[] = [
   {
     id: "step-2-1",
     phaseId: "phase-2",
     stepNumber: "2.1",
-    title: "Mapping Funded AI Laboratories via CSRankings.org & Grant Databases",
-    shortTitle: "CSRankings Lab Mapping",
-    subtitle: "Identify institutions and laboratories holding active, unspent funding in your specific AI subfield",
+    title: "Mapping Active Research Groups via Publication & Grant Databases",
+    shortTitle: "Group Mapping",
+    subtitle: "Find labs that publish in your niche and hold funding to hire students",
     duration: "3 Weeks",
     priority: "Crucial",
-    keyObjective: "Build a comprehensive database of prospective PIs who are actively publishing at top-tier venues and have grant capital to hire students.",
-    description: "Generic university brand names do not reflect AI research strength. A top-10 overall university might have a weak AI lab, while a top-40 university might host a world-renowned pioneer with millions in grant funding.",
+    keyObjective: "Build a list of 25–35 professors whose recent work matches yours and whose groups can fund a student.",
+    description:
+      "A university's name says little about a particular lab. A mid-ranked university can have the strongest group in your niche. Use recent papers to find active groups, then check grant databases to see who holds funding that can pay a research student.",
     checklist: [
       {
         id: "c-2-1-1",
-        task: "Filter CSRankings.org by Subfield",
-        detail: "Select Artificial Intelligence, Machine Learning, Computer Vision, and NLP. Filter by regional zones (US, Canada, Europe, Asia)."
+        task: "Search by Topic, Not by Ranking",
+        detail: "Use Google Scholar or OpenAlex to find authors who published in your niche in the last two years."
       },
       {
         id: "c-2-1-2",
-        task: "Audit NSF Award Search & ERC grants",
-        detail: "Search the NSF and ERC grant databases for active awards funded through 2026–2030 to confirm the lab has liquid capital."
+        task: "Audit Their Funding",
+        detail: "Search the NSF Award Search, the EU CORDIS database or the national council of the country for active grants."
       },
       {
         id: "c-2-1-3",
-        task: "Examine European CORDIS & ERC Grants",
-        detail: "Search for ERC Starting Grants and Horizon Europe AI consortia—these PIs receive up to €1.5M–€2.5M and are mandated to hire salaried PhD researchers."
+        task: "Read the Lab Website",
+        detail: "Look for open positions, current students, recent graduates and where they went next."
       },
       {
         id: "c-2-1-4",
-        task: "Track Faculty Hiring Announcements",
-        detail: "Monitor Twitter/X (#AcademicTwitter, #PhDPosition) and OpenReview for announcements: 'My lab is looking for 2 funded PhD students for Fall 2026'."
+        task: "Build the Tiered List",
+        detail: "Aim for about three dream, five target and two safer groups, and record why each one fits."
       }
     ],
     proTips: [
-      "Look at the acknowledgments section of recent papers from target labs to see who funds them (e.g., 'This research was supported by NSF Award #XXXXXX or a Google Research Scholar Award').",
-      "Check the lab's current PhD student roster on their group website—if their senior students are graduating this year, the PI will have open funded desks."
+      "Newly funded projects often hire quickly, so a recent grant is a good sign.",
+      "Check where former students went: it shows whether the lab prepares people for the career you want."
     ],
     commonPitfalls: [
-      "Applying to famous senior professors whose last paper was published 5 years ago and who have transitioned into administrative dean roles with no active lab.",
-      "Relying on US News or QS general rankings which are skewed by medical and law schools rather than computer science output."
+      "Choosing only by university prestige.",
+      "Writing to a professor who is near retirement or has no recent papers."
     ],
-    deliverable: "A structured tracking spreadsheet containing 35+ individual professors categorized into 3 Dream / 5 Target / 2 Safe institutional tiers.",
+    deliverable: "A spreadsheet of 25–35 professors with university, niche, recent papers, funding and a fit note.",
     resources: [
-      {
-        title: "CSRankings: Computer Science Rankings",
-        url: "https://csrankings.org/",
-        type: "database",
-        description: "Metrics-based ranking of top computer science institutions by publication volume in premier venues."
-      },
       {
         title: "NSF Award Search",
         url: "https://www.nsf.gov/awardsearch/",
         type: "database",
-        description: "Official National Science Foundation database of active academic research grants in the US."
+        description: "Search active US research grants by topic, institution or investigator."
+      },
+      {
+        title: "CORDIS: EU Research Results",
+        url: "https://cordis.europa.eu/",
+        type: "database",
+        description: "Find EU-funded research projects and the groups that run them."
       }
     ]
   },
@@ -63,44 +65,45 @@ export const phase2Steps: RoadmapStep[] = [
     phaseId: "phase-2",
     stepNumber: "2.2",
     title: "Prioritizing Junior (Assistant) Professors with Startup Packages",
-    shortTitle: "Junior Faculty Strategy",
-    subtitle: "Maximize your admission probability by targeting tenure-track assistant professors with unspent startup millions",
+    shortTitle: "Junior Professors",
+    subtitle: "Early-career professors are building groups and often have funds to hire",
     duration: "2 Weeks",
     priority: "Crucial",
-    keyObjective: "Focus your outreach on faculty who have the highest urgency and budget to hire doctoral students immediately.",
-    description: "Tenure-track Assistant Professors in Computer Science receive $500,000 to $1,500,000 in startup funding from their universities when hired. They must publish extensively and graduate doctoral students to achieve tenure, making them the most motivated recruiters in academia.",
+    keyObjective: "Add early-career professors to your list, because they often have positions and time to supervise.",
+    description:
+      "Assistant professors usually receive startup funding from the university and need students to build their groups. They tend to reply faster and spend more time with each student. Senior professors are valuable too, but they receive far more email, so mix both.",
     checklist: [
       {
         id: "c-2-2-1",
-        task: "Identify Faculty in Years 1 to 4 of Appointment",
-        detail: "Look for Assistant Professors who joined departments within the past 1–4 years from top doctoral or postdoc labs."
+        task: "Identify Early-Career Faculty",
+        detail: "Look at faculty pages for people who joined in the last five years, and at the date of their first independent papers."
       },
       {
         id: "c-2-2-2",
-        task: "Analyze Their Graduate Alma Mater & Pedigree",
-        detail: "Junior faculty often maintain co-authorships and collaborative compute sharing with their former PhD advisors at MIT, Stanford, Berkeley, or CMU."
+        task: "Check for Hiring Signals",
+        detail: "Look for a news post about a new grant, an open position or an 'join us' page on the lab website."
       },
       {
         id: "c-2-2-3",
-        task: "Verify Active Lab Compute Resources",
-        detail: "Confirm that the assistant professor has secured dedicated GPU nodes or industry cloud sponsorship (e.g., NVIDIA Academic Hardware Grants)."
+        task: "Balance the List",
+        detail: "Keep a mix of early-career and established professors, so that you do not depend on one type."
       }
     ],
     proTips: [
-      "Junior faculty read their own emails and frequently answer cold inquiries, unlike senior directors whose inboxes are managed by departmental staff.",
-      "Assistant professors are often far more hands-on, meeting with their PhD students multiple times per week and actively coding and debugging alongside them."
+      "A professor who thanks a new grant in recent papers is likely to be hiring.",
+      "Ask current students how much time the professor gives to each of them."
     ],
     commonPitfalls: [
-      "Assuming that working for a famous senior professor is automatically better—famous PIs often meet their PhD students once every 3 months and leave mentorship to postdocs.",
-      "Targeting professors whose research direction has shifted away from your specific interests."
+      "Ignoring junior professors because their university is less famous.",
+      "Writing only to very senior professors who receive hundreds of emails."
     ],
-    deliverable: "Curated shortlist of 15–20 high-potential Assistant Professors who have joined target CS departments within the past 3 years.",
+    deliverable: "Your professor list marked with career stage and hiring signals.",
     resources: [
       {
-        title: "The Assistant Professor Hiring Guide",
-        url: "https://cra.org/",
-        type: "guide",
-        description: "Computing Research Association (CRA) insights into academic faculty hiring and startup packages."
+        title: "Council of Graduate Schools",
+        url: "https://cgsnet.org/",
+        type: "official",
+        description: "Information on graduate admissions practices and resolutions in the United States."
       }
     ]
   },
@@ -108,55 +111,51 @@ export const phase2Steps: RoadmapStep[] = [
     id: "step-2-3",
     phaseId: "phase-2",
     stepNumber: "2.3",
-    title: "The 5-Point AI Cold Email Outreach Campaign",
-    shortTitle: "AI Cold Outreach Campaign",
-    subtitle: "Execute personalized, technical email outreach that catches the attention of busy faculty in under 10 seconds",
+    title: "The 5-Point Cold Email Outreach Campaign",
+    shortTitle: "Cold Email Campaign",
+    subtitle: "Send short, specific emails that show you have read the professor's work",
     duration: "4 Weeks",
     priority: "Crucial",
-    keyObjective: "Secure positive responses and informal Zoom screening calls from prospective supervisors prior to formal application submission.",
-    description: "Faculty receive dozens of generic emails daily. Your email must immediately prove that you have read their work, understand their technical trade-offs, and possess the concrete skills to make progress on their active grants.",
+    keyObjective: "Send a personal email to each professor on your list and get replies you can act on.",
+    description:
+      "A good cold email is short, specific and easy to answer. Open with one precise point from a recent paper, show how your own work connects, attach your CV and make one clear request. Send it six to ten months before the deadline and follow up once.",
     checklist: [
       {
         id: "c-2-3-1",
-        task: "Read 1 Recent Paper in Depth",
-        detail: "Select a paper published in the past 12 months. Study the methodology, loss curves, ablation tables, and noted limitations."
+        task: "Write a Clear Subject Line",
+        detail: "Name the degree, the year and your niche, for example 'Prospective PhD student: [your topic]'."
       },
       {
         id: "c-2-3-2",
-        task: "Draft the Hyper-Specific Technical Critique",
-        detail: "Highlight an empirical constraint, a failure mode in edge cases, or an unexplored architectural extension."
+        task: "Show You Read Their Work",
+        detail: "Mention one specific result or method from a recent paper and one honest question or link to your own work."
       },
       {
         id: "c-2-3-3",
-        task: "Connect Your Demonstrated Weaponry",
-        detail: "State your related project, link your arXiv preprint, and provide a direct GitHub URL."
+        task: "Link Your Evidence",
+        detail: "State your related project, link your paper or report and attach a two-page CV."
       },
       {
         id: "c-2-3-4",
-        task: "Execute Outreach on Optimal Schedule",
-        detail: "Send emails Tuesday through Thursday between 8:30 AM and 9:15 AM in the professor's local time zone."
-      },
-      {
-        id: "c-2-3-5",
-        task: "Send One Polite 7-Day Follow-Up",
-        detail: "If no response after 7 business days, reply to the same thread with a brief 2-sentence bump."
+        task: "Make One Request and Follow Up Once",
+        detail: "Ask whether the group expects openings, and send one polite reminder after about a week or two."
       }
     ],
     proTips: [
-      "Never paste text with mismatched fonts or background formatting from rich-text editors. Send clean, plain-text emails with clear hyperlinks.",
-      "Subject line formula: `Prospective PhD Student (Fall 2026) - [Subfield, e.g. Diffusion Guidance] - [Your Full Name]`."
+      "Keep the email under 200 words so it fits on a phone screen.",
+      "Track every email, reply and follow-up date in the professor tracker."
     ],
     commonPitfalls: [
-      "Sending mass mailings with 'Dear Respected Professor' and generic praise ('I am fascinated by your esteemed work'). This results in immediate blocking.",
-      "Attaching 25MB zip files containing code or certificates. Only attach a clean 2-page PDF CV and link everything else."
+      "Sending one template to everyone without changing the details.",
+      "Opening with flattery instead of a specific point about the work."
     ],
-    deliverable: "25–35 personalized cold outreach emails sent, logged in an outreach tracker with response statuses and scheduled calls.",
+    deliverable: "A set of personalised emails sent, with a tracker showing replies and follow-ups.",
     resources: [
       {
-        title: "How to Email a Professor (Philip Guo, UCSD)",
+        title: "How to Email a Professor (Philip Guo)",
         url: "https://pgbovine.net/email-professors.htm",
         type: "guide",
-        description: "Classic, widely respected advice on academic email etiquette from a computer science professor."
+        description: "Practical advice on writing to professors about research positions."
       }
     ]
   },
@@ -164,50 +163,46 @@ export const phase2Steps: RoadmapStep[] = [
     id: "step-2-4",
     phaseId: "phase-2",
     stepNumber: "2.4",
-    title: "Acing the Professor 15-Minute Zoom Screening Call",
-    shortTitle: "PI Zoom Screening",
-    subtitle: "Present your research concisely and evaluate the laboratory culture and compute resources",
+    title: "Acing the Professor 15-Minute Video Screening Call",
+    shortTitle: "Screening Call",
+    subtitle: "Prepare for a short call that tests clarity, autonomy and fit",
     duration: "2 Weeks",
     priority: "Crucial",
-    keyObjective: "Convert an informal Zoom conversation into an explicit commitment from the professor to champion your application in the departmental committee.",
-    description: "When an AI professor invites you to a 15-minute call, they are assessing intellectual autonomy, clarity of thought, and interpersonal communication. You must articulate your past work with crisp scientific precision.",
+    keyObjective: "Explain your research interests clearly and ask questions that show you understand the group.",
+    description:
+      "When a professor invites you to a short call, they are judging how clearly you think, how well you know the area and whether you would work well in the group. Prepare a two-minute summary of your best project and a list of questions about the lab.",
     checklist: [
       {
         id: "c-2-4-1",
-        task: "Prepare the 5-Slide Backup Presentation",
-        detail: "Have a clean slide deck ready: Problem -> Prior Limitations -> Your Method -> Quantitative Benchmarks -> Open Questions."
+        task: "Prepare a Two-Minute Summary",
+        detail: "Practise explaining your best project: the problem, your method, your result and what you learned."
       },
       {
         id: "c-2-4-2",
-        task: "Practice the 3-Minute Verbal Elevator Pitch",
-        detail: "Deliver a concise summary of your research trajectory without relying on slides if the professor prefers an informal dialogue."
+        task: "Re-read Their Recent Papers",
+        detail: "Be ready to discuss one paper and to ask a thoughtful question about it."
       },
       {
         id: "c-2-4-3",
-        task: "Inquire About Compute & GPU-to-Student Ratios",
-        detail: "Ask: 'What does the compute setup look like for incoming students (on-prem Slurm cluster vs. cloud allocations)?'"
-      },
-      {
-        id: "c-2-4-4",
-        task: "Confirm Formal Application Endorsement",
-        detail: "Close by asking: 'If I formally submit my application to the department, should I list your name as prospective advisor on the portal?'"
+        task: "Prepare Questions About the Lab",
+        detail: "Ask about supervision style, funding length, equipment access and where former students went."
       }
     ],
     proTips: [
-      "Test your microphone, lighting, and screen-sharing setup beforehand. Inability to share your screen smoothly makes a poor first impression on a computer science faculty member.",
-      "Send a thank-you email within 4 hours summarizing key discussion points and referencing any papers or repositories mentioned during the call."
+      "Send a short thank-you email within a day and mention one thing you learned.",
+      "Test your camera, microphone and connection before the call."
     ],
     commonPitfalls: [
-      "Monopolizing the entire call with a 20-minute monologue without letting the professor speak or ask questions.",
-      "Saying 'I don't know' and freezing up when asked about an experimental failure. Instead, walk through your scientific troubleshooting hypothesis."
+      "Talking only about grades instead of your research.",
+      "Asking questions that the lab website already answers."
     ],
-    deliverable: "Completed screening calls resulting in positive verbal commitments from faculty to review your file during committee admissions.",
+    deliverable: "A one-page call sheet with your summary, key paper notes and questions.",
     resources: [
       {
-        title: "Grad School Interview Advice (Andrej Karpathy)",
-        url: "https://karpathy.github.io/",
+        title: "How to Give a Great Research Talk (Simon Peyton Jones)",
+        url: "https://www.microsoft.com/en-us/research/academic-program/give-great-research-talk/",
         type: "guide",
-        description: "Insights into communicating scientific concepts effectively in machine learning."
+        description: "Advice on explaining research clearly, useful for any short technical conversation."
       }
     ]
   }

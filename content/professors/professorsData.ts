@@ -10,7 +10,7 @@ export const professorOutreachWorkflow: OutreachStep[] = [
   {
     stepNumber: 2,
     title: "Find Active Faculty via Recent Papers",
-    shortDesc: "Identify actively publishing professors on Google Scholar, DBLP, arXiv or OpenReview.",
+    shortDesc: "Identify actively publishing professors on Google Scholar, OpenAlex, Scopus or arXiv.",
     detailedProtocol: "Search for professors who published peer-reviewed papers in your research niche within the last 18–24 months. Focus on tenure-track Assistant Professors (who actively recruit and have new funding) and active Associate/Full Professors."
   },
   {
@@ -35,7 +35,7 @@ export const professorOutreachWorkflow: OutreachStep[] = [
     stepNumber: 6,
     title: "Attach Your Academic CV as a Clean PDF",
     shortDesc: "Attach only a clean 2-page Academic CV titled 'CV_FirstName_LastName.pdf'.",
-    detailedProtocol: "Never attach large zip files, high school diplomas, or unrequested 50-page manuscripts. Include live hyperlinks (GitHub, Google Scholar, preprints) inside your CV instead of sending heavy files."
+    detailedProtocol: "Never attach large zip files, high school diplomas, or unrequested 50-page manuscripts. Include live hyperlinks (portfolio, Google Scholar, preprints) inside your CV instead of sending heavy files."
   },
   {
     stepNumber: 7,
@@ -86,7 +86,7 @@ Sincerely,
 [Your Full Legal Name]
 [Your Degree & Major]
 [Your Current University / Institution]
-[LinkedIn / Google Scholar / GitHub profile link]`
+[LinkedIn / Google Scholar / portfolio link]`
   },
   {
     id: "masters-research-inquiry",

@@ -1,55 +1,56 @@
 import type { RoadmapStep } from "@/modules/roadmap";
 
+// Phase 4: submit. Written for engineering research applicants in any department.
 export const phase4Steps: RoadmapStep[] = [
   {
     id: "step-4-1",
     phaseId: "phase-4",
     stepNumber: "4.1",
-    title: "Securing Departmental & Conference Diversity Application Fee Waivers",
-    shortTitle: "Application Fee Waivers",
-    subtitle: "Acquire fee waiver codes to submit 8–12 applications for free without paying $1,000+ in fees",
+    title: "Securing Application Fee Waivers",
+    shortTitle: "Fee Waivers",
+    subtitle: "Many universities waive the fee if you ask in time and explain your situation",
     duration: "4 Weeks",
     priority: "Crucial",
-    keyObjective: "Eliminate application fees across your target institutions through conference partnerships, virtual open houses, and financial hardship appeals.",
-    description: "Application fees for US graduate programs run $75–$150 each. For international applicants applying to 10 programs, this can total $1,200+. You can eliminate these costs through early fee waiver programs.",
+    keyObjective: "Cut application costs by requesting every waiver you qualify for before the deadlines.",
+    description:
+      "Application fees add up quickly when you apply to many programmes. Many graduate schools offer waivers for financial need, for participation in outreach programmes, or when a professor asks for one. The rules and the deadlines for the request are on each graduate school's page.",
     checklist: [
       {
         id: "c-4-1-1",
-        task: "Attend Virtual Graduate Open Houses",
-        detail: "Register for and attend virtual admissions info sessions hosted by CS departments in September/October; attendees routinely receive fee waiver codes."
+        task: "Find the Waiver Page",
+        detail: "Search each graduate school's fees page for 'fee waiver' and note who is eligible and the request deadline."
       },
       {
         id: "c-4-1-2",
-        task: "Apply Through Conference Affinity Groups",
-        detail: "Submit requests through affinity organizations (Black in AI, LatinX in AI, WiML, Indigenous in AI, Queer in AI) which partner with universities for free application codes."
+        task: "Prepare the Evidence",
+        detail: "Collect any document the school asks for, for example proof of income or a letter from a supervisor."
       },
       {
         id: "c-4-1-3",
-        task: "Direct Email to CS Graduate Admissions Chairs",
-        detail: "Send formal waiver requests citing international currency devaluation, accompanied by your academic CV."
+        task: "Ask Early and Politely",
+        detail: "Send the request well before the application deadline, because waiver decisions take days or weeks."
+      },
+      {
+        id: "c-4-1-4",
+        task: "Ask the Professor",
+        detail: "In some departments a professor who wants to admit you can ask the school to waive the fee."
       }
     ],
     proTips: [
-      "Many US departments have an automated fee waiver checkbox directly inside the application portal under 'Financial Hardship' or 'Diversity' that does not even require uploading tax documents.",
-      "Request waiver codes early in October—departmental waiver budgets are finite and often run out by late November."
+      "Make a table of fees and waiver deadlines so that no request is missed.",
+      "Prefer programmes without a fee when two choices are equal."
     ],
     commonPitfalls: [
-      "Paying application fees out-of-pocket without checking for available waiver codes.",
-      "Waiting until December 14 to request a waiver code when university administrative offices take 3–5 business days to process requests."
+      "Asking for a waiver on the deadline day.",
+      "Paying a fee and then learning that a waiver was available."
     ],
-    deliverable: "Acquired fee waiver discount codes entered into application portals, reducing application costs to $0.",
+    deliverable: "A table of every programme with its fee, waiver rule and request date.",
     resources: [
       {
-        title: "Black in AI - Graduate Application Fee Support",
-        url: "https://blackinai.github.io/",
+        title: "ETS GRE Official Site",
+        url: "https://www.ets.org/gre.html",
         type: "official",
-        description: "Provides application mentoring and fee waiver programs for AI applicants."
-      },
-      {
-        title: "Women in Machine Learning (WiML) Programs",
-        url: "https://wiml.org/",
-        type: "official",
-        description: "Travel grants, workshop mentorship, and graduate school application fee waivers."
+        description: "Official GRE information, including test fees and where reduced fees are offered."
       }
     ]
   },
@@ -58,49 +59,50 @@ export const phase4Steps: RoadmapStep[] = [
     phaseId: "phase-4",
     stepNumber: "4.2",
     title: "Official Academic Transcripts, Attestations & Translations",
-    shortTitle: "Transcript Verification",
-    subtitle: "Prepare verified, sealed transcripts, notarizations, and credential evaluations",
+    shortTitle: "Transcripts & Attestation",
+    subtitle: "Order official records early, because embassies and boards can take weeks",
     duration: "4 Weeks",
     priority: "Crucial",
-    keyObjective: "Ensure all official academic documentation is certified, translated, and verified in compliance with international admissions requirements.",
-    description: "Incomplete or unverified academic documentation can invalidate an otherwise competitive application. Ensure that degree certificates, grading scale keys, and certified translations are prepared early.",
+    keyObjective: "Have every certified, attested or translated document ready before you start the applications.",
+    description:
+      "Universities ask for official transcripts, degree certificates and sometimes attested or translated copies. Some countries also ask for a credential evaluation. Each step involves other offices, so start early and keep digital copies of everything.",
     checklist: [
       {
         id: "c-4-2-1",
-        task: "Request Sealed Official Transcripts",
-        detail: "Obtain official stamped and signed transcript PDFs directly from your university registrar."
+        task: "Order Official Copies",
+        detail: "Request sealed or electronic transcripts and degree certificates from your university registrar."
       },
       {
         id: "c-4-2-2",
-        task: "Verify Institutional Grading Scale Keys",
-        detail: "Ensure the back of your transcript includes an official formula explaining how percentages or letter grades map to GPA."
+        task: "Check Attestation Rules",
+        detail: "Find out whether the target country needs attestation, an apostille or a credential evaluation."
       },
       {
         id: "c-4-2-3",
-        task: "Obtain Sworn Certified Translations",
-        detail: "If your documents are in any language other than English, have them translated by a certified court translator and legally bound with original copies."
+        task: "Arrange Translations",
+        detail: "Use an accepted translator when the documents are not in English or the local language."
       },
       {
         id: "c-4-2-4",
-        task: "Complete Credential Evaluations (if mandated)",
-        detail: "For institutions requiring third-party evaluation (e.g., WES or ECE), submit documentation 8 weeks before deadlines."
+        task: "Scan and Name Files",
+        detail: "Scan at readable quality and name each file clearly so you can upload it fast."
       }
     ],
     proTips: [
-      "Most top US CS departments allow you to upload unofficial PDF scans during the initial review phase, only requiring expensive official mailed copies after admission.",
-      "Always scan transcripts in high-resolution color (300 DPI) so official watermarks and signatures are clearly legible to reviewers."
+      "Ask for several sealed copies at once.",
+      "Convert your grades to the scale the programme uses and keep the conversion notes."
     ],
     commonPitfalls: [
-      "Calculating your own converted GPA using arbitrary online formulas instead of reporting your university's native grading scale.",
-      "Forgetting to include proof of degree completion if you have already graduated."
+      "Starting attestation a week before the deadline.",
+      "Uploading a blurry scan that the admissions office rejects."
     ],
-    deliverable: "High-resolution, verified PDF packages of all undergraduate/master's transcripts and certified translations ready for portal upload.",
+    deliverable: "A folder of certified transcripts, certificates and translations ready for every application.",
     resources: [
       {
         title: "World Education Services (WES)",
         url: "https://www.wes.org/",
         type: "tool",
-        description: "International academic credential evaluation services for North American institutions."
+        description: "Credential evaluation and GPA conversion used by many North American institutions."
       }
     ]
   },
@@ -108,50 +110,51 @@ export const phase4Steps: RoadmapStep[] = [
     id: "step-4-3",
     phaseId: "phase-4",
     stepNumber: "4.3",
-    title: "Executing the December 1–15 Priority Fellowship Deadlines",
-    shortTitle: "December Priority Deadlines",
-    subtitle: "Submit all applications before strict fellowship windows close to guarantee consideration for full funding",
+    title: "Executing the Priority Deadlines",
+    shortTitle: "Priority Deadlines",
+    subtitle: "Submit early, check every portal and keep proof of submission",
     duration: "2 Weeks",
     priority: "Crucial",
-    keyObjective: "Submit all application components, confirm recommendation uploads, and secure priority consideration for departmental assistantships and university fellowships.",
-    description: "In top Computer Science departments, submitting before the Priority Fellowship Deadline (typically December 1 – December 15) is mandatory for financial support. Applications submitted for 'regular' deadlines in January or February are often considered only after fellowship funding has been allocated.",
+    keyObjective: "Submit each application before the priority deadline with all documents and letters confirmed.",
+    description:
+      "Deadlines differ a lot: many US and Canadian programmes close in December and January, many European posts are open until filled, and scholarships often close earlier than the university. Submit a few days early, check that every referee has uploaded a letter and keep the confirmation emails.",
     checklist: [
       {
         id: "c-4-3-1",
-        task: "Target December 1 as Universal Submission Date",
-        detail: "Aim to submit all applications 48 hours before the deadline to prevent portal crashes during peak server loads."
+        task: "Build the Deadline Calendar",
+        detail: "Put every programme and scholarship deadline, with time zone, in one calendar or in the planner."
       },
       {
         id: "c-4-3-2",
-        task: "Verify Recommender Status Dashboards",
-        detail: "Log into each application portal to confirm all 3 letters of recommendation have been uploaded and registered as 'Received'."
+        task: "Finish Portals Early",
+        detail: "Create accounts early, fill in the forms in advance and upload documents in the exact format asked for."
       },
       {
         id: "c-4-3-3",
-        task: "Confirm Program-Specific Questions",
-        detail: "Ensure that you have selected 'Yes, I wish to be considered for departmental financial support / assistantships'."
+        task: "Confirm the Letters",
+        detail: "Check each portal to see that all recommendation letters have arrived, and remind referees kindly."
       },
       {
         id: "c-4-3-4",
-        task: "Archive Submission Confirmation Receipts",
-        detail: "Save the confirmation PDF and Application ID number for each institution in your tracking spreadsheet."
+        task: "Save Proof",
+        detail: "Keep the confirmation page or email of every submission."
       }
     ],
     proTips: [
-      "If a recommender has not uploaded their letter 48 hours before the deadline, send a polite, urgent reminder through the portal's automated reminder button.",
-      "Most departments allow letters of recommendation to arrive a few days after the formal student deadline, provided your portion is submitted on time."
+      "Submit at least three days early, so a portal problem does not cost you the application.",
+      "Track every application in the planner with its status."
     ],
     commonPitfalls: [
-      "Accidentally selecting 'Self-Funded' or 'No Financial Aid Required' on application drop-down menus.",
-      "Waiting until 11:59 PM on deadline day when payment gateways and application servers frequently experience heavy traffic."
+      "Ignoring time zones in the deadline.",
+      "Assuming referees uploaded their letters without checking."
     ],
-    deliverable: "100% of target applications officially submitted with confirmation receipts and confirmed recommender uploads.",
+    deliverable: "All applications submitted, with confirmations saved and letters confirmed.",
     resources: [
       {
-        title: "GradCafe Computer Science Results",
+        title: "The GradCafe: Admission Results",
         url: "https://www.thegradcafe.com/survey/index.php",
         type: "database",
-        description: "Crowdsourced historical admissions results, notification dates, and interview timelines."
+        description: "Self-reported results that give a rough feel for timelines and decisions."
       }
     ]
   }

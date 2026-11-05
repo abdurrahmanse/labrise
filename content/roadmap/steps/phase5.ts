@@ -1,59 +1,51 @@
 import type { RoadmapStep } from "@/modules/roadmap";
 
+// Phase 5: interview, offer and negotiation. Written for engineering research applicants in any department.
 export const phase5Steps: RoadmapStep[] = [
   {
     id: "step-5-1",
     phaseId: "phase-5",
     stepNumber: "5.1",
-    title: "The 5-Slide Technical Research Presentation Defense",
-    shortTitle: "5-Slide Technical Defense",
-    subtitle: "Present your core machine learning project with scientific clarity during formal faculty committee interviews",
+    title: "The Short Research Presentation",
+    shortTitle: "Research Presentation",
+    subtitle: "Present one project clearly in five slides or five minutes",
     duration: "3 Weeks",
     priority: "Crucial",
-    keyObjective: "Deliver a compelling, 8-minute technical defense of your research to an admissions committee or lab PI.",
-    description: "Formal graduate interviews in machine learning are technical defenses. Faculty evaluate how well you explain complex concepts, defend your methodology, and explain experimental design choices.",
+    keyObjective: "Explain your best project so that faculty from a neighbouring field can follow it.",
+    description:
+      "Some programmes and funders ask for a short talk, and every interview includes a version of 'tell us about your research'. Prepare a five-slide story: the problem, why it matters, your method, your result and what comes next. Practise it aloud with a timer.",
     checklist: [
       {
         id: "c-5-1-1",
-        task: "Slide 1: Scientific Motivation & Existing Limits",
-        detail: "Explain the problem setting and why existing state-of-the-art baselines break down."
+        task: "Build the Five-Slide Story",
+        detail: "Problem, motivation, method, result and next steps, with one clear figure per slide."
       },
       {
         id: "c-5-1-2",
-        task: "Slide 2: Your Core Algorithmic/Mathematical Insight",
-        detail: "Present your key contribution using clean mathematical notation and an intuitive architectural flow diagram."
+        task: "Rehearse with a Timer",
+        detail: "Practise until you finish in the time given, leaving room for questions."
       },
       {
         id: "c-5-1-3",
-        task: "Slide 3: Quantitative Experimental Benchmarks",
-        detail: "Show your primary comparison table across standard benchmarks with error bars and statistical significance."
-      },
-      {
-        id: "c-5-1-4",
-        task: "Slide 4: Controlled Ablation Studies",
-        detail: "Prove which specific component of your design was responsible for the performance gain."
-      },
-      {
-        id: "c-5-1-5",
-        task: "Slide 5: Open Questions & Future Horizons",
-        detail: "Demonstrate scientific maturity by outlining what experiments you would conduct next."
+        task: "Prepare for Questions",
+        detail: "List the ten hardest questions about your method and write short, honest answers."
       }
     ],
     proTips: [
-      "Practice your timing: 8 minutes of presentation leaves 12 minutes for Q&A in a standard 20-minute faculty interview slot.",
-      "Anticipate the most common question: 'What would happen to your method if [assumption X] was violated in the real world?'"
+      "Say what you did yourself and what the team did.",
+      "Keep backup slides for details you expect people to ask about."
     ],
     commonPitfalls: [
-      "Reading script text directly off slides instead of maintaining conversational eye contact with the camera.",
-      "Focusing on trivial hyperparameter tuning details instead of the core scientific hypothesis and insights."
+      "Slides full of text that you read aloud.",
+      "Claiming results that you cannot defend under questions."
     ],
-    deliverable: "Rehearsed 5-slide technical presentation deck ready for screen sharing during admissions interview calls.",
+    deliverable: "A five-slide deck and a recorded practice run.",
     resources: [
       {
         title: "How to Give a Great Research Talk (Simon Peyton Jones)",
         url: "https://www.microsoft.com/en-us/research/academic-program/give-great-research-talk/",
         type: "guide",
-        description: "Classic guide on structuring and delivering technical computer science presentations."
+        description: "Short, practical advice on structuring a research talk."
       }
     ]
   },
@@ -61,102 +53,102 @@ export const phase5Steps: RoadmapStep[] = [
     id: "step-5-2",
     phaseId: "phase-5",
     stepNumber: "5.2",
-    title: "Handling Live Algorithmic & Deep Learning Stress-Testing",
-    shortTitle: "Live Technical Stress-Testing",
-    subtitle: "Confidently answer in-depth questions on optimization, memory ceilings, and failure modes",
+    title: "Handling Technical Questions in the Faculty Interview",
+    shortTitle: "Technical Interview",
+    subtitle: "Show how you think when a question is hard or you do not know the answer",
     duration: "3 Weeks",
     priority: "Crucial",
-    keyObjective: "Demonstrate deep technical comprehension when professors challenge your derivations, design choices, and systems knowledge.",
-    description: "Professors will push you beyond your comfort zone to see how you reason under uncertainty. They want to see your analytical troubleshooting process when an experiment fails or theoretical assumptions break down.",
+    keyObjective: "Stay calm and reason out loud when faculty test your fundamentals and your judgement.",
+    description:
+      "Faculty interviews check your fundamentals, how you approach an unfamiliar problem and how honest you are about limits. Review the core courses of your field, revisit your own project in depth and practise thinking aloud.",
     checklist: [
       {
         id: "c-5-2-1",
-        task: "Review Core Deep Learning Derivations",
-        detail: "Be ready to explain backpropagation, self-attention complexity, diffusion reverse processes, and contrastive loss dynamics."
+        task: "Review the Fundamentals",
+        detail: "Revisit the main courses of your field and be ready for basic questions on theory and units."
       },
       {
         id: "c-5-2-2",
-        task: "Prepare for 'Why Not Method X?' Inquiries",
-        detail: "Know why you chose your specific architecture over prominent alternatives in the literature."
+        task: "Know Your Own Project Deeply",
+        detail: "Be ready to justify every assumption, parameter and choice in your thesis or project."
       },
       {
         id: "c-5-2-3",
-        task: "Master the STAR-L Interview Framework",
-        detail: "Answer behavioural and technical challenges using: Situation, Task, Action, Result, and Learning."
+        task: "Practise Thinking Aloud",
+        detail: "Do mock interviews where a friend asks an unfamiliar question and you reason through it step by step."
       },
       {
         id: "c-5-2-4",
-        task: "Formulate High-Caliber Faculty Questions",
-        detail: "Ask about upcoming lab grant directions, student autonomy in choosing projects, and GPU availability."
+        task: "Prepare Your Own Questions",
+        detail: "Ask about the group's direction, supervision style and how students are funded."
       }
     ],
     proTips: [
-      "If you do not know an answer, do not guess. Say: 'I haven't derived that specific case, but based on the properties of X, my hypothesis would be Y, which I would test by Z.'",
-      "Faculty are evaluating you as a future colleague—they want researchers who are pleasant, curious, and open to feedback."
+      "It is fine to say 'I do not know, but I would start by...' and then reason it out.",
+      "Bring a one-page summary of your project in case a screen share fails."
     ],
     commonPitfalls: [
-      "Becoming defensive or argumentative when a professor points out a potential limitation in your past paper.",
-      "Claiming an experiment had 'no limitations'—every piece of research has boundary conditions."
+      "Guessing confidently when you do not know.",
+      "Memorised answers that fall apart after one follow-up question."
     ],
-    deliverable: "Documented interview response sheet covering the top 10 most common deep learning technical defense scenarios.",
-    resources: [
-      
-    ]
+    deliverable: "A list of the twenty most likely questions with short answers, and two mock interviews done.",
+    resources: []
   },
   {
     id: "step-5-3",
     phaseId: "phase-5",
     stepNumber: "5.3",
     title: "Deciphering the Financial Offer & Net Take-Home Math",
-    shortTitle: "Stipend Math & Living Costs",
-    subtitle: "Calculate true purchasing power after taxes, mandatory campus fees, and metropolitan cost-of-living",
+    shortTitle: "Reading the Offer",
+    subtitle: "Compare stipends, salaries, fees and living costs on the same basis",
     duration: "2 Weeks",
     priority: "Crucial",
-    keyObjective: "Accurately compare competing fully funded offers by calculating net disposable monthly income.",
-    description: "A $34,000 stipend in Atlanta (Georgia Tech) or Urbana-Champaign (UIUC) offers a comfortable quality of life. The same $34,000 in New York City (Columbia) or the Bay Area (Stanford) can mean severe financial strain. Calculate the net reality before signing.",
+    keyObjective: "Know your real monthly income after tax, fees and rent for every offer.",
+    description:
+      "A headline number can mislead. Some offers include a tuition waiver, health insurance and a salary, while others pay a stipend but charge fees. Convert each offer to a monthly net amount and compare it with living costs in that city.",
     checklist: [
       {
         id: "c-5-3-1",
-        task: "Deduct Estimated Tax Withholding",
-        detail: "Account for federal, state, and local income tax deductions (typically 12%–15% for graduate stipends in the US)."
+        task: "List Everything in the Offer",
+        detail: "Write down stipend or salary, tuition waiver, health insurance, fees, duration and conditions."
       },
       {
         id: "c-5-3-2",
-        task: "Identify Mandatory Student Fees",
-        detail: "Check the offer letter for non-waivable university fees (often $1,200–$2,500/year for campus facilities and technology)."
+        task: "Calculate Net Monthly Income",
+        detail: "Subtract tax, mandatory fees and insurance, and convert to your currency if useful."
       },
       {
         id: "c-5-3-3",
-        task: "Verify Health Insurance Premium Subsidies",
-        detail: "Confirm whether the department covers 100% of student health insurance or requires co-pays from your stipend."
+        task: "Compare with Local Costs",
+        detail: "Check rent, food and transport for the city using a cost-of-living calculator."
       },
       {
         id: "c-5-3-4",
-        task: "Calculate Local Rent-to-Stipend Ratios",
-        detail: "Ensure that standard 1-bedroom or shared apartment rent in the university area does not exceed 45% of your net monthly income."
+        task: "Check the Conditions",
+        detail: "Read the length of funding, what happens if the project ends, and any teaching duties."
       }
     ],
     proTips: [
-      "In European salaried PhD programs (Germany TV-L E13, Switzerland, Netherlands), your salary includes social security, unemployment insurance, and pension contributions.",
-      "Check whether your stipend is paid over 9 months (academic year) or 12 months (calendar year)—summer funding makes a huge difference."
+      "Ask the group how long funding is guaranteed and whether summers are paid.",
+      "Ask a current student what living in the city really costs."
     ],
     commonPitfalls: [
-      "Comparing nominal gross stipends without adjusting for regional cost-of-living differences.",
-      "Assuming all university health insurance plans cover dental and vision care (they often require an extra fee)."
+      "Comparing gross and net numbers as if they were the same.",
+      "Ignoring fees, insurance and the cost of the first month."
     ],
-    deliverable: "Completed net disposable income spreadsheet comparing all received funding packages side-by-side.",
+    deliverable: "A table of your offers with net monthly income, conditions and living costs.",
     resources: [
       {
         title: "PhD Stipends Database",
         url: "http://phdstipends.com/",
         type: "database",
-        description: "Crowdsourced database of verified graduate stipends across all US and international universities."
+        description: "Self-reported stipend data for graduate students, mostly in the United States."
       },
       {
         title: "MIT Living Wage Calculator",
         url: "https://livingwage.mit.edu/",
         type: "tool",
-        description: "Cost of living and basic expense breakdowns across all US counties and metropolitan areas."
+        description: "Estimates the cost of living by place in the United States."
       }
     ]
   },
@@ -164,50 +156,51 @@ export const phase5Steps: RoadmapStep[] = [
     id: "step-5-4",
     phaseId: "phase-5",
     stepNumber: "5.4",
-    title: "Respectful Scholarship Negotiation & Summer Funding Leverage",
-    shortTitle: "Funding Negotiation",
-    subtitle: "Leverage competing fully funded offers to secure departmental top-up fellowships and summer research support",
+    title: "Respectful Negotiation & Responding to Offers",
+    shortTitle: "Negotiation",
+    subtitle: "Ask politely, decide on time and decline gracefully",
     duration: "2 Weeks",
     priority: "Recommended",
-    keyObjective: "Respectfully negotiate with your top-choice institution to match a higher financial package or secure guaranteed summer research funding.",
-    description: "If you receive multiple fully funded offers, you have established your value as an in-demand researcher. Departments have discretionary Dean's fellowship top-ups ($2,000–$10,000/year) that they can unlock to recruit top students.",
+    keyObjective: "Accept the best offer in writing, and keep every professor's goodwill.",
+    description:
+      "Where rules allow it, you can ask politely about start date, relocation support, summer funding or equipment. Many places have fixed salaries, so focus on terms that can change. In North America many universities follow a common acceptance date in April; check the date of each offer.",
     checklist: [
       {
         id: "c-5-4-1",
-        task: "Identify Competing Leverage Points",
-        detail: "Select your highest-paying or most prestigious offer to serve as a polite comparison point."
+        task: "Know What Can Change",
+        detail: "Ask what is fixed by rules and what the group can adjust, such as start date or conference travel."
       },
       {
         id: "c-5-4-2",
-        task: "Draft a Transparent, Respectful Inquiry",
-        detail: "Reiterate that the target university is your first choice intellectually, and transparently ask if supplemental funding is possible."
+        task: "Ask Politely and in Writing",
+        detail: "Send a short email that thanks them, states your question and gives a reason."
       },
       {
         id: "c-5-4-3",
-        task: "Negotiate Dedicated Compute Allocations",
-        detail: "If monetary stipends are fixed by union contracts, negotiate additional dedicated GPU cloud credits or hardware for your desk."
+        task: "Decide by the Deadline",
+        detail: "Respond before the stated date and accept only one offer once you have decided."
       },
       {
         id: "c-5-4-4",
-        task: "Formally Sign & Decline Other Offers Promptly",
-        detail: "Once you sign your accepted contract, promptly decline other offers so their funding can be released to waitlisted peers."
+        task: "Decline with Thanks",
+        detail: "Tell the other professors early and thank them. The research community is small."
       }
     ],
     proTips: [
-      "In Computer Science, the April 15 Resolution (CGS agreement) gives you until April 15 to make your final decision for US universities—never feel pressured to accept early.",
-      "Always remain exceptionally polite and professional; academia is a small world and the professors you decline today will be reviewing your papers at NeurIPS tomorrow."
+      "Get the final terms in writing before you decline other offers.",
+      "Never claim an offer you do not have."
     ],
     commonPitfalls: [
-      "Issuing aggressive ultimatums ('Match this or I won't come')—this alienates faculty before you even arrive.",
-      "Holding onto 5 funded offers until April 15 without letting other students on the waitlist have an opportunity."
+      "Accepting two offers and withdrawing later.",
+      "Ignoring emails from professors who gave you an offer."
     ],
-    deliverable: "Final signed Graduate Research Assistantship (GRA) or Doctoral Fellow appointment letter with maximum negotiated benefits.",
+    deliverable: "A signed or confirmed acceptance and polite decline emails sent.",
     resources: [
       {
-        title: "Council of Graduate Schools (CGS) April 15 Resolution",
-        url: "https://cgsnet.org",
+        title: "Council of Graduate Schools: Resolution on Graduate Scholars",
+        url: "https://cgsnet.org/",
         type: "official",
-        description: "Official agreement protecting graduate student decision timelines across North America."
+        description: "Explains the common April acceptance date used by many US graduate programmes."
       }
     ]
   }

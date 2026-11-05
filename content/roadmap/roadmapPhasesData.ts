@@ -53,7 +53,7 @@ export const roadmapPhasesData: RoadmapPhase[] = [
       "Forgetting to request an official Medium of Instruction (MOI) certificate early from your registrar."
     ],
     practicalExample:
-      "A student with a 3.1 GPA focused on European salaried PhD vacancies where their undergraduate thesis and GitHub project outweighed coursework grades.",
+      "A student with a 3.1 GPA focused on European salaried PhD vacancies where their undergraduate thesis and research portfolio outweighed coursework grades.",
     checklist: [
       { id: "p1-c1", label: "Collected official English transcripts with grading scales from all attended universities." },
       { id: "p1-c2", label: "Calculated native GPA and equivalent US 4.0 or German grade scale." },
@@ -232,9 +232,9 @@ export const roadmapPhasesData: RoadmapPhase[] = [
     ],
     where: [
       {
-        name: "CSRankings (Computer Science Focus)",
-        url: "https://csrankings.org/",
-        description: "Metrics-based ranking tracking top conference publications by university faculty."
+        name: "OpenAlex",
+        url: "https://openalex.org/",
+        description: "Open index of papers, authors and institutions, to see who publishes most in your niche."
       },
       {
         name: "Nature Index",
@@ -306,7 +306,7 @@ export const roadmapPhasesData: RoadmapPhase[] = [
       {
         name: "OpenReview",
         url: "https://openreview.net/",
-        description: "Review current conference submissions and active research papers in computer science and AI."
+        description: "Review current conference submissions and active research papers in your field."
       },
       {
         name: "ResearchGate",

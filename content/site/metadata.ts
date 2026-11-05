@@ -8,26 +8,26 @@ import { brand } from "./brand";
 export const siteMetadata = {
   siteName: brand.name,
   siteUrl: brand.url,
-  defaultTitle: `${brand.name}: Fully Funded AI/ML & CS Research Roadmap`,
+  defaultTitle: `${brand.name}: Fully Funded Research Master's & PhD Roadmap for Engineers`,
   titleTemplate: `%s | ${brand.name}`,
   defaultDescription:
-    "AIGradPath is a free roadmap for Computer Science students in AI/ML research and engineering: choose a country, find AI/ML professors and funders, prepare your CV and statement of purpose, and apply for a fully funded Master's or PhD.",
+    "ResearchBound is a free roadmap for engineering students in any department who want a fully funded research Master's or PhD abroad: choose a country, find professors and funders, prepare your CV and research statement, and apply step by step.",
   locale: brand.locale,
   keywords: [
-    "AIGradPath",
-    "AI Grad Path",
-    "fully funded PhD in machine learning",
-    "fully funded PhD in artificial intelligence",
-    "funded AI research PhD positions",
-    "fully funded Master's in Computer Science",
-    "machine learning PhD scholarships for international students",
-    "how to email a professor machine learning",
-    "statement of purpose machine learning PhD",
-    "AI research PhD abroad",
-    "ELLIS PhD program",
-    "Marie Curie doctoral network AI",
-    "DAAD scholarship Computer Science",
-    "Computer Science graduate admissions",
+    "ResearchBound",
+    "Research Bound",
+    "fully funded PhD in engineering",
+    "fully funded research Master's in engineering",
+    "funded PhD positions engineering abroad",
+    "how to email a professor for a PhD position",
+    "statement of purpose research PhD engineering",
+    "research proposal PhD engineering",
+    "scholarships for international engineering students",
+    "salaried PhD Europe engineering",
+    "research assistantship graduate engineering",
+    "DAAD scholarship engineering",
+    "Marie Curie doctoral network engineering",
+    "graduate research admissions engineering",
     "fully funded scholarships for international students"
   ],
   authors: [{ name: `${brand.name} Team` }],
@@ -141,9 +141,9 @@ export const rootMetadata: Metadata = {
  * Home Page (/) Metadata
  */
 export const homeMetadata: Metadata = constructMetadata({
-  title: "Fully Funded AI/ML & CS Research Roadmap",
+  title: "Fully Funded Research Roadmap for Engineers",
   description:
-    "A step-by-step roadmap for AI/ML research and engineering students: pick a country, find professors and funders, prepare your documents and apply for a fully funded Master's or PhD.",
+    "A step-by-step roadmap for engineering students: pick a country, find research professors and funders, prepare your documents and apply for a fully funded research Master's or PhD.",
   path: "/",
 });
 
@@ -151,9 +151,9 @@ export const homeMetadata: Metadata = constructMetadata({
  * Complete 13-Phase Roadmap (/roadmap) Metadata
  */
 export const roadmapMetadata: Metadata = constructMetadata({
-  title: "The Complete Computer Science Funding Roadmap (13 Phases)",
+  title: "The Complete Research Funding Roadmap for Engineers (13 Phases)",
   description:
-    "A 13-phase roadmap for AI/ML and CS research applicants, from profile audit and country choice to professor outreach, documents and comparing funding offers.",
+    "A 13-phase roadmap for engineering research applicants, from profile audit and country choice to professor outreach, documents and comparing funding offers.",
   path: "/roadmap",
 });
 
@@ -161,9 +161,9 @@ export const roadmapMetadata: Metadata = constructMetadata({
  * Explore Countries (/countries) Metadata
  */
 export const countriesMetadata: Metadata = constructMetadata({
-  title: "Study AI/ML & CS Research Abroad: Funded Destinations",
+  title: "Study Engineering Research Abroad: Funded Destinations",
   description:
-    "Country guides for AI/ML and CS research applicants across Europe, North America, Asia and Oceania, with funding models, awards and official portals.",
+    "Country guides for engineering research applicants across Europe, North America, Asia and Oceania, with funding models, awards and official portals.",
   path: "/countries",
 });
 
@@ -171,9 +171,9 @@ export const countriesMetadata: Metadata = constructMetadata({
  * Find Scholarships & Universities (/scholarships) Metadata
  */
 export const scholarshipsMetadata: Metadata = constructMetadata({
-  title: "Find AI/ML & CS Research Scholarships: 11-Step Search Guide",
+  title: "Find Engineering Research Scholarships: 11-Step Search Guide",
   description:
-    "A safe search workflow for CS students: official university pages, government programmes, copyable search queries and verified portals.",
+    "A safe search workflow for engineering applicants: official university pages, government programmes, copyable search queries and verified portals.",
   path: "/scholarships",
 });
 
@@ -181,9 +181,9 @@ export const scholarshipsMetadata: Metadata = constructMetadata({
  * Find and Contact Professors (/professors) Metadata
  */
 export const professorsMetadata: Metadata = constructMetadata({
-  title: "Find and Email AI/ML Professors",
+  title: "Find and Email Research Professors",
   description:
-    "How AI/ML applicants reach supervisors: check research fit from recent papers, write a short cold email, follow up politely and learn where a supervisor is needed first.",
+    "How engineering applicants reach supervisors: check research fit from recent papers, write a short cold email, follow up politely and learn where a supervisor is needed first.",
   path: "/professors",
 });
 
@@ -191,9 +191,9 @@ export const professorsMetadata: Metadata = constructMetadata({
  * Required Documents Guide (/documents) Metadata
  */
 export const documentsMetadata: Metadata = constructMetadata({
-  title: "Documents for a CS Master's or PhD: CV, SOP, Proposal, Letters",
+  title: "Documents for a Research Master's or PhD: CV, SOP, Proposal, Letters",
   description:
-    "What an AI/ML or CS research application needs: academic CV, statement of purpose, research proposal, recommendation letters and a readiness checklist.",
+    "What an engineering research application needs: academic CV, statement of purpose, research proposal, recommendation letters and a readiness checklist.",
   path: "/documents",
 });
 
@@ -201,9 +201,9 @@ export const documentsMetadata: Metadata = constructMetadata({
  * Frequently Asked Questions (/faqs) Metadata
  */
 export const faqsMetadata: Metadata = constructMetadata({
-  title: "AI/ML & CS Admissions FAQ: IELTS, GPA, Funding",
+  title: "Research Admissions FAQ: IELTS, GPA, Funding",
   description:
-    "Straight answers for CS applicants: IELTS, GPA, supervisor outreach, tuition waivers and reapplying.",
+    "Straight answers for engineering research applicants: IELTS, GPA, supervisor outreach, tuition waivers and reapplying.",
   path: "/faqs",
 });
 

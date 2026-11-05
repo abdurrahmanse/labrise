@@ -11,7 +11,7 @@ export const interviewPrepGuide: GuideDetail = {
       items: [
         { title: "Your own projects", detail: "Be able to explain every project: problem, method, results, mistakes and next steps." },
         { title: "The professor's papers", detail: "Read 3–4 papers, note strengths and one possible extension." },
-        { title: "Fundamentals", detail: "Review linear algebra, probability, optimisation and ML basics. Expect a few technical questions." },
+        { title: "Fundamentals", detail: "Review mathematics, probability and the core courses of your field. Expect a few technical questions." },
         { title: "Questions for them", detail: "Ask about supervision style, funding length, teaching duties and lab culture." }
       ]
     },

@@ -11,7 +11,7 @@ export const documentsData: DocumentGuideline[] = [
     structure: [
       {
         section: "1. Header & Contact Information",
-        guidance: "Full legal name, professional email, phone number, LinkedIn, and links to your GitHub or Google Scholar. Do not include photos, age, marital status, or nationality unless requested."
+        guidance: "Full legal name, professional email, phone number, LinkedIn, and links to your Google Scholar profile, ORCID or portfolio. Do not include photos, age, marital status, or nationality unless requested."
       },
       {
         section: "2. Education & Credentials",
@@ -43,7 +43,7 @@ export const documentsData: DocumentGuideline[] = [
     officialChecks: [
       "Keep to 2 pages maximum for Master's and early-career PhD applicants.",
       "Save as a clean, text-searchable PDF titled 'CV_FirstName_LastName.pdf'.",
-      "Verify that all links (GitHub, Google Scholar, publications) are active and clickable."
+      "Verify that all links (portfolio, Google Scholar, publications) are active and clickable."
     ],
     checklistItems: [
       { id: "doc-cv-1", label: "Structured in reverse chronological order with complete degree details", tip: "Ensure graduation dates match your official transcripts." },
@@ -334,15 +334,15 @@ export const documentsData: DocumentGuideline[] = [
     badge: "Selective Requirement",
     degreeLevel: "Universal",
     what: "Graduate Record Examination (GRE General) measuring Quantitative Reasoning, Verbal Reasoning, and Analytical Writing.",
-    why: "While many programs are now 'GRE Optional', a strong Quantitative score (165–170) can help strengthen applications to competitive computer science and engineering programs.",
+    why: "While many programs are now 'GRE Optional', a strong Quantitative score (165–170) can help strengthen applications to competitive engineering programs.",
     structure: [
       {
         section: "Quantitative Reasoning (130–170)",
-        guidance: "Target: 164–170 for computer science, machine learning and engineering programs."
+        guidance: "Target: 164–170 for engineering and quantitative research programs."
       },
       {
         section: "Verbal Reasoning (130–170)",
-        guidance: "Verbal matters less for AI/ML and engineering programs; 150+ is usually enough."
+        guidance: "Verbal matters less for engineering programs; 150+ is usually enough."
       },
       {
         section: "Analytical Writing (0.0–6.0)",
@@ -367,7 +367,7 @@ export const documentsData: DocumentGuideline[] = [
     name: "Writing Samples, Publications & Portfolio",
     badge: "Technical Demonstrator",
     degreeLevel: "PhD / Research Master's",
-    what: "A sample of your best academic writing (thesis excerpt, published paper, or seminar paper) or a technical portfolio (GitHub repositories, design projects).",
+    what: "A sample of your best academic writing (thesis excerpt, published paper, or seminar paper) or a technical portfolio (code repositories, CAD or design projects).",
     why: "Writing samples provide direct evidence of your critical thinking, scientific writing ability, and research methodology.",
     structure: [
       {
@@ -385,7 +385,7 @@ export const documentsData: DocumentGuideline[] = [
     ],
     officialChecks: [
       "Ensure writing samples are within requested page and word limits.",
-      "Check that GitHub repositories are public, documented with clean READMEs, and reproducible."
+      "Check that shared files and repositories are public, documented and reproducible."
     ],
     checklistItems: [
       { id: "doc-ws-1", label: "Selected your strongest piece of academic or technical writing", tip: "Choose work where you were primary or sole author." },

@@ -19,10 +19,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!phase) return { title: notFoundTitles.phase };
 
   return {
-    title: `Phase ${phase.number}: ${phase.title} — CS Funding Roadmap`,
+    title: `Phase ${phase.number}: ${phase.title} — Research Funding Roadmap`,
     description: `${phase.tagline} Detailed step-by-step instructions, official resources, common pitfalls to avoid, and preparation checklist for Phase ${phase.number}.`,
     openGraph: {
-      title: `Phase ${phase.number}: ${phase.title} — Fully Funded CS Roadmap`,
+      title: `Phase ${phase.number}: ${phase.title} — Fully Funded Research Roadmap`,
       description: phase.what.slice(0, 160),
       type: "article",
     },

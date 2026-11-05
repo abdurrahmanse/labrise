@@ -9,7 +9,7 @@ export const englishAndGreGuide: GuideDetail = {
     {
       heading: "Which test, when",
       items: [
-        { title: "GRE General", detail: "Needed by some US programs. Many computer science programs no longer require it. Check each page." },
+        { title: "GRE General", detail: "Needed by some US programs. Many engineering programs no longer require it. Check each page." },
         { title: "Duolingo English Test", detail: "Accepted by some universities as a cheaper option. Confirm before taking it." },
         { title: "Waivers", detail: "Degrees taught in English or studies in English-speaking countries can waive language tests." }
       ]

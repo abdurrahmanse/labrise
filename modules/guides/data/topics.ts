@@ -12,7 +12,7 @@ export const guideTopics: GuideTopic[] = [
     tag: "Do first",
     steps: [
       "List 3 courses or projects you enjoyed most.",
-      "Read 10 recent papers on arXiv in those topics.",
+      "Read 10 recent papers on those topics.",
       "Pick one area and one sub-topic.",
       "Write your interest in two sentences.",
       "Check that 10+ professors work on it."
@@ -26,7 +26,7 @@ export const guideTopics: GuideTopic[] = [
       "Use a clean one-column LaTeX or Word template.",
       "Order: education, research, projects, publications, skills.",
       "Write each item as action + method + result.",
-      "Add links: GitHub, Google Scholar, website.",
+      "Add links: Google Scholar, ORCID, website.",
       "Keep it 2 pages max and save as PDF."
     ]
   },
@@ -135,8 +135,8 @@ export const guideTopics: GuideTopic[] = [
   { id: "english-and-gre", title: "GRE and other tests", tag: "Only if needed", steps: ["List requirements.", "Check GRE necessity.", "Check Duolingo acceptance.", "Look for waivers.", "Pick the fewest tests."] },
   { id: "master-vs-phd", title: "Master's or PhD?", tag: "Choose first", steps: ["Career goal.", "Entry rules.", "Funding certainty.", "Research profile.", "Decide."] },
   { id: "no-research-background", title: "No research background", tag: "Start here", steps: ["Reproduce papers.", "Small project.", "Find a mentor.", "Research internship.", "Honest SOP."] },
-  { id: "publications", title: "First publication", tag: "Strong plus", steps: ["Pick a project.", "Target a workshop.", "Post on arXiv.", "Release code.", "Get feedback."] },
-  { id: "github-portfolio", title: "GitHub and portfolio", tag: "Show your work", steps: ["Pin 3 projects.", "Write READMEs.", "Make it reproducible.", "Build a page.", "Link everywhere."] },
+  { id: "publications", title: "First publication", tag: "Strong plus", steps: ["Pick a project.", "Target a conference or journal.", "Post a preprint.", "Release data and code.", "Get feedback."] },
+  { id: "github-portfolio", title: "Portfolio and open files", tag: "Show your work", steps: ["Pick 3 projects.", "Write short project pages.", "Share data, code or designs.", "Build a simple page.", "Link it in emails."] },
   { id: "grade-conversion", title: "Grades and conversion", tag: "Give context", steps: ["State the scale.", "Add rank.", "Attach grading key.", "Use official rules.", "Do not self-convert."] },
   { id: "application-portals", title: "Application portals", tag: "Stay organised", steps: ["List systems.", "Create accounts.", "Track in a sheet.", "Check formats.", "Submit early."] },
   { id: "arrival-checklist", title: "Arrival checklist", tag: "After the visa", steps: ["Housing.", "Insurance.", "Money.", "Register.", "Meet supervisor."] },

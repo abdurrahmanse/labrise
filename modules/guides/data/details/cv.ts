@@ -9,7 +9,7 @@ export const cvGuide: GuideDetail = {
     {
       heading: "Structure (in this order)",
       items: [
-        { title: "Header", detail: "Name, email, city/country, links to GitHub, Google Scholar or website. Skip photo, age, marital status and passport details." },
+        { title: "Header", detail: "Name, email, city/country, links to Google Scholar, ORCID or your website. Skip photo, age, marital status and passport details." },
         { title: "Education", detail: "Degree, university, years, GPA with scale (for example 3.7/4.0, top 5%). Add thesis title and supervisor." },
         { title: "Research experience", detail: "Most important section. Title, lab, dates, one line of context, then 2–3 bullets with method and result." },
         { title: "Publications and preprints", detail: "List with authors, venue, year and link. Mark 'under review' honestly. Leave out if you have none and let projects speak." },
@@ -26,8 +26,8 @@ export const cvGuide: GuideDetail = {
       ]
     }
   ],
-  example: { label: "Bullet example", text: "Research Assistant, Vision Lab, XYZ University (2024–2025)\n– Built a segmentation pipeline for retinal images (U-Net, 12k scans), improving Dice from 0.78 to 0.85.\n– Wrote evaluation scripts released on GitHub (140 stars)." },
-  mistakes: ["Three or more pages for a master's applicant.", "Listing every course.", "Vague phrases like 'worked on AI'.", "Fancy multi-column templates that break text extraction."],
+  example: { label: "Bullet example", text: "Research Assistant, Materials Lab, XYZ University (2024–2025)\n– Designed and ran fatigue tests on 3D-printed titanium specimens (60 samples), reducing scatter in results by 30%.\n– Wrote the analysis scripts and a methods note, released with the data in a public repository." },
+  mistakes: ["Three or more pages for a master's applicant.", "Listing every course.", "Vague phrases like 'worked on a project'.", "Fancy multi-column templates that break text extraction."],
   checklist: ["1–2 pages, PDF", "Research section first after education", "All links work", "Numbers in bullets", "Spell-checked by someone else"],
   links: [{ label: "Overleaf CV templates", href: "https://www.overleaf.com/latex/templates/tagged/cv" }],
   related: ["sop", "cold-email", "reference-letter"]

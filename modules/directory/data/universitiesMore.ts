@@ -351,6 +351,84 @@ export const moreUniversities: UniversityEntry[] = [
     ["NYU Abu Dhabi", "https://nyuad.nyu.edu"],
     ["United Arab Emirates University", "https://www.uaeu.ac.ae"]
   ]),
+  ...group("Israel", "Middle East", "Graduate scholarships and research-grant funding", "Check each school's admissions page", [
+    ["Technion – Israel Institute of Technology", "https://www.technion.ac.il/en/"],
+    ["Weizmann Institute of Science", "https://www.weizmann.ac.il/feinberg/"],
+    ["Tel Aviv University", "https://www.tau.ac.il/"],
+    ["Hebrew University of Jerusalem", "https://www.huji.ac.il/"],
+    ["Ben-Gurion University of the Negev", "https://in.bgu.ac.il/en/"],
+    ["Bar-Ilan University", "https://www.biu.ac.il/en"],
+    ["University of Haifa", "https://www.haifa.ac.il/"],
+    ["Reichman University", "https://www.runi.ac.il/en/"]
+  ]),
+  ...group("Egypt", "Middle East", "University and scholarship funding; E-JUST fully funded programmes", "Check each university's admissions page", [
+    ["Cairo University", "https://cu.edu.eg/"],
+    ["American University in Cairo", "https://www.aucegypt.edu/"],
+    ["Ain Shams University", "https://www.asu.edu.eg/"],
+    ["Alexandria University", "https://www.alexu.edu.eg/"],
+    ["Egypt-Japan University of Science and Technology", "https://www.ejust.edu.eg/"],
+    ["Zewail City of Science and Technology", "https://zewailcity.edu.eg/"],
+    ["Mansoura University", "https://www.mans.edu.eg/"],
+    ["Assiut University", "https://www.aun.edu.eg/"]
+  ]),
+  ...group("Jordan", "Middle East", "Research and teaching assistantships; varies by university", "Check each university's admissions page", [
+    ["University of Jordan", "https://www.ju.edu.jo/"],
+    ["Jordan University of Science and Technology", "https://www.just.edu.jo/"],
+    ["Princess Sumaya University for Technology", "https://www.psut.edu.jo/"],
+    ["Yarmouk University", "https://www.yu.edu.jo/"],
+    ["German Jordanian University", "https://www.gju.edu.jo/"],
+    ["Hashemite University", "https://www.hu.edu.jo/"]
+  ]),
+  ...group("Lebanon", "Middle East", "Dean's office PhD funding and assistantships; varies by programme", "Check each university's admissions page", [
+    ["American University of Beirut", "https://www.aub.edu.lb/"],
+    ["Lebanese American University", "https://www.lau.edu.lb/"],
+    ["Saint Joseph University of Beirut", "https://www.usj.edu.lb/"],
+    ["Lebanese University", "https://www.ul.edu.lb/"]
+  ]),
+  ...group("Kuwait", "Middle East", "Varies; funding is often for nationals", "Check each university's admissions page", [
+    ["Kuwait University", "https://www.ku.edu.kw/"],
+    ["Gulf University for Science and Technology", "https://www.gust.edu.kw/"],
+    ["American University of Kuwait", "https://www.auk.edu.kw/"]
+  ]),
+  ...group("Oman", "Middle East", "Varies; government scholarships mainly for nationals", "Check each university's admissions page", [
+    ["Sultan Qaboos University", "https://www.squ.edu.om/"],
+    ["German University of Technology in Oman", "https://www.gutech.edu.om/"],
+    ["University of Nizwa", "https://www.unizwa.edu.om/"]
+  ]),
+  ...group("Bahrain", "Middle East", "Varies by programme", "Check each university's admissions page", [
+    ["University of Bahrain", "https://www.uob.edu.bh/"],
+    ["Arabian Gulf University", "https://www.agu.edu.bh/"],
+    ["Bahrain Polytechnic", "https://www.polytechnic.bh/"]
+  ]),
+  ...group("United Arab Emirates", "Middle East", "Fully funded scholarship (stipend + tuition)", "See the official admissions page", [
+    ["American University of Sharjah", "https://www.aus.edu/"],
+    ["University of Sharjah", "https://www.sharjah.ac.ae/"],
+    ["Zayed University", "https://www.zu.ac.ae/"]
+  ]),
+  ...group("Qatar", "Middle East", "Fully funded graduate scholarship (stipend + tuition + housing)", "See the official admissions page", [
+    ["Texas A&M University at Qatar", "https://www.qatar.tamu.edu/"],
+    ["Carnegie Mellon University in Qatar", "https://www.qatar.cmu.edu/"]
+  ]),
+  ...group("Saudi Arabia", "Middle East", "University scholarship / stipend", "See the official admissions page", [
+    ["Imam Abdulrahman Bin Faisal University", "https://www.iau.edu.sa/"],
+    ["Taibah University", "https://www.taibahu.edu.sa/"],
+    ["King Khalid University", "https://www.kku.edu.sa/"],
+    ["Qassim University", "https://qu.edu.sa/"],
+    ["Princess Nourah bint Abdulrahman University", "https://www.pnu.edu.sa/"],
+    ["University of Jeddah", "https://www.uj.edu.sa/"]
+  ]),
+  ...group("Turkey", "Middle East", "Türkiye Scholarships / university assistantship", "See the official admissions page", [
+    ["Gebze Technical University", "https://www.gtu.edu.tr/"],
+    ["Izmir Institute of Technology", "https://www.iyte.edu.tr/"],
+    ["Yildiz Technical University", "https://www.yildiz.edu.tr/"],
+    ["TOBB University of Economics and Technology", "https://www.etu.edu.tr/"],
+    ["Özyeğin University", "https://www.ozyegin.edu.tr/"],
+    ["Atatürk University", "https://www.atauni.edu.tr/"],
+    ["Sakarya University", "https://www.sakarya.edu.tr/"],
+    ["Erciyes University", "https://www.erciyes.edu.tr/"],
+    ["Dokuz Eylül University", "https://www.deu.edu.tr/"],
+    ["Karadeniz Technical University", "https://www.ktu.edu.tr/"]
+  ]),
   ...group("Malaysia", "Asia", "Malaysia International Scholarship; university fellowships", "Per intake; see the official admissions page", [
     ["Universiti Malaya", "https://www.um.edu.my"],
     ["Universiti Putra Malaysia", "https://www.upm.edu.my"],

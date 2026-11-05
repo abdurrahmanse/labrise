@@ -1,16 +1,13 @@
 import { brand } from "@/content/site/brand";
 
-/** The AIGradPath mark: a path through neural-network nodes that ends at a gold goal node. The same art is in app/icon.svg. */
+/** The ResearchBound mark: a white R on blue, with a gold point like a data point on a graph. The same art is in app/icon.svg. */
 export function Logo({ size = 36, className }: { size?: number; className?: string }) {
-  const { blue, gold } = brand.colors;
   return (
     <svg width={size} height={size} viewBox="0 0 64 64" role="img" aria-label={brand.name} className={className}>
-      <rect width="64" height="64" fill={blue} />
-      <path d="M14 46 26 22 38 40 50 17" fill="none" stroke="#fff" strokeWidth="3.5" strokeLinejoin="miter" />
-      <circle cx="14" cy="46" r="5" fill="#fff" />
-      <circle cx="26" cy="22" r="5" fill="#fff" />
-      <circle cx="38" cy="40" r="5" fill="#fff" />
-      <circle cx="50" cy="17" r="7.5" fill={gold} />
+      <rect width="64" height="64" fill={brand.colors.blue} />
+      <path d="M18 54V14h15a10.5 10.5 0 0 1 0 21H18" fill="none" stroke="#fff" strokeWidth="8" strokeLinejoin="miter" />
+      <path d="M33 36l14 18" fill="none" stroke="#fff" strokeWidth="8" />
+      <circle cx="49" cy="15" r="6" fill={brand.colors.gold} />
     </svg>
   );
 }

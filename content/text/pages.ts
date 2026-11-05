@@ -22,14 +22,14 @@ export const aboutText: StaticPageText = {
   title: `About ${brand.name}`,
   description: "What this site is, who it is for and how its directory is built.",
   eyebrow: "About",
-  heading: "A free guide to funded AI/ML and CS research abroad",
-  lead: "A step-by-step roadmap and a directory of countries, AI/ML professors and funders for Master's and PhD applicants.",
+  heading: "A free guide to funded engineering research abroad",
+  lead: "A step-by-step roadmap and a directory of countries, research professors and funders for Master's and PhD applicants.",
   sections: [
     {
       title: "What it is",
       Icon: BookOpen,
       paragraphs: [
-        `${brand.name} helps Computer Science students plan a fully funded Master's or PhD abroad. It is built for AI/ML research and engineering: it explains each step, from choosing a research area to the visa, and lists the countries, universities, AI/ML professors and funding organisations connected to each route. It does not cover other fields.`
+        `${brand.name} helps engineering students plan a fully funded research Master's or PhD abroad. It is built for research, in any engineering department: it explains each step, from choosing a research area to the visa, and lists the countries, universities, research professors and funding organisations connected to each route. Coursework-only degrees are not the focus.`
       ]
     },
     {
