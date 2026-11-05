@@ -106,7 +106,7 @@ const baseProviders: ProviderEntry[] = [
     supports: "International students at master's and PhD level",
     country: "China", region: "Asia", kind: "Government agency",
     programs: ["Chinese Government Scholarship (CSC)"],
-    route: "Apply via the CSC portal and the host university's agency channel, or via your embassy.",
+    route: "Type A: apply through the Chinese embassy in your country. Type B: apply to a Chinese university that has CSC places, and the university nominates you to CSC.",
     requirements: [
       "Non-Chinese citizen in good health",
       "Master's applicants hold a bachelor's degree; PhD applicants hold a master's degree",

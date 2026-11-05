@@ -229,6 +229,9 @@ export const moreUniversities: UniversityEntry[] = [
     ["Sun Yat-sen University", "https://www.sysu.edu.cn"],
     ["Tongji University", "https://www.tongji.edu.cn"]
   ]),
+  ...group("China", "Asia", "CSC / CAS-ANSO / university scholarship", "See the official admissions page", [
+    ["University of Chinese Academy of Sciences", "https://english.ucas.ac.cn/"]
+  ]),
   ...group("Singapore", "Asia", "Research scholarship (stipend + fees)", "See the graduate admissions page", [
     ["Singapore University of Technology and Design", "https://www.sutd.edu.sg"],
     ["Singapore Management University", "https://www.smu.edu.sg"]

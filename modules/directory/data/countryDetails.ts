@@ -210,15 +210,15 @@ export const countryDetails: Record<string, CountryDetail> = {
     tips: ["Check the professor's lab openings for direct funding."]
   },
   china: {
-    overview: "CSC and university scholarships cover tuition and living for international graduate students.",
+    overview: "The Chinese Government Scholarship (CSC) and the CAS-ANSO Scholarship fund international Master's and PhD students, and many universities add their own awards.",
     phd: "3–4 years.",
-    pay: "Roughly CNY 3,000–3,500 per month plus accommodation or allowance (type A/B vary).",
+    pay: "CSC and ANSO awards cover tuition, accommodation or an allowance, insurance and a monthly stipend. Amounts change with each call, so check the current one.",
     language: "English-taught programs exist.",
-    intake: "Applications usually winter to spring.",
+    intake: "Applications usually open from winter to spring.",
     visa: "X1 student visa.",
-    find: [{ label: "CSC", href: "https://www.csc.edu.cn" }, { label: "Study in China", href: "https://www.campuschina.org" }],
-    scholarships: ["CSC", "Tsinghua / Peking scholarships"],
-    tips: ["A pre-admission letter from a supervisor strengthens CSC applications."]
+    find: [{ label: "CSC", href: "https://www.csc.edu.cn" }, { label: "CAS-ANSO Scholarship", href: "https://www.anso.org.cn" }, { label: "Study in China", href: "https://www.campuschina.org" }],
+    scholarships: ["Chinese Government Scholarship (CSC)", "CAS-ANSO Scholarship"],
+    tips: ["Type B (through a university) needs admission or pre-admission, so contact a supervisor early.", "Read the age limit and the nationality rule of each call."]
   },
   singapore: {
     overview: "NUS, NTU and A*STAR run research scholarships.",

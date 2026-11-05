@@ -11,11 +11,11 @@ export const siteMetadata = {
   defaultTitle: `${brand.name}: Fully Funded Research Master's & PhD Roadmap for Engineers`,
   titleTemplate: `%s | ${brand.name}`,
   defaultDescription:
-    "ResearchBound is a free roadmap for engineering students in any department who want a fully funded research Master's or PhD abroad: choose a country, find professors and funders, prepare your CV and research statement, and apply step by step.",
+    "Labrise is a free roadmap for engineering students in any department who want a fully funded research Master's or PhD abroad: choose a country, find professors and funders, prepare your CV and research statement, and apply step by step.",
   locale: brand.locale,
   keywords: [
-    "ResearchBound",
-    "Research Bound",
+    "Labrise",
+    "Labrise scholarships",
     "fully funded PhD in engineering",
     "fully funded research Master's in engineering",
     "funded PhD positions engineering abroad",

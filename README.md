@@ -1,4 +1,4 @@
-# ResearchBound
+# Labrise
 
 A free roadmap to a fully funded **research** Master's or PhD abroad, for engineering students in any department.
 
@@ -6,7 +6,7 @@ A free roadmap to a fully funded **research** Master's or PhD abroad, for engine
 
 ## About
 
-ResearchBound shows engineering students how to win a funded research place abroad, step by step. It brings the plan, the guides and a directory of research professors, universities and funders into one simple site. Research is the focus: research Master's and PhD programmes, in any engineering department.
+Labrise shows engineering students how to win a funded research place abroad, step by step. It brings the plan, the guides and a directory of research professors, universities and funders into one simple site. Research is the focus: research Master's and PhD programmes, in any engineering department.
 
 ## Mission
 

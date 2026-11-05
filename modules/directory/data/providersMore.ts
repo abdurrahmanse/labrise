@@ -25,24 +25,6 @@ export const moreProviders: ProviderEntry[] = [
     ["Doctorate completed (or about to be) for postdoctoral fellowships", "Strong publication record", "A host in Germany who agrees to receive you"],
     ["CV and publication list", "Research proposal", "Invitation from the host", "Reference letters"],
     "Independent expert review; no fixed quota by country or subject.", "https://www.humboldt-foundation.de"),
-  entry("Germany", "Europe", "Political foundation", "Konrad-Adenauer-Stiftung",
-    "Highly able students and doctoral candidates, including international ones, by programme", ["KAS Scholarships"],
-    "Apply through the foundation's scholarship portal; international applicants use the international programme.",
-    ["Excellent academic record", "Social or political engagement", "Enrolment at a university in Germany or a place to study there"],
-    ["CV", "Transcripts", "Motivation statement", "Reference letters"],
-    "Written application, selection seminar and interviews.", "https://www.kas.de"),
-  entry("Germany", "Europe", "Political foundation", "Friedrich-Ebert-Stiftung",
-    "Students and doctoral candidates, including international students at German universities", ["FES Scholarships"],
-    "Apply through the foundation's scholarship page; check the international students section for the current call.",
-    ["Very good academic results", "Social or political engagement", "Study at a German university"],
-    ["CV", "Transcripts", "Motivation statement", "Reference letters"],
-    "Application review followed by selection interviews.", "https://www.fes.de"),
-  entry("Germany", "Europe", "Political foundation", "Heinrich-Böll-Stiftung",
-    "Students and doctoral candidates, including international applicants", ["Heinrich Böll Foundation Scholarships"],
-    "Apply through the foundation's online scholarship portal during the open call.",
-    ["Strong academic record", "Social, ecological or political engagement", "Study at a university in Germany"],
-    ["CV", "Transcripts", "Motivation statement", "Reference letters"],
-    "Document review, then selection interviews.", "https://www.boell.de"),
 
   // Switzerland
   entry("Switzerland", "Europe", "Government research funder", "Swiss National Science Foundation (SNSF)",
@@ -595,11 +577,18 @@ export const moreProviders: ProviderEntry[] = [
     "Apply to the PhD programme at AUB, then ask the faculty which dean's office funding applies to you.",
     ["Master's degree or equivalent in a related field", "Three recommendation letters", "Funding terms change; confirm the current ones with the faculty"],
     ["Online application", "Official transcripts", "Three recommendation letters"],
-    "Admission by the department, then funding decisions by the faculty.", "https://www.aub.edu.lb/")
+    "Admission by the department, then funding decisions by the faculty.", "https://www.aub.edu.lb/"),
+  entry("China", "Asia", "Science academy and alliance", "Alliance of International Science Organizations (ANSO) and the Chinese Academy of Sciences",
+    "International Master's and PhD students at USTC, UCAS and institutes of the Chinese Academy of Sciences", ["CAS-ANSO Scholarship"],
+    "Apply through the admission system of USTC or UCAS and select the ANSO scholarship option, or through a participating CAS institute.",
+    ["Not a Chinese citizen", "Admission to USTC, UCAS or a CAS institute", "Age limit and degree requirements set in each call", "A separate track serves PhD applicants from developing countries"],
+    ["Transcripts and degree certificate", "Study plan or research proposal", "Recommendation letters", "Language certificate if asked"],
+    "Review by the host institution and the scholarship office. Amounts and dates change with each call.", "https://www.anso.org.cn")
 ];
 
 
-export const moreUniversityOnlyProviders: Record<string, string> = {
+export const moreUniversityOnlyProviders: Record<string, string | string[]> = {
+  "Alliance of International Science Organizations (ANSO) and the Chinese Academy of Sciences": ["University of Science and Technology of China", "University of Chinese Academy of Sciences"],
   "Weizmann Institute of Science (Feinberg Graduate School)": "Weizmann Institute of Science",
   "Technion Graduate School": "Technion – Israel Institute of Technology",
   "Egypt-Japan University of Science and Technology (E-JUST)": "Egypt-Japan University of Science and Technology",

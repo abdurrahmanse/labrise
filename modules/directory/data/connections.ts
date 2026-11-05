@@ -3,8 +3,8 @@
 
 import { moreUniversityOnlyProviders } from "./providersMore";
 
-/** Providers tied to a single university. They are not offered across the whole country. */
-export const universityOnlyProviders: Record<string, string> = {
+/** Providers tied to one university, or to a short list of them. They are not offered across the whole country. */
+export const universityOnlyProviders: Record<string, string | string[]> = {
   ...moreUniversityOnlyProviders,
   "Gates Cambridge Trust": "University of Cambridge",
   "Rhodes Trust": "University of Oxford",
@@ -27,8 +27,20 @@ export const europeanProgrammeCountries = [
 /** Nations inside a larger country whose funders also apply: UK-wide programmes work in Scotland. */
 export const parentCountry: Record<string, string> = { Scotland: "United Kingdom" };
 
-/** Industry fellowships a PhD student can win from inside a PhD, through a nominating university. */
-export const phdFellowshipProviders = ["Google PhD Fellowship", "NVIDIA Graduate Fellowship Program", "Apple Scholars in AI/ML PhD Fellowship"];
+/**
+ * Providers that fund study at many universities in many countries, so they belong to no single host country.
+ * They are listed in the providers directory and linked from their own scholarship page, but not under a country or a university.
+ * Industry fellowships go to students already in a PhD, through universities that the company invites or lets nominate.
+ */
+export const worldwideProviders = [
+  "Google PhD Fellowship",
+  "NVIDIA Graduate Fellowship Program",
+  "Apple Scholars in AI/ML PhD Fellowship",
+  "Aga Khan Foundation (International Scholarship Programme)",
+  "Mastercard Foundation Scholars Program",
+  "Islamic Development Bank (Scholarship Programme)",
+  "Institute of International Education (IIE)"
+];
 
 /** Universities that host an ELLIS unit. */
 export const ellisHosts = [

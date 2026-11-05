@@ -4,8 +4,8 @@ import {
   ellisHosts,
   europeanProgrammeCountries,
   parentCountry,
-  phdFellowshipProviders,
-  universityOnlyProviders
+  universityOnlyProviders,
+  worldwideProviders
 } from "../data/connections";
 import { providers } from "../data/providers";
 import { scholarships } from "../data/scholarships";
@@ -15,24 +15,25 @@ import { professorsAtUniversity, professorsInCountry, universitiesInCountry } fr
 
 const named = (names: string[]) => providers.filter((p) => names.includes(p.name));
 
+/** The universities a university-only provider is tied to, or none if it is open across the country. */
+const tiedUniversities = (providerName: string): string[] => [universityOnlyProviders[providerName] ?? []].flat();
+
 /** Organisations that fund or run programmes in a country. */
 export function fundersOfCountry(country: string): ProviderEntry[] {
   const nations = [country, parentCountry[country]];
-  const national = providers.filter((p) => nations.includes(p.country) && !universityOnlyProviders[p.name]);
+  const national = providers.filter((p) => nations.includes(p.country) && !universityOnlyProviders[p.name] && !worldwideProviders.includes(p.name));
   const european = europeanProgrammeCountries.includes(country) ? named(countryWideEuropeanProviders) : [];
   const universityBased = named(
-    Object.entries(universityOnlyProviders)
-      .filter(([, uni]) => universities.find((u) => u.name === uni)?.country === country)
-      .map(([name]) => name)
+    Object.keys(universityOnlyProviders).filter((name) => tiedUniversities(name).some((uni) => universities.find((u) => u.name === uni)?.country === country))
   );
-  return dedupe([...national, ...european, ...universityBased, ...named(phdFellowshipProviders)]);
+  return dedupe([...national, ...european, ...universityBased]);
 }
 
 /** Organisations connected to one university: national ones, university-only ones and ELLIS. */
 export function fundersOfUniversity(university: UniversityEntry): ProviderEntry[] {
   const national = fundersOfCountry(university.country).filter((p) => {
-    const only = universityOnlyProviders[p.name];
-    return !only || only === university.name;
+    const tied = tiedUniversities(p.name);
+    return tied.length === 0 || tied.includes(university.name);
   });
   const ellis = ellisHosts.includes(university.name) ? named([ELLIS_PROVIDER]) : [];
   return dedupe([...national, ...ellis]);
