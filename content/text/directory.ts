@@ -126,6 +126,7 @@ export const detailText = {
     deadlines: "Deadlines and funding change every cycle. Confirm on the official site.",
     openOrg: "Open an organisation to see its requirements and how to apply.",
     amounts: "Amounts, eligibility and deadlines change every cycle. Confirm on the official page.",
+    worldwide: "This organisation funds students at many universities in many countries, so it is not tied to one country or university. Check the official page for the universities that can take part.",
     usualRules: "These are the usual rules. Each programme sets its own, so read the official call before you apply.",
     noFunders: "No national organisation is listed. See the funding organisations tab for details.",
     universityRoute: "Want a university route instead?",

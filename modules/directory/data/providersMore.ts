@@ -180,7 +180,7 @@ export const moreProviders: ProviderEntry[] = [
     ["Application form", "Transcripts", "Study plan", "References"],
     "Review by AECID.", "https://www.aecid.es"),
   entry("Spain", "Europe", "Foundation", "la Caixa Foundation",
-    "Doctoral researchers in Spain and Portugal, and graduate students", ["INPhINIT doctoral fellowships", "Postgraduate study fellowships"],
+    "Doctoral researchers hosted at research centres in Spain and Portugal", ["INPhINIT doctoral fellowships"],
     "Apply online during the call.",
     ["Master's degree for doctoral fellowships", "Strong academic record", "Research plan with a host"],
     ["CV", "Transcripts", "Research proposal", "References"],

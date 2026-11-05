@@ -13,6 +13,7 @@ import { Flag } from "@/shared/components/Flag";
 import { detailText } from "@/content/text/directory";
 import { EntryActions } from "@/modules/library";
 import { providerSlug } from "../../utils/slugs";
+import { worldwideProviders } from "../../data/connections";
 
 const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 
@@ -64,6 +65,8 @@ export function ProviderDetailView({ provider }: { provider: ProviderEntry }) {
           <Chips items={programmes.map((s) => ({ href: `/directory/scholarships/${scholarshipSlug(s)}`, label: s.name, meta: s.level }))} />
         </Block>
       )}
+
+      {worldwideProviders.includes(provider.name) && <p className="text-sm text-slate-400">{detailText.hints.worldwide}</p>}
 
       {places.length > 0 && (
         <Block title={detailText.blocks.universitiesApply}>
