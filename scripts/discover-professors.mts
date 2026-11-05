@@ -11,7 +11,7 @@
 // OpenAlex without a key allows about 1000 calls a day, so each university costs two calls and the script stops early.
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { professors, universities } from "../modules/directory/data/index";
-import { universityOfProfessor } from "../modules/directory/utils/lookups";
+import { universityOfProfessor } from "../modules/directory/utils/lookups/universityLookups";
 
 const COUNTRY: Record<string, string> = {
   Germany: "DE", Switzerland: "CH", Sweden: "SE", Netherlands: "NL", Denmark: "DK", Norway: "NO", Finland: "FI", Belgium: "BE", Austria: "AT", France: "FR", Italy: "IT", Spain: "ES",
