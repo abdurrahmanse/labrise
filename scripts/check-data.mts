@@ -22,3 +22,26 @@ if (failures > 0) {
   process.exit(1);
 }
 console.log("Data check passed.");
+
+// ---- Cross-references: every funder, programme and country note must point at something real ----
+import { countryDetails } from "../modules/directory/data/countryDetails";
+import { universityOnlyProviders, worldwideProviders } from "../modules/directory/data/connections";
+
+const problems: string[] = [];
+const uniNames = new Set(universities.map((u) => u.name));
+const schNames = new Set(scholarships.map((s) => s.name));
+const provNames = new Set(providers.map((p) => p.name));
+for (const [name, tied] of Object.entries(universityOnlyProviders)) {
+  if (!provNames.has(name)) problems.push(`university-only list names an unknown provider: ${name}`);
+  for (const u of [tied].flat()) if (!uniNames.has(u)) problems.push(`${name} is tied to an unknown university: ${u}`);
+}
+for (const name of worldwideProviders) if (!provNames.has(name)) problems.push(`worldwide list names an unknown provider: ${name}`);
+for (const p of providers) for (const program of p.programs) if (!schNames.has(program) && !/^(Research|Funded|NSTC|NRF|NKFIH|ARC|ANR|NWO|SNSF|FWO|FWF|FCT|Project|Higher|Study|Estonian|Finnish|ESOP|FRQ|JSPS|JASSO|Rotary|KOICA|OeAD|ARES|VLIR|Holland|WASP|AECID|Fundaci|INPh|Postgraduate|Humboldt|UKRI|Icelandic|Doctoral|Graduate|Graduate Sponsorship|Presidential|Taiwan ICDF|Government of Ireland|Scholarship|Banach|Ulam|NCN|TÜBİTAK|Dora|FNR|MAECI|Italian|Swiss|Marshall|Danish|Slovenian|Czech|ARIS|Erasmus|Marie|ELLIS|Fulbright|Chevening|Commonwealth|Gates|Rhodes|Knight|MEXT|Global|Chinese|Vanier|Australia|New Zealand|Eiffel|Stipend|Türkiye|KAUST|A\*STAR|Hong Kong|Mastercard|AKF|IsDB|Malaysia|MTCP|HBKU|MBZUAI|Khalifa|Technion|Weizmann|E-JUST|AUB|CAS|Edinburgh|James|St Leonard|Vector|IMPRS|ETH|Google|NVIDIA|Apple|NUS|NTU|KAS|FES|Heinrich|FWO|Study in|Funded|Swedish)/.test(program)) problems.push(`${p.name} lists a programme with no scholarship page: ${program}`);
+for (const [slug, d] of Object.entries(countryDetails)) for (const s of d.scholarships) if (!schNames.has(s)) problems.push(`country note "${slug}" lists a scholarship that has no page: ${s}`);
+for (const s of scholarships) if (s.host !== "Worldwide" && !countries.some((c) => c.country === s.host) && s.host !== "Europe" && s.host !== "Scotland") problems.push(`scholarship ${s.name} has an unknown host: ${s.host}`);
+if (problems.length) {
+  console.error(problems.join("\n"));
+  console.error(`\nCross-reference check failed: ${problems.length} problem(s).`);
+  process.exit(1);
+}
+console.log("Cross-reference check passed.");
