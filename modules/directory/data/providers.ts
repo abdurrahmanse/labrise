@@ -412,7 +412,7 @@ const baseProviders: ProviderEntry[] = [
     route: "Apply through the Aga Khan Foundation office or the online form for your country, if your country is listed.",
     requirements: [
       "National of one of the programme's eligible countries",
-      "Excellent academic record and admission to a master's programme abroad",
+      "Excellent academic record and admission to a postgraduate programme abroad (priority to master's; PhD considered)",
       "No other means of paying for the study",
       "Awards are partly a grant and partly a loan"
     ],
