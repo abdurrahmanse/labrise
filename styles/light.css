@@ -1,0 +1,114 @@
+
+/* ───────────────────────────────────────────────────────────
+   Light theme (default)
+   The dark palette is the base. In light mode the neutral scale,
+   white/black alpha overlays and canvas colours are swapped, so every
+   existing utility (text-slate-300, border-white/20, bg-canvas-card…)
+   flips without touching component code.
+   ─────────────────────────────────────────────────────────── */
+.light {
+  color-scheme: light;
+  --line: rgba(0, 0, 0, 0.3);
+  --color-canvas-base: var(--pure-bg);
+  --color-canvas-card: var(--pure-bg);
+  --color-canvas-card-hover: var(--pure-bg);
+  --color-canvas-border: rgba(0, 0, 0, 0.3);
+  --color-canvas-ink: var(--pure-bg);
+  --color-white: var(--pure-fg);
+  --background: var(--pure-bg);
+  --foreground: var(--pure-fg);
+  --pure-fg: #000000;
+  --pure-bg: #ffffff;
+  --btn-bg: #000000;
+  --btn-fg: #ffffff;
+  --btn-hover: #000000;
+
+
+  /* Readable status colours on a light canvas */
+  --color-emerald-300: #047857;
+  --color-emerald-400: #059669;
+  --color-amber-300: #b45309;
+  --color-amber-400: #d97706;
+  --color-rose-300: #be123c;
+  --color-rose-400: #e11d48;
+  --color-emerald-800: #a7f3d0;
+  --color-emerald-900: #d1fae5;
+  --color-emerald-950: #ecfdf5;
+  --color-amber-800: #fde68a;
+  --color-amber-900: #fef3c7;
+  --color-amber-950: #fffbeb;
+  --color-rose-800: #fecdd3;
+  --color-rose-900: #ffe4e6;
+  --color-rose-950: #fff1f2;
+}
+
+.light ::selection {
+  background: #000000;
+  color: #ffffff;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: #ffffff;
+}
+
+/* Bright accent text is too light on white: use the deeper shades */
+.light .text-indigo-200,
+.light .text-indigo-300,
+.light .text-indigo-400,
+.light .hover\:text-indigo-200:hover,
+.light .hover\:text-indigo-300:hover,
+.light .text-purple-300,
+.light .text-purple-400 {
+  color: #000000;
+}
+
+.light .text-cyan-300,
+.light .text-cyan-400,
+.light .text-teal-300,
+.light .text-teal-400 {
+  color: #000000;
+}
+
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.light .bg-field {
+  background-image:
+    radial-gradient(60% 55% at 78% 0%, rgba(0, 0, 0, 0.11), transparent 72%),
+    linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* White hover fills become ink in light mode, so their dark text needs flipping */
+.light .hover\:bg-white:hover {
+  color: #ffffff;
+}
+
+/* Touch screens: links that stand alone in a list get a taller hit area (WCAG target size). */
+@media (pointer: coarse) {
+  li > a:not([class*="p-"]):not([class*="px-"]):not([class*="py-"]),
+  dd > a:not([class*="p-"]):not([class*="px-"]):not([class*="py-"]) {
+    display: inline-block;
+    padding-block: 0.3rem;
+  }
+}
+
+/* Solid accent fills use the foreground colour, so the text on them takes the background colour in both themes. */
+:is(.bg-indigo-500, .bg-indigo-600, .bg-indigo-700, .bg-purple-500, .bg-purple-600, .bg-blue-500, .bg-blue-600, .bg-cyan-500, .bg-cyan-600, .bg-teal-500, .bg-teal-600, .from-indigo-600, .hover\:bg-indigo-600:hover, .hover\:bg-indigo-500:hover),
+:is(.bg-indigo-500, .bg-indigo-600, .bg-indigo-700, .bg-purple-500, .bg-purple-600, .bg-blue-500, .bg-blue-600, .bg-cyan-500, .bg-cyan-600, .bg-teal-500, .bg-teal-600, .from-indigo-600) :is(.text-white, [class*="text-slate-"]) {
+  color: var(--pure-bg);
+}
+
+/* Status fills keep real white text in light mode. */
+.light .bg-emerald-500,
+.light .bg-emerald-500 .text-white,
+.light .bg-rose-500,
+.light .bg-rose-500 .text-white {
+  color: #ffffff;
+}
+

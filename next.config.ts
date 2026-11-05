@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Lets a build run beside a dev server without sharing the .next folder.
+  distDir: process.env.NEXT_DIST_DIR ?? ".next",
   /* config options here */
   experimental: {
     agentFeedback: true,

@@ -1,0 +1,169 @@
+/* Theme switching is class based (next-themes sets .dark / .light on <html>) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-rajdhani), 'Rajdhani', sans-serif;
+  --font-heading: var(--font-rajdhani), 'Rajdhani', sans-serif;
+  --font-mono: var(--font-mono), monospace;
+
+  /* ── Design system: Minimalism + Brutalism + Glassmorphism ──
+     Minimal   → neutral ink palette, one acid-lime accent, lots of air
+     Brutalist → square corners, hard 1–2px borders, hard offset shadows
+     Glass     → frosted translucent surfaces floating over a quiet field */
+  --color-canvas-base: var(--pure-bg);
+  --color-canvas-card: var(--pure-bg);
+  --color-canvas-card-hover: var(--pure-bg);
+  --color-canvas-border: rgba(255, 255, 255, 0.3);
+  --color-canvas-ink: var(--pure-bg);
+
+  --color-accent-indigo: var(--pure-fg);
+  --color-accent-cyan: var(--pure-fg);
+  --color-accent-emerald: #10b981;
+  --color-accent-amber: #f59e0b;
+
+  /* Navy-tinted neutrals replace slate/gray */
+  --color-slate-50: var(--pure-fg);
+  --color-slate-100: var(--pure-fg);
+  --color-slate-200: var(--pure-fg);
+  --color-slate-300: var(--pure-fg);
+  --color-slate-400: var(--pure-fg);
+  --color-slate-500: var(--pure-fg);
+  --color-slate-600: var(--pure-fg);
+  --color-slate-700: var(--pure-fg);
+  --color-slate-800: var(--pure-bg);
+  --color-slate-900: var(--pure-bg);
+  --color-slate-950: var(--pure-bg);
+  --color-gray-50: var(--pure-fg);
+  --color-gray-100: var(--pure-fg);
+  --color-gray-200: var(--pure-fg);
+  --color-gray-300: var(--pure-fg);
+  --color-gray-400: var(--pure-fg);
+  --color-gray-500: var(--pure-fg);
+  --color-gray-600: var(--pure-fg);
+  --color-gray-700: var(--pure-fg);
+  --color-gray-800: var(--pure-bg);
+  --color-gray-900: var(--pure-bg);
+  --color-gray-950: var(--pure-bg);
+
+  /* Scholarly blue: indigo / violet / purple / blue families */
+  --color-indigo-50: var(--pure-fg);
+  --color-indigo-100: var(--pure-fg);
+  --color-indigo-200: var(--pure-fg);
+  --color-indigo-300: var(--pure-fg);
+  --color-indigo-400: var(--pure-fg);
+  --color-indigo-500: var(--pure-fg);
+  --color-indigo-600: var(--pure-fg);
+  --color-indigo-700: var(--pure-fg);
+  --color-indigo-800: var(--pure-bg);
+  --color-indigo-900: var(--pure-bg);
+  --color-indigo-950: var(--pure-bg);
+  --color-violet-50: var(--pure-fg);
+  --color-violet-100: var(--pure-fg);
+  --color-violet-200: var(--pure-fg);
+  --color-violet-300: var(--pure-fg);
+  --color-violet-400: var(--pure-fg);
+  --color-violet-500: var(--pure-fg);
+  --color-violet-600: var(--pure-fg);
+  --color-violet-700: var(--pure-fg);
+  --color-violet-800: var(--pure-bg);
+  --color-violet-900: var(--pure-bg);
+  --color-violet-950: var(--pure-bg);
+  --color-purple-50: var(--pure-fg);
+  --color-purple-100: var(--pure-fg);
+  --color-purple-200: var(--pure-fg);
+  --color-purple-300: var(--pure-fg);
+  --color-purple-400: var(--pure-fg);
+  --color-purple-500: var(--pure-fg);
+  --color-purple-600: var(--pure-fg);
+  --color-purple-700: var(--pure-fg);
+  --color-purple-800: var(--pure-bg);
+  --color-purple-900: var(--pure-bg);
+  --color-purple-950: var(--pure-bg);
+  --color-blue-50: var(--pure-fg);
+  --color-blue-100: var(--pure-fg);
+  --color-blue-200: var(--pure-fg);
+  --color-blue-300: var(--pure-fg);
+  --color-blue-400: var(--pure-fg);
+  --color-blue-500: var(--pure-fg);
+  --color-blue-600: var(--pure-fg);
+  --color-blue-700: var(--pure-fg);
+  --color-blue-800: var(--pure-bg);
+  --color-blue-900: var(--pure-bg);
+  --color-blue-950: var(--pure-bg);
+
+  /* Academic gold: cyan / sky / teal families */
+  --color-cyan-50: var(--pure-fg);
+  --color-cyan-100: var(--pure-fg);
+  --color-cyan-200: var(--pure-fg);
+  --color-cyan-300: var(--pure-fg);
+  --color-cyan-400: var(--pure-fg);
+  --color-cyan-500: var(--pure-fg);
+  --color-cyan-600: var(--pure-fg);
+  --color-cyan-700: var(--pure-fg);
+  --color-cyan-800: var(--pure-bg);
+  --color-cyan-900: var(--pure-bg);
+  --color-cyan-950: var(--pure-bg);
+  --color-sky-50: var(--pure-fg);
+  --color-sky-100: var(--pure-fg);
+  --color-sky-200: var(--pure-fg);
+  --color-sky-300: var(--pure-fg);
+  --color-sky-400: var(--pure-fg);
+  --color-sky-500: var(--pure-fg);
+  --color-sky-600: var(--pure-fg);
+  --color-sky-700: var(--pure-fg);
+  --color-sky-800: var(--pure-bg);
+  --color-sky-900: var(--pure-bg);
+  --color-sky-950: var(--pure-bg);
+  --color-teal-50: var(--pure-fg);
+  --color-teal-100: var(--pure-fg);
+  --color-teal-200: var(--pure-fg);
+  --color-teal-300: var(--pure-fg);
+  --color-teal-400: var(--pure-fg);
+  --color-teal-500: var(--pure-fg);
+  --color-teal-600: var(--pure-fg);
+  --color-teal-700: var(--pure-fg);
+  --color-teal-800: var(--pure-bg);
+  --color-teal-900: var(--pure-bg);
+  --color-teal-950: var(--pure-bg);
+
+  /* Square everything (brutalist). rounded-full stays for dots/avatars. */
+  --radius-xs: 0;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-2xl: 0;
+  --radius-3xl: 0;
+  --radius-4xl: 0;
+
+  /* Hard offset shadows instead of soft glows */
+  --shadow-sm: 2px 2px 0 0 color-mix(in srgb, var(--pure-fg) 30%, transparent);
+  --shadow-md: 3px 3px 0 0 color-mix(in srgb, var(--pure-fg) 30%, transparent);
+  --shadow-lg: 4px 4px 0 0 color-mix(in srgb, var(--pure-fg) 30%, transparent);
+  --shadow-xl: 6px 6px 0 0 color-mix(in srgb, var(--pure-fg) 30%, transparent);
+  --shadow-2xl: 8px 8px 0 0 color-mix(in srgb, var(--pure-fg) 30%, transparent);
+
+  /* Slightly scaled down heading & title font size tokens */
+  --text-2xl: 1.35rem;
+  --text-3xl: 1.65rem;
+  --text-4xl: 2rem;
+  --text-5xl: 2.6rem;
+  --text-6xl: 3.25rem;
+  --text-7xl: 3.85rem;
+}
+
+:root {
+  color-scheme: dark;
+  --background: var(--pure-bg);
+  --foreground: var(--pure-fg);
+  /* Button colours: white on dark, black on light */
+  --pure-fg: #ffffff;
+  --pure-bg: #000000;
+  --btn-bg: #ffffff;
+  --btn-fg: #000000;
+  --btn-hover: #ffffff;
+  --accent: var(--pure-fg);
+  --line: rgba(255, 255, 255, 0.3);
+  --font-rajdhani: 'Rajdhani', sans-serif;
+  --font-heading: 'Rajdhani', sans-serif;
+}
