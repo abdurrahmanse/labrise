@@ -23,7 +23,7 @@ export function LinkCardGrid({ items, columns = "md:grid-cols-2 lg:grid-cols-3" 
         <Link
           key={it.href}
           href={it.href}
-          className={surface({ tone: "panel", depth: "md", padding: "lg", className: "group flex items-center justify-between gap-4 transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[7px_7px_0_0_rgba(58,95,224,0.4)]" })}
+          className={surface({ tone: "panel", depth: "md", padding: "lg", className: "group flex items-center justify-between gap-4 transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[7px_7px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]" })}
         >
           <div className="flex items-center gap-4 min-w-0">
             {it.icon && <IconTile icon={it.icon} />}

@@ -12,10 +12,10 @@ export const surface = cva("backdrop-blur-xl", {
     },
     depth: {
       none: "",
-      sm: "shadow-[3px_3px_0_0_rgba(15,23,42,0.12)]",
-      soft: "shadow-[4px_4px_0_0_rgba(15,23,42,0.12)]",
-      md: "shadow-[4px_4px_0_0_rgba(15,23,42,0.18)]",
-      lg: "shadow-[6px_6px_0_0_rgba(58,95,224,0.25)]"
+      sm: "shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]",
+      soft: "shadow-[4px_4px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]",
+      md: "shadow-[4px_4px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]",
+      lg: "shadow-[6px_6px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]"
     },
     interactive: {
       true: "transition-all duration-150 hover:-translate-y-0.5 hover:border-indigo-400",

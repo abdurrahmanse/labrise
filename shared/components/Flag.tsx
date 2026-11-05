@@ -22,5 +22,5 @@ interface FlagProps {
 export function Flag({ country, className = "h-6 w-9" }: FlagProps) {
   const Component = FLAGS[country];
   if (!Component) return null;
-  return <Component title={country} className={`${className} shrink-0 rounded-[2px] shadow-[0_0_0_1px_rgba(15,23,42,0.15)]`} />;
+  return <Component title={country} className={`${className} shrink-0 rounded-[2px] shadow-[0_0_0_1px_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]`} />;
 }

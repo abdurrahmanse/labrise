@@ -18,7 +18,7 @@ export function FunderList({ funders, empty }: { funders: ProviderEntry[]; empty
         <Link
           key={p.name}
           href={`/directory/providers/${providerSlug(p)}`}
-          className={surface({ tone: "glass", depth: "sm", padding: "md", className: "group flex items-start gap-3 transition-all hover:-translate-y-0.5 hover:shadow-[5px_5px_0_0_rgba(58,95,224,0.3)]" })}
+          className={surface({ tone: "glass", depth: "sm", padding: "md", className: "group flex items-start gap-3 transition-all hover:-translate-y-0.5 hover:shadow-[5px_5px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]" })}
         >
           <Flag country={p.country} className="mt-1 h-5 w-8" />
           <div className="min-w-0 flex-1">

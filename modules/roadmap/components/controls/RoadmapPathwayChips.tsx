@@ -27,7 +27,7 @@ export function RoadmapPathwayChips({
         onClick={() => onFilterDegreeChange("all")}
         className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer border ${
           filterDegree === "all"
-            ? "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] font-bold"
+            ? "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] font-bold"
             : "bg-white/[0.03] text-slate-400 border-white/5 hover:text-white hover:border-white/15"
         }`}
       >
@@ -39,7 +39,7 @@ export function RoadmapPathwayChips({
         onClick={() => onFilterDegreeChange("masters")}
         className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer border ${
           filterDegree === "masters"
-            ? "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] font-bold"
+            ? "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] font-bold"
             : "bg-white/[0.03] text-slate-400 border-white/5 hover:text-white hover:border-white/15"
         }`}
       >
@@ -51,7 +51,7 @@ export function RoadmapPathwayChips({
         onClick={() => onFilterDegreeChange("phd")}
         className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer border ${
           filterDegree === "phd"
-            ? "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] font-bold"
+            ? "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] font-bold"
             : "bg-white/[0.03] text-slate-400 border-white/5 hover:text-white hover:border-white/15"
         }`}
       >

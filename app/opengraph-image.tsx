@@ -17,7 +17,7 @@ export default function OpengraphImage() {
           <div style={{ fontSize: 96, fontWeight: 700, lineHeight: 1 }}>{ogText.title}</div>
         </div>
         <div style={{ fontSize: 30, color: blue, letterSpacing: 5, marginTop: 40 }}>{ogText.eyebrow}</div>
-        <div style={{ fontSize: 36, marginTop: 20, color: "#4a5878" }}>{ogText.subtitle}</div>
+        <div style={{ fontSize: 36, marginTop: 20, color: "#000000" }}>{ogText.subtitle}</div>
       </div>
     ),
     size

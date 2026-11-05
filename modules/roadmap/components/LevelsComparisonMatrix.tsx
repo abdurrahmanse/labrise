@@ -21,7 +21,7 @@ export function LevelsComparisonMatrix() {
           {roadmapLevelsComparisonData.map((row, idx) => {
             const levelObj = roadmapLevelsData[idx];
             return (
-              <article key={row.level} className="flex flex-col gap-3 bg-canvas-card/70 backdrop-blur-xl p-5 shadow-[4px_4px_0_0_rgba(15,23,42,0.12)]">
+              <article key={row.level} className="flex flex-col gap-3 bg-canvas-card/70 backdrop-blur-xl p-5 shadow-[4px_4px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]">
                 <div className="flex items-center justify-between gap-3">
                   <span className="bg-indigo-600 px-2 py-0.5 font-mono text-xs font-bold text-white">{row.level}</span>
                   <span className="font-mono text-xs text-slate-400">{row.duration}</span>

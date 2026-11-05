@@ -47,7 +47,7 @@ export function FaqCategoryPills({
                 borderGlow={isSelected ? c.variant : "none"}
                 onClick={() => onSelectCategory(isSelected ? "All" : c.name)}
                 className={`cursor-pointer transition-all ${
-                  isSelected ? "bg-indigo-400/10 border-indigo-400 shadow-[4px_4px_0_0_rgba(58,95,224,0.4)]" : ""
+                  isSelected ? "bg-indigo-400/10 border-indigo-400 shadow-[4px_4px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]" : ""
                 }`}
                 icon={renderCommonIcon(c.iconName, `w-5 h-5 ${FAQ_CAT_ICON_COLORS[c.iconName] || "text-purple-400"}`)}
                 badge={c.tag}

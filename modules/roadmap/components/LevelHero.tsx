@@ -28,7 +28,7 @@ export function LevelHero({ level }: LevelHeroProps) {
         className="absolute top-0 inset-x-0 h-[500px] pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(58, 95, 224, 0.1) 0%, rgba(255, 255, 255, 0.04) 45%, transparent 75%)",
+            "radial-gradient(ellipse 85% 60% at 50% -15%, color-mix(in srgb, var(--pure-fg) calc(0.1 * 100%), transparent) 0%, rgba(255, 255, 255, 0.04) 45%, transparent 75%)",
         }}
       />
 
@@ -67,7 +67,7 @@ export function LevelHero({ level }: LevelHeroProps) {
 
         {/* Level Badge, Timeline, Difficulty */}
         <div className="flex flex-wrap items-center gap-3 mb-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none bg-slate-900/80 border border-indigo-500/40 text-white text-xs font-mono font-bold shadow-[3px_3px_0_0_rgba(58,95,224,0.35)] backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none bg-slate-900/80 border border-indigo-500/40 text-white text-xs font-mono font-bold shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] backdrop-blur-md">
             <span className="relative flex h-2 w-2 shrink-0">
               <span className="animate-radar-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>

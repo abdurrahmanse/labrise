@@ -26,7 +26,7 @@ export function ContactTopicPicker({ value, onChange }: ContactTopicPickerProps)
               <Icon className="mt-0.5 h-5 w-5 shrink-0" aria-hidden />
               <span>
                 <span className="block font-bold">{label}</span>
-                <span className={cn("block font-sans text-sm font-normal", active ? "text-white/80" : "text-slate-400")}>{hint}</span>
+                <span className={cn("block font-sans text-sm font-normal", active ? "opacity-80" : "text-slate-400")}>{hint}</span>
               </span>
             </label>
           );

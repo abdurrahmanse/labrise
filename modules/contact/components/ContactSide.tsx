@@ -4,7 +4,7 @@ import { contactInfo, contactPageText as t } from "@/content/text/contact";
 import { IconBadge } from "@/shared/components/IconBadge";
 import { ContourPattern } from "@/shared/illustrations/ContourPattern";
 
-const card = "border-2 border-white/30 bg-canvas-card/60 p-5 backdrop-blur-xl shadow-[4px_4px_0_0_rgba(15,23,42,0.18)]";
+const card = "border-2 border-white/30 bg-canvas-card/60 p-5 backdrop-blur-xl shadow-[4px_4px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]";
 const osmLink = `https://www.openstreetmap.org/?mlat=${contactInfo.latitude}&mlon=${contactInfo.longitude}#map=11/${contactInfo.latitude}/${contactInfo.longitude}`;
 
 export function ContactSide() {

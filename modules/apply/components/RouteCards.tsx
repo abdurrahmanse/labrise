@@ -17,7 +17,7 @@ function RouteCard({ track }: { track: ApplyTrack }) {
   const { done, total, percent } = useProgress(useApplyProgress, stepKeys(track.id, track.steps.length));
 
   return (
-    <article className={surface({ tone: "panel", depth: "none", padding: "xl", className: "relative flex flex-col gap-4 pt-8 shadow-[6px_6px_0_0_rgba(58,95,224,0.25)]" })}>
+    <article className={surface({ tone: "panel", depth: "none", padding: "xl", className: "relative flex flex-col gap-4 pt-8 shadow-[6px_6px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]" })}>
       <span className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-indigo-600 to-cyan-400" />
       <div className="flex items-center justify-between gap-3">
         <IconBadge icon={Icon} size="xl" shadow />

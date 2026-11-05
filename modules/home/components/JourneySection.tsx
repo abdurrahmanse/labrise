@@ -17,7 +17,7 @@ export function JourneySection() {
           <li key={s.step}>
             <Link
               href={s.href}
-              className={surface({ tone: "panel", depth: "md", padding: "lg", className: "group block h-full transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[7px_7px_0_0_rgba(58,95,224,0.4)]" })}
+              className={surface({ tone: "panel", depth: "md", padding: "lg", className: "group block h-full transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[7px_7px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]" })}
             >
               <div className="flex items-center justify-between mb-4">
                 <IconTile icon={STEP_ICONS[s.step - 1]} size={52} />

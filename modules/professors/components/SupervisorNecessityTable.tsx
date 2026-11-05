@@ -27,7 +27,7 @@ export function SupervisorNecessityTable() {
           const isRecommended = rule.necessity === "Recommended";
 
           return (
-            <article key={idx} className="flex flex-col gap-3 bg-canvas-card/70 backdrop-blur-xl p-5 shadow-[4px_4px_0_0_rgba(15,23,42,0.12)]">
+            <article key={idx} className="flex flex-col gap-3 bg-canvas-card/70 backdrop-blur-xl p-5 shadow-[4px_4px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]">
               <div className="flex items-start justify-between gap-3">
                 <h4 className="text-xl font-bold text-white">{rule.country}</h4>
                 <span className="shrink-0 font-mono text-xs uppercase tracking-wider text-slate-400">{rule.degreeLevel}</span>

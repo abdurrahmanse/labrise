@@ -20,7 +20,7 @@ export function HeroHighlights({ items, iconClass }: HeroHighlightsProps) {
       {items.map((item) => (
         <div
           key={item.label}
-          className="group flex items-center gap-2 px-3.5 sm:px-4 py-2 bg-white/[0.05] border border-white/25 hover:border-indigo-400 backdrop-blur-md text-slate-200 hover:text-white font-mono text-[11px] sm:text-xs shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] hover:-translate-y-0.5 transition-all duration-200"
+          className="group flex items-center gap-2 px-3.5 sm:px-4 py-2 bg-white/[0.05] border border-white/25 hover:border-indigo-400 backdrop-blur-md text-slate-200 hover:text-white font-mono text-[11px] sm:text-xs shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] hover:-translate-y-0.5 transition-all duration-200"
         >
           <span className="w-5 h-5 bg-white/[0.06] border border-white/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
             <HighlightIcon item={item} iconClass={iconClass} />

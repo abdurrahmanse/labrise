@@ -11,7 +11,7 @@ const badge = cva("flex shrink-0 items-center justify-center bg-indigo-600 text-
       lg: "h-12 w-12 [&>svg]:h-6 [&>svg]:w-6",
       xl: "h-14 w-14 [&>svg]:h-7 [&>svg]:w-7"
     },
-    shadow: { true: "shadow-[3px_3px_0_0_rgba(15,23,42,0.2)]", false: "" }
+    shadow: { true: "shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]", false: "" }
   },
   defaultVariants: { size: "md", shadow: false }
 });

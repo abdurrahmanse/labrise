@@ -4,7 +4,7 @@ export function IconTile({ icon: Icon, size = 48 }: { icon: LucideIcon; size?: n
   return (
     <span
       style={{ width: size, height: size }}
-      className="flex shrink-0 items-center justify-center bg-gradient-to-br from-indigo-600 to-indigo-400 text-white shadow-[3px_3px_0_0_rgba(15,23,42,0.15)]"
+      className="flex shrink-0 items-center justify-center bg-gradient-to-br from-indigo-600 to-indigo-400 text-white shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]"
     >
       <Icon style={{ width: size * 0.5, height: size * 0.5 }} />
     </span>

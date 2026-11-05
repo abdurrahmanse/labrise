@@ -13,121 +13,121 @@
      Minimal   → neutral ink palette, one acid-lime accent, lots of air
      Brutalist → square corners, hard 1–2px borders, hard offset shadows
      Glass     → frosted translucent surfaces floating over a quiet field */
-  --color-canvas-base: #0b1220;
-  --color-canvas-card: #121b30;
-  --color-canvas-card-hover: #18233d;
-  --color-canvas-border: rgba(255, 255, 255, 0.08);
-  --color-canvas-ink: #0b1220;
+  --color-canvas-base: var(--pure-bg);
+  --color-canvas-card: var(--pure-bg);
+  --color-canvas-card-hover: var(--pure-bg);
+  --color-canvas-border: rgba(255, 255, 255, 0.3);
+  --color-canvas-ink: var(--pure-bg);
 
-  --color-accent-indigo: #3a5fe0;
-  --color-accent-cyan: #e0b53e;
+  --color-accent-indigo: var(--pure-fg);
+  --color-accent-cyan: var(--pure-fg);
   --color-accent-emerald: #10b981;
   --color-accent-amber: #f59e0b;
 
   /* Navy-tinted neutrals replace slate/gray */
-  --color-slate-50: #f4f6fb;
-  --color-slate-100: #e6ebf5;
-  --color-slate-200: #cfd8ea;
-  --color-slate-300: #aab6d0;
-  --color-slate-400: #8593b3;
-  --color-slate-500: #62708f;
-  --color-slate-600: #46526f;
-  --color-slate-700: #323d58;
-  --color-slate-800: #212a42;
-  --color-slate-900: #151d33;
-  --color-slate-950: #0d1424;
-  --color-gray-50: #f4f6fb;
-  --color-gray-100: #e6ebf5;
-  --color-gray-200: #cfd8ea;
-  --color-gray-300: #aab6d0;
-  --color-gray-400: #8593b3;
-  --color-gray-500: #62708f;
-  --color-gray-600: #46526f;
-  --color-gray-700: #323d58;
-  --color-gray-800: #212a42;
-  --color-gray-900: #151d33;
-  --color-gray-950: #0d1424;
+  --color-slate-50: var(--pure-fg);
+  --color-slate-100: var(--pure-fg);
+  --color-slate-200: var(--pure-fg);
+  --color-slate-300: var(--pure-fg);
+  --color-slate-400: var(--pure-fg);
+  --color-slate-500: var(--pure-fg);
+  --color-slate-600: var(--pure-fg);
+  --color-slate-700: var(--pure-fg);
+  --color-slate-800: var(--pure-bg);
+  --color-slate-900: var(--pure-bg);
+  --color-slate-950: var(--pure-bg);
+  --color-gray-50: var(--pure-fg);
+  --color-gray-100: var(--pure-fg);
+  --color-gray-200: var(--pure-fg);
+  --color-gray-300: var(--pure-fg);
+  --color-gray-400: var(--pure-fg);
+  --color-gray-500: var(--pure-fg);
+  --color-gray-600: var(--pure-fg);
+  --color-gray-700: var(--pure-fg);
+  --color-gray-800: var(--pure-bg);
+  --color-gray-900: var(--pure-bg);
+  --color-gray-950: var(--pure-bg);
 
   /* Scholarly blue: indigo / violet / purple / blue families */
-  --color-indigo-50: #f2f4ff;
-  --color-indigo-100: #e4e9ff;
-  --color-indigo-200: #c9d4ff;
-  --color-indigo-300: #a5b8ff;
-  --color-indigo-400: #7f9bff;
-  --color-indigo-500: #5577f0;
-  --color-indigo-600: #3a5fe0;
-  --color-indigo-700: #2c49b8;
-  --color-indigo-800: #213690;
-  --color-indigo-900: #19276b;
-  --color-indigo-950: #101a44;
-  --color-violet-50: #f2f4ff;
-  --color-violet-100: #e4e9ff;
-  --color-violet-200: #c9d4ff;
-  --color-violet-300: #a5b8ff;
-  --color-violet-400: #7f9bff;
-  --color-violet-500: #5577f0;
-  --color-violet-600: #3a5fe0;
-  --color-violet-700: #2c49b8;
-  --color-violet-800: #213690;
-  --color-violet-900: #19276b;
-  --color-violet-950: #101a44;
-  --color-purple-50: #f2f4ff;
-  --color-purple-100: #e4e9ff;
-  --color-purple-200: #c9d4ff;
-  --color-purple-300: #a5b8ff;
-  --color-purple-400: #7f9bff;
-  --color-purple-500: #5577f0;
-  --color-purple-600: #3a5fe0;
-  --color-purple-700: #2c49b8;
-  --color-purple-800: #213690;
-  --color-purple-900: #19276b;
-  --color-purple-950: #101a44;
-  --color-blue-50: #f2f4ff;
-  --color-blue-100: #e4e9ff;
-  --color-blue-200: #c9d4ff;
-  --color-blue-300: #a5b8ff;
-  --color-blue-400: #7f9bff;
-  --color-blue-500: #5577f0;
-  --color-blue-600: #3a5fe0;
-  --color-blue-700: #2c49b8;
-  --color-blue-800: #213690;
-  --color-blue-900: #19276b;
-  --color-blue-950: #101a44;
+  --color-indigo-50: var(--pure-fg);
+  --color-indigo-100: var(--pure-fg);
+  --color-indigo-200: var(--pure-fg);
+  --color-indigo-300: var(--pure-fg);
+  --color-indigo-400: var(--pure-fg);
+  --color-indigo-500: var(--pure-fg);
+  --color-indigo-600: var(--pure-fg);
+  --color-indigo-700: var(--pure-fg);
+  --color-indigo-800: var(--pure-bg);
+  --color-indigo-900: var(--pure-bg);
+  --color-indigo-950: var(--pure-bg);
+  --color-violet-50: var(--pure-fg);
+  --color-violet-100: var(--pure-fg);
+  --color-violet-200: var(--pure-fg);
+  --color-violet-300: var(--pure-fg);
+  --color-violet-400: var(--pure-fg);
+  --color-violet-500: var(--pure-fg);
+  --color-violet-600: var(--pure-fg);
+  --color-violet-700: var(--pure-fg);
+  --color-violet-800: var(--pure-bg);
+  --color-violet-900: var(--pure-bg);
+  --color-violet-950: var(--pure-bg);
+  --color-purple-50: var(--pure-fg);
+  --color-purple-100: var(--pure-fg);
+  --color-purple-200: var(--pure-fg);
+  --color-purple-300: var(--pure-fg);
+  --color-purple-400: var(--pure-fg);
+  --color-purple-500: var(--pure-fg);
+  --color-purple-600: var(--pure-fg);
+  --color-purple-700: var(--pure-fg);
+  --color-purple-800: var(--pure-bg);
+  --color-purple-900: var(--pure-bg);
+  --color-purple-950: var(--pure-bg);
+  --color-blue-50: var(--pure-fg);
+  --color-blue-100: var(--pure-fg);
+  --color-blue-200: var(--pure-fg);
+  --color-blue-300: var(--pure-fg);
+  --color-blue-400: var(--pure-fg);
+  --color-blue-500: var(--pure-fg);
+  --color-blue-600: var(--pure-fg);
+  --color-blue-700: var(--pure-fg);
+  --color-blue-800: var(--pure-bg);
+  --color-blue-900: var(--pure-bg);
+  --color-blue-950: var(--pure-bg);
 
   /* Academic gold: cyan / sky / teal families */
-  --color-cyan-50: #fdf8e8;
-  --color-cyan-100: #faefc5;
-  --color-cyan-200: #f4df93;
-  --color-cyan-300: #ecca5f;
-  --color-cyan-400: #e0b53e;
-  --color-cyan-500: #c99a22;
-  --color-cyan-600: #a67a16;
-  --color-cyan-700: #805c13;
-  --color-cyan-800: #5c4210;
-  --color-cyan-900: #3d2c0c;
-  --color-cyan-950: #241a07;
-  --color-sky-50: #fdf8e8;
-  --color-sky-100: #faefc5;
-  --color-sky-200: #f4df93;
-  --color-sky-300: #ecca5f;
-  --color-sky-400: #e0b53e;
-  --color-sky-500: #c99a22;
-  --color-sky-600: #a67a16;
-  --color-sky-700: #805c13;
-  --color-sky-800: #5c4210;
-  --color-sky-900: #3d2c0c;
-  --color-sky-950: #241a07;
-  --color-teal-50: #fdf8e8;
-  --color-teal-100: #faefc5;
-  --color-teal-200: #f4df93;
-  --color-teal-300: #ecca5f;
-  --color-teal-400: #e0b53e;
-  --color-teal-500: #c99a22;
-  --color-teal-600: #a67a16;
-  --color-teal-700: #805c13;
-  --color-teal-800: #5c4210;
-  --color-teal-900: #3d2c0c;
-  --color-teal-950: #241a07;
+  --color-cyan-50: var(--pure-fg);
+  --color-cyan-100: var(--pure-fg);
+  --color-cyan-200: var(--pure-fg);
+  --color-cyan-300: var(--pure-fg);
+  --color-cyan-400: var(--pure-fg);
+  --color-cyan-500: var(--pure-fg);
+  --color-cyan-600: var(--pure-fg);
+  --color-cyan-700: var(--pure-fg);
+  --color-cyan-800: var(--pure-bg);
+  --color-cyan-900: var(--pure-bg);
+  --color-cyan-950: var(--pure-bg);
+  --color-sky-50: var(--pure-fg);
+  --color-sky-100: var(--pure-fg);
+  --color-sky-200: var(--pure-fg);
+  --color-sky-300: var(--pure-fg);
+  --color-sky-400: var(--pure-fg);
+  --color-sky-500: var(--pure-fg);
+  --color-sky-600: var(--pure-fg);
+  --color-sky-700: var(--pure-fg);
+  --color-sky-800: var(--pure-bg);
+  --color-sky-900: var(--pure-bg);
+  --color-sky-950: var(--pure-bg);
+  --color-teal-50: var(--pure-fg);
+  --color-teal-100: var(--pure-fg);
+  --color-teal-200: var(--pure-fg);
+  --color-teal-300: var(--pure-fg);
+  --color-teal-400: var(--pure-fg);
+  --color-teal-500: var(--pure-fg);
+  --color-teal-600: var(--pure-fg);
+  --color-teal-700: var(--pure-fg);
+  --color-teal-800: var(--pure-bg);
+  --color-teal-900: var(--pure-bg);
+  --color-teal-950: var(--pure-bg);
 
   /* Square everything (brutalist). rounded-full stays for dots/avatars. */
   --radius-xs: 0;
@@ -140,11 +140,11 @@
   --radius-4xl: 0;
 
   /* Hard offset shadows instead of soft glows */
-  --shadow-sm: 2px 2px 0 0 rgb(15 23 42 / 0.20);
-  --shadow-md: 3px 3px 0 0 rgb(15 23 42 / 0.20);
-  --shadow-lg: 4px 4px 0 0 rgb(15 23 42 / 0.20);
-  --shadow-xl: 6px 6px 0 0 rgb(15 23 42 / 0.20);
-  --shadow-2xl: 8px 8px 0 0 rgb(15 23 42 / 0.20);
+  --shadow-sm: 2px 2px 0 0 color-mix(in srgb, var(--pure-fg) 30%, transparent);
+  --shadow-md: 3px 3px 0 0 color-mix(in srgb, var(--pure-fg) 30%, transparent);
+  --shadow-lg: 4px 4px 0 0 color-mix(in srgb, var(--pure-fg) 30%, transparent);
+  --shadow-xl: 6px 6px 0 0 color-mix(in srgb, var(--pure-fg) 30%, transparent);
+  --shadow-2xl: 8px 8px 0 0 color-mix(in srgb, var(--pure-fg) 30%, transparent);
 
   /* Slightly scaled down heading & title font size tokens */
   --text-2xl: 1.35rem;
@@ -157,10 +157,16 @@
 
 :root {
   color-scheme: dark;
-  --background: #0b1220;
-  --foreground: #e6ebf5;
-  --accent: #3a5fe0;
-  --line: rgba(255, 255, 255, 0.08);
+  --background: var(--pure-bg);
+  --foreground: var(--pure-fg);
+  /* Button colours: white on dark, black on light */
+  --pure-fg: #ffffff;
+  --pure-bg: #000000;
+  --btn-bg: #ffffff;
+  --btn-fg: #000000;
+  --btn-hover: #ffffff;
+  --accent: var(--pure-fg);
+  --line: rgba(255, 255, 255, 0.3);
   --font-rajdhani: 'Rajdhani', sans-serif;
   --font-heading: 'Rajdhani', sans-serif;
 }
@@ -211,7 +217,7 @@ body {
 }
 
 ::selection {
-  background: #3a5fe0;
+  background: #000000;
   color: #ffffff;
 }
 
@@ -351,16 +357,16 @@ samp,
 }
 
 ::-webkit-scrollbar-track {
-  background: #0b1220;
+  background: #000000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #323d58;
+  background: #000000;
   border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3a5fe0;
+  background: #000000;
 }
 
 /* Native Range Slider Custom Styling */
@@ -371,7 +377,7 @@ input[type="range"].range-slider {
   height: 8px;
   border-radius: 0;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  background: #212a42;
+  background: #000000;
   outline: none;
   cursor: pointer;
   transition: background 0.2s ease;
@@ -383,25 +389,25 @@ input[type="range"].range-slider::-webkit-slider-thumb {
   width: 22px;
   height: 22px;
   border-radius: 0;
-  background: #3a5fe0;
+  background: #000000;
   border: 2px solid #ffffff;
-  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.4);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 input[type="range"].range-slider::-webkit-slider-thumb:hover {
   transform: scale(1.18);
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.5);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 input[type="range"].range-slider::-moz-range-thumb {
   width: 22px;
   height: 22px;
   border-radius: 0;
-  background: #3a5fe0;
+  background: #000000;
   border: 2px solid #ffffff;
-  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.4);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
   cursor: pointer;
 }
 
@@ -409,8 +415,8 @@ input[type="range"].range-slider::-moz-range-thumb {
 /* Page field: one soft blue light from the top, fading into the flat canvas. No grid, no second colour. */
 .bg-field {
   background-image:
-    radial-gradient(60% 55% at 78% 0%, rgba(58, 95, 224, 0.18), transparent 72%),
-    radial-gradient(45% 40% at 8% 0%, rgba(58, 95, 224, 0.07), transparent 75%);
+    radial-gradient(60% 55% at 78% 0%, rgba(0, 0, 0, 0.18), transparent 72%),
+    radial-gradient(45% 40% at 8% 0%, rgba(0, 0, 0, 0.07), transparent 75%);
 }
 
 .bg-dot-pattern {
@@ -419,11 +425,11 @@ input[type="range"].range-slider::-moz-range-thumb {
 }
 
 .bg-radial-vignette {
-  background: radial-gradient(circle at 50% -10%, rgba(58, 95, 224, 0.06) 0%, rgba(11, 18, 32, 0.96) 60%, #0b1220 100%);
+  background: radial-gradient(circle at 50% -10%, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.96) 60%, #000000 100%);
 }
 
 .bg-aurora-glow {
-  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(58, 95, 224, 0.1), transparent 70%);
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 0, 0, 0.1), transparent 70%);
 }
 
 /* Glass surface: frosted translucent panel + brutalist edge */
@@ -441,8 +447,8 @@ input[type="range"].range-slider::-moz-range-thumb {
 
 .glass-panel-hover:hover {
   background: rgba(24, 24, 27, 0.7);
-  border-color: #3a5fe0;
-  box-shadow: 8px 8px 0 0 #3a5fe0;
+  border-color: #000000;
+  box-shadow: 8px 8px 0 0 #000000;
   transform: translate(-3px, -3px);
 }
 
@@ -452,17 +458,17 @@ input[type="range"].range-slider::-moz-range-thumb {
 }
 
 .brutal-shadow {
-  box-shadow: 5px 5px 0 0 #3a5fe0;
+  box-shadow: 5px 5px 0 0 #000000;
 }
 
 /* Flat text accents (gradients dropped for the minimal look) */
 .gradient-text-indigo,
 .gradient-text-purple {
-  color: #3a5fe0;
+  color: #000000;
 }
 
 .gradient-text-cyan {
-  color: #e6ebf5;
+  color: #ffffff;
 }
 
 .gradient-text-emerald {
@@ -470,7 +476,7 @@ input[type="range"].range-slider::-moz-range-thumb {
 }
 
 .gradient-text-amber {
-  color: #fbbf24;
+  color: #ffffff;
 }
 
 /* Keyframe Animations (kept restrained) */
@@ -539,7 +545,7 @@ input[type="range"].range-slider::-moz-range-thumb {
 }
 
 .shimmer-badge {
-  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
   background-size: 200% 100%;
   animation: shimmer-sweep 4s infinite linear;
 }
@@ -570,7 +576,7 @@ input[type="range"].range-slider::-moz-range-thumb {
 
 /* Brutalist: keyboard focus is a hard lime outline */
 :focus-visible {
-  outline: 2px solid #3a5fe0;
+  outline: 2px solid #000000;
   outline-offset: 2px;
 }
 
@@ -622,38 +628,21 @@ input[type="range"].range-slider::-moz-range-thumb {
    ─────────────────────────────────────────────────────────── */
 .light {
   color-scheme: light;
-  --line: rgba(15, 27, 61, 0.1);
-  --color-canvas-base: #f5f6fa;
-  --color-canvas-card: #ffffff;
-  --color-canvas-card-hover: #f9faff;
-  --color-canvas-border: rgba(15, 27, 61, 0.1);
-  --color-canvas-ink: #0f1b3d;
-  --color-white: #0f1b3d;
-  --background: #f5f6fa;
-  --foreground: #0f1b3d;
+  --line: rgba(0, 0, 0, 0.3);
+  --color-canvas-base: var(--pure-bg);
+  --color-canvas-card: var(--pure-bg);
+  --color-canvas-card-hover: var(--pure-bg);
+  --color-canvas-border: rgba(0, 0, 0, 0.3);
+  --color-canvas-ink: var(--pure-bg);
+  --color-white: var(--pure-fg);
+  --background: var(--pure-bg);
+  --foreground: var(--pure-fg);
+  --pure-fg: #000000;
+  --pure-bg: #ffffff;
+  --btn-bg: #000000;
+  --btn-fg: #ffffff;
+  --btn-hover: #000000;
 
-  --color-slate-50: #0b1430;
-  --color-slate-100: #0f1b3d;
-  --color-slate-200: #1c2a52;
-  --color-slate-300: #2f3d63;
-  --color-slate-400: #4a5878;
-  --color-slate-500: #6b7896;
-  --color-slate-600: #9aa5c0;
-  --color-slate-700: #cdd4e6;
-  --color-slate-800: #e1e6f2;
-  --color-slate-900: #eef1f8;
-  --color-slate-950: #f6f7fb;
-  --color-gray-50: #0b1430;
-  --color-gray-100: #0f1b3d;
-  --color-gray-200: #1c2a52;
-  --color-gray-300: #2f3d63;
-  --color-gray-400: #4a5878;
-  --color-gray-500: #6b7896;
-  --color-gray-600: #9aa5c0;
-  --color-gray-700: #cdd4e6;
-  --color-gray-800: #e1e6f2;
-  --color-gray-900: #eef1f8;
-  --color-gray-950: #f6f7fb;
 
   /* Readable status colours on a light canvas */
   --color-emerald-300: #047857;
@@ -662,19 +651,28 @@ input[type="range"].range-slider::-moz-range-thumb {
   --color-amber-400: #d97706;
   --color-rose-300: #be123c;
   --color-rose-400: #e11d48;
+  --color-emerald-800: #a7f3d0;
+  --color-emerald-900: #d1fae5;
+  --color-emerald-950: #ecfdf5;
+  --color-amber-800: #fde68a;
+  --color-amber-900: #fef3c7;
+  --color-amber-950: #fffbeb;
+  --color-rose-800: #fecdd3;
+  --color-rose-900: #ffe4e6;
+  --color-rose-950: #fff1f2;
 }
 
 .light ::selection {
-  background: #3a5fe0;
+  background: #000000;
   color: #ffffff;
 }
 
 .light ::-webkit-scrollbar-track {
-  background: #f5f6fa;
+  background: #ffffff;
 }
 
 .light ::-webkit-scrollbar-thumb {
-  background: #b6c0d8;
+  background: #ffffff;
 }
 
 /* Bright accent text is too light on white: use the deeper shades */
@@ -685,24 +683,24 @@ input[type="range"].range-slider::-moz-range-thumb {
 .light .hover\:text-indigo-300:hover,
 .light .text-purple-300,
 .light .text-purple-400 {
-  color: #2c49b8;
+  color: #000000;
 }
 
 .light .text-cyan-300,
 .light .text-cyan-400,
 .light .text-teal-300,
 .light .text-teal-400 {
-  color: #805c13;
+  color: #000000;
 }
 
 .light .glass-panel {
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 8px 24px rgba(15, 27, 61, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .light .bg-field {
   background-image:
-    radial-gradient(60% 55% at 78% 0%, rgba(58, 95, 224, 0.11), transparent 72%),
+    radial-gradient(60% 55% at 78% 0%, rgba(0, 0, 0, 0.11), transparent 72%),
     linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
 }
 
@@ -720,15 +718,17 @@ input[type="range"].range-slider::-moz-range-thumb {
   }
 }
 
-/* In light mode text-white is the dark ink colour, so text and icons on solid blue fills need real white. */
-.light .bg-indigo-600,
-.light .bg-indigo-600 .text-white,
-.light .from-indigo-600,
-.light .from-indigo-600 .text-white,
+/* Solid accent fills use the foreground colour, so the text on them takes the background colour in both themes. */
+:is(.bg-indigo-500, .bg-indigo-600, .bg-indigo-700, .bg-purple-500, .bg-purple-600, .bg-blue-500, .bg-blue-600, .bg-cyan-500, .bg-cyan-600, .bg-teal-500, .bg-teal-600, .from-indigo-600, .hover\:bg-indigo-600:hover, .hover\:bg-indigo-500:hover),
+:is(.bg-indigo-500, .bg-indigo-600, .bg-indigo-700, .bg-purple-500, .bg-purple-600, .bg-blue-500, .bg-blue-600, .bg-cyan-500, .bg-cyan-600, .bg-teal-500, .bg-teal-600, .from-indigo-600) :is(.text-white, [class*="text-slate-"]) {
+  color: var(--pure-bg);
+}
+
+/* Status fills keep real white text in light mode. */
 .light .bg-emerald-500,
 .light .bg-emerald-500 .text-white,
 .light .bg-rose-500,
-.light .bg-rose-500 .text-white,
-.light .hover\:bg-indigo-600:hover {
+.light .bg-rose-500 .text-white {
   color: #ffffff;
 }
+

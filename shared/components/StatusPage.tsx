@@ -27,10 +27,10 @@ export function StatusPage({ code, eyebrow, title, body, Icon, actions, suggesti
 
       <div className="relative mx-auto max-w-5xl space-y-12 px-4 sm:px-6 lg:px-8">
         <section className="grid grid-cols-1 items-center gap-8 md:grid-cols-[auto_1fr]">
-          <div className="relative mx-auto flex h-44 w-44 items-center justify-center border-2 border-white/80 bg-canvas-card/70 backdrop-blur-xl shadow-[8px_8px_0_0_rgba(58,95,224,0.35)] md:h-56 md:w-56">
+          <div className="relative mx-auto flex h-44 w-44 items-center justify-center border-2 border-white/80 bg-canvas-card/70 backdrop-blur-xl shadow-[8px_8px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] md:h-56 md:w-56">
             <span className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-indigo-600 to-cyan-400" />
             <Icon className="h-24 w-24 text-indigo-400 md:h-32 md:w-32" strokeWidth={1.25} aria-hidden />
-            <span className="absolute -bottom-4 -right-4 bg-indigo-600 px-3 py-1 font-mono text-lg font-bold text-white shadow-[3px_3px_0_0_rgba(15,23,42,0.25)]">
+            <span className="absolute -bottom-4 -right-4 bg-indigo-600 px-3 py-1 font-mono text-lg font-bold text-white shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]">
               {code}
             </span>
           </div>

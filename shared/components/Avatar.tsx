@@ -1,10 +1,6 @@
 const PALETTES = [
-  ["#3a5fe0", "#7f9bff"],
-  ["#805c13", "#e0b53e"],
-  ["#0f766e", "#5eead4"],
-  ["#7c3aed", "#c4b5fd"],
-  ["#be123c", "#fda4af"],
-  ["#1d4ed8", "#38bdf8"]
+  ["#000000", "#4d4d4d"],
+  ["#1a1a1a", "#000000"]
 ] as const;
 
 const hash = (text: string) => [...text].reduce((sum, ch) => (sum * 31 + ch.charCodeAt(0)) >>> 0, 7);

@@ -13,8 +13,8 @@ export function HeroArt({ className = "" }: { className?: string }) {
     <svg viewBox="0 0 480 380" fill="none" role="img" aria-label="A path with six milestones leading to a graduation cap" className={className}>
       <defs>
         <linearGradient id="hero-path" x1="0" y1="1" x2="1" y2="0">
-          <stop offset="0" stopColor="#3a5fe0" />
-          <stop offset="1" stopColor="#e0b53e" />
+          <stop offset="0" stopColor="#000000" />
+          <stop offset="1" stopColor="#a3a3a3" />
         </linearGradient>
       </defs>
 

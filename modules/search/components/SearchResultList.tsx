@@ -27,7 +27,7 @@ export function SearchResultList({ listId, items, active, onHover, onPick }: Sea
         >
           <span className="min-w-0">
             <span className="block truncate font-bold">{entry.title}</span>
-            <span className={cn("block truncate font-sans text-sm font-normal", i === active ? "text-white/80" : "text-slate-400")}>{entry.subtitle}</span>
+            <span className={cn("block truncate font-sans text-sm font-normal", i === active ? "opacity-80" : "text-slate-400")}>{entry.subtitle}</span>
           </span>
           <span className="inline-flex shrink-0 items-center gap-1.5 font-mono text-xs uppercase tracking-wider opacity-80">
             <KindIcon kind={entry.kind} />

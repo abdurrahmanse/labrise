@@ -19,7 +19,7 @@ export function PhaseDetailHero({ phase }: PhaseDetailHeroProps) {
         className="absolute top-0 inset-x-0 h-[500px] pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 85% 60% at 50% -15%, rgba(58, 95, 224, 0.1) 0%, rgba(255, 255, 255, 0.04) 45%, transparent 75%)",
+            "radial-gradient(ellipse 85% 60% at 50% -15%, color-mix(in srgb, var(--pure-fg) calc(0.1 * 100%), transparent) 0%, rgba(255, 255, 255, 0.04) 45%, transparent 75%)",
         }}
       />
 

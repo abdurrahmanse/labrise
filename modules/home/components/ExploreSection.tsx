@@ -21,7 +21,7 @@ export function ExploreSection() {
           <Link
             key={href}
             href={href}
-            className="group border-2 border-white/30 bg-white/[0.04] backdrop-blur-xl p-6 shadow-[4px_4px_0_0_rgba(15,23,42,0.18)] transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[7px_7px_0_0_rgba(58,95,224,0.4)]"
+            className="group border-2 border-white/30 bg-white/[0.04] backdrop-blur-xl p-6 shadow-[4px_4px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[7px_7px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]"
           >
             <div className="mb-5 flex items-center justify-between gap-3">
               <Icon className="w-7 h-7 text-indigo-400" />

@@ -25,7 +25,7 @@ export function EcosystemTiles({ slug, universities, professors, funders }: { sl
         <Link
           key={label}
           href={href}
-          className={surface({ tone: "glass", depth: "soft", padding: "lg", className: "group transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0_0_rgba(58,95,224,0.3)]" })}
+          className={surface({ tone: "glass", depth: "soft", padding: "lg", className: "group transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]" })}
         >
           <Icon className="mb-3 h-6 w-6 text-indigo-400" />
           <div className="text-3xl font-bold text-white">{count}</div>

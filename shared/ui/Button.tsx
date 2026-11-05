@@ -19,28 +19,28 @@ export type ButtonVariant =
 export type ButtonSize = "xs" | "sm" | "md" | "lg";
 
 export const buttonVariants = cva(
-  "inline-flex items-center justify-center font-heading transition-all duration-200 select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/60 disabled:opacity-50 disabled:pointer-events-none",
+  "inline-flex items-center justify-center font-heading transition-all duration-200 select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--btn-bg)]/60 disabled:opacity-50 disabled:pointer-events-none",
   {
     variants: {
       variant: {
         primary:
-          "bg-indigo-600 hover:bg-indigo-500 text-white border-2 border-transparent shadow-[4px_4px_0_0_rgba(15,23,42,0.18)] hover:shadow-[2px_2px_0_0_rgba(15,23,42,0.18)] hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none uppercase tracking-wider",
+          "bg-[var(--btn-bg)] hover:bg-[var(--btn-hover)] text-[var(--btn-fg)] border-2 border-[var(--btn-bg)] shadow-[4px_4px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] hover:shadow-[2px_2px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none uppercase tracking-wider",
         secondary:
-          "bg-white/[0.06] backdrop-blur-md hover:bg-white/10 text-slate-100 border-2 border-white/40 hover:border-white shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] uppercase tracking-wider",
+          "bg-transparent hover:bg-[var(--btn-bg)] hover:text-[var(--btn-fg)] text-[var(--btn-bg)] border-2 border-[var(--btn-bg)] shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] uppercase tracking-wider",
         outline:
-          "bg-transparent hover:bg-white hover:text-black text-slate-200 border-2 border-white/60 uppercase tracking-wider",
+          "bg-transparent hover:bg-[var(--btn-bg)] hover:text-[var(--btn-fg)] text-[var(--btn-bg)] border-2 border-[var(--btn-bg)] uppercase tracking-wider",
         ghost: "bg-transparent hover:bg-white/5 text-slate-400 hover:text-white border border-transparent",
         danger:
           "bg-rose-950/60 hover:bg-rose-900/60 text-rose-300 border border-rose-500/40 shadow-lg shadow-rose-950/50",
         indigo:
-          "bg-indigo-400/10 hover:bg-indigo-600 hover:text-white text-indigo-300 border-2 border-indigo-400 shadow-[3px_3px_0_0_rgba(58,95,224,0.35)]",
-        cyan: "bg-white/10 hover:bg-white hover:text-black text-white border-2 border-white/70 shadow-[3px_3px_0_0_rgba(15,23,42,0.18)]",
+          "bg-transparent hover:bg-[var(--btn-bg)] hover:text-[var(--btn-fg)] text-[var(--btn-bg)] border-2 border-[var(--btn-bg)] shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]",
+        cyan: "bg-transparent hover:bg-[var(--btn-bg)] hover:text-[var(--btn-fg)] text-[var(--btn-bg)] border-2 border-[var(--btn-bg)] shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]",
         emerald:
           "bg-emerald-950/50 hover:bg-emerald-900/50 text-emerald-300 border border-emerald-500/40 shadow-md shadow-emerald-950/50",
         amber:
           "bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 shadow-md shadow-amber-950/50",
         purple:
-          "bg-indigo-400/10 hover:bg-indigo-600 hover:text-white text-indigo-300 border-2 border-indigo-400 shadow-[3px_3px_0_0_rgba(58,95,224,0.35)]"
+          "bg-transparent hover:bg-[var(--btn-bg)] hover:text-[var(--btn-fg)] text-[var(--btn-bg)] border-2 border-[var(--btn-bg)] shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]"
       },
       size: {
         xs: "px-2.5 py-1 text-[11px] gap-1.5",

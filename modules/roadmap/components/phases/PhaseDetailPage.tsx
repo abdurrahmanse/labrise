@@ -54,7 +54,7 @@ export function PhaseDetailPage({
   };
 
   return (
-    <main className="min-h-screen bg-[#07090e] text-slate-100 font-sans selection:bg-teal-500 selection:text-slate-950 pb-24">
+    <main className="min-h-screen bg-canvas-base text-slate-100 font-sans selection:bg-teal-500 selection:text-slate-950 pb-24">
       {/* 1. HERO SECTION */}
       <PhaseDetailHero phase={phase} />
 

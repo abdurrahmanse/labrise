@@ -41,7 +41,7 @@ export function ApplicationForm() {
           ))}
         </select>
       </div>
-      <button type="submit" className="inline-flex cursor-pointer items-center justify-center gap-2 border-2 border-transparent bg-indigo-600 px-5 py-3 font-bold uppercase tracking-wider text-sm text-white shadow-[4px_4px_0_0_rgba(15,23,42,0.25)] transition-transform hover:-translate-y-0.5">
+      <button type="submit" className="inline-flex cursor-pointer items-center justify-center gap-2 border-2 border-transparent bg-indigo-600 px-5 py-3 font-bold uppercase tracking-wider text-sm text-white shadow-[4px_4px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] transition-transform hover:-translate-y-0.5">
         <Plus className="h-4 w-4" aria-hidden /> {t.form.add}
       </button>
       <p className="font-sans text-sm font-normal text-slate-400 md:col-span-4">{t.form.deadlineHint}</p>

@@ -13,7 +13,7 @@ export interface HeroThemeStyles {
 }
 
 const spotlight = (mid: string) =>
-  `radial-gradient(ellipse 85% 60% at 50% -15%, rgba(58, 95, 224, 0.1) 0%, ${mid} 45%, transparent 75%)`;
+  `radial-gradient(ellipse 85% 60% at 50% -15%, color-mix(in srgb, var(--pure-fg) calc(0.1 * 100%), transparent) 0%, ${mid} 45%, transparent 75%)`;
 
 const WHITE_3 = "rgba(255, 255, 255, 0.03)";
 
@@ -32,7 +32,7 @@ const base: Omit<HeroThemeStyles, "spotlight"> = {
 export const THEME_STYLES: Record<PageHeroTheme, HeroThemeStyles> = {
   indigo: { ...base, spotlight: spotlight("rgba(255, 255, 255, 0.04)") },
   cyan: { ...base, spotlight: spotlight(WHITE_3) },
-  purple: { ...base, spotlight: spotlight("rgba(58, 95, 224, 0.04)") },
+  purple: { ...base, spotlight: spotlight("color-mix(in srgb, var(--pure-fg) calc(0.04 * 100%), transparent)") },
   emerald: { ...base, spotlight: spotlight(WHITE_3) },
   amber: { ...base, spotlight: spotlight(WHITE_3) },
   blue: { ...base, spotlight: spotlight(WHITE_3) }

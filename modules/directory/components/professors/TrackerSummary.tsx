@@ -13,7 +13,7 @@ export function TrackerSummary({ professors }: { professors: ProfessorEntry[] })
 
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-5">
-      <div className="bg-indigo-600 p-4 text-white shadow-[3px_3px_0_0_rgba(15,23,42,0.12)]">
+      <div className="bg-indigo-600 p-4 text-white shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]">
         <div className="text-3xl font-bold">{saved.length}</div>
         <div className="font-mono text-xs uppercase tracking-wider opacity-80">{trackerText.saved}</div>
       </div>

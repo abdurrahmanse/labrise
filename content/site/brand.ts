@@ -13,7 +13,7 @@ export const brand = {
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://scholarship-roadmap.vercel.app").replace(/\/$/, ""),
   locale: "en_US",
   /** Colours used by the logo, the icon and the share card. */
-  colors: { blue: "#3a5fe0", gold: "#e0b53e", ink: "#0f1b3d", paper: "#f5f6fa" },
+  colors: { blue: "#000000", gold: "#bdbdbd", ink: "#000000", paper: "#ffffff" },
   /** Who writes to us. */
   contactEmail: "abdurrahmansoftw@gmail.com",
   /** Names people may also type when they look for the site. */

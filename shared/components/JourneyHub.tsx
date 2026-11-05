@@ -25,7 +25,7 @@ export function JourneyHub({ items, related, badges = {} }: JourneyHubProps) {
             <li key={href} className={i === 0 ? "md:col-span-2" : undefined}>
               <Link
                 href={href}
-                className={surface({ tone: "panel", depth: "none", padding: "xl", className: "group relative flex h-full gap-5 overflow-hidden shadow-[5px_5px_0_0_rgba(15,23,42,0.18)] transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[8px_8px_0_0_rgba(58,95,224,0.4)]" })}
+                className={surface({ tone: "panel", depth: "none", padding: "xl", className: "group relative flex h-full gap-5 overflow-hidden shadow-[5px_5px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] transition-all duration-150 hover:-translate-x-[3px] hover:-translate-y-[3px] hover:border-indigo-400 hover:shadow-[8px_8px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]" })}
               >
                 <span className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-indigo-600 to-cyan-400" />
                 {i === 0 && <ContourPattern className="absolute -right-10 -top-4 hidden h-48 w-80 opacity-40 md:block" />}

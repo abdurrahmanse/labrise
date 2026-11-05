@@ -17,27 +17,27 @@ interface WidgetTabButtonProps {
 
 const TAB_ACTIVE_STYLES: Record<WidgetTheme, { active: string; topText: string }> = {
   indigo: {
-    active: "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] font-bold",
+    active: "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] font-bold",
     topText: "text-white/70"
   },
   cyan: {
-    active: "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] font-bold",
+    active: "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] font-bold",
     topText: "text-white/70"
   },
   emerald: {
-    active: "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] font-bold",
+    active: "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] font-bold",
     topText: "text-white/70"
   },
   amber: {
-    active: "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] font-bold",
+    active: "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] font-bold",
     topText: "text-white/70"
   },
   purple: {
-    active: "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] font-bold",
+    active: "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] font-bold",
     topText: "text-white/70"
   },
   rose: {
-    active: "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] font-bold",
+    active: "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] font-bold",
     topText: "text-white/70"
   }
 };

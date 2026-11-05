@@ -21,7 +21,7 @@ interface CardShellProps {
 export function CardShell({ href, eyebrow, title, media, children }: CardShellProps) {
   const prefetch = usePrefetchHref(href);
   return (
-    <article onMouseEnter={prefetch} onFocus={prefetch} className={surface({ tone: "glass", depth: "soft", padding: "lg", className: "group relative flex flex-col gap-3 pt-6 transition-all duration-150 hover:-translate-y-1 hover:shadow-[6px_6px_0_0_rgba(58,95,224,0.3)]" })}>
+    <article onMouseEnter={prefetch} onFocus={prefetch} className={surface({ tone: "glass", depth: "soft", padding: "lg", className: "group relative flex flex-col gap-3 pt-6 transition-all duration-150 hover:-translate-y-1 hover:shadow-[6px_6px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]" })}>
       <span className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-indigo-600 to-cyan-400" />
       <div className="flex items-center gap-3">
         {media}

@@ -39,7 +39,7 @@ export function LevelTasksSection({ level, levelSteps }: LevelTasksSectionProps)
           <Link
             key={step.id}
             href={`/roadmap/${level.slug}/${step.id}`}
-            className="group flex flex-col gap-2 bg-canvas-card/70 backdrop-blur-xl p-5 shadow-[4px_4px_0_0_rgba(15,23,42,0.12)] transition-all duration-150 hover:-translate-y-1 hover:shadow-[6px_6px_0_0_rgba(58,95,224,0.3)]"
+            className="group flex flex-col gap-2 bg-canvas-card/70 backdrop-blur-xl p-5 shadow-[4px_4px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] transition-all duration-150 hover:-translate-y-1 hover:shadow-[6px_6px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]"
           >
             <div className="flex items-center justify-between gap-3">
               <span className="bg-indigo-600 px-2 py-0.5 font-mono text-xs font-bold text-white">{step.stepNumber}</span>

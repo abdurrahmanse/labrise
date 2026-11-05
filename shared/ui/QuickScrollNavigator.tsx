@@ -70,7 +70,7 @@ export function QuickScrollNavigator({
                 onClick={() => scrollToSection(anchor.id)}
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition-all flex items-center gap-2 cursor-pointer ${
                   isActive
-                    ? "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] font-bold"
+                    ? "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] font-bold"
                     : "bg-canvas-base/70 text-slate-400 hover:text-slate-200 hover:bg-slate-800/60 border border-white/5"
                 }`}
               >

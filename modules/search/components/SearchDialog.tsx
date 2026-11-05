@@ -43,7 +43,7 @@ export function SearchDialog({ onClosed }: SearchDialogProps) {
       aria-label={searchText.open}
       onClose={handleClosed}
       onClick={(e) => e.target === dialogRef.current && close()}
-      className="m-0 mx-auto mt-[10vh] w-[min(40rem,calc(100vw-2rem))] border-2 border-white/80 bg-canvas-base p-0 text-slate-100 shadow-[6px_6px_0_0_rgba(15,23,42,0.25)] backdrop:bg-black/50 backdrop:backdrop-blur-sm"
+      className="m-0 mx-auto mt-[10vh] w-[min(40rem,calc(100vw-2rem))] border-2 border-white/80 bg-canvas-base p-0 text-slate-100 shadow-[6px_6px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] backdrop:bg-black/50 backdrop:backdrop-blur-sm"
     >
       <div className="flex items-center gap-3 border-b border-white/15 px-4 py-3">
         {search.pending && hasQuery ? <Loader2 className="h-5 w-5 shrink-0 animate-spin text-indigo-400" aria-hidden /> : <Search className="h-5 w-5 shrink-0 text-indigo-400" aria-hidden />}

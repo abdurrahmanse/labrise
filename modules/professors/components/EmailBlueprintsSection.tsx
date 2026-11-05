@@ -36,7 +36,7 @@ export function EmailBlueprintsSection() {
             onClick={() => setActiveTemplateId(template.id)}
             className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
               activeTemplateId === template.id
-                ? "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_rgba(15,23,42,0.18)] font-bold"
+                ? "bg-indigo-600 text-white border-transparent shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] font-bold"
                 : "text-slate-400 hover:text-white"
             }`}
           >
