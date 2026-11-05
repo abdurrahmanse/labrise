@@ -16,7 +16,7 @@ export interface Result { person: Person; status: "VERIFIED" | "INSTITUTION_UNSU
 const COUNTRY: Record<string, string> = {
   Germany: "DE", Switzerland: "CH", Sweden: "SE", Netherlands: "NL", Denmark: "DK", Norway: "NO", Finland: "FI", Belgium: "BE", Austria: "AT", France: "FR", Italy: "IT", Spain: "ES",
   "United Kingdom": "GB", Scotland: "GB", Ireland: "IE", "United States": "US", Canada: "CA", Japan: "JP", "South Korea": "KR", China: "CN", Singapore: "SG", "Hong Kong": "HK", Taiwan: "TW",
-  Australia: "AU", "New Zealand": "NZ", Turkey: "TR", "Saudi Arabia": "SA", Hungary: "HU", Qatar: "QA", "United Arab Emirates": "AE", Malaysia: "MY", Israel: "IL", Egypt: "EG", Jordan: "JO",
+  Australia: "AU", "New Zealand": "NZ", Turkey: "TR", "Saudi Arabia": "SA", Hungary: "HU", Qatar: "QA", "United Arab Emirates": "AE", Malaysia: "MY", Egypt: "EG", Jordan: "JO",
   Lebanon: "LB", Kuwait: "KW", Oman: "OM", Bahrain: "BH", Iran: "IR", Poland: "PL", "Czech Republic": "CZ", Portugal: "PT", Estonia: "EE", Luxembourg: "LU", Iceland: "IS", Slovenia: "SI",
   India: "IN", Pakistan: "PK", Bangladesh: "BD", "South Africa": "ZA"
 };

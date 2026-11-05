@@ -429,17 +429,6 @@ export const countryDetails: Record<string, CountryDetail> = {
     scholarships: ["Malaysia International Scholarship (MIS)", "MTCP Scholarships"],
     tips: ["Contact a supervisor first.", "Check which scholarships apply to your nationality."]
   },
-  israel: {
-    overview: "Technion, the Weizmann Institute, Tel Aviv University and the Hebrew University are research-intensive and strong in engineering and computing. Research students are usually funded through school scholarships and the supervisor's grants.",
-    phd: "About 3–5 years. Research tracks end with a thesis.",
-    pay: "The Technion Graduate School offers scholarships to research Master's and PhD students on merit. The Weizmann Institute's Feinberg Graduate School waives tuition and pays stipends to full-time students without outside support. Amounts change, so check each school.",
-    language: "Graduate research programmes are often taught in English. Check each department.",
-    intake: "Annual cycles, many in winter or spring. Check each school.",
-    visa: "A student visa is arranged with the university once you are admitted.",
-    find: [{ label: "Technion Graduate School", href: "https://graduate.technion.ac.il/en/" }, { label: "Weizmann Feinberg Graduate School", href: "https://www.weizmann.ac.il/feinberg/" }],
-    scholarships: ["Technion Graduate School Scholarships", "Weizmann Feinberg Graduate School Stipends"],
-    tips: ["Contact a supervisor before you apply and ask about funding.", "Read the school's current scholarship rules, since amounts and eligibility change."]
-  },
   egypt: {
     overview: "Cairo University, the American University in Cairo, Alexandria University and the Egypt-Japan University of Science and Technology (E-JUST) offer graduate research programmes in engineering and sciences.",
     phd: "About 3–5 years.",

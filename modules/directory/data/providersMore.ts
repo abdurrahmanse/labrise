@@ -554,18 +554,6 @@ export const moreProviders: ProviderEntry[] = [
     ["Application form", "Transcripts", "Admission proof"],
     "Selection by the Malaysian government with your country's focal point.", "https://www.kln.gov.my"),
   // Middle East
-  entry("Israel", "Middle East", "University programme", "Weizmann Institute of Science (Feinberg Graduate School)",
-    "Graduate students in science and engineering-related research at the Weizmann Institute", ["Weizmann Feinberg Graduate School Stipends"],
-    "Apply to the Feinberg Graduate School through its online admissions portal during the yearly call.",
-    ["Strong undergraduate record in a relevant field", "English test score as set by the school", "Interest in a research group at the institute"],
-    ["CV", "Transcripts", "Statement of purpose", "Recommendation letters"],
-    "Committee review, then interviews. Full-time students without outside support are eligible for a stipend.", "https://www.weizmann.ac.il/feinberg/"),
-  entry("Israel", "Middle East", "University programme", "Technion Graduate School",
-    "Research Master's and PhD students at the Technion", ["Technion Graduate School Scholarships"],
-    "Apply to the department at the Technion; scholarships are considered through the Graduate School.",
-    ["High academic achievement", "Research track (thesis) rather than a non-thesis track", "International students may also be considered for Lady Davis fellowships"],
-    ["CV", "Transcripts", "Recommendation letters", "Research interests statement"],
-    "The department admits you, and the Graduate School reviews scholarships on merit and budget.", "https://graduate.technion.ac.il/en/"),
   entry("Egypt", "Middle East", "University programme", "Egypt-Japan University of Science and Technology (E-JUST)",
     "Postgraduate students at E-JUST, including a fully funded programme for African students", ["E-JUST TICAD8 Postgraduate Scholarship"],
     "Apply through E-JUST's online application system during the call. The call asks for a research proposal.",
@@ -589,8 +577,6 @@ export const moreProviders: ProviderEntry[] = [
 
 export const moreUniversityOnlyProviders: Record<string, string | string[]> = {
   "Alliance of International Science Organizations (ANSO) and the Chinese Academy of Sciences": ["University of Science and Technology of China", "University of Chinese Academy of Sciences"],
-  "Weizmann Institute of Science (Feinberg Graduate School)": "Weizmann Institute of Science",
-  "Technion Graduate School": "Technion – Israel Institute of Technology",
   "Egypt-Japan University of Science and Technology (E-JUST)": "Egypt-Japan University of Science and Technology",
   "American University of Beirut (Engineering PhD funding)": "American University of Beirut",
   "ETH AI Center Doctoral Fellowships": "ETH Zurich",

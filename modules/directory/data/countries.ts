@@ -39,7 +39,6 @@ export const countries: CountryEntry[] = [
   { country: "United Arab Emirates", region: "Middle East", routes: "MBZUAI, Khalifa University, NYU Abu Dhabi funded graduate programmes", funding: "Stipend + tuition (+ housing at some)", supervisor: "Recommended", fee: "None" },
   { country: "Saudi Arabia", region: "Middle East", routes: "KAUST fellowship", funding: "Stipend + tuition + housing", supervisor: "Recommended", fee: "None" },
   { country: "Hungary", region: "Europe", routes: "Stipendium Hungaricum", funding: "Stipend + tuition + housing", supervisor: "Recommended", fee: "None" },
-  { country: "Israel", region: "Middle East", routes: "Technion and Weizmann Institute graduate scholarships, research-track MSc and PhD", funding: "Scholarship or stipend; tuition waived at some schools", supervisor: "Recommended", fee: "Check the university" },
   { country: "Egypt", region: "Middle East", routes: "E-JUST scholarships, university research assistantships", funding: "Stipend + tuition at E-JUST; varies elsewhere", supervisor: "Recommended", fee: "Check the university" },
   { country: "Jordan", region: "Middle East", routes: "University research and teaching assistantships", funding: "Varies by university", supervisor: "Recommended", fee: "Check the university" },
   { country: "Lebanon", region: "Middle East", routes: "AUB engineering PhD funding, university assistantships", funding: "Varies by programme", supervisor: "Recommended", fee: "Check the university" },

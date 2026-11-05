@@ -354,16 +354,6 @@ export const moreUniversities: UniversityEntry[] = [
     ["NYU Abu Dhabi", "https://nyuad.nyu.edu"],
     ["United Arab Emirates University", "https://www.uaeu.ac.ae"]
   ]),
-  ...group("Israel", "Middle East", "Graduate scholarships and research-grant funding", "Check each school's admissions page", [
-    ["Technion – Israel Institute of Technology", "https://www.technion.ac.il/en/"],
-    ["Weizmann Institute of Science", "https://www.weizmann.ac.il/feinberg/"],
-    ["Tel Aviv University", "https://www.tau.ac.il/"],
-    ["Hebrew University of Jerusalem", "https://www.huji.ac.il/"],
-    ["Ben-Gurion University of the Negev", "https://in.bgu.ac.il/en/"],
-    ["Bar-Ilan University", "https://www.biu.ac.il/en"],
-    ["University of Haifa", "https://www.haifa.ac.il/"],
-    ["Reichman University", "https://www.runi.ac.il/en/"]
-  ]),
   ...group("Egypt", "Middle East", "University and scholarship funding; E-JUST fully funded programmes", "Check each university's admissions page", [
     ["Cairo University", "https://cu.edu.eg/"],
     ["American University in Cairo", "https://www.aucegypt.edu/"],

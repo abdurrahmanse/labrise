@@ -1,5 +1,5 @@
 import {
-  AE, AT, AU, BE, BH, CA, CH, CN, CZ, DE, DK, EE, EG, ES, EU, FI, FR, GB, GB_SCT, HK, HU, IE, IL, IS, IT, JO, JP, KR, KW, LB, LU, MY, NL, NO, NZ, OM, PL, PT, QA, SA, SE, SG, SI, TR, TW, US
+  AE, AT, AU, BE, BH, CA, CH, CN, CZ, DE, DK, EE, EG, ES, EU, FI, FR, GB, GB_SCT, HK, HU, IE, IS, IT, JO, JP, KR, KW, LB, LU, MY, NL, NO, NZ, OM, PL, PT, QA, SA, SE, SG, SI, TR, TW, US
 } from "country-flag-icons/react/3x2";
 
 type FlagComponent = typeof DE;
@@ -10,7 +10,7 @@ const FLAGS: Record<string, FlagComponent> = {
   Italy: IT, Japan: JP, "South Korea": KR, Netherlands: NL, Norway: NO, "New Zealand": NZ, "Saudi Arabia": SA,
   Sweden: SE, Singapore: SG, Turkey: TR, Taiwan: TW, "United States": US, Scotland: GB_SCT, "Czech Republic": CZ, Poland: PL,
   Portugal: PT, Estonia: EE, Luxembourg: LU, Iceland: IS, Slovenia: SI, Qatar: QA, "United Arab Emirates": AE, Malaysia: MY,
-  Israel: IL, Egypt: EG, Jordan: JO, Lebanon: LB, Kuwait: KW, Oman: OM, Bahrain: BH
+  Egypt: EG, Jordan: JO, Lebanon: LB, Kuwait: KW, Oman: OM, Bahrain: BH
 };
 
 interface FlagProps {

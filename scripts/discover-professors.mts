@@ -1,6 +1,6 @@
 // Finds engineering and computing researchers for universities in the directory, using OpenAlex.
 //
-//   npm run discover:professors -- --countries "Israel,Egypt" --per 8 --out found.json
+//   npm run discover:professors -- --countries "Egypt,Jordan" --per 8 --out found.json
 //   npm run discover:professors -- --missing 2 --per 5 --out found.json     (universities with fewer than 2 professors)
 //   add --dry to only count the universities and the API calls
 //
@@ -16,7 +16,7 @@ import { universityOfProfessor } from "../modules/directory/utils/lookups";
 const COUNTRY: Record<string, string> = {
   Germany: "DE", Switzerland: "CH", Sweden: "SE", Netherlands: "NL", Denmark: "DK", Norway: "NO", Finland: "FI", Belgium: "BE", Austria: "AT", France: "FR", Italy: "IT", Spain: "ES",
   "United Kingdom": "GB", Scotland: "GB", Ireland: "IE", "United States": "US", Canada: "CA", Japan: "JP", "South Korea": "KR", China: "CN", Singapore: "SG", "Hong Kong": "HK", Taiwan: "TW",
-  Australia: "AU", "New Zealand": "NZ", Turkey: "TR", "Saudi Arabia": "SA", Hungary: "HU", Qatar: "QA", "United Arab Emirates": "AE", Malaysia: "MY", Israel: "IL", Egypt: "EG", Jordan: "JO",
+  Australia: "AU", "New Zealand": "NZ", Turkey: "TR", "Saudi Arabia": "SA", Hungary: "HU", Qatar: "QA", "United Arab Emirates": "AE", Malaysia: "MY", Egypt: "EG", Jordan: "JO",
   Lebanon: "LB", Kuwait: "KW", Oman: "OM", Bahrain: "BH", Poland: "PL", "Czech Republic": "CZ", Portugal: "PT", Estonia: "EE", Luxembourg: "LU", Iceland: "IS", Slovenia: "SI"
 };
 const ALLOWED_FIELDS = new Set(["Engineering", "Computer Science", "Materials Science", "Energy", "Chemical Engineering"]);
