@@ -1,5 +1,8 @@
 import { HeroArt } from "@/shared/illustrations/HeroArt";
-import { ChecklistStageCard, DeadlineStageCard, ProfessorStageCard, ScholarshipStageCard } from "./StageCards";
+import { ChecklistStageCard } from "./ChecklistStageCard";
+import { DeadlineStageCard } from "./DeadlineStageCard";
+import { ProfessorStageCard } from "./ProfessorStageCard";
+import { ScholarshipStageCard } from "./ScholarshipStageCard";
 
 /** The creative centrepiece: the journey illustration with floating cards around it. */
 export function HeroStage() {

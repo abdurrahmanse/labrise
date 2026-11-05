@@ -2,7 +2,9 @@ import Link from "next/link";
 import { Building2, Globe2, Users } from "lucide-react";
 import type { ReactNode } from "react";
 import { countries, professors, universities } from "@/modules/directory/catalog";
-import { CountriesArt, ProfessorsArt, UniversitiesArt } from "./ExploreArt";
+import { CountriesArt } from "./CountriesArt";
+import { ProfessorsArt } from "./ProfessorsArt";
+import { UniversitiesArt } from "./UniversitiesArt";
 import { SectionHeading } from "./SectionHeading";
 import { homeText } from "@/content/text/site";
 
