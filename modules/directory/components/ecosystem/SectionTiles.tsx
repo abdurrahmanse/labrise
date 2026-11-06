@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, type LucideIcon } from "lucide-react";
-import { surface } from "@/shared/components/Surface";
+import { liftCard } from "@/shared/components/liftCard";
 
 export interface SectionTile {
   href: string;
@@ -18,7 +18,7 @@ export function SectionTiles({ tiles }: { tiles: SectionTile[] }) {
         <Link
           key={href}
           href={href}
-          className={surface({ tone: "glass", depth: "soft", padding: "lg", className: "group flex flex-col gap-1 transition-all hover:-translate-y-1 hover:border-indigo-400 hover:shadow-[6px_6px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]" })}
+          className={liftCard("flex flex-col gap-1")}
         >
           <Icon className="mb-2 h-6 w-6 text-indigo-400" />
           {count !== undefined && <div className="text-3xl font-bold text-white">{count}</div>}

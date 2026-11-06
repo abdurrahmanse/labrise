@@ -3,7 +3,7 @@ import { Avatar } from "@/shared/components/Avatar";
 import type { UniversitySummary } from "../../utils/connections";
 import { universitySlug } from "../../utils/slugs";
 import { rosterLabels } from "@/content/text/directory";
-import { surface } from "@/shared/components/Surface";
+import { liftCard } from "@/shared/components/liftCard";
 import { ViewDetails } from "@/shared/components/ViewDetails";
 import { commonText } from "@/content/text/common";
 
@@ -17,7 +17,7 @@ export function UniversityRoster({ summaries }: { summaries: UniversitySummary[]
         <Link
           key={university.name}
           href={`/directory/universities/${universitySlug(university)}`}
-          className={surface({ tone: "glass", depth: "soft", padding: "lg", className: "group flex gap-4 transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]" })}
+          className={liftCard("flex gap-4")}
         >
           <Avatar name={university.name.replace(/^(University of|The) /, "")} size={48} square />
           <div className="min-w-0 flex-1">

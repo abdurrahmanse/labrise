@@ -3,6 +3,7 @@ import { BulletList } from "@/shared/components/BulletList";
 import { Chips } from "@/shared/components/Chips";
 import { PageShell } from "@/shared/components/PageShell";
 import { sectionText } from "@/content/text/directory";
+import { directoryListTrail } from "../../utils/trails";
 import { countryByName } from "../../utils/lookups/countryLookups";
 import { countrySlug } from "../../utils/slugs";
 import { peopleInField } from "../../utils/hubs";
@@ -22,12 +23,7 @@ export function FieldView({ fieldKey, info }: { fieldKey: string; info: FieldInf
       eyebrow="Research field"
       title={info.title}
       lead={info.about}
-      trail={[
-        { label: "Home", href: "/" },
-        { label: "Directory", href: "/directory" },
-        { label: t.title, href: "/directory/fields" },
-        { label: info.title, href: `/directory/fields/${fieldKey}` }
-      ]}
+      trail={[...directoryListTrail(t.title, "fields"), { label: info.title, href: `/directory/fields/${fieldKey}` }]}
     >
       <Block title={t.topics}>
         <BulletList items={info.topics} />

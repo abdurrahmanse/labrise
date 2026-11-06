@@ -1,39 +1,26 @@
-import Link from "next/link";
-import { ArrowRight, Building2, FlaskConical, Landmark, Users } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import { Building2, FlaskConical, Landmark, Users } from "lucide-react";
 import { ecosystemText } from "@/content/text/directory";
-import { surface } from "@/shared/components/Surface";
+import { SectionTiles } from "./SectionTiles";
 
-interface Tile {
-  href: string;
-  label: string;
-  count: number;
-  Icon: LucideIcon;
+interface EcosystemTilesProps {
+  slug: string;
+  universities: number;
+  professors: number;
+  labs: number;
+  funders: number;
 }
 
 /** Entry points under one country: its universities, professors, labs and funders. */
-export function EcosystemTiles({ slug, universities, professors, labs, funders }: { slug: string; universities: number; professors: number; labs: number; funders: number }) {
-  const tiles: Tile[] = [
-    { href: `/directory/countries/${slug}/universities`, label: ecosystemText.universities, count: universities, Icon: Building2 },
-    { href: `/directory/countries/${slug}/professors`, label: ecosystemText.professors, count: professors, Icon: Users },
-    { href: `/directory/countries/${slug}/labs`, label: ecosystemText.labs, count: labs, Icon: FlaskConical },
-    { href: `/directory/countries/${slug}/funding`, label: ecosystemText.funding, count: funders, Icon: Landmark }
-  ];
-
+export function EcosystemTiles({ slug, universities, professors, labs, funders }: EcosystemTilesProps) {
+  const at = (view: string) => `/directory/countries/${slug}/${view}`;
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {tiles.map(({ href, label, count, Icon }) => (
-        <Link
-          key={label}
-          href={href}
-          className={surface({ tone: "glass", depth: "soft", padding: "lg", className: "group transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]" })}
-        >
-          <Icon className="mb-3 h-6 w-6 text-indigo-400" />
-          <div className="text-3xl font-bold text-white">{count}</div>
-          <div className="font-mono text-xs uppercase tracking-wider text-slate-400">{label}</div>
-          <div className="mt-2 inline-flex items-center gap-1.5 text-sm font-bold text-indigo-300 group-hover:text-white">Open <ArrowRight aria-hidden className="h-4 w-4" /></div>
-        </Link>
-      ))}
-    </div>
+    <SectionTiles
+      tiles={[
+        { href: at("universities"), label: ecosystemText.universities, count: universities, Icon: Building2 },
+        { href: at("professors"), label: ecosystemText.professors, count: professors, Icon: Users },
+        { href: at("labs"), label: ecosystemText.labs, count: labs, Icon: FlaskConical },
+        { href: at("funding"), label: ecosystemText.funding, count: funders, Icon: Landmark }
+      ]}
+    />
   );
 }

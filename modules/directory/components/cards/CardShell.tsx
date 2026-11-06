@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 import { commonText } from "@/content/text/common";
 import { IconFor } from "@/shared/components/IconFor";
 import { usePrefetchHref } from "../../hooks/useDirectoryEntry";
-import { surface } from "@/shared/components/Surface";
+import { liftCard } from "@/shared/components/liftCard";
 import { ViewDetails, titleLinkClass } from "@/shared/components/ViewDetails";
 
 interface CardShellProps {
@@ -21,7 +21,7 @@ interface CardShellProps {
 export function CardShell({ href, eyebrow, title, media, children }: CardShellProps) {
   const prefetch = usePrefetchHref(href);
   return (
-    <article onMouseEnter={prefetch} onFocus={prefetch} className={surface({ tone: "glass", depth: "soft", padding: "lg", className: "group relative flex flex-col gap-3 pt-6 transition-all duration-150 hover:-translate-y-1 hover:border-indigo-400 hover:shadow-[6px_6px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]" })}>
+    <article onMouseEnter={prefetch} onFocus={prefetch} className={liftCard("flex flex-col gap-3 pt-6")}>
       <span className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-indigo-600 to-cyan-400" />
       <div className="flex items-center gap-3">
         {media}

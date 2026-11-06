@@ -1,5 +1,6 @@
 import { PageShell } from "@/shared/components/PageShell";
 import { LinkCardGrid } from "@/shared/components/LinkCardGrid";
+import { directoryListTrail } from "../../utils/trails";
 import { sectionText } from "@/content/text/directory";
 import { regionNames, regionSlug, statsOfRegion } from "../../utils/hubs";
 
@@ -10,7 +11,7 @@ export function RegionsIndexView() {
       eyebrow="Directory"
       title={t.title}
       lead="Pick a region to compare its countries, universities, professors, labs and scholarships side by side."
-      trail={[{ label: "Home", href: "/" }, { label: "Directory", href: "/directory" }, { label: t.title, href: "/directory/regions" }]}
+      trail={directoryListTrail(t.title, "regions")}
     >
       <LinkCardGrid
         items={regionNames.map((r) => {

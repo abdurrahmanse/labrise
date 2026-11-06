@@ -6,6 +6,7 @@ import { Flag } from "@/shared/components/Flag";
 import { PageShell } from "@/shared/components/PageShell";
 import { StatTiles } from "@/shared/components/StatTiles";
 import { sectionText } from "@/content/text/directory";
+import { directoryListTrail } from "../../utils/trails";
 import { regionSlug, statsOfRegion } from "../../utils/hubs";
 import { countrySlug, scholarshipSlug, universitySlug } from "../../utils/slugs";
 
@@ -19,7 +20,7 @@ export function RegionView({ region }: { region: string }) {
       eyebrow="Region"
       title={region}
       lead={t.lead(region, stats.countries.length)}
-      trail={[{ label: "Home", href: "/" }, { label: "Directory", href: "/directory" }, { label: t.title, href: "/directory/regions" }, { label: region, href: `/directory/regions/${regionSlug(region)}` }]}
+      trail={[...directoryListTrail(t.title, "regions"), { label: region, href: `/directory/regions/${regionSlug(region)}` }]}
     >
       <StatTiles
         items={[

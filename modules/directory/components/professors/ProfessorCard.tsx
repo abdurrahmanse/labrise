@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Avatar } from "@/shared/components/Avatar";
 import { Flag } from "@/shared/components/Flag";
 import { fieldOf } from "../../data/fields";
@@ -10,7 +9,7 @@ import { SaveButton } from "./SaveButton";
 import { StatusSelect } from "./StatusSelect";
 import { commonText } from "@/content/text/common";
 import { surface } from "@/shared/components/Surface";
-import { titleLinkClass } from "@/shared/components/ViewDetails";
+import { PillLink, titleLinkClass } from "@/shared/components/ViewDetails";
 
 export function ProfessorCard({ professor }: { professor: ProfessorEntry }) {
   const slug = professorSlug(professor);
@@ -40,9 +39,7 @@ export function ProfessorCard({ professor }: { professor: ProfessorEntry }) {
 
       <div className="mt-auto flex items-center justify-between gap-3 pt-2">
         <StatusSelect slug={slug} />
-        <Link href={`/directory/professors/${slug}`} className="inline-flex items-center gap-1.5 border-2 border-indigo-400/60 bg-indigo-400/10 px-3 py-1.5 text-sm font-bold text-indigo-200 hover:border-indigo-300 hover:bg-indigo-500 hover:text-white">
-          {commonText.actions.details} <ArrowRight className="h-4 w-4" />
-        </Link>
+        <PillLink href={`/directory/professors/${slug}`}>{commonText.actions.details}</PillLink>
       </div>
     </article>
   );

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FlaskConical, Users } from "lucide-react";
-import { surface } from "@/shared/components/Surface";
+import { liftCard } from "@/shared/components/liftCard";
 import { ViewDetails, titleLinkClass } from "@/shared/components/ViewDetails";
 import { commonText } from "@/content/text/common";
 import { labText } from "@/content/text/directory";
@@ -17,7 +17,7 @@ export function LabRoster({ labs, showUniversity = true }: { labs: LabEntry[]; s
       {labs.map((l) => {
         const university = l.university ? universities.find((u) => u.name === l.university) : undefined;
         return (
-          <div key={l.name} className={surface({ tone: "glass", depth: "soft", padding: "lg", className: "group relative flex flex-col gap-3 transition-all hover:-translate-y-1 hover:border-indigo-400 hover:shadow-[6px_6px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]" })}>
+          <div key={l.name} className={liftCard("flex flex-col gap-3")}>
             <div className="flex items-start gap-3">
               <FlaskConical className="mt-1 h-6 w-6 shrink-0 text-indigo-400" />
               <div className="min-w-0 flex-1">

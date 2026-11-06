@@ -3,7 +3,7 @@ import { providerSlug } from "../../utils/slugs";
 import type { ProviderEntry } from "../../types";
 import { Flag } from "@/shared/components/Flag";
 import { rosterLabels } from "@/content/text/directory";
-import { surface } from "@/shared/components/Surface";
+import { liftCard } from "@/shared/components/liftCard";
 import { ViewDetails } from "@/shared/components/ViewDetails";
 
 /** Funding organisations as small cards, each linking to its requirements. */
@@ -18,7 +18,7 @@ export function FunderList({ funders, empty }: { funders: ProviderEntry[]; empty
         <Link
           key={p.name}
           href={`/directory/providers/${providerSlug(p)}`}
-          className={surface({ tone: "glass", depth: "sm", padding: "md", className: "group flex items-start gap-3 transition-all hover:-translate-y-0.5 hover:shadow-[5px_5px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]" })}
+          className={liftCard("flex items-start gap-3", "md")}
         >
           <Flag country={p.country} className="mt-1 h-5 w-8" />
           <div className="min-w-0 flex-1">

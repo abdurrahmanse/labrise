@@ -1,5 +1,6 @@
 import { PageShell } from "@/shared/components/PageShell";
 import { LinkCardGrid } from "@/shared/components/LinkCardGrid";
+import { directoryListTrail } from "../../utils/trails";
 import { sectionText } from "@/content/text/directory";
 import { summaryOfFields } from "../../utils/hubs";
 
@@ -10,7 +11,7 @@ export function FieldsIndexView() {
       eyebrow="Directory"
       title={t.title}
       lead={t.lead}
-      trail={[{ label: "Home", href: "/" }, { label: "Directory", href: "/directory" }, { label: t.title, href: "/directory/fields" }]}
+      trail={directoryListTrail(t.title, "fields")}
     >
       <LinkCardGrid items={summaryOfFields().map((f) => ({ href: `/directory/fields/${f.key}`, title: f.info.title, meta: t.counts(f.professors, f.labs) }))} />
     </PageShell>
