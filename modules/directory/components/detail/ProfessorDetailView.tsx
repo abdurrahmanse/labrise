@@ -21,7 +21,7 @@ import { professorSlug, universitySlug } from "../../utils/slugs";
 import type { ProfessorEntry } from "../../types";
 import { FunderList } from "../ecosystem/FunderList";
 import { Flag } from "@/shared/components/Flag";
-import { LabList } from "../ecosystem/LabList";
+import { LabRoster } from "../ecosystem/LabRoster";
 import { ProfessorTracker } from "../professors/ProfessorTracker";
 import { EMAIL_STEPS } from "./applySteps";
 import { buildEmailDraft } from "./emailDraft";
@@ -91,7 +91,7 @@ export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }
 
           <ProfessorFieldInfo field={field} />
 
-          {labs.length > 0 && <Block title={detailText.blocks.labsHere(labs.length)}><LabList labs={labs} /></Block>}
+          {labs.length > 0 && <Block title={detailText.blocks.labsHere(labs.length)}><LabRoster labs={labs} /></Block>}
           {funders.length > 0 && <Block title={t.funding}><FunderList funders={funders} /></Block>}
         </div>
 

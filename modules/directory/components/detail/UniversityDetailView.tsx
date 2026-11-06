@@ -17,7 +17,7 @@ import { universities } from "../../data/universities";
 import { Avatar } from "@/shared/components/Avatar";
 import { APPLY_STEPS } from "./applySteps";
 import { FunderList } from "../ecosystem/FunderList";
-import { LabList } from "../ecosystem/LabList";
+import { LabRoster } from "../ecosystem/LabRoster";
 import { ProfessorRoster } from "../ecosystem/ProfessorRoster";
 import { CountryFacts } from "./CountryFacts";
 import { detailText } from "@/content/text/directory";
@@ -79,7 +79,7 @@ export function UniversityDetailView({ university }: { university: UniversityEnt
 
       {labs.length > 0 && (
         <Block title={detailText.blocks.labsHere(labs.length)}>
-          <LabList labs={labs} />
+          <LabRoster labs={labs} showUniversity={false} />
         </Block>
       )}
       <Block title={detailText.blocks.professors(profs.length)}>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Building2, Landmark, Users } from "lucide-react";
+import { Building2, FlaskConical, Landmark, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { ecosystemText } from "@/content/text/directory";
 import { surface } from "@/shared/components/Surface";
@@ -11,16 +11,17 @@ interface Tile {
   Icon: LucideIcon;
 }
 
-/** Three entry points under one country: its universities, professors and funders. */
-export function EcosystemTiles({ slug, universities, professors, funders }: { slug: string; universities: number; professors: number; funders: number }) {
+/** Entry points under one country: its universities, professors, labs and funders. */
+export function EcosystemTiles({ slug, universities, professors, labs, funders }: { slug: string; universities: number; professors: number; labs: number; funders: number }) {
   const tiles: Tile[] = [
     { href: `/directory/countries/${slug}/universities`, label: ecosystemText.universities, count: universities, Icon: Building2 },
     { href: `/directory/countries/${slug}/professors`, label: ecosystemText.professors, count: professors, Icon: Users },
+    { href: `/directory/countries/${slug}/labs`, label: ecosystemText.labs, count: labs, Icon: FlaskConical },
     { href: `/directory/countries/${slug}/funding`, label: ecosystemText.funding, count: funders, Icon: Landmark }
   ];
 
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {tiles.map(({ href, label, count, Icon }) => (
         <Link
           key={label}

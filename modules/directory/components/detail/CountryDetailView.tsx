@@ -16,7 +16,7 @@ import { APPLY_STEPS } from "./applySteps";
 import { CountryViewTabs } from "../ecosystem/CountryViewTabs";
 import { EcosystemTiles } from "../ecosystem/EcosystemTiles";
 import { FunderList } from "../ecosystem/FunderList";
-import { LabList } from "../ecosystem/LabList";
+import { LabRoster } from "../ecosystem/LabRoster";
 import { UniversityRoster } from "../ecosystem/UniversityRoster";
 import { CountryFacts } from "./CountryFacts";
 import { detailText } from "@/content/text/directory";
@@ -40,7 +40,7 @@ export function CountryDetailView({ country, dossier }: { country: CountryEntry;
     >
       <CountryViewTabs slug={slug} />
 
-      <EcosystemTiles slug={slug} universities={summaries.length} professors={professors.length} funders={funders.length} />
+      <EcosystemTiles slug={slug} universities={summaries.length} professors={professors.length} labs={labs.length} funders={funders.length} />
 
       <Facts
         rows={[
@@ -82,7 +82,8 @@ export function CountryDetailView({ country, dossier }: { country: CountryEntry;
       </Block>
       {labs.length > 0 && (
         <Block title={detailText.blocks.labsHere(labs.length)}>
-          <LabList labs={labs} />
+          <LabRoster labs={labs.slice(0, 4)} />
+          {labs.length > 4 && <Link href={`/directory/countries/${slug}/labs`} className="text-sm font-bold text-indigo-400 hover:text-indigo-200">{detailText.hints.allLabs(labs.length)} →</Link>}
         </Block>
       )}
       <Block title={detailText.blocks.whoFunds}>

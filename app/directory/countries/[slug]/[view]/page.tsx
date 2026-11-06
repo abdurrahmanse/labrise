@@ -3,22 +3,24 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Block } from "@/shared/components/Block";
 import { PageShell } from "@/shared/components/PageShell";
-import { countries, ecosystemOfCountry, findCountry } from "@/modules/directory/catalog";
+import { countries, ecosystemOfCountry, findCountry, universities } from "@/modules/directory/catalog";
+import { labsInCountry } from "@/modules/directory/catalog";
 import { countrySlug, universitySlug } from "@/modules/directory/contracts";
 import { CountryViewTabs } from "@/modules/directory/components/ecosystem/CountryViewTabs";
 import { FunderList } from "@/modules/directory/components/ecosystem/FunderList";
+import { LabRoster } from "@/modules/directory/components/ecosystem/LabRoster";
 import { ProfessorRoster } from "@/modules/directory/components/ecosystem/ProfessorRoster";
 import { UniversityRoster } from "@/modules/directory/components/ecosystem/UniversityRoster";
 import { Flag } from "@/shared/components/Flag";
 import { buildMetadata } from "@/modules/seo";
-import { countryViewText, rosterText } from "@/content/text/directory";
+import { countryViewText, labText, rosterText } from "@/content/text/directory";
 import { PageFallback } from "@/shared/components/PageFallback";
 
 interface Props {
   params: Promise<{ slug: string; view: string }>;
 }
 
-const VIEWS = ["universities", "professors", "funding"] as const;
+const VIEWS = ["universities", "professors", "labs", "funding"] as const;
 type View = (typeof VIEWS)[number];
 
 const TITLES: Record<View, string> = countryViewText.titles;
@@ -44,6 +46,7 @@ async function CountryViewPageContent({ params }: Props) {
   if (!country || !VIEWS.includes(view as View)) notFound();
 
   const { summaries, professors, funders } = ecosystemOfCountry(country);
+  const labs = view === "labs" ? labsInCountry(country.country) : [];
 
   return (
     <PageShell
@@ -71,6 +74,28 @@ async function CountryViewPageContent({ params }: Props) {
         ) : (
           <ProfessorRoster professors={professors} />
         ))}
+
+      {view === "labs" && (
+        <>
+          <p className="text-slate-300">{labText.countryIntro(country.country, labs.length)}</p>
+          {universities
+            .filter((u) => labs.some((l) => l.university === u.name))
+            .map((u) => (
+              <Block key={u.name} title={u.name}>
+                <LabRoster labs={labs.filter((l) => l.university === u.name)} showUniversity={false} />
+                <a href={`/directory/universities/${universitySlug(u)}`} className="text-sm font-bold text-indigo-400 hover:text-indigo-200">
+                  {rosterText.universityDetails}
+                </a>
+              </Block>
+            ))}
+          {labs.some((l) => !l.university) && (
+            <Block title={labText.nationalGroup}>
+              <LabRoster labs={labs.filter((l) => !l.university)} />
+            </Block>
+          )}
+          {labs.length === 0 && <p className="text-slate-400">{labText.none}</p>}
+        </>
+      )}
 
       {view === "funding" && (
         <Block title={countryViewText.fundingBlock}>

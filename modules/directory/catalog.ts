@@ -5,6 +5,7 @@
  */
 export { countries, directoryTypes, labs, professors, providers, scholarships, universities } from "./data";
 export { fieldOf } from "./data/fields";
+export { labsAtUniversity, labsInCountry, labsOfProfessor } from "./utils/lookups";
 export { ecosystemOfCountry } from "./utils/connections";
 export { entryMeta } from "./utils/entryMeta";
 export { findCountry, findLab, findProfessor, findProvider, findScholarship, findUniversity, providerOfScholarship } from "./utils/lookups";

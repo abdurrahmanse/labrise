@@ -50,7 +50,8 @@ export const ecosystemText = {
   sections: "Country sections",
   universities: "Universities",
   professors: "Professors",
-  funding: "Funding organisations"
+  funding: "Funding organisations",
+  labs: "Labs"
 } as const;
 
 export const detailText = {
@@ -60,7 +61,8 @@ export const detailText = {
     professors: "All professors",
     providers: "All providers",
     scholarships: "All scholarships",
-    labs: "All labs and groups"
+    labs: "All labs and groups",
+    labsShort: "labs and groups"
   },
   eyebrow: {
     country: (region: string) => `Country · ${region}`,
@@ -132,6 +134,7 @@ export const detailText = {
     moreLabs: (place: string) => `More labs and groups in ${place}`
   },
   hints: {
+    allLabs: (n: number) => `See all ${n} labs and groups`,
     labs: "Labs change their pages, openings and funding often. Open the official page and write to the group or its professors before you apply.",
     figures: "Figures are typical ranges. Confirm on the official pages below.",
     deadlines: "Deadlines and funding change every cycle. Confirm on the official site.",
@@ -178,7 +181,7 @@ export const rosterLabels = {
 
 export const countryViewText = {
   overview: "Overview",
-  titles: { universities: "Universities", professors: "Professors", funding: "Funding organisations" },
+  titles: { universities: "Universities", professors: "Professors", labs: "Labs and groups", funding: "Funding organisations" },
   notFound: "Not found",
   eyebrow: (country: string, region: string) => `${country} · ${region}`,
   metaTitle: (view: string, country: string) => `${view} in ${country}`,
@@ -193,4 +196,35 @@ export const professorDetailText = {
   emailHint: "Emails were taken from official university or institute pages. People move, so confirm on their page before writing.",
   fieldAbout: (field: string) => `About the field: ${field}`,
   moreIn: (group: string) => `More in ${group}`
+} as const;
+
+export const labText = {
+  none: "No labs or groups are listed here yet.",
+  offers: "What it offers",
+  people: (n: number) => `${n} ${n === 1 ? "professor" : "professors"}`,
+  nationalGroup: "National institutes and networks",
+  countryIntro: (country: string, n: number) => `${n} labs, institutes and communities in ${country}, grouped by university. Open one to see who leads it, how it is funded and how to approach it.`,
+  blocks: {
+    overview: "What this place works on",
+    people: "People and contacts",
+    funding: "How study here can be funded",
+    fundingHint: "These organisations and programmes fund study in this country or at this university. Funding for a specific lab post comes from the lab's own openings, so check the official page.",
+    scholarships: "Scholarships hosted in this country",
+    university: "The university behind it",
+    country: "Studying in this country",
+    approach: "How to approach this lab",
+    related: (place: string) => `More labs and groups in ${place}`,
+    community: "About joining a community or network"
+  },
+  facts: { affiliation: "Affiliation", independent: "Independent institute or network", people: "Listed people", region: "Region", deadline: "Typical university deadline", funding: "University funding route", supervisorFirst: "Contact a professor first?" },
+  approach: [
+    "Read the lab's official page and its latest papers or projects, so you can name something specific.",
+    "Check for open posts, fellowships or a doctoral school call on the official page before you write.",
+    "Write a short email to the listed professor or the contact person: who you are, what you read, why it fits, and what you attach.",
+    "Prepare a CV, transcripts and a research statement. Match the statement to the lab's topics.",
+    "Apply through the university or doctoral school as well: the lab alone usually cannot admit you.",
+    "Apply for the scholarships listed below in parallel, because deadlines differ."
+  ],
+  communityNote: "A community or network usually has no single admissions office. Use it to find groups, events, supervisors and funded calls, and then apply to the member university or lab that fits.",
+  instituteNote: "Institutes often run their own doctoral school or work with partner universities. Open the official page to see which one admits you."
 } as const;
