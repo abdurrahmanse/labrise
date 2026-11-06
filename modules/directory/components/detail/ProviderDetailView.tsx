@@ -13,6 +13,7 @@ import { Flag } from "@/shared/components/Flag";
 import { detailText } from "@/content/text/directory";
 import { EntryActions } from "@/modules/library";
 import { providerSlug } from "../../utils/slugs";
+import { providerTrail } from "../../utils/trails";
 import { worldwideProviders } from "../../data/connections";
 
 const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
@@ -29,7 +30,7 @@ export function ProviderDetailView({ provider }: { provider: ProviderEntry }) {
       actions={<EntryActions type="providers" slug={providerSlug(provider)} />}
       lead={provider.route}
       media={<Flag country={provider.country} className="h-10 w-14" />}
-      back={{ href: "/directory/providers", label: detailText.back.providers }}
+      trail={providerTrail(provider)}
     >
       <Facts
         rows={[

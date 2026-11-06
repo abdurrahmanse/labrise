@@ -18,6 +18,7 @@ import { professors } from "../../data/professors";
 import { fundersOfUniversity } from "../../utils/connections";
 import { labsOfProfessor, professorsAtUniversity, universityOfProfessor } from "../../utils/lookups";
 import { professorSlug, universitySlug } from "../../utils/slugs";
+import { professorTrail } from "../../utils/trails";
 import type { ProfessorEntry } from "../../types";
 import { FunderList } from "../ecosystem/FunderList";
 import { Flag } from "@/shared/components/Flag";
@@ -51,7 +52,7 @@ export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }
       media={<Avatar name={professor.name} size={80} />}
       actions={<EntryActions type="professors" slug={slug} />}
       lead={detailText.lead.professor(professor.university, professor.country, professor.group)}
-      back={{ href: "/directory/professors", label: detailText.back.professors }}
+      trail={professorTrail(professor)}
     >
       <HighlightTiles
         items={[

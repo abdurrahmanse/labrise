@@ -1,6 +1,6 @@
 import { getCountryGuides, getDocuments } from "@/modules/content/server";
 import type { MetadataRoute } from "next";
-import { countries, labs, professors, providers, scholarships, universities } from "@/modules/directory/catalog";
+import { countries, fieldKeys, labs, professors, providers, regionNames, regionSlug, scholarships, universities } from "@/modules/directory/catalog";
 import { countrySlug, labSlug, professorSlug, providerSlug, scholarshipSlug, universitySlug } from "@/modules/directory/contracts";
 import { guideTopics } from "@/modules/guides";
 import { roadmapLevelsData } from "@/content/roadmap/levelsData";
@@ -9,7 +9,7 @@ import { absoluteUrl } from "@/modules/seo";
 
 const staticPaths = [
   "/", "/steps", "/profile", "/guides", "/directory", "/problems",
-  "/directory/countries", "/directory/universities", "/directory/professors", "/directory/scholarships", "/directory/providers", "/directory/labs", "/apply", "/apply/university", "/apply/scholarship",
+  "/directory/countries", "/directory/universities", "/directory/professors", "/directory/scholarships", "/directory/providers", "/directory/labs", "/directory/fields", "/directory/regions", "/apply", "/apply/university", "/apply/scholarship",
   "/roadmap", "/roadmap/phases", "/scholarships/formulas", "/scholarships/portals", "/professors/rules", "/faqs/checklist", "/scholarships", "/professors", "/documents", "/faqs",
   "/professors/find", "/professors/supervisor", "/professors/workflow", "/professors/templates", "/scholarships/browse", "/scholarships/workflow", "/planner", "/saved", "/glossary", "/support", "/about", "/disclaimer", "/privacy", "/contact"
 ];
@@ -31,7 +31,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...scholarships.map((s) => `/directory/scholarships/${scholarshipSlug(s)}`),
     ...countries.flatMap((c) => ["universities", "professors", "funding"].map((v) => `/directory/countries/${countrySlug(c)}/${v}`)),
     ...providers.map((p) => `/directory/providers/${providerSlug(p)}`),
-    ...labs.map((l) => `/directory/labs/${labSlug(l)}`)
+    ...labs.map((l) => `/directory/labs/${labSlug(l)}`),
+    ...labs.flatMap((l) => ["people", "funding", "join", "context"].map((v) => `/directory/labs/${labSlug(l)}/${v}`)),
+    ...universities.flatMap((u) => ["labs", "professors", "funding", "study"].map((v) => `/directory/universities/${universitySlug(u)}/${v}`)),
+    ...countries.flatMap((c) => ["labs", "scholarships", "study"].map((v) => `/directory/countries/${countrySlug(c)}/${v}`)),
+    ...fieldKeys.map((k) => `/directory/fields/${k}`),
+    ...regionNames.map((r) => `/directory/regions/${regionSlug(r)}`)
   ];
 
   return paths.map((path) => ({

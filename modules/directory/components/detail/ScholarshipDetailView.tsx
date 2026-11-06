@@ -8,6 +8,7 @@ import { PageShell } from "@/shared/components/PageShell";
 import { applicationChecklist } from "../../utils/scholarshipRelations";
 import { providerOfScholarship } from "../../utils/lookups";
 import { scholarshipSlug } from "../../utils/slugs";
+import { scholarshipTrail } from "../../utils/trails";
 import type { ScholarshipEntry } from "../../types";
 import { Flag } from "@/shared/components/Flag";
 import { bodyClass } from "./scholarship/detailStyles";
@@ -33,7 +34,7 @@ export function ScholarshipDetailView({ scholarship }: { scholarship: Scholarshi
       }
       media={<Flag country={scholarship.host} className="h-10 w-14" />}
       lead={detailText.lead.scholarship(scholarship.host, scholarship.covers)}
-      back={{ href: "/directory/scholarships", label: detailText.back.scholarships }}
+      trail={scholarshipTrail(scholarship)}
     >
       <ScholarshipHighlights scholarship={scholarship} provider={provider} />
 

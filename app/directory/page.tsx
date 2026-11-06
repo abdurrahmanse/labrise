@@ -3,7 +3,7 @@ import { Block } from "@/shared/components/Block";
 import { PageShell } from "@/shared/components/PageShell";
 import { countries, labs, professors, providers, scholarships, universities } from "@/modules/directory/catalog";
 import { buildMetadata } from "@/modules/seo";
-import { commonText } from "@/content/text/common";
+import { navLabels } from "@/content/text/site";
 import { directoryIndexText as t } from "@/content/text/pages";
 import { Award, FlaskConical, GraduationCap, Landmark, MapPin, Users } from "lucide-react";
 
@@ -15,7 +15,7 @@ export default function DirectoryPage() {
       eyebrow={t.eyebrow}
       title={t.heading}
       lead={t.lead}
-      back={{ href: "/", label: commonText.actions.home }}
+      trail={[{ label: navLabels.home, href: "/" }, { label: navLabels.directory, href: "/directory" }]}
       prev={{ href: "/guides", label: t.prev }}
       next={{ href: "/problems", label: t.next }}
     >

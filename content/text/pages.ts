@@ -122,6 +122,8 @@ export const directoryIndexText = {
   more: {
     title: "More resources",
     items: [
+      { href: "/directory/fields", title: "Research fields", meta: "Topics, reading, people and labs" },
+      { href: "/directory/regions", title: "Regions", meta: "Compare countries side by side" },
       { href: "/countries", title: "Country dossiers", meta: "20 detailed guides" },
       { href: "/scholarships", title: "Scholarship finder", meta: "Search workflow" },
       { href: "/professors", title: "Email templates", meta: "Cold email and checklist" },

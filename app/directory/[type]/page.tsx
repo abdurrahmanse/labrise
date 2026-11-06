@@ -47,7 +47,7 @@ async function DirectoryTypePageContent({ params }: Props) {
       eyebrow={pageText.directoryType.eyebrow}
       title={entry.title}
       lead={entry.lead}
-      back={{ href: "/directory", label: navLabels.directory }}
+      trail={[{ label: navLabels.home, href: "/" }, { label: navLabels.directory, href: "/directory" }, { label: entry.title, href: `/directory/${entry.type}` }]}
       prev={prev && { href: `/directory/${prev.type}`, label: prev.title }}
       next={next && { href: `/directory/${next.type}`, label: next.title }}
     >

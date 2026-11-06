@@ -1,7 +1,7 @@
 import type { TrailStep } from "@/shared/components/PageTrail";
-import type { CountryEntry, LabEntry, ProfessorEntry, UniversityEntry } from "../types";
+import type { CountryEntry, LabEntry, ProfessorEntry, ProviderEntry, ScholarshipEntry, UniversityEntry } from "../types";
 import { countryByName } from "./lookups/countryLookups";
-import { labSlug, countrySlug, professorSlug, universitySlug } from "./slugs";
+import { labSlug, countrySlug, professorSlug, providerSlug, scholarshipSlug, universitySlug } from "./slugs";
 import { universityOfProfessor } from "./lookups/universityLookups";
 import { universities } from "../data/universities";
 
@@ -38,3 +38,15 @@ export function labTrail(lab: LabEntry): TrailStep[] {
 
 /** Adds one more step under a page, such as "People" under a lab. */
 export const withStep = (trail: TrailStep[], label: string, href: string): TrailStep[] => [...trail, { label, href }];
+
+export function scholarshipTrail(scholarship: ScholarshipEntry): TrailStep[] {
+  const country = countryByName(scholarship.host);
+  const base = country
+    ? [...countryTrail(country), { label: "Scholarships", href: `/directory/countries/${countrySlug(country)}/scholarships` }]
+    : directoryListTrail("Scholarships", "scholarships");
+  return [...base, { label: scholarship.name, href: `/directory/scholarships/${scholarshipSlug(scholarship)}` }];
+}
+
+export function providerTrail(provider: ProviderEntry): TrailStep[] {
+  return [...directoryListTrail("Scholarship providers", "providers"), { label: provider.name, href: `/directory/providers/${providerSlug(provider)}` }];
+}
