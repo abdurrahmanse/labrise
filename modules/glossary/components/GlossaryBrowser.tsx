@@ -9,6 +9,7 @@ import { emptyText } from "@/content/text/status";
 import { EmptyState } from "@/shared/components/EmptyState";
 import { glossaryTerms } from "../data/terms";
 import { surface } from "@/shared/components/Surface";
+import { actionLinkClass } from "@/shared/components/linkStyles";
 
 export function GlossaryBrowser() {
   const [query, setQuery] = useState("");
@@ -38,7 +39,7 @@ export function GlossaryBrowser() {
               {g.full && <p className="font-mono text-xs uppercase tracking-wider text-indigo-300">{g.full}</p>}
               <dd className="font-sans text-[length:var(--text-body)] font-normal text-slate-300">{g.meaning}</dd>
               {g.guide && (
-                <Link href={`/guides/${g.guide}`} className="mt-auto w-fit text-sm font-bold text-indigo-400 hover:text-indigo-200">
+                <Link href={`/guides/${g.guide}`} className={`mt-auto w-fit text-sm ${actionLinkClass}`}>
                   {t.guide} →
                 </Link>
               )}

@@ -3,6 +3,7 @@ import { CopyButton } from "@/shared/ui/CopyButton";
 import { contactInfo, contactPageText as t } from "@/content/text/contact";
 import { IconBadge } from "@/shared/components/IconBadge";
 import { ContourPattern } from "@/shared/illustrations/ContourPattern";
+import { actionLinkClass } from "@/shared/components/linkStyles";
 
 const card = "border-2 border-white/30 bg-canvas-card/60 p-5 backdrop-blur-xl shadow-[4px_4px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]";
 const osmLink = `https://www.openstreetmap.org/?mlat=${contactInfo.latitude}&mlon=${contactInfo.longitude}#map=11/${contactInfo.latitude}/${contactInfo.longitude}`;
@@ -38,7 +39,7 @@ export function ContactSide() {
             <p className="font-mono text-xs text-slate-400">{t.side.location.coordinates}</p>
           </div>
         </div>
-        <a href={osmLink} target="_blank" rel="noopener noreferrer" className="relative mt-3 inline-block text-sm font-bold text-indigo-400 hover:text-indigo-200">
+        <a href={osmLink} target="_blank" rel="noopener noreferrer" className={`relative mt-3 inline-block text-sm ${actionLinkClass}`}>
           {t.side.location.mapLink} ↗
         </a>
       </div>

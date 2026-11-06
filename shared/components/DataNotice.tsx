@@ -2,6 +2,7 @@ import { Flag, ShieldAlert, ShieldCheck } from "lucide-react";
 import { DATA_REVIEWED } from "@/shared/data/review";
 import { noticeText } from "@/content/text/common";
 import { contactInfo } from "@/content/text/contact";
+import { actionLinkClass } from "@/shared/components/linkStyles";
 
 interface DataNoticeProps {
   /** What the page is about, used in the correction message. */
@@ -31,11 +32,11 @@ export function DataNotice({ subject, source, caution, unverified }: DataNoticeP
       </p>
       <div className="flex shrink-0 flex-wrap gap-4 font-bold">
         {source && (
-          <a href={source} target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:text-indigo-200">
+          <a href={source} target="_blank" rel="noopener noreferrer" className={`${actionLinkClass}`}>
             {noticeText.officialSource} ↗
           </a>
         )}
-        <a href={reportHref} className="inline-flex items-center gap-1 text-indigo-400 hover:text-indigo-200">
+        <a href={reportHref} className={`inline-flex items-center gap-1 ${actionLinkClass}`}>
           <Flag className="h-4 w-4" /> {noticeText.report}
         </a>
       </div>

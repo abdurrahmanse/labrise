@@ -7,7 +7,9 @@ import type { ProfessorEntry } from "../types";
 import { rosterLabels } from "@/content/text/directory";
 import { commonText } from "@/content/text/common";
 import { surface } from "@/shared/components/Surface";
-import { PillLink, titleLinkClass } from "@/shared/components/ViewDetails";
+import { PillLink } from "@/shared/components/ViewDetails";
+import { titleLinkClass } from "@/shared/components/linkStyles";
+import { actionLinkClass } from "@/shared/components/linkStyles";
 
 /** Professors with their field and email, ready to open or copy. */
 export function ProfessorRoster({ professors }: { professors: ProfessorEntry[] }) {
@@ -25,7 +27,7 @@ export function ProfessorRoster({ professors }: { professors: ProfessorEntry[] }
             <div className="font-mono text-xs uppercase tracking-wider text-slate-400">{p.group}</div>
             {p.email ? (
               <div className="mt-1 flex flex-wrap items-center gap-2">
-                <a href={`mailto:${p.email}`} className="inline-flex items-center gap-1 break-all text-indigo-400 hover:text-indigo-200">
+                <a href={`mailto:${p.email}`} className={`inline-flex items-center gap-1 break-all ${actionLinkClass}`}>
                   <Mail className="h-4 w-4 shrink-0" /> {p.email}
                 </a>
                 <CopyButton textToCopy={p.email} label={commonText.actions.copy} />

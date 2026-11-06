@@ -17,8 +17,8 @@ import { countrySlug, labSlug, universitySlug } from "../utils/slugs";
 import { EntryTabs } from "../ecosystem/EntryTabs";
 import { LabRoster } from "../ecosystem/LabRoster";
 import { SectionTiles } from "../ecosystem/SectionTiles";
+import { inlineLinkClass } from "@/shared/components/linkStyles";
 
-const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 
 /** The short overview of one lab. People, funding, how to join and the place each have their own page. */
 export function LabDetailView({ lab }: { lab: LabEntry }) {
@@ -45,13 +45,13 @@ export function LabDetailView({ lab }: { lab: LabEntry }) {
 
       <Facts
         rows={[
-          [detailText.facts.country, country ? <Link key="c" href={`/directory/countries/${countrySlug(country)}`} className={linkClass}>{lab.country}</Link> : lab.country],
-          [labText.facts.affiliation, university ? <Link key="u" href={`/directory/universities/${universitySlug(university)}`} className={linkClass}>{university.name}</Link> : labText.facts.independent],
+          [detailText.facts.country, country ? <Link key="c" href={`/directory/countries/${countrySlug(country)}`} className={inlineLinkClass}>{lab.country}</Link> : lab.country],
+          [labText.facts.affiliation, university ? <Link key="u" href={`/directory/universities/${universitySlug(university)}`} className={inlineLinkClass}>{university.name}</Link> : labText.facts.independent],
           [detailText.facts.kind, lab.kind],
           [detailText.facts.whatItOffers, lab.offers],
           [
             detailText.facts.officialPage,
-            <a key="s" href={lab.site} target="_blank" rel="noopener noreferrer" className={`${linkClass} inline-flex items-center gap-1`}>
+            <a key="s" href={lab.site} target="_blank" rel="noopener noreferrer" className={`${inlineLinkClass} inline-flex items-center gap-1`}>
               {lab.site.replace(/^https?:\/\//, "")} <ExternalLink className="h-4 w-4" />
             </a>
           ]

@@ -5,8 +5,8 @@ import type { GuideDetail } from "../types";
 import type { GuideTopic } from "../data/topics";
 import { GuideChecklist } from "./GuideChecklist";
 import { guideSidebarText } from "@/content/text/site";
+import { inlineLinkClass } from "@/shared/components/linkStyles";
 
-const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 
 interface GuideSidebarProps {
   guideId: string;
@@ -25,11 +25,11 @@ export function GuideSidebar({ guideId, detail, related }: GuideSidebarProps) {
             {detail.links.map((link) => (
               <li key={link.href}>
                 {link.href.startsWith("http") ? (
-                  <a href={link.href} target="_blank" rel="noopener noreferrer" className={`${linkClass} inline-flex items-center gap-1`}>
+                  <a href={link.href} target="_blank" rel="noopener noreferrer" className={`${inlineLinkClass} inline-flex items-center gap-1`}>
                     {link.label} <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 ) : (
-                  <Link href={link.href} className={linkClass}>{link.label}</Link>
+                  <Link href={link.href} className={inlineLinkClass}>{link.label}</Link>
                 )}
               </li>
             ))}

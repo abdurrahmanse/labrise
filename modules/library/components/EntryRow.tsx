@@ -7,6 +7,7 @@ import { cn } from "@/shared/utils/cn";
 import { describeEntry } from "../utils/entryView";
 import { isMissingEntry } from "../utils/entryQuery";
 import type { EntryRef } from "../store/useBookmarks";
+import { actionLinkClass } from "@/shared/components/linkStyles";
 
 const base = "flex items-center gap-4 border-2 bg-canvas-card/60 p-4 backdrop-blur-xl";
 
@@ -32,7 +33,7 @@ export function EntryRow({ entry, result }: EntryRowProps) {
         <TriangleAlert className="h-5 w-5 shrink-0 text-rose-400" aria-hidden />
         <span className="flex-1 font-sans text-sm text-slate-300">{missing ? t.missing : t.failed}</span>
         {!missing && (
-          <button type="button" onClick={() => void result.refetch()} className="cursor-pointer text-sm font-bold text-indigo-400 hover:text-indigo-200">
+          <button type="button" onClick={() => void result.refetch()} className={`cursor-pointer text-sm ${actionLinkClass}`}>
             {t.retry}
           </button>
         )}

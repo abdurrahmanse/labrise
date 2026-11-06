@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, type LucideIcon } from "lucide-react";
 import { IconTile } from "./IconTile";
 import { surface } from "@/shared/components/Surface";
-import { titleGroupClass } from "./ViewDetails";
+import { titleGroupClass } from "./linkStyles";
 
 export interface LinkCardItem {
   href: string;

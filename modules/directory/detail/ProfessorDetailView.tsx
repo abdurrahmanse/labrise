@@ -31,8 +31,8 @@ import { EmailDraftBox } from "./EmailDraftBox";
 import { ProfessorFieldInfo } from "./ProfessorFieldInfo";
 import { HelpLinks } from "@/shared/components/HelpLinks";
 import { surface } from "@/shared/components/Surface";
+import { inlineLinkClass } from "@/shared/components/linkStyles";
 
-const link = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 
 export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }) {
   const slug = professorSlug(professor);
@@ -70,11 +70,11 @@ export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }
             <div className={surface({ tone: "quiet", depth: "none", padding: "lg", className: "space-y-4" })}>
               {professor.email ? (
                 <div className="flex flex-wrap items-center gap-3">
-                  <a href={`mailto:${professor.email}`} className={`break-all text-lg font-bold ${link}`}>{professor.email}</a>
+                  <a href={`mailto:${professor.email}`} className={`break-all text-lg font-bold ${inlineLinkClass}`}>{professor.email}</a>
                   <CopyButton textToCopy={professor.email} />
                 </div>
               ) : (
-                <a href={searchHref} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-2 text-lg font-bold ${link}`}>
+                <a href={searchHref} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-2 text-lg font-bold ${inlineLinkClass}`}>
                   <Search className="h-5 w-5" aria-hidden /> {t.contact.find}
                 </a>
               )}

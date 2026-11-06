@@ -17,8 +17,8 @@ import { EntryTabs } from "../ecosystem/EntryTabs";
 import { SectionTiles } from "../ecosystem/SectionTiles";
 import { detailText, sectionText } from "@/content/text/directory";
 import { EntryActions } from "@/modules/library";
+import { inlineLinkClass } from "@/shared/components/linkStyles";
 
-const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 
 /** The short overview of one university. Labs, professors, funding and study each have their own page. */
 export function UniversityDetailView({ university }: { university: UniversityEntry }) {
@@ -46,13 +46,13 @@ export function UniversityDetailView({ university }: { university: UniversityEnt
 
       <Facts
         rows={[
-          [detailText.facts.country, country ? <Link key="c" href={`/directory/countries/${countrySlug(country)}`} className={linkClass}>{university.country}</Link> : university.country],
+          [detailText.facts.country, country ? <Link key="c" href={`/directory/countries/${countrySlug(country)}`} className={inlineLinkClass}>{university.country}</Link> : university.country],
           [detailText.facts.region, university.region],
           [detailText.facts.funding, university.funding],
           [detailText.facts.typicalDeadline, university.deadline],
           [
             detailText.facts.officialSite,
-            <a key="s" href={university.site} target="_blank" rel="noopener noreferrer" className={`${linkClass} inline-flex items-center gap-1`}>
+            <a key="s" href={university.site} target="_blank" rel="noopener noreferrer" className={`${inlineLinkClass} inline-flex items-center gap-1`}>
               {university.site.replace("https://", "")} <ExternalLink className="w-4 h-4" />
             </a>
           ],

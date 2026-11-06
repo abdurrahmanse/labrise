@@ -8,8 +8,8 @@ import { universities } from "../data/universities";
 import type { LabEntry } from "../types";
 import { countrySlug, universitySlug } from "../utils/slugs";
 import { CountryFacts } from "../detail/CountryFacts";
+import { inlineLinkClass } from "@/shared/components/linkStyles";
 
-const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 
 export function LabContextSection({ lab }: { lab: LabEntry }) {
   const country = countries.find((c) => c.country === lab.country);
@@ -22,7 +22,7 @@ export function LabContextSection({ lab }: { lab: LabEntry }) {
         <Block title={labText.blocks.university}>
           <Facts
             rows={[
-              [labText.facts.affiliation, <Link key="u" href={`/directory/universities/${universitySlug(university)}`} className={linkClass}>{university.name}</Link>],
+              [labText.facts.affiliation, <Link key="u" href={`/directory/universities/${universitySlug(university)}`} className={inlineLinkClass}>{university.name}</Link>],
               [labText.facts.funding, university.funding],
               [labText.facts.deadline, university.deadline]
             ]}
@@ -40,7 +40,7 @@ export function LabContextSection({ lab }: { lab: LabEntry }) {
             ]}
           />
           {detail && <CountryFacts detail={detail} />}
-          <Link href={`/directory/countries/${countrySlug(country)}`} className={linkClass}>{detailText.hints.dossier(country.country)}</Link>
+          <Link href={`/directory/countries/${countrySlug(country)}`} className={inlineLinkClass}>{detailText.hints.dossier(country.country)}</Link>
         </Block>
       )}
     </>

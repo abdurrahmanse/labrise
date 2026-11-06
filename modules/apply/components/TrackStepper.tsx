@@ -10,6 +10,7 @@ import { Body, Label } from "@/shared/components/Text";
 import { useProgress } from "@/shared/progress/useProgress";
 import type { ApplyTrack } from "../data/tracks";
 import { stepKey, stepKeys, useApplyProgress } from "../store/useApplyProgress";
+import { actionLinkClass } from "@/shared/components/linkStyles";
 
 /** Steps grouped into stages, each with a done toggle that is saved in the browser. */
 export function TrackStepper({ track }: { track: ApplyTrack }) {
@@ -39,7 +40,7 @@ export function TrackStepper({ track }: { track: ApplyTrack }) {
                       <h3 className={cn("text-lg font-bold", done ? "text-slate-400 line-through" : "text-white")}>{step.title}</h3>
                       <Body className="mt-1">{step.detail}</Body>
                       {step.href && (
-                        <Link href={step.href} className="mt-2 inline-flex items-center gap-1.5 text-sm font-bold text-indigo-400 hover:text-indigo-200">
+                        <Link href={step.href} className={`mt-2 inline-flex items-center gap-1.5 text-sm ${actionLinkClass}`}>
                           {step.linkLabel} <ArrowRight className="h-4 w-4" aria-hidden />
                         </Link>
                       )}

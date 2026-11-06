@@ -9,6 +9,7 @@ import { FaqCategoryPills } from "./FaqCategoryPills";
 import { faqsNavAnchors } from "@/content/faqs/faqsSectionData";
 import type { FAQItem } from "@/modules/content";
 import { legacyText } from "@/content/text/legacy";
+import { actionLinkClass } from "@/shared/components/linkStyles";
 
 export function FaqsPageClient({ initialFaqs }: { initialFaqs: FAQItem[] }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -37,7 +38,7 @@ export function FaqsPageClient({ initialFaqs }: { initialFaqs: FAQItem[] }) {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <Link href="/faqs/checklist" className="inline-flex items-center gap-2 font-bold text-indigo-400 hover:text-indigo-200">
+        <Link href="/faqs/checklist" className={`inline-flex items-center gap-2 ${actionLinkClass}`}>
           {legacyText.faqsPageClient.t0}
         </Link>
       </div>

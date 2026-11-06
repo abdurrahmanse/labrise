@@ -10,6 +10,7 @@ import { Label, Body } from "@/shared/components/Text";
 import { Surface } from "@/shared/components/Surface";
 import { useProgress } from "@/shared/progress/useProgress";
 import { useDocumentChecklist } from "../store/useDocumentChecklist";
+import { actionLinkClass } from "@/shared/components/linkStyles";
 
 export function DocumentCard({ doc }: { doc: DocumentGuideline }) {
   const { percent } = useProgress(useDocumentChecklist, doc.checklistItems.map((i) => i.id));
@@ -30,7 +31,7 @@ export function DocumentCard({ doc }: { doc: DocumentGuideline }) {
         <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-indigo-400" aria-hidden />{t.checks(doc.checklistItems.length)}</span>
       </div>
       <ProgressBar percent={percent} label={doc.name} />
-      <Link href={href} className="mt-auto inline-flex w-fit items-center gap-1.5 pt-1 text-sm font-bold text-indigo-400 hover:text-indigo-200">
+      <Link href={href} className={`mt-auto inline-flex w-fit items-center gap-1.5 pt-1 text-sm ${actionLinkClass}`}>
         {t.open} <ArrowRight className="h-4 w-4" aria-hidden />
       </Link>
     </Surface>

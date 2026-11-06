@@ -16,8 +16,8 @@ import { EntryActions } from "@/modules/library";
 import { providerSlug } from "../utils/slugs";
 import { providerTrail } from "../utils/trails";
 import { worldwideProviders } from "../data/connections";
+import { inlineLinkClass } from "@/shared/components/linkStyles";
 
-const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 
 export function ProviderDetailView({ provider }: { provider: ProviderEntry }) {
   const programmes = scholarships.filter((s) => provider.programs.includes(s.name));
@@ -40,7 +40,7 @@ export function ProviderDetailView({ provider }: { provider: ProviderEntry }) {
           [detailText.facts.selection, provider.selection],
           [
             detailText.facts.officialPage,
-            <a key="s" href={provider.site} target="_blank" rel="noopener noreferrer" className={`${linkClass} inline-flex items-center gap-1`}>
+            <a key="s" href={provider.site} target="_blank" rel="noopener noreferrer" className={`${inlineLinkClass} inline-flex items-center gap-1`}>
               {provider.site.replace("https://", "")} <ExternalLink className="h-4 w-4" />
             </a>
           ]
@@ -85,7 +85,7 @@ export function ProviderDetailView({ provider }: { provider: ProviderEntry }) {
           ]}
         />
         <p className="text-sm text-slate-400">
-          {detailText.hints.universityRoute} <Link href="/apply/university" className={linkClass}>{detailText.hints.universityRouteLink}</Link>.
+          {detailText.hints.universityRoute} <Link href="/apply/university" className={inlineLinkClass}>{detailText.hints.universityRouteLink}</Link>.
         </p>
       </Block>
     </PageShell>

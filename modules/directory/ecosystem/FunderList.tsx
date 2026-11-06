@@ -4,7 +4,8 @@ import type { ProviderEntry } from "../types";
 import { Flag } from "@/shared/components/Flag";
 import { rosterLabels } from "@/content/text/directory";
 import { liftCard } from "@/shared/components/liftCard";
-import { ViewDetails, titleGroupClass } from "@/shared/components/ViewDetails";
+import { ViewDetails } from "@/shared/components/ViewDetails";
+import { titleGroupClass } from "@/shared/components/linkStyles";
 
 /** Funding organisations as small cards, each linking to its requirements. */
 export function FunderList({ funders, empty }: { funders: ProviderEntry[]; empty?: string }) {

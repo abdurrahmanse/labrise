@@ -9,7 +9,8 @@ import { SaveButton } from "./SaveButton";
 import { StatusSelect } from "./StatusSelect";
 import { commonText } from "@/content/text/common";
 import { surface } from "@/shared/components/Surface";
-import { PillLink, titleLinkClass } from "@/shared/components/ViewDetails";
+import { PillLink } from "@/shared/components/ViewDetails";
+import { titleLinkClass } from "@/shared/components/linkStyles";
 
 export function ProfessorCard({ professor }: { professor: ProfessorEntry }) {
   const slug = professorSlug(professor);

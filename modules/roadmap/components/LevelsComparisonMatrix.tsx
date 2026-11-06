@@ -4,6 +4,7 @@ import { Table, ArrowRight, ShieldAlert, CheckCircle2 } from "lucide-react";
 import { SectionHeading } from "@/shared/ui/SectionHeading";
 import { roadmapLevelsComparisonData, roadmapLevelsData } from "@/content/roadmap/levelsData";
 import { legacyText } from "@/content/text/legacy";
+import { actionLinkClass } from "@/shared/components/linkStyles";
 
 export function LevelsComparisonMatrix() {
   return (
@@ -40,7 +41,7 @@ export function LevelsComparisonMatrix() {
                   <span>{row.riskFactor}</span>
                 </p>
                 {levelObj && (
-                  <Link href={`/roadmap/${levelObj.slug}`} className="mt-auto inline-flex w-fit items-center gap-1.5 pt-2 text-sm font-bold text-indigo-400 hover:text-indigo-200">
+                  <Link href={`/roadmap/${levelObj.slug}`} className={`mt-auto inline-flex w-fit items-center gap-1.5 pt-2 text-sm ${actionLinkClass}`}>
                     Open level <ArrowRight className="h-4 w-4" />
                   </Link>
                 )}

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, type LucideIcon } from "lucide-react";
 import { liftCard } from "@/shared/components/liftCard";
-import { titleGroupClass } from "@/shared/components/ViewDetails";
+import { titleGroupClass } from "@/shared/components/linkStyles";
 
 export interface SectionTile {
   href: string;

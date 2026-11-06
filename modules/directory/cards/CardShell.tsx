@@ -6,7 +6,8 @@ import { commonText } from "@/content/text/common";
 import { IconFor } from "@/shared/components/IconFor";
 import { usePrefetchHref } from "../hooks/useDirectoryEntry";
 import { liftCard } from "@/shared/components/liftCard";
-import { ViewDetails, titleGroupClass } from "@/shared/components/ViewDetails";
+import { ViewDetails } from "@/shared/components/ViewDetails";
+import { titleGroupClass } from "@/shared/components/linkStyles";
 
 interface CardShellProps {
   href: string;

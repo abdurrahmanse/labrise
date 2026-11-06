@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { FlaskConical, Users } from "lucide-react";
 import { liftCard } from "@/shared/components/liftCard";
-import { ViewDetails, titleGroupClass } from "@/shared/components/ViewDetails";
+import { ViewDetails } from "@/shared/components/ViewDetails";
+import { titleGroupClass } from "@/shared/components/linkStyles";
 import { commonText } from "@/content/text/common";
 import { labText } from "@/content/text/directory";
 import type { LabEntry } from "../types";

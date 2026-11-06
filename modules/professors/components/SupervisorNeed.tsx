@@ -4,6 +4,7 @@ import { professorsHubText as t } from "@/content/text/professorsHub";
 import { countries } from "@/modules/directory/catalog";
 import { countrySlug } from "@/modules/directory/contracts";
 import { surface } from "@/shared/components/Surface";
+import { actionLinkClass } from "@/shared/components/linkStyles";
 
 const GROUPS = [
   { key: "Required first", Icon: CircleCheck, tone: "text-amber-400" },
@@ -30,7 +31,7 @@ export function SupervisorNeed() {
           </section>
         ))}
       </div>
-      <Link href="/professors/rules" className="inline-flex text-sm font-bold text-indigo-400 hover:text-indigo-200">{t.need.rules} →</Link>
+      <Link href="/professors/rules" className={`inline-flex text-sm ${actionLinkClass}`}>{t.need.rules} →</Link>
     </div>
   );
 }

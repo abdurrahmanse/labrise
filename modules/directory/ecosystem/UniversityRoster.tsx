@@ -4,7 +4,8 @@ import type { UniversitySummary } from "../connections";
 import { universitySlug } from "../utils/slugs";
 import { rosterLabels } from "@/content/text/directory";
 import { liftCard } from "@/shared/components/liftCard";
-import { ViewDetails, titleGroupClass } from "@/shared/components/ViewDetails";
+import { ViewDetails } from "@/shared/components/ViewDetails";
+import { titleGroupClass } from "@/shared/components/linkStyles";
 import { commonText } from "@/content/text/common";
 
 /** Universities in a country with how many professors and funders are connected to each. */

@@ -17,6 +17,7 @@ import { LabRoster } from "../ecosystem/LabRoster";
 import { UniversityRoster } from "../ecosystem/UniversityRoster";
 import { detailText } from "@/content/text/directory";
 import { EntryActions } from "@/modules/library";
+import { actionLinkClass, inlineLinkClass } from "@/shared/components/linkStyles";
 
 export function CountryDetailView({ country, dossier }: { country: CountryEntry; dossier?: CountryGuide | null }) {
   const slug = countrySlug(country);
@@ -48,7 +49,7 @@ export function CountryDetailView({ country, dossier }: { country: CountryEntry;
 
       {dossier && (
         <p>
-          <Link href={`/countries/${dossier.id}`} className="text-indigo-400 hover:text-indigo-200 underline underline-offset-4">
+          <Link href={`/countries/${dossier.id}`} className={`${inlineLinkClass}`}>
             {detailText.hints.dossier(country.country)}
           </Link>
         </p>
@@ -60,7 +61,7 @@ export function CountryDetailView({ country, dossier }: { country: CountryEntry;
       {labs.length > 0 && (
         <Block title={detailText.blocks.labsHere(labs.length)}>
           <LabRoster labs={labs.slice(0, 4)} />
-          {labs.length > 4 && <Link href={`/directory/countries/${slug}/labs`} className="text-sm font-bold text-indigo-400 hover:text-indigo-200">{detailText.hints.allLabs(labs.length)} →</Link>}
+          {labs.length > 4 && <Link href={`/directory/countries/${slug}/labs`} className={`text-sm ${actionLinkClass}`}>{detailText.hints.allLabs(labs.length)} →</Link>}
         </Block>
       )}
       <Block title={detailText.blocks.whoFunds}>

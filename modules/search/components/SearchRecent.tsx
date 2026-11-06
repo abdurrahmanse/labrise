@@ -1,6 +1,7 @@
 import { Bookmark, History } from "lucide-react";
 import { searchText } from "@/content/text/common";
 import { searchDialogText as d } from "@/content/text/library";
+import { actionLinkClass } from "@/shared/components/linkStyles";
 
 interface SearchRecentProps {
   terms: string[];
@@ -29,7 +30,7 @@ export function SearchRecent({ terms, onPickTerm, onClear, onOpenSaved }: Search
           </div>
         </div>
       )}
-      <button type="button" onClick={onOpenSaved} className="inline-flex cursor-pointer items-center gap-2 text-sm font-bold text-indigo-400 hover:text-indigo-200">
+      <button type="button" onClick={onOpenSaved} className={`inline-flex cursor-pointer items-center gap-2 text-sm ${actionLinkClass}`}>
         <Bookmark className="h-4 w-4" aria-hidden /> {d.saved}
       </button>
     </div>

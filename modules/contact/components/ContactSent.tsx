@@ -4,6 +4,7 @@ import { contactPageText as t } from "@/content/text/contact";
 import { surface } from "@/shared/components/Surface";
 import { buildMessage } from "../utils/buildMailto";
 import type { ContactValues } from "../utils/contactSchema";
+import { actionLinkClass } from "@/shared/components/linkStyles";
 
 interface ContactSentProps {
   values: ContactValues;
@@ -29,7 +30,7 @@ export function ContactSent({ values, onReset }: ContactSentProps) {
       </pre>
       <div className="flex flex-wrap gap-3">
         <CopyButton textToCopy={`${subject}\n\n${body}`} label={t.sent.copy} />
-        <button type="button" onClick={onReset} className="cursor-pointer px-3 py-1.5 text-sm font-bold text-indigo-400 hover:text-indigo-200">
+        <button type="button" onClick={onReset} className={`cursor-pointer px-3 py-1.5 text-sm ${actionLinkClass}`}>
           {t.sent.again}
         </button>
       </div>

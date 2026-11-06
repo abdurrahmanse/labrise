@@ -10,6 +10,7 @@ import { applicationsToCsv } from "../utils/csv";
 import { daysUntil } from "../utils/dates";
 import { STATUS_KEYS, usePlanner, type ApplicationStatus } from "../store/usePlanner";
 import { surface } from "@/shared/components/Surface";
+import { actionLinkClass } from "@/shared/components/linkStyles";
 
 const STATUS_STYLE: Record<ApplicationStatus, string> = {
   planning: "text-slate-300",
@@ -81,7 +82,7 @@ export function ApplicationList() {
               <textarea aria-label={t.list.noteLabel} value={a.note} onChange={(e) => update(a.id, { note: e.target.value })} placeholder={t.list.notePlaceholder} rows={2} className="w-full resize-y bg-white/[0.05] p-3 text-slate-100 placeholder-slate-500 outline-none focus:ring-2 focus:ring-indigo-400/50" />
 
               {a.href && (
-                <Link href={a.href} className="inline-flex w-fit items-center gap-1.5 text-sm font-bold text-indigo-400 hover:text-indigo-200">
+                <Link href={a.href} className={`inline-flex w-fit items-center gap-1.5 text-sm ${actionLinkClass}`}>
                   {t.list.openEntry} <ExternalLink className="h-4 w-4" aria-hidden />
                 </Link>
               )}
