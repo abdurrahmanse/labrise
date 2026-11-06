@@ -177,3 +177,14 @@ export function fieldOf(group: string): FieldInfo {
   const hit = RULES.find(([pattern]) => pattern.test(g));
   return FIELDS[hit ? hit[1] : "general"];
 }
+
+/** The key of the field a group label belongs to, used in the address of the field's page. */
+export function fieldKeyOf(group: string): string {
+  const g = group.toLowerCase();
+  const hit = RULES.find(([pattern]) => pattern.test(g));
+  return hit ? hit[1] : "general";
+}
+
+export const fieldByKey = (key: string): FieldInfo | undefined => FIELDS[key];
+
+export const fieldKeys = Object.keys(FIELDS);

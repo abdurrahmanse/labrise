@@ -10,6 +10,7 @@ import { countryDetails } from "../../data/countryDetails";
 import { ecosystemOfCountry } from "../../utils/connections";
 import { labsInCountry } from "../../utils/lookups";
 import { countrySlug } from "../../utils/slugs";
+import { countryTrail } from "../../utils/trails";
 import type { CountryEntry } from "../../types";
 import { Flag } from "@/shared/components/Flag";
 import { APPLY_STEPS } from "./applySteps";
@@ -36,7 +37,7 @@ export function CountryDetailView({ country, dossier }: { country: CountryEntry;
       actions={<EntryActions type="countries" slug={slug} />}
       media={<Flag country={country.country} className="h-10 w-14" />}
       lead={detail?.overview}
-      back={{ href: "/directory/countries", label: detailText.back.countries }}
+      trail={countryTrail(country)}
     >
       <CountryViewTabs slug={slug} />
 
@@ -50,24 +51,6 @@ export function CountryDetailView({ country, dossier }: { country: CountryEntry;
           [detailText.facts.applicationFee, country.fee]
         ]}
       />
-
-      {detail && (
-        <>
-          <Block title={detailText.blocks.studyAndLife}>
-            <CountryFacts detail={detail} />
-            <p className="text-sm text-slate-400">{detailText.hints.figures}</p>
-          </Block>
-          <Block title={detailText.blocks.scholarshipsPrograms}>
-            <BulletList items={detail.scholarships} />
-          </Block>
-          <Block title={detailText.blocks.findPositions}>
-            <ExternalLinks items={detail.find} />
-          </Block>
-          <Block title={detailText.blocks.tips}>
-            <BulletList items={detail.tips} />
-          </Block>
-        </>
-      )}
 
       {dossier && (
         <p>
@@ -89,9 +72,7 @@ export function CountryDetailView({ country, dossier }: { country: CountryEntry;
       <Block title={detailText.blocks.whoFunds}>
         <FunderList funders={funders.slice(0, 4)} empty={detailText.hints.noFunders} />
       </Block>
-      <Block title={detailText.blocks.howToApply}>
-        <StepGrid steps={APPLY_STEPS} />
-      </Block>
+      <p className="text-sm text-slate-400">{detailText.hints.moreDetail}</p>
     </PageShell>
   );
 }

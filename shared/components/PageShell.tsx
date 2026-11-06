@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ContourPattern } from "../illustrations/ContourPattern";
 import { DataNotice } from "./DataNotice";
 import { IconFor } from "./IconFor";
+import { PageTrail, type TrailStep } from "./PageTrail";
 
 export interface ShellLink {
   href: string;
@@ -15,6 +16,8 @@ interface PageShellProps {
   title: string;
   lead?: string;
   back?: ShellLink;
+  /** The path to this page, shown as a band at the top. When set, the single back link is not shown. */
+  trail?: TrailStep[];
   prev?: ShellLink;
   next?: ShellLink;
   /** Flag, avatar or icon shown beside the title. */
@@ -30,13 +33,14 @@ const edgeLink =
   "inline-flex items-center gap-2 border-2 border-white/40 bg-white/[0.04] backdrop-blur-md px-4 py-2 font-bold uppercase tracking-wider text-sm text-slate-100 hover:bg-indigo-600 hover:text-white hover:border-transparent";
 
 /** One compact page: heading, a single content block, previous/next links. */
-export function PageShell({ eyebrow, title, lead, back, prev, next, media, notice, actions, children }: PageShellProps) {
+export function PageShell({ eyebrow, title, lead, back, trail, prev, next, media, notice, actions, children }: PageShellProps) {
   return (
     <main className="min-h-screen py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        {trail && <PageTrail trail={trail} />}
         <header className="relative space-y-3 border-b border-white/10 pb-6">
           <ContourPattern className="absolute -top-10 right-0 hidden h-56 w-96 opacity-60 md:block" />
-          {back && (
+          {back && !trail && (
             <Link href={back.href} className="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-indigo-300">
               <ArrowLeft className="w-4 h-4" /> {back.label}
             </Link>

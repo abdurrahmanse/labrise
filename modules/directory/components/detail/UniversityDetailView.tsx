@@ -1,48 +1,47 @@
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, FlaskConical, GraduationCap, Landmark, Users } from "lucide-react";
 import { Block } from "@/shared/components/Block";
-import { BulletList } from "@/shared/components/BulletList";
 import { Chips } from "@/shared/components/Chips";
-import { ExternalLinks } from "@/shared/components/ExternalLinks";
 import { Facts } from "@/shared/components/Facts";
 import { PageShell } from "@/shared/components/PageShell";
-import { StepGrid } from "@/shared/components/StepGrid";
-import { countryDetails } from "../../data/countryDetails";
 import { countries } from "../../data/countries";
+import { universities } from "../../data/universities";
 import { fundersOfUniversity } from "../../utils/connections";
 import { labsAtUniversity, professorsAtUniversity } from "../../utils/lookups";
 import { countrySlug, universitySlug } from "../../utils/slugs";
+import { universityTrail } from "../../utils/trails";
 import type { UniversityEntry } from "../../types";
-import { universities } from "../../data/universities";
 import { Avatar } from "@/shared/components/Avatar";
-import { APPLY_STEPS } from "./applySteps";
-import { FunderList } from "../ecosystem/FunderList";
-import { LabRoster } from "../ecosystem/LabRoster";
-import { ProfessorRoster } from "../ecosystem/ProfessorRoster";
-import { CountryFacts } from "./CountryFacts";
-import { detailText } from "@/content/text/directory";
+import { EntryTabs } from "../ecosystem/EntryTabs";
+import { SectionTiles } from "../ecosystem/SectionTiles";
+import { detailText, sectionText } from "@/content/text/directory";
 import { EntryActions } from "@/modules/library";
 
 const linkClass = "text-indigo-400 hover:text-indigo-200 underline underline-offset-4";
 
+/** The short overview of one university. Labs, professors, funding and study each have their own page. */
 export function UniversityDetailView({ university }: { university: UniversityEntry }) {
+  const slug = universitySlug(university);
+  const base = `/directory/universities/${slug}`;
   const country = countries.find((c) => c.country === university.country);
-  const detail = country ? countryDetails[countrySlug(country)] : undefined;
   const profs = professorsAtUniversity(university);
   const funders = fundersOfUniversity(university);
   const labs = labsAtUniversity(university);
-  const others = universities.filter((u) => u.country === university.country && u.name !== university.name);
+  const others = universities.filter((u) => u.country === university.country && u.name !== university.name).slice(0, 12);
+  const s = sectionText.university;
 
   return (
     <PageShell
       eyebrow={detailText.eyebrow.university(university.country)}
       title={university.name}
       notice={{ subject: university.name, source: university.site }}
-      actions={<EntryActions type="universities" slug={universitySlug(university)} />}
+      actions={<EntryActions type="universities" slug={slug} />}
       media={<Avatar name={university.name.replace(/^(University of|The) /, "")} size={64} square />}
       lead={detailText.lead.university(university.funding, university.deadline)}
-      back={{ href: "/directory/universities", label: detailText.back.universities }}
+      trail={universityTrail(university)}
     >
+      <EntryTabs label={s.tabsLabel} base={base} tabs={[...s.tabs]} />
+
       <Facts
         rows={[
           [detailText.facts.country, country ? <Link key="c" href={`/directory/countries/${countrySlug(country)}`} className={linkClass}>{university.country}</Link> : university.country],
@@ -60,43 +59,22 @@ export function UniversityDetailView({ university }: { university: UniversityEnt
       />
       <p className="text-sm text-slate-400">{detailText.hints.deadlines}</p>
 
-      {detail && (
-        <>
-          <Block title={detailText.blocks.studyingIn(university.country)}>
-            <CountryFacts detail={detail} />
-          </Block>
-          <Block title={detailText.blocks.fundingToCheck}>
-            <BulletList items={detail.scholarships} />
-          </Block>
-          <Block title={detailText.blocks.openPositions}>
-            <ExternalLinks items={[{ label: detailText.hints.website(university.name), href: university.site }, ...detail.find]} />
-          </Block>
-          <Block title={detailText.blocks.tipsShort}>
-            <BulletList items={detail.tips} />
-          </Block>
-        </>
-      )}
+      <Block title={detailText.blocks.explore(university.name)}>
+        <SectionTiles
+          tiles={[
+            { href: `${base}/labs`, label: s.titles.labs, hint: s.hints.labs, count: labs.length, Icon: FlaskConical },
+            { href: `${base}/professors`, label: s.titles.professors, hint: s.hints.professors, count: profs.length, Icon: Users },
+            { href: `${base}/funding`, label: s.titles.funding, hint: s.hints.funding, count: funders.length, Icon: Landmark },
+            { href: `${base}/study`, label: s.titles.study, hint: s.hints.study, Icon: GraduationCap }
+          ]}
+        />
+      </Block>
 
-      {labs.length > 0 && (
-        <Block title={detailText.blocks.labsHere(labs.length)}>
-          <LabRoster labs={labs} showUniversity={false} />
-        </Block>
-      )}
-      <Block title={detailText.blocks.professors(profs.length)}>
-        <ProfessorRoster professors={profs} />
-      </Block>
-      <Block title={detailText.blocks.fundersHere}>
-        <FunderList funders={funders} />
-        <p className="text-sm text-slate-400">{detailText.hints.openOrg}</p>
-      </Block>
       {others.length > 0 && (
         <Block title={detailText.blocks.moreIn(university.country)}>
           <Chips items={others.map((u) => ({ href: `/directory/universities/${universitySlug(u)}`, label: u.name }))} />
         </Block>
       )}
-      <Block title={detailText.blocks.howToApply}>
-        <StepGrid steps={APPLY_STEPS} />
-      </Block>
     </PageShell>
   );
 }
