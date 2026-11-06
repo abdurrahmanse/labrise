@@ -1,34 +1,43 @@
 /* ───────────────────────────────────────────────────────────
-   Hover highlight
-   Every colour in the palette is black or white, so a colour change cannot show a hover.
-   Hovering a button, chip or text link instead fills it with --hover-bg and sets its text to --hover-fg:
-   white fill and black text in dark mode, light grey fill and black text in light mode.
+   Hover
+   The palette is black and white, so a colour change cannot show a hover. Hover is shown with a light tint of the
+   foreground colour, a firmer line and a small movement, and the text colour stays the same in both themes.
+   Tokens: --hover-tint (text links), --hover-fill (buttons and chips), --hover-line, --hover-shadow (see theme.css).
    ─────────────────────────────────────────────────────────── */
 
-/* Buttons and chips that used to fill with an accent colour on hover */
+/* Legacy fills: classes that used to turn a button an accent colour on hover now get the same quiet tint. */
 :is(.hover\:bg-indigo-500, .hover\:bg-indigo-600, .hover\:bg-indigo-700, .hover\:bg-teal-500):hover,
 .group:hover :is(.group-hover\:bg-indigo-500, .group-hover\:bg-indigo-600) {
-  background-color: var(--hover-bg);
+  background-color: var(--hover-fill);
   border-color: var(--hover-line);
-  color: var(--hover-fg);
 }
 
-/* Icons and labels inside a highlighted element follow its text colour */
-:is(.hover\:bg-indigo-500, .hover\:bg-indigo-600, .hover\:bg-indigo-700, .hover\:bg-teal-500):hover *,
-.group:hover :is(.group-hover\:bg-indigo-500, .group-hover\:bg-indigo-600) * {
-  color: inherit;
-}
-
-/* Text links whose hover used to change only the colour, which is the same colour in this palette */
+/* Legacy text links: the colour change was invisible, so they get the tint and a firmer underline. */
 :is(.hover\:text-indigo-200, .hover\:text-indigo-300):hover {
-  background-color: var(--hover-bg);
-  color: var(--hover-fg);
+  background-color: var(--hover-tint);
+  text-decoration-color: var(--hover-line);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
 
-/* Anything that fills with the hover tokens (Tailwind class hover:bg-[var(--hover-bg)]): its inner text and icons follow the new text colour */
-[class*="hover:bg-[var(--hover-bg)]"]:hover *,
-.group:hover [class*="group-hover:bg-[var(--hover-bg)]"] * {
-  color: inherit;
+/* Smooth, but never for people who ask for less motion */
+a, button {
+  transition-property: color, background-color, border-color, box-shadow, transform;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a, button { transition-duration: 0.01ms; }
+}
+
+/* Keyboard users get the same highlight as the pointer */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--hover-line);
+  outline-offset: 3px;
+}
+
+/* Links and buttons that only changed text colour (hover:text-white) get a quiet tint as well */
+:is(a, button).hover\:text-white:hover {
+  background-color: var(--hover-tint);
 }

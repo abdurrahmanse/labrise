@@ -24,7 +24,7 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-[var(--btn-bg)] hover:bg-[var(--btn-hover)] text-[var(--btn-fg)] border-2 border-[var(--btn-bg)] shadow-[4px_4px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] hover:shadow-[2px_2px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none uppercase tracking-wider",
+          "bg-[var(--btn-bg)] hover:bg-[var(--btn-hover)] text-[var(--btn-fg)] border-2 border-[var(--btn-bg)] shadow-[4px_4px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] hover:shadow-[var(--hover-shadow)] hover:-translate-y-px active:translate-y-0 active:shadow-none uppercase tracking-wider",
         secondary:
           "bg-transparent hover:bg-[var(--hover-fill)] hover:border-[var(--hover-line)] text-[var(--btn-bg)] border-2 border-[var(--btn-bg)] shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] uppercase tracking-wider",
         outline:
