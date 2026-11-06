@@ -1,0 +1,34 @@
+/* ───────────────────────────────────────────────────────────
+   Hover highlight
+   Every colour in the palette is black or white, so a colour change cannot show a hover.
+   Hovering a button, chip or text link instead fills it with --hover-bg and sets its text to --hover-fg:
+   white fill and black text in dark mode, light grey fill and black text in light mode.
+   ─────────────────────────────────────────────────────────── */
+
+/* Buttons and chips that used to fill with an accent colour on hover */
+:is(.hover\:bg-indigo-500, .hover\:bg-indigo-600, .hover\:bg-indigo-700, .hover\:bg-teal-500):hover,
+.group:hover :is(.group-hover\:bg-indigo-500, .group-hover\:bg-indigo-600) {
+  background-color: var(--hover-bg);
+  border-color: var(--hover-line);
+  color: var(--hover-fg);
+}
+
+/* Icons and labels inside a highlighted element follow its text colour */
+:is(.hover\:bg-indigo-500, .hover\:bg-indigo-600, .hover\:bg-indigo-700, .hover\:bg-teal-500):hover *,
+.group:hover :is(.group-hover\:bg-indigo-500, .group-hover\:bg-indigo-600) * {
+  color: inherit;
+}
+
+/* Text links whose hover used to change only the colour, which is the same colour in this palette */
+:is(.hover\:text-indigo-200, .hover\:text-indigo-300):hover {
+  background-color: var(--hover-bg);
+  color: var(--hover-fg);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Anything that fills with the hover tokens (Tailwind class hover:bg-[var(--hover-bg)]): its inner text and icons follow the new text colour */
+[class*="hover:bg-[var(--hover-bg)]"]:hover *,
+.group:hover [class*="group-hover:bg-[var(--hover-bg)]"] * {
+  color: inherit;
+}

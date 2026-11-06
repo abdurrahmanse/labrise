@@ -44,10 +44,16 @@ Dependencies point one way:
 
 A module holds everything about one feature. A folder is created when its first file needs it, never empty.
 
+**Depth rule: a file is at most `modules/<feature>/<folder>/<file>`. Folders never contain folders.**
+When a module has a lot of UI, each kind of UI gets its own folder beside the layers (for example `modules/directory/cards/`,
+`modules/directory/lists/`, `modules/roadmap/widgets/`) instead of a second level under `components/`.
+To find a file, look for the folder named after what it is: a card, a list, a detail page, a section, a filter.
+
 ```
 modules/<feature>/
 ├── index.ts          Public API: what other modules may import
-├── components/       UI (feature-specific)
+├── components/       UI that does not need a folder of its own (feature-specific)
+├── <ui-folder>/      One folder per kind of UI when there is a lot of it: cards/, lists/, detail/, sections/, widgets/...
 ├── hooks/            One hook, one responsibility
 ├── store/            Browser state (zustand)
 ├── services/         Use cases: pure, they only know the repository contract
@@ -58,6 +64,7 @@ modules/<feature>/
 ├── dto/              DTO types, inferred from the schemas
 ├── mappers/          toX(dto) and toXDto(entity)
 ├── utils/            Pure helpers: filtering, sorting, validation, formatting
+├── <logic-folder>/   A group of related pure logic with its own folder, such as directory's connections/ and lookups/
 ├── constants.ts      Lists and limits used by types, schemas and UI
 └── data/             Records that belong to this module only
 ```
@@ -107,7 +114,7 @@ so a field added on one side is a compile error.
 Enforced by ESLint (`eslint.config.mjs`):
 
 - Between modules, import `@/modules/<name>` (or one of its listed entries), never inner files.
-- Route files (`app/**`) may import a component file directly (`@/modules/<name>/components/...`): a page then loads only what it renders.
+- Route files (`app/**`) may import a component file directly from a module's UI folders (`components/` and the folders listed as `uiFolders` in `eslint.config.mjs`, such as `cards/` or `lists/`): a page then loads only what it renders.
 - `core/`, `infrastructure/`, `app/api` and tests may reach inside a module, because they implement its contracts.
 - A file re-exported through an `index.ts` that uses client-only code (stores, hooks) must start with `"use client"`.
 

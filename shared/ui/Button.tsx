@@ -26,21 +26,21 @@ export const buttonVariants = cva(
         primary:
           "bg-[var(--btn-bg)] hover:bg-[var(--btn-hover)] text-[var(--btn-fg)] border-2 border-[var(--btn-bg)] shadow-[4px_4px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] hover:shadow-[2px_2px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none uppercase tracking-wider",
         secondary:
-          "bg-transparent hover:bg-[var(--btn-bg)] hover:text-[var(--btn-fg)] text-[var(--btn-bg)] border-2 border-[var(--btn-bg)] shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] uppercase tracking-wider",
+          "bg-transparent hover:bg-[var(--hover-bg)] hover:text-[var(--hover-fg)] hover:border-[var(--hover-line)] text-[var(--btn-bg)] border-2 border-[var(--btn-bg)] shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] uppercase tracking-wider",
         outline:
-          "bg-transparent hover:bg-[var(--btn-bg)] hover:text-[var(--btn-fg)] text-[var(--btn-bg)] border-2 border-[var(--btn-bg)] uppercase tracking-wider",
-        ghost: "bg-transparent hover:bg-white/5 text-slate-400 hover:text-white border border-transparent",
+          "bg-transparent hover:bg-[var(--hover-bg)] hover:text-[var(--hover-fg)] hover:border-[var(--hover-line)] text-[var(--btn-bg)] border-2 border-[var(--btn-bg)] uppercase tracking-wider",
+        ghost: "bg-transparent hover:bg-[var(--hover-bg)] text-slate-400 hover:text-[var(--hover-fg)] border border-transparent",
         danger:
           "bg-rose-950/60 hover:bg-rose-900/60 text-rose-300 border border-rose-500/40 shadow-lg shadow-rose-950/50",
         indigo:
-          "bg-transparent hover:bg-[var(--btn-bg)] hover:text-[var(--btn-fg)] text-[var(--btn-bg)] border-2 border-[var(--btn-bg)] shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]",
-        cyan: "bg-transparent hover:bg-[var(--btn-bg)] hover:text-[var(--btn-fg)] text-[var(--btn-bg)] border-2 border-[var(--btn-bg)] shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]",
+          "bg-transparent hover:bg-[var(--hover-bg)] hover:text-[var(--hover-fg)] hover:border-[var(--hover-line)] text-[var(--btn-bg)] border-2 border-[var(--btn-bg)] shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]",
+        cyan: "bg-transparent hover:bg-[var(--hover-bg)] hover:text-[var(--hover-fg)] hover:border-[var(--hover-line)] text-[var(--btn-bg)] border-2 border-[var(--btn-bg)] shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]",
         emerald:
           "bg-emerald-950/50 hover:bg-emerald-900/50 text-emerald-300 border border-emerald-500/40 shadow-md shadow-emerald-950/50",
         amber:
           "bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 shadow-md shadow-amber-950/50",
         purple:
-          "bg-transparent hover:bg-[var(--btn-bg)] hover:text-[var(--btn-fg)] text-[var(--btn-bg)] border-2 border-[var(--btn-bg)] shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]"
+          "bg-transparent hover:bg-[var(--hover-bg)] hover:text-[var(--hover-fg)] hover:border-[var(--hover-line)] text-[var(--btn-bg)] border-2 border-[var(--btn-bg)] shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]"
       },
       size: {
         xs: "px-2.5 py-1 text-[11px] gap-1.5",

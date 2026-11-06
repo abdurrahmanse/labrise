@@ -6,7 +6,7 @@ import { commonText } from "@/content/text/common";
 import { IconFor } from "@/shared/components/IconFor";
 import { usePrefetchHref } from "../hooks/useDirectoryEntry";
 import { liftCard } from "@/shared/components/liftCard";
-import { ViewDetails, titleLinkClass } from "@/shared/components/ViewDetails";
+import { ViewDetails, titleGroupClass } from "@/shared/components/ViewDetails";
 
 interface CardShellProps {
   href: string;
@@ -28,7 +28,7 @@ export function CardShell({ href, eyebrow, title, media, children }: CardShellPr
         <p className="font-mono text-xs uppercase tracking-wider text-indigo-300">{eyebrow}</p>
       </div>
       <h3 className="text-xl font-bold text-white">
-        <Link href={href} className={`${titleLinkClass} after:absolute after:inset-0 after:content-['']`}>{title}</Link>
+        <Link href={href} className={`${titleGroupClass} after:absolute after:inset-0 after:content-['']`}>{title}</Link>
       </h3>
       <div className="space-y-2 text-slate-300">{children}</div>
       <div className="mt-auto pt-2">

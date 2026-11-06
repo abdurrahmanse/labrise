@@ -21,7 +21,10 @@
   --pure-bg: #ffffff;
   --btn-bg: #000000;
   --btn-fg: #ffffff;
-  --btn-hover: #000000;
+  --btn-hover: #3f3f46;
+  --hover-bg: #e4e4e7;
+  --hover-fg: #000000;
+  --hover-line: #000000;
 
 
   /* Readable status colours on a light canvas */
@@ -99,7 +102,7 @@
 }
 
 /* Solid accent fills use the foreground colour, so the text on them takes the background colour in both themes. */
-:is(.bg-indigo-500, .bg-indigo-600, .bg-indigo-700, .bg-purple-500, .bg-purple-600, .bg-blue-500, .bg-blue-600, .bg-cyan-500, .bg-cyan-600, .bg-teal-500, .bg-teal-600, .from-indigo-600, .hover\:bg-indigo-600:hover, .hover\:bg-indigo-500:hover),
+:is(.bg-indigo-500, .bg-indigo-600, .bg-indigo-700, .bg-purple-500, .bg-purple-600, .bg-blue-500, .bg-blue-600, .bg-cyan-500, .bg-cyan-600, .bg-teal-500, .bg-teal-600, .from-indigo-600),
 :is(.bg-indigo-500, .bg-indigo-600, .bg-indigo-700, .bg-purple-500, .bg-purple-600, .bg-blue-500, .bg-blue-600, .bg-cyan-500, .bg-cyan-600, .bg-teal-500, .bg-teal-600, .from-indigo-600) :is(.text-white, [class*="text-slate-"]) {
   color: var(--pure-bg);
 }

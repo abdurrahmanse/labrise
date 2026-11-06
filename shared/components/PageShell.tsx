@@ -30,7 +30,7 @@ interface PageShellProps {
 }
 
 const edgeLink =
-  "inline-flex items-center gap-2 border-2 border-white/40 bg-white/[0.04] backdrop-blur-md px-4 py-2 font-bold uppercase tracking-wider text-sm text-slate-100 hover:bg-indigo-600 hover:text-white hover:border-transparent";
+  "inline-flex items-center gap-2 border-2 border-white/40 bg-white/[0.04] backdrop-blur-md px-4 py-2 font-bold uppercase tracking-wider text-sm text-slate-100 hover:bg-[var(--hover-bg)] hover:text-[var(--hover-fg)] hover:border-[var(--hover-line)]";
 
 /** One compact page: heading, a single content block, previous/next links. */
 export function PageShell({ eyebrow, title, lead, back, trail, prev, next, media, notice, actions, children }: PageShellProps) {

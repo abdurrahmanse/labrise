@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, type LucideIcon } from "lucide-react";
 import { liftCard } from "@/shared/components/liftCard";
+import { titleGroupClass } from "@/shared/components/ViewDetails";
 
 export interface SectionTile {
   href: string;
@@ -22,7 +23,7 @@ export function SectionTiles({ tiles }: { tiles: SectionTile[] }) {
         >
           <Icon className="mb-2 h-6 w-6 text-indigo-400" />
           {count !== undefined && <div className="text-3xl font-bold text-white">{count}</div>}
-          <div className="font-mono text-xs uppercase tracking-wider text-slate-200">{label}</div>
+          <div className={`w-fit font-mono text-xs uppercase tracking-wider text-slate-200 ${titleGroupClass}`}>{label}</div>
           {hint && <div className="font-sans text-sm font-normal text-slate-400">{hint}</div>}
           <div className="mt-2 inline-flex items-center gap-1.5 text-sm font-bold text-indigo-300 group-hover:text-white">Open <ArrowRight aria-hidden className="h-4 w-4 transition-transform group-hover:translate-x-0.5" /></div>
         </Link>

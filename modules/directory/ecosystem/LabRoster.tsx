@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FlaskConical, Users } from "lucide-react";
 import { liftCard } from "@/shared/components/liftCard";
-import { ViewDetails, titleLinkClass } from "@/shared/components/ViewDetails";
+import { ViewDetails, titleGroupClass } from "@/shared/components/ViewDetails";
 import { commonText } from "@/content/text/common";
 import { labText } from "@/content/text/directory";
 import type { LabEntry } from "../types";
@@ -21,7 +21,7 @@ export function LabRoster({ labs, showUniversity = true }: { labs: LabEntry[]; s
             <div className="flex items-start gap-3">
               <FlaskConical className="mt-1 h-6 w-6 shrink-0 text-indigo-400" />
               <div className="min-w-0 flex-1">
-                <Link href={`/directory/labs/${labSlug(l)}`} className={`text-lg font-bold text-white ${titleLinkClass} after:absolute after:inset-0 after:content-['']`}>{l.name}</Link>
+                <Link href={`/directory/labs/${labSlug(l)}`} className={`text-lg font-bold text-white ${titleGroupClass} after:absolute after:inset-0 after:content-['']`}>{l.name}</Link>
                 <div className="font-mono text-xs uppercase tracking-wider text-slate-400">{l.kind}</div>
               </div>
             </div>

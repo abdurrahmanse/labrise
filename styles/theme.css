@@ -161,7 +161,11 @@
   --pure-bg: #000000;
   --btn-bg: #ffffff;
   --btn-fg: #000000;
-  --btn-hover: #ffffff;
+  --btn-hover: #d4d4d8;
+  /* Hover highlight: a white fill with black text on dark, a light grey fill with black text on light. */
+  --hover-bg: #ffffff;
+  --hover-fg: #000000;
+  --hover-line: #ffffff;
   --accent: var(--pure-fg);
   --line: rgba(255, 255, 255, 0.3);
   --font-rajdhani: 'Rajdhani', sans-serif;

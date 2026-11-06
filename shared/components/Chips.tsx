@@ -17,11 +17,11 @@ export function Chips({ items }: { items: ChipItem[] }) {
         <Link
           key={item.href}
           href={item.href}
-          className="group inline-flex items-center gap-1.5 border-2 border-indigo-400/40 bg-white/[0.04] backdrop-blur-md px-3 py-1.5 text-sm font-bold text-slate-100 hover:bg-indigo-600 hover:text-white hover:border-transparent"
+          className="group inline-flex items-center gap-1.5 border-2 border-indigo-400/40 bg-white/[0.04] backdrop-blur-md px-3 py-1.5 text-sm font-bold text-slate-100 hover:bg-[var(--hover-bg)] hover:text-[var(--hover-fg)] hover:border-[var(--hover-line)]"
         >
           {item.label}
           {item.meta && <span className="ml-1 font-mono text-xs opacity-70">{item.meta}</span>}
-          <ArrowUpRight aria-hidden className="h-3.5 w-3.5 shrink-0 text-indigo-300 group-hover:text-white" />
+          <ArrowUpRight aria-hidden className="h-3.5 w-3.5 shrink-0" />
         </Link>
       ))}
     </div>

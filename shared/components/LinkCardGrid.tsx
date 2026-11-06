@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, type LucideIcon } from "lucide-react";
 import { IconTile } from "./IconTile";
 import { surface } from "@/shared/components/Surface";
+import { titleGroupClass } from "./ViewDetails";
 
 export interface LinkCardItem {
   href: string;
@@ -29,7 +30,7 @@ export function LinkCardGrid({ items, columns = "md:grid-cols-2 lg:grid-cols-3" 
             {it.icon && <IconTile icon={it.icon} />}
             {!it.icon && it.index && <span className="bg-indigo-600 text-white font-mono font-bold px-2 py-0.5">{it.index}</span>}
             <div className="min-w-0">
-              <div className="text-xl font-bold text-white underline decoration-indigo-400/70 decoration-2 underline-offset-4 group-hover:text-indigo-300">{it.title}</div>
+              <div className={`text-xl font-bold text-white ${titleGroupClass}`}>{it.title}</div>
               {it.meta && <div className="font-mono text-xs text-slate-400">{it.meta}</div>}
             </div>
           </div>
