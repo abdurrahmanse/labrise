@@ -8,6 +8,7 @@ import { StepGrid } from "@/shared/components/StepGrid";
 import type { CountryGuide } from "@/modules/content";
 import { countryDetails } from "../../data/countryDetails";
 import { ecosystemOfCountry } from "../../utils/connections";
+import { labsInCountry } from "../../utils/lookups";
 import { countrySlug } from "../../utils/slugs";
 import type { CountryEntry } from "../../types";
 import { Flag } from "@/shared/components/Flag";
@@ -15,6 +16,7 @@ import { APPLY_STEPS } from "./applySteps";
 import { CountryViewTabs } from "../ecosystem/CountryViewTabs";
 import { EcosystemTiles } from "../ecosystem/EcosystemTiles";
 import { FunderList } from "../ecosystem/FunderList";
+import { LabList } from "../ecosystem/LabList";
 import { UniversityRoster } from "../ecosystem/UniversityRoster";
 import { CountryFacts } from "./CountryFacts";
 import { detailText } from "@/content/text/directory";
@@ -24,6 +26,7 @@ export function CountryDetailView({ country, dossier }: { country: CountryEntry;
   const slug = countrySlug(country);
   const detail = countryDetails[slug];
   const { summaries, professors, funders } = ecosystemOfCountry(country);
+  const labs = labsInCountry(country.country);
 
   return (
     <PageShell
@@ -77,6 +80,11 @@ export function CountryDetailView({ country, dossier }: { country: CountryEntry;
       <Block title={detailText.blocks.universities}>
         <UniversityRoster summaries={summaries.slice(0, 4)} />
       </Block>
+      {labs.length > 0 && (
+        <Block title={detailText.blocks.labsHere(labs.length)}>
+          <LabList labs={labs} />
+        </Block>
+      )}
       <Block title={detailText.blocks.whoFunds}>
         <FunderList funders={funders.slice(0, 4)} empty={detailText.hints.noFunders} />
       </Block>

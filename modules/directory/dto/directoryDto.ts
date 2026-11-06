@@ -4,6 +4,7 @@ import type {
   countryDtoSchema,
   entryLinkDtoSchema,
   entryResponseDtoSchema,
+  labDtoSchema,
   professorDtoSchema,
   providerDtoSchema,
   universityDtoSchema
@@ -13,6 +14,7 @@ export type CountryDto = z.infer<typeof countryDtoSchema>;
 export type UniversityDto = z.infer<typeof universityDtoSchema>;
 export type ProfessorDto = z.infer<typeof professorDtoSchema>;
 export type ProviderDto = z.infer<typeof providerDtoSchema>;
+export type LabDto = z.infer<typeof labDtoSchema>;
 export type EntryLinkDto = z.infer<typeof entryLinkDtoSchema>;
 export type EntryResponseDto = z.infer<typeof entryResponseDtoSchema>;
 
@@ -23,4 +25,5 @@ export interface DtoOf {
   professors: ProfessorDto;
   scholarships: ScholarshipDto;
   providers: ProviderDto;
+  labs: LabDto;
 }

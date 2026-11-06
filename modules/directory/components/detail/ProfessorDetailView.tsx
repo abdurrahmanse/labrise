@@ -16,11 +16,12 @@ import { countries } from "../../data/countries";
 import { fieldOf } from "../../data/fields";
 import { professors } from "../../data/professors";
 import { fundersOfUniversity } from "../../utils/connections";
-import { professorsAtUniversity, universityOfProfessor } from "../../utils/lookups";
+import { labsOfProfessor, professorsAtUniversity, universityOfProfessor } from "../../utils/lookups";
 import { professorSlug, universitySlug } from "../../utils/slugs";
 import type { ProfessorEntry } from "../../types";
 import { FunderList } from "../ecosystem/FunderList";
 import { Flag } from "@/shared/components/Flag";
+import { LabList } from "../ecosystem/LabList";
 import { ProfessorTracker } from "../professors/ProfessorTracker";
 import { EMAIL_STEPS } from "./applySteps";
 import { buildEmailDraft } from "./emailDraft";
@@ -37,6 +38,7 @@ export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }
   const field = fieldOf(professor.group);
   const country = countries.find((c) => c.country === professor.country);
   const funders = university ? fundersOfUniversity(university) : [];
+  const labs = labsOfProfessor(professor);
   const peers = professors.filter((p) => p.group === professor.group && p.name !== professor.name).slice(0, 8);
   const colleagues = university ? professorsAtUniversity(university).filter((p) => p.name !== professor.name).slice(0, 8) : [];
   const searchHref = `https://www.google.com/search?q=${encodeURIComponent(emailText.searchQuery(professor.name, professor.university))}`;
@@ -89,6 +91,7 @@ export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }
 
           <ProfessorFieldInfo field={field} />
 
+          {labs.length > 0 && <Block title={detailText.blocks.labsHere(labs.length)}><LabList labs={labs} /></Block>}
           {funders.length > 0 && <Block title={t.funding}><FunderList funders={funders} /></Block>}
         </div>
 

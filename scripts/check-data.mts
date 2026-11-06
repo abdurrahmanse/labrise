@@ -1,4 +1,4 @@
-import { countries, universities, professors, providers, scholarships } from "../modules/directory/data/index";
+import { countries, universities, professors, providers, scholarships, labs } from "../modules/directory/data/index";
 import * as S from "../modules/directory/utils/slugs";
 import { universityOfProfessor } from "../modules/directory/utils/lookups/universityLookups";
 let failures = 0;
@@ -48,3 +48,33 @@ if (problems.length) {
   process.exit(1);
 }
 console.log("Cross-reference check passed.");
+
+// ---- Labs: every link must point at a real country, university and professor, with no duplicates ----
+const labProblems: string[] = [];
+const seenLabs = new Set<string>();
+const seenSlugs = new Set<string>();
+for (const l of labs) {
+  if (seenLabs.has(l.name)) labProblems.push(`duplicate lab: ${l.name}`);
+  seenLabs.add(l.name);
+  const slug = S.labSlug(l);
+  if (seenSlugs.has(slug)) labProblems.push(`duplicate lab slug: ${slug}`);
+  seenSlugs.add(slug);
+  if (!countries.some((c) => c.country === l.country)) labProblems.push(`${l.name}: unknown country ${l.country}`);
+  const uni = l.university ? universities.find((u) => u.name === l.university) : undefined;
+  if (l.university && !uni) labProblems.push(`${l.name}: unknown university ${l.university}`);
+  if (uni && uni.country !== l.country) labProblems.push(`${l.name}: university ${uni.name} is in ${uni.country}, not ${l.country}`);
+  for (const name of l.professors) {
+    const p = professors.find((x) => x.name === name);
+    if (!p) labProblems.push(`${l.name}: unknown professor ${name}`);
+    else if (p.country !== l.country) labProblems.push(`${l.name}: professor ${name} is in ${p.country}, not ${l.country}`);
+    else if (uni && universityOfProfessor(p)?.name !== uni.name) labProblems.push(`${l.name}: professor ${name} is at ${p.university}, not ${uni.name}`);
+  }
+  if (!/^https?:\/\/[^ ]+\.[a-z]/.test(l.site)) labProblems.push(`${l.name}: bad site ${l.site}`);
+}
+console.log(`labs: ${labs.length}, countries with a lab: ${new Set(labs.map((l) => l.country)).size}`);
+if (labProblems.length) {
+  console.error(labProblems.join("\n"));
+  console.error(`\nLab check failed: ${labProblems.length} problem(s).`);
+  process.exit(1);
+}
+console.log("Lab check passed.");

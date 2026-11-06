@@ -10,13 +10,14 @@ import { StepGrid } from "@/shared/components/StepGrid";
 import { countryDetails } from "../../data/countryDetails";
 import { countries } from "../../data/countries";
 import { fundersOfUniversity } from "../../utils/connections";
-import { professorsAtUniversity } from "../../utils/lookups";
+import { labsAtUniversity, professorsAtUniversity } from "../../utils/lookups";
 import { countrySlug, universitySlug } from "../../utils/slugs";
 import type { UniversityEntry } from "../../types";
 import { universities } from "../../data/universities";
 import { Avatar } from "@/shared/components/Avatar";
 import { APPLY_STEPS } from "./applySteps";
 import { FunderList } from "../ecosystem/FunderList";
+import { LabList } from "../ecosystem/LabList";
 import { ProfessorRoster } from "../ecosystem/ProfessorRoster";
 import { CountryFacts } from "./CountryFacts";
 import { detailText } from "@/content/text/directory";
@@ -29,6 +30,7 @@ export function UniversityDetailView({ university }: { university: UniversityEnt
   const detail = country ? countryDetails[countrySlug(country)] : undefined;
   const profs = professorsAtUniversity(university);
   const funders = fundersOfUniversity(university);
+  const labs = labsAtUniversity(university);
   const others = universities.filter((u) => u.country === university.country && u.name !== university.name);
 
   return (
@@ -75,6 +77,11 @@ export function UniversityDetailView({ university }: { university: UniversityEnt
         </>
       )}
 
+      {labs.length > 0 && (
+        <Block title={detailText.blocks.labsHere(labs.length)}>
+          <LabList labs={labs} />
+        </Block>
+      )}
       <Block title={detailText.blocks.professors(profs.length)}>
         <ProfessorRoster professors={profs} />
       </Block>

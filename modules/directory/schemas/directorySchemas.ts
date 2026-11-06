@@ -49,6 +49,18 @@ export const providerDtoSchema = z.object({
   site: z.string()
 });
 
+export const labDtoSchema = z.object({
+  name: z.string(),
+  kind: z.string(),
+  country: z.string(),
+  region,
+  university: z.string().optional(),
+  focus: z.string(),
+  offers: z.string(),
+  professors: z.array(z.string()),
+  site: z.string()
+});
+
 export const entryLinkDtoSchema = z.object({
   kind: z.enum(ENTRY_KINDS),
   title: z.string(),
@@ -64,5 +76,6 @@ export const entryResponseDtoSchema = z.discriminatedUnion("type", [
   z.object({ type: z.literal("universities"), entry: universityDtoSchema, ...base }),
   z.object({ type: z.literal("professors"), entry: professorDtoSchema, ...base }),
   z.object({ type: z.literal("scholarships"), entry: scholarshipDtoSchema, ...base }),
-  z.object({ type: z.literal("providers"), entry: providerDtoSchema, ...base })
+  z.object({ type: z.literal("providers"), entry: providerDtoSchema, ...base }),
+  z.object({ type: z.literal("labs"), entry: labDtoSchema, ...base })
 ]);

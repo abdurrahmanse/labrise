@@ -1,7 +1,8 @@
 import type { ScholarshipEntry } from "../types";
+import { expansionScholarships } from "./scholarshipsExpansion";
 
 // Amounts and deadlines change every cycle. Each entry links to the official page.
-export const scholarships: ScholarshipEntry[] = [
+const baseScholarships: ScholarshipEntry[] = [
   { name: "Fulbright Foreign Student Program", host: "United States", region: "North America", level: "Master's & PhD", covers: "Tuition, living stipend, travel, health insurance (varies by country)", eligibility: "Citizens of participating countries. Apply through your national Fulbright commission or US embassy.", deadline: "Varies by country, often spring to summer a year before", site: "https://foreign.fulbrightonline.org" },
   { name: "DAAD Scholarships", host: "Germany", region: "Europe", level: "Master's & PhD", covers: "Monthly stipend, health insurance, travel allowance", eligibility: "Strong degree in the field. Programs differ by home country and subject.", deadline: "Often autumn for the next year", site: "https://www.daad.de/en" },
   { name: "Chevening Scholarships", host: "United Kingdom", region: "Europe", level: "Master's", covers: "Tuition, living stipend, flights, visa", eligibility: "Citizens of eligible countries, 2+ years of work experience, return home for 2 years.", deadline: "Early November", site: "https://www.chevening.org" },
@@ -55,3 +56,5 @@ export const scholarships: ScholarshipEntry[] = [
   { name: "AUB Engineering PhD Funding", host: "Lebanon", region: "Middle East", level: "PhD", covers: "Funding from the dean's office, such as the PhD sponsorship programmes; terms change", eligibility: "Admitted PhD applicants in the engineering faculty. Confirm the current rules with the faculty.", deadline: "Per admissions cycle; check the faculty", site: "https://www.aub.edu.lb/" },
   { name: "CAS-ANSO Scholarship", host: "China", region: "Asia", level: "Master's & PhD", covers: "Tuition waiver, monthly stipend and health insurance; amounts change with each call", eligibility: "Non-Chinese citizens admitted to USTC, UCAS or a CAS institute. A separate track serves PhD applicants from developing countries.", deadline: "Usually closes in winter (the 2025 call closed on 31 January 2026); check anso.org.cn", site: "https://www.anso.org.cn" }
 ];
+
+export const scholarships: ScholarshipEntry[] = [...baseScholarships, ...expansionScholarships];

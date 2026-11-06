@@ -116,7 +116,8 @@ export const directoryIndexText = {
     scholarships: (n: number) => ({ title: "Scholarships", meta: `${n} programs` }),
     countries: (n: number) => ({ title: "Countries", meta: `${n} listed` }),
     universities: (n: number) => ({ title: "Universities", meta: `${n} listed` }),
-    professors: (n: number) => ({ title: "Professors", meta: `${n} listed` })
+    professors: (n: number) => ({ title: "Professors", meta: `${n} listed` }),
+    labs: (n: number) => ({ title: "Labs & groups", meta: `${n} labs, institutes and communities` })
   },
   more: {
     title: "More resources",

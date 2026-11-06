@@ -3,7 +3,8 @@ export const cardText = {
   country: { funding: "You get", supervisor: "Professor first", fee: "Fee" },
   university: { funding: "Funding", deadline: "Deadline" },
   scholarship: { deadline: "Deadline" },
-  provider: { supports: "Supports", programmes: "Programmes", route: "How to apply" }
+  provider: { supports: "Supports", programmes: "Programmes", route: "How to apply" },
+  lab: { university: "University", focus: "Focus", offers: "What it offers" }
 } as const;
 
 export const listText = {
@@ -11,6 +12,7 @@ export const listText = {
   universities: "Search university, country, funding…",
   scholarships: "Search scholarship, host, level…",
   providers: "Search organisation, programme, country, or try: need-based, government…",
+  labs: "Search lab, university, country, topic…",
   noMatch: "No matches. Clear the search or region filter.",
   noProfessors: "No professors match. Clear the search or filters."
 } as const;
@@ -57,14 +59,16 @@ export const detailText = {
     universities: "All universities",
     professors: "All professors",
     providers: "All providers",
-    scholarships: "All scholarships"
+    scholarships: "All scholarships",
+    labs: "All labs and groups"
   },
   eyebrow: {
     country: (region: string) => `Country · ${region}`,
     university: (country: string) => `University · ${country}`,
     provider: (kind: string) => `Provider · ${kind}`,
     scholarship: (level: string) => `Scholarship · ${level}`,
-    professor: (group: string) => `Professor · ${group}`
+    professor: (group: string) => `Professor · ${group}`,
+    lab: (kind: string, country: string) => `${kind} · ${country}`
   },
   lead: {
     university: (funding: string, deadline: string) => `${funding}. Typical application window: ${deadline}.`,
@@ -90,7 +94,10 @@ export const detailText = {
     host: "Host",
     awardedBy: "Awarded by",
     covers: "Covers",
-    whoCanApply: "Who can apply"
+    whoCanApply: "Who can apply",
+    university: "University",
+    kind: "Type",
+    whatItOffers: "What it offers"
   },
   blocks: {
     studyAndLife: "Study and life",
@@ -119,9 +126,13 @@ export const detailText = {
     starterEmail: "Starter email draft",
     commonTopics: "Common topics",
     skills: "Skills to show",
-    reading: "What to read"
+    reading: "What to read",
+    labsHere: (n: number) => `Labs and groups (${n})`,
+    labProfessors: "Professors in this lab",
+    moreLabs: (place: string) => `More labs and groups in ${place}`
   },
   hints: {
+    labs: "Labs change their pages, openings and funding often. Open the official page and write to the group or its professors before you apply.",
     figures: "Figures are typical ranges. Confirm on the official pages below.",
     deadlines: "Deadlines and funding change every cycle. Confirm on the official site.",
     openOrg: "Open an organisation to see its requirements and how to apply.",

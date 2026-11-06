@@ -49,6 +49,23 @@ export interface ProviderEntry {
   site: string;
 }
 
+/** A research lab, group, institute or community. It belongs to a country, usually sits under a university, and can name its professors. */
+export interface LabEntry {
+  name: string;
+  /** Research lab, Research group, Institute, Research centre or Community / network. */
+  kind: string;
+  country: string;
+  region: Region;
+  /** Exact name of the university it belongs to. Left out for national institutes and networks. */
+  university?: string;
+  focus: string;
+  /** What it offers students: funded posts, fellowships, a doctoral school, a community to join. */
+  offers: string;
+  /** Exact names of listed professors who lead or work in it. */
+  professors: string[];
+  site: string;
+}
+
 export type DirectoryType = (typeof DIRECTORY_TYPES)[number];
 
 /** The entity each directory type lists. */
@@ -58,6 +75,7 @@ export interface EntryOf {
   professors: ProfessorEntry;
   scholarships: ScholarshipEntry;
   providers: ProviderEntry;
+  labs: LabEntry;
 }
 
 /** The full list of entries for each directory type. */

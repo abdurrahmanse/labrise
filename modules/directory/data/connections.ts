@@ -1,11 +1,13 @@
 // How funders connect to places. Each link means "this organisation funds or runs programmes here".
 // Check the provider page for the exact rules. Connections are listed only where they are well known.
 
+import { expansionUniversityOnlyProviders, expansionWorldwideProviders } from "./providersExpansion";
 import { moreUniversityOnlyProviders } from "./providersMore";
 
 /** Providers tied to one university, or to a short list of them. They are not offered across the whole country. */
 export const universityOnlyProviders: Record<string, string | string[]> = {
   ...moreUniversityOnlyProviders,
+  ...expansionUniversityOnlyProviders,
   "Gates Cambridge Trust": "University of Cambridge",
   "Rhodes Trust": "University of Oxford",
   "Knight-Hennessy Scholars (Stanford University)": "Stanford University",
@@ -21,7 +23,8 @@ export const countryWideEuropeanProviders = [
 /** Countries where the European programmes above are available. */
 export const europeanProgrammeCountries = [
   "Germany", "Sweden", "Netherlands", "Denmark", "Finland", "Belgium", "Austria", "France", "Italy", "Spain", "Ireland", "Hungary", "Norway",
-  "Czech Republic", "Poland", "Portugal", "Estonia", "Luxembourg", "Iceland", "Slovenia"
+  "Czech Republic", "Poland", "Portugal", "Estonia", "Luxembourg", "Iceland", "Slovenia",
+  "Greece", "Romania", "Bulgaria", "Croatia", "Slovakia", "Lithuania", "Latvia", "Serbia", "Cyprus"
 ];
 
 /** Nations inside a larger country whose funders also apply: UK-wide programmes work in Scotland. */
@@ -39,7 +42,8 @@ export const worldwideProviders = [
   "Aga Khan Foundation (International Scholarship Programme)",
   "Mastercard Foundation Scholars Program",
   "Islamic Development Bank (Scholarship Programme)",
-  "Institute of International Education (IIE)"
+  "Institute of International Education (IIE)",
+  ...expansionWorldwideProviders
 ];
 
 /** Universities that host an ELLIS unit. */

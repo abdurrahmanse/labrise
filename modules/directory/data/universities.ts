@@ -1,4 +1,5 @@
 import type { UniversityEntry } from "../types";
+import { expansionUniversities } from "./universitiesExpansion";
 import { moreUniversities } from "./universitiesMore";
 
 const baseUniversities: UniversityEntry[] = [
@@ -76,4 +77,4 @@ const baseUniversities: UniversityEntry[] = [
   { name: "University of Auckland", country: "New Zealand", region: "Oceania", funding: "Doctoral scholarship", deadline: "Rolling", site: "https://auckland.ac.nz" }
 ];
 
-export const universities: UniversityEntry[] = [...baseUniversities, ...moreUniversities];
+export const universities: UniversityEntry[] = [...baseUniversities, ...moreUniversities, ...expansionUniversities];

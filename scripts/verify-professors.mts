@@ -17,8 +17,8 @@ const COUNTRY: Record<string, string> = {
   Germany: "DE", Switzerland: "CH", Sweden: "SE", Netherlands: "NL", Denmark: "DK", Norway: "NO", Finland: "FI", Belgium: "BE", Austria: "AT", France: "FR", Italy: "IT", Spain: "ES",
   "United Kingdom": "GB", Scotland: "GB", Ireland: "IE", "United States": "US", Canada: "CA", Japan: "JP", "South Korea": "KR", China: "CN", Singapore: "SG", "Hong Kong": "HK", Taiwan: "TW",
   Australia: "AU", "New Zealand": "NZ", Turkey: "TR", "Saudi Arabia": "SA", Hungary: "HU", Qatar: "QA", "United Arab Emirates": "AE", Malaysia: "MY", Egypt: "EG", Jordan: "JO",
-  Lebanon: "LB", Kuwait: "KW", Oman: "OM", Bahrain: "BH", Iran: "IR", Poland: "PL", "Czech Republic": "CZ", Portugal: "PT", Estonia: "EE", Luxembourg: "LU", Iceland: "IS", Slovenia: "SI",
-  India: "IN", Pakistan: "PK", Bangladesh: "BD", "South Africa": "ZA"
+  Lebanon: "LB", Kuwait: "KW", Oman: "OM", Bahrain: "BH", Iran: "IR", Poland: "PL", "Czech Republic": "CZ", Portugal: "PT", Estonia: "EE", Luxembourg: "LU", Iceland: "IS", Slovenia: "SI", Greece: "GR", Romania: "RO", Bulgaria: "BG", Croatia: "HR", Slovakia: "SK", Lithuania: "LT", Latvia: "LV", Serbia: "RS", Cyprus: "CY", India: "IN", Thailand: "TH", Indonesia: "ID", Kazakhstan: "KZ",
+  Pakistan: "PK", Bangladesh: "BD", "South Africa": "ZA"
 };
 const GENERIC = new Set(["university", "institute", "technology", "college", "school", "science", "sciences", "national", "state", "technical", "polytechnic", "centre", "center", "research", "applied", "graduate", "engineering"]);
 

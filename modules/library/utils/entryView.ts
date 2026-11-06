@@ -13,6 +13,8 @@ export function describeEntry(r: EntryResult): EntryView {
       return { title: r.entry.name, subtitle: `${r.entry.university}, ${r.entry.country}`, href };
     case "scholarships":
       return { title: r.entry.name, subtitle: `${r.entry.host} · ${r.entry.level}`, href };
+    case "labs":
+      return { title: r.entry.name, subtitle: `${r.entry.university ?? r.entry.country} · ${r.entry.kind}`, href };
     case "providers":
       return { title: r.entry.name, subtitle: `${r.entry.country} · ${r.entry.kind}`, href };
   }

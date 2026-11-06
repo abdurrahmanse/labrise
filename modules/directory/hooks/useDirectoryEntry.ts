@@ -18,7 +18,7 @@ export function useDirectoryEntry(type: DirectoryType, slug: string) {
 
 /** Prefetch for a card link such as /directory/universities/eth-zurich. Other links do nothing. */
 export function usePrefetchHref(href: string) {
-  const match = /^\/directory\/(countries|universities|professors|scholarships|providers)\/([^/]+)$/.exec(href);
+  const match = /^\/directory\/(countries|universities|professors|scholarships|providers|labs)\/([^/]+)$/.exec(href);
   const prefetch = usePrefetchEntry((match?.[1] ?? "countries") as DirectoryType, match?.[2] ?? "");
   return match ? prefetch : undefined;
 }

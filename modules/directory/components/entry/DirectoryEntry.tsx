@@ -1,5 +1,6 @@
 import type { DirectoryType } from "../../types";
 import { CountryEntry } from "./CountryEntry";
+import { LabEntry } from "./LabEntry";
 import { ProfessorEntry } from "./ProfessorEntry";
 import { ProviderEntry } from "./ProviderEntry";
 import { ScholarshipEntry } from "./ScholarshipEntry";
@@ -23,5 +24,7 @@ export function DirectoryEntry({ type, slug }: DirectoryEntryProps) {
       return <ScholarshipEntry slug={slug} />;
     case "professors":
       return <ProfessorEntry slug={slug} />;
+    case "labs":
+      return <LabEntry slug={slug} />;
   }
 }

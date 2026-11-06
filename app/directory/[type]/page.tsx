@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { countries, directoryTypes, professors, providers, scholarships, universities } from "@/modules/directory/catalog";
+import { countries, directoryTypes, labs, professors, providers, scholarships, universities } from "@/modules/directory/catalog";
 import { directoryTypeSchema } from "@/modules/directory/contracts";
 import { ProfessorsExplorer } from "@/modules/directory/components/professors/ProfessorsExplorer";
 import { CountriesList } from "@/modules/directory/components/lists/CountriesList";
+import { LabsList } from "@/modules/directory/components/lists/LabsList";
 import { ProvidersList } from "@/modules/directory/components/lists/ProvidersList";
 import { ScholarshipsList } from "@/modules/directory/components/lists/ScholarshipsList";
 import { UniversitiesList } from "@/modules/directory/components/lists/UniversitiesList";
@@ -55,6 +56,7 @@ async function DirectoryTypePageContent({ params }: Props) {
         {parsed.data === "universities" && <UniversitiesList initialData={universities} />}
         {parsed.data === "providers" && <ProvidersList initialData={providers} />}
         {parsed.data === "scholarships" && <ScholarshipsList initialData={scholarships} />}
+        {parsed.data === "labs" && <LabsList initialData={labs} />}
         {parsed.data === "professors" && <ProfessorsExplorer initialData={professors} />}
       </Suspense>
     </PageShell>

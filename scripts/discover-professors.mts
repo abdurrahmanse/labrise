@@ -9,6 +9,7 @@
 // in 2024 or later, with at least two of their top three topics in those fields and a 2023-or-later affiliation at
 // the university. The author record, not our memory, supplies the name, affiliation and field.
 // OpenAlex without a key allows about 1000 calls a day, so each university costs two calls and the script stops early.
+// A free key from https://openalex.org/settings/api raises the limit: set it as OPENALEX_API_KEY before you run the script.
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { professors, universities } from "../modules/directory/data/index";
 import { universityOfProfessor } from "../modules/directory/utils/lookups/universityLookups";
@@ -17,7 +18,7 @@ const COUNTRY: Record<string, string> = {
   Germany: "DE", Switzerland: "CH", Sweden: "SE", Netherlands: "NL", Denmark: "DK", Norway: "NO", Finland: "FI", Belgium: "BE", Austria: "AT", France: "FR", Italy: "IT", Spain: "ES",
   "United Kingdom": "GB", Scotland: "GB", Ireland: "IE", "United States": "US", Canada: "CA", Japan: "JP", "South Korea": "KR", China: "CN", Singapore: "SG", "Hong Kong": "HK", Taiwan: "TW",
   Australia: "AU", "New Zealand": "NZ", Turkey: "TR", "Saudi Arabia": "SA", Hungary: "HU", Qatar: "QA", "United Arab Emirates": "AE", Malaysia: "MY", Egypt: "EG", Jordan: "JO",
-  Lebanon: "LB", Kuwait: "KW", Oman: "OM", Bahrain: "BH", Poland: "PL", "Czech Republic": "CZ", Portugal: "PT", Estonia: "EE", Luxembourg: "LU", Iceland: "IS", Slovenia: "SI"
+  Lebanon: "LB", Kuwait: "KW", Oman: "OM", Bahrain: "BH", Poland: "PL", "Czech Republic": "CZ", Portugal: "PT", Estonia: "EE", Luxembourg: "LU", Iceland: "IS", Slovenia: "SI", Greece: "GR", Romania: "RO", Bulgaria: "BG", Croatia: "HR", Slovakia: "SK", Lithuania: "LT", Latvia: "LV", Serbia: "RS", Cyprus: "CY", India: "IN", Thailand: "TH", Indonesia: "ID", Kazakhstan: "KZ"
 };
 const ALLOWED_FIELDS = new Set(["Engineering", "Computer Science", "Materials Science", "Energy", "Chemical Engineering"]);
 const GROUP: Record<string, string> = {
@@ -60,12 +61,14 @@ const targets = universities.filter((u) => COUNTRY[u.country] && (countriesArg ?
 console.error(`${targets.length} universities, about ${targets.length * 2} API calls`);
 if (args.includes("--dry")) process.exit(0);
 
-let remaining = 1000;
+let remaining = process.env.OPENALEX_API_KEY ? 100000 : 1000;
 async function api<T>(path: string): Promise<T | null> {
   if (remaining < 25) return null;
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
-      const res = await fetch(`https://api.openalex.org/${path}`, { signal: AbortSignal.timeout(30000) });
+      const key = process.env.OPENALEX_API_KEY;
+      const url = `https://api.openalex.org/${path}${key ? `${path.includes("?") ? "&" : "?"}api_key=${key}` : ""}`;
+      const res = await fetch(url, { signal: AbortSignal.timeout(30000) });
       remaining = Number(res.headers.get("x-ratelimit-remaining") ?? remaining);
       if (res.ok) return (await res.json()) as T;
       if (res.status === 429 || res.status === 402) { await new Promise((r) => setTimeout(r, 3000)); continue; }

@@ -21,7 +21,7 @@ export const libraryText = {
   retryAll: (n: number) => `Retry ${n} failed`,
   missing: "This entry is no longer in the directory.",
   open: "Open",
-  kinds: { countries: "Country", universities: "University", professors: "Professor", scholarships: "Scholarship", providers: "Funder" }
+  kinds: { countries: "Country", universities: "University", professors: "Professor", scholarships: "Scholarship", providers: "Funder", labs: "Lab" }
 } as const;
 
 export const searchDialogText = {

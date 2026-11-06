@@ -16,7 +16,7 @@ function roundTrip<T extends DirectoryType>(type: T) {
 }
 
 describe("directory mappers", () => {
-  for (const type of ["countries", "universities", "professors", "scholarships", "providers"] as const) {
+  for (const type of ["countries", "universities", "professors", "scholarships", "providers", "labs"] as const) {
     it(`${type}: every bundled entry survives entity -> DTO -> schema -> entity unchanged`, () => assert.ok(roundTrip(type) > 0));
   }
 });

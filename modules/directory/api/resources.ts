@@ -1,8 +1,8 @@
 import { z } from "zod";
 import { scholarshipDtoSchema, toScholarship, toScholarshipDto } from "@/modules/scholarships/contracts";
 import type { DtoOf } from "../dto/directoryDto";
-import { toCountry, toCountryDto, toProfessor, toProfessorDto, toProvider, toProviderDto, toUniversity, toUniversityDto } from "../mappers/entryMappers";
-import { countryDtoSchema, professorDtoSchema, providerDtoSchema, universityDtoSchema } from "../schemas/directorySchemas";
+import { toCountry, toCountryDto, toLab, toLabDto, toProfessor, toProfessorDto, toProvider, toProviderDto, toUniversity, toUniversityDto } from "../mappers/entryMappers";
+import { countryDtoSchema, labDtoSchema, professorDtoSchema, providerDtoSchema, universityDtoSchema } from "../schemas/directorySchemas";
 import type { DirectoryType, EntryOf } from "../types";
 
 /** How one directory type crosses the wire: the schema for its list, and the mappers for each entry. */
@@ -17,7 +17,8 @@ const resources: { [T in DirectoryType]: ListResource<T> } = {
   universities: { schema: z.array(universityDtoSchema), fromDto: toUniversity, toDto: toUniversityDto },
   professors: { schema: z.array(professorDtoSchema), fromDto: toProfessor, toDto: toProfessorDto },
   scholarships: { schema: z.array(scholarshipDtoSchema), fromDto: toScholarship, toDto: toScholarshipDto },
-  providers: { schema: z.array(providerDtoSchema), fromDto: toProvider, toDto: toProviderDto }
+  providers: { schema: z.array(providerDtoSchema), fromDto: toProvider, toDto: toProviderDto },
+  labs: { schema: z.array(labDtoSchema), fromDto: toLab, toDto: toLabDto }
 };
 
 /** The list resource for a directory type, typed by that type's entity and DTO. */

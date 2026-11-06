@@ -1,7 +1,7 @@
 import { toScholarship, toScholarshipDto } from "@/modules/scholarships/contracts";
 import type { EntryLinkDto, EntryResponseDto } from "../dto/directoryDto";
 import type { EntryLink, EntryResult } from "../types";
-import { toCountry, toCountryDto, toProfessor, toProfessorDto, toProvider, toProviderDto, toUniversity, toUniversityDto } from "./entryMappers";
+import { toCountry, toCountryDto, toLab, toLabDto, toProfessor, toProfessorDto, toProvider, toProviderDto, toUniversity, toUniversityDto } from "./entryMappers";
 
 const toEntryLink = (dto: EntryLinkDto): EntryLink => ({ kind: dto.kind, title: dto.title, subtitle: dto.subtitle, href: dto.href });
 const toEntryLinkDto = (link: EntryLink): EntryLinkDto => ({ kind: link.kind, title: link.title, subtitle: link.subtitle, href: link.href });
@@ -20,6 +20,8 @@ export function toEntryResult(dto: EntryResponseDto): EntryResult {
       return { type: dto.type, entry: toScholarship(dto.entry), ...common };
     case "providers":
       return { type: dto.type, entry: toProvider(dto.entry), ...common };
+    case "labs":
+      return { type: dto.type, entry: toLab(dto.entry), ...common };
   }
 }
 
@@ -37,5 +39,7 @@ export function toEntryResponseDto(result: EntryResult): EntryResponseDto {
       return { type: result.type, entry: toScholarshipDto(result.entry), ...common };
     case "providers":
       return { type: result.type, entry: toProviderDto(result.entry), ...common };
+    case "labs":
+      return { type: result.type, entry: toLabDto(result.entry), ...common };
   }
 }

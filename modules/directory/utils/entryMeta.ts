@@ -1,4 +1,4 @@
-import { findCountry, findProfessor, findProvider, findScholarship, findUniversity } from "./lookups";
+import { findCountry, findLab, findProfessor, findProvider, findScholarship, findUniversity } from "./lookups";
 
 export interface EntryMeta {
   title: string;
@@ -27,6 +27,10 @@ export function entryMeta(type: string, slug: string): EntryMeta | null {
     case "professors": {
       const p = findProfessor(slug);
       return p ? { title: `${p.name}, ${p.university}`, description: `${p.group} research group in ${p.country}. How to approach and what to read.` } : null;
+    }
+    case "labs": {
+      const l = findLab(slug);
+      return l ? { title: `${l.name}: ${l.kind.toLowerCase()} in ${l.country}`, description: `${l.focus}. ${l.offers}` } : null;
     }
     default:
       return null;

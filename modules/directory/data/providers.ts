@@ -1,4 +1,5 @@
 import type { ProviderEntry } from "../types";
+import { expansionProviders } from "./providersExpansion";
 import { moreProviders } from "./providersMore";
 
 // Organisations that award scholarships. Requirements are the usual ones, listed briefly.
@@ -439,4 +440,4 @@ const baseProviders: ProviderEntry[] = [
 
 ];
 
-export const providers: ProviderEntry[] = [...baseProviders, ...moreProviders];
+export const providers: ProviderEntry[] = [...baseProviders, ...moreProviders, ...expansionProviders];

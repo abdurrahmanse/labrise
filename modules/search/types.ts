@@ -1,4 +1,4 @@
-export const SEARCH_KINDS = ["Country", "University", "Professor", "Funder", "Scholarship"] as const;
+export const SEARCH_KINDS = ["Country", "University", "Professor", "Funder", "Scholarship", "Lab"] as const;
 export type SearchKind = (typeof SEARCH_KINDS)[number];
 
 /** One hit in the search box. */

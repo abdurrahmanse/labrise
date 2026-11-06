@@ -34,5 +34,5 @@ export const searchText = {
   placeholder: "Search countries, universities, professors, funders…",
   hint: "Type to search the whole directory.",
   empty: "No match. Try a country, university or professor name.",
-  kinds: { Country: "Country", University: "University", Professor: "Professor", Funder: "Funder", Scholarship: "Scholarship" }
+  kinds: { Country: "Country", University: "University", Professor: "Professor", Funder: "Funder", Scholarship: "Scholarship", Lab: "Lab" }
 } as const;

@@ -1,4 +1,4 @@
-import { Award, GraduationCap, Landmark, MapPin, Users, type LucideIcon } from "lucide-react";
+import { Award, FlaskConical, GraduationCap, Landmark, MapPin, Users, type LucideIcon } from "lucide-react";
 import type { SearchKind } from "../types";
 
 const ICONS: Record<SearchKind, LucideIcon> = {
@@ -6,7 +6,8 @@ const ICONS: Record<SearchKind, LucideIcon> = {
   University: GraduationCap,
   Professor: Users,
   Funder: Landmark,
-  Scholarship: Award
+  Scholarship: Award,
+  Lab: FlaskConical
 };
 
 export function KindIcon({ kind }: { kind: SearchKind }) {
