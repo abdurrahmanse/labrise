@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { countries, entryMeta, professors, providers, scholarships, universities } from "@/modules/directory/catalog";
 import { countrySlug, directoryTypeSchema, professorSlug, providerSlug, scholarshipSlug, universitySlug } from "@/modules/directory/contracts";
-import { DirectoryEntry } from "@/modules/directory/components/entry/DirectoryEntry";
+import { DirectoryEntry } from "@/modules/directory/entry/DirectoryEntry";
 import { buildMetadata } from "@/modules/seo";
 import { PageFallback } from "@/shared/components/PageFallback";
 import { notFoundTitles } from "@/content/text/site";

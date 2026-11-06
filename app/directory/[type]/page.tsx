@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { directoryTypes } from "@/modules/directory/catalog";
-import { DirectoryTypeList } from "@/modules/directory/components/lists/DirectoryTypeList";
+import { DirectoryTypeList } from "@/modules/directory/lists/DirectoryTypeList";
 import { directoryTypeSchema } from "@/modules/directory/contracts";
 import { PageShell } from "@/shared/components/PageShell";
 import { buildMetadata } from "@/modules/seo";

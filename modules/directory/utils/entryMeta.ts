@@ -1,4 +1,4 @@
-import { findCountry, findLab, findProfessor, findProvider, findScholarship, findUniversity } from "./lookups";
+import { findCountry, findLab, findProfessor, findProvider, findScholarship, findUniversity } from "../lookups";
 
 export interface EntryMeta {
   title: string;

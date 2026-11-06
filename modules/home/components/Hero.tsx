@@ -1,8 +1,8 @@
-import { FlagMarquee } from "./hero/FlagMarquee";
-import { HeroActions } from "./hero/HeroActions";
-import { HeroHeadline } from "./hero/HeroHeadline";
-import { HeroStage } from "./hero/HeroStage";
-import { HeroStats } from "./hero/HeroStats";
+import { FlagMarquee } from "../hero/FlagMarquee";
+import { HeroActions } from "../hero/HeroActions";
+import { HeroHeadline } from "../hero/HeroHeadline";
+import { HeroStage } from "../hero/HeroStage";
+import { HeroStats } from "../hero/HeroStats";
 
 export function Hero() {
   return (

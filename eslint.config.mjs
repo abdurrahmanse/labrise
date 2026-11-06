@@ -12,6 +12,12 @@ const publicEntry = {
   message: 'Import from "@/modules/<name>" (its public API), or "@/modules/<name>/server" for server-only reads (search has "/client", records-only "/catalog" entries, "/contracts" entries with types, DTOs and mappers, directory "/cards"). Not from inner files.'
 };
 
+/**
+ * Folders that hold a module's UI. Route files may import components from them directly (see the app/** block below).
+ * Everything else inside a module (hooks, store, utils, data, mappers...) stays private to the module.
+ */
+const uiFolders = ["components", "cards", "detail", "ecosystem", "entry", "hubs", "lists", "professors", "sections", "card", "controls", "header", "phases", "tasks", "widgets", "filters", "listing", "hero"];
+
 const wiring = ["core/**", "infrastructure/**", "app/api/**", "**/*.test.ts", "**/*.test.tsx"];
 
 const modulePatterns = [publicEntry];
@@ -29,7 +35,7 @@ const eslintConfig = defineConfig([
     // A barrel that re-exports client components makes every page importing it ship all of them.
     files: ["app/**/*.{ts,tsx}"],
     ignores: ["app/api/**"],
-    rules: { "no-restricted-imports": ["error", { patterns: [{ ...publicEntry, group: [...publicEntry.group, "!@/modules/*/components"] }] }] }
+    rules: { "no-restricted-imports": ["error", { patterns: [{ ...publicEntry, group: [...publicEntry.group, ...uiFolders.map((folder) => `!@/modules/*/${folder}`)] }] }] }
   },
   {
     // Layering: shared code and core config never depend on feature modules or the site layout. (Repeats modulePatterns: the last matching block wins.)

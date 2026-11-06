@@ -43,7 +43,7 @@ function measure(el) {
   return found[0];
 }
 
-const browser = await chromium.launch();
+const browser = await chromium.launch({ channel: "chrome" });
 const out = [];
 for (const theme of ["dark", "light"]) {
   const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });

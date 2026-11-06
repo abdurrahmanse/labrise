@@ -5,7 +5,7 @@ import { professors } from "../data/professors";
 import { scholarships } from "../data/scholarships";
 import { universities } from "../data/universities";
 import type { LabEntry, ProfessorEntry } from "../types";
-import { universityOfProfessor } from "./lookups/universityLookups";
+import { universityOfProfessor } from "../lookups/universityLookups";
 import { slugify } from "./slugs";
 
 /** Pages that group the directory by research field or by region. Everything here is derived from the records. */

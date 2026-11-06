@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { regionNames, regionOfSlug, regionSlug } from "@/modules/directory/catalog";
-import { RegionView } from "@/modules/directory/components/hubs/RegionView";
+import { RegionView } from "@/modules/directory/hubs/RegionView";
 import { buildMetadata } from "@/modules/seo";
 import { sectionText } from "@/content/text/directory";
 

@@ -1,7 +1,7 @@
 import { countries, findCountry } from "@/modules/directory/catalog";
 import { countrySlug } from "@/modules/directory/contracts";
-import { COUNTRY_VIEWS, COUNTRY_VIEW_TITLES, CountrySectionView } from "@/modules/directory/components/detail/CountrySectionView";
-import { defineSectionRoute } from "@/modules/directory/components/sections/defineSectionRoute";
+import { COUNTRY_VIEWS, COUNTRY_VIEW_TITLES, CountrySectionView } from "@/modules/directory/detail/CountrySectionView";
+import { defineSectionRoute } from "@/modules/directory/sections/defineSectionRoute";
 import { countryViewText } from "@/content/text/directory";
 
 const route = defineSectionRoute({

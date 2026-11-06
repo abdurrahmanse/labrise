@@ -1,4 +1,4 @@
-import { RegionsIndexView } from "@/modules/directory/components/hubs/RegionsIndexView";
+import { RegionsIndexView } from "@/modules/directory/hubs/RegionsIndexView";
 import { buildMetadata } from "@/modules/seo";
 
 export const metadata = buildMetadata({

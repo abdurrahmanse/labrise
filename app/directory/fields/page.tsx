@@ -1,4 +1,4 @@
-import { FieldsIndexView } from "@/modules/directory/components/hubs/FieldsIndexView";
+import { FieldsIndexView } from "@/modules/directory/hubs/FieldsIndexView";
 import { buildMetadata } from "@/modules/seo";
 import { sectionText } from "@/content/text/directory";
 

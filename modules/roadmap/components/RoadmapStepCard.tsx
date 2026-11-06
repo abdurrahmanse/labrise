@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { GlassCard } from "@/shared/ui/GlassCard";
 import type { RoadmapStep } from "../types/step";
-import { StepWidgetRenderer } from "./widgets/StepWidgetRegistry";
+import { StepWidgetRenderer } from "../widgets/StepWidgetRegistry";
 import { percentOf } from "@/shared/utils/percent";
 import {
   StepCardHeader,
@@ -15,7 +15,7 @@ import {
   StepFacultyIntel,
   StepDeliverableBanner,
   StepResourcesList,
-} from "./tasks";
+} from "../tasks";
 
 interface RoadmapStepCardProps {
   step: RoadmapStep;

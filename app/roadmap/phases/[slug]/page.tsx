@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { roadmapPhasesData, getPhaseBySlug } from "@/content/roadmap/roadmapPhasesData";
-import { PhaseDetailPage } from "@/modules/roadmap/components/phases/PhaseDetailPage";
+import { PhaseDetailPage } from "@/modules/roadmap/phases/PhaseDetailPage";
 import { notFoundTitles } from "@/content/text/site";
 
 interface Props {

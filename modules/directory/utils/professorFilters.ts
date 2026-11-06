@@ -2,7 +2,7 @@ import { fieldOf } from "../data/fields";
 import type { TrackedProfessor } from "../store/useProfessorTracker";
 import { getTracked } from "../store/useProfessorTracker";
 import type { ProfessorEntry } from "../types";
-import { regionOfProfessor } from "./lookups";
+import { regionOfProfessor } from "../lookups";
 import { professorSlug } from "./slugs";
 
 export const SORTS = ["name", "university", "country"] as const;

@@ -5,7 +5,7 @@ import {
   PhaseStrategicObjective,
   PhaseMilestonesPreview,
   PhaseCardFooter,
-} from "./card";
+} from "../card";
 
 export interface RoadmapPhaseCardProps {
   phase: RoadmapPhase;

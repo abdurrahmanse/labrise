@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { findScholarship, findProvider } from "./lookups";
+import { findScholarship, findProvider } from "../lookups";
 import { applicationChecklist, sameHostScholarships, sameLevelScholarships } from "./scholarshipRelations";
 
 describe("scholarshipRelations", () => {

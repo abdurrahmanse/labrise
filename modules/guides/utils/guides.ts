@@ -1,4 +1,4 @@
-import { getGuideDetail } from "../data/details";
+import { getGuideDetail } from "../details";
 import { guideTopics } from "../data/topics";
 
 export const findGuide = (id: string) => guideTopics.find((g) => g.id === id);

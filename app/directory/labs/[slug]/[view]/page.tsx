@@ -1,7 +1,7 @@
 import { findLab, labs } from "@/modules/directory/catalog";
 import { labSlug } from "@/modules/directory/contracts";
-import { LAB_VIEWS, LabSectionView } from "@/modules/directory/components/detail/LabSectionView";
-import { defineSectionRoute } from "@/modules/directory/components/sections/defineSectionRoute";
+import { LAB_VIEWS, LabSectionView } from "@/modules/directory/detail/LabSectionView";
+import { defineSectionRoute } from "@/modules/directory/sections/defineSectionRoute";
 import { sectionText } from "@/content/text/directory";
 
 const route = defineSectionRoute({

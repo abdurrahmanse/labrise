@@ -4,7 +4,7 @@ import {
   RoadmapHeaderGlow,
   RoadmapRadarBadge,
   RoadmapIntelligenceChips,
-} from "./header";
+} from "../header";
 
 export function RoadmapHeader() {
   const { title, subtitle } = roadmapControlsData.header;

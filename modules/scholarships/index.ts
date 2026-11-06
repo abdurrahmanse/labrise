@@ -13,7 +13,7 @@ export { useFinderProgress } from "./store/useFinderProgress";
 export { FinderStats } from "./components/FinderStats";
 export { FinderProgressBadge } from "./components/FinderProgressBadge";
 export { WorkflowStepper } from "./components/WorkflowStepper";
-export { ScholarshipBrowse } from "./components/listing/ScholarshipBrowse";
+export { ScholarshipBrowse } from "./listing/ScholarshipBrowse";
 export { ScholarshipFinderView } from "./components/ScholarshipFinderView";
 export { SCHOLARSHIP_TABS } from "./components/scholarshipTabs";
 export type { ScholarshipPart } from "./components/scholarshipTabs";

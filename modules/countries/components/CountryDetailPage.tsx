@@ -16,7 +16,7 @@ import {
   CountrySequenceSection,
   CountryWarningsSection,
   CountryPortalsSection,
-} from "./detail";
+} from "../detail";
 import { legacyText } from "@/content/text/legacy";
 
 interface CountryDetailPageProps {

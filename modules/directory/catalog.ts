@@ -6,7 +6,7 @@
 export { countries, directoryTypes, labs, professors, providers, scholarships, universities } from "./data";
 export { fieldByKey, fieldKeys, fieldOf } from "./data/fields";
 export { regionNames, regionOfSlug, regionSlug } from "./utils/hubs";
-export { labsAtUniversity, labsInCountry, labsOfProfessor } from "./utils/lookups";
-export { ecosystemOfCountry } from "./utils/connections";
+export { labsAtUniversity, labsInCountry, labsOfProfessor } from "./lookups";
+export { ecosystemOfCountry } from "./connections";
 export { entryMeta } from "./utils/entryMeta";
-export { findCountry, findLab, findProfessor, findProvider, findScholarship, findUniversity, providerOfScholarship } from "./utils/lookups";
+export { findCountry, findLab, findProfessor, findProvider, findScholarship, findUniversity, providerOfScholarship } from "./lookups";

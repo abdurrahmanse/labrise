@@ -1,8 +1,8 @@
 import type { TrailStep } from "@/shared/components/PageTrail";
 import type { CountryEntry, LabEntry, ProfessorEntry, ProviderEntry, ScholarshipEntry, UniversityEntry } from "../types";
-import { countryByName } from "./lookups/countryLookups";
+import { countryByName } from "../lookups/countryLookups";
 import { labSlug, countrySlug, professorSlug, providerSlug, scholarshipSlug, universitySlug } from "./slugs";
-import { universityOfProfessor } from "./lookups/universityLookups";
+import { universityOfProfessor } from "../lookups/universityLookups";
 import { universities } from "../data/universities";
 
 /**

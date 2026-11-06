@@ -1,7 +1,7 @@
 import { findUniversity, universities } from "@/modules/directory/catalog";
 import { universitySlug } from "@/modules/directory/contracts";
-import { UNIVERSITY_VIEWS, UniversitySectionView } from "@/modules/directory/components/detail/UniversitySectionView";
-import { defineSectionRoute } from "@/modules/directory/components/sections/defineSectionRoute";
+import { UNIVERSITY_VIEWS, UniversitySectionView } from "@/modules/directory/detail/UniversitySectionView";
+import { defineSectionRoute } from "@/modules/directory/sections/defineSectionRoute";
 import { sectionText } from "@/content/text/directory";
 
 const route = defineSectionRoute({

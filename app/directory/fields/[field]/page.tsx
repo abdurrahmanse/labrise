@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { fieldByKey, fieldKeys } from "@/modules/directory/catalog";
-import { FieldView } from "@/modules/directory/components/hubs/FieldView";
+import { FieldView } from "@/modules/directory/hubs/FieldView";
 import { buildMetadata } from "@/modules/seo";
 
 interface Props {

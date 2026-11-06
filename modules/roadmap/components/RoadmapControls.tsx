@@ -5,7 +5,7 @@ import {
   RoadmapSearchField,
   RoadmapPathwayChips,
   RoadmapResultsCount,
-} from "./controls";
+} from "../controls";
 
 export interface RoadmapControlsProps {
   filterDegree: "all" | "masters" | "phd";

@@ -1,7 +1,7 @@
 import "server-only";
 import { countries, labs, professors, providers, universities } from "../data";
-import { fundersOfUniversity, universitiesOfProvider } from "../utils/connections";
-import { findCountry, findLab, findProfessor, findProvider, findScholarship, findUniversity, labsAtUniversity, labsInCountry, labsOfProfessor, professorsAtUniversity, providerOfScholarship, universitiesInCountry, universityOfProfessor } from "../utils/lookups";
+import { fundersOfUniversity, universitiesOfProvider } from "../connections";
+import { findCountry, findLab, findProfessor, findProvider, findScholarship, findUniversity, labsAtUniversity, labsInCountry, labsOfProfessor, professorsAtUniversity, providerOfScholarship, universitiesInCountry, universityOfProfessor } from "../lookups";
 import { countrySlug, labSlug, professorSlug, providerSlug, universitySlug } from "../utils/slugs";
 import type { DirectoryType, EntryLink, EntryResult } from "../types";
 

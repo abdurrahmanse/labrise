@@ -3,7 +3,7 @@ import { RoadmapHeader } from "./RoadmapHeader";
 import {
   RoadmapPhasesPipelineSection,
   RoadmapLevelsLadderSection,
-} from "./sections";
+} from "../sections";
 import { AdmissionsSuiteLaunchpad } from "./AdmissionsSuiteLaunchpad";
 import { ROADMAP_TABS } from "./roadmapTabs";
 import { SubNav } from "@/shared/components/SubNav";

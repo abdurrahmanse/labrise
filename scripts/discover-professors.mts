@@ -12,7 +12,7 @@
 // A free key from https://openalex.org/settings/api raises the limit: set it as OPENALEX_API_KEY before you run the script.
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { professors, universities } from "../modules/directory/data/index";
-import { universityOfProfessor } from "../modules/directory/utils/lookups/universityLookups";
+import { universityOfProfessor } from "../modules/directory/lookups/universityLookups";
 
 const COUNTRY: Record<string, string> = {
   Germany: "DE", Switzerland: "CH", Sweden: "SE", Netherlands: "NL", Denmark: "DK", Norway: "NO", Finland: "FI", Belgium: "BE", Austria: "AT", France: "FR", Italy: "IT", Spain: "ES",
