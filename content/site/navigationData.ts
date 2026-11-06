@@ -89,7 +89,8 @@ export const headerData = {
 
 /** The main navigation: the four places a visitor starts from. Everything else is in "more" and the footer. */
 export const navLinksData: NavLinkItem[] = [
-  { href: "/steps", label: "Roadmap", iconName: "Map", matches: ["/roadmap", "/profile", "/apply"] },
+  { href: "/steps", label: "Roadmap", iconName: "Map", matches: ["/roadmap", "/profile"] },
+  { href: "/apply", label: "Apply", iconName: "FileCheck" },
   { href: "/guides", label: "Guides", iconName: "BookOpen", matches: ["/documents", "/problems", "/glossary"] },
   { href: "/directory", label: "Directory", iconName: "Building2", matches: ["/countries", "/scholarships", "/professors"] },
   { href: "/planner", label: "Planner", iconName: "ClipboardCheck", matches: ["/saved"] }
@@ -100,7 +101,6 @@ export const supportLinkData: NavLinkItem = { href: "/support", label: "Support"
 
 /** Pages that are not in the main navigation but still need a way in on small screens. */
 export const moreLinksData: NavLinkItem[] = [
-  { href: "/apply", label: "How to apply", iconName: "" },
   { href: "/faqs", label: "FAQs", iconName: "" },
   { href: "/saved", label: "Saved", iconName: "" },
   { href: "/about", label: "About", iconName: "" },

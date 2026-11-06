@@ -39,6 +39,7 @@ export function UniversityDetailView({ university }: { university: UniversityEnt
       media={<Avatar name={university.name.replace(/^(University of|The) /, "")} size={64} square />}
       lead={detailText.lead.university(university.funding, university.deadline)}
       trail={universityTrail(university)}
+      next={{ href: `${base}/labs`, label: s.titles.labs }}
     >
       <EntryTabs label={s.tabsLabel} base={base} tabs={[...s.tabs]} />
 

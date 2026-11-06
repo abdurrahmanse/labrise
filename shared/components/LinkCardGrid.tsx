@@ -29,11 +29,11 @@ export function LinkCardGrid({ items, columns = "md:grid-cols-2 lg:grid-cols-3" 
             {it.icon && <IconTile icon={it.icon} />}
             {!it.icon && it.index && <span className="bg-indigo-600 text-white font-mono font-bold px-2 py-0.5">{it.index}</span>}
             <div className="min-w-0">
-              <div className="text-xl font-bold text-white">{it.title}</div>
+              <div className="text-xl font-bold text-white underline decoration-indigo-400/70 decoration-2 underline-offset-4 group-hover:text-indigo-300">{it.title}</div>
               {it.meta && <div className="font-mono text-xs text-slate-400">{it.meta}</div>}
             </div>
           </div>
-          <ArrowRight className="w-5 h-5 shrink-0 text-slate-400 group-hover:text-indigo-400" />
+          <span className="inline-flex shrink-0 items-center gap-1.5 text-sm font-bold text-indigo-300 group-hover:text-white">Open <ArrowRight className="h-5 w-5" /></span>
         </Link>
       ))}
     </div>

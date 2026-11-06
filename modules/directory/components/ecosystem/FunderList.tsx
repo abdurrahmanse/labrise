@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { providerSlug } from "../../utils/slugs";
 import type { ProviderEntry } from "../../types";
 import { Flag } from "@/shared/components/Flag";
 import { rosterLabels } from "@/content/text/directory";
 import { surface } from "@/shared/components/Surface";
+import { ViewDetails } from "@/shared/components/ViewDetails";
 
 /** Funding organisations as small cards, each linking to its requirements. */
 export function FunderList({ funders, empty }: { funders: ProviderEntry[]; empty?: string }) {
@@ -22,11 +22,9 @@ export function FunderList({ funders, empty }: { funders: ProviderEntry[]; empty
         >
           <Flag country={p.country} className="mt-1 h-5 w-8" />
           <div className="min-w-0 flex-1">
-            <div className="font-bold text-white">{p.name}</div>
+            <div className="font-bold text-white underline decoration-indigo-400/70 decoration-2 underline-offset-4 group-hover:text-indigo-300">{p.name}</div>
             <div className="text-sm text-slate-300">{p.programs.join(", ")}</div>
-            <div className="mt-1 inline-flex items-center gap-1 text-sm font-bold text-indigo-400">
-              {rosterLabels.requirements} <ArrowRight className="h-4 w-4" />
-            </div>
+            <div className="mt-2"><ViewDetails label={rosterLabels.requirements} /></div>
           </div>
         </Link>
       ))}

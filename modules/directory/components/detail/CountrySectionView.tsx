@@ -1,125 +1,52 @@
-import { Block } from "@/shared/components/Block";
-import { BulletList } from "@/shared/components/BulletList";
-import { Chips } from "@/shared/components/Chips";
-import { ExternalLinks } from "@/shared/components/ExternalLinks";
+import type { ComponentType } from "react";
 import { Flag } from "@/shared/components/Flag";
-import { PageShell } from "@/shared/components/PageShell";
-import { StepGrid } from "@/shared/components/StepGrid";
-import { countryViewText, detailText, labText, rosterText } from "@/content/text/directory";
-import { countryDetails } from "../../data/countryDetails";
-import { universities } from "../../data/universities";
+import { countryViewText } from "@/content/text/directory";
 import type { CountryEntry } from "../../types";
-import { ecosystemOfCountry } from "../../utils/connections";
-import { labsInCountry, scholarshipsInCountry } from "../../utils/lookups";
-import { countrySlug, scholarshipSlug, universitySlug } from "../../utils/slugs";
+import { countrySlug } from "../../utils/slugs";
 import { countryTrail, withStep } from "../../utils/trails";
-import { CountryViewTabs } from "../ecosystem/CountryViewTabs";
-import { FunderList } from "../ecosystem/FunderList";
-import { LabRoster } from "../ecosystem/LabRoster";
-import { ProfessorRoster } from "../ecosystem/ProfessorRoster";
-import { UniversityRoster } from "../ecosystem/UniversityRoster";
-import { CountryFacts } from "./CountryFacts";
-import { APPLY_STEPS } from "./applySteps";
+import { CountryViewTabs, countryViewItems } from "../ecosystem/CountryViewTabs";
+import { EntrySectionShell } from "../sections/EntrySectionShell";
+import { CountryFundingSection } from "../sections/country/CountryFundingSection";
+import { CountryLabsSection } from "../sections/country/CountryLabsSection";
+import { CountryProfessorsSection } from "../sections/country/CountryProfessorsSection";
+import { CountryScholarshipsSection } from "../sections/country/CountryScholarshipsSection";
+import { CountryStudySection } from "../sections/country/CountryStudySection";
+import { CountryUniversitiesSection } from "../sections/country/CountryUniversitiesSection";
 
-export const COUNTRY_VIEWS = ["universities", "professors", "labs", "scholarships", "study", "funding"] as const;
-export type CountryView = (typeof COUNTRY_VIEWS)[number];
+const SECTIONS = {
+  universities: CountryUniversitiesSection,
+  professors: CountryProfessorsSection,
+  labs: CountryLabsSection,
+  scholarships: CountryScholarshipsSection,
+  study: CountryStudySection,
+  funding: CountryFundingSection
+} satisfies Record<string, ComponentType<{ country: CountryEntry }>>;
+
+export type CountryView = keyof typeof SECTIONS;
+export const COUNTRY_VIEWS = Object.keys(SECTIONS) as CountryView[];
 export const COUNTRY_VIEW_TITLES: Record<CountryView, string> = countryViewText.titles;
 
-/** One small page of a country: its universities, professors, labs, scholarships, study facts or funders. */
+/** One small page of a country. The frame is shared; each view is its own section component. */
 export function CountrySectionView({ country, view }: { country: CountryEntry; view: CountryView }) {
   const slug = countrySlug(country);
-  const { summaries, professors, funders } = ecosystemOfCountry(country);
-  const labs = view === "labs" ? labsInCountry(country.country) : [];
+  const items = countryViewItems(slug);
+  const at = items.findIndex((i) => i.href.endsWith(`/${view}`));
+  const Section = SECTIONS[view];
 
   return (
-    <PageShell
+    <EntrySectionShell
       eyebrow={countryViewText.eyebrow(country.country, country.region)}
       title={COUNTRY_VIEW_TITLES[view]}
+      lead={country.routes}
       media={<Flag country={country.country} className="h-10 w-14" />}
       trail={withStep(countryTrail(country), COUNTRY_VIEW_TITLES[view], `/directory/countries/${slug}/${view}`)}
+      notice={{ subject: country.country }}
+      detail={{ href: `/directory/countries/${slug}`, kind: "Country", name: country.country }}
+      tabs={<CountryViewTabs slug={slug} />}
+      prev={items[at - 1]}
+      next={items[at + 1]}
     >
-      <CountryViewTabs slug={slug} />
-
-      {view === "universities" && <UniversityRoster summaries={summaries} />}
-
-      {view === "professors" &&
-        (summaries.some((s) => s.professors.length > 0) ? (
-          summaries
-            .filter((s) => s.professors.length > 0)
-            .map(({ university, professors: list }) => (
-              <Block key={university.name} title={university.name}>
-                <ProfessorRoster professors={list} />
-                <a href={`/directory/universities/${universitySlug(university)}`} className="text-sm font-bold text-indigo-400 hover:text-indigo-200">
-                  {rosterText.universityDetails}
-                </a>
-              </Block>
-            ))
-        ) : (
-          <ProfessorRoster professors={professors} />
-        ))}
-
-      {view === "labs" && (
-        <>
-          <p className="text-slate-300">{labText.countryIntro(country.country, labs.length)}</p>
-          {universities
-            .filter((u) => labs.some((l) => l.university === u.name))
-            .map((u) => (
-              <Block key={u.name} title={u.name}>
-                <LabRoster labs={labs.filter((l) => l.university === u.name)} showUniversity={false} />
-                <a href={`/directory/universities/${universitySlug(u)}`} className="text-sm font-bold text-indigo-400 hover:text-indigo-200">
-                  {rosterText.universityDetails}
-                </a>
-              </Block>
-            ))}
-          {labs.some((l) => !l.university) && (
-            <Block title={labText.nationalGroup}>
-              <LabRoster labs={labs.filter((l) => !l.university)} />
-            </Block>
-          )}
-          {labs.length === 0 && <p className="text-slate-400">{labText.none}</p>}
-        </>
-      )}
-
-      {view === "scholarships" && (
-        <>
-          <Block title={detailText.blocks.scholarshipsPrograms}>
-            {scholarshipsInCountry(country.country).length > 0 ? (
-              <Chips items={scholarshipsInCountry(country.country).map((x) => ({ href: `/directory/scholarships/${scholarshipSlug(x)}`, label: x.name, meta: x.level }))} />
-            ) : (
-              <p className="text-slate-400">{countryViewText.noScholarships}</p>
-            )}
-            {countryDetails[slug] && <BulletList items={countryDetails[slug].scholarships} />}
-          </Block>
-          <Block title={countryViewText.fundingBlock}>
-            <FunderList funders={funders} empty={countryViewText.fundingEmpty} />
-          </Block>
-        </>
-      )}
-
-      {view === "study" && countryDetails[slug] && (
-        <>
-          <Block title={detailText.blocks.studyAndLife}>
-            <CountryFacts detail={countryDetails[slug]} />
-            <p className="text-sm text-slate-400">{detailText.hints.figures}</p>
-          </Block>
-          <Block title={detailText.blocks.findPositions}>
-            <ExternalLinks items={countryDetails[slug].find} />
-          </Block>
-          <Block title={detailText.blocks.tips}>
-            <BulletList items={countryDetails[slug].tips} />
-          </Block>
-          <Block title={detailText.blocks.howToApply}>
-            <StepGrid steps={APPLY_STEPS} />
-          </Block>
-        </>
-      )}
-
-      {view === "funding" && (
-        <Block title={countryViewText.fundingBlock}>
-          <FunderList funders={funders} empty={countryViewText.fundingEmpty} />
-          <p className="text-sm text-slate-400">{countryViewText.fundingHint}</p>
-        </Block>
-      )}
-    </PageShell>
+      <Section country={country} />
+    </EntrySectionShell>
   );
 }

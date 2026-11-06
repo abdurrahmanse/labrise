@@ -38,6 +38,7 @@ export function LabDetailView({ lab }: { lab: LabEntry }) {
       lead={lab.focus}
       media={<Flag country={lab.country} className="h-10 w-14" />}
       trail={labTrail(lab)}
+      next={{ href: `${base}/people`, label: s.titles.people }}
     >
       <EntryTabs label={s.tabsLabel} base={base} tabs={[...s.tabs]} />
 

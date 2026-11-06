@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { commonText } from "@/content/text/common";
 import { IconFor } from "@/shared/components/IconFor";
 import { usePrefetchHref } from "../../hooks/useDirectoryEntry";
 import { surface } from "@/shared/components/Surface";
+import { ViewDetails, titleLinkClass } from "@/shared/components/ViewDetails";
 
 interface CardShellProps {
   href: string;
@@ -21,19 +21,19 @@ interface CardShellProps {
 export function CardShell({ href, eyebrow, title, media, children }: CardShellProps) {
   const prefetch = usePrefetchHref(href);
   return (
-    <article onMouseEnter={prefetch} onFocus={prefetch} className={surface({ tone: "glass", depth: "soft", padding: "lg", className: "group relative flex flex-col gap-3 pt-6 transition-all duration-150 hover:-translate-y-1 hover:shadow-[6px_6px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]" })}>
+    <article onMouseEnter={prefetch} onFocus={prefetch} className={surface({ tone: "glass", depth: "soft", padding: "lg", className: "group relative flex flex-col gap-3 pt-6 transition-all duration-150 hover:-translate-y-1 hover:border-indigo-400 hover:shadow-[6px_6px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]" })}>
       <span className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-indigo-600 to-cyan-400" />
       <div className="flex items-center gap-3">
         {media}
         <p className="font-mono text-xs uppercase tracking-wider text-indigo-300">{eyebrow}</p>
       </div>
       <h3 className="text-xl font-bold text-white">
-        <Link href={href} className="hover:text-indigo-300">{title}</Link>
+        <Link href={href} className={`${titleLinkClass} after:absolute after:inset-0 after:content-['']`}>{title}</Link>
       </h3>
       <div className="space-y-2 text-slate-300">{children}</div>
-      <Link href={href} className="mt-auto inline-flex w-fit items-center gap-1.5 pt-2 text-sm font-bold text-indigo-400 hover:text-indigo-200">
-        {commonText.actions.details} <ArrowRight className="h-4 w-4" />
-      </Link>
+      <div className="mt-auto pt-2">
+        <ViewDetails label={commonText.actions.details} />
+      </div>
     </article>
   );
 }

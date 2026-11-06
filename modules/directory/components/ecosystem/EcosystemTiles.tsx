@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Building2, FlaskConical, Landmark, Users } from "lucide-react";
+import { ArrowRight, Building2, FlaskConical, Landmark, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { ecosystemText } from "@/content/text/directory";
 import { surface } from "@/shared/components/Surface";
@@ -31,6 +31,7 @@ export function EcosystemTiles({ slug, universities, professors, labs, funders }
           <Icon className="mb-3 h-6 w-6 text-indigo-400" />
           <div className="text-3xl font-bold text-white">{count}</div>
           <div className="font-mono text-xs uppercase tracking-wider text-slate-400">{label}</div>
+          <div className="mt-2 inline-flex items-center gap-1.5 text-sm font-bold text-indigo-300 group-hover:text-white">Open <ArrowRight aria-hidden className="h-4 w-4" /></div>
         </Link>
       ))}
     </div>

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { FlaskConical, Users } from "lucide-react";
 import { surface } from "@/shared/components/Surface";
+import { ViewDetails, titleLinkClass } from "@/shared/components/ViewDetails";
+import { commonText } from "@/content/text/common";
 import { labText } from "@/content/text/directory";
 import type { LabEntry } from "../../types";
 import { labSlug, universitySlug } from "../../utils/slugs";
@@ -15,17 +17,17 @@ export function LabRoster({ labs, showUniversity = true }: { labs: LabEntry[]; s
       {labs.map((l) => {
         const university = l.university ? universities.find((u) => u.name === l.university) : undefined;
         return (
-          <div key={l.name} className={surface({ tone: "glass", depth: "soft", padding: "lg", className: "flex flex-col gap-3 transition-all hover:-translate-y-1 hover:shadow-[6px_6px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]" })}>
+          <div key={l.name} className={surface({ tone: "glass", depth: "soft", padding: "lg", className: "group relative flex flex-col gap-3 transition-all hover:-translate-y-1 hover:border-indigo-400 hover:shadow-[6px_6px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]" })}>
             <div className="flex items-start gap-3">
               <FlaskConical className="mt-1 h-6 w-6 shrink-0 text-indigo-400" />
               <div className="min-w-0 flex-1">
-                <Link href={`/directory/labs/${labSlug(l)}`} className="text-lg font-bold text-white hover:text-indigo-300">{l.name}</Link>
+                <Link href={`/directory/labs/${labSlug(l)}`} className={`text-lg font-bold text-white ${titleLinkClass} after:absolute after:inset-0 after:content-['']`}>{l.name}</Link>
                 <div className="font-mono text-xs uppercase tracking-wider text-slate-400">{l.kind}</div>
               </div>
             </div>
             <p className="font-sans text-sm font-normal text-slate-200">{l.focus}</p>
             <p className="font-sans text-sm font-normal text-slate-300"><span className="font-bold text-white">{labText.offers}: </span>{l.offers}</p>
-            <div className="mt-auto flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-wider">
+            <div className="relative z-10 mt-auto flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-wider">
               {showUniversity && university && (
                 <Link href={`/directory/universities/${universitySlug(university)}`} className="bg-cyan-400/10 px-2 py-1 text-cyan-300 hover:text-cyan-100">{university.name}</Link>
               )}
@@ -33,6 +35,7 @@ export function LabRoster({ labs, showUniversity = true }: { labs: LabEntry[]; s
                 <span className="inline-flex items-center gap-1 bg-indigo-400/10 px-2 py-1 text-indigo-300"><Users className="h-3 w-3" /> {labText.people(l.professors.length)}</span>
               )}
             </div>
+            <ViewDetails label={commonText.actions.details} />
           </div>
         );
       })}

@@ -1,45 +1,19 @@
-import { Suspense } from "react";
-import { notFound } from "next/navigation";
-import type { Metadata } from "next";
 import { findLab, labs } from "@/modules/directory/catalog";
 import { labSlug } from "@/modules/directory/contracts";
-import { LAB_VIEWS, LabSectionView, type LabView } from "@/modules/directory/components/detail/LabSectionView";
-import { PageFallback } from "@/shared/components/PageFallback";
-import { buildMetadata } from "@/modules/seo";
+import { LAB_VIEWS, LabSectionView } from "@/modules/directory/components/detail/LabSectionView";
+import { defineSectionRoute } from "@/modules/directory/components/sections/defineSectionRoute";
 import { sectionText } from "@/content/text/directory";
 
-interface Props {
-  params: Promise<{ slug: string; view: string }>;
-}
+const route = defineSectionRoute({
+  entries: labs,
+  slugOf: labSlug,
+  find: findLab,
+  views: LAB_VIEWS,
+  basePath: "/directory/labs",
+  meta: (lab, view) => ({ title: `${sectionText.lab.titles[view]}: ${lab.name}`, description: `${sectionText.lab.hints[view]}. ${lab.focus}.` }),
+  render: (lab, view) => <LabSectionView lab={lab} view={view} />
+});
 
-const isView = (v: string): v is LabView => (LAB_VIEWS as string[]).includes(v);
-
-export function generateStaticParams() {
-  return labs.flatMap((l) => LAB_VIEWS.map((view) => ({ slug: labSlug(l), view })));
-}
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug, view } = await params;
-  const lab = findLab(slug);
-  if (!lab || !isView(view)) return { title: "Not found" };
-  return buildMetadata({
-    title: `${sectionText.lab.titles[view]}: ${lab.name}`,
-    description: `${sectionText.lab.hints[view]}. ${lab.focus}.`,
-    path: `/directory/labs/${slug}/${view}`
-  });
-}
-
-async function LabViewContent({ params }: Props) {
-  const { slug, view } = await params;
-  const lab = findLab(slug);
-  if (!lab || !isView(view)) notFound();
-  return <LabSectionView lab={lab} view={view} />;
-}
-
-export default function LabViewPage({ params }: Props) {
-  return (
-    <Suspense fallback={<PageFallback />}>
-      <LabViewContent params={params} />
-    </Suspense>
-  );
-}
+export const generateStaticParams = route.generateStaticParams;
+export const generateMetadata = route.generateMetadata;
+export default route.Page;
