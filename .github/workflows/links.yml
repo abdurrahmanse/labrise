@@ -1,0 +1,21 @@
+name: Official links
+
+# Checks that the official page of every university, provider and scholarship still answers.
+# Runs weekly and by hand. It reports problems but never blocks a merge: sites go down for a day.
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  verify-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run verify:links

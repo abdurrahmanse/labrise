@@ -25,7 +25,7 @@ interface PageShellProps {
   /** Shows the review date and a correction link. Set on pages that carry directory data. */
   /** Buttons shown under the heading, such as save. */
   actions?: ReactNode;
-  notice?: { subject: string; source?: string; caution?: string };
+  notice?: { subject: string; source?: string; caution?: string; unverified?: boolean };
   children: React.ReactNode;
 }
 

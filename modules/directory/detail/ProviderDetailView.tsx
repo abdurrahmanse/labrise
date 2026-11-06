@@ -8,6 +8,7 @@ import { PageShell } from "@/shared/components/PageShell";
 import { scholarships } from "../data/scholarships";
 import { universitiesOfProvider } from "../connections";
 import { scholarshipSlug, universitySlug } from "../utils/slugs";
+import { isUnverified } from "../utils/review";
 import type { ProviderEntry } from "../types";
 import { Flag } from "@/shared/components/Flag";
 import { detailText } from "@/content/text/directory";
@@ -26,7 +27,7 @@ export function ProviderDetailView({ provider }: { provider: ProviderEntry }) {
     <PageShell
       eyebrow={detailText.eyebrow.provider(provider.kind)}
       title={provider.name}
-      notice={{ subject: provider.name, source: provider.site }}
+      notice={{ subject: provider.name, source: provider.site, unverified: isUnverified("providers", provider.name) }}
       actions={<EntryActions type="providers" slug={providerSlug(provider)} />}
       lead={provider.route}
       media={<Flag country={provider.country} className="h-10 w-14" />}

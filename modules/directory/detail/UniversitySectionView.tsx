@@ -1,3 +1,4 @@
+import { isUnverified } from "../utils/review";
 import type { ComponentType } from "react";
 import { Avatar } from "@/shared/components/Avatar";
 import { detailText, sectionText } from "@/content/text/directory";
@@ -35,7 +36,7 @@ export function UniversitySectionView({ university, view }: { university: Univer
       lead={s.hints[view]}
       media={<Avatar name={university.name.replace(/^(University of|The) /, "")} size={64} square />}
       trail={withStep(universityTrail(university), s.titles[view], `${base}/${view}`)}
-      notice={{ subject: university.name, source: university.site }}
+      notice={{ subject: university.name, source: university.site, unverified: isUnverified("universities", university.name) }}
       detail={{ href: base, kind: "University", name: university.name }}
       tabs={<EntryTabs label={s.tabsLabel} base={base} tabs={[...s.tabs]} />}
       {...tabNeighbours(base, [...s.tabs], view)}

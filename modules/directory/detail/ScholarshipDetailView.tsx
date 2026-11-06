@@ -9,6 +9,7 @@ import { applicationChecklist } from "../utils/scholarshipRelations";
 import { providerOfScholarship } from "../lookups";
 import { scholarshipSlug } from "../utils/slugs";
 import { scholarshipTrail } from "../utils/trails";
+import { isUnverified } from "../utils/review";
 import type { ScholarshipEntry } from "../types";
 import { Flag } from "@/shared/components/Flag";
 import { bodyClass } from "./detailStyles";
@@ -25,7 +26,7 @@ export function ScholarshipDetailView({ scholarship }: { scholarship: Scholarshi
     <PageShell
       eyebrow={detailText.eyebrow.scholarship(scholarship.level)}
       title={scholarship.name}
-      notice={{ subject: scholarship.name, source: scholarship.site }}
+      notice={{ subject: scholarship.name, source: scholarship.site, unverified: isUnverified("scholarships", scholarship.name) }}
       actions={
         <>
           <EntryActions type="scholarships" slug={slug} />

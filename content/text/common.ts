@@ -21,6 +21,8 @@ export const commonText = {
 
 export const noticeText = {
   reviewed: (month: string) => `Reviewed ${month}. Deadlines, funding and people change, so confirm on the official source before you act.`,
+  unverified: "Added from public sources and not yet checked against the official page. Names, posts, deadlines and funding may be out of date, so confirm on the official source before you act.",
+  unverifiedBadge: "Not yet verified",
   officialSource: "Official source",
   report: "Report a correction",
   reportSubject: (subject: string) => `Correction: ${subject}`,

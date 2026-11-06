@@ -10,6 +10,7 @@ import { fundersOfUniversity } from "../connections";
 import { labsAtUniversity, professorsAtUniversity } from "../lookups";
 import { countrySlug, universitySlug } from "../utils/slugs";
 import { universityTrail } from "../utils/trails";
+import { isUnverified } from "../utils/review";
 import type { UniversityEntry } from "../types";
 import { Avatar } from "@/shared/components/Avatar";
 import { EntryTabs } from "../ecosystem/EntryTabs";
@@ -34,7 +35,7 @@ export function UniversityDetailView({ university }: { university: UniversityEnt
     <PageShell
       eyebrow={detailText.eyebrow.university(university.country)}
       title={university.name}
-      notice={{ subject: university.name, source: university.site }}
+      notice={{ subject: university.name, source: university.site, unverified: isUnverified("universities", university.name) }}
       actions={<EntryActions type="universities" slug={slug} />}
       media={<Avatar name={university.name.replace(/^(University of|The) /, "")} size={64} square />}
       lead={detailText.lead.university(university.funding, university.deadline)}

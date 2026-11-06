@@ -26,13 +26,14 @@ A world where a good student never misses a funded research place because they d
 | Profile checklist | `/profile` |
 | How to apply | `/apply` |
 | 27 guides (CV, SOP, IELTS, visa and more) | `/guides` |
-| Countries, universities, research professors, funders, scholarships | `/directory` |
+| Countries, universities, research professors, labs, funders, scholarships | `/directory` |
+| Research fields and regions (compare and browse) | `/directory/fields`, `/directory/regions` |
 | Common problems and fixes | `/problems` |
 | Contact and corrections | `/contact` |
 
-**In numbers:** 45 countries, about 400 universities, about 1,170 professors, about 110 funders, 53 scholarships.
+**In numbers:** 57 countries, 875 universities, about 1,500 professors, about 200 funders, about 150 scholarships and 106 labs, groups and communities.
 
-Every country links to its universities, professors and funders. Every entry has its own page.
+Every country links to its universities, professors, labs and funders. Every entry has its own page, split into small pages (for a lab: people, funding, how to join, the place behind it), with a path at the top of each page.
 
 ## Who it is for
 
@@ -40,7 +41,7 @@ Engineering students, in any department, who want a funded research Master's or 
 
 ## Our promise
 
-- **Real data only.** Entries come from official pages. Links are re-checked with `npm run verify:links`, and professors are checked against OpenAlex with `npm run verify:professors`.
+- **Real data only.** Entries come from official pages. Entries added from public sources and not yet checked against their official page say so on their own page instead of showing a review date. Links are re-checked with `npm run verify:links`, and professors are checked against OpenAlex with `npm run verify:professors`.
 - **Research only.** Funders limited to other fields (humanities, health, peace studies, regional studies) are left out. Entries that need a human look are marked on their page.
 - **No made-up emails.** A professor's email is shown only if an official page lists it.
 - **Always check the source.** Each page shows its review date and a link to the official site.
@@ -58,12 +59,15 @@ Based in Dhaka, Bangladesh.
 
 | Command | What it does |
 | :--- | :--- |
-| `npm run check:data` | Finds duplicates, bad links, unlinked professors and country mismatches |
+| `npm run check:data` | Finds duplicates, bad links, unlinked professors, country mismatches and labs that point at nothing |
+| `npm run verify` | Lint, tests, data checks and structure checks in one go (what CI runs before the build) |
 | `npm run verify:links` | Visits every official link in the directory |
 | `npm run verify:professors` | Compares each professor with OpenAlex (name, institution, country) |
 | `npm run discover:professors -- --missing 2` | Finds engineering researchers for universities that have few professors |
 
-OpenAlex allows about 1,000 calls a day without a key, so the last two work in batches.
+OpenAlex allows about 1,000 calls a day without a key, so the last two work in batches. With a free key from [openalex.org/settings/api](https://openalex.org/settings/api), set `OPENALEX_API_KEY` and `discover:professors` has no daily limit.
+
+CI (`.github/workflows`) runs the checks and the build on every push and pull request, and checks the official links once a week.
 
 ## Run it
 
@@ -78,7 +82,7 @@ Open [http://localhost:3000](http://localhost:3000). It runs on the bundled data
 
 ```
 app/              Routes (pages, layouts, API routes)
-modules/          Features: components, hooks, types, schemas, mappers, services per feature
+modules/          Features. Inside a feature a file is at most one folder deep: modules/<feature>/<folder>/<file>
 shared/           Feature-agnostic UI, hooks, utils, API client, query setup
 core/             Config, composition roots, site layout, providers
 infrastructure/   Data sources: bundled data and REST
@@ -87,7 +91,7 @@ content/          Bundled content and UI copy
 
 How the pieces connect, how to plug in a backend, and the rules the linter enforces are in [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
-Before pushing: `npx tsc --noEmit && npx eslint . && npm test && npm run build`.
+Before pushing: `npm run verify && npm run build`.
 
 ## License
 

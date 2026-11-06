@@ -1,3 +1,4 @@
+import { isUnverified } from "../utils/review";
 import type { ComponentType } from "react";
 import { Flag } from "@/shared/components/Flag";
 import { detailText, sectionText } from "@/content/text/directory";
@@ -30,7 +31,7 @@ export function LabSectionView({ lab, view }: { lab: LabEntry; view: LabView }) 
       lead={s.hints[view]}
       media={<Flag country={lab.country} className="h-10 w-14" />}
       trail={withStep(labTrail(lab), s.titles[view], `${base}/${view}`)}
-      notice={{ subject: lab.name, source: lab.site }}
+      notice={{ subject: lab.name, source: lab.site, unverified: isUnverified("labs", lab.name) }}
       detail={{ href: base, kind: "Lab", name: lab.name }}
       tabs={<EntryTabs label={s.tabsLabel} base={base} tabs={[...s.tabs]} />}
       {...tabNeighbours(base, [...s.tabs], view)}

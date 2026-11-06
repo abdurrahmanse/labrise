@@ -19,6 +19,7 @@ import { fundersOfUniversity } from "../connections";
 import { labsOfProfessor, professorsAtUniversity, universityOfProfessor } from "../lookups";
 import { professorSlug, universitySlug } from "../utils/slugs";
 import { professorTrail } from "../utils/trails";
+import { isUnverified } from "../utils/review";
 import type { ProfessorEntry } from "../types";
 import { FunderList } from "../ecosystem/FunderList";
 import { Flag } from "@/shared/components/Flag";
@@ -48,7 +49,7 @@ export function ProfessorDetailView({ professor }: { professor: ProfessorEntry }
     <PageShell
       eyebrow={detailText.eyebrow.professor(professor.group)}
       title={professor.name}
-      notice={{ subject: professor.name, caution: professor.email ? undefined : noticeText.professorCaution }}
+      notice={{ subject: professor.name, unverified: isUnverified("professors", professor.name), caution: professor.email ? undefined : noticeText.professorCaution }}
       media={<Avatar name={professor.name} size={80} />}
       actions={<EntryActions type="professors" slug={slug} />}
       lead={detailText.lead.professor(professor.university, professor.country, professor.group)}

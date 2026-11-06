@@ -9,7 +9,7 @@ interface EntrySectionShellProps {
   lead: string;
   media: ReactNode;
   trail: TrailStep[];
-  notice: { subject: string; source?: string };
+  notice: { subject: string; source?: string; unverified?: boolean };
   /** The full details page this small page belongs to. */
   detail: { href: string; kind: string; name: string };
   tabs: ReactNode;

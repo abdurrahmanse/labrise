@@ -10,6 +10,7 @@ import { countries } from "../data/countries";
 import { labs } from "../data/labs";
 import { professors } from "../data/professors";
 import { universities } from "../data/universities";
+import { isUnverified } from "../utils/review";
 import type { LabEntry } from "../types";
 import { labTrail } from "../utils/trails";
 import { countrySlug, labSlug, universitySlug } from "../utils/slugs";
@@ -33,7 +34,7 @@ export function LabDetailView({ lab }: { lab: LabEntry }) {
     <PageShell
       eyebrow={detailText.eyebrow.lab(lab.kind, lab.country)}
       title={lab.name}
-      notice={{ subject: lab.name, source: lab.site }}
+      notice={{ subject: lab.name, source: lab.site, unverified: isUnverified("labs", lab.name) }}
       actions={<EntryActions type="labs" slug={slug} />}
       lead={lab.focus}
       media={<Flag country={lab.country} className="h-10 w-14" />}
