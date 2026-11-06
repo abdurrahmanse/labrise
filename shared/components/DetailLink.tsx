@@ -6,7 +6,7 @@ export function DetailLink({ href, kind, name }: { href: string; kind: string; n
   return (
     <Link
       href={href}
-      className="group flex flex-wrap items-center gap-3 border-2 border-indigo-400/50 bg-indigo-400/10 px-4 py-3 hover:border-[var(--hover-line)] hover:bg-[var(--hover-bg)] hover:text-[var(--hover-fg)]"
+      className="group flex flex-wrap items-center gap-3 border-2 border-indigo-400/50 bg-indigo-400/10 px-4 py-3 hover:border-[var(--hover-line)] hover:bg-[var(--hover-fill)] "
     >
       <ArrowLeft aria-hidden className="h-5 w-5 shrink-0 transition-transform group-hover:-translate-x-0.5" />
       <span className="font-mono text-xs uppercase tracking-wider opacity-80">{kind}</span>

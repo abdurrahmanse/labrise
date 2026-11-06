@@ -162,10 +162,11 @@
   --btn-bg: #ffffff;
   --btn-fg: #000000;
   --btn-hover: #d4d4d8;
-  /* Hover highlight: a white fill with black text on dark, a light grey fill with black text on light. */
-  --hover-bg: #ffffff;
-  --hover-fg: #000000;
-  --hover-line: #ffffff;
+  /* Hover: a light tint of the foreground colour, a firmer line, and the text colour stays as it is. */
+  --hover-tint: color-mix(in srgb, var(--pure-fg) 9%, transparent);
+  --hover-fill: color-mix(in srgb, var(--pure-fg) 18%, transparent);
+  --hover-line: color-mix(in srgb, var(--pure-fg) 85%, transparent);
+  --hover-shadow: 0 14px 30px -16px color-mix(in srgb, var(--pure-fg) 55%, transparent);
   --accent: var(--pure-fg);
   --line: rgba(255, 255, 255, 0.3);
   --font-rajdhani: 'Rajdhani', sans-serif;

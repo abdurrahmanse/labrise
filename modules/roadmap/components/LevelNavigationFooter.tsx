@@ -24,7 +24,7 @@ export function LevelNavigationFooter({ currentLevel }: LevelNavigationFooterPro
           {prevLevel ? (
             <Link
               href={`/roadmap/${prevLevel.slug}`}
-              className="w-full sm:w-auto p-4 rounded-xl bg-canvas-card hover:bg-[var(--hover-bg)] hover:border-[var(--hover-line)] border border-white/10 text-slate-300 hover:text-[var(--hover-fg)] transition-all flex items-center gap-3 cursor-pointer group"
+              className="w-full sm:w-auto p-4 rounded-xl bg-canvas-card hover:bg-[var(--hover-fill)] hover:border-[var(--hover-line)] border border-white/10 text-slate-300 transition-all flex items-center gap-3 cursor-pointer group"
             >
               <ChevronLeft className="w-5 h-5 text-indigo-400 group-hover:-translate-x-1 transition-transform" />
               <div className="text-left">
@@ -39,7 +39,7 @@ export function LevelNavigationFooter({ currentLevel }: LevelNavigationFooterPro
           ) : (
             <Link
               href="/roadmap"
-              className="w-full sm:w-auto p-4 rounded-xl bg-canvas-card hover:bg-[var(--hover-bg)] hover:border-[var(--hover-line)] border border-white/10 text-slate-300 hover:text-[var(--hover-fg)] transition-all flex items-center gap-3 cursor-pointer group"
+              className="w-full sm:w-auto p-4 rounded-xl bg-canvas-card hover:bg-[var(--hover-fill)] hover:border-[var(--hover-line)] border border-white/10 text-slate-300 transition-all flex items-center gap-3 cursor-pointer group"
             >
               <ChevronLeft className="w-5 h-5 text-indigo-400 group-hover:-translate-x-1 transition-transform" />
               <div className="text-left">
@@ -66,7 +66,7 @@ export function LevelNavigationFooter({ currentLevel }: LevelNavigationFooterPro
           {nextLevel ? (
             <Link
               href={`/roadmap/${nextLevel.slug}`}
-              className="w-full sm:w-auto p-4 rounded-xl bg-canvas-card hover:bg-[var(--hover-bg)] hover:border-[var(--hover-line)] border border-white/10 text-slate-300 hover:text-[var(--hover-fg)] transition-all flex items-center justify-between sm:justify-end gap-3 cursor-pointer group text-right"
+              className="w-full sm:w-auto p-4 rounded-xl bg-canvas-card hover:bg-[var(--hover-fill)] hover:border-[var(--hover-line)] border border-white/10 text-slate-300 transition-all flex items-center justify-between sm:justify-end gap-3 cursor-pointer group text-right"
             >
               <div>
                 <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">

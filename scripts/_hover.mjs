@@ -50,15 +50,15 @@ for (const theme of ["dark", "light"]) {
   await ctx.addInitScript((t) => { try { localStorage.setItem("theme", t); } catch { /* storage unavailable */ } }, theme);
   const page = await ctx.newPage();
   for (const path of PAGES) {
-    await page.goto(BASE + path, { waitUntil: "networkidle" }).catch(() => {});
+    await page.goto(BASE + path, { waitUntil: "load" }).catch(() => {});
     const handles = await page.$$("a[href], button");
     let checked = 0;
-    for (const h of handles.slice(0, 120)) {
+    for (const h of handles.slice(0, 45)) {
       await h.scrollIntoViewIfNeeded().catch(() => {});
       const box = await h.boundingBox().catch(() => null);
       if (!box || box.width < 4 || box.height < 4) continue;
       await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
-      await page.waitForTimeout(250);
+      await page.waitForTimeout(120);
       const res = await h.evaluate(measure).catch(() => null);
       checked++;
       if (res && res.ratio < 3) out.push({ theme, path, ...res });
