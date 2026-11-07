@@ -24,7 +24,7 @@ export const SECTIONS: CaseSection[] = [
   { id: "outreach", label: "Emailing professors", title: "How she contacted professors", lead: "The real emails, the follow-up, the reply and her tracker.", Body: OutreachSection },
   { id: "package", label: "Application package", title: "SOP, CV and research proposal", lead: "Sample extracts and the choices behind them.", Body: PackageSection },
   { id: "funding", label: "Funding", title: "Funding in writing", lead: "Where the 100% came from, and the backup.", Body: FundingSection },
-  { id: "plan", label: "Plan", title: "Her plan, month by month", lead: "Each step linked to the guide she followed.", Body: PlanTimeline },
+  { id: "plan", label: "Plan", title: "Her plan, month by month", lead: "Seven phases over 14 months. Each step shows what she finished and the guide she followed.", Body: PlanTimeline },
   { id: "results", label: "Results", title: "Interviews, results and the decision", lead: "Offers, silence and a rejection. Real journeys are mixed.", Body: ResultsSection },
   { id: "arrival", label: "Visa and arrival", title: "Visa, money and arrival", lead: "What she did between accepting and landing.", Body: ArrivalSection },
   { id: "lessons", label: "Lessons", title: "What to copy", lead: "The habits behind the result, and your next steps.", Body: LessonsSection }

@@ -1,4 +1,4 @@
-import type { Step, Table } from "../types";
+import type { Phase, Step, Table } from "../types";
 
 export const journey = {
   funding: {
@@ -10,19 +10,28 @@ export const journey = {
     ],
     note: "She secured funding in writing before accepting anything. A verbal promise is not funding."
   } satisfies Table,
+  phases: [
+    { id: "plan", name: "Plan", from: 14, to: 12, summary: "Route, proof of skill, budget" },
+    { id: "shortlist", name: "Shortlist", from: 11, to: 10, summary: "Long list, funding and fit checks" },
+    { id: "reach", name: "Reach out", from: 9, to: 8, summary: "Emails, calls and replies" },
+    { id: "prepare", name: "Prepare", from: 7, to: 6, summary: "Certified papers, SOP, proposal" },
+    { id: "apply", name: "Apply", from: 5, to: 4, summary: "Submit early, interviews" },
+    { id: "decide", name: "Decide", from: 3, to: 3, summary: "Compare and accept in writing" },
+    { id: "move", name: "Move", from: 2, to: 1, summary: "Visa, money, housing" }
+  ] satisfies Phase[],
   timeline: [
-    { when: "14 months before", title: "Chose the area and the route", detail: "Picked computer vision for medical images and a PhD over a second Master's.", guide: "/guides/master-vs-phd", guideLabel: "Master's or PhD?" },
-    { when: "13 months before", title: "Built proof of skill", detail: "Published code and a preprint, so claims could be checked.", guide: "/guides/publications", guideLabel: "First publication" },
-    { when: "12 months before", title: "Planned the budget and booked IELTS", detail: "Listed every cost before arrival.", guide: "/guides/budget-planning", guideLabel: "Budget and costs" },
-    { when: "11 months before", title: "Built the long list", detail: "Thirty groups from the directory, then funding and fit checks.", guide: "/guides/research-area", guideLabel: "Research area" },
-    { when: "10 months before", title: "Read each call", detail: "Ticked eligibility and dates for every programme.", guide: "/guides/read-a-call", guideLabel: "Read a call" },
-    { when: "9 months before", title: "Emailed professors", detail: "Four first emails, one follow-up each.", guide: "/guides/cold-email", guideLabel: "Cold email" },
-    { when: "7 months before", title: "Started certified documents", detail: "Transcripts, attestation and grade context letter.", guide: "/guides/bangladesh-applicants", guideLabel: "Applying from Bangladesh" },
-    { when: "6 months before", title: "Wrote and revised", detail: "SOP and proposal, three drafts each.", guide: "/guides/sop", guideLabel: "SOP guide" },
-    { when: "5 months before", title: "Submitted early", detail: "A week before each deadline, with receipts saved.", guide: "/guides/application-portals", guideLabel: "Application portals" },
-    { when: "4 months before", title: "Interviews", detail: "A call with two professors and a panel interview.", guide: "/guides/interview-prep", guideLabel: "Interview prep" },
-    { when: "3 months before", title: "Compared offers and accepted", detail: "Used a written comparison and replied before the date.", guide: "/guides/offer-comparison", guideLabel: "Compare offers" },
-    { when: "2 months before", title: "Visa and housing", detail: "Booked the visa slot the week she accepted.", guide: "/guides/visa-interview", guideLabel: "Visa guide" }
+    { monthsBefore: 14, title: "Chose the area and the route", detail: "Picked computer vision for medical images and a PhD over a second Master's.", output: "One-page decision note", guide: "/guides/master-vs-phd", guideLabel: "Master's or PhD?" },
+    { monthsBefore: 13, title: "Built proof of skill", detail: "Published code and a preprint, so claims could be checked.", output: "Public repository and preprint", guide: "/guides/publications", guideLabel: "First publication" },
+    { monthsBefore: 12, title: "Planned the budget and booked IELTS", detail: "Listed every cost before arrival and booked the test once.", output: "Budget sheet and a test date", guide: "/guides/budget-planning", guideLabel: "Budget and costs" },
+    { monthsBefore: 11, title: "Built the long list", detail: "Thirty groups from the directory, then funding and fit checks.", output: "30 groups cut to 6", guide: "/guides/research-area", guideLabel: "Research area" },
+    { monthsBefore: 10, title: "Read each call", detail: "Ticked eligibility and dates for every programme.", output: "Eligibility sheet per programme", guide: "/guides/read-a-call", guideLabel: "Read a call" },
+    { monthsBefore: 9, title: "Emailed professors", detail: "Four first emails, one follow-up each.", output: "2 replies, 2 calls booked", guide: "/guides/cold-email", guideLabel: "Cold email" },
+    { monthsBefore: 7, title: "Started certified documents", detail: "Transcripts, attestation and grade context letter.", output: "Certified copies requested", guide: "/guides/bangladesh-applicants", guideLabel: "Applying from Bangladesh" },
+    { monthsBefore: 6, title: "Wrote and revised", detail: "SOP and proposal, three drafts each, reviewed by two people.", output: "Final SOP and proposal", guide: "/guides/sop", guideLabel: "SOP guide" },
+    { monthsBefore: 5, title: "Submitted early", detail: "A week before each deadline, with receipts saved.", output: "Submission receipts", guide: "/guides/application-portals", guideLabel: "Application portals" },
+    { monthsBefore: 4, title: "Interviews", detail: "A call with two professors and a panel interview.", output: "Interview notes", guide: "/guides/interview-prep", guideLabel: "Interview prep" },
+    { monthsBefore: 3, title: "Compared offers and accepted", detail: "Used a written comparison and replied before the date.", output: "Signed acceptance", guide: "/guides/offer-comparison", guideLabel: "Compare offers" },
+    { monthsBefore: 2, title: "Visa and housing", detail: "Booked the visa slot the week she accepted.", output: "Visa appointment, first-month housing", guide: "/guides/visa-interview", guideLabel: "Visa guide" }
   ] satisfies Step[],
   interview: [
     { q: "Explain your thesis in two minutes.", a: "Problem, method, one result with a number, and the open question." },
