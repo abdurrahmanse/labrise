@@ -93,7 +93,8 @@ export const navLinksData: NavLinkItem[] = [
   { href: "/apply", label: "Apply", iconName: "FileCheck" },
   { href: "/guides", label: "Guides", iconName: "BookOpen", matches: ["/documents", "/problems", "/glossary"] },
   { href: "/directory", label: "Directory", iconName: "Building2", matches: ["/countries", "/scholarships", "/professors"] },
-  { href: "/planner", label: "Planner", iconName: "ClipboardCheck", matches: ["/saved"] }
+  { href: "/planner", label: "Planner", iconName: "ClipboardCheck", matches: ["/saved"] },
+  { href: "/case-study", label: "Case study", iconName: "Award" }
 ];
 
 /** The call to action beside the navigation. */
@@ -121,6 +122,7 @@ export const footerLinksData: NavLinkItem[] = [
   { href: "/faqs", label: "FAQs", iconName: "" },
   { href: "/problems", label: "Problems", iconName: "" },
   { href: "/planner", label: "Planner", iconName: "" },
+  { href: "/case-study", label: "Case study", iconName: "" },
   { href: "/saved", label: "Saved", iconName: "" },
   { href: "/glossary", label: "Glossary", iconName: "" },
   { href: "/about", label: "About", iconName: "" },

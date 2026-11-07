@@ -11,7 +11,7 @@ const staticPaths = [
   "/", "/steps", "/profile", "/guides", "/directory", "/problems",
   "/directory/countries", "/directory/universities", "/directory/professors", "/directory/scholarships", "/directory/providers", "/directory/labs", "/directory/fields", "/directory/regions", "/apply", "/apply/university", "/apply/scholarship",
   "/roadmap", "/roadmap/phases", "/scholarships/formulas", "/scholarships/portals", "/professors/rules", "/faqs/checklist", "/scholarships", "/professors", "/documents", "/faqs",
-  "/professors/find", "/professors/supervisor", "/professors/workflow", "/professors/templates", "/scholarships/browse", "/scholarships/workflow", "/planner", "/saved", "/glossary", "/support", "/about", "/disclaimer", "/privacy", "/contact"
+  "/professors/find", "/professors/supervisor", "/professors/workflow", "/professors/templates", "/scholarships/browse", "/scholarships/workflow", "/planner", "/case-study", "/saved", "/glossary", "/support", "/about", "/disclaimer", "/privacy", "/contact"
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

@@ -25,7 +25,7 @@ export function PageTrail({ trail }: { trail: TrailStep[] }) {
               {i === last ? (
                 <span aria-current="page" className="max-w-[18rem] truncate font-bold text-white">{step.label}</span>
               ) : (
-                <Link href={step.href} className="inline-flex items-center gap-1 hover:text-indigo-300">
+                <Link href={step.href} className="inline-flex min-h-8 items-center gap-1 hover:text-indigo-300">
                   {i === 0 && <Home aria-hidden className="h-3.5 w-3.5" />}
                   {step.label}
                 </Link>
