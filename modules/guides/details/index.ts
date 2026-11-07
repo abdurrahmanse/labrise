@@ -30,6 +30,7 @@ import { scholarshipEssayGuide } from "./scholarship-essay";
 import { readACallGuide } from "./read-a-call";
 import { housingAndInsuranceGuide } from "./housing-and-insurance";
 import { afterAcceptanceGuide } from "./after-acceptance";
+import { bangladeshApplicantsGuide } from "./bangladesh-applicants";
 import type { GuideDetail } from "../types";
 
 export const guideDetails: GuideDetail[] = [
@@ -64,7 +65,8 @@ export const guideDetails: GuideDetail[] = [
   scholarshipEssayGuide,
   readACallGuide,
   housingAndInsuranceGuide,
-  afterAcceptanceGuide
+  afterAcceptanceGuide,
+  bangladeshApplicantsGuide
 ];
 
 export const getGuideDetail = (id: string) => guideDetails.find((g) => g.id === id);

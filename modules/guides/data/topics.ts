@@ -147,5 +147,6 @@ export const guideTopics: GuideTopic[] = [
   { id: "scholarship-essay", title: "Scholarship essay", tag: "Beyond the SOP", steps: ["Read the exact prompt.", "Pick one story.", "Show impact and plan.", "Connect to the funder's goal.", "Edit and trim."] },
   { id: "read-a-call", title: "Read a scholarship call", tag: "Before you apply", steps: ["Find the official call.", "Mark eligibility rules.", "List documents and dates.", "Check what is covered.", "Note how to submit."] },
   { id: "housing-and-insurance", title: "Housing and health insurance", tag: "Before you travel", steps: ["Ask the university for housing.", "Check scam signs.", "Confirm insurance rules.", "Keep contracts and receipts.", "Plan a temporary stay."] },
-  { id: "after-acceptance", title: "After you are accepted", tag: "Offer to arrival", steps: ["Reply and confirm in writing.", "Collect enrolment documents.", "Start the visa process.", "Arrange money and housing.", "Tell referees and thank them."] }
+  { id: "after-acceptance", title: "After you are accepted", tag: "Offer to arrival", steps: ["Reply and confirm in writing.", "Collect enrolment documents.", "Start the visa process.", "Arrange money and housing.", "Tell referees and thank them."] },
+  { id: "bangladesh-applicants", title: "Applying from Bangladesh", tag: "Local steps", steps: ["Show the grading scale.", "Request certified papers early.", "Check Bangladesh eligibility.", "Avoid paid agents.", "Follow embassy pages."] }
 ];

@@ -18,7 +18,7 @@ export function scholarshipJourney(s: ScholarshipEntry): JourneyStage[] {
     {
       title: "Read the call and check you qualify",
       detail: "Open the official page, tick every eligibility rule and note the deadline with its time zone.",
-      links: [{ label: "How to read a call", href: "/guides/read-a-call" }, { label: "Weak profile?", href: "/guides/weak-profile" }]
+      links: [{ label: "How to read a call", href: "/guides/read-a-call" }, { label: "Weak profile?", href: "/guides/weak-profile" }, { label: "Applying from Bangladesh", href: "/guides/bangladesh-applicants" }]
     },
     {
       title: "Sort out language tests and grades",
