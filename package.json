@@ -12,6 +12,7 @@
     "check:data": "tsx scripts/check-data.mts",
     "check:responsive": "node scripts/responsive-audit.mjs",
     "test": "tsx --test \"shared/**/*.test.ts\" \"shared/**/*.test.tsx\" \"infrastructure/**/*.test.ts\" \"modules/**/*.test.ts\"",
+    "generate:case-study": "tsx scripts/generate-case-study-pdfs.mts",
     "check:routes": "tsx scripts/check-routes.mts",
     "check:cycles": "tsx scripts/check-cycles.mts",
     "check:unused": "tsx scripts/check-unused.mts",

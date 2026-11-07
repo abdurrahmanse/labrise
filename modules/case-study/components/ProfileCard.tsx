@@ -1,9 +1,9 @@
-import { Avatar } from "@/shared/components/Avatar";
 import { Surface } from "@/shared/components/Surface";
 import { Label } from "@/shared/components/Text";
 import { caseStudyText as t } from "../text";
 import { student } from "../data/profile";
 import { SECTIONS } from "../sections";
+import { StudentPortrait } from "./StudentPortrait";
 
 /** The student's profile card: photo, name, headline and key numbers, with the page's section links beneath it. */
 export function ProfileCard() {
@@ -12,7 +12,7 @@ export function ProfileCard() {
       <Surface tone="panel" depth="md" padding="lg" className="space-y-4">
         <div className="flex items-center gap-4">
           <div className="space-y-1 text-center">
-            <Avatar name={student.name} size={88} />
+            <StudentPortrait size={88} className="border-2 border-white/40" />
             <p className="font-mono text-[10px] uppercase tracking-wider text-slate-500">{t.photoNote}</p>
           </div>
           <div className="min-w-0">

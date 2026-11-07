@@ -4,7 +4,7 @@ export const journey = {
   funding: {
     head: ["Source", "What it covers", "Status"],
     rows: [
-      { cells: ["Salaried PhD post (RWTH Aachen)", "Monthly salary with social insurance, no tuition", "Offer, accepted"], href: "/directory/universities/rwth-aachen" },
+      { cells: ["Salaried PhD post (RWTH Aachen)", "Monthly salary with social insurance, no tuition", "Offer, accepted"], href: "/directory/universities/rwth-aachen", file: "offer-letter" },
       { cells: ["DAAD scholarship", "Stipend, insurance and travel allowance", "Selected as backup"], href: "/directory/scholarships/daad-scholarships" },
       { cells: ["Tübingen salaried post", "Salary, no tuition", "Offer, declined"], href: "/directory/universities/university-of-tubingen" }
     ],
