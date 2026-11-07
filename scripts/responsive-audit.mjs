@@ -13,7 +13,7 @@ const VIEWPORTS = [
 // Representative pages: every template, plus the new hubs and detail pages.
 const ROUTES = (process.env.ROUTES ?? "/,/steps,/profile,/apply,/apply/university,/apply/scholarship,/guides,/guides/cv,/directory,/directory/countries,/directory/universities,/directory/professors,/directory/scholarships,/directory/providers,/directory/countries/germany,/directory/universities/eth-zurich,/directory/professors/daniel-cremers,/directory/providers/daad-german-academic-exchange-service,/directory/scholarships/daad-scholarships,/professors,/professors/find,/professors/supervisor,/professors/workflow,/professors/templates,/professors/rules,/scholarships,/scholarships/browse,/scholarships/workflow,/scholarships/formulas,/scholarships/portals,/documents,/documents/academic-cv,/planner,/saved,/glossary,/problems,/about,/contact,/countries,/countries/germany,/roadmap,/faqs").split(",").filter(Boolean);
 
-const browser = await chromium.launch();
+const browser = await chromium.launch(process.env.CHANNEL ? { channel: process.env.CHANNEL } : {});
 const results = [];
 
 for (const vp of VIEWPORTS) {

@@ -34,7 +34,7 @@ export function FilterTabs<T extends string>({ options, value, onChange, label, 
             aria-pressed={tabs ? undefined : active}
             onClick={() => onChange(v)}
             className={cn(
-              "inline-flex cursor-pointer items-center gap-2 px-4 py-2 text-sm font-bold uppercase tracking-wider transition-colors",
+              "inline-flex min-h-9 cursor-pointer items-center gap-2 px-3.5 py-1.5 text-sm font-bold uppercase tracking-wider transition-colors",
               active ? "bg-indigo-600 text-white" : "bg-white/[0.05] text-slate-200 hover:bg-white/10"
             )}
           >

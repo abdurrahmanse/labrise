@@ -20,7 +20,7 @@ export function SearchStatus({ isError, settled, isEmpty, hasNextPage, isFetchin
   return (
     <>
       {hasNextPage && (
-        <button type="button" onClick={onLoadMore} disabled={isFetchingNextPage} className="w-full cursor-pointer border-t border-white/15 px-4 py-3 text-sm font-bold text-indigo-400 hover:bg-white/[0.06] disabled:opacity-60">
+        <button type="button" onClick={onLoadMore} disabled={isFetchingNextPage} className="w-full cursor-pointer border-t border-white/15 px-4 py-2 text-sm font-bold text-indigo-400 hover:bg-white/[0.06] disabled:opacity-60">
           {isFetchingNextPage ? d.searching : `${d.loadMore} (${d.resultsFor(total)})`}
         </button>
       )}

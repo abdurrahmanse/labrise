@@ -7,7 +7,7 @@ import { getStepById } from "@/content/roadmap/steps";
 import { PageShell } from "@/shared/components/PageShell";
 import { buildMetadata } from "@/modules/seo";
 import { PageFallback } from "@/shared/components/PageFallback";
-import { notFoundTitles } from "@/content/text/site";
+import { navLabels, notFoundTitles } from "@/content/text/site";
 
 interface Props {
   params: Promise<{ level: string; step: string }>;
@@ -39,7 +39,7 @@ async function LevelStepPageContent({ params }: Props) {
       eyebrow={`Level 0${level.levelNumber} · Step ${step.stepNumber}`}
       title={step.shortTitle}
       lead={step.subtitle}
-      back={{ href: `/roadmap/${level.slug}`, label: `Level 0${level.levelNumber}` }}
+      trail={[{ href: "/", label: navLabels.home }, { href: "/roadmap", label: navLabels.roadmap }, { href: `/roadmap/${level.slug}`, label: `Level 0${level.levelNumber}` }, { href: "", label: step.shortTitle }]}
       prev={prev ? { href: `/roadmap/${level.slug}/${prev.id}`, label: prev.shortTitle } : undefined}
       next={next ? { href: `/roadmap/${level.slug}/${next.id}`, label: next.shortTitle } : undefined}
     >
