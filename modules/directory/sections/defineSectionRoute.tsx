@@ -1,7 +1,6 @@
-import { Suspense, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { PageFallback } from "@/shared/components/PageFallback";
 import { buildMetadata } from "@/modules/seo";
 
 interface SectionRouteConfig<E, V extends string> {
@@ -32,23 +31,16 @@ export function defineSectionRoute<E, V extends string>(config: SectionRouteConf
   async function generateMetadata({ params }: Params): Promise<Metadata> {
     const { slug, view } = await params;
     const entry = config.find(slug);
-    if (!entry || !isView(view)) return { title: "Not found" };
+    if (!entry || !isView(view)) return { title: "Not found", robots: { index: false, follow: false } };
     return buildMetadata({ ...config.meta(entry, view), path: `${config.basePath}/${slug}/${view}` });
   }
 
-  async function Content({ params }: Params) {
+  /** Params are read and checked before anything streams, so an unknown address answers 404 instead of an empty 200 page. */
+  async function Page({ params }: Params) {
     const { slug, view } = await params;
     const entry = config.find(slug);
     if (!entry || !isView(view)) notFound();
     return <>{config.render(entry, view)}</>;
-  }
-
-  function Page({ params }: Params) {
-    return (
-      <Suspense fallback={<PageFallback />}>
-        <Content params={params} />
-      </Suspense>
-    );
   }
 
   return { generateStaticParams, generateMetadata, Page };

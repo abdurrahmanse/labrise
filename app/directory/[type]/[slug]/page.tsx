@@ -1,8 +1,8 @@
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { countries, entryMeta, professors, providers, scholarships, universities } from "@/modules/directory/catalog";
-import { countrySlug, directoryTypeSchema, professorSlug, providerSlug, scholarshipSlug, universitySlug } from "@/modules/directory/contracts";
+import { countries, entryMeta, labs, professors, providers, scholarships, universities } from "@/modules/directory/catalog";
+import { countrySlug, directoryTypeSchema, labSlug, professorSlug, providerSlug, scholarshipSlug, universitySlug } from "@/modules/directory/contracts";
 import { DirectoryEntry } from "@/modules/directory/entry/DirectoryEntry";
 import { buildMetadata } from "@/modules/seo";
 import { PageFallback } from "@/shared/components/PageFallback";
@@ -18,27 +18,26 @@ export function generateStaticParams() {
     ...universities.map((u) => ({ type: "universities", slug: universitySlug(u) })),
     ...professors.map((p) => ({ type: "professors", slug: professorSlug(p) })),
     ...scholarships.map((s) => ({ type: "scholarships", slug: scholarshipSlug(s) })),
-    ...providers.map((p) => ({ type: "providers", slug: providerSlug(p) }))
+    ...providers.map((p) => ({ type: "providers", slug: providerSlug(p) })),
+    ...labs.map((l) => ({ type: "labs", slug: labSlug(l) }))
   ];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { type, slug } = await params;
   const meta = entryMeta(type, slug);
-  return meta ? buildMetadata({ ...meta, path: `/directory/${type}/${slug}` }) : { title: notFoundTitles.generic };
+  return meta ? buildMetadata({ ...meta, path: `/directory/${type}/${slug}` }) : { title: notFoundTitles.generic, robots: { index: false, follow: false } };
 }
 
-async function DirectoryDetailPageContent({ params }: Props) {
+/** Unknown addresses answer 404: the params are read and checked before anything streams, so the status is still open. */
+export default async function DirectoryDetailPage({ params }: Props) {
   const { type, slug } = await params;
   const parsed = directoryTypeSchema.safeParse(type);
-  if (!parsed.success) notFound();
-  return <DirectoryEntry type={parsed.data} slug={slug} />;
-}
+  if (!parsed.success || !entryMeta(type, slug)) notFound();
 
-export default function DirectoryDetailPage({ params }: Props) {
   return (
     <Suspense fallback={<PageFallback />}>
-      <DirectoryDetailPageContent params={params} />
+      <DirectoryEntry type={parsed.data} slug={slug} />
     </Suspense>
   );
 }

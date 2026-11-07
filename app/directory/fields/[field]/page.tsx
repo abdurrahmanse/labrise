@@ -13,7 +13,7 @@ export const generateStaticParams = () => fieldKeys.map((field) => ({ field }));
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { field } = await params;
   const info = fieldByKey(field);
-  if (!info) return { title: "Not found" };
+  if (!info) return { title: "Not found", robots: { index: false, follow: false } };
   return buildMetadata({ title: `${info.title}: topics, reading, professors and labs`, description: info.about, path: `/directory/fields/${field}` });
 }
 

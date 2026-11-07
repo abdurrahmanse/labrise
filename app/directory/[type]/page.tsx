@@ -20,7 +20,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { type } = await params;
   const entry = directoryTypes.find((t) => t.type === type);
-  if (!entry) return { title: notFoundTitles.directory };
+  if (!entry) return { title: notFoundTitles.directory, robots: { index: false, follow: false } };
   return buildMetadata({
     title: pageText.directoryType.metaTitle(entry.title),
     description: entry.lead,
