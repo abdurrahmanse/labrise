@@ -53,6 +53,8 @@ export const student = {
       { cells: ["Research proposal (3 pages)", "Ready", "Question, method, plan and why this lab"], href: "/guides/research-proposal", file: "research-proposal" },
       { cells: ["Transcripts and degrees", "Certified", "With the grading key and class rank"], href: "/guides/document-attestation", file: "transcript" },
       { cells: ["Grade context letter", "Certified", "States the 4.00 scale"], href: "/guides/grade-conversion", file: "grade-context-letter" },
+      { cells: ["Scholarship essay", "Ready", "One story with results and a plan"], href: "/guides/scholarship-essay", file: "scholarship-essay" },
+      { cells: ["Referee request email", "Sent", "Sent 8 weeks ahead with a deadline table"], href: "/guides/reference-letter", file: "referee-brief" },
       { cells: ["Three reference letters", "Sent", "Asked 8 weeks ahead with her CV and deadlines"], href: "/guides/reference-letter", file: "reference-letter" },
       { cells: ["IELTS report", "Sent", "Electronic score report to each university"], href: "/guides/ielts", file: "ielts-report" },
       { cells: ["Publication and code links", "Ready", "Preprint, repository and a short project page"], href: "/guides/github-portfolio" }

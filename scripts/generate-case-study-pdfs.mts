@@ -4,6 +4,8 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { createElement } from "react";
 import { StudentPortrait } from "../modules/case-study/components/StudentPortrait";
 import { student } from "../modules/case-study/data/profile";
+import { applicationPackage } from "../modules/case-study/data/package";
+import { scholarship } from "../modules/case-study/data/scholarship";
 
 // Builds the sample PDFs for the case study with Chrome's own PDF engine. Run: npm run generate:case-study
 // Every document is made up. Each page carries a SAMPLE watermark and a footer saying so.
@@ -36,7 +38,19 @@ const doc = (title: string, body: string) =>
 
 const who = `<div><h1>Tania Rahman</h1><p class="muted">MSc Computer Science · Computer vision for medical imaging<br>Dhaka, Bangladesh · tania.rahman@sample.invalid · github.com/sample-tania</p></div>`;
 
+const brief = applicationPackage.refereeBrief;
+
 const docs: Record<string, string> = {
+  "scholarship-essay": doc("Scholarship essay (sample)", `
+    <h1>Scholarship essay</h1><p class="muted">Tania Rahman · Fully funded PhD · Sample draft, 300 words</p>
+    <p>${scholarship.essay}</p>
+    <h2>Notes on the draft</h2><ul><li>One story with a result: a useful model from only a few hundred labelled images.</li><li>A clear plan for the PhD and for the years after the award.</li><li>Tied to the funder's goal of lasting benefit, in her own words.</li></ul>`),
+
+  "referee-brief": doc("Referee request email (sample)", `
+    <h1>${brief.subject}</h1><p class="muted">To: ${brief.to} · Sent: ${brief.sent}</p>
+    ${brief.body.map((l) => `<p>${l}</p>`).join("")}
+    <h2>Attachments</h2><ul><li>Academic CV (PDF)</li><li>Statement of purpose draft</li><li>Transcript</li><li>Deadline table: programme, date, how to submit the letter</li></ul>`),
+
   "academic-cv": doc("Academic CV, Tania Rahman (sample)", `
     <div class="head">${who}${portrait}</div>
     <h2>Education</h2>
