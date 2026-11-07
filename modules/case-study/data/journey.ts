@@ -31,7 +31,7 @@ export const journey = {
     { monthsBefore: 5, title: "Submitted early", detail: "A week before each deadline, with receipts saved.", output: "Submission receipts", guide: "/guides/application-portals", guideLabel: "Application portals" },
     { monthsBefore: 4, title: "Interviews", detail: "A call with two professors and a panel interview.", output: "Interview notes", guide: "/guides/interview-prep", guideLabel: "Interview prep" },
     { monthsBefore: 3, title: "Compared offers and accepted", detail: "Used a written comparison and replied before the date.", output: "Signed acceptance", guide: "/guides/offer-comparison", guideLabel: "Compare offers" },
-    { monthsBefore: 2, title: "Visa and housing", detail: "Booked the visa slot the week she accepted.", output: "Visa appointment, first-month housing", guide: "/guides/visa-interview", guideLabel: "Visa guide" }
+    { monthsBefore: 2, title: "Embassy appointment, visa interview and housing", detail: "Booked the slot the week she accepted, passed a short embassy interview and arranged first-month housing.", output: "Visa approved, first-month housing", guide: "/guides/visa-interview", guideLabel: "Visa guide" }
   ] satisfies Step[],
   interview: [
     { q: "Explain your thesis in two minutes.", a: "Problem, method, one result with a number, and the open question." },
@@ -67,6 +67,45 @@ export const journey = {
     "Funding is not part of the offer, so scholarship and funding checks come before the university shortlist.",
     "Everything else stays the same: read the call, certify documents early, apply early, compare offers in writing."
   ],
+  visa: {
+    steps: [
+      { title: "Accepted the offer in writing", detail: "The signed acceptance and the offer letter are the base of the visa file." },
+      { title: "Read the embassy's own page", detail: "Checked the visa type, forms, fee, photo rules and the exact document list on the official embassy site, never a forum." },
+      { title: "Booked the appointment early", detail: "Slots can be weeks away, so she booked the same week she accepted and kept the confirmation." },
+      { title: "Built the visa file", detail: "Collected every document in the order the embassy lists them, with originals and copies." },
+      { title: "Biometrics and submission", detail: "Attended on time, gave fingerprints and a photo, paid only the official fee and kept the receipt." },
+      { title: "Embassy interview", detail: "A short interview about her study plan, funding and plans after the degree." },
+      { title: "Decision and travel", detail: "Checked the visa details for errors on arrival, then booked the flight only after approval." }
+    ],
+    documents: {
+      head: ["Document", "Why the embassy wants it", "Status"],
+      rows: [
+        { cells: ["Valid passport", "Identity, with enough validity left", "Ready"] },
+        { cells: ["Offer or admission letter", "Proves the place and the start date", "Ready"], file: "offer-letter" },
+        { cells: ["Funding proof", "Contract or scholarship letter showing the costs are covered", "Ready"] },
+        { cells: ["Degree and transcripts", "Proves the qualification", "Certified"], file: "transcript" },
+        { cells: ["Language certificate", "Proves she can study in the course language", "Ready"], file: "ielts-report" },
+        { cells: ["Health insurance proof", "Cover from the first day, if the embassy asks", "Ready"], href: "/guides/housing-and-insurance" },
+        { cells: ["Visa form and photos", "Completed online and printed exactly as instructed", "Ready"] },
+        { cells: ["Accommodation or temporary address", "A first address for the first weeks", "Ready"], href: "/guides/housing-and-insurance" }
+      ],
+      note: "The exact list changes by embassy and year. Use only the embassy's current page and ask them if anything is unclear."
+    } satisfies Table,
+    interview: [
+      { q: "Why do you want to study in this country?", a: "Named the group, the topic and the data access, and said why her project needs this lab." },
+      { q: "Who is paying for your stay?", a: "The salaried contract, with the offer letter and the scholarship as a second source." },
+      { q: "What will you do after the degree?", a: "Honest and specific: finish the PhD, publish, then work in research, possibly with partners at home." },
+      { q: "Tell me about your research.", a: "Two minutes in plain words: problem, method and one result." },
+      { q: "Where will you live?", a: "University housing request plus a temporary address for the first weeks." }
+    ],
+    tips: [
+      "Answer briefly and truthfully in your own words, and do not memorise a script.",
+      "Bring every original, in the same order as the embassy list.",
+      "Never submit a document you cannot explain, and never use an agent's invented papers.",
+      "Arrive early, dress simply and stay calm if you are asked to wait.",
+      "If refused, read the reason in writing and ask the university whether a new attempt makes sense."
+    ]
+  },
   arrival: [
     "Visa slot booked the week she accepted; documents kept in one folder.",
     "First-month budget set aside before the first salary.",

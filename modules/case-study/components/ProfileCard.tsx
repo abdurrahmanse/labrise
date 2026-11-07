@@ -11,10 +11,7 @@ export function ProfileCard() {
     <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">
       <Surface tone="panel" depth="md" padding="lg" className="space-y-4">
         <div className="flex items-center gap-4">
-          <div className="space-y-1 text-center">
-            <StudentPortrait size={88} className="border-2 border-white/40" />
-            <p className="font-mono text-[10px] uppercase tracking-wider text-slate-500">{t.photoNote}</p>
-          </div>
+          <StudentPortrait size={88} className="shrink-0 border-2 border-white/40" />
           <div className="min-w-0">
             <h2 className="text-xl font-bold text-white">{student.name}</h2>
             <p className="font-sans text-sm text-slate-400">{student.location}</p>

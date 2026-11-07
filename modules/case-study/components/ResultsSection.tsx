@@ -7,7 +7,7 @@ import { Subheading } from "./Subheading";
 export function ResultsSection() {
   return (
     <div className="space-y-6">
-      <Subheading title="Interview questions she prepared">
+      <Subheading title="University interview: questions she prepared">
         <dl className="space-y-2">
           {journey.interview.map((i) => (
             <div key={i.q} className="border border-white/20 p-3 font-sans text-sm">

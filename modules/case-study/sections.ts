@@ -32,6 +32,6 @@ export const SECTIONS: CaseSection[] = [
   { id: "effort", label: "Cost and effort", title: "What it cost and how long it took", lead: "Indicative costs and hours. Fees change, so check each official page.", Body: EffortSection },
   { id: "plan", label: "Plan", title: "Her plan, month by month", lead: "Seven phases over 14 months. Each step shows what she finished and the guide she followed.", Body: PlanTimeline },
   { id: "results", label: "Results", title: "Interviews, results and the decision", lead: "Offers, silence and a rejection. Real journeys are mixed.", Body: ResultsSection },
-  { id: "arrival", label: "Visa and arrival", title: "Visa, money and arrival", lead: "What she did between accepting and landing.", Body: ArrivalSection },
+  { id: "arrival", label: "Visa and embassy", title: "Embassy process, visa interview and arrival", lead: "From the signed acceptance to the first week abroad: appointment, documents, interview, money and housing.", Body: ArrivalSection },
   { id: "lessons", label: "Lessons", title: "What to copy", lead: "The habits behind the result, and your next steps.", Body: LessonsSection }
 ];
