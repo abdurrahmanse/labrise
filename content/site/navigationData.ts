@@ -108,28 +108,52 @@ export const moreLinksData: NavLinkItem[] = [
   { href: "/contact", label: "Contact", iconName: "" }
 ];
 
-/** Every page, used by the simple footer. */
-export const footerLinksData: NavLinkItem[] = [
-  { href: "/steps", label: "6 Steps", iconName: "" },
-  { href: "/profile", label: "Profile", iconName: "" },
-  { href: "/apply", label: "How to apply", iconName: "" },
-  { href: "/guides", label: "Guides", iconName: "" },
-  { href: "/directory", label: "Directory", iconName: "" },
-  { href: "/countries", label: "Countries", iconName: "" },
-  { href: "/scholarships", label: "Scholarships", iconName: "" },
-  { href: "/professors", label: "Professors", iconName: "" },
-  { href: "/documents", label: "Documents", iconName: "" },
-  { href: "/faqs", label: "FAQs", iconName: "" },
-  { href: "/problems", label: "Problems", iconName: "" },
-  { href: "/planner", label: "Planner", iconName: "" },
-  { href: "/case-study", label: "Case study", iconName: "" },
-  { href: "/saved", label: "Saved", iconName: "" },
-  { href: "/glossary", label: "Glossary", iconName: "" },
-  { href: "/about", label: "About", iconName: "" },
-  { href: "/disclaimer", label: "Disclaimer", iconName: "" },
-  { href: "/privacy", label: "Privacy", iconName: "" },
-  { href: "/support", label: "Support", iconName: "" },
-  { href: "/contact", label: "Contact", iconName: "" }
+export interface FooterGroup { title: string; links: NavLinkItem[] }
+
+/** Every page, grouped by what a visitor wants to do. The footer shows these as columns. */
+export const footerGroupsData: FooterGroup[] = [
+  {
+    title: "Learn",
+    links: [
+      { href: "/steps", label: "6 Steps", iconName: "" },
+      { href: "/roadmap", label: "Roadmap", iconName: "" },
+      { href: "/guides", label: "Guides", iconName: "" },
+      { href: "/documents", label: "Documents", iconName: "" },
+      { href: "/glossary", label: "Glossary", iconName: "" },
+      { href: "/faqs", label: "FAQs", iconName: "" },
+      { href: "/problems", label: "Problems", iconName: "" }
+    ]
+  },
+  {
+    title: "Find",
+    links: [
+      { href: "/directory", label: "Directory", iconName: "" },
+      { href: "/countries", label: "Countries", iconName: "" },
+      { href: "/scholarships", label: "Scholarships", iconName: "" },
+      { href: "/professors", label: "Professors", iconName: "" },
+      { href: "/directory/labs", label: "Labs and groups", iconName: "" }
+    ]
+  },
+  {
+    title: "Apply",
+    links: [
+      { href: "/apply", label: "How to apply", iconName: "" },
+      { href: "/planner", label: "Planner", iconName: "" },
+      { href: "/case-study", label: "Case study", iconName: "" },
+      { href: "/profile", label: "Profile checklist", iconName: "" },
+      { href: "/saved", label: "Saved", iconName: "" }
+    ]
+  },
+  {
+    title: "About",
+    links: [
+      { href: "/about", label: "About", iconName: "" },
+      { href: "/contact", label: "Contact", iconName: "" },
+      { href: "/support", label: "Support", iconName: "" },
+      { href: "/privacy", label: "Privacy", iconName: "" },
+      { href: "/disclaimer", label: "Disclaimer", iconName: "" }
+    ]
+  }
 ];
 
 export const footerData = {

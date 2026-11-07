@@ -1,34 +1,26 @@
-import React from "react";
-import Link from "next/link";
+import { footerGroupsData } from "@/content/site/navigationData";
 import { commonText } from "@/content/text/common";
-import { footerLinksData } from "@/content/site/navigationData";
-import { IconFor } from "@/shared/components/IconFor";
-import { Logo } from "@/shared/ui/Logo";
+import { BackToTop } from "./BackToTop";
+import { FooterBrand } from "./FooterBrand";
+import { FooterColumn } from "./FooterColumn";
 
+/** Site footer: brand and call to action, four link columns, and a bottom bar with the data note. */
 export function Footer() {
   return (
-    <footer
-      role="contentinfo"
-      className="mt-auto relative z-10 border-t-2 border-white/80 bg-canvas-base/70 backdrop-blur-xl"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-        <Link href="/" aria-label={commonText.brand.homeLabel} className="inline-flex items-center gap-2.5 font-bold text-lg text-white tracking-wider">
-          <Logo size={28} />
-          <span>
-            {commonText.brand.first}<span className="text-indigo-400">{commonText.brand.second}</span>
-          </span>
-        </Link>
-
-        <nav aria-label={commonText.header.footerNav} className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
-          {footerLinksData.map((l) => (
-              <Link key={l.href} href={l.href} className="inline-flex items-center gap-1.5 text-slate-400 hover:text-indigo-300">
-                <IconFor text={l.label} className="h-4 w-4" />
-                {l.label}
-              </Link>
-          ))}
-        </nav>
-
-        <p className="font-mono text-xs text-slate-500">{commonText.footer.tagline}</p>
+    <footer role="contentinfo" className="relative z-10 mt-auto border-t-2 border-white/80 bg-canvas-base/70 backdrop-blur-xl">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-10 px-4 py-12 sm:px-6 md:grid-cols-4 lg:grid-cols-[1.6fr_repeat(4,minmax(0,1fr))] lg:px-8">
+        <div className="col-span-2 md:col-span-4 lg:col-span-1">
+          <FooterBrand />
+        </div>
+        {footerGroupsData.map((group) => (
+          <FooterColumn key={group.title} group={group} />
+        ))}
+      </div>
+      <div className="border-t border-white/15">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-4 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+          <p className="font-mono text-xs text-slate-500">{commonText.brand.first}{commonText.brand.second} · {commonText.footer.tagline} · {commonText.footer.note}</p>
+          <BackToTop />
+        </div>
       </div>
     </footer>
   );

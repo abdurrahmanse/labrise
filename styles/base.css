@@ -44,9 +44,11 @@ body {
   text-size-adjust: 100%;
 }
 
+/* Selected text swaps the two theme colours, so it stands out in both light and dark mode. */
 ::selection {
-  background: #000000;
-  color: #ffffff;
+  background: var(--pure-fg);
+  color: var(--pure-bg);
+  text-shadow: none;
 }
 
 /* ───────────────────────────────────────────────────────────
@@ -178,23 +180,38 @@ samp,
   font-family: var(--font-mono), monospace !important;
 }
 
-/* Custom Sleek Scrollbar */
+/* Scrollbar: a quiet track and a clear thumb made from the theme colours, so it is visible in light and dark mode. */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--pure-fg) 55%, transparent) color-mix(in srgb, var(--pure-fg) 10%, transparent);
+}
+
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 12px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: color-mix(in srgb, var(--pure-fg) 8%, var(--pure-bg));
+  border-left: 1px solid color-mix(in srgb, var(--pure-fg) 18%, transparent);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #000000;
-  border-radius: 0;
+  background: color-mix(in srgb, var(--pure-fg) 55%, transparent);
+  border: 3px solid transparent;
+  background-clip: content-box;
+  border-radius: 999px;
+  min-height: 40px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #000000;
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+  background: var(--pure-fg);
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 /* Native Range Slider Custom Styling */

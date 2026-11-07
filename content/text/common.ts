@@ -2,7 +2,7 @@ import { brand } from "@/content/site/brand";
 // Text used on many pages. Change wording here; components only read it.
 export const commonText = {
   brand: { first: brand.first, second: brand.second, homeLabel: `${brand.name} home` },
-  footer: { tagline: "Free and open", backToTop: "Back to top", backToTopLabel: "Back to top of page", status: "Live Open Access" },
+  footer: { tagline: "Free and open", blurb: "A free guide to fully funded Master's and PhD study. Always confirm deadlines, amounts and rules on the official page before you apply.", cta: "Start here", note: "Information only. Not an official source.", backToTop: "Back to top", backToTopLabel: "Back to top of page", status: "Live Open Access" },
   theme: { toggleLabel: "Toggle dark mode" },
   header: {
     mobileDrawerLabel: "Mobile Navigation Drawer",

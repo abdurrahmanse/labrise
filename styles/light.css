@@ -42,19 +42,6 @@
   --color-rose-950: #fff1f2;
 }
 
-.light ::selection {
-  background: #000000;
-  color: #ffffff;
-}
-
-.light ::-webkit-scrollbar-track {
-  background: #ffffff;
-}
-
-.light ::-webkit-scrollbar-thumb {
-  background: #ffffff;
-}
-
 /* Bright accent text is too light on white: use the deeper shades */
 .light .text-indigo-200,
 .light .text-indigo-300,
