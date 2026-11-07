@@ -12,6 +12,7 @@ export function LessonsSection() {
         <Subheading title="What to copy"><BulletList items={journey.lessons} /></Subheading>
         <Subheading title="What she avoided"><BulletList items={journey.avoided} /></Subheading>
       </div>
+      <Subheading title="If you are applying for a Master's instead"><BulletList items={journey.masters} /></Subheading>
       <Subheading title={t.cta.title}>
         <div className="flex flex-wrap gap-3">
           <Button href="/apply">{t.cta.apply}</Button>

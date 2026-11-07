@@ -9,8 +9,8 @@ const stepsOf = (phase: Phase): Step[] => journey.timeline.filter((s) => s.month
 
 function PlanStep({ step }: { step: Step }) {
   return (
-    <li className="relative pl-12">
-      <span className="absolute left-0 top-0 flex h-9 w-9 items-center justify-center border-2 border-white/60 bg-canvas-base font-mono text-xs font-bold text-white" aria-hidden>
+    <li className="relative pl-14">
+      <span className="absolute left-0 top-0 flex h-9 w-11 items-center justify-center border-2 border-white/60 bg-canvas-base whitespace-nowrap font-mono text-xs font-bold text-white" aria-hidden>
         M-{step.monthsBefore}
       </span>
       <div className="space-y-2 border-2 border-white/20 bg-white/[0.03] p-4">
@@ -40,7 +40,7 @@ export function PlanTimeline() {
             </h3>
             <Label>{phase.from === phase.to ? `Month ${phase.from}` : `Months ${phase.from} to ${phase.to}`} · {phase.summary}</Label>
           </header>
-          <ol className="relative space-y-3 before:absolute before:bottom-0 before:left-[17px] before:top-0 before:w-0.5 before:bg-white/25">
+          <ol className="relative space-y-3 before:absolute before:bottom-0 before:left-[21px] before:top-0 before:w-0.5 before:bg-white/25">
             {stepsOf(phase).map((step) => <PlanStep key={step.title} step={step} />)}
           </ol>
         </section>

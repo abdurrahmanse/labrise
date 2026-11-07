@@ -45,6 +45,39 @@ export const outreach = {
     summary: "Professor Keller replied on day 15: a funded post was open, and he asked for a 30-minute call and a two-page proposal.",
     next: "She sent the proposal the same week, then prepared for the call by rereading his last three papers."
   },
+  accept: {
+    subject: "Acceptance: doctoral position starting 1 September 2027",
+    to: "Prof. M. Keller (fictional)",
+    sent: "Two days after the offer",
+    body: [
+      "Dear Professor Keller,",
+      "Thank you very much for the offer of the doctoral position. I am delighted to accept it.",
+      "I confirm the start date of 1 September 2027 and the 36-month contract as described in your letter. I will send my certified degree documents this week and begin the visa process now.",
+      "Could you let me know who in your group can help with housing and registration for new international students?",
+      "With many thanks, Tania Rahman"
+    ],
+    notes: [
+      { part: "In writing", why: "An acceptance by email creates a record before any call or contract." },
+      { part: "Terms repeated", why: "Restating dates and contract length catches misunderstandings early." },
+      { part: "Next steps", why: "Names her actions and asks one practical question." }
+    ]
+  } satisfies EmailMessage,
+  decline: {
+    subject: "Declining the offer: thank you",
+    to: "Prof. L. Brandt (fictional)",
+    sent: "Same day she accepted",
+    body: [
+      "Dear Professor Brandt,",
+      "Thank you for the generous offer and for the time you gave me in our call. After careful thought I have accepted another position whose topic is closer to my thesis, so I must decline.",
+      "I enjoyed learning about your group's work and hope our paths cross again at a conference. Thank you for your support.",
+      "Kind regards, Tania Rahman"
+    ],
+    notes: [
+      { part: "Prompt", why: "Declining quickly frees the place for another student." },
+      { part: "Honest and short", why: "A brief true reason is enough, without criticising anyone." },
+      { part: "Door open", why: "The academic world is small; leave on good terms." }
+    ]
+  } satisfies EmailMessage,
   tracker: {
     head: ["Professor", "University", "Sent", "Reply", "Outcome"],
     rows: [

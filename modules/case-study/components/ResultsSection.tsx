@@ -1,4 +1,6 @@
 import { journey } from "../data/journey";
+import { outreach } from "../data/outreach";
+import { EmailCard } from "./EmailCard";
 import { DataTable } from "./DataTable";
 import { Subheading } from "./Subheading";
 
@@ -17,6 +19,8 @@ export function ResultsSection() {
       </Subheading>
       <Subheading title="Every application and its result"><DataTable table={journey.results} /></Subheading>
       <Subheading title="How she decided"><DataTable table={journey.decision} /></Subheading>
+      <Subheading title="Accepting in writing"><EmailCard email={outreach.accept} /></Subheading>
+      <Subheading title="Declining politely"><EmailCard email={outreach.decline} /></Subheading>
     </div>
   );
 }

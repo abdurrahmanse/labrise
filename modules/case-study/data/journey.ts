@@ -59,6 +59,14 @@ export const journey = {
       { cells: ["Decision", "Accepted", "Declined politely"] }
     ]
   } satisfies Table,
+  masters: [
+    "A supervisor is usually not needed first. Programmes admit through a portal, so skip the professor emails.",
+    "Grades, language score and the statement of purpose carry more weight, so start those early.",
+    "Scholarship deadlines come earlier than admission deadlines. Check each call the day you find it.",
+    "The scholarship essay becomes the main document: one story, results and a clear plan after the award.",
+    "Funding is not part of the offer, so scholarship and funding checks come before the university shortlist.",
+    "Everything else stays the same: read the call, certify documents early, apply early, compare offers in writing."
+  ],
   arrival: [
     "Visa slot booked the week she accepted; documents kept in one folder.",
     "First-month budget set aside before the first salary.",
