@@ -25,7 +25,7 @@ interface PlannerState {
   applications: PlannedApplication[];
   setIntake: (intake: string) => void;
   add: (item: Omit<PlannedApplication, "id" | "status" | "note">) => void;
-  update: (id: string, patch: Partial<Pick<PlannedApplication, "status" | "note">>) => void;
+  update: (id: string, patch: Partial<Pick<PlannedApplication, "status" | "note" | "deadline">>) => void;
   remove: (id: string) => void;
 }
 

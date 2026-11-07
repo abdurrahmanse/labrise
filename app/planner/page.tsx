@@ -1,3 +1,4 @@
+import { StepGrid } from "@/shared/components/StepGrid";
 import { Block } from "@/shared/components/Block";
 import { PageShell } from "@/shared/components/PageShell";
 import { ApplicationForm } from "@/modules/planner/components/ApplicationForm";
@@ -12,7 +13,8 @@ export const metadata = buildMetadata({ title: t.title, description: t.descripti
 
 export default function PlannerPage() {
   return (
-    <PageShell eyebrow={t.eyebrow} title={t.heading} lead={t.lead} back={{ href: "/", label: commonText.actions.home }}>
+    <PageShell eyebrow={t.eyebrow} title={t.heading} lead={t.lead} back={{ href: "/", label: commonText.actions.home }} next={{ href: "/apply", label: t.next }}>
+      <StepGrid steps={[...t.howItWorks]} />
       <p className="font-mono text-xs text-slate-400">{t.privacy}</p>
       <Block title={t.timeline.title}>
         <TimelineBuilder />

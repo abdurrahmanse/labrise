@@ -15,6 +15,29 @@ export const applyHubText = {
     university: { who: "For a Master's or PhD place at a university", highlights: ["Same steps for almost every university", "A professor may need to agree first", "Funding is stated in the offer"] },
     scholarship: { who: "For awards such as Commonwealth, DAAD, Chevening or Fulbright", highlights: ["Check eligibility before anything else", "Rules and routes differ for each provider", "Deadlines are often earlier"] }
   },
+  overall: { title: "Your progress across both routes", saved: "Saved in this browser only.", resume: (route: string) => `Continue: ${route}` },
+  before: {
+    title: "Before you start",
+    lead: "Ten minutes here saves weeks later.",
+    items: [
+      { title: "Choose Master's or PhD", meta: "Pick the right route", href: "/guides/master-vs-phd" },
+      { title: "Fix your research area", meta: "Used in every email", href: "/guides/research-area" },
+      { title: "Check language and tests", meta: "IELTS, GRE, waivers", href: "/guides/english-and-gre" },
+      { title: "Plan your budget", meta: "Costs before arrival", href: "/guides/budget-planning" },
+      { title: "Applying from Bangladesh", meta: "Grades and attestation", href: "/guides/bangladesh-applicants" },
+      { title: "Learn the scam signs", meta: "Never pay for awards", href: "/guides/scholarship-scams" }
+    ]
+  },
+  find: {
+    title: "Find what to apply to",
+    lead: "Build your shortlist from the directory, then add each deadline to the planner.",
+    items: [
+      { title: "Scholarships", meta: "Funded awards", href: "/directory/scholarships" },
+      { title: "Universities", meta: "Programmes by country", href: "/directory/universities" },
+      { title: "Professors", meta: "Supervisors by area", href: "/directory/professors" },
+      { title: "Labs and groups", meta: "Research groups", href: "/directory/labs" }
+    ]
+  },
   steps: (n: number) => `${n} steps`,
   start: "Start this route",
   continue: "Continue",

@@ -2,6 +2,8 @@ import { CalendarCheck, FileText } from "lucide-react";
 import { applyHubText as t, phaseIcons } from "@/content/text/apply";
 import { commonText } from "@/content/text/common";
 import { navLabels } from "@/content/text/site";
+import { OverallProgress } from "@/modules/apply/components/OverallProgress";
+import { LinkTile, LinkTileGrid } from "@/shared/components/LinkTile";
 import { CompareRoutes } from "@/modules/apply/components/CompareRoutes";
 import { RouteCards } from "@/modules/apply/components/RouteCards";
 import { buildMetadata } from "@/modules/seo";
@@ -22,6 +24,15 @@ export default function ApplyPage() {
       back={{ href: "/", label: commonText.actions.home }}
       next={{ href: "/directory", label: navLabels.directory }}
     >
+      <OverallProgress />
+
+      <Block title={t.before.title}>
+        <p className="font-sans text-sm text-slate-400">{t.before.lead}</p>
+        <LinkTileGrid>
+          {t.before.items.map((item) => <LinkTile key={item.href} {...item} />)}
+        </LinkTileGrid>
+      </Block>
+
       <Block title={t.routes.title}>
         <RouteCards />
       </Block>
@@ -44,6 +55,13 @@ export default function ApplyPage() {
 
       <Block title={t.compare.title}>
         <CompareRoutes />
+      </Block>
+
+      <Block title={t.find.title}>
+        <p className="font-sans text-sm text-slate-400">{t.find.lead}</p>
+        <LinkTileGrid columns="sm:grid-cols-2 lg:grid-cols-4">
+          {t.find.items.map((item) => <LinkTile key={item.href} {...item} />)}
+        </LinkTileGrid>
       </Block>
 
       <Block title={t.together.title}>

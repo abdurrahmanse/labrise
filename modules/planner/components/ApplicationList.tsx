@@ -1,95 +1,53 @@
 "use client";
 
-import Link from "next/link";
-import { CalendarClock, Download, ExternalLink, Trash2 } from "lucide-react";
+import { useState } from "react";
+import { CalendarPlus, Download } from "lucide-react";
 import { plannerText as t } from "@/content/text/planner";
+import { Button } from "@/shared/ui/Button";
 import { EmptyState } from "@/shared/components/EmptyState";
+import { FilterTabs, type FilterOption } from "@/shared/components/FilterTabs";
 import { useMounted } from "@/shared/hooks/useMounted";
-import { cn } from "@/shared/utils/cn";
 import { applicationsToCsv } from "../utils/csv";
-import { daysUntil } from "../utils/dates";
-import { STATUS_KEYS, usePlanner, type ApplicationStatus } from "../store/usePlanner";
-import { surface } from "@/shared/components/Surface";
-import { actionLinkClass } from "@/shared/components/linkStyles";
+import { downloadText } from "../utils/download";
+import { applicationsToIcs } from "../utils/ics";
+import { matchesFilter, type PlannerFilter } from "../utils/urgency";
+import { usePlanner } from "../store/usePlanner";
+import { ApplicationCard } from "./ApplicationCard";
 
-const STATUS_STYLE: Record<ApplicationStatus, string> = {
-  planning: "text-slate-300",
-  preparing: "text-amber-400",
-  submitted: "text-indigo-400",
-  offer: "text-emerald-400",
-  rejected: "text-rose-400"
-};
+const FILTERS: PlannerFilter[] = ["all", "open", "submitted", "offer", "rejected"];
 
-function dueLabel(days: number) {
-  if (days === 0) return t.list.today;
-  return days < 0 ? t.list.overdue(-days) : t.list.left(days);
-}
-
-function download(csv: string) {
-  const url = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "applications.csv";
-  a.click();
-  URL.revokeObjectURL(url);
-}
-
+/** Saved applications, nearest deadline first, with a status filter and downloads for CSV and calendar. */
 export function ApplicationList() {
   const mounted = useMounted();
   const applications = usePlanner((s) => s.applications);
-  const update = usePlanner((s) => s.update);
-  const remove = usePlanner((s) => s.remove);
+  const [filter, setFilter] = useState<PlannerFilter>("all");
 
   // Saved data and today's date exist only in the browser.
   if (!mounted) return null;
   if (applications.length === 0) return <EmptyState title={t.list.empty} />;
 
   const sorted = [...applications].sort((a, b) => a.deadline.localeCompare(b.deadline));
+  const visible = sorted.filter((a) => matchesFilter(a, filter));
+  const options: FilterOption<PlannerFilter>[] = FILTERS.map((f) => ({ value: f, label: `${t.filters[f]} (${sorted.filter((a) => matchesFilter(a, f)).length})` }));
 
   return (
     <div className="space-y-4">
-      <button type="button" onClick={() => download(applicationsToCsv(sorted))} className="inline-flex cursor-pointer items-center gap-2 border-2 border-white/40 bg-white/[0.04] px-4 py-2 text-sm font-bold uppercase tracking-wider text-slate-100 hover:border-indigo-400 hover:text-indigo-300">
-        <Download className="h-4 w-4" aria-hidden /> {t.list.export}
-      </button>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <FilterTabs options={options} value={filter} onChange={setFilter} label={t.filters.label} />
+        <div className="flex flex-wrap gap-2">
+          <Button variant="secondary" onClick={() => downloadText("applications.ics", applicationsToIcs(sorted), "text/calendar")} leftIcon={<CalendarPlus className="h-4 w-4" aria-hidden />}>{t.calendar.all}</Button>
+          <Button variant="secondary" onClick={() => downloadText("applications.csv", applicationsToCsv(sorted), "text/csv")} leftIcon={<Download className="h-4 w-4" aria-hidden />}>{t.list.export}</Button>
+        </div>
+      </div>
+      <p className="font-sans text-sm text-slate-400">{t.calendar.hint}</p>
 
-      <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        {sorted.map((a) => {
-          const days = daysUntil(a.deadline);
-          const closed = a.status === "submitted" || a.status === "offer" || a.status === "rejected";
-          return (
-            <li key={a.id} className={surface({ tone: "glass", depth: "soft", padding: "lg", className: "flex flex-col gap-3" })}>
-              <div className="flex items-start justify-between gap-3">
-                <div className="min-w-0">
-                  <p className="font-mono text-xs uppercase tracking-wider text-indigo-300">{t.form.kinds[a.kind]}</p>
-                  <h3 className="text-xl font-bold text-white">{a.name}</h3>
-                </div>
-                <button type="button" onClick={() => remove(a.id)} aria-label={t.list.remove} className="cursor-pointer text-slate-500 hover:text-rose-400">
-                  <Trash2 className="h-5 w-5" aria-hidden />
-                </button>
-              </div>
-
-              <p className={cn("inline-flex items-center gap-2 font-bold", closed ? "text-slate-400" : days < 0 ? "text-rose-400" : days <= 14 ? "text-amber-400" : "text-slate-100")}>
-                <CalendarClock className="h-4 w-4" aria-hidden />
-                {a.deadline} · {dueLabel(days)}
-              </p>
-
-              <select aria-label={t.list.statusLabel} value={a.status} onChange={(e) => update(a.id, { status: e.target.value as ApplicationStatus })} className={cn("w-fit cursor-pointer bg-white/[0.05] px-2 py-1.5 text-sm font-bold outline-none", STATUS_STYLE[a.status])}>
-                {STATUS_KEYS.map((k) => (
-                  <option key={k} value={k}>{t.statuses[k]}</option>
-                ))}
-              </select>
-
-              <textarea aria-label={t.list.noteLabel} value={a.note} onChange={(e) => update(a.id, { note: e.target.value })} placeholder={t.list.notePlaceholder} rows={2} className="w-full resize-y bg-white/[0.05] p-3 text-slate-100 placeholder-slate-500 outline-none focus:ring-2 focus:ring-indigo-400/50" />
-
-              {a.href && (
-                <Link href={a.href} className={`inline-flex w-fit items-center gap-1.5 text-sm ${actionLinkClass}`}>
-                  {t.list.openEntry} <ExternalLink className="h-4 w-4" aria-hidden />
-                </Link>
-              )}
-            </li>
-          );
-        })}
-      </ul>
+      {visible.length === 0 ? (
+        <EmptyState title={t.filters.emptyFilter} hint={t.filters.emptyHint} />
+      ) : (
+        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          {visible.map((a) => <ApplicationCard key={a.id} application={a} />)}
+        </ul>
+      )}
     </div>
   );
 }

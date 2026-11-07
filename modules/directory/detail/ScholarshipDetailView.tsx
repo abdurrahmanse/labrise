@@ -56,7 +56,7 @@ export function ScholarshipDetailView({ scholarship }: { scholarship: Scholarshi
           {provider && <ScholarshipProviderBlock provider={provider} />}
           <ScholarshipRelated scholarship={scholarship} />
         </div>
-        <ScholarshipSidebar slug={slug} checklist={applicationChecklist(provider)} />
+        <ScholarshipSidebar slug={slug} name={scholarship.name} checklist={applicationChecklist(provider)} />
       </div>
     </PageShell>
   );

@@ -1,34 +1,52 @@
 "use client";
 
+import Link from "next/link";
+import { AlertTriangle, CalendarClock, ClipboardList, Hourglass, Send } from "lucide-react";
 import { plannerText as t } from "@/content/text/planner";
+import { StatTiles } from "@/shared/components/StatTiles";
+import { Surface } from "@/shared/components/Surface";
+import { Label } from "@/shared/components/Text";
+import { actionLinkClass } from "@/shared/components/linkStyles";
 import { useMounted } from "@/shared/hooks/useMounted";
 import { daysUntil } from "../utils/dates";
+import { plannerNumbers } from "../utils/urgency";
 import { usePlanner } from "../store/usePlanner";
-import { surface } from "@/shared/components/Surface";
+import { dueLabel } from "./dueLabel";
 
+/** The numbers that matter first: what is overdue, what is due soon and which deadline comes next. */
 export function PlannerSummary() {
   const mounted = useMounted();
   const applications = usePlanner((s) => s.applications);
   if (!mounted) return null;
 
-  const open = applications.filter((a) => a.status === "planning" || a.status === "preparing");
-  const next = open.filter((a) => daysUntil(a.deadline) >= 0).sort((a, b) => a.deadline.localeCompare(b.deadline))[0];
-
-  const tiles = [
-    { label: t.summary.total, value: String(applications.length) },
-    { label: t.summary.submitted, value: String(applications.filter((a) => a.status === "submitted").length) },
-    { label: t.summary.offers, value: String(applications.filter((a) => a.status === "offer").length) },
-    { label: t.summary.next, value: next ? `${next.deadline}` : t.summary.none }
-  ];
+  const n = plannerNumbers(applications);
 
   return (
-    <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-      {tiles.map((tile) => (
-        <div key={tile.label} className={surface({ tone: "glass", depth: "sm", padding: "md" })}>
-          <div className="text-2xl font-bold text-white">{tile.value}</div>
-          <div className="font-mono text-xs uppercase tracking-wider text-slate-400">{tile.label}</div>
+    <div className="space-y-4">
+      <Surface tone="panel" depth="sm" padding="lg" className="flex flex-wrap items-center justify-between gap-4">
+        <div className="min-w-0">
+          <Label>{t.summary.nextLead}</Label>
+          {n.next ? (
+            <>
+              <p className="text-xl font-bold text-white">{n.next.name}</p>
+              <p className="inline-flex items-center gap-2 font-sans text-slate-300">
+                <CalendarClock className="h-4 w-4" aria-hidden /> {n.next.deadline} · {dueLabel(daysUntil(n.next.deadline))}
+              </p>
+            </>
+          ) : (
+            <p className="font-sans text-slate-300">{t.summary.allClear}</p>
+          )}
         </div>
-      ))}
+        {n.next?.href && <Link href={n.next.href} className={`text-sm ${actionLinkClass}`}>{t.summary.nextOpen} →</Link>}
+      </Surface>
+      <StatTiles
+        items={[
+          { Icon: ClipboardList, label: t.summary.total, value: n.total },
+          { Icon: AlertTriangle, label: t.summary.overdue, value: n.overdue },
+          { Icon: Hourglass, label: t.summary.soon, value: n.soon },
+          { Icon: Send, label: t.summary.progress, value: `${n.submitted} / ${n.offers}` }
+        ]}
+      />
     </div>
   );
 }

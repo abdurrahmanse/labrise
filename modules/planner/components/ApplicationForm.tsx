@@ -17,7 +17,7 @@ export function ApplicationForm() {
   const form = useApplicationForm();
 
   return (
-    <form onSubmit={form.submit} noValidate className={surface({ tone: "panel", depth: "md", padding: "lg", className: "grid grid-cols-1 gap-4 md:grid-cols-[2fr_1fr_1fr_auto] md:items-end" })}>
+    <form id="add-application" onSubmit={form.submit} noValidate className={surface({ tone: "panel", depth: "md", padding: "lg", className: "grid grid-cols-1 gap-4 md:grid-cols-[2fr_1fr_1fr_auto] md:items-end" })}>
       <div>
         <label htmlFor="app-name" className={label}>{t.form.name}</label>
         <input id="app-name" list={listId} value={form.name} onChange={(e) => form.changeName(e.target.value)} placeholder={t.form.namePlaceholder} className={cn(field, form.errors.name && "border-rose-400")} />
@@ -44,7 +44,7 @@ export function ApplicationForm() {
       <button type="submit" className="inline-flex cursor-pointer items-center justify-center gap-2 border-2 border-transparent bg-indigo-600 px-5 py-3 font-bold uppercase tracking-wider text-sm text-white shadow-[4px_4px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] transition-transform hover:-translate-y-0.5">
         <Plus className="h-4 w-4" aria-hidden /> {t.form.add}
       </button>
-      <p className="font-sans text-sm font-normal text-slate-400 md:col-span-4">{t.form.deadlineHint}</p>
+      <p className="font-sans text-sm font-normal text-slate-400 md:col-span-4">{form.prefilled ? t.prefill : t.form.deadlineHint}</p>
     </form>
   );
 }
