@@ -1,4 +1,6 @@
 import type { ComponentType } from "react";
+import { FaqSection } from "./components/FaqSection";
+import { SetbacksSection } from "./components/SetbacksSection";
 import { CallSection } from "./components/CallSection";
 import { EffortSection } from "./components/EffortSection";
 import { SearchSection } from "./components/SearchSection";
@@ -32,6 +34,8 @@ export const SECTIONS: CaseSection[] = [
   { id: "effort", label: "Cost and effort", title: "What it cost and how long it took", lead: "Indicative costs and hours. Fees change, so check each official page.", Body: EffortSection },
   { id: "plan", label: "Plan", title: "Her plan, month by month", lead: "Seven phases over 14 months. Each step shows what she finished and the guide she followed.", Body: PlanTimeline },
   { id: "results", label: "Results", title: "Interviews, results and the decision", lead: "Offers, silence and a rejection. Real journeys are mixed.", Body: ResultsSection },
+  { id: "setbacks", label: "Setbacks", title: "What went wrong, and what she did", lead: "Silence, a rejection and a weak first draft. Every journey has them.", Body: SetbacksSection },
   { id: "arrival", label: "Visa and embassy", title: "Embassy process, visa interview and arrival", lead: "From the signed acceptance to the first week abroad: appointment, documents, interview, money and housing.", Body: ArrivalSection },
+  { id: "questions", label: "Questions", title: "Questions students ask about this case", lead: "Short answers, each with the guide for more.", Body: FaqSection },
   { id: "lessons", label: "Lessons", title: "What to copy", lead: "The habits behind the result, and your next steps.", Body: LessonsSection }
 ];

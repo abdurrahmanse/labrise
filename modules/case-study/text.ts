@@ -12,5 +12,5 @@ export const caseStudyText = {
   specimen: "Sample",
   passport: { surname: "Surname", given: "Given name", nationality: "Nationality", born: "Born", issued: "Issued", expires: "Expires", number: "Passport no." },
   email: { subject: "Subject", to: "To", sent: "Sent", whyTitle: "Why it works" },
-  cta: { title: "Now build yours", apply: "Start your application", planner: "Open the planner", guides: "Read the guides", directory: "Find professors" }
+  cta: { title: "Now build yours", apply: "Start your application", planner: "Open the planner", guides: "Read the guides", profile: "Check your own profile", directory: "Find professors" }
 } as const;

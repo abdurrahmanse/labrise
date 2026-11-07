@@ -18,6 +18,7 @@ export function LessonsSection() {
           <Button href="/apply">{t.cta.apply}</Button>
           <Button href="/directory/professors" variant="secondary">{t.cta.directory}</Button>
           <Button href="/planner" variant="secondary">{t.cta.planner}</Button>
+          <Button href="/profile" variant="secondary">{t.cta.profile}</Button>
           <Button href="/guides" variant="secondary">{t.cta.guides}</Button>
         </div>
       </Subheading>
