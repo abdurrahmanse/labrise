@@ -31,7 +31,12 @@ const ICONS: Record<string, LucideIcon> = {
   "negotiating-and-declining": Handshake,
   "visa-interview": Plane,
   "arrival-checklist": Home,
-  "scholarship-scams": ShieldAlert
+  "scholarship-scams": ShieldAlert,
+  "weak-profile": Compass,
+  "scholarship-essay": ScrollText,
+  "read-a-call": Search,
+  "housing-and-insurance": Home,
+  "after-acceptance": ClipboardCheck
 };
 
 export const guideIcon = (id: string): LucideIcon => ICONS[id] ?? BookOpen;

@@ -19,6 +19,7 @@ export const finderText = {
     lead: "From official university pages to scam checks. Tick each step as you finish it.",
     progress: (done: number, total: number) => `${done} of ${total} steps done`,
     saved: "Saved in this browser only.",
+    howTo: "How to do this →",
     reset: "Reset progress",
     markDone: "Mark step as done",
     markUndone: "Mark step as not done",
@@ -59,8 +60,10 @@ export const scholarshipDetailText = {
     markDone: "Mark as done",
     markUndone: "Mark as not done",
     reset: "Reset",
-    saved: "Saved in this browser only."
+    saved: "Saved in this browser only.",
+    howTo: "How to do this →"
   },
+  journey: { title: "Your path, step by step", lead: "Follow the stages in order. Each one links to a guide that explains it." },
   similar: { title: (host: string) => `More scholarships in ${host}`, level: "Other awards at this level" },
   planner: "Add the deadline to your planner",
   help: {

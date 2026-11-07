@@ -14,6 +14,7 @@ import type { ScholarshipEntry } from "../types";
 import { Flag } from "@/shared/components/Flag";
 import { bodyClass } from "./detailStyles";
 import { ScholarshipHighlights } from "./ScholarshipHighlights";
+import { ScholarshipJourney } from "./ScholarshipJourney";
 import { ScholarshipProviderBlock } from "./ScholarshipProviderBlock";
 import { ScholarshipRelated } from "./ScholarshipRelated";
 import { ScholarshipSidebar } from "./ScholarshipSidebar";
@@ -51,6 +52,7 @@ export function ScholarshipDetailView({ scholarship }: { scholarship: Scholarshi
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
         <div className="space-y-8">
+          <ScholarshipJourney scholarship={scholarship} />
           {provider && <ScholarshipProviderBlock provider={provider} />}
           <ScholarshipRelated scholarship={scholarship} />
         </div>

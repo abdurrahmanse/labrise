@@ -142,5 +142,10 @@ export const guideTopics: GuideTopic[] = [
   { id: "arrival-checklist", title: "Arrival checklist", tag: "After the visa", steps: ["Housing.", "Insurance.", "Money.", "Register.", "Meet supervisor."] },
   { id: "negotiating-and-declining", title: "Negotiate and decline", tag: "After offers", steps: ["Ask in writing.", "Request extension.", "Be realistic.", "Reply promptly.", "Decline kindly."] },
   { id: "document-attestation", title: "Attestation and translation", tag: "Ask early", steps: ["Ask what is required.", "Request originals.", "Certify translations.", "Apostille if required.", "Keep scans."] },
-  { id: "budget-planning", title: "Budget and costs", tag: "Plan the numbers", steps: ["List pre-arrival costs.", "Confirm net income.", "Estimate monthly costs.", "Plan a first-month buffer.", "Compare offers."] }
+  { id: "budget-planning", title: "Budget and costs", tag: "Plan the numbers", steps: ["List pre-arrival costs.", "Confirm net income.", "Estimate monthly costs.", "Plan a first-month buffer.", "Compare offers."] },
+  { id: "weak-profile", title: "Weak profile or low CGPA", tag: "Be honest", steps: ["Name the weakness once.", "Show recent strength.", "Add proof beyond grades.", "Target the right programmes.", "Ask referees who know you."] },
+  { id: "scholarship-essay", title: "Scholarship essay", tag: "Beyond the SOP", steps: ["Read the exact prompt.", "Pick one story.", "Show impact and plan.", "Connect to the funder's goal.", "Edit and trim."] },
+  { id: "read-a-call", title: "Read a scholarship call", tag: "Before you apply", steps: ["Find the official call.", "Mark eligibility rules.", "List documents and dates.", "Check what is covered.", "Note how to submit."] },
+  { id: "housing-and-insurance", title: "Housing and health insurance", tag: "Before you travel", steps: ["Ask the university for housing.", "Check scam signs.", "Confirm insurance rules.", "Keep contracts and receipts.", "Plan a temporary stay."] },
+  { id: "after-acceptance", title: "After you are accepted", tag: "Offer to arrival", steps: ["Reply and confirm in writing.", "Collect enrolment documents.", "Start the visa process.", "Arrange money and housing.", "Tell referees and thank them."] }
 ];
