@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { regionNames, regionOfSlug, regionSlug } from "@/modules/directory/catalog";
 import { RegionView } from "@/modules/directory/hubs/RegionView";
+import { WithParams } from "@/shared/components/WithParams";
 import { buildMetadata } from "@/modules/seo";
 import { sectionText } from "@/content/text/directory";
 
@@ -18,9 +19,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return buildMetadata({ ...sectionText.regions.meta(name), path: `/directory/regions/${region}` });
 }
 
-export default async function RegionPage({ params }: Props) {
-  const { region } = await params;
-  const name = regionOfSlug(region);
-  if (!name) notFound();
-  return <RegionView region={name} />;
+export default function RegionPage({ params }: Props) {
+  return (
+    <WithParams params={params}>
+      {({ region }) => {
+        const name = regionOfSlug(region);
+        if (!name) notFound();
+        return <RegionView region={name} />;
+      }}
+    </WithParams>
+  );
 }

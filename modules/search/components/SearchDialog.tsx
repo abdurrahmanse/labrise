@@ -45,7 +45,7 @@ export function SearchDialog({ onClosed }: SearchDialogProps) {
       onClick={(e) => e.target === dialogRef.current && close()}
       className="m-0 mx-auto mt-[10vh] w-[min(40rem,calc(100vw-2rem))] border-2 border-white/80 bg-canvas-base p-0 text-slate-100 shadow-[6px_6px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] backdrop:bg-black/50 backdrop:backdrop-blur-sm"
     >
-      <div className="flex items-center gap-3 border-b border-white/15 px-4 py-3">
+      <div className="flex items-center gap-3 border-b border-white/15 px-4 py-2.5">
         {search.pending && hasQuery ? <Loader2 className="h-5 w-5 shrink-0 animate-spin text-indigo-400" aria-hidden /> : <Search className="h-5 w-5 shrink-0 text-indigo-400" aria-hidden />}
         <input
           ref={inputRef}
@@ -60,7 +60,7 @@ export function SearchDialog({ onClosed }: SearchDialogProps) {
           aria-controls={listId}
           aria-activedescendant={search.items[nav.active] ? `${listId}-${nav.active}` : undefined}
           placeholder={searchText.placeholder}
-          className="min-w-0 flex-1 bg-transparent text-lg outline-none placeholder:text-slate-500"
+          className="min-w-0 flex-1 bg-transparent text-base outline-none placeholder:text-slate-500"
         />
         <button type="button" onClick={close} aria-label={searchText.close} className="cursor-pointer text-slate-400 hover:text-white">
           <X className="h-5 w-5" />

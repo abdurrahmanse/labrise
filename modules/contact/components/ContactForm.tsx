@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/shared/ui/Button";
 import { Send } from "lucide-react";
 import { contactPageText as t } from "@/content/text/contact";
 import { cn } from "@/shared/utils/cn";
@@ -58,9 +59,7 @@ export function ContactForm() {
       </div>
 
       <div className="flex flex-wrap items-center gap-4">
-        <button type="submit" className="inline-flex cursor-pointer items-center gap-2 border-2 border-transparent bg-indigo-600 px-6 py-3 font-bold uppercase tracking-wider text-sm text-white shadow-[4px_4px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] transition-transform hover:-translate-y-0.5">
-          <Send className="h-4 w-4" aria-hidden /> {t.form.submit}
-        </button>
+        <Button type="submit" leftIcon={<Send className="h-4 w-4" aria-hidden />}>{t.form.submit}</Button>
         <p className="max-w-sm font-sans text-sm font-normal text-slate-400">{t.form.note}</p>
       </div>
     </form>

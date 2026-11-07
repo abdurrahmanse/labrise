@@ -112,7 +112,6 @@ export function LevelCard({ level }: LevelCardProps) {
         <Button
           href={`/roadmap/${level.slug}`}
           variant="indigo"
-          size="sm"
           rightIcon={<ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
         >
           Explore Level {level.levelNumber} Detailed Roadmap

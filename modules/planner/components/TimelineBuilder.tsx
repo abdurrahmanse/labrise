@@ -9,10 +9,9 @@ import { formatMonth, monthsBefore } from "../utils/dates";
 import { stepState } from "../utils/timeline";
 import { usePlanner } from "../store/usePlanner";
 import { titleLinkClass } from "@/shared/components/linkStyles";
+import { inlineFieldClass as field } from "@/shared/ui/fieldStyles";
 import { surface } from "@/shared/components/Surface";
 
-const field =
-  "border-2 border-white/30 bg-white/[0.05] px-4 py-3 font-sans text-base text-slate-100 outline-none transition-colors focus:border-indigo-400";
 
 export function TimelineBuilder() {
   const intake = usePlanner((s) => s.intake);

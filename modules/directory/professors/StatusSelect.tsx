@@ -1,5 +1,6 @@
 "use client";
 
+import { inlineFieldClass } from "@/shared/ui/fieldStyles";
 import { getTracked, STATUSES, useProfessorTracker, type ProfessorStatus } from "../store/useProfessorTracker";
 import { trackerText } from "@/content/text/directory";
 
@@ -19,7 +20,7 @@ export function StatusSelect({ slug }: { slug: string }) {
       aria-label={trackerText.statusLabel}
       value={status}
       onChange={(e) => setStatus(slug, e.target.value as ProfessorStatus)}
-      className={`bg-white/[0.05] px-2 py-1.5 text-sm font-bold cursor-pointer outline-none ${STATUS_STYLE[status]}`}
+      className={`${inlineFieldClass} cursor-pointer font-bold ${STATUS_STYLE[status]}`}
     >
       {STATUSES.map((s) => (
         <option key={s} value={s}>

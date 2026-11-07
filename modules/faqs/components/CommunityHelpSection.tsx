@@ -38,7 +38,6 @@ export function CommunityHelpSection() {
                 <Button
                   href={c.href}
                   variant="ghost"
-                  size="xs"
                   rightIcon={<ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />}
                   className="text-cyan-400 hover:text-cyan-300 p-0 hover:bg-transparent"
                 >

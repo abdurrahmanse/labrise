@@ -68,7 +68,6 @@ export function InteractivePreflightChecklist() {
               <Button
                 href="/roadmap"
                 variant="emerald"
-                size="md"
                 rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
               >
                 {legacyText.interactivePreflightChecklist.t2}

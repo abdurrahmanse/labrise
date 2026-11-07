@@ -39,8 +39,8 @@ export function FindProfessors() {
       </div>
 
       <div className="flex flex-wrap gap-3">
-        <Button href="/directory/professors" size="lg" rightIcon={<ArrowRight className="h-4 w-4" aria-hidden />}>{t.find.all}</Button>
-        <Button href="/directory/professors?savedOnly=true" size="lg" variant="secondary" leftIcon={<Bookmark className="h-4 w-4" aria-hidden />}>{t.find.saved}</Button>
+        <Button href="/directory/professors" rightIcon={<ArrowRight className="h-4 w-4" aria-hidden />}>{t.find.all}</Button>
+        <Button href="/directory/professors?savedOnly=true" variant="secondary" leftIcon={<Bookmark className="h-4 w-4" aria-hidden />}>{t.find.saved}</Button>
       </div>
     </div>
   );

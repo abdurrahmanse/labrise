@@ -6,7 +6,7 @@ import { DirectoryTypeList } from "@/modules/directory/lists/DirectoryTypeList";
 import { directoryTypeSchema } from "@/modules/directory/contracts";
 import { PageShell } from "@/shared/components/PageShell";
 import { buildMetadata } from "@/modules/seo";
-import { PageFallback } from "@/shared/components/PageFallback";
+import { WithParams } from "@/shared/components/WithParams";
 import { navLabels, notFoundTitles, pageText } from "@/content/text/site";
 
 interface Props {
@@ -28,8 +28,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-async function DirectoryTypePageContent({ params }: Props) {
-  const parsed = directoryTypeSchema.safeParse((await params).type);
+function DirectoryTypeContent({ type }: { type: string }) {
+  const parsed = directoryTypeSchema.safeParse(type);
   if (!parsed.success) notFound();
 
   const index = directoryTypes.findIndex((t) => t.type === parsed.data);
@@ -54,9 +54,5 @@ async function DirectoryTypePageContent({ params }: Props) {
 }
 
 export default function DirectoryTypePage({ params }: Props) {
-  return (
-    <Suspense fallback={<PageFallback />}>
-      <DirectoryTypePageContent params={params} />
-    </Suspense>
-  );
+  return <WithParams params={params}>{({ type }) => <DirectoryTypeContent type={type} />}</WithParams>;
 }

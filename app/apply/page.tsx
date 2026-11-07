@@ -67,8 +67,8 @@ export default function ApplyPage() {
       <Block title={t.together.title}>
         <p className="font-sans text-[length:var(--text-body)] font-normal text-slate-300">{t.together.body}</p>
         <div className="flex flex-wrap gap-3">
-          <Button href="/planner" size="lg" variant="secondary" leftIcon={<CalendarCheck className="h-4 w-4" aria-hidden />}>{t.together.planner}</Button>
-          <Button href="/documents" size="lg" variant="secondary" leftIcon={<FileText className="h-4 w-4" aria-hidden />}>{t.together.documents}</Button>
+          <Button href="/planner" variant="secondary" leftIcon={<CalendarCheck className="h-4 w-4" aria-hidden />}>{t.together.planner}</Button>
+          <Button href="/documents" variant="secondary" leftIcon={<FileText className="h-4 w-4" aria-hidden />}>{t.together.documents}</Button>
         </div>
       </Block>
     </PageShell>

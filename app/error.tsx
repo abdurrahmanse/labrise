@@ -21,9 +21,9 @@ export default function ErrorPage({ error, reset }: { error: Error & { digest?: 
       footnote={error.digest ? t.reference(error.digest) : undefined}
       actions={
         <>
-          <Button size="lg" onClick={reset} leftIcon={<RotateCcw className="h-4 w-4" aria-hidden />}>{t.retry}</Button>
-          <Button href="/" size="lg" variant="secondary" leftIcon={<Home className="h-4 w-4" aria-hidden />}>{t.home}</Button>
-          <Button href="/contact" size="lg" variant="secondary" leftIcon={<Flag className="h-4 w-4" aria-hidden />}>{t.report}</Button>
+          <Button onClick={reset} leftIcon={<RotateCcw className="h-4 w-4" aria-hidden />}>{t.retry}</Button>
+          <Button href="/" variant="secondary" leftIcon={<Home className="h-4 w-4" aria-hidden />}>{t.home}</Button>
+          <Button href="/contact" variant="secondary" leftIcon={<Flag className="h-4 w-4" aria-hidden />}>{t.report}</Button>
         </>
       }
       suggestions={{ title: t.suggestions, links: quickLinks.slice(0, 3) }}

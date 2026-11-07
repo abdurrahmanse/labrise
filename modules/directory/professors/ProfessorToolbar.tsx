@@ -1,5 +1,6 @@
 "use client";
 
+import { inlineFieldClass } from "@/shared/ui/fieldStyles";
 import { SearchInput } from "@/shared/ui/SearchInput";
 import { REGIONS } from "../utils/regions";
 import { SORTS, type ProfessorFilters, type ProfessorSort } from "../utils/professorFilters";
@@ -13,11 +14,11 @@ interface ProfessorToolbarProps {
   onChange: (patch: Partial<ProfessorFilters>) => void;
 }
 
-const control = "bg-white/[0.05] px-3 py-2 text-sm font-bold text-slate-100 outline-none cursor-pointer";
+const control = `${inlineFieldClass} cursor-pointer font-bold`;
 
 function Toggle({ label, on, onClick }: { label: string; on: boolean; onClick: () => void }) {
   return (
-    <button type="button" aria-pressed={on} onClick={onClick} className={`px-3 py-2 text-sm font-bold cursor-pointer transition-colors ${on ? "bg-indigo-600 text-white" : "bg-white/[0.05] text-slate-200 hover:bg-white/10"}`}>
+    <button type="button" aria-pressed={on} onClick={onClick} className={`min-h-9 px-3 py-1.5 text-sm font-bold cursor-pointer transition-colors ${on ? "bg-indigo-600 text-white" : "bg-white/[0.05] text-slate-200 hover:bg-white/10"}`}>
       {label}
     </button>
   );

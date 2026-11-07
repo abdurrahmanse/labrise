@@ -164,6 +164,7 @@ Measured with `next analyze`: a plain page used to ship ~945 KB of JavaScript (r
 | `npx tsc --noEmit` | A type error |
 | `npx eslint .` | A lint error or a broken module boundary |
 | `npm test` | A test fails (node:test through tsx) |
+| `npm run check:routes` | A page reads `params` outside a Suspense boundary (use `WithParams`) |
 | `npm run check:cycles` | Files import each other in a loop |
 | `npm run check:unused` | A file is unreachable from a route or a module's `index.ts` |
 | `npm run check:types` | An exported type nothing references (uses the compiler, so a word in a string does not count) |

@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { buildMetadata } from "@/modules/seo";
+import { WithParams } from "@/shared/components/WithParams";
 
 interface SectionRouteConfig<E, V extends string> {
   /** Every entry that has these small pages. */
@@ -35,12 +36,17 @@ export function defineSectionRoute<E, V extends string>(config: SectionRouteConf
     return buildMetadata({ ...config.meta(entry, view), path: `${config.basePath}/${slug}/${view}` });
   }
 
-  /** Params are read and checked before anything streams, so an unknown address answers 404 instead of an empty 200 page. */
-  async function Page({ params }: Params) {
-    const { slug, view } = await params;
-    const entry = config.find(slug);
-    if (!entry || !isView(view)) notFound();
-    return <>{config.render(entry, view)}</>;
+  /** The URL is read inside a boundary (see WithParams). An unknown address renders the not-found page. */
+  function Page({ params }: Params) {
+    return (
+      <WithParams params={params}>
+        {({ slug, view }) => {
+          const entry = config.find(slug);
+          if (!entry || !isView(view)) notFound();
+          return config.render(entry, view);
+        }}
+      </WithParams>
+    );
   }
 
   return { generateStaticParams, generateMetadata, Page };

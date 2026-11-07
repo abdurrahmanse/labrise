@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 import { cn } from "@/shared/utils/cn";
 
-export const fieldClass =
-  "w-full border-2 border-white/30 bg-white/[0.05] px-4 py-3 font-sans text-base font-normal text-slate-100 placeholder-slate-500 outline-none transition-colors focus:border-indigo-400";
-export const labelClass = "mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate-400";
+import { fieldClass, fieldLabelClass as labelClass } from "@/shared/ui/fieldStyles";
+
+export { fieldClass, labelClass };
 
 interface ContactFieldProps {
   id: string;

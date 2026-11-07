@@ -3,14 +3,13 @@
 import { useId } from "react";
 import { Plus } from "lucide-react";
 import { plannerText as t } from "@/content/text/planner";
+import { Button } from "@/shared/ui/Button";
+import { fieldClass as field, fieldLabelClass as label } from "@/shared/ui/fieldStyles";
 import { cn } from "@/shared/utils/cn";
 import { surface } from "@/shared/components/Surface";
 import { useApplicationForm } from "../hooks/useApplicationForm";
 import type { ApplicationKind } from "../store/usePlanner";
 
-const field =
-  "w-full border-2 border-white/30 bg-white/[0.05] px-4 py-3 font-sans text-base text-slate-100 placeholder-slate-500 outline-none transition-colors focus:border-indigo-400";
-const label = "mb-1.5 block font-mono text-xs uppercase tracking-wider text-slate-400";
 
 export function ApplicationForm() {
   const listId = useId();
@@ -41,9 +40,7 @@ export function ApplicationForm() {
           ))}
         </select>
       </div>
-      <button type="submit" className="inline-flex cursor-pointer items-center justify-center gap-2 border-2 border-transparent bg-indigo-600 px-5 py-3 font-bold uppercase tracking-wider text-sm text-white shadow-[4px_4px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)] transition-transform hover:-translate-y-0.5">
-        <Plus className="h-4 w-4" aria-hidden /> {t.form.add}
-      </button>
+      <Button type="submit" leftIcon={<Plus className="h-4 w-4" aria-hidden />}>{t.form.add}</Button>
       <p className="font-sans text-sm font-normal text-slate-400 md:col-span-4">{form.prefilled ? t.prefill : t.form.deadlineHint}</p>
     </form>
   );

@@ -5,6 +5,7 @@ import { CalendarClock, CalendarPlus, ExternalLink, Trash2 } from "lucide-react"
 import { plannerText as t } from "@/content/text/planner";
 import { Surface } from "@/shared/components/Surface";
 import { actionLinkClass } from "@/shared/components/linkStyles";
+import { fieldClass, inlineFieldClass } from "@/shared/ui/fieldStyles";
 import { cn } from "@/shared/utils/cn";
 import { daysUntil } from "../utils/dates";
 import { downloadText } from "../utils/download";
@@ -28,7 +29,7 @@ const URGENCY_STYLE: Record<Urgency, string> = {
   closed: "border-white/20 text-slate-400"
 };
 
-const inputClass = "bg-white/[0.05] px-2 py-1.5 text-sm outline-none focus:ring-2 focus:ring-indigo-400/50";
+const inputClass = inlineFieldClass;
 
 /** One tracked application: urgency, deadline, status, note and calendar download. */
 export function ApplicationCard({ application: a }: { application: PlannedApplication }) {
@@ -63,7 +64,7 @@ export function ApplicationCard({ application: a }: { application: PlannedApplic
         <input type="date" aria-label={t.edit.deadline} value={a.deadline} onChange={(e) => e.target.value && update(a.id, { deadline: e.target.value })} className={cn(inputClass, "text-slate-100")} />
       </div>
 
-      <textarea aria-label={t.list.noteLabel} value={a.note} onChange={(e) => update(a.id, { note: e.target.value })} placeholder={t.list.notePlaceholder} rows={2} className="w-full resize-y bg-white/[0.05] p-3 text-slate-100 placeholder-slate-500 outline-none focus:ring-2 focus:ring-indigo-400/50" />
+      <textarea aria-label={t.list.noteLabel} value={a.note} onChange={(e) => update(a.id, { note: e.target.value })} placeholder={t.list.notePlaceholder} rows={2} className={cn(fieldClass, "resize-y")} />
 
       <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
         <button type="button" onClick={() => downloadText(`${a.name.replace(/[^\w]+/g, "-")}.ics`, applicationsToIcs([a]), "text/calendar")} className={`inline-flex cursor-pointer items-center gap-1.5 ${actionLinkClass}`}>

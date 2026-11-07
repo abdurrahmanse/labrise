@@ -17,7 +17,7 @@ export default function NotFound() {
       Icon={t.Icon}
       actions={
         <>
-          <Button href="/" size="lg" leftIcon={<Home className="h-4 w-4" aria-hidden />}>{t.home}</Button>
+          <Button href="/" leftIcon={<Home className="h-4 w-4" aria-hidden />}>{t.home}</Button>
           <OpenSearchButton label={t.search} />
         </>
       }

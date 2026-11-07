@@ -32,7 +32,7 @@ function RouteCard({ track }: { track: ApplyTrack }) {
       </ul>
       <div className="mt-auto space-y-4 pt-2">
         <ProgressPanel bare label={track.title} summary={t.done(done, total)} percent={percent} />
-        <Button href={`/apply/${track.id}`} size="lg" rightIcon={<ArrowRight className="h-4 w-4" aria-hidden />}>
+        <Button href={`/apply/${track.id}`} rightIcon={<ArrowRight className="h-4 w-4" aria-hidden />}>
           {done > 0 ? t.continue : t.start}
         </Button>
       </div>

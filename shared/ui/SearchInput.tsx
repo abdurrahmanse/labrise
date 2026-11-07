@@ -1,5 +1,6 @@
 "use client";
 
+import { fieldClass } from "./fieldStyles";
 import React from "react";
 import { Search, X } from "lucide-react";
 import { commonText } from "@/content/text/common";
@@ -28,7 +29,7 @@ export function SearchInput({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         autoFocus={autoFocus}
-        className="w-full pl-10 pr-9 py-2.5 rounded-xl bg-slate-950/80 border border-white/10 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-teal-500/60 focus:ring-1 focus:ring-teal-500/30 transition-all duration-200"
+        className={`${fieldClass} pl-9 pr-9`}
       />
       {value.trim().length > 0 && (
         <button

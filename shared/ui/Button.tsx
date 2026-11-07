@@ -16,10 +16,8 @@ export type ButtonVariant =
   | "amber"
   | "purple";
 
-export type ButtonSize = "xs" | "sm" | "md" | "lg";
-
 export const buttonVariants = cva(
-  "inline-flex items-center justify-center font-heading transition-all duration-200 select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--btn-bg)]/60 disabled:opacity-50 disabled:pointer-events-none",
+  "inline-flex min-h-9 items-center justify-center gap-2 px-3.5 py-1.5 text-sm font-semibold font-heading transition-all duration-200 select-none cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--btn-bg)]/60 disabled:opacity-50 disabled:pointer-events-none",
   {
     variants: {
       variant: {
@@ -42,21 +40,14 @@ export const buttonVariants = cva(
         purple:
           "bg-transparent hover:bg-[var(--hover-fill)] hover:border-[var(--hover-line)] text-[var(--btn-bg)] border-2 border-[var(--btn-bg)] shadow-[3px_3px_0_0_color-mix(in_srgb,var(--pure-fg)_30%,transparent)]"
       },
-      size: {
-        xs: "px-2.5 py-1 text-[11px] gap-1.5",
-        sm: "px-3 py-1.5 text-xs gap-2",
-        md: "px-4 py-2 text-xs sm:text-sm gap-2 font-medium",
-        lg: "px-5 py-2.5 text-sm sm:text-base gap-2.5 font-semibold"
-      },
       fullWidth: { true: "w-full", false: "" }
     },
-    defaultVariants: { variant: "primary", size: "md", fullWidth: false }
+    defaultVariants: { variant: "primary", fullWidth: false }
   }
 );
 
 interface BaseButtonProps {
   variant?: ButtonVariant;
-  size?: ButtonSize;
   icon?: React.ReactNode;
   leftIcon?: React.ReactNode;
   iconRight?: React.ReactNode;
@@ -84,7 +75,6 @@ export type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 export function Button({
   variant,
-  size,
   icon,
   leftIcon,
   iconRight,
@@ -96,7 +86,7 @@ export function Button({
   className,
   ...props
 }: ButtonProps) {
-  const classes = cn(buttonVariants({ variant, size, fullWidth }), className);
+  const classes = cn(buttonVariants({ variant, fullWidth }), className);
   const startIcon = leftIcon || icon;
   const endIcon = rightIcon || iconRight;
 

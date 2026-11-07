@@ -1,5 +1,6 @@
 "use client";
 
+import { fieldClass } from "@/shared/ui/fieldStyles";
 import React, { useState } from "react";
 import { Search, HelpCircle, RotateCcw } from "lucide-react";
 import { SectionHeader } from "@/shared/ui/SectionHeader";
@@ -66,7 +67,7 @@ export function FaqAccordionSection({
             placeholder={faqsHeaderData.searchPlaceholder}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-11 pr-10 py-3.5 rounded-2xl bg-canvas-card border border-white/10 focus:border-cyan-500 text-slate-100 placeholder-slate-500 text-xs sm:text-sm outline-none transition-all shadow-inner"
+            className={`${fieldClass} pl-9 pr-9`}
           />
           {searchQuery && (
             <button
@@ -114,7 +115,6 @@ export function FaqAccordionSection({
                 <Button
                   onClick={handleReset}
                   variant="secondary"
-                  size="sm"
                   leftIcon={<RotateCcw className="w-3.5 h-3.5" />}
                 >
                   Reset Search & Filters

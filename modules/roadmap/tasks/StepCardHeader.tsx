@@ -66,7 +66,6 @@ export function StepCardHeader({
       {/* Expand / Collapse Control */}
       <Button
         variant="secondary"
-        size="sm"
         onClick={onToggleExpand}
         iconRight={
           isExpanded ? (

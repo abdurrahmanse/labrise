@@ -28,6 +28,7 @@ jobs:
         run: npm run check:data
       - name: Structure checks (import cycles, unused files, unused types)
         run: |
+          npm run check:routes
           npm run check:cycles
           npm run check:unused
           npm run check:types
